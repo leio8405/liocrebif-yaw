@@ -1,0 +1,331 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  currentPath="/"
+  title="Precision Inertial Navigation & Fiber Optic Sensing"
+  description="HongKong Liocrebif Technology — Leading manufacturer of inertial navigation systems, fiber optic gyroscopes, and fiber optic components. Serving 30+ countries with vertically integrated manufacturing."
+>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 gradient-hero"></div>
+    <div class="absolute top-20 right-0 w-[500px] h-[500px] rounded-full bg-brand-500/5 blur-[120px]"></div>
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-brand-600/5 blur-[100px]"></div>
+
+    <div class="container-page relative py-20 sm:py-28 lg:py-36">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-sm mb-8">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-400"></span>
+          </span>
+          Serving 30+ Countries Worldwide
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+          Precision <span class="text-gradient">Navigation</span><br/>
+          for Critical <span class="text-gradient">Missions</span>
+        </h1>
+
+        <p class="text-surface-400 text-lg sm:text-xl mt-6 max-w-xl leading-relaxed">
+          From core optical sensors to complete inertial navigation systems — Liocrebif delivers vertically integrated, high-precision solutions trusted by aerospace, defense, and industrial partners worldwide.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mt-10">
+          <a href="/products" class="btn-primary text-base">
+            Explore Products
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="/contact" class="btn-outline text-base">
+            Request a Quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Stats -->
+  <section class="border-y border-surface-800/50 bg-surface-900/30">
+    <div class="container-page py-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="data-number">2019</div>
+          <div class="data-label">Founded</div>
+        </div>
+        <div class="text-center">
+          <div class="data-number">50+</div>
+          <div class="data-label">Team Members</div>
+        </div>
+        <div class="text-center">
+          <div class="data-number">30+</div>
+          <div class="data-label">Countries Served</div>
+        </div>
+        <div class="text-center">
+          <div class="data-number">13,300<span class="text-brand-400 text-lg">㎡</span></div>
+          <div class="data-label">Industrial Park</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Product Lines -->
+  <section class="container-page py-20 sm:py-28">
+    <div class="text-center mb-16">
+      <h2 class="section-title">Core Technology <span class="text-gradient">Platforms</span></h2>
+      <p class="section-subtitle mx-auto">Three integrated product lines built on proprietary technology, from components to complete systems.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- INS -->
+      <a href="/products/inertial-navigation-systems" class="product-card group">
+        <div class="w-14 h-14 rounded-xl gradient-brand flex items-center justify-center mb-5 text-white shadow-lg shadow-brand-500/20 group-hover:scale-110 transition-transform">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"/></svg>
+        </div>
+        <h3 class="product-card-title">Inertial Navigation Systems</h3>
+        <p class="text-surface-400 text-sm mt-2 leading-relaxed">High-precision FOG and MEMS-based INS/GNSS integrated navigation solutions for aerospace, marine, and autonomous vehicle applications.</p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="tag">FOG INS</span>
+          <span class="tag">MEMS INS</span>
+          <span class="tag">GNSS/INS</span>
+        </div>
+        <div class="mt-5 text-brand-400 text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+          Explore Products <span aria-hidden="true">→</span>
+        </div>
+      </a>
+
+      <!-- Gyroscopes -->
+      <a href="/products/gyroscopes" class="product-card group">
+        <div class="w-14 h-14 rounded-xl gradient-brand flex items-center justify-center mb-5 text-white shadow-lg shadow-brand-500/20 group-hover:scale-110 transition-transform">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h3 class="product-card-title">Gyroscope Systems</h3>
+        <p class="text-surface-400 text-sm mt-2 leading-relaxed">Single to tri-axis fiber optic and MEMS gyroscopes from industrial to navigation-grade precision. Core sensing technology for stabilization and guidance.</p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="tag">FOG Gyro</span>
+          <span class="tag">MEMS Gyro</span>
+          <span class="tag">Tactical Grade</span>
+        </div>
+        <div class="mt-5 text-brand-400 text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+          Explore Products <span aria-hidden="true">→</span>
+        </div>
+      </a>
+
+      <!-- Fiber Optic -->
+      <a href="/products/fiber-optic" class="product-card group">
+        <div class="w-14 h-14 rounded-xl gradient-brand flex items-center justify-center mb-5 text-white shadow-lg shadow-brand-500/20 group-hover:scale-110 transition-transform">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/></svg>
+        </div>
+        <h3 class="product-card-title">Fiber Optic Systems</h3>
+        <p class="text-surface-400 text-sm mt-2 leading-relaxed">FOG components, fiber coil winding machines, and calibration equipment. Full in-house manufacturing capability from optical devices to production tools.</p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="tag">FOG Components</span>
+          <span class="tag">Winding Machines</span>
+          <span class="tag">Calibration</span>
+        </div>
+        <div class="mt-5 text-brand-400 text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+          Explore Products <span aria-hidden="true">→</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Differentiator: Full Chain -->
+  <section class="bg-surface-900/50 border-y border-surface-800/30">
+    <div class="container-page py-20 sm:py-28">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div>
+          <div class="tag mb-4">Full-Stack Manufacturing</div>
+          <h2 class="section-title">From Core Sensor to <span class="text-gradient">Complete System</span></h2>
+          <p class="text-surface-400 mt-4 leading-relaxed">
+            Unlike assemblers who source components externally, Liocrebif controls the entire value chain. We manufacture our own fiber optic coils, gyroscope cores, and inertial measurement units — giving you better performance, faster customization, and competitive pricing.
+          </p>
+          <ul class="mt-6 space-y-3">
+            <li class="flex items-start gap-3 text-surface-300">
+              <span class="mt-1 w-5 h-5 rounded-full bg-brand-500/20 flex items-center justify-center flex-shrink-0 text-brand-400 text-xs">✓</span>
+              <span>In-house fiber coil winding & testing</span>
+            </li>
+            <li class="flex items-start gap-3 text-surface-300">
+              <span class="mt-1 w-5 h-5 rounded-full bg-brand-500/20 flex items-center justify-center flex-shrink-0 text-brand-400 text-xs">✓</span>
+              <span>Proprietary FOG & MEMS gyroscope design</span>
+            </li>
+            <li class="flex items-start gap-3 text-surface-300">
+              <span class="mt-1 w-5 h-5 rounded-full bg-brand-500/20 flex items-center justify-center flex-shrink-0 text-brand-400 text-xs">✓</span>
+              <span>Complete calibration & testing infrastructure</span>
+            </li>
+            <li class="flex items-start gap-3 text-surface-300">
+              <span class="mt-1 w-5 h-5 rounded-full bg-brand-500/20 flex items-center justify-center flex-shrink-0 text-brand-400 text-xs">✓</span>
+              <span>13,300㎡ self-owned Optoelectronic Industrial Park</span>
+            </li>
+          </ul>
+          <a href="/about" class="btn-outline mt-8">About Our Facility →</a>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-surface-800 to-surface-900 border border-surface-700/30 flex items-center justify-center overflow-hidden">
+            <div class="text-center p-8">
+              <div class="w-20 h-20 rounded-2xl gradient-brand flex items-center justify-center mx-auto mb-6 shadow-2xl shadow-brand-500/30">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+              </div>
+              <div class="text-5xl font-black text-white tracking-tight">13,300<span class="text-brand-400">㎡</span></div>
+              <div class="text-surface-400 mt-2">Self-Owned Industrial Park</div>
+              <div class="flex justify-center gap-8 mt-6 text-sm text-surface-500">
+                <div>R&D Center</div>
+                <div>Production Lines</div>
+                <div>Calibration Labs</div>
+              </div>
+            </div>
+          </div>
+          <!-- Decorative dots -->
+          <div class="absolute -top-4 -right-4 w-24 h-24 opacity-20">
+            <svg viewBox="0 0 100 100"><circle cx="10" cy="10" r="2" fill="currentColor" class="text-brand-400"/><circle cx="30" cy="10" r="2" fill="currentColor" class="text-brand-400"/><circle cx="50" cy="10" r="2" fill="currentColor" class="text-brand-400"/><circle cx="10" cy="30" r="2" fill="currentColor" class="text-brand-400"/><circle cx="30" cy="30" r="2" fill="currentColor" class="text-brand-400"/><circle cx="50" cy="30" r="2" fill="currentColor" class="text-brand-400"/><circle cx="10" cy="50" r="2" fill="currentColor" class="text-brand-400"/><circle cx="30" cy="50" r="2" fill="currentColor" class="text-brand-400"/><circle cx="50" cy="50" r="2" fill="currentColor" class="text-brand-400"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hot Products -->
+  <section class="container-page py-20 sm:py-28">
+    <div class="text-center mb-14">
+      <h2 class="section-title">Featured <span class="text-gradient">Products</span></h2>
+      <p class="section-subtitle mx-auto">Industry-leading performance across our three core technology platforms.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Product 1: INS -->
+      <a href="/products/inertial-navigation-systems" class="glass-card-hover p-0 overflow-hidden block">
+        <div class="h-40 bg-surface-900/50 flex items-center justify-center p-4">
+          <img src="https://cowork-storage-public-cdn.lx.netease.com/lxbg/2024/11/01/9916fd75af594a13b9785080e2784c4c.png" alt="LKF-FS300" class="max-h-full object-contain" loading="lazy" />
+        </div>
+        <div class="h-1 bg-gradient-to-r from-brand-500 to-brand-400"></div>
+        <div class="p-6">
+          <div class="flex items-start justify-between mb-3">
+            <div class="tag">INS</div>
+            <span class="text-xs text-surface-500 font-mono">LKF-FS300</span>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Fiber Optical Integrated Navigation System</h3>
+          <p class="text-surface-400 text-sm line-clamp-2">Tactical-grade FOG-based GNSS/INS with self-alignment and RTK navigation for aircraft, ships, and UAVs.</p>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-xs text-surface-500">
+              <span class="text-brand-400 font-mono">FOG</span> · Navigation Grade
+            </div>
+            <span class="text-brand-400 text-sm font-medium">Details →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Product 2: Gyro -->
+      <a href="/products/gyroscopes" class="glass-card-hover p-0 overflow-hidden block">
+        <div class="h-40 bg-surface-900/50 flex items-center justify-center p-4">
+          <img src="https://cowork-storage-public-cdn.lx.netease.com/lxbg/2024/10/30/b17433d3ad3d413380bbdb2ed6a5c43e.png" alt="LKF-FS60" class="max-h-full object-contain" loading="lazy" />
+        </div>
+        <div class="h-1 bg-gradient-to-r from-brand-500 to-brand-400"></div>
+        <div class="p-6">
+          <div class="flex items-start justify-between mb-3">
+            <div class="tag">Gyroscope</div>
+            <span class="text-xs text-surface-500 font-mono">LKF-FS60</span>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Single Axis Medium-High Precision FOG</h3>
+          <p class="text-surface-400 text-sm line-clamp-2">Miniaturized closed-loop FOG with 135μm thin PM fiber technology. Compact, fast start-up, RS-422 output.</p>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-xs text-surface-500">
+              <span class="text-brand-400 font-mono">FOG</span> · Medium-High Precision
+            </div>
+            <span class="text-brand-400 text-sm font-medium">Details →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Product 3: Fiber -->
+      <a href="/products/fiber-optic" class="glass-card-hover p-0 overflow-hidden block">
+        <div class="h-40 bg-surface-900/50 flex items-center justify-center p-4">
+          <img src="https://cowork-storage-public-cdn.lx.netease.com/lxbg/2024/11/01/7c8932c0c3be441e86c1435ed082538f.jpg" alt="LKF-RH16" class="max-h-full object-contain rounded" loading="lazy" />
+        </div>
+        <div class="h-1 bg-gradient-to-r from-brand-500 to-brand-400"></div>
+        <div class="p-6">
+          <div class="flex items-start justify-between mb-3">
+            <div class="tag">Fiber Equipment</div>
+            <span class="text-xs text-surface-500 font-mono">LKF-RH16</span>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Precision FOG Coil Winding Machine</h3>
+          <p class="text-surface-400 text-sm line-clamp-2">Multi-pole winding system with automatic glue coating. Real-time display of winding parameters.</p>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-xs text-surface-500">
+              <span class="text-brand-400 font-mono">Equipment</span> · Multipole Winding
+            </div>
+            <span class="text-brand-400 text-sm font-medium">Details →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Industries Served -->
+  <section class="border-t border-surface-800/30 bg-surface-900/30">
+    <div class="container-page py-20 sm:py-28">
+      <div class="text-center mb-14">
+        <h2 class="section-title">Industries <span class="text-gradient">Served</span></h2>
+        <p class="section-subtitle mx-auto">Our navigation and sensing solutions power critical applications across multiple sectors.</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="glass-card p-6 text-center hover:border-brand-500/30 transition-all cursor-default">
+          <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center mx-auto mb-3 text-brand-400">🛰️</div>
+          <div class="text-sm font-medium text-white">Aerospace</div>
+        </div>
+        <div class="glass-card p-6 text-center hover:border-brand-500/30 transition-all cursor-default">
+          <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center mx-auto mb-3 text-brand-400">🚢</div>
+          <div class="text-sm font-medium text-white">Marine</div>
+        </div>
+        <div class="glass-card p-6 text-center hover:border-brand-500/30 transition-all cursor-default">
+          <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center mx-auto mb-3 text-brand-400">🚗</div>
+          <div class="text-sm font-medium text-white">Autonomous Vehicles</div>
+        </div>
+        <div class="glass-card p-6 text-center hover:border-brand-500/30 transition-all cursor-default">
+          <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center mx-auto mb-3 text-brand-400">🗺️</div>
+          <div class="text-sm font-medium text-white">Surveying & Mapping</div>
+        </div>
+        <div class="glass-card p-6 text-center hover:border-brand-500/30 transition-all cursor-default">
+          <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center mx-auto mb-3 text-brand-400">⚡</div>
+          <div class="text-sm font-medium text-white">Electric Power</div>
+        </div>
+        <div class="glass-card p-6 text-center hover:border-brand-500/30 transition-all cursor-default">
+          <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center mx-auto mb-3 text-brand-400">🚄</div>
+          <div class="text-sm font-medium text-white">Transportation</div>
+        </div>
+        <div class="glass-card p-6 text-center hover:border-brand-500/30 transition-all cursor-default">
+          <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center mx-auto mb-3 text-brand-400">🛡️</div>
+          <div class="text-sm font-medium text-white">Defense</div>
+        </div>
+        <div class="glass-card p-6 text-center hover:border-brand-500/30 transition-all cursor-default">
+          <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center mx-auto mb-3 text-brand-400">🏭</div>
+          <div class="text-sm font-medium text-white">Industrial</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="container-page py-20 sm:py-28">
+    <div class="relative rounded-2xl overflow-hidden">
+      <div class="absolute inset-0 gradient-hero"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-surface-900/90 to-surface-900/70"></div>
+      <div class="relative p-10 sm:p-16 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white">Ready to Discuss Your Project?</h2>
+        <p class="text-surface-300 mt-4 max-w-lg mx-auto">
+          Our engineering team is ready to help you find the right navigation solution for your application.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 mt-8">
+          <a href="/contact" class="btn-primary text-base">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Send Inquiry
+          </a>
+          <a href="https://wa.me/8618062673472" class="btn-outline text-base border-green-600 text-green-300 hover:bg-green-900/30 hover:border-green-500" target="_blank">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
