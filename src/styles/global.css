@@ -25,7 +25,7 @@
   --color-surface-900: #0f172a;
   --color-surface-950: #020617;
 
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Inter', 'Noto Sans SC', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
