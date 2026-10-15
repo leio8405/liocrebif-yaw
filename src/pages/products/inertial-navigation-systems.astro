@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getLangFromUrl, useTranslations, translatePath } from '../../i18n/utils';
+import { inertialNavigation } from '../../data/products';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -24,74 +25,36 @@ const t = useTranslations(lang);
   <section class="container-page py-16">
     <div class="space-y-10">
 
-      <!-- LKF-FS300 -->
-      <div class="glass-card overflow-hidden">
-        <div class="grid lg:grid-cols-3">
-          <div class="lg:col-span-1 bg-surface-900/50 flex items-center justify-center p-6 min-h-[240px]">
-            <img src="https://cowork-storage-public-cdn.lx.netease.com/lxbg/2024/11/01/9916fd75af594a13b9785080e2784c4c.png" alt="LKF-FS300 Fiber Optical Integrated Navigation System" class="max-h-[200px] object-contain" loading="lazy" />
-          </div>
-          <div class="lg:col-span-2 p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="tag">{t('home.tech.ins.tag1')}</span><span class="text-xs text-surface-500 font-mono">LKF-FS300</span>
+      {inertialNavigation.map((p) => (
+        <div class="glass-card overflow-hidden">
+          <div class="grid lg:grid-cols-3">
+            <div class="lg:col-span-1 bg-surface-900/50 flex items-center justify-center p-6 min-h-[240px]">
+              {p.image ? (
+                <img src={p.image} alt={`${p.model} ${lang === 'zh' ? p.nameZh : p.nameEn}`} class="max-h-[200px] object-contain" loading="lazy" />
+              ) : (
+                <div class="w-20 h-20 rounded-2xl gradient-brand flex items-center justify-center shadow-2xl shadow-brand-500/30 text-3xl">{p.emoji || '📦'}</div>
+              )}
             </div>
-            <h3 class="text-xl font-bold text-white">{t('home.featured.fs300.title')}</h3>
-            <p class="text-surface-400 text-sm mt-2">{t('home.featured.fs300.desc')}</p>
-            <div class="flex flex-wrap gap-2 mt-3">
-              <span class="text-xs text-surface-500">{t('products.size')}: 21.2×15.5×12.5 cm</span>
+            <div class="lg:col-span-2 p-6 sm:p-8">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="tag">{lang === 'zh' ? p.tagZh : p.tagEn}</span><span class="text-xs text-surface-500 font-mono">{p.model}</span>
+              </div>
+              <h3 class="text-xl font-bold text-white">{lang === 'zh' ? p.nameZh : p.nameEn}</h3>
+              <p class="text-surface-400 text-sm mt-2">{lang === 'zh' ? p.descZh : p.descEn}</p>
+              {p.includesEn && <p class="text-surface-500 text-xs mt-3">{lang === 'zh' ? p.includesZh : p.includesEn}</p>}
+              {p.specs && (
+                <div class="flex flex-wrap gap-2 mt-3">
+                  <span class="text-xs text-surface-500">{t('products.size')}: {p.specs}</span>
+                </div>
+              )}
+              <div class="flex flex-wrap gap-3 mt-4">
+                {(lang === 'zh' ? p.appsZh : p.appsEn).map((app) => <span class="tag">{app}</span>)}
+              </div>
+              <a href={translatePath('/contact', lang)} class="btn-primary text-sm mt-4">{t('products.requestDatasheet')}</a>
             </div>
-            <div class="flex flex-wrap gap-3 mt-4">
-              <span class="tag">Aircraft Navigation</span><span class="tag">UAV/Vehicle/Ship</span><span class="tag">Attitude Reference</span>
-            </div>
-            <a href={translatePath('/contact', lang)} class="btn-primary text-sm mt-4">{t('products.requestDatasheet')}</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- LKF-MG300K -->
-      <div class="glass-card overflow-hidden">
-        <div class="grid lg:grid-cols-3">
-          <div class="lg:col-span-1 bg-surface-900/50 flex items-center justify-center p-6 min-h-[240px]">
-            <img src="https://cowork-storage-public-cdn.lx.netease.com/lxbg/2024/11/07/d6d76718798c4d3896e8cad69a483aca.png" alt="LKF-MG300K Microminiature MEMS North Seeker" class="max-h-[200px] object-contain" loading="lazy" />
-          </div>
-          <div class="lg:col-span-2 p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="tag">North Seeker</span><span class="text-xs text-surface-500 font-mono">LKF-MG300K</span>
-            </div>
-            <h3 class="text-xl font-bold text-white">Microminiature MEMS North Seeker</h3>
-            <p class="text-surface-400 text-sm mt-2">Six-axis MEMS inertial sensor combo for north-seeking, navigation and attitude control. Full temperature compensation (-45°C to +80°C), 4KHz high-speed sampling, vibration-resistant sealed design.</p>
-            <div class="flex flex-wrap gap-2 mt-3">
-              <span class="text-xs text-surface-500">{t('products.size')}: 4.7×4.7×3.15 cm</span>
-            </div>
-            <div class="flex flex-wrap gap-3 mt-4">
-              <span class="tag">North Seeking</span><span class="tag">Drilling Systems</span><span class="tag">Vehicle/Vessel Attitude</span><span class="tag">Satcom on-the-Move</span>
-            </div>
-            <a href={translatePath('/contact', lang)} class="btn-primary text-sm mt-4">{t('products.requestDatasheet')}</a>
           </div>
         </div>
-      </div>
-
-      <!-- LKF-MG204B -->
-      <div class="glass-card overflow-hidden">
-        <div class="grid lg:grid-cols-3">
-          <div class="lg:col-span-1 bg-surface-900/50 flex items-center justify-center p-6 min-h-[240px]">
-            <img src="https://cowork-storage-public-cdn.lx.netease.com/lxbg/2024/11/07/03e2fdf743744e00b8f04cec5c8a1cc2.png" alt="LKF-MG204B Medium Precision MEMS IMU" class="max-h-[200px] object-contain" loading="lazy" />
-          </div>
-          <div class="lg:col-span-2 p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="tag">MEMS IMU</span><span class="text-xs text-surface-500 font-mono">LKF-MG204B</span>
-            </div>
-            <h3 class="text-xl font-bold text-white">Medium Precision MEMS Inertial Measurement Unit</h3>
-            <p class="text-surface-400 text-sm mt-2">Six-axis MEMS inertial attitude system with full-temperature calibration. In-situ replacement for STIM300. 1KHz sampling, sealed design for harsh environments. High-performance gyro + accelerometer integration.</p>
-            <div class="flex flex-wrap gap-2 mt-3">
-              <span class="text-xs text-surface-500">{t('products.size')}: 4.48×3.86×2.15 cm</span>
-            </div>
-            <div class="flex flex-wrap gap-3 mt-4">
-              <span class="tag">UAV Attitude Reference</span><span class="tag">Mobile Mapping</span><span class="tag">Missile Flight Control</span><span class="tag">Radar Stabilization</span>
-            </div>
-            <a href={translatePath('/contact', lang)} class="btn-primary text-sm mt-4">{t('products.requestDatasheet')}</a>
-          </div>
-        </div>
-      </div>
+      ))}
 
     </div>
   </section>

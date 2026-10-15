@@ -3,8 +3,8 @@ node_modules/
 .pnp
 .pnp.js
 
-# build output (committed for Cloudflare Pages direct deploy)
-# dist/ is intentionally NOT ignored
+# build output (Cloudflare Pages builds automatically from Git — no need to commit dist)
+dist/
 
 # environment
 .env

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getLangFromUrl, useTranslations, translatePath } from '../../i18n/utils';
+import { fiberOptic } from '../../data/products';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -24,68 +25,36 @@ const t = useTranslations(lang);
   <section class="container-page py-16">
     <div class="space-y-10">
 
-      <!-- LKF-RH16 -->
-      <div class="glass-card overflow-hidden">
-        <div class="grid lg:grid-cols-3">
-          <div class="lg:col-span-1 bg-surface-900/50 flex items-center justify-center p-6 min-h-[240px]">
-            <img src="https://cowork-storage-public-cdn.lx.netease.com/lxbg/2024/11/01/7c8932c0c3be441e86c1435ed082538f.jpg" alt="LKF-RH16 Multi-Pole Fiber Coil Winding Machine" class="max-h-[200px] object-contain rounded" loading="lazy" />
-          </div>
-          <div class="lg:col-span-2 p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="tag">Core Equipment</span><span class="text-xs text-surface-500 font-mono">LKF-RH16</span>
+      {fiberOptic.map((p) => (
+        <div class="glass-card overflow-hidden">
+          <div class="grid lg:grid-cols-3">
+            <div class="lg:col-span-1 bg-surface-900/50 flex items-center justify-center p-6 min-h-[240px]">
+              {p.image ? (
+                <img src={p.image} alt={`${p.model} ${lang === 'zh' ? p.nameZh : p.nameEn}`} class="max-h-[200px] object-contain" loading="lazy" />
+              ) : (
+                <div class="w-20 h-20 rounded-2xl gradient-brand flex items-center justify-center shadow-2xl shadow-brand-500/30 text-3xl">{p.emoji || '📦'}</div>
+              )}
             </div>
-            <h3 class="text-xl font-bold text-white">{t('home.featured.rh16.title')}</h3>
-            <p class="text-surface-400 text-sm mt-2">{t('home.featured.rh16.desc')}</p>
-            <p class="text-surface-500 text-xs mt-3">Includes: fiber take-up, laying and pay-off devices, tension sensing, coil skeleton fixing spindle, fiber guiding, automatic gluing, industrial control computer + display, HD camera system, 2× standard rewinding spools.</p>
-            <div class="flex flex-wrap gap-3 mt-4">
-              <span class="tag">Quadrupole Winding</span><span class="tag">Octupole Winding</span><span class="tag">Automatic Glue Coating</span><span class="tag">Precision Fiber Laying</span>
+            <div class="lg:col-span-2 p-6 sm:p-8">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="tag">{lang === 'zh' ? p.tagZh : p.tagEn}</span><span class="text-xs text-surface-500 font-mono">{p.model}</span>
+              </div>
+              <h3 class="text-xl font-bold text-white">{lang === 'zh' ? p.nameZh : p.nameEn}</h3>
+              <p class="text-surface-400 text-sm mt-2">{lang === 'zh' ? p.descZh : p.descEn}</p>
+              {p.includesEn && <p class="text-surface-500 text-xs mt-3">{lang === 'zh' ? p.includesZh : p.includesEn}</p>}
+              {p.specs && (
+                <div class="flex flex-wrap gap-2 mt-3">
+                  <span class="text-xs text-surface-500">{t('products.size')}: {p.specs}</span>
+                </div>
+              )}
+              <div class="flex flex-wrap gap-3 mt-4">
+                {(lang === 'zh' ? p.appsZh : p.appsEn).map((app) => <span class="tag">{app}</span>)}
+              </div>
+              <a href={translatePath('/contact', lang)} class="btn-primary text-sm mt-4">{t('products.requestDatasheet')}</a>
             </div>
-            <a href={translatePath('/contact', lang)} class="btn-primary text-sm mt-4">{t('products.requestDatasheet')}</a>
           </div>
         </div>
-      </div>
-
-      <!-- FOG Components -->
-      <div class="glass-card overflow-hidden">
-        <div class="grid lg:grid-cols-3">
-          <div class="lg:col-span-1 bg-surface-900/50 flex items-center justify-center p-6 min-h-[240px]">
-            <img src="https://cowork-storage-public-cdn.lx.netease.com/lxbg/2024/11/20/7e6da8cb18ee42ef9a6a429da5cc97a4.png" alt="FOG Components" class="max-h-[200px] object-contain" loading="lazy" />
-          </div>
-          <div class="lg:col-span-2 p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="tag">{t('home.tech.fiber.tag1')}</span><span class="text-xs text-surface-500 font-mono">FOG Series</span>
-            </div>
-            <h3 class="text-xl font-bold text-white">Fiber Optic Gyroscope Components</h3>
-            <p class="text-surface-400 text-sm mt-2">Complete range of FOG optical sub-assemblies and components including PM fiber coils, optical chips, couplers, and source modules. All manufactured in-house with proprietary thin-fiber (135μm) technology for miniaturized FOG solutions.</p>
-            <div class="flex flex-wrap gap-3 mt-4">
-              <span class="tag">PM Fiber Coils</span><span class="tag">Optical Chips</span><span class="tag">Couplers</span><span class="tag">Source Modules</span>
-            </div>
-            <a href={translatePath('/contact', lang)} class="btn-primary text-sm mt-4">{t('products.requestDatasheet')}</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Calibration -->
-      <div class="glass-card overflow-hidden">
-        <div class="grid lg:grid-cols-3">
-          <div class="lg:col-span-1 bg-surface-900/50 flex items-center justify-center p-6 min-h-[240px]">
-            <div class="w-20 h-20 rounded-2xl gradient-brand flex items-center justify-center shadow-2xl shadow-brand-500/30">
-              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"/></svg>
-            </div>
-          </div>
-          <div class="lg:col-span-2 p-6 sm:p-8">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="tag">{t('home.tech.fiber.tag3')}</span><span class="text-xs text-surface-500 font-mono">Calibration Series</span>
-            </div>
-            <h3 class="text-xl font-bold text-white">Measuring & Calibration Equipment</h3>
-            <p class="text-surface-400 text-sm mt-2">Precision turntables, rate tables, and environmental testing equipment for FOG and MEMS sensor calibration. Production-grade instruments ensuring every device meets specified performance parameters.</p>
-            <div class="flex flex-wrap gap-3 mt-4">
-              <span class="tag">Rate Tables</span><span class="tag">Precision Turntables</span><span class="tag">Environmental Testing</span><span class="tag">Sensor Calibration</span>
-            </div>
-            <a href={translatePath('/contact', lang)} class="btn-primary text-sm mt-4">{t('products.requestDatasheet')}</a>
-          </div>
-        </div>
-      </div>
+      ))}
 
     </div>
   </section>
