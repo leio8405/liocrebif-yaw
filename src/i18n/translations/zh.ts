@@ -21,8 +21,8 @@ export const zh = {
   'footer.aboutUs': '关于我们',
   'footer.allProducts': '所有产品',
   'footer.contact': '联系我们',
-  'footer.copyright': '© 2025 香港里奥克雷科技 (Liocrebif) 有限公司。保留所有权利。',
-  'footer.motto': '技术驱动，领航未来',
+  'footer.copyright': '© 2025 武汉利科夫科技有限公司。保留所有权利。',
+  'footer.motto': '科技创新，导航未来',
 
   // Homepage
   'home.hero.title': '关键任务的精密导航',

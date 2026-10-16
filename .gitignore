@@ -27,3 +27,6 @@ Thumbs.db
 # logs
 *.log
 npm-debug.log*
+
+# local QA screenshots
+.qa/

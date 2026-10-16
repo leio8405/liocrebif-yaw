@@ -12,58 +12,62 @@ const t = useTranslations(lang);
   title={t('products.gyro.pageTitle')}
   description={t('products.gyro.pageDesc')}
 >
-  <section class="border-b border-surface-800/30">
-    <div class="container-page py-16 sm:py-20">
-      <a href={translatePath('/products', lang)} class="text-surface-500 hover:text-surface-300 text-sm transition-colors mb-4 inline-flex items-center gap-1">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg> {t('nav.products')}
+  <section class="border-b border-rule">
+    <div class="container-page py-14 sm:py-16">
+      <a href={translatePath('/products', lang)} class="font-mono text-xs uppercase tracking-[0.05em] text-muted hover:text-accent transition-colors inline-flex items-center gap-1.5 mb-6">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/></svg>
+        {t('nav.products')}
       </a>
-      <h1 class="text-4xl font-extrabold tracking-tight">{t('products.gyro.pageTitle').split(' ').slice(0, -1).join(' ')} <span class="text-gradient">{t('products.gyro.pageTitle').split(' ').slice(-1)}</span></h1>
-      <p class="text-surface-400 text-lg mt-4 max-w-2xl">{t('products.gyro.pageDesc')}</p>
+      <h1 class="font-display font-semibold tracking-tight text-ink text-3xl sm:text-4xl">{t('products.gyro.pageTitle')}</h1>
+      <p class="text-muted text-lg mt-4 max-w-2xl leading-relaxed">{t('products.gyro.pageDesc')}</p>
     </div>
   </section>
 
-  <section class="container-page py-16">
-    <div class="space-y-10">
-
+  <section class="container-page py-14 sm:py-16">
+    <div class="space-y-6">
       {gyroscopes.map((p) => (
-        <div class="glass-card overflow-hidden">
-          <div class="grid lg:grid-cols-3">
-            <div class="lg:col-span-1 bg-surface-900/50 flex items-center justify-center p-6 min-h-[240px]">
+        <article class="hairline-card overflow-hidden reveal">
+          <div class="grid lg:grid-cols-5">
+            <div class="lg:col-span-2 bg-paper-2 border-b lg:border-b-0 lg:border-r border-rule flex items-center justify-center p-8 min-h-[240px]">
               {p.image ? (
-                <img src={p.image} alt={`${p.model} ${lang === 'zh' ? p.nameZh : p.nameEn}`} class="max-h-[200px] object-contain" loading="lazy" />
+                <img src={p.image} alt={`${p.model} ${lang === 'zh' ? p.nameZh : p.nameEn}`} class="max-h-[220px] object-contain" loading="lazy" />
               ) : (
-                <div class="w-20 h-20 rounded-2xl gradient-brand flex items-center justify-center shadow-2xl shadow-brand-500/30 text-3xl">{p.emoji || '📦'}</div>
+                <span class="font-mono text-2xl text-muted tracking-tight">{p.model}</span>
               )}
             </div>
-            <div class="lg:col-span-2 p-6 sm:p-8">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="tag">{lang === 'zh' ? p.tagZh : p.tagEn}</span><span class="text-xs text-surface-500 font-mono">{p.model}</span>
+            <div class="lg:col-span-3 p-6 sm:p-8">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="tag tag--accent">{lang === 'zh' ? p.tagZh : p.tagEn}</span>
+                <span class="font-mono text-xs text-muted">{p.model}</span>
               </div>
-              <h3 class="text-xl font-bold text-white">{lang === 'zh' ? p.nameZh : p.nameEn}</h3>
-              <p class="text-surface-400 text-sm mt-2">{lang === 'zh' ? p.descZh : p.descEn}</p>
-              {p.includesEn && <p class="text-surface-500 text-xs mt-3">{lang === 'zh' ? p.includesZh : p.includesEn}</p>}
+              <h3 class="font-display font-semibold text-ink text-xl leading-snug">{lang === 'zh' ? p.nameZh : p.nameEn}</h3>
+              <p class="text-ink-2 text-[15px] mt-3 leading-relaxed">{lang === 'zh' ? p.descZh : p.descEn}</p>
+              {p.includesEn && <p class="text-muted text-xs mt-3 leading-relaxed">{lang === 'zh' ? p.includesZh : p.includesEn}</p>}
               {p.specs && (
-                <div class="flex flex-wrap gap-2 mt-3">
-                  <span class="text-xs text-surface-500">{t('products.size')}: {p.specs}</span>
-                </div>
+                <p class="font-mono text-xs text-muted mt-5 pt-4 border-t border-rule">
+                  <span class="uppercase tracking-[0.05em]">{t('products.size')}</span><span class="mx-2 text-rule">|</span>{p.specs}
+                </p>
               )}
-              <div class="flex flex-wrap gap-3 mt-4">
+              <div class="flex flex-wrap gap-2 mt-4">
                 {(lang === 'zh' ? p.appsZh : p.appsEn).map((app) => <span class="tag">{app}</span>)}
               </div>
-              <a href={translatePath('/contact', lang)} class="btn-primary text-sm mt-4">{t('products.requestDatasheet')}</a>
+              <a href={translatePath('/contact', lang)} class="btn-outline text-sm mt-6">{t('products.requestDatasheet')}</a>
             </div>
           </div>
-        </div>
+        </article>
       ))}
-
     </div>
   </section>
 
-  <section class="container-page pb-20">
-    <div class="glass-card p-10 text-center">
-      <h3 class="text-2xl font-bold text-white">{t('home.cta.title')}</h3>
-      <p class="text-surface-400 mt-2">{t('home.cta.subtitle')}</p>
-      <a href={translatePath('/contact', lang)} class="btn-primary mt-6 text-base">{t('home.cta.button')} →</a>
+  <section class="border-t border-rule bg-paper-2">
+    <div class="container-page py-14">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+        <div>
+          <h3 class="font-display font-semibold text-ink text-xl">{t('home.cta.title')}</h3>
+          <p class="text-muted text-sm mt-1.5">{t('home.cta.subtitle')}</p>
+        </div>
+        <a href={translatePath('/contact', lang)} class="btn-primary shrink-0">{t('home.cta.button')}</a>
+      </div>
     </div>
   </section>
 </BaseLayout>

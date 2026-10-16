@@ -1,9 +1,50 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getLangFromUrl, useTranslations, translatePath } from '../i18n/utils';
+import { gyroscopes } from '../data/products';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const fs60 = gyroscopes.find((p) => p.model === 'LKF-FS60') ?? gyroscopes[0];
+const featured = [
+  {
+    href: '/products/inertial-navigation-systems',
+    img: 'https://cowork-storage-public-cdn.lx.netease.com/lxbg/2024/11/01/9916fd75af594a13b9785080e2784c4c.png',
+    model: 'LKF-FS300',
+    title: t('home.featured.fs300.title'),
+    desc: t('home.featured.fs300.desc'),
+    tag: 'INS',
+    meta: `FOG · ${t('home.featured.tag.nav')}`,
+  },
+  {
+    href: '/products/gyroscopes',
+    img: 'https://cowork-storage-public-cdn.lx.netease.com/lxbg/2024/10/30/b17433d3ad3d413380bbdb2ed6a5c43e.png',
+    model: 'LKF-FS60',
+    title: t('home.featured.fs60.title'),
+    desc: t('home.featured.fs60.desc'),
+    tag: 'Gyroscope',
+    meta: `FOG · ${t('home.featured.tag.midHigh')}`,
+  },
+  {
+    href: '/products/fiber-optic',
+    img: 'https://cowork-storage-public-cdn.lx.netease.com/lxbg/2024/11/01/7c8932c0c3be441e86c1435ed082538f.jpg',
+    model: 'LKF-RH16',
+    title: t('home.featured.rh16.title'),
+    desc: t('home.featured.rh16.desc'),
+    tag: 'Fiber Equipment',
+    meta: `Equipment · ${t('home.featured.tag.equip')}`,
+  },
+];
+const industries = [
+  t('home.industries.aerospace'),
+  t('home.industries.marine'),
+  t('home.industries.autonomous'),
+  t('home.industries.surveying'),
+  t('home.industries.electric'),
+  t('home.industries.transportation'),
+  t('home.industries.defense'),
+  t('home.industries.industrial'),
+];
 ---
 
 <BaseLayout
@@ -11,323 +52,251 @@ const t = useTranslations(lang);
   title={t('home.hero.title')}
   description={t('home.hero.subtitle')}
 >
-  <!-- Hero Section -->
-  <section class="relative overflow-hidden">
-    <div class="absolute inset-0 gradient-hero"></div>
-    <div class="absolute top-20 right-0 w-[500px] h-[500px] rounded-full bg-brand-500/5 blur-[120px]"></div>
-    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-brand-600/5 blur-[100px]"></div>
-
-    <div class="container-page relative py-20 sm:py-28 lg:py-36">
-      <div class="max-w-3xl">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-sm mb-8">
-          <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-400"></span>
-          </span>
-          {t('home.hero.subtitle')}
+  <!-- Hero: title left, spec card right -->
+  <section class="border-b border-rule">
+    <div class="container-page py-16 sm:py-24 lg:py-28">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        <div class="lg:col-span-7">
+          <p class="eyebrow mb-6">Precision Inertial Systems</p>
+          <h1 class="display-hero max-w-xl">{t('home.hero.title')}</h1>
+          <p class="text-muted text-lg mt-6 max-w-xl leading-relaxed">
+            {t('home.hero.subtitle')}
+          </p>
+          <div class="flex flex-wrap gap-3 mt-9">
+            <a href={translatePath('/products', lang)} class="btn-primary">
+              {t('nav.products')}
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href={translatePath('/contact', lang)} class="btn-outline">{t('home.cta.datasheet')}</a>
+          </div>
         </div>
 
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-          {t('home.hero.title').split(' ').map((word: string, i: number) => i % 2 === 1 ? <span class="text-gradient">{word}</span> : word).reduce((acc: any[], item: any, i: number) => i === 0 ? [item] : [...acc, ' ', item], [])}
-        </h1>
-
-        <p class="text-surface-400 text-lg sm:text-xl mt-6 max-w-xl leading-relaxed">
-          {t('home.hero.subtitle')}
-        </p>
-
-        <div class="flex flex-wrap gap-4 mt-10">
-          <a href={translatePath('/products', lang)} class="btn-primary text-base">
-            {t('nav.products')}
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-          <a href={translatePath('/contact', lang)} class="btn-outline text-base">
-            {t('home.cta.datasheet')}
-          </a>
+        <div class="lg:col-span-5">
+          <div class="spec-card p-5 sm:p-6">
+            <div class="flex items-center gap-1.5 pb-4 border-b border-graphite-line">
+              <span class="w-2 h-2 rounded-full bg-graphite-line"></span>
+              <span class="w-2 h-2 rounded-full bg-graphite-line"></span>
+              <span class="w-2 h-2 rounded-full bg-graphite-line"></span>
+              <span class="ml-3 text-[11px] tracking-[0.08em] text-graphite-ink uppercase">{fs60.model} · Spec</span>
+            </div>
+            <dl class="pt-4 space-y-3 text-[13px]">
+              <div class="flex items-baseline justify-between gap-4">
+                <dt class="text-graphite-ink uppercase tracking-[0.06em] text-xs shrink-0">Type</dt>
+                <dd class="text-paper text-right">Single-axis closed-loop FOG</dd>
+              </div>
+              <div class="flex items-baseline justify-between gap-4">
+                <dt class="text-graphite-ink uppercase tracking-[0.06em] text-xs shrink-0">Output</dt>
+                <dd class="text-accent text-right">RS-422 digital</dd>
+              </div>
+              <div class="flex items-baseline justify-between gap-4">
+                <dt class="text-graphite-ink uppercase tracking-[0.06em] text-xs shrink-0">Size</dt>
+                <dd class="text-paper text-right">6 × 6 × 3 cm</dd>
+              </div>
+              <div class="flex items-baseline justify-between gap-4">
+                <dt class="text-graphite-ink uppercase tracking-[0.06em] text-xs shrink-0">Fiber</dt>
+                <dd class="text-paper text-right">135 μm PM coil</dd>
+              </div>
+              <div class="flex items-baseline justify-between gap-4">
+                <dt class="text-graphite-ink uppercase tracking-[0.06em] text-xs shrink-0">Grade</dt>
+                <dd class="text-paper text-right">Medium-high precision</dd>
+              </div>
+            </dl>
+            <div class="flex items-center justify-between pt-4 mt-4 border-t border-graphite-line">
+              <span class="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-[0.06em] uppercase text-accent">
+                <span class="w-1.5 h-1.5 bg-accent" aria-hidden="true"></span>
+                In production
+              </span>
+              <a href={translatePath('/products/gyroscopes', lang)} class="text-[11px] font-medium tracking-[0.06em] uppercase text-graphite-ink hover:text-paper transition-colors">
+                {t('home.featured.details')}
+              </a>
+            </div>
+          </div>
+          <p class="font-mono text-[11px] text-muted mt-3 text-right">{fs60.nameEn}</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Trust Stats -->
-  <section class="border-y border-surface-800/50 bg-surface-900/30">
-    <div class="container-page py-10">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div class="text-center">
+  <!-- Stats band -->
+  <section class="bg-paper-2 border-b border-rule">
+    <div class="container-page py-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-y-8">
+        <div class="text-center md:border-r border-rule">
           <div class="data-number">2019</div>
           <div class="data-label">{t('home.stat.founded')}</div>
         </div>
-        <div class="text-center">
+        <div class="text-center md:border-r border-rule">
           <div class="data-number">50+</div>
           <div class="data-label">{t('home.stat.team')}</div>
         </div>
-        <div class="text-center">
+        <div class="text-center md:border-r border-rule">
           <div class="data-number">30+</div>
           <div class="data-label">{t('home.stat.countries')}</div>
         </div>
         <div class="text-center">
-          <div class="data-number">13,300<span class="text-brand-400 text-lg">㎡</span></div>
+          <div class="data-number">13,300<span class="text-accent text-lg">㎡</span></div>
           <div class="data-label">{t('home.stat.park')}</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Core Product Lines -->
+  <!-- Core product lines -->
   <section class="container-page py-20 sm:py-28">
-    <div class="text-center mb-16">
-      <h2 class="section-title">{t('home.tech.title').split(' ').slice(0, -1).join(' ')} <span class="text-gradient">{t('home.tech.title').split(' ').slice(-1)}</span></h2>
-      <p class="section-subtitle mx-auto">{t('home.tech.subtitle')}</p>
+    <div class="max-w-2xl reveal">
+      <p class="eyebrow mb-4">Technology Platforms</p>
+      <h2 class="section-title">{t('home.tech.title')}</h2>
+      <p class="section-subtitle">{t('home.tech.subtitle')}</p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6">
-      <!-- INS -->
-      <a href={translatePath('/products/inertial-navigation-systems', lang)} class="product-card group">
-        <div class="w-14 h-14 rounded-xl gradient-brand flex items-center justify-center mb-5 text-white shadow-lg shadow-brand-500/20 group-hover:scale-110 transition-transform">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"/></svg>
-        </div>
+    <div class="grid md:grid-cols-3 gap-5 mt-12">
+      <a href={translatePath('/products/inertial-navigation-systems', lang)} class="hairline-card product-card reveal group">
         <h3 class="product-card-title">{t('home.tech.ins.title')}</h3>
-        <p class="text-surface-400 text-sm mt-2 leading-relaxed">{t('home.tech.ins.desc')}</p>
-        <div class="flex flex-wrap gap-2 mt-4">
+        <p class="text-muted text-sm mt-2.5 leading-relaxed">{t('home.tech.ins.desc')}</p>
+        <div class="flex flex-wrap gap-2 mt-5">
           <span class="tag">{t('home.tech.ins.tag1')}</span>
           <span class="tag">{t('home.tech.ins.tag2')}</span>
           <span class="tag">{t('home.tech.ins.tag3')}</span>
         </div>
-        <div class="mt-5 text-brand-400 text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+        <div class="mt-6 text-accent text-sm font-medium flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
           {t('home.tech.ins.cta')} <span aria-hidden="true">→</span>
         </div>
       </a>
 
-      <!-- Gyroscopes -->
-      <a href={translatePath('/products/gyroscopes', lang)} class="product-card group">
-        <div class="w-14 h-14 rounded-xl gradient-brand flex items-center justify-center mb-5 text-white shadow-lg shadow-brand-500/20 group-hover:scale-110 transition-transform">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-        </div>
+      <a href={translatePath('/products/gyroscopes', lang)} class="hairline-card product-card reveal group">
         <h3 class="product-card-title">{t('home.tech.gyro.title')}</h3>
-        <p class="text-surface-400 text-sm mt-2 leading-relaxed">{t('home.tech.gyro.desc')}</p>
-        <div class="flex flex-wrap gap-2 mt-4">
+        <p class="text-muted text-sm mt-2.5 leading-relaxed">{t('home.tech.gyro.desc')}</p>
+        <div class="flex flex-wrap gap-2 mt-5">
           <span class="tag">{t('home.tech.gyro.tag1')}</span>
           <span class="tag">{t('home.tech.gyro.tag2')}</span>
           <span class="tag">{t('home.tech.gyro.tag3')}</span>
         </div>
-        <div class="mt-5 text-brand-400 text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+        <div class="mt-6 text-accent text-sm font-medium flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
           {t('home.tech.gyro.cta')} <span aria-hidden="true">→</span>
         </div>
       </a>
 
-      <!-- Fiber Optic -->
-      <a href={translatePath('/products/fiber-optic', lang)} class="product-card group">
-        <div class="w-14 h-14 rounded-xl gradient-brand flex items-center justify-center mb-5 text-white shadow-lg shadow-brand-500/20 group-hover:scale-110 transition-transform">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/></svg>
-        </div>
+      <a href={translatePath('/products/fiber-optic', lang)} class="hairline-card product-card reveal group">
         <h3 class="product-card-title">{t('home.tech.fiber.title')}</h3>
-        <p class="text-surface-400 text-sm mt-2 leading-relaxed">{t('home.tech.fiber.desc')}</p>
-        <div class="flex flex-wrap gap-2 mt-4">
+        <p class="text-muted text-sm mt-2.5 leading-relaxed">{t('home.tech.fiber.desc')}</p>
+        <div class="flex flex-wrap gap-2 mt-5">
           <span class="tag">{t('home.tech.fiber.tag1')}</span>
           <span class="tag">{t('home.tech.fiber.tag2')}</span>
           <span class="tag">{t('home.tech.fiber.tag3')}</span>
         </div>
-        <div class="mt-5 text-brand-400 text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+        <div class="mt-6 text-accent text-sm font-medium flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
           {t('home.tech.fiber.cta')} <span aria-hidden="true">→</span>
         </div>
       </a>
     </div>
   </section>
 
-  <!-- Differentiator: Full Chain -->
-  <section class="bg-surface-900/50 border-y border-surface-800/30">
+  <!-- Differentiator — the page's one graphite band -->
+  <section class="bg-graphite">
     <div class="container-page py-20 sm:py-28">
       <div class="grid lg:grid-cols-2 gap-14 items-center">
         <div>
-          <div class="tag mb-4">Full-Stack Manufacturing</div>
-          <h2 class="section-title">{t('home.diff.title1')} to <span class="text-gradient">{t('home.diff.title2')}</span></h2>
-          <p class="text-surface-400 mt-4 leading-relaxed">
+          <p class="eyebrow mb-5">Full-Stack Manufacturing</p>
+          <h2 class="font-display font-semibold tracking-tight text-paper text-3xl sm:text-4xl leading-tight">
+            {t('home.diff.title1')} to {t('home.diff.title2')}
+          </h2>
+          <p class="text-graphite-ink mt-5 leading-relaxed">
             {t('home.diff.subtitle')}
           </p>
-          <ul class="mt-6 space-y-3">
-            <li class="flex items-start gap-3 text-surface-300">
-              <span class="mt-1 w-5 h-5 rounded-full bg-brand-500/20 flex items-center justify-center flex-shrink-0 text-brand-400 text-xs">✓</span>
-              <span>{t('home.diff.point1')}</span>
-            </li>
-            <li class="flex items-start gap-3 text-surface-300">
-              <span class="mt-1 w-5 h-5 rounded-full bg-brand-500/20 flex items-center justify-center flex-shrink-0 text-brand-400 text-xs">✓</span>
-              <span>{t('home.diff.point2')}</span>
-            </li>
-            <li class="flex items-start gap-3 text-surface-300">
-              <span class="mt-1 w-5 h-5 rounded-full bg-brand-500/20 flex items-center justify-center flex-shrink-0 text-brand-400 text-xs">✓</span>
-              <span>{t('home.diff.point3')}</span>
-            </li>
-            <li class="flex items-start gap-3 text-surface-300">
-              <span class="mt-1 w-5 h-5 rounded-full bg-brand-500/20 flex items-center justify-center flex-shrink-0 text-brand-400 text-xs">✓</span>
-              <span>{t('home.diff.point4')}</span>
-            </li>
+          <ul class="mt-7 space-y-3.5">
+            {[t('home.diff.point1'), t('home.diff.point2'), t('home.diff.point3'), t('home.diff.point4')].map((point) => (
+              <li class="flex items-start gap-3 text-paper/90 text-[15px]">
+                <span class="mt-1 w-4 h-4 flex items-center justify-center flex-shrink-0 text-accent" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </span>
+                <span>{point}</span>
+              </li>
+            ))}
           </ul>
-          <a href={translatePath('/about', lang)} class="btn-outline mt-8">{t('home.diff.cta')}</a>
+          <a href={translatePath('/about', lang)} class="inline-flex items-center gap-2 mt-9 px-5 py-3 rounded-md border border-paper/40 text-paper text-sm font-medium hover:border-accent hover:text-accent transition-colors">
+            {t('home.diff.cta')}
+          </a>
         </div>
-        <div class="relative">
-          <div class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-surface-800 to-surface-900 border border-surface-700/30 flex items-center justify-center overflow-hidden">
-            <div class="text-center p-8">
-              <div class="w-20 h-20 rounded-2xl gradient-brand flex items-center justify-center mx-auto mb-6 shadow-2xl shadow-brand-500/30">
-                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+        <div class="lg:pl-10">
+          <div class="border-l border-graphite-line pl-8 sm:pl-10">
+            <div class="font-display font-semibold tracking-tight text-paper text-6xl sm:text-7xl">13,300<span class="text-accent text-3xl sm:text-4xl">㎡</span></div>
+            <div class="font-mono text-xs tracking-[0.08em] uppercase text-graphite-ink mt-3">{t('home.diff.park')}</div>
+            <div class="mt-8 space-y-0 divide-y divide-graphite-line border-y border-graphite-line">
+              <div class="flex items-center justify-between py-3.5">
+                <span class="text-paper/90 text-sm">{t('home.diff.rd')}</span>
+                <span class="font-mono text-[11px] text-graphite-ink uppercase tracking-[0.06em]">In-house</span>
               </div>
-              <div class="text-5xl font-black text-white tracking-tight">13,300<span class="text-brand-400">㎡</span></div>
-              <div class="text-surface-400 mt-2">{t('home.diff.park')}</div>
-              <div class="flex justify-center gap-8 mt-6 text-sm text-surface-500">
-                <div>{t('home.diff.rd')}</div>
-                <div>{t('home.diff.production')}</div>
-                <div>{t('home.diff.calibration')}</div>
+              <div class="flex items-center justify-between py-3.5">
+                <span class="text-paper/90 text-sm">{t('home.diff.production')}</span>
+                <span class="font-mono text-[11px] text-graphite-ink uppercase tracking-[0.06em]">In-house</span>
+              </div>
+              <div class="flex items-center justify-between py-3.5">
+                <span class="text-paper/90 text-sm">{t('home.diff.calibration')}</span>
+                <span class="font-mono text-[11px] text-graphite-ink uppercase tracking-[0.06em]">In-house</span>
               </div>
             </div>
-          </div>
-          <!-- Decorative dots -->
-          <div class="absolute -top-4 -right-4 w-24 h-24 opacity-20">
-            <svg viewBox="0 0 100 100"><circle cx="10" cy="10" r="2" fill="currentColor" class="text-brand-400"/><circle cx="30" cy="10" r="2" fill="currentColor" class="text-brand-400"/><circle cx="50" cy="10" r="2" fill="currentColor" class="text-brand-400"/><circle cx="10" cy="30" r="2" fill="currentColor" class="text-brand-400"/><circle cx="30" cy="30" r="2" fill="currentColor" class="text-brand-400"/><circle cx="50" cy="30" r="2" fill="currentColor" class="text-brand-400"/><circle cx="10" cy="50" r="2" fill="currentColor" class="text-brand-400"/><circle cx="30" cy="50" r="2" fill="currentColor" class="text-brand-400"/><circle cx="50" cy="50" r="2" fill="currentColor" class="text-brand-400"/></svg>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Hot Products -->
+  <!-- Featured products -->
   <section class="container-page py-20 sm:py-28">
-    <div class="text-center mb-14">
-      <h2 class="section-title">{t('home.featured.title').split(' ')[0]} <span class="text-gradient">{t('home.featured.title').split(' ').slice(1).join(' ')}</span></h2>
-      <p class="section-subtitle mx-auto">{t('home.featured.subtitle')}</p>
+    <div class="max-w-2xl reveal">
+      <p class="eyebrow mb-4">Product Index</p>
+      <h2 class="section-title">{t('home.featured.title')}</h2>
+      <p class="section-subtitle">{t('home.featured.subtitle')}</p>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Product 1: INS -->
-      <a href={translatePath('/products/inertial-navigation-systems', lang)} class="glass-card-hover p-0 overflow-hidden block">
-        <div class="h-40 bg-surface-900/50 flex items-center justify-center p-4">
-          <img src="https://cowork-storage-public-cdn.lx.netease.com/lxbg/2024/11/01/9916fd75af594a13b9785080e2784c4c.png" alt="LKF-FS300" class="max-h-full object-contain" loading="lazy" />
-        </div>
-        <div class="h-1 bg-gradient-to-r from-brand-500 to-brand-400"></div>
-        <div class="p-6">
-          <div class="flex items-start justify-between mb-3">
-            <div class="tag">INS</div>
-            <span class="text-xs text-surface-500 font-mono">LKF-FS300</span>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
+      {featured.map((p) => (
+        <a href={translatePath(p.href, lang)} class="hairline-card overflow-hidden reveal group">
+          <div class="h-44 bg-paper-2 border-b border-rule flex items-center justify-center p-5">
+            <img src={p.img} alt={p.model} class="max-h-full object-contain" loading="lazy" />
           </div>
-          <h3 class="text-lg font-semibold text-white mb-2">{t('home.featured.fs300.title')}</h3>
-          <p class="text-surface-400 text-sm line-clamp-2">{t('home.featured.fs300.desc')}</p>
-          <div class="mt-4 flex items-center justify-between">
-            <div class="text-xs text-surface-500">
-              <span class="text-brand-400 font-mono">FOG</span> · {t('home.featured.tag.nav')}
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <span class="tag tag--accent">{p.tag}</span>
+              <span class="font-mono text-xs text-muted">{p.model}</span>
             </div>
-            <span class="text-brand-400 text-sm font-medium">{t('home.featured.details')}</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Product 2: Gyro -->
-      <a href={translatePath('/products/gyroscopes', lang)} class="glass-card-hover p-0 overflow-hidden block">
-        <div class="h-40 bg-surface-900/50 flex items-center justify-center p-4">
-          <img src="https://cowork-storage-public-cdn.lx.netease.com/lxbg/2024/10/30/b17433d3ad3d413380bbdb2ed6a5c43e.png" alt="LKF-FS60" class="max-h-full object-contain" loading="lazy" />
-        </div>
-        <div class="h-1 bg-gradient-to-r from-brand-500 to-brand-400"></div>
-        <div class="p-6">
-          <div class="flex items-start justify-between mb-3">
-            <div class="tag">Gyroscope</div>
-            <span class="text-xs text-surface-500 font-mono">LKF-FS60</span>
-          </div>
-          <h3 class="text-lg font-semibold text-white mb-2">{t('home.featured.fs60.title')}</h3>
-          <p class="text-surface-400 text-sm line-clamp-2">{t('home.featured.fs60.desc')}</p>
-          <div class="mt-4 flex items-center justify-between">
-            <div class="text-xs text-surface-500">
-              <span class="text-brand-400 font-mono">FOG</span> · {t('home.featured.tag.midHigh')}
+            <h3 class="font-display font-semibold text-ink text-lg leading-snug">{p.title}</h3>
+            <p class="text-muted text-sm line-clamp-2 mt-2">{p.desc}</p>
+            <div class="mt-5 pt-4 border-t border-rule flex items-center justify-between">
+              <span class="font-mono text-[11px] uppercase tracking-[0.05em] text-muted">{p.meta}</span>
+              <span class="text-accent text-sm font-medium">{t('home.featured.details')}</span>
             </div>
-            <span class="text-brand-400 text-sm font-medium">{t('home.featured.details')}</span>
           </div>
-        </div>
-      </a>
-
-      <!-- Product 3: Fiber -->
-      <a href={translatePath('/products/fiber-optic', lang)} class="glass-card-hover p-0 overflow-hidden block">
-        <div class="h-40 bg-surface-900/50 flex items-center justify-center p-4">
-          <img src="https://cowork-storage-public-cdn.lx.netease.com/lxbg/2024/11/01/7c8932c0c3be441e86c1435ed082538f.jpg" alt="LKF-RH16" class="max-h-full object-contain rounded" loading="lazy" />
-        </div>
-        <div class="h-1 bg-gradient-to-r from-brand-500 to-brand-400"></div>
-        <div class="p-6">
-          <div class="flex items-start justify-between mb-3">
-            <div class="tag">Fiber Equipment</div>
-            <span class="text-xs text-surface-500 font-mono">LKF-RH16</span>
-          </div>
-          <h3 class="text-lg font-semibold text-white mb-2">{t('home.featured.rh16.title')}</h3>
-          <p class="text-surface-400 text-sm line-clamp-2">{t('home.featured.rh16.desc')}</p>
-          <div class="mt-4 flex items-center justify-between">
-            <div class="text-xs text-surface-500">
-              <span class="text-brand-400 font-mono">Equipment</span> · {t('home.featured.tag.equip')}
-            </div>
-            <span class="text-brand-400 text-sm font-medium">{t('home.featured.details')}</span>
-          </div>
-        </div>
-      </a>
+        </a>
+      ))}
     </div>
   </section>
 
-  <!-- Industries Served -->
-  <section class="border-t border-surface-800/30 bg-surface-900/30">
+  <!-- Industries — mono grid, no emoji -->
+  <section class="border-t border-rule bg-paper-2">
     <div class="container-page py-20 sm:py-28">
-      <div class="text-center mb-14">
-        <h2 class="section-title">{t('home.industries.title').split(' ')[0]} <span class="text-gradient">{t('home.industries.title').split(' ').slice(1).join(' ')}</span></h2>
-        <p class="section-subtitle mx-auto">{t('home.industries.subtitle')}</p>
+      <div class="max-w-2xl reveal">
+        <h2 class="section-title">{t('home.industries.title')}</h2>
+        <p class="section-subtitle">{t('home.industries.subtitle')}</p>
       </div>
-
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-        <div class="glass-card p-6 text-center hover:border-brand-500/30 transition-all cursor-default">
-          <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center mx-auto mb-3 text-brand-400">🛰️</div>
-          <div class="text-sm font-medium text-white">{t('home.industries.aerospace')}</div>
-        </div>
-        <div class="glass-card p-6 text-center hover:border-brand-500/30 transition-all cursor-default">
-          <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center mx-auto mb-3 text-brand-400">🚢</div>
-          <div class="text-sm font-medium text-white">{t('home.industries.marine')}</div>
-        </div>
-        <div class="glass-card p-6 text-center hover:border-brand-500/30 transition-all cursor-default">
-          <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center mx-auto mb-3 text-brand-400">🚗</div>
-          <div class="text-sm font-medium text-white">{t('home.industries.autonomous')}</div>
-        </div>
-        <div class="glass-card p-6 text-center hover:border-brand-500/30 transition-all cursor-default">
-          <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center mx-auto mb-3 text-brand-400">🗺️</div>
-          <div class="text-sm font-medium text-white">{t('home.industries.surveying')}</div>
-        </div>
-        <div class="glass-card p-6 text-center hover:border-brand-500/30 transition-all cursor-default">
-          <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center mx-auto mb-3 text-brand-400">⚡</div>
-          <div class="text-sm font-medium text-white">{t('home.industries.electric')}</div>
-        </div>
-        <div class="glass-card p-6 text-center hover:border-brand-500/30 transition-all cursor-default">
-          <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center mx-auto mb-3 text-brand-400">🚄</div>
-          <div class="text-sm font-medium text-white">{t('home.industries.transportation')}</div>
-        </div>
-        <div class="glass-card p-6 text-center hover:border-brand-500/30 transition-all cursor-default">
-          <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center mx-auto mb-3 text-brand-400">🛡️</div>
-          <div class="text-sm font-medium text-white">{t('home.industries.defense')}</div>
-        </div>
-        <div class="glass-card p-6 text-center hover:border-brand-500/30 transition-all cursor-default">
-          <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center mx-auto mb-3 text-brand-400">🏭</div>
-          <div class="text-sm font-medium text-white">{t('home.industries.industrial')}</div>
-        </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 border-t border-l border-rule mt-12 reveal">
+        {industries.map((name) => (
+          <div class="border-b border-r border-rule px-5 py-7 flex items-center">
+            <span class="font-mono text-xs uppercase tracking-[0.06em] text-ink-2">{name}</span>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- CTA -->
   <section class="container-page py-20 sm:py-28">
-    <div class="relative rounded-2xl overflow-hidden">
-      <div class="absolute inset-0 gradient-hero"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-surface-900/90 to-surface-900/70"></div>
-      <div class="relative p-10 sm:p-16 text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white">{t('home.cta.title')}</h2>
-        <p class="text-surface-300 mt-4 max-w-lg mx-auto">
-          {t('home.cta.subtitle')}
-        </p>
-        <div class="flex flex-wrap justify-center gap-4 mt-8">
-          <a href={translatePath('/contact', lang)} class="btn-primary text-base">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            {t('home.cta.button')}
-          </a>
-          <a href="https://wa.me/8618062673472" class="btn-outline text-base border-green-600 text-green-300 hover:bg-green-900/30 hover:border-green-500" target="_blank">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
-            WhatsApp
-          </a>
-        </div>
+    <div class="max-w-2xl reveal">
+      <h2 class="font-display font-semibold tracking-tight text-ink text-3xl sm:text-4xl leading-tight">{t('home.cta.title')}</h2>
+      <p class="text-muted mt-4 leading-relaxed max-w-xl">{t('home.cta.subtitle')}</p>
+      <div class="flex flex-wrap gap-3 mt-8">
+        <a href={translatePath('/contact', lang)} class="btn-primary">{t('home.cta.button')}</a>
+        <a href="https://wa.me/8618062673472" target="_blank" class="btn-outline">WhatsApp</a>
       </div>
     </div>
   </section>

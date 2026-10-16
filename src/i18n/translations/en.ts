@@ -21,7 +21,7 @@ export const en = {
   'footer.aboutUs': 'About Us',
   'footer.allProducts': 'All Products',
   'footer.contact': 'Contact',
-  'footer.copyright': '© 2025 HongKong Liocrebif Technology Co., Ltd. All rights reserved.',
+  'footer.copyright': '© 2025 Wuhan Liocrebif Technology Co., Ltd. All rights reserved.',
   'footer.motto': 'Technology Driven, Navigating the Future',
 
   // Homepage
