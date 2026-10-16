@@ -30,3 +30,6 @@ npm-debug.log*
 
 # local QA screenshots
 .qa/
+
+# local npm lock (contains CN mirror URLs, breaks Cloudflare build; deploy uses pnpm-lock.yaml)
+package-lock.json
