@@ -1,6 +1,7 @@
 ---
 /**
  * 产品列表组件：分类页与总览页共用
+ * 卡片链接到产品详情页 /products/<model>/
  * 参数表全展开（目录册定位），无图显示 mono 型号占位
  */
 import type { Product } from '../data/products';
@@ -12,28 +13,35 @@ interface Props {
 
 const { products, lang } = Astro.props;
 const isZh = lang === 'zh';
+const pre = isZh ? '/zh' : '';
 
 const labels = isZh
-  ? { size: '尺寸', datasheet: '索取资料', spec: '技术规格', noSpec: '详细参数请询价' }
-  : { size: 'Size', datasheet: 'Request Datasheet', spec: 'Specifications', noSpec: 'Contact us for full specifications' };
+  ? { datasheet: '索取资料', spec: '技术规格', detail: '查看详情' }
+  : { datasheet: 'Request Datasheet', spec: 'Specifications', detail: 'View details' };
 ---
 
-{products.map((p) => (
+{products.map((p) => {
+  const detail = pre + '/products/' + p.model.toLowerCase() + '/';
+  return (
   <article class="hairline-card overflow-hidden reveal" id={p.model}>
     <div class="grid lg:grid-cols-5">
       <div class="lg:col-span-2 bg-paper-2 border-b lg:border-b-0 lg:border-r border-rule flex items-center justify-center p-8 min-h-[240px]">
-        {p.image ? (
-          <img src={p.image} alt={`${p.model} ${isZh ? p.nameZh : p.nameEn}`} class="max-h-[220px] object-contain" loading="lazy" />
-        ) : (
-          <span class="font-mono text-2xl text-muted tracking-tight text-center break-all px-4">{p.model}</span>
-        )}
+        <a href={detail} class="flex items-center justify-center w-full h-full" aria-label={p.model}>
+          {p.image ? (
+            <img src={p.image} alt={`${p.model} ${isZh ? p.nameZh : p.nameEn}`} class="max-h-[220px] object-contain" loading="lazy" />
+          ) : (
+            <span class="font-mono text-2xl text-muted tracking-tight text-center break-all px-4">{p.model}</span>
+          )}
+        </a>
       </div>
       <div class="lg:col-span-3 p-6 sm:p-8">
         <div class="flex items-center gap-3 mb-3 flex-wrap">
           <span class="tag tag--accent">{isZh ? p.tagZh : p.tagEn}</span>
-          <span class="font-mono text-xs text-muted">{p.model}</span>
+          <a href={detail} class="font-mono text-xs text-muted hover:text-accent transition-colors">{p.model}</a>
         </div>
-        <h3 class="font-display font-semibold text-ink text-xl leading-snug">{isZh ? p.nameZh : p.nameEn}</h3>
+        <h3 class="font-display font-semibold text-ink text-xl leading-snug">
+          <a href={detail} class="hover:text-accent transition-colors">{isZh ? p.nameZh : p.nameEn}</a>
+        </h3>
         {(isZh ? p.descZh : p.descEn) && (
           <p class="text-ink-2 text-[15px] mt-3 leading-relaxed">{isZh ? p.descZh : p.descEn}</p>
         )}
@@ -71,8 +79,14 @@ const labels = isZh
             {(isZh ? p.appsZh : p.appsEn).map((app) => <span class="tag">{app}</span>)}
           </div>
         )}
-        <a href={lang === 'zh' ? '/zh/contact/' : '/contact/'} class="btn-outline text-sm mt-6">{labels.datasheet}</a>
+        <div class="flex items-center gap-5 mt-6">
+          <a href={detail} class="text-accent text-sm font-medium inline-flex items-center gap-1.5 hover:gap-2.5 transition-all">
+            {labels.detail} <span aria-hidden="true">→</span>
+          </a>
+          <a href={(isZh ? '/zh' : '') + '/contact/'} class="btn-outline text-sm">{labels.datasheet}</a>
+        </div>
       </div>
     </div>
   </article>
-))}
+  );
+})}

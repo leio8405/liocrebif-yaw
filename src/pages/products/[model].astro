@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { productCategories } from '../../data/products';
+
+export function getStaticPaths() {
+  const paths = [];
+  for (const cat of productCategories) {
+    for (const p of cat.products) {
+      paths.push({
+        params: { model: p.model.toLowerCase() },
+        props: { product: p, category: cat },
+      });
+    }
+  }
+  return paths;
+}
+
+const { product, category } = Astro.props;
+const isZh = false;
+const detailPath = `/products/${product.model.toLowerCase()}/`;
+
+// 同分类其他产品（最多 4 个）
+const related = category.products.filter((p) => p.model !== product.model).slice(0, 4);
+---
+
+<BaseLayout
+  currentPath={Astro.url.pathname}
+  title={`${isZh ? product.nameZh : product.nameEn} | ${product.model}`}
+  description={product.descEn || product.nameEn}
+>
+  <section class="border-b border-rule">
+    <div class="container-page py-10 sm:py-12">
+      <nav class="font-mono text-xs uppercase tracking-[0.05em] text-muted mb-6 flex items-center gap-2 flex-wrap" aria-label="Breadcrumb">
+        <a href="/products/" class="hover:text-accent transition-colors">Products</a>
+        <span>/</span>
+        <a href={`/products/${category.slug}/`} class="hover:text-accent transition-colors">{category.titleEn}</a>
+        <span>/</span>
+        <span class="text-ink">{product.model}</span>
+      </nav>
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-5">
+          <div class="hairline-card bg-paper-2 flex items-center justify-center p-10 min-h-[320px]">
+            {product.image ? (
+              <img src={product.image} alt={`${product.model} ${product.nameEn}`} class="max-h-[300px] object-contain" />
+            ) : (
+              <span class="font-mono text-3xl text-muted tracking-tight">{product.model}</span>
+            )}
+          </div>
+        </div>
+        <div class="lg:col-span-7">
+          <div class="flex items-center gap-3 mb-3 flex-wrap">
+            <span class="tag tag--accent">{isZh ? product.tagZh : product.tagEn}</span>
+            <span class="font-mono text-sm text-muted">{product.model}</span>
+          </div>
+          <h1 class="font-display font-semibold tracking-tight text-ink text-3xl sm:text-4xl leading-tight">
+            {isZh ? product.nameZh : product.nameEn}
+          </h1>
+          {product.descEn && (
+            <p class="text-ink-2 text-[15px] mt-5 leading-relaxed max-w-2xl">{product.descEn}</p>
+          )}
+          {product.appsEn && product.appsEn.length > 0 && (
+            <div class="flex flex-wrap gap-2 mt-6">
+              {product.appsEn.map((app) => <span class="tag">{app}</span>)}
+            </div>
+          )}
+          <div class="flex flex-wrap gap-3 mt-8">
+            <a href="/contact/" class="btn-primary">Request Datasheet & Quotation</a>
+            <a href={`mailto:yaw_sales@liocrebif.com?subject=Inquiry: ${encodeURIComponent(product.model)}`} class="btn-outline">Email Inquiry</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {product.specTable && product.specTable.rows.length > 0 && (
+    <section class="container-page py-14">
+      <h2 class="font-mono text-sm uppercase tracking-[0.08em] text-muted mb-6">Specifications</h2>
+      <div class="hairline-card overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-paper-2 border-b border-rule">
+                <th class="text-left py-3 px-5 font-mono text-[11px] uppercase tracking-[0.06em] text-muted font-medium min-w-[220px]">
+                  Parameter
+                </th>
+                {product.specTable.headers.slice(1).map((h) => (
+                  <th class="text-left py-3 px-5 font-mono text-[11px] uppercase tracking-[0.06em] text-muted font-medium">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {product.specTable.rows.map((row) => (
+                <tr class="border-b border-rule/60 last:border-0 hover:bg-paper-2/60 transition-colors">
+                  <td class="py-2.5 px-5 text-ink-2 align-top">{row.kEn || row.k}</td>
+                  {row.v.map((v) => (
+                    <td class="py-2.5 px-5 text-ink align-top font-medium whitespace-nowrap">{v || '—'}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {related.length > 0 && (
+    <section class="border-t border-rule bg-paper-2">
+      <div class="container-page py-12">
+        <h2 class="font-mono text-sm uppercase tracking-[0.08em] text-muted mb-6">
+          More from {category.titleEn}
+        </h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {related.map((p) => (
+            <a href={`/products/${p.model.toLowerCase()}/`} class="hairline-card p-4 group hover:border-accent transition-colors">
+              <span class="font-mono text-xs text-muted group-hover:text-accent transition-colors">{p.model}</span>
+              <span class="block text-sm text-ink font-medium leading-snug mt-1.5">{p.nameEn}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="border-t border-rule">
+    <div class="container-page py-14">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+        <div>
+          <h3 class="font-display font-semibold text-ink text-xl">Need specifications, pricing or lead time?</h3>
+          <p class="text-muted text-sm mt-1.5">Send us your application and requirements — we respond within 24 hours.</p>
+        </div>
+        <a href="/contact/" class="btn-primary shrink-0">Send Inquiry</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
