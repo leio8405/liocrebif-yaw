@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { resources } from '../../../data/resources';
+---
+
+<BaseLayout
+  currentPath={Astro.url.pathname}
+  title="资源与洞察 | Liocrebif Technology"
+  description="惯性导航技术洞察：光纤陀螺与 MEMS 选型、寻北方法与实用工程框架。"
+>
+  <section class="border-b border-rule">
+    <div class="container-page py-14 sm:py-16">
+      <p class="eyebrow mb-4">资源</p>
+      <h1 class="font-display font-semibold tracking-tight text-ink text-3xl sm:text-4xl">洞察与工程指南</h1>
+      <p class="text-muted text-lg mt-4 max-w-2xl leading-relaxed">
+        面向导航系统选型工程师的实用技术指南。
+      </p>
+    </div>
+  </section>
+
+  <section class="container-page py-14 sm:py-16">
+    <div class="grid md:grid-cols-2 gap-5">
+      {resources.map((r) => (
+        <a href={r.zh ? `/zh/resources/${r.slug}/` : `/resources/${r.slug}/`} class="hairline-card p-6 sm:p-8 group hover:border-accent transition-colors flex flex-col">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="tag tag--accent">{r.tag}</span>
+            <span class="font-mono text-xs text-muted">{r.date} · {r.readingTime} min</span>
+            {!r.zh && <span class="font-mono text-[10px] text-muted border border-rule rounded px-1.5 py-0.5">EN</span>}
+          </div>
+          <h2 class="font-display font-semibold text-ink text-xl leading-snug group-hover:text-accent transition-colors">{r.zh ? r.zh.title : r.title}</h2>
+          <p class="text-muted text-sm mt-3 leading-relaxed flex-1">{r.zh ? r.zh.description : r.description}</p>
+          <span class="text-accent text-sm font-medium mt-5 inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
+            阅读全文 <span aria-hidden="true">→</span>
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
