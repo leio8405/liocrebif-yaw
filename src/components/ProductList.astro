@@ -1,0 +1,78 @@
+---
+/**
+ * 产品列表组件：分类页与总览页共用
+ * 参数表全展开（目录册定位），无图显示 mono 型号占位
+ */
+import type { Product } from '../data/products';
+
+interface Props {
+  products: Product[];
+  lang: 'en' | 'zh';
+}
+
+const { products, lang } = Astro.props;
+const isZh = lang === 'zh';
+
+const labels = isZh
+  ? { size: '尺寸', datasheet: '索取资料', spec: '技术规格', noSpec: '详细参数请询价' }
+  : { size: 'Size', datasheet: 'Request Datasheet', spec: 'Specifications', noSpec: 'Contact us for full specifications' };
+---
+
+{products.map((p) => (
+  <article class="hairline-card overflow-hidden reveal" id={p.model}>
+    <div class="grid lg:grid-cols-5">
+      <div class="lg:col-span-2 bg-paper-2 border-b lg:border-b-0 lg:border-r border-rule flex items-center justify-center p-8 min-h-[240px]">
+        {p.image ? (
+          <img src={p.image} alt={`${p.model} ${isZh ? p.nameZh : p.nameEn}`} class="max-h-[220px] object-contain" loading="lazy" />
+        ) : (
+          <span class="font-mono text-2xl text-muted tracking-tight text-center break-all px-4">{p.model}</span>
+        )}
+      </div>
+      <div class="lg:col-span-3 p-6 sm:p-8">
+        <div class="flex items-center gap-3 mb-3 flex-wrap">
+          <span class="tag tag--accent">{isZh ? p.tagZh : p.tagEn}</span>
+          <span class="font-mono text-xs text-muted">{p.model}</span>
+        </div>
+        <h3 class="font-display font-semibold text-ink text-xl leading-snug">{isZh ? p.nameZh : p.nameEn}</h3>
+        {(isZh ? p.descZh : p.descEn) && (
+          <p class="text-ink-2 text-[15px] mt-3 leading-relaxed">{isZh ? p.descZh : p.descEn}</p>
+        )}
+        {p.specTable && p.specTable.rows.length > 0 && (
+          <div class="mt-5 pt-4 border-t border-rule">
+            <p class="font-mono text-[11px] uppercase tracking-[0.06em] text-muted mb-2.5">{labels.spec}</p>
+            <div class="overflow-x-auto">
+              <table class="w-full text-[13px] border-collapse">
+                <thead>
+                  <tr class="border-b border-rule">
+                    <th class="text-left py-2 pr-4 font-mono text-[11px] uppercase tracking-[0.05em] text-muted font-medium min-w-[140px]">
+                      {isZh ? '参数' : 'Parameter'}
+                    </th>
+                    {p.specTable.headers.slice(1).map((h) => (
+                      <th class="text-left py-2 pr-4 font-mono text-[11px] uppercase tracking-[0.05em] text-muted font-medium">{h}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {p.specTable.rows.map((row) => (
+                    <tr class="border-b border-rule/60 last:border-0">
+                      <td class="py-2 pr-4 text-ink-2 align-top">{isZh ? row.k : (row.kEn || row.k)}</td>
+                      {(isZh ? row.v : (row.vEn && row.vEn.length ? row.vEn : row.v)).map((v) => (
+                        <td class="py-2 pr-4 text-ink align-top font-medium whitespace-nowrap">{v || '—'}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+        {p.appsEn && p.appsEn.length > 0 && (
+          <div class="flex flex-wrap gap-2 mt-4">
+            {(isZh ? p.appsZh : p.appsEn).map((app) => <span class="tag">{app}</span>)}
+          </div>
+        )}
+        <a href={lang === 'zh' ? '/zh/contact/' : '/contact/'} class="btn-outline text-sm mt-6">{labels.datasheet}</a>
+      </div>
+    </div>
+  </article>
+))}

@@ -5,12 +5,7 @@ import { productCategories } from '../data/products';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
-const categoryInfo = [
-  { titleKey: 'products.ins.title', descKey: 'products.ins.desc' },
-  { titleKey: 'products.gyro.title', descKey: 'products.gyro.desc' },
-  { titleKey: 'products.fiber.title', descKey: 'products.fiber.desc' },
-];
+const isZh = lang === 'zh';
 ---
 
 <BaseLayout
@@ -20,7 +15,7 @@ const categoryInfo = [
 >
   <section class="border-b border-rule">
     <div class="container-page py-14 sm:py-16">
-      <p class="eyebrow mb-4">Product Lines</p>
+      <p class="eyebrow mb-4">{isZh ? '产品线' : 'Product Lines'}</p>
       <h1 class="font-display font-semibold tracking-tight text-ink text-3xl sm:text-4xl">{t('products.title')}</h1>
       <p class="text-muted text-lg mt-4 max-w-2xl leading-relaxed">{t('products.subtitle')}</p>
     </div>
@@ -31,8 +26,10 @@ const categoryInfo = [
       <div class={i > 0 ? 'border-t border-rule pt-16' : ''}>
         <div class="grid lg:grid-cols-12 gap-10">
           <div class="lg:col-span-4">
-            <h2 class="font-display font-semibold text-ink text-2xl tracking-tight">{t(categoryInfo[i].titleKey)}</h2>
-            <p class="text-muted text-sm leading-relaxed mt-3">{t(categoryInfo[i].descKey)}</p>
+            <p class="font-mono text-[11px] text-muted tracking-[0.08em] uppercase mb-3">0{i + 1}</p>
+            <h2 class="font-display font-semibold text-ink text-2xl tracking-tight">{isZh ? cat.titleZh : cat.titleEn}</h2>
+            <p class="text-muted text-sm leading-relaxed mt-3">{isZh ? cat.descZh : cat.descEn}</p>
+            <p class="font-mono text-xs text-muted mt-4">{cat.products.length} {isZh ? '款产品' : 'products'}</p>
             <a href={translatePath(`/products/${cat.slug}`, lang)} class="inline-flex items-center gap-1.5 text-accent text-sm font-medium mt-5 hover:gap-2.5 transition-all">
               {t('products.explore')} <span aria-hidden="true">→</span>
             </a>
@@ -40,11 +37,13 @@ const categoryInfo = [
           <div class="lg:col-span-8">
             <div class="border-t border-rule">
               {cat.products.map((p) => (
-                <a href={translatePath(`/products/${cat.slug}`, lang)} class="group grid grid-cols-[auto_1fr] sm:grid-cols-[110px_1fr] gap-x-5 items-baseline py-3.5 border-b border-rule hover:bg-paper-2 transition-colors px-2 -mx-2">
+                <a href={translatePath(`/products/${cat.slug}`, lang)} class="group grid grid-cols-[auto_1fr] sm:grid-cols-[130px_1fr] gap-x-5 items-baseline py-3 border-b border-rule hover:bg-paper-2 transition-colors px-2 -mx-2">
                   <span class="font-mono text-xs text-muted group-hover:text-accent transition-colors">{p.model}</span>
                   <span class="min-w-0">
-                    <span class="block text-[15px] text-ink font-medium leading-snug">{lang === 'zh' ? (p.shortZh || p.nameZh) : (p.shortEn || p.nameEn)}</span>
-                    {p.subEn && <span class="block text-xs text-muted mt-0.5 leading-snug">{lang === 'zh' ? p.subZh : p.subEn}</span>}
+                    <span class="block text-[15px] text-ink font-medium leading-snug">{isZh ? p.nameZh : p.nameEn}</span>
+                    {(isZh ? p.appsZh : p.appsEn)?.length ? (
+                      <span class="block text-xs text-muted mt-0.5 leading-snug truncate">{(isZh ? p.appsZh : p.appsEn).slice(0, 4).join(' · ')}</span>
+                    ) : null}
                   </span>
                 </a>
               ))}

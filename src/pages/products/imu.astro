@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductList from '../../components/ProductList.astro';
+import { productCategories } from '../../data/products';
+
+const cat = productCategories.find((c) => c.slug === 'imu')!;
+---
+
+<BaseLayout currentPath={Astro.url.pathname} title={cat.titleEn} description={cat.descEn}>
+  <section class="border-b border-rule">
+    <div class="container-page py-14 sm:py-16">
+      <a href="/products/" class="font-mono text-xs uppercase tracking-[0.05em] text-muted hover:text-accent transition-colors inline-flex items-center gap-1.5 mb-6">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/></svg>
+        Products
+      </a>
+      <h1 class="font-display font-semibold tracking-tight text-ink text-3xl sm:text-4xl">{cat.titleEn}</h1>
+      <p class="text-muted text-lg mt-4 max-w-2xl leading-relaxed">{cat.descEn}</p>
+      <p class="font-mono text-xs text-muted mt-4">{cat.products.length} products</p>
+    </div>
+  </section>
+
+  <section class="container-page py-14 sm:py-16">
+    <div class="space-y-6">
+      <ProductList products={cat.products} lang="en" />
+    </div>
+  </section>
+
+  <section class="border-t border-rule bg-paper-2">
+    <div class="container-page py-14">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+        <div>
+          <h3 class="font-display font-semibold text-ink text-xl">Ready to Find the Right Solution?</h3>
+          <p class="text-muted text-sm mt-1.5">Our engineering team is ready to help you select the optimal inertial navigation or sensing system for your application.</p>
+        </div>
+        <a href="/contact/" class="btn-primary shrink-0">Contact Our Team</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

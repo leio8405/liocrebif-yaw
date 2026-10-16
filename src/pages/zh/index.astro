@@ -1,11 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getLangFromUrl, useTranslations, translatePath } from '../../i18n/utils';
-import { gyroscopes } from '../../data/products';
+import { fogGyros } from '../../data/products';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const fs60 = gyroscopes.find((p) => p.model === 'LKF-FS60') ?? gyroscopes[0];
+const fs60 = fogGyros.find((p) => p.model === 'LKF-FS60') ?? fogGyros[0];
 const featured = [
   {
     href: '/products/inertial-navigation-systems',

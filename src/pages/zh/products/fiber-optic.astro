@@ -1,61 +1,27 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { getLangFromUrl, useTranslations, translatePath } from '../../../i18n/utils';
-import { fiberOptic } from '../../../data/products';
+import ProductList from '../../../components/ProductList.astro';
+import { productCategories } from '../../../data/products';
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const cat = productCategories.find((c) => c.slug === 'fiber-optic')!;
 ---
 
-<BaseLayout
-  currentPath={Astro.url.pathname}
-  title={t('products.fiber.pageTitle')}
-  description={t('products.fiber.pageDesc')}
->
+<BaseLayout currentPath={Astro.url.pathname} title={cat.titleZh} description={cat.descZh}>
   <section class="border-b border-rule">
     <div class="container-page py-14 sm:py-16">
-      <a href={translatePath('/products', lang)} class="font-mono text-xs tracking-[0.05em] text-muted hover:text-accent transition-colors inline-flex items-center gap-1.5 mb-6">
+      <a href="/zh/products/" class="font-mono text-xs tracking-[0.05em] text-muted hover:text-accent transition-colors inline-flex items-center gap-1.5 mb-6">
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/></svg>
-        {t('nav.products')}
+        产品中心
       </a>
-      <h1 class="font-display font-semibold tracking-tight text-ink text-3xl sm:text-4xl">{t('products.fiber.pageTitle')}</h1>
-      <p class="text-muted text-lg mt-4 max-w-2xl leading-relaxed">{t('products.fiber.pageDesc')}</p>
+      <h1 class="font-display font-semibold tracking-tight text-ink text-3xl sm:text-4xl">{cat.titleZh}</h1>
+      <p class="text-muted text-lg mt-4 max-w-2xl leading-relaxed">{cat.descZh}</p>
+      <p class="font-mono text-xs text-muted mt-4">{cat.products.length} 款产品</p>
     </div>
   </section>
 
   <section class="container-page py-14 sm:py-16">
     <div class="space-y-6">
-      {fiberOptic.map((p) => (
-        <article class="hairline-card overflow-hidden reveal">
-          <div class="grid lg:grid-cols-5">
-            <div class="lg:col-span-2 bg-paper-2 border-b lg:border-b-0 lg:border-r border-rule flex items-center justify-center p-8 min-h-[240px]">
-              {p.image ? (
-                <img src={p.image} alt={`${p.model} ${lang === 'zh' ? p.nameZh : p.nameEn}`} class="max-h-[220px] object-contain" loading="lazy" />
-              ) : (
-                <span class="font-mono text-2xl text-muted tracking-tight">{p.model}</span>
-              )}
-            </div>
-            <div class="lg:col-span-3 p-6 sm:p-8">
-              <div class="flex items-center gap-3 mb-3">
-                <span class="tag tag--accent">{lang === 'zh' ? p.tagZh : p.tagEn}</span>
-                <span class="font-mono text-xs text-muted">{p.model}</span>
-              </div>
-              <h3 class="font-display font-semibold text-ink text-xl leading-snug">{lang === 'zh' ? p.nameZh : p.nameEn}</h3>
-              <p class="text-ink-2 text-[15px] mt-3 leading-relaxed">{lang === 'zh' ? p.descZh : p.descEn}</p>
-              {p.includesEn && <p class="text-muted text-xs mt-3 leading-relaxed">{lang === 'zh' ? p.includesZh : p.includesEn}</p>}
-              {p.specs && (
-                <p class="font-mono text-xs text-muted mt-5 pt-4 border-t border-rule">
-                  <span class="tracking-[0.05em]">{t('products.size')}</span><span class="mx-2 text-rule">|</span>{p.specs}
-                </p>
-              )}
-              <div class="flex flex-wrap gap-2 mt-4">
-                {(lang === 'zh' ? p.appsZh : p.appsEn).map((app) => <span class="tag">{app}</span>)}
-              </div>
-              <a href={translatePath('/contact', lang)} class="btn-outline text-sm mt-6">{t('products.requestDatasheet')}</a>
-            </div>
-          </div>
-        </article>
-      ))}
+      <ProductList products={cat.products} lang="zh" />
     </div>
   </section>
 
@@ -63,10 +29,10 @@ const t = useTranslations(lang);
     <div class="container-page py-14">
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
         <div>
-          <h3 class="font-display font-semibold text-ink text-xl">{t('home.cta.title')}</h3>
-          <p class="text-muted text-sm mt-1.5">{t('home.cta.subtitle')}</p>
+          <h3 class="font-display font-semibold text-ink text-xl">准备好找到合适的解决方案了吗？</h3>
+          <p class="text-muted text-sm mt-1.5">我们的工程团队随时准备帮助您选择最适合您应用的惯性导航或传感系统。</p>
         </div>
-        <a href={translatePath('/contact', lang)} class="btn-primary shrink-0">{t('home.cta.button')}</a>
+        <a href="/zh/contact/" class="btn-primary shrink-0">联系我们的团队</a>
       </div>
     </div>
   </section>

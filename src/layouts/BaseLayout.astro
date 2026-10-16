@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { getLangFromUrl, useTranslations, translatePath, type Lang } from '../i18n/utils';
+import { productCategories } from '../data/products';
 
 export interface Props {
   title: string;
@@ -11,6 +12,7 @@ export interface Props {
 const { title, description, currentPath = '/' } = Astro.props;
 const lang: Lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const isZh = lang === 'zh';
 
 function isActive(path: string) {
   // Strip /zh prefix for comparison
@@ -58,10 +60,12 @@ const currentYear = new Date().getFullYear();
             <svg class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </a>
           <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-            <div class="bg-paper border border-rule rounded-lg p-1.5 min-w-[240px]">
-              <a href={translatePath('/products/inertial-navigation-systems', lang)} class="block px-3.5 py-2.5 rounded-md font-mono text-xs uppercase tracking-wide text-muted hover:text-ink hover:bg-paper-2 transition-colors">{t('nav.ins')}</a>
-              <a href={translatePath('/products/gyroscopes', lang)} class="block px-3.5 py-2.5 rounded-md font-mono text-xs uppercase tracking-wide text-muted hover:text-ink hover:bg-paper-2 transition-colors">{t('nav.gyroscopes')}</a>
-              <a href={translatePath('/products/fiber-optic', lang)} class="block px-3.5 py-2.5 rounded-md font-mono text-xs uppercase tracking-wide text-muted hover:text-ink hover:bg-paper-2 transition-colors">{t('nav.fiberOptic')}</a>
+            <div class="bg-paper border border-rule rounded-lg p-1.5 min-w-[280px]">
+              {productCategories.map((cat) => (
+                <a href={translatePath(`/products/${cat.slug}`, lang)} class="block px-3.5 py-2.5 rounded-md hover:bg-paper-2 transition-colors">
+                  <span class="block font-mono text-xs uppercase tracking-wide text-muted hover:text-ink">{isZh ? cat.titleZh : cat.titleEn}</span>
+                </a>
+              ))}
               <div class="border-t border-rule my-1"></div>
               <a href={translatePath('/products', lang)} class="block px-3.5 py-2.5 rounded-md font-mono text-xs uppercase tracking-wide text-accent hover:bg-accent-soft transition-colors">{t('nav.viewAll')}</a>
             </div>
@@ -93,9 +97,12 @@ const currentYear = new Date().getFullYear();
       <div class="container-page py-4 space-y-0.5">
         <a href={translatePath('/', lang)} class={isActive('/') ? 'block px-3 py-2.5 font-mono text-xs uppercase tracking-wide text-ink bg-paper-2 rounded-md' : 'block px-3 py-2.5 font-mono text-xs uppercase tracking-wide text-muted hover:text-ink hover:bg-paper-2 rounded-md transition-colors'}>{t('nav.home')}</a>
         <a href={translatePath('/products', lang)} class={isActive('/products') ? 'block px-3 py-2.5 font-mono text-xs uppercase tracking-wide text-ink bg-paper-2 rounded-md' : 'block px-3 py-2.5 font-mono text-xs uppercase tracking-wide text-muted hover:text-ink hover:bg-paper-2 rounded-md transition-colors'}>{t('nav.products')}</a>
-        <a href={translatePath('/products/inertial-navigation-systems', lang)} class="block pl-6 pr-3 py-2 text-sm text-muted hover:text-ink transition-colors">↳ {t('nav.ins')}</a>
-        <a href={translatePath('/products/gyroscopes', lang)} class="block pl-6 pr-3 py-2 text-sm text-muted hover:text-ink transition-colors">↳ {t('nav.gyroscopes')}</a>
-        <a href={translatePath('/products/fiber-optic', lang)} class="block pl-6 pr-3 py-2 text-sm text-muted hover:text-ink transition-colors">↳ {t('nav.fiberOptic')}</a>
+        <a href={translatePath('/products/inertial-navigation-systems', lang)} class="block pl-6 pr-3 py-2 text-sm text-muted hover:text-ink transition-colors">↳ {isZh ? 'INS 组合导航' : 'INS / GNSS'}</a>
+        <a href={translatePath('/products/fog-gyroscopes', lang)} class="block pl-6 pr-3 py-2 text-sm text-muted hover:text-ink transition-colors">↳ {isZh ? '光纤陀螺' : 'FOG Gyroscopes'}</a>
+        <a href={translatePath('/products/mems-gyroscopes', lang)} class="block pl-6 pr-3 py-2 text-sm text-muted hover:text-ink transition-colors">↳ {isZh ? 'MEMS 陀螺' : 'MEMS Gyroscopes'}</a>
+        <a href={translatePath('/products/imu', lang)} class="block pl-6 pr-3 py-2 text-sm text-muted hover:text-ink transition-colors">↳ {isZh ? 'IMU 与寻北仪' : 'IMU & North Seekers'}</a>
+        <a href={translatePath('/products/accelerometers', lang)} class="block pl-6 pr-3 py-2 text-sm text-muted hover:text-ink transition-colors">↳ {isZh ? '加速度计' : 'Accelerometers'}</a>
+        <a href={translatePath('/products/fiber-optic', lang)} class="block pl-6 pr-3 py-2 text-sm text-muted hover:text-ink transition-colors">↳ {isZh ? '光纤器件与设备' : 'Fiber Devices & Equipment'}</a>
         <a href={translatePath('/about', lang)} class={isActive('/about') ? 'block px-3 py-2.5 font-mono text-xs uppercase tracking-wide text-ink bg-paper-2 rounded-md' : 'block px-3 py-2.5 font-mono text-xs uppercase tracking-wide text-muted hover:text-ink hover:bg-paper-2 rounded-md transition-colors'}>{t('nav.about')}</a>
         <a href={translatePath('/contact', lang)} class={isActive('/contact') ? 'block px-3 py-2.5 font-mono text-xs uppercase tracking-wide text-ink bg-paper-2 rounded-md' : 'block px-3 py-2.5 font-mono text-xs uppercase tracking-wide text-muted hover:text-ink hover:bg-paper-2 rounded-md transition-colors'}>{t('nav.contact')}</a>
         <div class="pt-3 mt-2 border-t border-rule flex items-center justify-between">
