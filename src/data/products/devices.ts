@@ -4,6 +4,8 @@ import type { Product } from './types';
 export const devices: Product[] = [
   {
     model: 'LKF-PM',
+    subZh: '保偏光纤',
+    subEn: 'PM Fiber',
     tagEn: 'PM Fiber',
     tagZh: '保偏光纤',
     nameEn: 'LKF-PM(1310&1550)Coil Winding Panda PM Fiber',
@@ -34,6 +36,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-PM',
+    subZh: '保偏光纤',
+    subEn: 'PM Fiber',
     tagEn: 'PM Fiber',
     tagZh: '保偏光纤',
     nameEn: 'LKF-PM(1310&1550)WaveGuide Panda PM Fiber',
@@ -61,6 +65,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-PM',
+    subZh: '保偏光纤',
+    subEn: 'PM Fiber',
     tagEn: 'PM Fiber',
     tagZh: '保偏光纤',
     nameEn: 'LKF-PM Polarization-Maintaining Photonic Crystal Fiber',
@@ -85,6 +91,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-G652',
+    subZh: '单模光纤',
+    subEn: 'Single-Mode Fiber',
     tagEn: 'Single-Mode Fiber',
     tagZh: '单模光纤',
     nameEn: 'LKF-G652 Low-Water Peak Single-Mode Fiber',
@@ -119,6 +127,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-G652',
+    subZh: '单模光纤',
+    subEn: 'Single-Mode Fiber',
     tagEn: 'Single-Mode Fiber',
     tagZh: '单模光纤',
     nameEn: 'Low Water Peak Single-Mode Fiber',
@@ -153,6 +163,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-G652',
+    subZh: '单模光纤',
+    subEn: 'Single-Mode Fiber',
     tagEn: 'Single-Mode Fiber',
     tagZh: '单模光纤',
     nameEn: 'Ultra-Low Loss Single-Mode Fiber',
@@ -187,6 +199,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-G657A1',
+    subZh: '单模光纤',
+    subEn: 'Single-Mode Fiber',
     tagEn: 'Single-Mode Fiber',
     tagZh: '单模光纤',
     nameEn: 'Low-Loss Bend-Insensitive Single-Mode Fiber',
@@ -221,6 +235,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-G657A2',
+    subZh: '单模光纤',
+    subEn: 'Single-Mode Fiber',
     tagEn: 'Single-Mode Fiber',
     tagZh: '单模光纤',
     nameEn: 'LKF-G657A2 Low Water Peak Bend-Insensitive Single-Mode Fiber',
@@ -255,6 +271,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-G657B3',
+    subZh: '单模光纤',
+    subEn: 'Single-Mode Fiber',
     tagEn: 'Single-Mode Fiber',
     tagZh: '单模光纤',
     nameEn: 'Ultra Bend-Insensitive Single-Mode Fiber',
@@ -289,6 +307,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-FC',
+    subZh: '光纤环圈',
+    subEn: 'Fiber Coil',
     tagEn: 'Fiber Coil',
     tagZh: '光纤环圈',
     nameEn: 'LKF-FC Polarization-Maintaining Fiber Coil',
@@ -313,6 +333,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-ASE',
+    subZh: '光学器件',
+    subEn: 'Optical Component',
     tagEn: 'Optical Component',
     tagZh: '光学器件',
     nameEn: 'LKF-ASE Light Source',
@@ -340,6 +362,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-FIOS1550',
+    subZh: '光学器件',
+    subEn: 'Optical Component',
     tagEn: 'Optical Component',
     tagZh: '光学器件',
     nameEn: 'LKF-FIOS 1550 Four-in-One Fully Integrated Optical Device',
@@ -376,6 +400,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-MIOC1310',
+    subZh: '光学器件',
+    subEn: 'Optical Component',
     tagEn: 'Optical Component',
     tagZh: '光学器件',
     nameEn: 'LKF-MIOC 1310nm (Y-waveguide)',
@@ -408,6 +434,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-MIOC1550',
+    subZh: '光学器件',
+    subEn: 'Optical Component',
     tagEn: 'Optical Component',
     tagZh: '光学器件',
     nameEn: 'LKF-SPC1310 Three-in-One Integrated Optical Device',
@@ -440,6 +468,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-PIN-FET',
+    subZh: '光学器件',
+    subEn: 'Optical Component',
     tagEn: 'Optical Component',
     tagZh: '光学器件',
     nameEn: 'LKF-PIN-FET Optical Receiver Module',
@@ -468,6 +498,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-SLD',
+    subZh: '光学器件',
+    subEn: 'Optical Component',
     tagEn: 'Optical Component',
     tagZh: '光学器件',
     nameEn: 'LKF-SLD(1310nm)Superluminescent Diode',
@@ -497,6 +529,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-SPC1310',
+    subZh: '光学器件',
+    subEn: 'Optical Component',
     tagEn: 'Optical Component',
     tagZh: '光学器件',
     nameEn: 'Three-in-One Integrated Optical Device',
@@ -526,6 +560,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-TIOS1310',
+    subZh: '硅光收发组件',
+    subEn: 'SiPh Transceiver',
     tagEn: 'SiPh Transceiver',
     tagZh: '硅光收发组件',
     nameEn: 'LKF-TIOS1310 Silicon-Photonic Three-Axis Integrated Gyro Transceiver Assembly',
@@ -558,6 +594,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-FX02',
+    subZh: '生产设备',
+    subEn: 'Production Equipment',
     tagEn: 'Production Equipment',
     tagZh: '生产设备',
     nameEn: 'LKF-FX02 Fiber Separating and Rewinding Machine',
@@ -582,6 +620,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-FX03',
+    subZh: '生产设备',
+    subEn: 'Production Equipment',
     tagEn: 'Production Equipment',
     tagZh: '生产设备',
     nameEn: 'LKF-FX03 Fiber Separating and Rewinding Machine',
@@ -607,6 +647,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-GR02',
+    subZh: '生产设备',
+    subEn: 'Production Equipment',
     tagEn: 'Production Equipment',
     tagZh: '生产设备',
     nameEn: 'LKF-GR02 Thermal Curing Chanber',
@@ -634,6 +676,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-RH04',
+    subZh: '生产设备',
+    subEn: 'Production Equipment',
     tagEn: 'Production Equipment',
     tagZh: '生产设备',
     nameEn: 'LKF-RH04 Fiber Coil Winding Machine',
@@ -660,6 +704,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-RH16A',
+    subZh: '生产设备',
+    subEn: 'Production Equipment',
     tagEn: 'Production Equipment',
     tagZh: '生产设备',
     nameEn: 'LKF-RH16A Fiber Coil Winding Machine',
@@ -686,6 +732,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-RH16',
+    subZh: '生产设备',
+    subEn: 'Production Equipment',
     tagEn: 'Production Equipment',
     tagZh: '生产设备',
     nameEn: 'LKF-RH16 Fiber Coil Winding Machine',
@@ -712,6 +760,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-UV02',
+    subZh: '生产设备',
+    subEn: 'Production Equipment',
     tagEn: 'Production Equipment',
     tagZh: '生产设备',
     nameEn: 'LKF-UV02 Rotary UV Curing Chamber',
@@ -750,6 +800,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-UV03',
+    subZh: '生产设备',
+    subEn: 'Production Equipment',
     tagEn: 'Production Equipment',
     tagZh: '生产设备',
     nameEn: 'LKF-UV03 Rotary UV Curing Chamber',
@@ -786,6 +838,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-2FDT400WK',
+    subZh: '测试设备',
+    subEn: 'Test Equipment',
     tagEn: 'Test Equipment',
     tagZh: '测试设备',
     nameEn: 'LKF-2FDT400WK Dual-Axis Thermal-Chamber Turntable',
@@ -816,6 +870,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-3FDT550WK',
+    subZh: '测试设备',
+    subEn: 'Test Equipment',
     tagEn: 'Test Equipment',
     tagZh: '测试设备',
     nameEn: 'LKF-3FDT550WK Three-Axis Thermal-Chamber Turntable',
@@ -847,6 +903,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-DT300A',
+    subZh: '测试设备',
+    subEn: 'Test Equipment',
     tagEn: 'Test Equipment',
     tagZh: '测试设备',
     nameEn: 'LKF-DT300A Single-Axis Motorized Rate-Position Turntable',
@@ -873,6 +931,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-FCTS1310C',
+    subZh: '测试设备',
+    subEn: 'Test Equipment',
     tagEn: 'Test Equipment',
     tagZh: '测试设备',
     nameEn: 'LKF-FCTS1310C Fiber Coil Test System',
@@ -900,6 +960,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-FCTS1550C',
+    subZh: '测试设备',
+    subEn: 'Test Equipment',
     tagEn: 'Test Equipment',
     tagZh: '测试设备',
     nameEn: 'LKF-FCTS1550C Fiber Coil Test System',
@@ -927,6 +989,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-FMTP',
+    subZh: '测试设备',
+    subEn: 'Test Equipment',
     tagEn: 'Test Equipment',
     tagZh: '测试设备',
     nameEn: 'LKF-FMTP Fiber Coil Multifunction Test Platform',
@@ -972,6 +1036,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-HLTTC',
+    subZh: '测试设备',
+    subEn: 'Test Equipment',
     tagEn: 'Test Equipment',
     tagZh: '测试设备',
     nameEn: 'LKF-HLTTC Single-Axis High-Low Temperature Test Chamber',
@@ -1008,6 +1074,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-LDDR1',
+    subZh: '测试设备',
+    subEn: 'Test Equipment',
     tagEn: 'Test Equipment',
     tagZh: '测试设备',
     nameEn: 'LKF-LDDR1 SLD Controller',
@@ -1035,6 +1103,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-OMTS1310C',
+    subZh: '测试设备',
+    subEn: 'Test Equipment',
     tagEn: 'Test Equipment',
     tagZh: '测试设备',
     nameEn: 'LKF-OMTS1310C FOG Optical Module Test System',
@@ -1062,6 +1132,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-OMTS1550C',
+    subZh: '测试设备',
+    subEn: 'Test Equipment',
     tagEn: 'Test Equipment',
     tagZh: '测试设备',
     nameEn: 'LKF-OMTS1550C FOG Optical Module Test System',
@@ -1089,6 +1161,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-PERM',
+    subZh: '测试设备',
+    subEn: 'Test Equipment',
     tagEn: 'Test Equipment',
     tagZh: '测试设备',
     nameEn: 'LKF-PERM Polarization Extinction Ratio Meter',
@@ -1115,6 +1189,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-Fiber Adhesive',
+    subZh: '胶水',
+    subEn: 'Adhesive',
     tagEn: 'Adhesive',
     tagZh: '胶水',
     nameEn: 'LKF-Fiber Adhesive',
@@ -1126,6 +1202,8 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-Fiber Preform',
+    subZh: '光纤预制棒',
+    subEn: 'Fiber Preform',
     tagEn: 'Fiber Preform',
     tagZh: '光纤预制棒',
     nameEn: 'LKF-Fiber Preform',

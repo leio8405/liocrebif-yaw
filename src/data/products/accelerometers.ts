@@ -4,6 +4,8 @@ import type { Product } from './types';
 export const accelerometers: Product[] = [
   {
     model: 'LKF-Quartz Accelerometer',
+    subZh: '石英加速度计',
+    subEn: 'Quartz Accelerometer',
     tagEn: 'Quartz Accelerometer',
     tagZh: '石英加速度计',
     nameEn: 'LKF-Quartz Accelerometer',
@@ -15,6 +17,8 @@ export const accelerometers: Product[] = [
   },
   {
     model: 'LKF-MXD',
+    subZh: 'MEMS 加速度计',
+    subEn: 'MEMS Accelerometer',
     tagEn: 'MEMS Accelerometer',
     tagZh: 'MEMS 加速度计',
     nameEn: 'LKF-MXD Dual-Axis MEMS Accelerometer',
@@ -61,6 +65,8 @@ export const accelerometers: Product[] = [
   },
   {
     model: 'LKF-MXH',
+    subZh: 'MEMS 加速度计',
+    subEn: 'MEMS Accelerometer',
     tagEn: 'MEMS Accelerometer',
     tagZh: 'MEMS 加速度计',
     nameEn: 'LKF-MXH Single-Axis MEMS Accelerometer',
@@ -107,6 +113,8 @@ export const accelerometers: Product[] = [
   },
   {
     model: 'LKF-MXT15',
+    subZh: 'MEMS 加速度计',
+    subEn: 'MEMS Accelerometer',
     tagEn: 'MEMS Accelerometer',
     tagZh: 'MEMS 加速度计',
     nameEn: 'LKF-MXT15 Three-Axis MEMS Accelerometer',
@@ -154,6 +162,8 @@ export const accelerometers: Product[] = [
   },
   {
     model: 'LKF-MXT50',
+    subZh: 'MEMS 加速度计',
+    subEn: 'MEMS Accelerometer',
     tagEn: 'MEMS Accelerometer',
     tagZh: 'MEMS 加速度计',
     nameEn: 'LKF-MXT50 Three-Axis MEMS Accelerometer',

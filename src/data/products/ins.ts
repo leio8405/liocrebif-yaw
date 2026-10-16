@@ -4,6 +4,8 @@ import type { Product } from './types';
 export const insSystems: Product[] = [
   {
     model: 'LKF-FSI206',
+    subZh: '光纤 INS',
+    subEn: 'FOG INS',
     tagEn: 'FOG INS',
     tagZh: '光纤 INS',
     nameEn: 'LKF-FSI206 FOG Strapdown Inertial Navigation System',
@@ -37,6 +39,8 @@ export const insSystems: Product[] = [
   },
   {
     model: 'LKF-FSI301',
+    subZh: '光纤 INS',
+    subEn: 'FOG INS',
     tagEn: 'FOG INS',
     tagZh: '光纤 INS',
     nameEn: 'LKF-FSI301 FOG_GNSS Combined Inertial Navigation System',
@@ -66,6 +70,8 @@ export const insSystems: Product[] = [
   },
   {
     model: 'LKF-FSI400',
+    subZh: '光纤 INS',
+    subEn: 'FOG INS',
     tagEn: 'FOG INS',
     tagZh: '光纤 INS',
     nameEn: 'LKF-FSI400 FOG_GNSS Combined Inertial Navigation System',
@@ -93,6 +99,8 @@ export const insSystems: Product[] = [
   },
   {
     model: 'LKF-MSI100',
+    subZh: 'MEMS INS',
+    subEn: 'MEMS INS',
     tagEn: 'MEMS INS',
     tagZh: 'MEMS INS',
     nameEn: 'LKF-MSI100 MEMS_GNSS Inertial Navigation System',
@@ -119,6 +127,8 @@ export const insSystems: Product[] = [
   },
   {
     model: 'LKF-MSI105',
+    subZh: 'MEMS INS',
+    subEn: 'MEMS INS',
     tagEn: 'MEMS INS',
     tagZh: 'MEMS INS',
     nameEn: 'LKF-MSI105 Micro MEMS Inertial Navigation System',
@@ -159,6 +169,8 @@ export const insSystems: Product[] = [
   },
   {
     model: 'LKF-MSI300',
+    subZh: 'MEMS INS',
+    subEn: 'MEMS INS',
     tagEn: 'MEMS INS',
     tagZh: 'MEMS INS',
     nameEn: 'LKF-MSI300 MEMS_GNSS Combined Inertial Navigation System',

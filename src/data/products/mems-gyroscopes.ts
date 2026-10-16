@@ -4,6 +4,8 @@ import type { Product } from './types';
 export const memsGyros: Product[] = [
   {
     model: 'LKF-MEMS',
+    subZh: 'MEMS 芯片',
+    subEn: 'MEMS Chip',
     tagEn: 'MEMS Chip',
     tagZh: 'MEMS 芯片',
     nameEn: 'LKF-MEMS Single-Axis Gyroscope Chip',
@@ -49,6 +51,8 @@ export const memsGyros: Product[] = [
   },
   {
     model: 'LKF-MTG200',
+    subZh: 'MEMS 陀螺',
+    subEn: 'MEMS Gyro',
     tagEn: 'MEMS Gyro',
     tagZh: 'MEMS 陀螺',
     nameEn: 'LKF-MTG200 MEMS Gyro',
@@ -84,6 +88,8 @@ export const memsGyros: Product[] = [
   },
   {
     model: 'LKF-MTG300A',
+    subZh: 'MEMS 陀螺',
+    subEn: 'MEMS Gyro',
     tagEn: 'MEMS Gyro',
     tagZh: 'MEMS 陀螺',
     nameEn: 'LKF-MTG300A MEMS Gyro',
@@ -122,6 +128,8 @@ export const memsGyros: Product[] = [
   },
   {
     model: 'LKF-MTG300',
+    subZh: 'MEMS 陀螺',
+    subEn: 'MEMS Gyro',
     tagEn: 'MEMS Gyro',
     tagZh: 'MEMS 陀螺',
     nameEn: 'LKF-MTG300 MEMS Gyro',

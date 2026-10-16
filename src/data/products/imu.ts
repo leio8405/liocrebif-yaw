@@ -4,6 +4,8 @@ import type { Product } from './types';
 export const imus: Product[] = [
   {
     model: 'LKF-F3X100',
+    subZh: '光纤 IMU',
+    subEn: 'FOG IMU',
     tagEn: 'FOG IMU',
     tagZh: '光纤 IMU',
     nameEn: 'LKF-F3X100 Three-Axis FOG IMU',
@@ -40,6 +42,8 @@ export const imus: Product[] = [
   },
   {
     model: 'LKF-F3X50',
+    subZh: '光纤 IMU',
+    subEn: 'FOG IMU',
     tagEn: 'FOG IMU',
     tagZh: '光纤 IMU',
     nameEn: 'LKF-F3X50 Three-Axis Fiber Gyro IMU',
@@ -74,6 +78,8 @@ export const imus: Product[] = [
   },
   {
     model: 'LKF-F3X70',
+    subZh: '光纤 IMU',
+    subEn: 'FOG IMU',
     tagEn: 'FOG IMU',
     tagZh: '光纤 IMU',
     nameEn: 'LKF-F3X70 Three-Axis FOG IMU',
@@ -108,6 +114,8 @@ export const imus: Product[] = [
   },
   {
     model: 'LKF-F3X80',
+    subZh: '光纤 IMU',
+    subEn: 'FOG IMU',
     tagEn: 'FOG IMU',
     tagZh: '光纤 IMU',
     nameEn: 'LKF-F3X80 Three-Axis FOG IMU',
@@ -145,6 +153,8 @@ export const imus: Product[] = [
   },
   {
     model: 'LKF-F3X90',
+    subZh: '光纤 IMU',
+    subEn: 'FOG IMU',
     tagEn: 'FOG IMU',
     tagZh: '光纤 IMU',
     nameEn: 'LKF-F3X90 Three-Axis FOG IMU',
@@ -181,6 +191,8 @@ export const imus: Product[] = [
   },
   {
     model: 'LKF-FSU305',
+    subZh: '光纤 IMU',
+    subEn: 'FOG IMU',
     tagEn: 'FOG IMU',
     tagZh: '光纤 IMU',
     nameEn: 'LKF-FSU305 Fiber Inertial Navigation System',
@@ -223,6 +235,8 @@ export const imus: Product[] = [
   },
   {
     model: 'LKF-FSU307',
+    subZh: '光纤 IMU',
+    subEn: 'FOG IMU',
     tagEn: 'FOG IMU',
     tagZh: '光纤 IMU',
     nameEn: 'LKF-FSU307 Fiber Optic Inertial Measurement Unit',
@@ -266,6 +280,8 @@ export const imus: Product[] = [
   },
   {
     model: 'LKF-MNU107',
+    subZh: 'MEMS IMU',
+    subEn: 'MEMS IMU',
     tagEn: 'MEMS IMU',
     tagZh: 'MEMS IMU',
     nameEn: 'LKF-MNU107 MEMS Inertial Measurement Unit',
@@ -312,6 +328,8 @@ export const imus: Product[] = [
   },
   {
     model: 'LKF-MSN300H',
+    subZh: 'MEMS IMU',
+    subEn: 'MEMS IMU',
     tagEn: 'MEMS IMU',
     tagZh: 'MEMS IMU',
     nameEn: 'LKF-MSN300H High Dynamic MEMS North Finder',
@@ -359,6 +377,8 @@ export const imus: Product[] = [
   },
   {
     model: 'LKF-MSN300',
+    subZh: 'MEMS IMU',
+    subEn: 'MEMS IMU',
     tagEn: 'MEMS IMU',
     tagZh: 'MEMS IMU',
     nameEn: 'LKF-MSN300 High Precision MEMS North Finder',
@@ -406,6 +426,8 @@ export const imus: Product[] = [
   },
   {
     model: 'LKF-MSN302',
+    subZh: 'MEMS IMU',
+    subEn: 'MEMS IMU',
     tagEn: 'MEMS IMU',
     tagZh: 'MEMS IMU',
     nameEn: 'LKF-MSN302 High Precision MEMS North Finder',
@@ -452,6 +474,8 @@ export const imus: Product[] = [
   },
   {
     model: 'LKF-MSU102',
+    subZh: 'MEMS IMU',
+    subEn: 'MEMS IMU',
     tagEn: 'MEMS IMU',
     tagZh: 'MEMS IMU',
     nameEn: 'LKF-MSU102 MEMS IMU',
@@ -490,6 +514,8 @@ export const imus: Product[] = [
   },
   {
     model: 'LKF-MSU105',
+    subZh: 'MEMS IMU',
+    subEn: 'MEMS IMU',
     tagEn: 'MEMS IMU',
     tagZh: 'MEMS IMU',
     nameEn: 'LKF-MSU105 Mini MEMS Integrated Inertial Navigation System',
@@ -535,6 +561,8 @@ export const imus: Product[] = [
   },
   {
     model: 'LKF-MSU203',
+    subZh: 'MEMS IMU',
+    subEn: 'MEMS IMU',
     tagEn: 'MEMS IMU',
     tagZh: 'MEMS IMU',
     nameEn: 'LKF-MSU203 MEMS Inertial Measurement Unit',
@@ -577,6 +605,8 @@ export const imus: Product[] = [
   },
   {
     model: 'LKF-MSU204A',
+    subZh: 'MEMS IMU',
+    subEn: 'MEMS IMU',
     tagEn: 'MEMS IMU',
     tagZh: 'MEMS IMU',
     nameEn: 'LKF-MSU204A MEMS Inertial Measurement Unit',
@@ -600,6 +630,8 @@ export const imus: Product[] = [
   },
   {
     model: 'LKF-MSU204B',
+    subZh: 'MEMS IMU',
+    subEn: 'MEMS IMU',
     tagEn: 'MEMS IMU',
     tagZh: 'MEMS IMU',
     nameEn: 'LKF-MSU204B MEMS Inertial Measurement Unit',
@@ -625,6 +657,8 @@ export const imus: Product[] = [
   },
   {
     model: 'LKF-MSU206',
+    subZh: 'MEMS IMU',
+    subEn: 'MEMS IMU',
     tagEn: 'MEMS IMU',
     tagZh: 'MEMS IMU',
     nameEn: 'LKF-MSU206 MEMS Inertial Measurement Unit',
@@ -672,6 +706,8 @@ export const imus: Product[] = [
   },
   {
     model: 'LKF-MSU300',
+    subZh: 'MEMS IMU',
+    subEn: 'MEMS IMU',
     tagEn: 'MEMS IMU',
     tagZh: 'MEMS IMU',
     nameEn: 'LKF-MSU300 High Precision MEMS Inertial Measurement Unit',
@@ -718,6 +754,8 @@ export const imus: Product[] = [
   },
   {
     model: 'LKF-MSU301',
+    subZh: 'MEMS IMU',
+    subEn: 'MEMS IMU',
     tagEn: 'MEMS IMU',
     tagZh: 'MEMS IMU',
     nameEn: 'LKF-MSU301 MEMS Inertial Measurement Module',
@@ -762,6 +800,8 @@ export const imus: Product[] = [
   },
   {
     model: 'LKF-MSU304D',
+    subZh: 'MEMS IMU',
+    subEn: 'MEMS IMU',
     tagEn: 'MEMS IMU',
     tagZh: 'MEMS IMU',
     nameEn: 'LKF-MSU304D High-Performance MEMS Inertial Measurement Module',
@@ -806,6 +846,8 @@ export const imus: Product[] = [
   },
   {
     model: 'LKF-MSU304',
+    subZh: 'MEMS IMU',
+    subEn: 'MEMS IMU',
     tagEn: 'MEMS IMU',
     tagZh: 'MEMS IMU',
     nameEn: 'LKF-MSU304 High Precision MEMS Inertial Measurement Unit',

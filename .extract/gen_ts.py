@@ -103,6 +103,8 @@ def ts_entry(r):
     lines = [
         "  {",
         f"    model: '{model}',",
+        f"    subZh: '{esc(tag_zh)}',",
+        f"    subEn: '{esc(tag_en)}',",
         f"    tagEn: '{esc(tag_en)}',",
         f"    tagZh: '{esc(tag_zh)}',",
         f"    nameEn: '{name_en}',",

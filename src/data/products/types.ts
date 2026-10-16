@@ -14,6 +14,8 @@ export interface SpecTable {
 
 export interface Product {
   model: string;        // 型号，如 'LKF-FS60'
+  subZh?: string;       // 子系列名（中文，分组用）
+  subEn?: string;       // 子系列名（英文，分组用）
   tagEn: string;        // 分类标签（英文）
   tagZh: string;        // 分类标签（中文）
   nameEn: string;       // 产品名称（英文）

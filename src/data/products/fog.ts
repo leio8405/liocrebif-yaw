@@ -4,6 +4,8 @@ import type { Product } from './types';
 export const fogGyros: Product[] = [
   {
     model: 'LKF-FS120H',
+    subZh: '单轴 FOG',
+    subEn: 'Single-Axis FOG',
     tagEn: 'Single-Axis FOG',
     tagZh: '单轴 FOG',
     nameEn: 'LKF-FS120H Single-Axis Medium-High Precision FOG',
@@ -36,6 +38,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-FS40H1',
+    subZh: '单轴 FOG',
+    subEn: 'Single-Axis FOG',
     tagEn: 'Single-Axis FOG',
     tagZh: '单轴 FOG',
     nameEn: 'LKF-FS40H1 Single-Axis Medium-High Precision Silicon Photonic Gyroscope',
@@ -68,6 +72,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-FS40L1',
+    subZh: '单轴 FOG',
+    subEn: 'Single-Axis FOG',
     tagEn: 'Single-Axis FOG',
     tagZh: '单轴 FOG',
     nameEn: 'LKF-FS40L1 Single-Axis Medium-Low Precision Silicon Photonic Gyroscope',
@@ -97,6 +103,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-FS50X',
+    subZh: '单轴 FOG',
+    subEn: 'Single-Axis FOG',
     tagEn: 'Single-Axis FOG',
     tagZh: '单轴 FOG',
     nameEn: 'LKF-FS50X Single-Axis Medium-Low Precision FOG',
@@ -128,6 +136,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-FS60',
+    subZh: '单轴 FOG',
+    subEn: 'Single-Axis FOG',
     tagEn: 'Single-Axis FOG',
     tagZh: '单轴 FOG',
     nameEn: 'LKF-FS60 Single-Axis Medium-High Precision FOG',
@@ -159,6 +169,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-FS70HA',
+    subZh: '单轴 FOG',
+    subEn: 'Single-Axis FOG',
     tagEn: 'Single-Axis FOG',
     tagZh: '单轴 FOG',
     nameEn: 'LKF-FS70HA Single-Axis Medium-High Precision FOG',
@@ -190,6 +202,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-FS70HB',
+    subZh: '单轴 FOG',
+    subEn: 'Single-Axis FOG',
     tagEn: 'Single-Axis FOG',
     tagZh: '单轴 FOG',
     nameEn: 'LKF-FS70HB SLD Single-Axis Medium-High Precision FOG',
@@ -223,6 +237,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-FS70ZKH',
+    subZh: '单轴 FOG',
+    subEn: 'Single-Axis FOG',
     tagEn: 'Single-Axis FOG',
     tagZh: '单轴 FOG',
     nameEn: 'LKF-FS70ZKH Single-Axis Medium-High Precision FOG',
@@ -254,6 +270,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-FS70ZK',
+    subZh: '单轴 FOG',
+    subEn: 'Single-Axis FOG',
     tagEn: 'Single-Axis FOG',
     tagZh: '单轴 FOG',
     nameEn: 'LKF-FS70ZK Single-Axis Medium-High Precision FOG',
@@ -284,6 +302,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-FS80',
+    subZh: '单轴 FOG',
+    subEn: 'Single-Axis FOG',
     tagEn: 'Single-Axis FOG',
     tagZh: '单轴 FOG',
     nameEn: 'LKF-FS80 Single-Axis Medium-High Precision FOG',
@@ -317,6 +337,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-FS98H',
+    subZh: '单轴 FOG',
+    subEn: 'Single-Axis FOG',
     tagEn: 'Single-Axis FOG',
     tagZh: '单轴 FOG',
     nameEn: 'LKF-FS98H Single-Axis Medium-High Precision FOG',
@@ -348,6 +370,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-F2X64',
+    subZh: '双轴 FOG',
+    subEn: 'Dual-Axis FOG',
     tagEn: 'Dual-Axis FOG',
     tagZh: '双轴 FOG',
     nameEn: 'LKF-F2X64 Dual-Axis Medium-Low Precision FOG',
@@ -378,6 +402,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-F2X70',
+    subZh: '双轴 FOG',
+    subEn: 'Dual-Axis FOG',
     tagEn: 'Dual-Axis FOG',
     tagZh: '双轴 FOG',
     nameEn: 'LKF-F2X70 Dual-Axis Medium Precision FOG',
@@ -410,6 +436,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-F3G20',
+    subZh: '三轴 FOG',
+    subEn: 'Tri-Axis FOG',
     tagEn: 'Tri-Axis FOG',
     tagZh: '三轴 FOG',
     nameEn: 'LKF-F3G20 Three-Axis FOG',
@@ -448,6 +476,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-F3G40S',
+    subZh: '三轴 FOG',
+    subEn: 'Tri-Axis FOG',
     tagEn: 'Tri-Axis FOG',
     tagZh: '三轴 FOG',
     nameEn: 'LKF-F3G40S Three-Axis FOG',
@@ -478,6 +508,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-F3G40',
+    subZh: '三轴 FOG',
+    subEn: 'Tri-Axis FOG',
     tagEn: 'Tri-Axis FOG',
     tagZh: '三轴 FOG',
     nameEn: 'LKF-F3G40 Three-Axis FOG',
@@ -508,6 +540,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-F3G80',
+    subZh: '三轴 FOG',
+    subEn: 'Tri-Axis FOG',
     tagEn: 'Tri-Axis FOG',
     tagZh: '三轴 FOG',
     nameEn: 'LKF-F3G80 Three-Axis FOG',
@@ -548,6 +582,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-F3G90',
+    subZh: '三轴 FOG',
+    subEn: 'Tri-Axis FOG',
     tagEn: 'Tri-Axis FOG',
     tagZh: '三轴 FOG',
     nameEn: 'LKF-F3G90 Three-Axis FOG',
@@ -588,6 +624,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-FT120C',
+    subZh: '三轴 FOG',
+    subEn: 'Tri-Axis FOG',
     tagEn: 'Tri-Axis FOG',
     tagZh: '三轴 FOG',
     nameEn: 'LKF-FT120C Three-Axis FOG',
@@ -628,6 +666,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-FT120H',
+    subZh: '三轴 FOG',
+    subEn: 'Tri-Axis FOG',
     tagEn: 'Tri-Axis FOG',
     tagZh: '三轴 FOG',
     nameEn: 'LKF-FT120H Three-Axis FOG',
@@ -668,6 +708,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-FT60',
+    subZh: '三轴 FOG',
+    subEn: 'Tri-Axis FOG',
     tagEn: 'Tri-Axis FOG',
     tagZh: '三轴 FOG',
     nameEn: 'LKF-FT60 Three-Axis FOG',
@@ -707,6 +749,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-FT70A',
+    subZh: '三轴 FOG',
+    subEn: 'Tri-Axis FOG',
     tagEn: 'Tri-Axis FOG',
     tagZh: '三轴 FOG',
     nameEn: 'LKF-FT70A Three-Axis FOG',
@@ -747,6 +791,8 @@ export const fogGyros: Product[] = [
   },
   {
     model: 'LKF-FT70H',
+    subZh: '三轴 FOG',
+    subEn: 'Tri-Axis FOG',
     tagEn: 'Tri-Axis FOG',
     tagZh: '三轴 FOG',
     nameEn: 'LKF-FT70H Three-Axis FOG',
