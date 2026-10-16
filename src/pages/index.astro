@@ -55,22 +55,22 @@ const heroProducts = [
 ];
 const featured = [
   {
-    href: '/products/lkf-fsi301/',
-    img: '/images/products/LKF-FSI301.png',
-    model: 'LKF-FSI301',
-    title: t('home.featured.fs300.title'),
-    desc: t('home.featured.fs300.desc'),
-    tag: 'INS',
-    meta: `FOG · ${t('home.featured.tag.nav')}`,
+    href: '/products/lkf-fs40h1/',
+    img: '/images/products/LKF-FS40H1.png',
+    model: 'LKF-FS40H1',
+    title: 'Single-Axis Silicon Photonic Gyroscope',
+    desc: 'All-solid-state compact design with strong environmental adaptability, ultra-long lifetime and fully digital RS-422 output.',
+    tag: 'Silicon Photonic',
+    meta: `FOG · MEDIUM-HIGH PRECISION`,
   },
   {
-    href: '/products/lkf-fs60/',
-    img: '/images/products/LKF-FS60.png',
-    model: 'LKF-FS60',
-    title: t('home.featured.fs60.title'),
-    desc: t('home.featured.fs60.desc'),
-    tag: 'Gyroscope',
-    meta: `FOG · ${t('home.featured.tag.midHigh')}`,
+    href: '/products/lkf-msn300/',
+    img: '/images/products/LKF-MSN300.png',
+    model: 'LKF-MSN300',
+    title: 'High-Precision MEMS North Seeker',
+    desc: 'Compact high-performance north finder with -40°C to +120°C full-temp calibration and harsh-environment resistance.',
+    tag: 'North Seeker',
+    meta: `MEMS · NORTH SEEKING`,
   },
   {
     href: '/products/lkf-rh16/',
@@ -79,7 +79,7 @@ const featured = [
     title: t('home.featured.rh16.title'),
     desc: t('home.featured.rh16.desc'),
     tag: 'Fiber Equipment',
-    meta: `Equipment · ${t('home.featured.tag.equip')}`,
+    meta: `EQUIPMENT · MULTIPOLE WINDING`,
   },
 ];
 const industries = [
@@ -135,17 +135,17 @@ const industries = [
                   data-href={p.href}
                   class={`absolute inset-0 transition-opacity duration-500 ${i === 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                 >
-                  <div class="rounded-md bg-black flex items-center justify-center p-3 h-40">
+                  <a href={p.href} class="block rounded-md bg-black flex items-center justify-center p-3 h-40">
                     <img src={p.image} alt={`${p.model} product photo`} class="max-h-full object-contain" loading="lazy" />
-                  </div>
-                  <dl class="pt-4 space-y-2.5 text-[13px]">
+                  </a>
+                  <a href={p.href} class="block pt-4 space-y-2.5 text-[13px]">
                     {p.specs.map(([k, v, accent]) => (
                       <div class="flex items-baseline justify-between gap-4">
                         <dt class="text-graphite-ink uppercase tracking-[0.06em] text-xs shrink-0">{k}</dt>
                         <dd class={`text-right font-medium ${accent ? 'text-accent' : 'text-paper'}`}>{v}</dd>
                       </div>
                     ))}
-                  </dl>
+                  </a>
                   <p class="pt-3 font-mono text-[10px] text-graphite-ink">{p.note}</p>
                 </div>
               ))}

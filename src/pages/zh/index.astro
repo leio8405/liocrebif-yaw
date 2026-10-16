@@ -54,22 +54,22 @@ const heroProducts = [
 ];
 const featured = [
   {
-    href: '/zh/products/lkf-fsi301/',
-    img: '/images/products/LKF-FSI301.png',
-    model: 'LKF-FSI301',
-    title: t('home.featured.fs300.title'),
-    desc: t('home.featured.fs300.desc'),
-    tag: '惯性导航',
-    meta: `FOG · ${t('home.featured.tag.nav')}`,
+    href: '/zh/products/lkf-fs40h1/',
+    img: '/images/products/LKF-FS40H1.png',
+    model: 'LKF-FS40H1',
+    title: '单轴中高精度硅光陀螺',
+    desc: '微型紧凑纯固态设计，环境适应性强，高可靠性超长寿命，全数字 RS-422 输出。',
+    tag: '硅光陀螺',
+    meta: `FOG · 中高精度`,
   },
   {
-    href: '/zh/products/lkf-fs60/',
-    img: '/images/products/LKF-FS60.png',
-    model: 'LKF-FS60',
-    title: t('home.featured.fs60.title'),
-    desc: t('home.featured.fs60.desc'),
-    tag: '陀螺仪',
-    meta: `FOG · ${t('home.featured.tag.midHigh')}`,
+    href: '/zh/products/lkf-msn300/',
+    img: '/images/products/LKF-MSN300.png',
+    model: 'LKF-MSN300',
+    title: '高精度 MEMS 寻北仪',
+    desc: '高性能小体积，-40℃ 到 +120℃ 全温标定补偿，抗恶劣力学环境，支持在线升级。',
+    tag: '寻北仪',
+    meta: `MEMS · 寻北`,
   },
   {
     href: '/zh/products/lkf-rh16/',
@@ -77,8 +77,8 @@ const featured = [
     model: 'LKF-RH16',
     title: t('home.featured.rh16.title'),
     desc: t('home.featured.rh16.desc'),
-    tag: '光纤设备',
-    meta: `Equipment · ${t('home.featured.tag.equip')}`,
+    tag: '缠绕设备',
+    meta: `设备 · 多极缠绕`,
   },
 ];
 const industries = [
@@ -134,17 +134,17 @@ const industries = [
                   data-href={p.href}
                   class={`absolute inset-0 transition-opacity duration-500 ${i === 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                 >
-                  <div class="rounded-md bg-black flex items-center justify-center p-3 h-40">
+                  <a href={p.href} class="block rounded-md bg-black flex items-center justify-center p-3 h-40">
                     <img src={p.image} alt={`${p.model} 产品实物`} class="max-h-full object-contain" loading="lazy" />
-                  </div>
-                  <dl class="pt-4 space-y-2.5 text-[13px]">
+                  </a>
+                  <a href={p.href} class="block pt-4 space-y-2.5 text-[13px]">
                     {p.specs.map(([k, v, accent]) => (
                       <div class="flex items-baseline justify-between gap-4">
                         <dt class="text-graphite-ink tracking-[0.06em] text-xs shrink-0">{k}</dt>
                         <dd class={`text-right font-medium ${accent ? 'text-accent' : 'text-paper'}`}>{v}</dd>
                       </div>
                     ))}
-                  </dl>
+                  </a>
                   <p class="pt-3 font-mono text-[10px] text-graphite-ink">{p.note}</p>
                 </div>
               ))}
