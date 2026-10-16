@@ -6,19 +6,66 @@ import { fogGyros } from '../data/products';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const fs60 = fogGyros.find((p) => p.model === 'LKF-FS60') ?? fogGyros[0];
+
+// Hero spec carousel — 3 flagship products, one per technology platform
+// All specs from official catalog (01/03/04 册); do not invent values
+const heroProducts = [
+  {
+    model: 'LKF-FS60',
+    href: '/products/fog-gyroscopes',
+    image: '/images/products/LKF-FS60.png',
+    caption: 'Single Axis Medium-High Precision FOG',
+    note: '* Grade C spec · Grades A / B available',
+    specs: [
+      ['Bias stability (1σ, 10s)', '≤0.05 °/h', true],
+      ['Angle random walk', '≤0.005 °/√h', false],
+      ['Dynamic range', '±500 °/s', false],
+      ['Settling time', '<10 s', false],
+      ['Operating temp', '-40 ~ +70 °C', false],
+    ],
+  },
+  {
+    model: 'LKF-FSI301',
+    href: '/products/inertial-navigation-systems',
+    image: '/images/products/LKF-FSI301.png',
+    caption: 'Fiber Optical Integrated Navigation System',
+    note: '* Navigation-grade FOG + MEMS accelerometer combo',
+    specs: [
+      ['Gyro bias stability', '≤0.03 °/h', true],
+      ['North seeking (1σ)', '≤0.1 ° secL', false],
+      ['Accelerometer range', '±30 g', false],
+      ['Supply voltage', '18~36 V DC', false],
+      ['Dimensions', '177×132×99 mm', false],
+    ],
+  },
+  {
+    model: 'LKF-MSU105',
+    href: '/products/imu',
+    image: '/images/products/LKF-MSU105.png',
+    caption: 'Micro MEMS Integrated Navigation System',
+    note: '* Full-temperature compensation · 0.5 W low power',
+    specs: [
+      ['Position (1σ)', '3 m / RTK 0.02+1 ppm', true],
+      ['Gyro range', '±300 °/s', false],
+      ['Gyro bias stability', '≤10 °/h', false],
+      ['Power', '0.5 W', false],
+      ['Dimensions', '44.8×38.6×21.5 mm', false],
+    ],
+  },
+];
 const featured = [
   {
     href: '/products/inertial-navigation-systems',
-    img: 'https://cowork-storage-public-cdn.lx.netease.com/lxbg/2024/11/01/9916fd75af594a13b9785080e2784c4c.png',
-    model: 'LKF-FS300',
+    img: '/images/products/LKF-FSI301.png',
+    model: 'LKF-FSI301',
     title: t('home.featured.fs300.title'),
     desc: t('home.featured.fs300.desc'),
     tag: 'INS',
     meta: `FOG · ${t('home.featured.tag.nav')}`,
   },
   {
-    href: '/products/gyroscopes',
-    img: 'https://cowork-storage-public-cdn.lx.netease.com/lxbg/2024/10/30/b17433d3ad3d413380bbdb2ed6a5c43e.png',
+    href: '/products/fog-gyroscopes',
+    img: '/images/products/LKF-FS60.png',
     model: 'LKF-FS60',
     title: t('home.featured.fs60.title'),
     desc: t('home.featured.fs60.desc'),
@@ -27,7 +74,7 @@ const featured = [
   },
   {
     href: '/products/fiber-optic',
-    img: 'https://cowork-storage-public-cdn.lx.netease.com/lxbg/2024/11/01/7c8932c0c3be441e86c1435ed082538f.jpg',
+    img: '/images/products/LKF-RH16.png',
     model: 'LKF-RH16',
     title: t('home.featured.rh16.title'),
     desc: t('home.featured.rh16.desc'),
@@ -72,50 +119,61 @@ const industries = [
         </div>
 
         <div class="lg:col-span-5">
-          <div class="spec-card p-5 sm:p-6">
+          <div class="spec-card p-5 sm:p-6" id="hero-spec">
             <div class="flex items-center gap-1.5 pb-4 border-b border-graphite-line">
               <span class="w-2 h-2 rounded-full bg-graphite-line"></span>
               <span class="w-2 h-2 rounded-full bg-graphite-line"></span>
               <span class="w-2 h-2 rounded-full bg-graphite-line"></span>
-              <span class="ml-3 text-[11px] tracking-[0.08em] text-graphite-ink uppercase">{fs60.model} · Spec</span>
+              <span class="ml-3 text-[11px] tracking-[0.08em] text-graphite-ink uppercase"><span data-model>LKF-FS60</span> · Spec</span>
+              <span class="ml-auto font-mono text-[11px] text-graphite-ink" data-counter>01 / 03</span>
             </div>
-            <div class="mt-4 rounded-md bg-black flex items-center justify-center p-3 h-40">
-              <img src="/images/products/LKF-FS60.png" alt="LKF-FS60 fiber optic gyroscope" class="max-h-full object-contain" loading="lazy" />
+            <div class="relative mt-4 min-h-[380px]" id="hero-slides">
+              {heroProducts.map((p, i) => (
+                <div
+                  data-slide
+                  data-model={p.model}
+                  data-href={p.href}
+                  class={`absolute inset-0 transition-opacity duration-500 ${i === 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                >
+                  <div class="rounded-md bg-black flex items-center justify-center p-3 h-40">
+                    <img src={p.image} alt={`${p.model} product photo`} class="max-h-full object-contain" loading="lazy" />
+                  </div>
+                  <dl class="pt-4 space-y-2.5 text-[13px]">
+                    {p.specs.map(([k, v, accent]) => (
+                      <div class="flex items-baseline justify-between gap-4">
+                        <dt class="text-graphite-ink uppercase tracking-[0.06em] text-xs shrink-0">{k}</dt>
+                        <dd class={`text-right font-medium ${accent ? 'text-accent' : 'text-paper'}`}>{v}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                  <p class="pt-3 font-mono text-[10px] text-graphite-ink">{p.note}</p>
+                </div>
+              ))}
             </div>
-            <dl class="pt-4 space-y-2.5 text-[13px]">
-              <div class="flex items-baseline justify-between gap-4">
-                <dt class="text-graphite-ink uppercase tracking-[0.06em] text-xs shrink-0">Bias stability (1σ, 10s)</dt>
-                <dd class="text-accent text-right font-medium">≤0.05 °/h</dd>
-              </div>
-              <div class="flex items-baseline justify-between gap-4">
-                <dt class="text-graphite-ink uppercase tracking-[0.06em] text-xs shrink-0">Angle random walk</dt>
-                <dd class="text-paper text-right">≤0.005 °/√h</dd>
-              </div>
-              <div class="flex items-baseline justify-between gap-4">
-                <dt class="text-graphite-ink uppercase tracking-[0.06em] text-xs shrink-0">Dynamic range</dt>
-                <dd class="text-paper text-right">±500 °/s</dd>
-              </div>
-              <div class="flex items-baseline justify-between gap-4">
-                <dt class="text-graphite-ink uppercase tracking-[0.06em] text-xs shrink-0">Settling time</dt>
-                <dd class="text-paper text-right">&lt;10 s</dd>
-              </div>
-              <div class="flex items-baseline justify-between gap-4">
-                <dt class="text-graphite-ink uppercase tracking-[0.06em] text-xs shrink-0">Operating temp</dt>
-                <dd class="text-paper text-right">-40 ~ +70 ℃</dd>
-              </div>
-            </dl>
-            <p class="pt-3 font-mono text-[10px] text-graphite-ink">* Grade C spec · Grades A / B available</p>
             <div class="flex items-center justify-between pt-4 mt-4 border-t border-graphite-line">
-              <span class="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-[0.06em] uppercase text-accent">
-                <span class="w-1.5 h-1.5 bg-accent" aria-hidden="true"></span>
-                In production
-              </span>
-              <a href={translatePath('/products/gyroscopes', lang)} class="text-[11px] font-medium tracking-[0.06em] uppercase text-graphite-ink hover:text-paper transition-colors">
+              <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2" role="tablist" aria-label="Featured products">
+                  {heroProducts.map((p, i) => (
+                    <button
+                      data-dot
+                      data-index={i}
+                      aria-label={p.model}
+                      class={`w-2.5 h-2.5 transition-colors ${i === 0 ? 'bg-accent' : 'bg-graphite-line hover:bg-graphite-ink'}`}
+                    ></button>
+                  ))}
+                </div>
+                <span class="ml-2 inline-flex items-center gap-1.5 text-[11px] font-medium tracking-[0.06em] uppercase text-accent">
+                  <span class="w-1.5 h-1.5 bg-accent" aria-hidden="true"></span>
+                  In production
+                </span>
+              </div>
+              <a data-link href={heroProducts[0].href} class="text-[11px] font-medium tracking-[0.06em] uppercase text-graphite-ink hover:text-paper transition-colors">
                 {t('home.featured.details')}
               </a>
             </div>
           </div>
-          <p class="font-mono text-[11px] text-muted mt-3 text-right">{fs60.nameEn}</p>
+          <p class="font-mono text-[11px] text-muted mt-3 text-right" data-caption>{heroProducts[0].caption}</p>
+        </div>
         </div>
       </div>
     </div>
@@ -304,4 +362,51 @@ const industries = [
       </div>
     </div>
   </section>
+
+<script>
+  const heroSpec = document.getElementById('hero-spec');
+  if (heroSpec) {
+    const slides = [...heroSpec.querySelectorAll('[data-slide]')];
+    const dots = [...heroSpec.querySelectorAll('[data-dot]')];
+    const modelEl = heroSpec.querySelector('[data-model]');
+    const counterEl = heroSpec.querySelector('[data-counter]');
+    const linkEl = heroSpec.querySelector('[data-link]');
+    const captionEl = document.querySelector('[data-caption]');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let idx = 0;
+    let timer = null;
+
+    function go(i) {
+      idx = (i + slides.length) % slides.length;
+      slides.forEach((s, n) => {
+        s.classList.toggle('opacity-100', n === idx);
+        s.classList.toggle('opacity-0', n !== idx);
+        s.classList.toggle('pointer-events-none', n !== idx);
+      });
+      dots.forEach((d, n) => {
+        d.classList.toggle('bg-accent', n === idx);
+        d.classList.toggle('bg-graphite-line', n !== idx);
+      });
+      const cur = slides[idx];
+      const model = cur.dataset.model || '';
+      const no = String(idx + 1).padStart(2, '0');
+      if (modelEl) modelEl.textContent = model.replace('LKF-', '');
+      if (counterEl) counterEl.textContent = no + ' / ' + String(slides.length).padStart(2, '0');
+      if (linkEl && cur.dataset.href) linkEl.href = cur.dataset.href;
+      if (captionEl && cur.querySelector('img')) captionEl.textContent = cur.querySelector('img').alt.replace(' product photo', '');
+    }
+
+    function startAuto() {
+      if (reduced || timer) return;
+      timer = setInterval(() => go(idx + 1), 6000);
+    }
+    function stopAuto() {
+      if (timer) { clearInterval(timer); timer = null; }
+    }
+
+    dots.forEach((d, n) => d.addEventListener('click', () => { stopAuto(); go(n); startAuto(); }));
+    go(0);
+    startAuto();
+  }
+</script>
 </BaseLayout>
