@@ -21,6 +21,29 @@ const detailPath = `/products/${product.model.toLowerCase()}/`;
 
 // 同分类其他产品（最多 4 个）
 const related = category.products.filter((p) => p.model !== product.model).slice(0, 4);
+
+const detailURL = new URL(Astro.url.pathname, Astro.site).href;
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: product.nameEn,
+  sku: product.model,
+  mpn: product.model,
+  description: product.descEn || product.nameEn,
+  image: product.image ? new URL(product.image, Astro.site).href : undefined,
+  category: category.titleEn,
+  brand: { '@type': 'Brand', name: 'Liocrebif' },
+  manufacturer: { '@type': 'Organization', name: 'Wuhan Liocrebif Technology Co., Ltd' },
+};
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Products', item: 'https://www.liocrebif-yaw.top/products/' },
+    { '@type': 'ListItem', position: 2, name: category.titleEn, item: `https://www.liocrebif-yaw.top/products/${category.slug}/` },
+    { '@type': 'ListItem', position: 3, name: product.model, item: detailURL },
+  ],
+};
 ---
 
 <BaseLayout
@@ -133,4 +156,7 @@ const related = category.products.filter((p) => p.model !== product.model).slice
       </div>
     </div>
   </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 </BaseLayout>
