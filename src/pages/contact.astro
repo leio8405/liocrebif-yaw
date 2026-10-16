@@ -4,6 +4,40 @@ import { getLangFromUrl, useTranslations, translatePath } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+// FAQ — 全部为站内既有事实（定制能力/24h 响应/30+ 国/B2B 定位）
+const faq = [
+  {
+    q: 'Do you support OEM / ODM customization?',
+    a: 'Yes. We manufacture fiber optic coils, gyroscope cores and inertial measurement units in-house at our own 13,300 m² optoelectronic industrial park, and support customization for volume orders.',
+  },
+  {
+    q: 'How quickly will I get a reply?',
+    a: 'All inquiries are answered within 24 hours by our sales and engineering team.',
+  },
+  {
+    q: 'Do you ship internationally?',
+    a: 'Yes. Our navigation and sensing products serve customers in more than 30 countries across aerospace, defense and industrial sectors.',
+  },
+  {
+    q: 'Can I request a datasheet before ordering?',
+    a: 'Yes. Use the inquiry form above or email us directly — the datasheet is typically sent with our first reply.',
+  },
+  {
+    q: 'Do you sell to end users or only to businesses?',
+    a: 'We are a B2B manufacturer. Our clients are system integrators and enterprises in aerospace, defense, marine, surveying and industrial fields.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
 ---
 
 <BaseLayout
@@ -19,7 +53,10 @@ const t = useTranslations(lang);
     </div>
   </section>
 
-  <section class="container-page py-14 sm:py-20">
+  
+
+
+<section class="container-page py-14 sm:py-20">
     <div class="grid lg:grid-cols-5 gap-12">
       <!-- Inquiry Form -->
       <div class="lg:col-span-3">
@@ -166,6 +203,23 @@ const t = useTranslations(lang);
       </div>
     </div>
   </section>
+
+  <!-- FAQ -->
+  <section class="border-t border-rule">
+    <div class="container-page py-14 sm:py-16">
+      <h2 class="font-display font-semibold tracking-tight text-ink text-2xl mb-8">Frequently Asked Questions</h2>
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-6 max-w-4xl">
+        {faq.map((f) => (
+          <div class="border-b border-rule pb-5">
+            <h3 class="text-ink font-medium text-[15px]">{f.q}</h3>
+            <p class="text-muted text-sm mt-2 leading-relaxed">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </BaseLayout>
 
 <script>

@@ -4,6 +4,40 @@ import { getLangFromUrl, useTranslations, translatePath } from '../../i18n/utils
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+// FAQ — 全部为站内既有事实
+const faq = [
+  {
+    q: '是否支持 OEM / ODM 定制？',
+    a: '支持。我们在自有 13,300㎡ 光电产业园内自主制造光纤环、陀螺核心与惯性测量单元，可为批量订单提供定制。',
+  },
+  {
+    q: '询盘后多久能收到回复？',
+    a: '所有询盘由我们的销售与工程团队在 24 小时内回复。',
+  },
+  {
+    q: '是否支持国际发货？',
+    a: '支持。我们的导航与传感产品已服务全球 30 多个国家的航空航天、国防与工业领域客户。',
+  },
+  {
+    q: '下单前能否先索取资料？',
+    a: '可以。通过上方询盘表单或直接邮件联系我们，资料通常会随首次回复一并发送。',
+  },
+  {
+    q: '面向个人用户还是企业客户？',
+    a: '我们是 B2B 制造商，客户为航空航天、国防、航海、测绘与工业领域的系统集成商和企业。',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
 ---
 
 <BaseLayout
@@ -19,7 +53,13 @@ const t = useTranslations(lang);
     </div>
   </section>
 
-  <section class="container-page py-14 sm:py-20">
+  
+
+
+
+
+
+<section class="container-page py-14 sm:py-20">
     <div class="grid lg:grid-cols-5 gap-12">
       <!-- Inquiry Form -->
       <div class="lg:col-span-3">
@@ -166,6 +206,40 @@ const t = useTranslations(lang);
       </div>
     </div>
   </section>
+
+  <!-- FAQ -->
+  <section class="border-t border-rule">
+    <div class="container-page py-14 sm:py-16">
+      <h2 class="font-display font-semibold tracking-tight text-ink text-2xl mb-8">常见问题</h2>
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-6 max-w-4xl">
+        {faq.map((f) => (
+          <div class="border-b border-rule pb-5">
+            <h3 class="text-ink font-medium text-[15px]">{f.q}</h3>
+            <p class="text-muted text-sm mt-2 leading-relaxed">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- FAQ -->
+  <section class="border-t border-rule">
+    <div class="container-page py-14 sm:py-16">
+      <h2 class="font-display font-semibold tracking-tight text-ink text-2xl mb-8">常见问题</h2>
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-6 max-w-4xl">
+        {faq.map((f) => (
+          <div class="border-b border-rule pb-5">
+            <h3 class="text-ink font-medium text-[15px]">{f.q}</h3>
+            <p class="text-muted text-sm mt-2 leading-relaxed">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </BaseLayout>
 
 <script>
