@@ -1198,7 +1198,7 @@ export const devices: Product[] = [
     descZh: 'UV500 绕环胶 UV500 是光纤环绕制工序专用的固化胶粘剂，核心作用是均匀分布于环体，固定绕制成型的光纤，使其保持既定的绕制状态，同时防止光纤脱皮、断裂。 该产品粘度适中，与光纤浸润性好，易于涂覆和灌封施工；固化后工作温度范围宽，可适配长周期的光纤绕制作业。 UV100 尾纤胶 UV100 是紫外光固化硅橡胶胶粘剂，通过硅氧烷在紫外光照射下发生加成交联反应实现固化，主要作为光纤缓冲层使用，可消除外部机械力损伤与温度变化带来的附加应力，对光纤起到保护作用。 产品光交联灵敏性高，固化后胶体均匀柔软、内应力低，在工作温度区间内保持低模量特性；同时吸水率低、低温性能优异，可有效降低低温环境下的光纤附加损耗，存储和使用过程对人体无害，固化条件可根据实际需求调整。 H01 光纤环与基底粘接胶 H01 是一款双组份环氧胶黏剂，主要用于光纤环与金属基材的粘接固定。 产品按固定质量比混合使用，混合后粘度低，与光纤环及各类器件浸润性好，可操作时间长，支持中温快速固化。固化后粘接强度高、韧性好，耐高低温冲击、耐湿热性能优异，可在较宽温度范围内长期使用，常温下密封储存周期较长。 独特技术 UV500绕环胶: 25°C典型数据 粘度(mPa.s) 操作时间(h) 模量(MPa) 强度(MPa) 伸长率(%) UV100尾纤胶:',
     appsEn: ['Fiber Coils'],
     appsZh: ['光纤环'],
-    image: '/images/products/LKF-F.png',
+    image: '/images/products/LKF-FiberPreform.png',
   },
   {
     model: 'LKF-Fiber Preform',
@@ -1211,6 +1211,6 @@ export const devices: Product[] = [
     descEn: 'Unique Technology Parameter Custom Boron Doping Conc. (mol) Boron Zone Dia. (mm) Boron Zone Ovality (%) Preform OD (mm) Preform Length (mm) Cladding Material Pure silica Structure Diagram Customization Information Cladding grinding available; other boron diameters or doping concentrations customizable',
     appsEn: ['PM Fiber Manufacturing'],
     appsZh: ['保偏光纤制造'],
-    image: '/images/products/LKF-F.png',
+    image: '/images/products/LKF-FiberPreform.png',
   },
 ];
