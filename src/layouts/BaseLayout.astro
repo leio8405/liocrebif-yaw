@@ -110,6 +110,7 @@ const orgSchema = {
             </div>
           </div>
         </div>
+        <a href={translatePath('/resources', lang)} class={isActive('/resources') ? 'nav-link nav-link-active' : 'nav-link'}>{isZh ? '洞察' : 'Insights'}</a>
         <a href={translatePath('/about', lang)} class={isActive('/about') ? 'nav-link nav-link-active' : 'nav-link'}>{t('nav.about')}</a>
         <a href={translatePath('/contact', lang)} class={isActive('/contact') ? 'nav-link nav-link-active' : 'nav-link'}>{t('nav.contact')}</a>
       </div>
@@ -142,6 +143,7 @@ const orgSchema = {
         <a href={translatePath('/products/imu', lang)} class="block pl-6 pr-3 py-2 text-sm text-muted hover:text-ink transition-colors">↳ {isZh ? 'IMU 与寻北仪' : 'IMU & North Seekers'}</a>
         <a href={translatePath('/products/accelerometers', lang)} class="block pl-6 pr-3 py-2 text-sm text-muted hover:text-ink transition-colors">↳ {isZh ? '加速度计' : 'Accelerometers'}</a>
         <a href={translatePath('/products/fiber-optic', lang)} class="block pl-6 pr-3 py-2 text-sm text-muted hover:text-ink transition-colors">↳ {isZh ? '光纤器件与设备' : 'Fiber Devices & Equipment'}</a>
+        <a href={translatePath('/resources', lang)} class={isActive('/resources') ? 'block px-3 py-2.5 font-mono text-xs uppercase tracking-wide text-ink bg-paper-2 rounded-md' : 'block px-3 py-2.5 font-mono text-xs uppercase tracking-wide text-muted hover:text-ink hover:bg-paper-2 rounded-md transition-colors'}>{isZh ? '洞察' : 'Insights'}</a>
         <a href={translatePath('/about', lang)} class={isActive('/about') ? 'block px-3 py-2.5 font-mono text-xs uppercase tracking-wide text-ink bg-paper-2 rounded-md' : 'block px-3 py-2.5 font-mono text-xs uppercase tracking-wide text-muted hover:text-ink hover:bg-paper-2 rounded-md transition-colors'}>{t('nav.about')}</a>
         <a href={translatePath('/contact', lang)} class={isActive('/contact') ? 'block px-3 py-2.5 font-mono text-xs uppercase tracking-wide text-ink bg-paper-2 rounded-md' : 'block px-3 py-2.5 font-mono text-xs uppercase tracking-wide text-muted hover:text-ink hover:bg-paper-2 rounded-md transition-colors'}>{t('nav.contact')}</a>
         <div class="pt-3 mt-2 border-t border-rule flex items-center justify-between">
@@ -176,6 +178,7 @@ const orgSchema = {
         </div>
         <nav class="flex flex-wrap items-center gap-x-6 gap-y-2" aria-label="Footer">
           <a href={translatePath('/products', lang)} class="footer-link">{t('nav.products')}</a>
+          <a href={translatePath('/resources', lang)} class="footer-link">{isZh ? '洞察' : 'Insights'}</a>
           <a href={translatePath('/products/inertial-navigation-systems', lang)} class="footer-link">{t('nav.ins')}</a>
           <a href={translatePath('/products/fog-gyroscopes', lang)} class="footer-link">{t('nav.gyroscopes')}</a>
           <a href={translatePath('/products/fiber-optic', lang)} class="footer-link">{t('nav.fiberOptic')}</a>
