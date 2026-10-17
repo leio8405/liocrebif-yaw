@@ -37,6 +37,89 @@ export interface ResourceArticle {
 
 export const resources: ResourceArticle[] = [
   {
+    slug: 'tactical-vs-navigation-grade-imu',
+    title: 'Tactical vs Navigation-Grade IMU: What the Spec Numbers Mean',
+    description:
+      'Gyro bias stability is the single number that separates tactical-grade from navigation-grade IMUs. How to read the datasheet figures, and how to work backward from a drift budget to the right accuracy class.',
+    date: '2026-10-17',
+    readingTime: 6,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'One number draws the line',
+        html: `<p>When engineers compare inertial sensors, the conversation quickly reaches for shorthand: <strong>tactical grade IMU</strong> or <strong>navigation grade IMU</strong>. The line between the two <strong>IMU accuracy classes</strong> is drawn by a single datasheet figure — gyro bias stability, quoted in degrees per hour. A tactical-grade device drifts at roughly 1–10 °/h; a navigation-grade device drifts at 0.01–0.1 °/h. That order-of-magnitude gap decides which platforms each class can serve, and it is the first number to check. This guide explains what the classes actually mean, why bias stability dominates the error budget, and how to work backward from your mission's drift tolerance to the right class of sensor.</p>`,
+      },
+      {
+        h2: 'What separates the two classes',
+        html: `<p>Bias stability is not the only difference, but it drives most of the others. A navigation-grade gyro needs a long, precisely wound fiber coil and low-noise optics; a tactical-grade gyro can be a microscopic silicon structure etched by the thousands on a wafer. Everything in the table below follows from that choice of sensing technology:</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Parameter</th>
+      <th class="py-2 pr-4 font-semibold">Tactical-Grade IMU</th>
+      <th class="py-2 pr-4 font-semibold">Navigation-Grade IMU</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Gyro bias stability</td><td class="py-2 pr-4">1–10 °/h</td><td class="py-2 pr-4">0.01–0.1 °/h</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Typical technology</td><td class="py-2 pr-4">MEMS vibrating gyro</td><td class="py-2 pr-4">Fiber optic gyroscope (FOG)</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Angle random walk</td><td class="py-2 pr-4">0.1–0.5 °/√h</td><td class="py-2 pr-4">0.005–0.02 °/√h</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Typical weight</td><td class="py-2 pr-4">Tens of grams</td><td class="py-2 pr-4">150 g – 3.5 kg</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Power</td><td class="py-2 pr-4">0.5–1.5 W</td><td class="py-2 pr-4">2–10 W</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Shock survival</td><td class="py-2 pr-4">500–1,000 g+</td><td class="py-2 pr-4">Moderate</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Typical platforms</td><td class="py-2 pr-4">Small UAVs, gimbals, munitions</td><td class="py-2 pr-4">Marine INS, long-endurance UAV, GNSS-denied military</td></tr>
+  </tbody>
+</table>`,
+      },
+      {
+        h2: 'Why bias stability dominates the error budget',
+        html: `<p>In a pure-inertial solution, the navigation filter integrates gyro output twice to produce attitude and position. Any residual bias — the constant offset left after the gyro's own noise is averaged out — is integrated along with the real rotation. The consequence is simple and unforgiving: <strong>attitude error grows linearly with time multiplied by bias</strong>.</p>
+<p>A gyro with 10 °/h of bias stability that runs unaided for one minute can accumulate up to about 0.17° of attitude error; after ten minutes, 1.7°. A 0.03 °/h FOG running for a full hour accumulates just 0.03°. As the unaided interval stretches from minutes to hours, the two classes stop being comparable — which is why bias stability, not range or bandwidth, is the figure that defines the class.</p>`,
+      },
+      {
+        h2: 'Which class fits which platform',
+        html: `<ul class="list-disc pl-5 space-y-2">
+<li><strong>Small multirotors and delivery drones.</strong> Continuous GNSS, short missions — a tactical MEMS IMU is the right class, and every gram counts.</li>
+<li><strong>Electro-optical gimbals and SatCom-on-the-Move.</strong> Stabilization needs low noise and fast response more than long-term drift performance; tactical MEMS, or a single medium-precision FOG on the critical axis.</li>
+<li><strong>Medium and long-endurance fixed-wing UAVs.</strong> Long sorties with periodic GNSS loss call for a FOG-based INS.</li>
+<li><strong>Marine vessels and security platforms.</strong> Hours of operation, jamming assumed — navigation-grade FOG INS is the baseline.</li>
+</ul>`,
+      },
+      {
+        h2: 'Working backward from a drift budget',
+        html: `<p>The practical selection method runs in the opposite direction: estimate what your mission can tolerate, then pick the class that stays inside it. Three questions do the job:</p>
+<p><strong>1. How long can you run without GNSS?</strong> Multiply the longest expected unaided interval by the candidate's bias stability to get worst-case attitude drift. If a 10 °/h tactical device exceeds your budget in five minutes, you are shopping for FOG.</p>
+<p><strong>2. How much SWaP can you spend?</strong> A micro MEMS unit like the <a href="/products/lkf-msu105/" class="text-blue-700 underline">LKF-MSU105</a> — ≤10 °/h bias stability, ≤0.5 W, 41.5 × 35.5 × 9.5 mm — fits a hand-launched UAV; with RTK corrections it holds 0.02 m + 1 ppm positioning. A FOG-based unit needs grams and watts the platform may not have.</p>
+<p><strong>3. Does one axis carry the requirement?</strong> A single-axis FOG like the <a href="/products/lkf-fs60/" class="text-blue-700 underline">LKF-FS60</a> (bias stability grades from ≤0.20 down to ≤0.05 °/h at 1σ, 150 g) can upgrade the critical axis of an otherwise MEMS system at a fraction of a full FOG IMU's cost.</p>
+<p>When the budget demands hours of unaided navigation, a FOG INS such as the <a href="/products/lkf-fsi301/" class="text-blue-700 underline">LKF-FSI301</a> — ≤0.03 °/h bias stability with ≤0.1° secL self north-seeking — is the class that closes the mission.</p>`,
+      },
+      {
+        h2: 'From class to part number',
+        html: `<p>Accuracy classes are a language, not a shopping list. Once you know which class your drift budget points to, the remaining datasheet lines — random walk, scale factor, vibration, temperature — narrow the field within that class. If you are mapping a requirement to a specific sensor, our <a href="/products/imu/" class="text-blue-700 underline">IMU and north seeker lineup</a> covers both classes, from 41.5 g-class MEMS units to 0.03 °/h FOG navigation systems, and our engineers can review a drift budget against your platform profile before you commit.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Can a MEMS IMU be navigation-grade?',
+        a: 'Not in the strict sense. The best current MEMS devices reach tactical-class bias stability with excellent Allan bias instability, but their pure-inertial drift over hours remains far beyond what a navigation-grade FOG achieves. With continuous RTK-aided GNSS, however, a tactical MEMS IMU delivers navigation-quality position — the class distinction applies to unaided performance.',
+      },
+      {
+        q: 'Does the accuracy class still matter if GNSS is always available?',
+        a: 'For position, less so — GNSS corrections dominate. It still matters for attitude during outages: jamming, tunnels, foliage and urban canyons all interrupt satellites, and the higher the IMU class, the longer the solution stays trustworthy through the gap.',
+      },
+      {
+        q: 'Which datasheet lines should I actually compare?',
+        a: 'Start with gyro bias stability (note the smoothing interval and sigma convention — many datasheets quote 1σ over a 10 s average), then Allan bias instability, angle random walk, and the test conditions behind the numbers — full-temperature figures tell you more about field behavior than room-temperature ones.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-MSU105', href: '/products/lkf-msu105/', caption: 'Micro MEMS integrated navigation system' },
+      { model: 'LKF-FS60', href: '/products/lkf-fs60/', caption: 'Single-axis medium-high precision FOG' },
+      { model: 'LKF-FSI301', href: '/products/lkf-fsi301/', caption: 'Fiber optical integrated navigation system' },
+    ],
+    relatedCategory: { name: 'IMU & North Seekers', href: '/products/imu/' },
+  },
+  {
     slug: 'fog-vs-mems-imu',
     title: 'FOG vs MEMS IMU: How to Choose the Right Inertial Sensor',
     description:

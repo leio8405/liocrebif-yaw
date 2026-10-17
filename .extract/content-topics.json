@@ -5,7 +5,7 @@
     {"id": 2, "slug": "how-fiber-optic-gyroscope-works", "used": true, "published": "2026-10-16"},
     {"id": 3, "slug": "north-seeker-vs-gnss-heading", "used": true, "published": "2026-10-16"},
     {
-      "id": 4, "slug": "tactical-vs-navigation-grade-imu", "used": false,
+      "id": 4, "slug": "tactical-vs-navigation-grade-imu", "used": true, "published": "2026-10-17",
       "title": "Tactical vs Navigation-Grade IMU: What the Spec Numbers Mean",
       "targetKeywords": "tactical grade imu, navigation grade imu, imu accuracy classes",
       "outline": "解释 IMU 精度分档逻辑：以零偏稳定性为主轴（战术级 ~1-10 °/h vs 导航级 ~0.01-0.1 °/h），讲清各档位对应的应用平台（无人机/吊舱/舰船/导弹），给出按任务漂移预算反推精度档位的方法。内链：fog-gyroscopes 分类、imu 分类、LKF-MSU105 与 LKF-FS60 详情页。",
