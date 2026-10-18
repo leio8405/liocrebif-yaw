@@ -37,6 +37,99 @@ export interface ResourceArticle {
 
 export const resources: ResourceArticle[] = [
   {
+    slug: 'what-is-angle-random-walk',
+    title: 'What Is Angle Random Walk (ARW) in IMU Datasheets?',
+    description:
+      'Angle random walk (ARW) in degrees per root-hour is the white-noise figure on every IMU datasheet. What the unit means, how it differs from bias stability, and how each drives navigation error on different timescales.',
+    date: '2026-10-18',
+    readingTime: 6,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'The noise number that sets your short-term precision',
+        html: `<p>On any IMU or gyroscope datasheet, <strong>angle random walk</strong> (ARW) is usually the second number after bias stability — and the most frequently misread one. Quoted in degrees per root-hour (°/√h), it describes the pure white noise at the gyro output: the error that remains no matter how carefully the sensor is calibrated. This guide explains what the ARW unit actually means, how <strong>angle random walk</strong> relates to gyro bias stability, how each one drives navigation error on a different timescale, and how to read the ARW row on a real spec table — using the three accuracy grades of a production FOG as a worked example.</p>`,
+      },
+      {
+        h2: 'What degrees per root-hour actually means',
+        html: `<p>ARW is the angular-error equivalent of white noise. If the gyro output noise were perfectly white — uncorrelated from sample to sample — then averaging reduces it in a very specific way: the standard deviation of the accumulated angle error grows with the <strong>square root of time</strong>, not linearly:</p>
+<p><strong>σ(t) = ARW × √t</strong> (t in hours)</p>
+<p>That square root is where the odd unit comes from, and it has two practical consequences:</p>
+<ul class="list-disc pl-5 space-y-2">
+<li><strong>Averaging pays diminishing returns.</strong> Doubling the averaging time improves the noise-limited angle by a factor of √2 (about 41%), not 2×.</li>
+<li><strong>Short-time behavior is noise-dominated.</strong> Over one second, a 0.005 °/√h gyro contributes roughly 0.005/60 ≈ 0.0001° of noise-induced angle uncertainty — small in isolation, but exactly what an alignment filter has to average out before the navigation solution converges.</li>
+</ul>`,
+      },
+      {
+        h2: 'ARW vs bias stability: two different limits',
+        html: `<p>ARW and bias stability are often confused because both are quoted in "degrees, hours" units. They describe physically different error processes, and each dominates on a different timescale:</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Parameter</th>
+      <th class="py-2 pr-4 font-semibold">Angle Random Walk</th>
+      <th class="py-2 pr-4 font-semibold">Bias Stability</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Physical origin</td><td class="py-2 pr-4">White noise at the sensor output</td><td class="py-2 pr-4">Slowly varying residual offset</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Units</td><td class="py-2 pr-4">°/√h</td><td class="py-2 pr-4">°/h</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Attitude error growth</td><td class="py-2 pr-4">Proportional to √t</td><td class="py-2 pr-4">Proportional to t</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">On the Allan curve</td><td class="py-2 pr-4">The −1/2 slope region</td><td class="py-2 pr-4">The flat minimum</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Dominates</td><td class="py-2 pr-4">Short smoothing, alignment convergence, attitude jitter</td><td class="py-2 pr-4">Long unaided navigation drift</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Derivable from the other</td><td class="py-2 pr-4">No — independent processes</td><td class="py-2 pr-4">No</td></tr>
+  </tbody>
+</table>`,
+      },
+      {
+        h2: 'Where ARW lives on the Allan deviation curve',
+        html: `<p>The Allan deviation plot of a stationary gyro output shows both numbers at once. At short cluster times the curve falls with a −1/2 slope: read the value of that sloped line at t = 1 s and you have the ARW. As cluster time grows, the curve flattens and reaches a minimum — that minimum is the bias instability, and the datasheet "bias stability" figure (typically 1σ over a 10 s or 100 s smoothing interval) is taken near the bottom of the curve.</p>
+<p>This is also why the two numbers cannot be converted into each other: they are two regions of one error curve, shaped by different physical processes — detector and photon noise on one side, slow drift of the electronics and optical path on the other.</p>`,
+      },
+      {
+        h2: 'How ARW drives error in your system',
+        html: `<p>Because the two error terms grow at different rates, which one matters depends on your timescale. A useful rule: <strong>bias error (B × t) equals random-walk error (N × √t) at t = (N/B)² hours</strong> — before that crossover ARW dominates, after it bias does.</p>
+<p>Worked example with datasheet values. The <a href="/products/lkf-fs60/" class="text-blue-700 underline">LKF-FS60 single-axis FOG</a> ships in three accuracy grades — ARW ≤0.02 / ≤0.01 / ≤0.005 °/√h against bias stability ≤0.20 / ≤0.10 / ≤0.05 °/h (1σ, 10 s). For the highest grade:</p>
+<ul class="list-disc pl-5 space-y-2">
+<li><strong>At 1 second:</strong> noise contributes roughly 0.0001° of angle uncertainty — what the navigation filter averages through during initial alignment.</li>
+<li><strong>At 1 hour unaided:</strong> the random-walk term contributes only ≤0.005°, while bias contributes up to ≤0.05° — bias is now the dominant error by an order of magnitude.</li>
+<li><strong>Crossover:</strong> (N/B)² = (0.005/0.05)² = 0.01 h ≈ 36 s. Beyond about half a minute, improving bias helps the mission more than improving ARW.</li>
+</ul>
+<p>For gimbal and antenna stabilization the picture flips: the platform never integrates for minutes, so the <strong>short-term noise</strong> is what appears as line-of-sight jitter — and a lower-ARW grade is worth the premium even at equal bias.</p>`,
+      },
+      {
+        h2: 'How to read the ARW row on a datasheet',
+        html: `<ul class="list-disc pl-5 space-y-2">
+<li><strong>Check the unit as printed.</strong> °/√h and °/√hr are the same quantity; a plain °/h in an ARW row is a typo and changes the number's meaning entirely.</li>
+<li><strong>Read grade columns together.</strong> One model family usually spans several grades. On the FS60 table, ARW and bias stability scale together across grades — if a datasheet pairs a very low ARW with a poor bias (or the reverse) with no explanation, ask for the Allan plot.</li>
+<li><strong>Note the test conditions.</strong> ARW is conventionally a room-temperature figure on a stable mount; vibration converts directly into extra noise, so a vibrating platform can easily see several times the datasheet ARW.</li>
+<li><strong>Match the number to the job.</strong> For GNSS-aided navigation with long outages, bias stability sets the drift budget. For alignment speed, attitude hold and stabilization loops, ARW sets the noise floor. Compare both against the mission, not just the headline grade.</li>
+</ul>`,
+      },
+      {
+        h2: 'Choosing a gyro by its noise numbers',
+        html: `<p>ARW tells you how quiet the sensor is; bias stability tells you how far it drifts. Reading them as one curve — noise at short times, drift at long times — turns two cryptic datasheet rows into a concrete error budget for your platform. If you are comparing grades for a stabilization or navigation task, the <a href="/products/lkf-fs60/" class="text-blue-700 underline">LKF-FS60 FOG series</a> documents ARW and bias stability side by side for all three grades, and our <a href="/products/imu/" class="text-blue-700 underline">IMU and north seeker lineup</a> covers the range from tactical MEMS to navigation-grade FOG. Share your error budget and platform profile, and our engineers will help match the grade to the mission.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Why is angle random walk quoted per root-hour instead of per hour?',
+        a: 'Because the error it describes grows with the square root of time, not linearly. Averaging an angle random walk of N °/√h over t hours leaves N × √t degrees of uncertainty. The √h in the unit encodes that growth law, so the noise contribution at any averaging time can be computed directly.',
+      },
+      {
+        q: 'Can I convert ARW to bias stability (or the other way)?',
+        a: 'No. They characterize different, independent error processes: white noise versus slowly varying offset. Two gyros can share the same ARW and differ by an order of magnitude in bias stability. Both appear on the same Allan deviation curve, but in different regions of it.',
+      },
+      {
+        q: 'What ARW value is good enough for my application?',
+        a: 'Start from the shortest decision time your system cares about. Stabilization loops and alignment filters operate on the noise floor and reward low ARW directly. For long GNSS-denied navigation, bias stability dominates the drift budget and ARW matters mainly for how fast the solution converges after startup.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-FS60', href: '/products/lkf-fs60/', caption: 'Single-axis medium-high precision FOG' },
+    ],
+    relatedCategory: { name: 'IMU & North Seekers', href: '/products/imu/' },
+  },
+  {
     slug: 'tactical-vs-navigation-grade-imu',
     title: 'Tactical vs Navigation-Grade IMU: What the Spec Numbers Mean',
     description:

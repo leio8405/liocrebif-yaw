@@ -13,7 +13,7 @@
       "relatedCategory": "imu"
     },
     {
-      "id": 5, "slug": "what-is-angle-random-walk", "used": false,
+      "id": 5, "slug": "what-is-angle-random-walk", "used": true, "published": "2026-10-18",
       "title": "What Is Angle Random Walk (ARW) in IMU Datasheets?",
       "targetKeywords": "angle random walk, arw imu, arw deg/hr",
       "outline": "ARW 定义（°/√h）、与零偏稳定性的关系（Allan 方差曲线的斜率段）、对导航误差增长的长期影响、读表方法。内链：imu 分类、LKF-FS60 详情页。",
