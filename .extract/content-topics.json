@@ -21,7 +21,7 @@
       "relatedCategory": "imu"
     },
     {
-      "id": 6, "slug": "gnss-denied-navigation-solutions", "used": false,
+      "id": 6, "slug": "gnss-denied-navigation-solutions", "used": true, "published": "2026-10-19",
       "title": "GNSS-Denied Navigation: 5 Approaches Compared",
       "targetKeywords": "gnss denied navigation, navigation without gps, gps jamming navigation",
       "outline": "五种 GNSS 拒止方案对比：纯惯导（FOG）/寻北仪+惯导/地形匹配/视觉/磁导航，各自适用时长与环境，指出惯导是拒止环境的骨干。内链：inertial-navigation-systems 分类、LKF-FSI301、LKF-MSN300。",

@@ -37,6 +37,95 @@ export interface ResourceArticle {
 
 export const resources: ResourceArticle[] = [
   {
+    slug: 'gnss-denied-navigation-solutions',
+    title: 'GNSS-Denied Navigation: 5 Approaches Compared',
+    description:
+      'When GNSS is jammed, spoofed or simply unavailable, five navigation approaches keep a platform on track. How pure inertial navigation, gyroscopic north finding, terrain-referenced, visual and magnetic navigation compare — and how to architect around an outage.',
+    date: '2026-10-19',
+    readingTime: 6,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'Why GNSS-denied navigation is now a design requirement',
+        html: `<p>Satellite positioning has stopped being something you can assume. Receivers are jammed around conflict zones, spoofed in contested airspace, and simply unreachable underground, underwater, indoors and between tall buildings. <strong>GNSS-denied navigation</strong> — keeping a valid position, velocity and attitude solution when satellites are unavailable or unreliable — has moved from a military niche to a standard requirement for UAVs, ground vehicles, marine platforms and drilling tools. This guide compares the five main ways to achieve <strong>navigation without GPS</strong>: pure inertial navigation, gyroscopic north finding, terrain-referenced navigation, visual navigation and magnetic navigation, and shows where each one earns its place.</p>`,
+      },
+      {
+        h2: 'The five approaches at a glance',
+        html: `<p>No single source solves every outage. In practice a resilient architecture layers several of them, with inertial sensors at the core. The table below summarizes what each approach contributes:</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Approach</th>
+      <th class="py-2 pr-4 font-semibold">What it provides</th>
+      <th class="py-2 pr-4 font-semibold">External dependencies</th>
+      <th class="py-2 pr-4 font-semibold">Typical fit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Pure inertial (FOG/MEMS INS)</td><td class="py-2 pr-4">Continuous position, velocity and attitude by dead reckoning</td><td class="py-2 pr-4">None — fully self-contained, jam-immune</td><td class="py-2 pr-4">UAVs, vehicles, vessels, drilling tools</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Gyroscopic north finding</td><td class="py-2 pr-4">True heading from Earth rotation</td><td class="py-2 pr-4">None — passive measurement of Earth&#39;s spin</td><td class="py-2 pr-4">Pre-mission alignment, downhole and mining orientation</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Terrain-referenced navigation</td><td class="py-2 pr-4">Position updates by matching altitude profiles to a terrain database</td><td class="py-2 pr-4">Terrain relief, stored database</td><td class="py-2 pr-4">Low-altitude flight over mapped terrain</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Visual navigation (VIO)</td><td class="py-2 pr-4">Position and attitude from camera feature tracking</td><td class="py-2 pr-4">Light and visible texture</td><td class="py-2 pr-4">Indoor UAVs, inspection, last-mile delivery</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Magnetic anomaly navigation</td><td class="py-2 pr-4">Coarse position fixes by geomagnetic map matching</td><td class="py-2 pr-4">Regional magnetic maps; passive but low resolution</td><td class="py-2 pr-4">Long-endurance backup layer</td></tr>
+  </tbody>
+</table>`,
+      },
+      {
+        h2: 'Pure inertial navigation: the backbone',
+        html: `<p>An inertial navigation system integrates angular rate from gyroscopes and specific force from accelerometers to produce position, velocity and attitude at high update rate, with no transmissions and no dependency on any external station. That makes it the only approach that works everywhere, all the time — and also the one whose error grows with time, because every gyro bias integrates into attitude, and attitude error tilts the acceleration vector into the position solution.</p>
+<p>Gyro grade is therefore the design lever. A <a href="/products/lkf-fsi301/" class="text-blue-700 underline">FOG-based INS such as the LKF-FSI301</a> uses closed-loop fiber optic gyroscopes with a bias stability of ≤0.03 °/h (10 s smoothing) and an Allan bias instability of ≤0.006 °/h, plus self north-seeking to ≤0.1° × secL — a specification class intended for long unaided stretches on UAVs, ground vehicles and marine platforms. MEMS-grade systems trade drift rate for size, weight and cost, and are the right backbone when outages are short or aiding sources are frequent.</p>`,
+      },
+      {
+        h2: 'Gyroscopic north finding: absolute heading without a signal',
+        html: `<p>Dead reckoning is only as good as its heading. A heading error of 0.1° displaces the estimated position by roughly 17 m over 10 km of travel — and a magnetic compass cannot deliver reliable heading near steel structures, drill strings, vehicles or ore bodies. A gyroscopic north finder solves this by sensing the horizontal component of Earth rotation, which points to true north with no dependency on any magnetic or radio source.</p>
+<p>North finders come in FOG and MEMS flavors. A compact <a href="/products/lkf-msn300/" class="text-blue-700 underline">MEMS north finder such as the LKF-MSN300</a> delivers self north-seeking accuracy of ≤1° × secL in a Φ31.8 × 85 mm, 145 g package drawing ≤2 W, rated from −40 to +120 °C — small and frugal enough to ride inside downhole surveying instruments and mining equipment, where satellites have never been an option and magnetic compasses have never worked.</p>`,
+      },
+      {
+        h2: 'Aiding layers: terrain, vision and magnetics',
+        html: `<p>The remaining three approaches do not replace inertial navigation; they bound its drift by supplying occasional absolute fixes:</p>
+<ul class="list-disc pl-5 space-y-2">
+<li><strong>Terrain-referenced navigation (TRN)</strong> compares a radar or lidar altitude profile with a stored terrain database. It gives solid position updates over rolling terrain at low altitude, but degrades over flat sea or featureless plains.</li>
+<li><strong>Visual navigation</strong> tracks camera features to estimate motion (visual-inertial odometry). It is lightweight and works indoors and underground where nothing else does — provided there is light and texture — and it drifts without loop closures or absolute references.</li>
+<li><strong>Magnetic anomaly navigation</strong> matches measured geomagnetic fields against maps. It is fully passive and unjammable, but coarse and region-dependent; it serves as a low-rate backup layer rather than a primary source.</li>
+</ul>
+<p>Each of these feeds updates to the INS filter, resetting accumulated drift while the inertial core carries the solution between fixes.</p>`,
+      },
+      {
+        h2: 'Matching the approach to your outage profile',
+        html: `<ul class="list-disc pl-5 space-y-2">
+<li><strong>Outages of seconds to a couple of minutes</strong> (urban canyons, brief jamming): a tactical MEMS INS coasts through with negligible error; heavy sensors are unnecessary.</li>
+<li><strong>Outages of tens of minutes to hours</strong> (contested airspace, sea crossings): navigation-grade FOG INS is the backbone — bias stability in the hundredths of a degree per hour is what buys the endurance.</li>
+<li><strong>No GNSS, ever</strong> (underground, downhole, indoor): gyroscopic north finding for heading, plus dead reckoning or external aiding. A MEMS north finder makes this affordable enough for routine single-point surveying.</li>
+<li><strong>Low altitude over mapped terrain</strong>: FOG INS plus terrain-referenced updates.</li>
+</ul>
+<p>The common thread: the longer and more frequent the outage, the more the architecture converges on a high-grade inertial core, with the other techniques supplying corrections around it.</p>`,
+      },
+      {
+        h2: 'Designing a GNSS-denied architecture',
+        html: `<p>There is no single answer to <strong>GPS jamming and signal loss</strong> — there is an error budget, an outage profile and an operating environment, and an architecture that matches them. Explore our <a href="/products/inertial-navigation-systems/" class="text-blue-700 underline">INS / GNSS combined navigation systems</a> to compare the FOG and MEMS options side by side, or share your platform, mission duration and expected outage conditions — our engineers will help you pick the sensor grade and aiding combination that closes the budget.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'How long can an INS operate without GNSS before position errors grow unacceptable?',
+        a: 'It depends almost entirely on gyro grade. With a constant gyro bias, position error grows roughly with the cube of time, so a navigation-grade system with 0.01–0.1 °/h-class gyros holds a useful solution for hours where a consumer MEMS unit drifts out within minutes. The practical answer comes from your own error budget: define the maximum acceptable position error for the mission, then work backward to the bias stability the gyro needs.',
+      },
+      {
+        q: 'Why does heading accuracy matter more than anything else in GNSS-denied dead reckoning?',
+        a: 'Because heading error acts on the full distance traveled: a heading error of 0.1° displaces the dead-reckoned position by about 17 m over 10 km, even with a perfect speed measurement. Heading is also the hardest quantity to obtain without satellites — magnetic compasses are distorted by nearby steel and current-carrying structures, which is why gyroscopic north finding is the standard answer underground and near machinery.',
+      },
+      {
+        q: 'Can a MEMS north finder really find true north underground?',
+        a: 'Yes. A north finder does not listen for signals; it measures the rotation of the Earth itself, so soil, rock and depth are irrelevant. That is exactly why MEMS north finders such as the LKF-MSN300 are used for mine orientation, oil-well surveying and pipeline work, where GNSS is unavailable and magnetic compasses are unusable near drill strings and ore bodies.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-FSI301', href: '/products/lkf-fsi301/', caption: 'FOG/GNSS combined inertial navigation system' },
+      { model: 'LKF-MSN300', href: '/products/lkf-msn300/', caption: 'High-precision MEMS north finder' },
+    ],
+    relatedCategory: { name: 'INS / GNSS Navigation', href: '/products/inertial-navigation-systems/' },
+  },
+  {
     slug: 'what-is-angle-random-walk',
     title: 'What Is Angle Random Walk (ARW) in IMU Datasheets?',
     description:
