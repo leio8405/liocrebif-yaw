@@ -163,6 +163,10 @@ body {
   font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 700;
   letter-spacing: 0.12em; color: var(--color-accent-deep); margin-right: var(--space-2);
 }
+.cell__links { margin-top: var(--space-2); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-faint); }
+.cell__links a { color: var(--color-muted); text-decoration: none; border-bottom: 1px solid var(--color-rule-strong); }
+.cell__links a:hover { color: var(--color-accent-deep); border-bottom-color: var(--color-accent); }
+.cell__links a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
 .cell__tag {
   display: inline-block; font-family: var(--font-mono); font-size: var(--text-xs);
   color: var(--color-muted); border: 1px solid var(--color-rule-strong);
@@ -258,6 +262,7 @@ body {
       <h3 class="cell__title">水下无人系统密集下水，UUV 进入“母舰化”时代</h3>
       <p class="cell__sum">三个独立来源报道同类事件：<strong>中国第二艘 UUV 母舰</strong>现身广州船厂；<strong>Saab/FMV/瑞典武装部队</strong>的 LUUV 大型无人潜航器演示器入水；<strong>印度海军 INS Samarthak</strong>多用途艇服役（无人系统母舰 + 反水雷 + 武器试验三合一）。</p>
       <div class="cell__so"><b>四层视角</b>UUV 无 GNSS，是光纤陀螺最纯市场：L1 整机（F3G/FT 系列）、L2 环圈（LKF-FC 大长度规格）、L3 绕环设备三重机会。母舰化 = 编队化，惯导需求按艇数增长。</div>
+      <div class="cell__links">原文： <a href="https://www.twz.com/sea/second-chinese-submarine-drone-mothership-emerges">中国第二艘母舰 · TWZ</a> · <a href="https://www.navalnews.com/naval-news/2026/10/saab-fmv-and-the-swedish-armed-forces-launch-luuv/">Saab LUUV · Naval News</a> · <a href="https://www.navalnews.com/naval-news/2026/10/indian-navy-first-multi-purpose-vessel-ins-samarthak/">INS Samarthak · Naval News</a></div>
     </article>
 
     <article class="cell cell--lead">
@@ -265,6 +270,7 @@ body {
       <h3 class="cell__title">GPS 干扰烧到美国本土：洛杉矶商业航班中招，惯性冗余保平安</h3>
       <p class="cell__sum">联合航空 UA1962 起飞后卫星导航失效，UA1866 在 35,000 英尺巡航遭遇同类干扰，阿拉斯加航空 AS222 太平洋航线信号降级。两机<strong>依靠 VOR/DME 与惯性基准系统（IRS）平安无事</strong>。GPSWorld 同期刊文：导航栈正走向多源融合，核心问题从“我在哪”变成“我能否相信这个位置”。</p>
       <div class="cell__so"><b>四层视角</b>抗干扰叙事的最新弹药——开发信现成开场。也印证 L4 测试线的价值：全温、干扰环境下陀螺性能数据正是客户验证“最后防线”时的必问项。</div>
+      <div class="cell__links">原文： <a href="https://pntlab.nudt.edu.cn/yndt/mrjb/cab6579c62804271ad5411803fa63a04.htm">国防科大 PNT 每日动态 20261010（含 GPSWorld/Airlive 编译）</a></div>
     </article>
 
     <article class="cell cell--lead">
@@ -272,6 +278,7 @@ body {
       <h3 class="cell__title">LEO PNT 从演示走向商用：Xona 融资超 3 亿美元，本月首发 6 颗卫星</h3>
       <p class="cell__sum">TrustPoint 与 Calian 交付业界首个量产就绪 C 波段 GNSS 天线；ESA Celeste 在轨确认 LEO 双频测距；Xona 宣布本月发射 6 颗“脉冲星”卫星，规划 258 颗星座，厘米级精度、信号可穿楼，累计融资逾 3 亿美元（含美太空军 2,000 万），2028 年覆盖美欧日韩。</p>
       <div class="cell__so"><b>四层视角</b>LEO PNT 是 GNSS 的补充而非惯性的替代——同样依赖卫星信号，干扰下依然失效。客户拿 LEO 质疑惯性价值时，这是应答口径；“LEO 辅助惯性”可作新卖点。</div>
+      <div class="cell__links">原文： <a href="https://insidegnss.com/trustpoint-and-calian-deliver-industrys-first-mass-market-ready-c-band-gnss-antenna/">TrustPoint/Calian · Inside GNSS</a> · <a href="https://insidegnss.com/celeste-in-orbit-results-confirm-leo-ranging-performance/">Celeste 在轨测距 · Inside GNSS</a> · <a href="https://pntlab.nudt.edu.cn/yndt/mrjb/cab6579c62804271ad5411803fa63a04.htm">Xona 上线 · 国防科大 PNT</a></div>
     </article>
 
   </div>
@@ -286,21 +293,21 @@ body {
 
     <article class="cell">
       <div class="cell__meta"><span class="cell__src">EDN</span><span>10.19</span></div>
-      <h3 class="cell__title"><a href="https://www.edn.com/rss">Fiber optic gyroscopes: Elegant engineering of modern inertial navigation</a></h3>
+      <h3 class="cell__title"><a href="https://www.edn.com/fiber-optic-gyroscopes-elegant-engineering-of-modern-inertial-navigation/">Fiber optic gyroscopes: Elegant engineering of modern inertial navigation</a></h3>
       <p class="cell__sum">EDN 刊发光纤陀螺工程综述，系统讲解 FOG 如何成为现代惯性导航的核心——从萨格纳克效应到闭环检测的完整工程链路。</p>
       <div class="cell__so"><b>对你意味着</b>现成的英文科普素材：可改编为客户教育内容、开发信技术段、LinkedIn 帖子选题（与站内 FOG vs MEMS 主题文章联动）。</div>
     </article>
 
     <article class="cell">
       <div class="cell__meta"><span class="cell__src">arXiv physics.optics</span><span>10.19</span></div>
-      <h3 class="cell__title"><a href="https://arxiv.org">薄膜铌酸锂波导中的量子频率转换降噪</a></h3>
+      <h3 class="cell__title"><a href="https://arxiv.org/abs/2610.23575">薄膜铌酸锂波导中的量子频率转换降噪</a></h3>
       <p class="cell__sum">研究提出在薄膜铌酸锂（TFLN）波导中抑制量子频率转换噪声的方案。TFLN 正是 Y 波导（MIOC 系列）所在材料体系的下一代演进路线，调制带宽与半波电压指标是竞争焦点。</p>
       <div class="cell__so"><b>对你意味着</b>技术替代监测：TFLN 若成熟，Y 波导竞品会先换材料。我们的 MIOC1310/1550 半波电压 ≤3.5V、调制带宽 ≥300MHz 的指标优势需要持续对标。</div>
     </article>
 
     <article class="cell">
       <div class="cell__meta"><span class="cell__src">arXiv physics.optics</span><span>10.19</span></div>
-      <h3 class="cell__title"><a href="https://arxiv.org">硅光芯片实现 sub-Hz 本征线宽超稳激光器</a></h3>
+      <h3 class="cell__title"><a href="https://arxiv.org/abs/2610.22596">硅光芯片实现 sub-Hz 本征线宽超稳激光器</a></h3>
       <p class="cell__sum">在硅光芯片上实现本征线宽低于 1 Hz 的超稳激光器——硅光平台与超稳激光集成，指向硅光惯性器件的片上光源方案。</p>
       <div class="cell__so"><b>对你意味着</b>硅光陀螺路线的关键拼图（片上光源）。对应我们的 TIOS1310 硅光三轴收发组件与 FS40 L1 硅光陀螺——光源集成度决定硅光方案的成本下限，值得研发侧跟进。</div>
     </article>
