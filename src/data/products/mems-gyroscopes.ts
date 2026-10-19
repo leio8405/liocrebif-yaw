@@ -85,6 +85,7 @@ export const memsGyros: Product[] = [
     },
     appsEn: ['Servo Stabilization', 'Electro-optical Pod', 'Satellite Attitude Control'],
     appsZh: ['伺服稳定', '光电吊舱', '卫星姿控'],
+    image: '/images/products/LKF-MTG200.jpeg',
   },
   {
     model: 'LKF-MTG300A',
@@ -164,5 +165,6 @@ export const memsGyros: Product[] = [
     },
     appsEn: ['Satellite Stabilization Control'],
     appsZh: ['卫星稳定控制'],
+    image: '/images/products/LKF-MTG300.png',
   },
 ];

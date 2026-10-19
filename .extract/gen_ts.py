@@ -75,8 +75,15 @@ def esc(s):
 
 IMG_DIR = r"D:\利科夫\网站项目\liocrebif-yaw\public\images\products"
 
+MANUAL_IMAGES = {
+    "LKF-FSI206": "/images/products/LKF-FSI206.jpg",  # 用户提供的手动截图（docx 内为尺寸图无实物照）
+}
+
 def probe_image(r):
     """按实际存在的图片文件解析 image 路径；无文件返回 None（详情页显示型号占位）"""
+    manual = MANUAL_IMAGES.get(r.get("model"))
+    if manual and os.path.exists(os.path.join(IMG_DIR, os.path.basename(manual))):
+        return manual
     img = r.get("image")
     if not img:
         return None

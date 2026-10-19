@@ -473,6 +473,7 @@ export const fogGyros: Product[] = [
     },
     appsEn: ['Electro-optical Pod', 'Flight Control', 'Optical/Photography Platform', 'Platform Stabilization', 'SatCom-on-the-Move', 'Inertial Measurement Unit'],
     appsZh: ['光电吊舱', '飞控平台', '光学/摄影平台', '平台稳定装置', '动中通', '惯性测量单元'],
+    image: '/images/products/LKF-F3G20.png',
   },
   {
     model: 'LKF-F3G40S',

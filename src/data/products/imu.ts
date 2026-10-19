@@ -277,6 +277,7 @@ export const imus: Product[] = [
     },
     appsEn: ['Mobile Positioning & Attitude Reference', 'Underwater', 'Surveying & North-Seeking', 'Stabilized Platforms', 'SatCom-on-the-Move', 'Autonomous Driving & Missile-Borne'],
     appsZh: ['移动测量与姿态基准', '水下', '测绘与寻北', '稳定平台', '动中通', '自动驾驶与弹载'],
+    image: '/images/products/LKF-FSU307.jpeg',
   },
   {
     model: 'LKF-MNU107',

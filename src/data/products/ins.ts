@@ -36,6 +36,7 @@ export const insSystems: Product[] = [
     },
     appsEn: ['Mobile Position & Attitude Reference', 'Unmanned Ground Vehicles', 'Unmanned Surface Vessels', 'Surveying & Mapping', 'Stabilized Platforms', 'Underwater Vehicles'],
     appsZh: ['移动测量位置和姿态参考', '无人车', '无人船', '测绘', '稳定平台', '水下航行器'],
+    image: '/images/products/LKF-FSI206.jpg',
   },
   {
     model: 'LKF-FSI301',
