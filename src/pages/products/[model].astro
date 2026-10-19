@@ -34,6 +34,12 @@ const productSchema = {
   category: category.titleEn,
   brand: { '@type': 'Brand', name: 'Liocrebif' },
   manufacturer: { '@type': 'Organization', name: 'Wuhan Liocrebif Technology Co., Ltd' },
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
+    url: detailURL,
+    businessFunction: 'http://purl.org/goodrelations/v1#Sell',
+  },
 };
 const breadcrumbSchema = {
   '@context': 'https://schema.org',

@@ -20,6 +20,7 @@ const detailPath = `/zh/products/${product.model.toLowerCase()}/`;
 
 const related = category.products.filter((p) => p.model !== product.model).slice(0, 4);
 
+const detailURL = new URL(Astro.url.pathname, Astro.site).href;
 const productSchema = {
   '@context': 'https://schema.org',
   '@type': 'Product',
@@ -31,6 +32,12 @@ const productSchema = {
   category: category.titleZh,
   brand: { '@type': 'Brand', name: 'Liocrebif' },
   manufacturer: { '@type': 'Organization', name: 'Wuhan Liocrebif Technology Co., Ltd' },
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
+    url: detailURL,
+    businessFunction: 'http://purl.org/goodrelations/v1#Sell',
+  },
 };
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
