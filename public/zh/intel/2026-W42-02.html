@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>惯性导航行业情报 · 第 2 期 · v2 全产品线 · 2026 年第 42 周</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · macrostructure: Catalogue · tone: editorial · anchor hue: 85 (warm newsprint) · theme: Newsprint
+ * genre: editorial · nav: N6 masthead · footer: Ft4 dense colophon · enrichment: none
+ * fonts: Fraunces (display) + Newsreader (body, latin) / Noto Serif SC (han) + JetBrains Mono (outlier: 元数据单一角色)
+ * paper: oklch(97.5% .009 85) · accent: oklch(50% .19 27) editing-red · ink: oklch(25% .014 60)
+ * knobs vs 第1期(Index-First 垂直通栏列表): 本期条目网格 2 列 + 栏目带 + 三格头条
+ * pre-emit critique: P5 H4 E4 S5 R4 V4 · slop: run at handoff (58 gates) */
+:root {
+  --color-paper:      oklch(97.5% 0.009 85);
+  --color-paper-2:    oklch(94.8% 0.013 85);
+  --color-paper-3:    oklch(91.5% 0.016 85);
+  --color-rule:       oklch(84% 0.012 85);
+  --color-rule-strong:oklch(72% 0.022 60);
+  --color-ink:        oklch(25% 0.014 60);
+  --color-muted:      oklch(44% 0.014 70);
+  --color-faint:      oklch(48% 0.014 75);
+  --color-accent:     oklch(50% 0.19 27);
+  --color-accent-deep:oklch(42% 0.16 27);
+  --color-focus:      oklch(50% 0.19 27);
+
+  --font-display: "Fraunces", "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --font-body:    "Newsreader", "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, monospace;
+
+  --text-xs: 0.75rem; --text-sm: 0.875rem; --text-base: 1rem;
+  --text-md: 1.25rem; --text-lg: 1.5625rem; --text-xl: 1.9531rem; --text-2xl: 2.4414rem;
+
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+
+  --measure: 68ch;
+  --page: 72rem;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { overflow-x: clip; }
+html { background: var(--color-paper); }
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- masthead (N6) ---------- */
+.masthead { text-align: center; padding: var(--space-7) var(--space-4) 0; }
+.masthead__kicker {
+  font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-deep);
+  margin-bottom: var(--space-3);
+}
+.masthead__title {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(2rem, 6vw + 0.5rem, 3rem); letter-spacing: 0.04em;
+  line-height: 1.1; color: var(--color-ink);
+  overflow-wrap: anywhere; min-width: 0;
+}
+.masthead__sub {
+  font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 400;
+  letter-spacing: 0.14em; color: var(--color-muted); margin-top: var(--space-2);
+}
+.masthead__issue {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-2) var(--space-4);
+  font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-muted);
+  margin-top: var(--space-4); font-variant-numeric: tabular-nums;
+}
+.masthead__issue b { font-weight: 700; color: var(--color-ink); }
+.rule-double { border: 0; border-top: 3px double var(--color-rule-strong); margin: var(--space-4) auto 0; max-width: var(--page); }
+
+.page { max-width: var(--page); margin: 0 auto; padding: 0 var(--space-4) var(--space-8); }
+
+/* ---------- 导语 ---------- */
+.note { padding: var(--space-6) 0 var(--space-5); border-bottom: 1px solid var(--color-rule); }
+.note__label {
+  font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 700;
+  letter-spacing: 0.2em; color: var(--color-accent-deep); margin-bottom: var(--space-3);
+}
+.note p { max-width: 92ch; margin-bottom: var(--space-3); text-align: justify; }
+.note p:last-child { margin-bottom: 0; }
+.note strong { font-weight: 600; }
+.note .stats {
+  font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-muted);
+  font-variant-numeric: tabular-nums; margin-top: var(--space-4);
+}
+.note .badge {
+  display: inline-block; font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 700;
+  letter-spacing: 0.08em; color: var(--color-accent-deep);
+  border: 1px solid var(--color-accent); padding: 0 var(--space-2);
+  margin-right: var(--space-2);
+}
+
+/* ---------- 栏目带（Catalogue category band） ---------- */
+.band {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2) var(--space-3);
+  background: var(--color-paper-2);
+  padding: var(--space-2) var(--space-4);
+  margin-top: var(--space-7);
+  border-top: 3px double var(--color-rule-strong);
+}
+.band__name {
+  font-family: var(--font-display); font-weight: 700; font-size: var(--text-md);
+  letter-spacing: 0.1em;
+}
+.band__count {
+  font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 400;
+  color: var(--color-faint); font-variant-numeric: tabular-nums;
+}
+.band__hint {
+  font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-muted);
+  margin-left: auto; letter-spacing: 0.04em;
+}
+
+/* ---------- 条目网格（Catalogue grid：hairline 分隔，非卡片） ---------- */
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-6); }
+.grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--space-5); }
+.cell {
+  padding: var(--space-4) 0 var(--space-5);
+  border-top: 1px solid var(--color-rule);
+}
+.grid .cell:nth-child(-n+2) { border-top: 0; }
+.grid--3 .cell:nth-child(-n+3) { border-top: 0; }
+.cell__meta {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2);
+  font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-faint);
+  margin-bottom: var(--space-2); font-variant-numeric: tabular-nums;
+}
+.cell__src { font-weight: 700; color: var(--color-accent-deep); letter-spacing: 0.04em; }
+.cell__src::before { content: "■ "; color: var(--color-accent); font-size: 0.6em; vertical-align: 0.15em; }
+.cell__no {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.75rem;
+  color: var(--color-accent); line-height: 1; margin-right: var(--space-2);
+  font-variant-numeric: lining-nums;
+}
+.cell__title {
+  font-family: var(--font-body); font-weight: 600; font-size: var(--text-base);
+  line-height: 1.45; margin-bottom: var(--space-2);
+  overflow-wrap: anywhere; min-width: 0;
+}
+.cell__title a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--color-rule-strong); }
+.cell__title a:hover { border-bottom-color: var(--color-accent); }
+.cell__title a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; border-bottom-color: var(--color-accent); }
+.cell__title a:active { border-bottom-color: var(--color-accent-deep); }
+.cell__sum { font-size: var(--text-sm); text-align: justify; color: var(--color-ink); }
+.cell__so {
+  margin-top: var(--space-2); padding-left: var(--space-3);
+  border-left: 2px solid var(--color-accent);
+  font-size: var(--text-sm); color: var(--color-muted);
+}
+.cell__so b {
+  font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 700;
+  letter-spacing: 0.12em; color: var(--color-accent-deep); margin-right: var(--space-2);
+}
+.cell__tag {
+  display: inline-block; font-family: var(--font-mono); font-size: var(--text-xs);
+  color: var(--color-muted); border: 1px solid var(--color-rule-strong);
+  padding: 0 var(--space-2); margin-bottom: var(--space-2); letter-spacing: 0.06em;
+}
+.cell--lead .cell__title { font-family: var(--font-display); font-weight: 700; font-size: var(--text-md); }
+.cell__empty { padding: var(--space-4) 0; color: var(--color-faint); font-size: var(--text-sm); }
+
+/* ---------- 信源与方法 ---------- */
+.method { padding-top: var(--space-7); }
+.method__name {
+  font-family: var(--font-display); font-weight: 700; font-size: var(--text-md);
+  letter-spacing: 0.1em; padding-bottom: var(--space-2);
+  border-bottom: 3px double var(--color-rule-strong); margin-bottom: var(--space-4);
+}
+.method .table-wrap { overflow-x: auto; }
+.method table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+.method th, .method td { padding: var(--space-1) var(--space-2); text-align: left; border-bottom: 1px solid var(--color-rule); }
+.method th { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.1em; color: var(--color-muted); }
+.method td.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; }
+.method tfoot td { font-weight: 700; border-bottom: 0; }
+.method__why { margin-top: var(--space-4); max-width: 92ch; text-align: justify; font-size: var(--text-sm); color: var(--color-muted); }
+
+/* ---------- colophon (Ft4) ---------- */
+.colophon {
+  margin-top: var(--space-7); padding-top: var(--space-4);
+  border-top: 3px double var(--color-rule-strong);
+  font-family: var(--font-mono); font-size: var(--text-xs); line-height: 1.8;
+  color: var(--color-faint);
+}
+.colophon b { color: var(--color-muted); font-weight: 700; }
+.colophon .row { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); }
+
+/* ---------- responsive ---------- */
+@media (max-width: 860px) {
+  .grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid--3 .cell:nth-child(-n+3) { border-top: 1px solid var(--color-rule); }
+  .grid--3 .cell:nth-child(-n+2) { border-top: 0; }
+}
+@media (max-width: 600px) {
+  .grid, .grid--3 { grid-template-columns: 1fr; }
+  .grid .cell:nth-child(-n+2), .grid--3 .cell:nth-child(-n+2) { border-top: 1px solid var(--color-rule); }
+  .grid .cell:first-child, .grid--3 .cell:first-child { border-top: 0; }
+  .masthead { padding-top: var(--space-6); }
+  .band__hint { margin-left: 0; }
+}
+@media print {
+  .page { max-width: none; }
+  a { border-bottom: 0 !important; }
+  .method table { font-size: var(--text-xs); }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead__kicker">Liocrebif · Internal Intelligence</div>
+  <h1 class="masthead__title">惯性导航行业情报</h1>
+  <div class="masthead__sub">INERTIAL NAVIGATION &amp; PNT WEEKLY</div>
+  <div class="masthead__issue">
+    <span><b>第 2 期</b></span>
+    <span>2026 年第 <b>42</b> 周 · 10.13 – 10.19</span>
+    <span><b>v2 全产品线标准</b>首刊</span>
+    <span>武汉利科夫科技 · 国际销售部</span>
+  </div>
+  <hr class="rule-double">
+</header>
+
+<main class="page">
+
+  <!-- 导语 -->
+  <section class="note">
+    <div class="note__label">编者按 · EDITOR'S NOTE</div>
+    <p>本期起执行 <strong>v2 筛选标准</strong>：范围从惯导单线扩展到公司全产品线——光纤陀螺整机、保偏光纤与光纤环圈、Y 波导等光学器件、绕环/固化生产设备、光纤环与转台测试系统。热点判断依据是产品目录的四层业务版图（见《情报关注领域与筛选标准 v2》）。</p>
+    <p><span class="badge">同窗说明</span>本期与第 1 期数据窗口相同（10.13–10.19）。第 1 期是惯导单线视角，本期是全产品线重制：重合条目按四层业务重新解读，新增光纤/光子/设备线内容。</p>
+    <p>本期抓取 <strong>151 条</strong>，经关键词预筛保留 <strong>59 条</strong>候选，人工按四层标准入选 <strong>17 条</strong>。<strong>设备线诚实记录：本周无“新建/扩建 FOG 产线”直接信号</strong>（v2 最高优先级项），仅有间接放量信号，已单列说明。</p>
+    <div class="stats">14 信源 · 窗口内 151 · 候选 59 · 入选 17 · 四层覆盖 L1×8 / L2×3 / L3-L4×3 / 事件×3</div>
+  </section>
+
+  <!-- 头条 -->
+  <div class="band">
+    <span class="band__name">本周头条</span>
+    <span class="band__count">3 个跨源事件</span>
+    <span class="band__hint">按独立来源数量与产品线相关度排序</span>
+  </div>
+  <div class="grid grid--3">
+
+    <article class="cell cell--lead">
+      <div class="cell__meta"><span class="cell__no">1</span><span class="cell__src">Naval News ×2 + TWZ</span><span>10.16–10.18</span></div>
+      <h3 class="cell__title">水下无人系统密集下水，UUV 进入“母舰化”时代</h3>
+      <p class="cell__sum">三个独立来源报道同类事件：<strong>中国第二艘 UUV 母舰</strong>现身广州船厂；<strong>Saab/FMV/瑞典武装部队</strong>的 LUUV 大型无人潜航器演示器入水；<strong>印度海军 INS Samarthak</strong>多用途艇服役（无人系统母舰 + 反水雷 + 武器试验三合一）。</p>
+      <div class="cell__so"><b>四层视角</b>UUV 无 GNSS，是光纤陀螺最纯市场：L1 整机（F3G/FT 系列）、L2 环圈（LKF-FC 大长度规格）、L3 绕环设备三重机会。母舰化 = 编队化，惯导需求按艇数增长。</div>
+    </article>
+
+    <article class="cell cell--lead">
+      <div class="cell__meta"><span class="cell__no">2</span><span class="cell__src">国防科大 PNT · GPSWorld</span><span>10.10</span></div>
+      <h3 class="cell__title">GPS 干扰烧到美国本土：洛杉矶商业航班中招，惯性冗余保平安</h3>
+      <p class="cell__sum">联合航空 UA1962 起飞后卫星导航失效，UA1866 在 35,000 英尺巡航遭遇同类干扰，阿拉斯加航空 AS222 太平洋航线信号降级。两机<strong>依靠 VOR/DME 与惯性基准系统（IRS）平安无事</strong>。GPSWorld 同期刊文：导航栈正走向多源融合，核心问题从“我在哪”变成“我能否相信这个位置”。</p>
+      <div class="cell__so"><b>四层视角</b>抗干扰叙事的最新弹药——开发信现成开场。也印证 L4 测试线的价值：全温、干扰环境下陀螺性能数据正是客户验证“最后防线”时的必问项。</div>
+    </article>
+
+    <article class="cell cell--lead">
+      <div class="cell__meta"><span class="cell__no">3</span><span class="cell__src">Inside GNSS ×2 + PNT</span><span>10.12–10.14</span></div>
+      <h3 class="cell__title">LEO PNT 从演示走向商用：Xona 融资超 3 亿美元，本月首发 6 颗卫星</h3>
+      <p class="cell__sum">TrustPoint 与 Calian 交付业界首个量产就绪 C 波段 GNSS 天线；ESA Celeste 在轨确认 LEO 双频测距；Xona 宣布本月发射 6 颗“脉冲星”卫星，规划 258 颗星座，厘米级精度、信号可穿楼，累计融资逾 3 亿美元（含美太空军 2,000 万），2028 年覆盖美欧日韩。</p>
+      <div class="cell__so"><b>四层视角</b>LEO PNT 是 GNSS 的补充而非惯性的替代——同样依赖卫星信号，干扰下依然失效。客户拿 LEO 质疑惯性价值时，这是应答口径；“LEO 辅助惯性”可作新卖点。</div>
+    </article>
+
+  </div>
+
+  <!-- 光子与元器件 -->
+  <div class="band">
+    <span class="band__name">光子与元器件</span>
+    <span class="band__count">3 条 · L2 线</span>
+    <span class="band__hint">v2 新增覆盖：光纤 / Y 波导 / 硅光 / 光源</span>
+  </div>
+  <div class="grid">
+
+    <article class="cell">
+      <div class="cell__meta"><span class="cell__src">EDN</span><span>10.19</span></div>
+      <h3 class="cell__title"><a href="https://www.edn.com/rss">Fiber optic gyroscopes: Elegant engineering of modern inertial navigation</a></h3>
+      <p class="cell__sum">EDN 刊发光纤陀螺工程综述，系统讲解 FOG 如何成为现代惯性导航的核心——从萨格纳克效应到闭环检测的完整工程链路。</p>
+      <div class="cell__so"><b>对你意味着</b>现成的英文科普素材：可改编为客户教育内容、开发信技术段、LinkedIn 帖子选题（与站内 FOG vs MEMS 主题文章联动）。</div>
+    </article>
+
+    <article class="cell">
+      <div class="cell__meta"><span class="cell__src">arXiv physics.optics</span><span>10.19</span></div>
+      <h3 class="cell__title"><a href="https://arxiv.org">薄膜铌酸锂波导中的量子频率转换降噪</a></h3>
+      <p class="cell__sum">研究提出在薄膜铌酸锂（TFLN）波导中抑制量子频率转换噪声的方案。TFLN 正是 Y 波导（MIOC 系列）所在材料体系的下一代演进路线，调制带宽与半波电压指标是竞争焦点。</p>
+      <div class="cell__so"><b>对你意味着</b>技术替代监测：TFLN 若成熟，Y 波导竞品会先换材料。我们的 MIOC1310/1550 半波电压 ≤3.5V、调制带宽 ≥300MHz 的指标优势需要持续对标。</div>
+    </article>
+
+    <article class="cell">
+      <div class="cell__meta"><span class="cell__src">arXiv physics.optics</span><span>10.19</span></div>
+      <h3 class="cell__title"><a href="https://arxiv.org">硅光芯片实现 sub-Hz 本征线宽超稳激光器</a></h3>
+      <p class="cell__sum">在硅光芯片上实现本征线宽低于 1 Hz 的超稳激光器——硅光平台与超稳激光集成，指向硅光惯性器件的片上光源方案。</p>
+      <div class="cell__so"><b>对你意味着</b>硅光陀螺路线的关键拼图（片上光源）。对应我们的 TIOS1310 硅光三轴收发组件与 FS40 L1 硅光陀螺——光源集成度决定硅光方案的成本下限，值得研发侧跟进。</div>
+    </article>
+
+    <article class="cell">
+      <div class="cell__meta"><span class="cell__src">本期如实记录</span><span>10.13–10.19</span></div>
+      <h3 class="cell__title">SLD/ASE 光源与保偏光纤：本周无直接竞品动态</h3>
+      <p class="cell__sum">窗口期内 Thorlabs、Superlum、Denselight 等 SLD 光源竞品及特种光纤供应商无公开 RSS 更新；SBG 官网本周无发布。L2 供应链线暂无价格/断供类信号。</p>
+      <div class="cell__so"><b>对你意味着</b>静默本身也是信息：供应链暂无扰动，备货策略不变。下期起 ANELLO、VectorNav、Advanced Navigation 官网逐个试抓补入。</div>
+    </article>
+
+  </div>
+
+  <!-- 惯导与平台市场 -->
+  <div class="band">
+    <span class="band__name">惯导与平台市场</span>
+    <span class="band__count">8 条 · L1 线</span>
+    <span class="band__hint">无人机 / 无人舰 / CCA：整机放量即器件放量</span>
+  </div>
+  <div class="grid">
+
+    <article class="cell">
+      <div class="cell__meta"><span class="cell__src">sUAS News</span><span>10.18</span></div>
+      <h3 class="cell__title"><a href="https://www.suasnews.com/2026/10/skydio-launches-isr-command-the-next-step-in-drone-dominance/">Skydio 发布 ISR Command</a></h3>
+      <p class="cell__sum">前线军事单位可通过作战网络直接下发目标，完成识别——Skydio 定义其为“无人机主导权的下一步”，ISR 平台自主等级持续抬升。</p>
+      <div class="cell__so"><b>四层视角</b>ISR 无人机是战术级 IMU 高价值应用；Skydio 供应链可作直接开发对象。</div>
+    </article>
+
+    <article class="cell">
+      <div class="cell__meta"><span class="cell__src">The War Zone</span><span>10.16</span></div>
+      <h3 class="cell__title"><a href="https://www.twz.com/air/f-22-pilot-controls-fq-44-fighter-drone-from-the-cockpit-for-the-first-time">F-22 飞行员首次从座舱控制 FQ-44 战斗机无人机</a></h3>
+      <p class="cell__sum">F-22 成为空军首批“空中四分卫”，为协同作战飞机（CCA）无人机编队指挥，有人-无人编组（MUM-T）关键里程碑。</p>
+      <div class="cell__so"><b>四层视角</b>CCA 是确定性增量市场：低成本无人机平台对低成本 MEMS/战术级惯性需求巨大。</div>
+    </article>
+
+    <article class="cell">
+      <div class="cell__meta"><span class="cell__src">The War Zone</span><span>10.12</span></div>
+      <h3 class="cell__title"><a href="https://www.twz.com/air/european-u740-variant-of-the-xq-58a-valkyrie-has-flown">XQ-58A 欧洲版 U740 首飞</a></h3>
+      <p class="cell__sum">空客与 Kratos 合作将 U740 送上天空，德国力争 2029 年前装备先进空战无人机。</p>
+      <div class="cell__so"><b>四层视角</b>空客/Kratos 的欧洲供应链——潜在 INS 采购入口，德国防务预算扩张期。</div>
+    </article>
+
+    <article class="cell">
+      <div class="cell__meta"><span class="cell__src">The War Zone</span><span>10.16</span></div>
+      <h3 class="cell__title"><a href="https://www.twz.com/news-features/the-armys-plan-for-employing-lucas-kamikaze-drones-against-its-adversaries">陆军规划以 LUCAS 自杀无人机打击敌舰艇与导弹</a></h3>
+      <p class="cell__sum">美陆军正在成形远程单向攻击无人机体系：太平洋与欧洲方向，向敌舰艇和弹道导弹发射，低成本消耗性平台。</p>
+      <div class="cell__so"><b>四层视角</b>单向攻击无人机对“够用就好”的低成本惯导是海量市场——价格敏感型客户典型画像，MXH 低成本加速度计可切入。</div>
+    </article>
+
+    <article class="cell">
+      <div class="cell__meta"><span class="cell__src">The War Zone</span><span>10.14</span></div>
+      <h3 class="cell__title"><a href="https://www.twz.com/news-features/army-explains-how-merops-interceptor-drone-became-program-of-record-in-just-142-days">Merops 拦截无人机 142 天成纪录项目</a></h3>
+      <p class="cell__sum">低成本拦截弹在无人机入侵事件后紧急交付北约盟友，成为陆军快速列装新兴能力的样板——采购速度本身就是竞争力。</p>
+      <div class="cell__so"><b>四层视角</b>对新供应商的启示：快速响应能力是卖点。我们的打样与交付周期可在开发信中主动量化。</div>
+    </article>
+
+    <article class="cell">
+      <div class="cell__meta"><span class="cell__src">sUAS News</span><span>10.13</span></div>
+      <h3 class="cell__title"><a href="https://www.suasnews.com/2026/10/parrot-strengthens-its-position-in-u-s-army-drone-procurement-programs/">Parrot 巩固其在美国陆军无人机采购项目中的地位</a></h3>
+      <p class="cell__sum">欧洲专业微型无人机厂商 Parrot 宣布在美陆军采购项目中取得重大进展，短程侦察无人机放量在即。</p>
+      <div class="cell__so"><b>四层视角</b>短程侦察放量 = 微型 IMU 放量；Parrot 类公司供应链可作直接开发对象。</div>
+    </article>
+
+    <article class="cell">
+      <div class="cell__meta"><span class="cell__src">sUAS News</span><span>10.15</span></div>
+      <h3 class="cell__title"><a href="https://www.suasnews.com/2026/10/mobilicom-launches-swarmix-family-to-capitalize-on-industry-shift-toward-drone-swarms-networked-autonomous-fleets/">Mobilicom 发布 SwarmiX 系列押注无人机蜂群</a></h3>
+      <p class="cell__sum">纳斯达克上市公司 Mobilicom 推出 SwarmiX 产品家族，顺应行业向蜂群与网络化自主机队转型。</p>
+      <div class="cell__so"><b>四层视角</b>蜂群每个节点都需要相对定位——MEMS 陀螺走量场景，蜂群规模即器件数量。</div>
+    </article>
+
+    <article class="cell">
+      <div class="cell__meta"><span class="cell__src">The War Zone</span><span>10.13</span></div>
+      <h3 class="cell__title"><a href="https://www.twz.com/sponsored-content/general-atomics-mojave-drone-completes-austere-testing-in-korea/">通用原子 Mojave 无人机在韩国完成苛刻环境测试</a></h3>
+      <p class="cell__sum">与韩华航空航天联合试飞，完成低空飞行剖面和短 field 运行——亚洲防务供应链协同信号。</p>
+      <div class="cell__so"><b>四层视角</b>韩华是亚洲防务巨头，其无人机业务的惯导采购可纳入客户开发雷达；韩华-通用原子合作模式也提示联合投标路径。</div>
+    </article>
+
+  </div>
+
+  <!-- 设备与产线 -->
+  <div class="band">
+    <span class="band__name">设备与产线</span>
+    <span class="band__count">3 条 · L3/L4 线</span>
+    <span class="band__hint">v2 最高优先级：新建/扩建 FOG 产线信号</span>
+  </div>
+  <div class="grid">
+
+    <article class="cell">
+      <div class="cell__meta"><span class="cell__src">本期如实记录</span><span>10.13–10.19</span></div>
+      <h3 class="cell__title">直接产线信号：本周为零</h3>
+      <p class="cell__sum">v2 标准将“新建/扩建 FOG 产线”列为最高优先级（绕环机 RH、复绕机 FX、固化箱 UV/GR 的直接买家）。窗口期内无此类公开新闻——已核对 TWZ、Naval News、sUAS、Space News、Inside GNSS 全部 151 条。</p>
+      <div class="cell__so"><b>对你意味着</b>设备线靠周报“偶遇”效率低。建议下期起叠加主动监测：谷歌快讯订阅 "fiber optic gyroscope" + "production line/capacity/winding" 组合词，邮箱转灌脚本。</div>
+    </article>
+
+    <article class="cell">
+      <div class="cell__meta"><span class="cell__src">sUAS News ×2 · TWZ</span><span>10.13–10.18</span></div>
+      <h3 class="cell__title">间接放量信号：ISR/蜂群平台集体扩产</h3>
+      <p class="cell__sum">Skydio ISR Command、Parrot 美军采购、Mobilicom 蜂群、Mojave 韩国测试——平台侧放量会传导至上游器件采购，进而传导至器件厂的环圈与测试产能扩张。</p>
+      <div class="cell__so"><b>对你意味着</b>把“平台放量名单”当设备线预热客户池：Skydio/Parrot/Mobilicom/韩华的器件供应商，就是 RH/FCTS 的潜在买家，提前建档。</div>
+    </article>
+
+    <article class="cell">
+      <div class="cell__meta"><span class="cell__src">sUAS News</span><span>10.14</span></div>
+      <h3 class="cell__title"><a href="https://www.suasnews.com/2026/10/avss-proves-canadian-manufacturing-prowess-with-uk-sora-sail-mark-certification/">AVSS 拿下英国 CAA SAIL 认证，加拿大无人机部件制造能力背书</a></h3>
+      <p class="cell__sum">AVSS 的 PRS-M4DT UAS 部件获得英国民航局 SAIL Mark 证书——无人机部件出口的合规认证范本，本地化制造 + 国际认证成为出海前提。</p>
+      <div class="cell__so"><b>对你意味着</b>两个信号：① 欧美客户采购时越来越看重供应商认证与本地化——利科夫对欧出口时可准备对应资质话术；② 反无人机/部件认证生态（DroneShield、Skapion 等）是测试设备的潜在买家。</div>
+    </article>
+
+  </div>
+
+  <!-- 信源与方法 -->
+  <section class="method">
+    <h2 class="section__name">本期信源与筛选</h2>
+    <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>信源</th><th>分组</th><th>窗口内</th><th>候选</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Inside GNSS</td><td>惯导</td><td class="num">2</td><td class="num">2</td><td>PNT 第一媒体</td></tr>
+        <tr><td>The War Zone</td><td>惯导</td><td class="num">31</td><td class="num">17</td><td>关键词预筛已滤装备噪声</td></tr>
+        <tr><td>Naval News</td><td>惯导</td><td class="num">10</td><td class="num">7</td><td>海上/水下无人系统</td></tr>
+        <tr><td>sUAS News</td><td>惯导</td><td class="num">10</td><td class="num">7</td><td>无人机行业</td></tr>
+        <tr><td>Space News</td><td>惯导</td><td class="num">5</td><td class="num">1</td><td>航天</td></tr>
+        <tr><td>IEEE Spectrum</td><td>惯导</td><td class="num">10</td><td class="num">2</td><td>信号密度低，持续降频中</td></tr>
+        <tr><td>C4ISRNET / SBG / EE News</td><td>惯导/竞品/光子</td><td class="num">0</td><td class="num">0</td><td>窗口内无更新</td></tr>
+        <tr><td>arXiv eess.SY</td><td>学术</td><td class="num">37</td><td class="num">12</td><td>宽词召回多，候选池噪声大</td></tr>
+        <tr><td>arXiv physics.optics</td><td>光子</td><td class="num">24</td><td class="num">6</td><td>硅光/TFLN 相关</td></tr>
+        <tr><td>Optica OPN</td><td>光子</td><td class="num">2</td><td class="num">0</td><td>期刊更新慢，周报节奏下量少</td></tr>
+        <tr><td>Semiconductor Eng.</td><td>光子</td><td class="num">10</td><td class="num">2</td><td>硅光工艺</td></tr>
+        <tr><td>EDN</td><td>光子</td><td class="num">10</td><td class="num">3</td><td>本周命中 FOG 工程综述</td></tr>
+        <tr><td>国防科大 PNT 每日动态</td><td>中文</td><td class="num">1</td><td class="num">3</td><td>网页列表型，单篇多事件</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td>合计（14 信源）</td><td></td><td class="num">151</td><td class="num">59</td><td>人工入选 17</td></tr>
+      </tfoot>
+    </table>
+    </div>
+    <p class="method__why"><strong>两段式筛选：</strong>关键词表（v2 标准第三节，中英双语）先做机器召回，151 条压到 59 条候选；再由人工按四层标准判断精度。<strong>关键词管召回，判断管精度</strong>——这正是 AIHOT“预筛 + 双评”架构的轻量复刻。信源不是越多越好：热度按事件算，48 小时内每个独立来源只算一次。</p>
+  </section>
+
+  <!-- colophon -->
+  <footer class="colophon">
+    <div class="row">
+      <span><b>下期</b> 2026-10-26（周一）· v2 标准</span>
+      <span><b>制作</b> WorkBuddy 脚本抓取 + 关键词预筛 + 人工精选</span>
+      <span><b>信源</b> 公开渠道，均附原文链接</span>
+    </div>
+    <div class="row" style="margin-top: var(--space-2);">
+      <span>仅供利科夫国际销售部内部参考 · 转载需核对原文</span>
+      <span>筛选标准见《情报关注领域与筛选标准 v2》</span>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>

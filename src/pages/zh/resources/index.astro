@@ -19,6 +19,17 @@ import { resources } from '../../../data/resources';
   </section>
 
   <section class="container-page py-14 sm:py-16">
+    <a href="/zh/intel/" class="hairline-card p-6 sm:p-8 mb-10 group hover:border-accent transition-colors flex items-center gap-6" style="border-left:3px solid var(--color-accent, #b4342a);">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2.5">
+          <span class="tag tag--accent">行业情报</span>
+          <span class="font-mono text-xs text-muted">周更 · Weekly</span>
+        </div>
+        <h2 class="font-display font-semibold text-ink text-xl leading-snug group-hover:text-accent transition-colors">惯性导航行业情报 · 周报归档</h2>
+        <p class="text-muted text-sm mt-2 leading-relaxed">每周精选惯性导航行业动态、技术进展与市场情报，涵盖 FOG / MEMS / 组合导航产业链。</p>
+      </div>
+      <span class="text-accent text-xl shrink-0" aria-hidden="true">→</span>
+    </a>
     <div class="grid md:grid-cols-2 gap-5">
       {resources.map((r) => (
         <a href={r.zh ? `/zh/resources/${r.slug}/` : `/resources/${r.slug}/`} class="hairline-card p-6 sm:p-8 group hover:border-accent transition-colors flex flex-col">

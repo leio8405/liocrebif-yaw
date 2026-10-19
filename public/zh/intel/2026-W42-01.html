@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>惯性导航行业情报 · 第 1 期 · 2026 年第 42 周</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · macrostructure: Index-First · tone: editorial · anchor hue: 85 (warm newsprint) · theme: Newsprint
+ * genre: editorial · nav: N6 masthead · footer: Ft4 dense colophon · enrichment: none (typography only)
+ * fonts: Fraunces (display) + Newsreader (body, latin) / Noto Serif SC (body, han) + JetBrains Mono (outlier: 期号/来源/统计)
+ * paper: oklch(97.5% .009 85) warm broadsheet · accent: oklch(50% .19 27) editing-red · ink: oklch(25% .014 60)
+ * pre-emit critique: P5 H4 E4 S4 R5 V4 · slop: run at handoff (58 gates) */
+:root {
+  --color-paper:      oklch(97.5% 0.009 85);
+  --color-paper-2:    oklch(94.8% 0.013 85);
+  --color-paper-3:    oklch(91.5% 0.016 85);
+  --color-rule:       oklch(84% 0.012 85);
+  --color-rule-strong:oklch(72% 0.022 60);
+  --color-ink:        oklch(25% 0.014 60);
+  --color-muted:      oklch(44% 0.014 70);
+  --color-faint:      oklch(48% 0.014 75);
+  --color-accent:     oklch(50% 0.19 27);
+  --color-accent-deep:oklch(42% 0.16 27);
+  --color-focus:      oklch(50% 0.19 27);
+
+  --font-display: "Fraunces", "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --font-body:    "Newsreader", "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, monospace;
+
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-md:   1.25rem;
+  --text-lg:   1.5625rem;
+  --text-xl:   1.9531rem;
+  --text-2xl:  2.4414rem;
+
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+
+  --measure: 68ch;
+  --page: 46rem;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { overflow-x: clip; }
+html { background: var(--color-paper); }
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- masthead (N6) ---------- */
+.masthead { text-align: center; padding: var(--space-7) var(--space-4) 0; }
+.masthead__kicker {
+  font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-deep);
+  margin-bottom: var(--space-3);
+}
+.masthead__title {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(2rem, 6vw + 0.5rem, 3rem); letter-spacing: 0.04em;
+  line-height: 1.1; color: var(--color-ink);
+}
+.masthead__sub {
+  font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 400;
+  letter-spacing: 0.14em; color: var(--color-muted); margin-top: var(--space-2);
+}
+.masthead__issue {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-2) var(--space-4);
+  font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-muted);
+  margin-top: var(--space-4); font-variant-numeric: tabular-nums;
+}
+.masthead__issue b { font-weight: 700; color: var(--color-ink); }
+.rule-double { border: 0; border-top: 3px double var(--color-rule-strong); margin: var(--space-4) auto 0; max-width: var(--page); }
+.rule-thin { border: 0; border-top: 1px solid var(--color-rule); }
+
+.page { max-width: var(--page); margin: 0 auto; padding: 0 var(--space-4) var(--space-8); }
+
+/* ---------- 导语（编者按） ---------- */
+.note { padding: var(--space-6) 0 var(--space-5); border-bottom: 1px solid var(--color-rule); }
+.note__label {
+  font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 700;
+  letter-spacing: 0.2em; color: var(--color-accent-deep); margin-bottom: var(--space-3);
+}
+.note p { max-width: var(--measure); margin-bottom: var(--space-3); text-align: justify; }
+.note p:last-child { margin-bottom: 0; }
+.note strong { font-weight: 600; }
+.note .stats {
+  font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-muted);
+  font-variant-numeric: tabular-nums; margin-top: var(--space-4);
+}
+
+/* ---------- 头条 ---------- */
+.headlines { padding: var(--space-6) 0 var(--space-2); }
+.headlines__label {
+  font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 700;
+  letter-spacing: 0.2em; color: var(--color-accent-deep); margin-bottom: var(--space-5);
+}
+.headline {
+  display: grid; grid-template-columns: 4.5rem 1fr; gap: var(--space-4);
+  padding: var(--space-5) 0; border-top: 1px solid var(--color-rule);
+}
+.headline:last-of-type { border-bottom: 1px solid var(--color-rule); }
+.headline__no {
+  font-family: var(--font-display); font-weight: 700; font-size: 3.25rem;
+  line-height: 0.9; color: var(--color-accent); font-variant-numeric: lining-nums;
+}
+.headline__src {
+  font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-faint);
+  letter-spacing: 0.06em; margin-bottom: var(--space-2);
+  font-variant-numeric: tabular-nums;
+}
+.headline__title {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: var(--text-lg); line-height: 1.3; letter-spacing: 0.01em;
+  margin-bottom: var(--space-2);
+}
+.headline__body { max-width: var(--measure); text-align: justify; }
+.headline__body p { margin-bottom: var(--space-2); }
+
+/* ---------- 分类条目（Index-First 主体） ---------- */
+.section { padding-top: var(--space-6); }
+.section__name {
+  font-family: var(--font-display); font-weight: 700; font-size: var(--text-md);
+  letter-spacing: 0.1em; padding-bottom: var(--space-2);
+  border-bottom: 3px double var(--color-rule-strong); margin-bottom: 0;
+}
+.section__count {
+  font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 400;
+  color: var(--color-faint); letter-spacing: 0.06em; margin-left: var(--space-3);
+  font-variant-numeric: tabular-nums;
+}
+.entry { padding: var(--space-4) 0; border-bottom: 1px solid var(--color-rule); }
+.entry:last-child { border-bottom: 0; }
+.entry__meta {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2);
+  font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-faint);
+  margin-bottom: var(--space-2); font-variant-numeric: tabular-nums;
+}
+.entry__src { font-weight: 700; color: var(--color-accent-deep); letter-spacing: 0.04em; }
+.entry__src::before { content: "■ "; color: var(--color-accent); font-size: 0.6em; vertical-align: 0.15em; }
+.entry__title {
+  font-family: var(--font-body); font-weight: 600; font-size: var(--text-md);
+  line-height: 1.4; margin-bottom: var(--space-2);
+}
+.entry__title a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--color-rule-strong); }
+.entry__title a:hover { border-bottom-color: var(--color-accent); }
+.entry__sum { max-width: var(--measure); text-align: justify; color: var(--color-ink); }
+.entry__so {
+  margin-top: var(--space-2); padding-left: var(--space-3);
+  border-left: 2px solid var(--color-accent);
+  font-size: var(--text-sm); color: var(--color-muted); max-width: var(--measure);
+}
+.entry__so b {
+  font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 700;
+  letter-spacing: 0.12em; color: var(--color-accent-deep); margin-right: var(--space-2);
+}
+.entry__empty {
+  padding: var(--space-4) 0; color: var(--color-faint); font-size: var(--text-sm);
+}
+
+/* ---------- 信源与方法 ---------- */
+.method { padding-top: var(--space-7); }
+.method__name {
+  font-family: var(--font-display); font-weight: 700; font-size: var(--text-md);
+  letter-spacing: 0.1em; padding-bottom: var(--space-2);
+  border-bottom: 3px double var(--color-rule-strong); margin-bottom: var(--space-4);
+}
+.method .table-wrap { overflow-x: auto; }
+.method table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+.method th, .method td { padding: var(--space-1) var(--space-2); text-align: left; border-bottom: 1px solid var(--color-rule); }
+.method th {
+  font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 700;
+  letter-spacing: 0.1em; color: var(--color-muted);
+}
+.method td.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; }
+.method tfoot td { font-weight: 700; border-bottom: 0; }
+.method__why { margin-top: var(--space-4); max-width: var(--measure); text-align: justify; font-size: var(--text-sm); color: var(--color-muted); }
+
+/* ---------- colophon (Ft4) ---------- */
+.colophon {
+  margin-top: var(--space-7); padding-top: var(--space-4);
+  border-top: 3px double var(--color-rule-strong);
+  font-family: var(--font-mono); font-size: var(--text-xs); line-height: 1.8;
+  color: var(--color-faint);
+}
+.colophon b { color: var(--color-muted); font-weight: 700; }
+.colophon .row { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); }
+
+/* ---------- 交互状态（gate 26：focus-visible / active） ---------- */
+.entry__title a:focus-visible {
+  outline: 2px solid var(--color-focus); outline-offset: 2px;
+  border-bottom-color: var(--color-accent);
+}
+.entry__title a:active { border-bottom-color: var(--color-accent-deep); }
+
+/* ---------- display 标题长词换行（gate 51） ---------- */
+.masthead__title, .headline__title, .section__name, .entry__title {
+  overflow-wrap: anywhere; min-width: 0;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 600px) {
+  .headline { grid-template-columns: 2.75rem 1fr; gap: var(--space-3); }
+  .headline__no { font-size: 2.25rem; }
+  .masthead { padding-top: var(--space-6); }
+}
+@media (max-width: 375px) {
+  .headline { grid-template-columns: 1fr; }
+  .headline__no { font-size: 2rem; }
+  .entry__title { font-size: var(--text-base); }
+}
+@media print {
+  .page { max-width: none; }
+  a { border-bottom: 0 !important; }
+  .method table { font-size: var(--text-xs); }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead__kicker">Liocrebif · Internal Intelligence</div>
+  <h1 class="masthead__title">惯性导航行业情报</h1>
+  <div class="masthead__sub">INERTIAL NAVIGATION &amp; PNT WEEKLY</div>
+  <div class="masthead__issue">
+    <span><b>第 1 期</b></span>
+    <span>2026 年第 <b>42</b> 周 · 10.13 – 10.19</span>
+    <span>武汉利科夫科技 · 国际销售部</span>
+  </div>
+  <hr class="rule-double">
+</header>
+
+<main class="page">
+
+  <!-- 导语 -->
+  <section class="note">
+    <div class="note__label">编者按 · EDITOR'S NOTE</div>
+    <p>本期是<strong>创刊号</strong>。这一周从 9 个公开信源抓取 <strong>69 条</strong>资讯，按“与光纤陀螺 / MEMS 惯性 / INS 组合导航的相关度”筛选后入选 <strong>20 条</strong>，按事件归并成 <strong>3 个头条</strong>和 4 个栏目。阅读约需 12 分钟。</p>
+    <p>本周三条主线：<strong>水下无人系统密集下水</strong>（UUV 是纯惯性市场，无 GNSS 可用）；<strong>GPS 干扰烧到美国本土</strong>（洛杉矶商业航班中招，靠惯性基准保平安——抗干扰叙事有了最新弹药）；<strong>LEO PNT 进入商用部署</strong>（Xona 融资超 3 亿美元，本月首发 6 颗卫星）。</p>
+    <p>筛选标准借鉴了开源项目 AIHOT（aihot.news）的方法论：信源分级、事件归并、按“有多少独立来源在说”排热度。<strong>信源不是越多越好</strong>——本期 IEEE Spectrum 抓 10 条、入选 0 条，已在文末信源表中如实标注，下期将降频。</p>
+    <div class="stats">抓取 69 · 入选 20 · 归并 3 事件 · 覆盖 10.12–10.19 · 全部内容附出处链接</div>
+  </section>
+
+  <!-- 头条 -->
+  <section class="headlines">
+    <div class="headlines__label">本周头条 · TOP STORIES</div>
+
+    <article class="headline">
+      <div class="headline__no">1</div>
+      <div class="headline__body">
+        <div class="headline__src">Naval News ×2 + The War Zone · 10.16–10.18</div>
+        <h2 class="headline__title">水下无人系统密集下水，UUV 进入“母舰化”时代</h2>
+        <p>三个独立来源本周报道同类事件：<strong>中国第二艘无人潜航器（UUV）母舰</strong>现身广州船厂，为首艘的缩小型；<strong>Saab 与瑞典国防物资管理局、瑞典武装部队</strong>联合研制的 LUUV 大型无人潜航器演示器成功入水；<strong>印度海军首艘多用途艇 INS Samarthak</strong>服役，具备无人系统母舰、反水雷和武器试验三重能力。</p>
+        <p>水下没有 GNSS，UUV 是光纤陀螺最纯粹的应用市场。“母舰化”意味着从单艇走向编队——每一艘 UUV 都要配高精度惯导，需求量以编队规模计。</p>
+        <div class="entry__so"><b>对你意味着</b>这是本期最值得写进开发信的主题：给做水下机器人的客户（如 MARTAC、Saab 供应链）发邮件时，可用“UUV 编队化 → 惯导需求按艇数增长”作为切入点。</div>
+      </div>
+    </article>
+
+    <article class="headline">
+      <div class="headline__no">2</div>
+      <div class="headline__body">
+        <div class="headline__src">国防科大 PNT 每日动态 · 10.10 · GPSWorld / Airlive</div>
+        <h2 class="headline__title">GPS 干扰烧到美国本土：洛杉矶商业航班中招，惯性冗余保平安</h2>
+        <p>多架商业航班在洛杉矶附近空域接连报告严重 GPS 干扰：联合航空 UA1962 起飞后卫星导航失效，UA1866 在 35,000 英尺巡航中遭遇同类干扰，阿拉斯加航空 AS222 在太平洋航线上信号降级。两机<strong>依靠 VOR/DME 与惯性基准系统（IRS）等冗余导航平安无事</strong>。GPS 威胁地图显示干扰已蔓延至洛杉矶沿岸海上空域。</p>
+        <p>同期 GPSWorld 刊文指出：导航栈正变得庞大——惯性、相机、雷达、地磁、地面通信信号共同参与解算；美军可靠 PNT 项目按此思路，在 M 码接收机之外集成视觉辅助与替代导航。<strong>核心问题正从“我在哪”变成“我能否相信这个位置”。</strong></p>
+        <div class="entry__so"><b>对你意味着</b>现成的抗干扰开场素材。客户问“为什么要买惯性”时，这就是答案：GNSS 可以被干扰，惯性是最后一道防线——而且这次是在美国本土民航航线上真实发生的。</div>
+      </div>
+    </article>
+
+    <article class="headline">
+      <div class="headline__no">3</div>
+      <div class="headline__body">
+        <div class="headline__src">Inside GNSS ×2 + 国防科大 PNT · 10.12–10.14</div>
+        <h2 class="headline__title">LEO PNT 从演示走向商用：Xona 融资超 3 亿美元，本月首发 6 颗卫星</h2>
+        <p><strong>TrustPoint 与 Calian</strong> 交付业界首个量产就绪的 C 波段 GNSS 天线，在轨演示验证了 GPS 独立的 PNT 硬件路径；ESA <strong>Celeste</strong> Pathfinder A 在轨测量确认 LEO 双频测距性能；Xona 太空系统宣布本月经 SpaceX 发射 6 颗“脉冲星”卫星，规划 258 颗业务星座，厘米级精度、信号可穿楼，累计融资逾 3 亿美元（含美太空军 2,000 万美元），计划 2028 年覆盖美欧日韩。</p>
+        <p>注意：LEO PNT 是 GNSS 的<strong>补充</strong>而非惯性的替代——它同样依赖卫星信号，干扰环境下依然失效。</p>
+        <div class="entry__so"><b>对你意味着</b>两用：①“LEO 辅助惯性”可作为产品新卖点写进方案；②客户若拿 LEO PNT 质疑惯性价值，上面的结论就是应答口径。</div>
+      </div>
+    </article>
+  </section>
+
+  <!-- 一、水下与海上 -->
+  <section class="section">
+    <h2 class="section__name">水下与海上<span class="section__count">4 条</span></h2>
+
+    <article class="entry">
+      <div class="entry__meta"><span class="entry__src">The War Zone / Naval News</span><span>10.18</span></div>
+      <h3 class="entry__title"><a href="https://www.twz.com/sea/second-chinese-submarine-drone-mothership-emerges">中国第二艘潜艇无人机母舰现身</a></h3>
+      <p class="entry__sum">卫星图显示广州船舶国际公司建造了首艘 UUV 母舰的缩小型版本。该类平台用于发射和回收大型水下无人潜航器，被西方观察家视为中国水下无人系统规模化的标志。</p>
+      <div class="entry__so"><b>对你意味着</b>国内竞争对手在水下惯导上的采购动向，值得向公司研发侧同步。</div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__meta"><span class="entry__src">Naval News</span><span>10.16</span></div>
+      <h3 class="entry__title"><a href="https://www.navalnews.com/naval-news/2026/10/saab-fmv-and-the-swedish-armed-forces-launch-luuv/">Saab、FMV 与瑞典武装部队发射 LUUV 大型无人潜航器</a></h3>
+      <p class="entry__sum">Saab 与瑞典国防物资管理局（FMV）、瑞典武装部队成功研制并下水了 LUUV 演示器，定位为大型无人水下航行平台。</p>
+      <div class="entry__so"><b>对你意味着</b>Saab 是欧洲防务巨头，其 UUV 供应链上的惯导供应商名单值得研究——这是潜在客户路径。</div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__meta"><span class="entry__src">Naval News</span><span>10.17</span></div>
+      <h3 class="entry__title"><a href="https://www.navalnews.com/naval-news/2026/10/indian-navy-first-multi-purpose-vessel-ins-samarthak/">印度海军入役首艘多用途艇 INS Samarthak</a></h3>
+      <p class="entry__sum">由 Larsen &amp; Toubro 建造的 INS Samarthak（A 10）在卡瓦尔海军基地入役，可执行武器试验、反水雷作业，并充当无人系统母舰，同级共两艘。</p>
+      <div class="entry__so"><b>对你意味着</b>印度防务市场入口：L&T 的国产化供应链 + 无人系统集成商，都是可开发的客户画像。</div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__meta"><span class="entry__src">Naval News</span><span>10.16</span></div>
+      <h3 class="entry__title"><a href="https://www.navalnews.com/naval-news/2026/10/martac-usvs-gain-real-time-machine-vision-from-sea-ai/">MARTAC 无人艇获得 SEA.AI 实时机器视觉</a></h3>
+      <p class="entry__sum">MARTAC 在其无人水面艇（USV）上集成 SEA.AI 海事机器视觉系统，可在传感器端实时分类接触目标，无需人工盯视频流。</p>
+      <div class="entry__so"><b>对你意味着</b>MARTAC 已在客户池关注名单——其平台对导航定位的依赖随自主等级提升而增加。</div>
+    </article>
+  </section>
+
+  <!-- 二、空中无人系统与 CCA -->
+  <section class="section">
+    <h2 class="section__name">空中无人系统与 CCA<span class="section__count">10 条</span></h2>
+
+    <article class="entry">
+      <div class="entry__meta"><span class="entry__src">The War Zone</span><span>10.16</span></div>
+      <h3 class="entry__title"><a href="https://www.twz.com/air/f-22-pilot-controls-fq-44-fighter-drone-from-the-cockpit-for-the-first-time">F-22 飞行员首次从座舱控制 FQ-44 战斗机无人机</a></h3>
+      <p class="entry__sum">F-22 将成为空军首批“空中四分卫”，为协同作战飞机（CCA）无人机编队指挥。这是有人-无人编组（MUM-T）的关键里程碑。</p>
+      <div class="entry__so"><b>对你意味着</b>CCA 是确定性增量市场：低成本无人机平台对低成本 MEMS/战术级惯性需求巨大。</div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__meta"><span class="entry__src">The War Zone</span><span>10.12</span></div>
+      <h3 class="entry__title"><a href="https://www.twz.com/air/european-u740-variant-of-the-xq-58a-valkyrie-has-flown">XQ-58A 欧洲版 U740 首飞</a></h3>
+      <p class="entry__sum">空客与 Kratos 合作将 U740 送上天空，德国力争 2029 年前装备先进空战无人机。</p>
+      <div class="entry__so"><b>对你意味着</b>空客/Kratos 的欧洲供应链——潜在的 INS 采购入口。</div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__meta"><span class="entry__src">The War Zone</span><span>10.16</span></div>
+      <h3 class="entry__title"><a href="https://www.twz.com/news-features/the-armys-plan-for-employing-lucas-kamikaze-drones-against-its-adversaries">陆军规划以 LUCAS 自杀无人机打击对手</a></h3>
+      <p class="entry__sum">美陆军正在成形一支部队在太平洋和欧洲向敌舰艇与弹道导弹发射远程单向攻击无人机的构想。</p>
+      <div class="entry__so"><b>对你意味着</b>单向攻击无人机对“够用就好”的低成本惯导是海量市场——价格敏感型客户的典型画像。</div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__meta"><span class="entry__src">The War Zone</span><span>10.14</span></div>
+      <h3 class="entry__title"><a href="https://www.twz.com/news-features/army-explains-how-merops-interceptor-drone-became-program-of-record-in-just-142-days">Merops 拦截无人机 142 天成为纪录项目</a></h3>
+      <p class="entry__sum">低成本拦截弹在无人机入侵事件后紧急交付北约盟友，如今成为陆军快速列装新兴能力的样板。</p>
+      <div class="entry__so"><b>对你意味着</b>“142 天从概念到纪录项目”的采购速度——对新供应商来说，快速响应能力本身就是卖点。</div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__meta"><span class="entry__src">sUAS News</span><span>10.18</span></div>
+      <h3 class="entry__title"><a href="https://www.suasnews.com/2026/10/skydio-launches-isr-command-the-next-step-in-drone-dominance/">Skydio 发布 ISR Command</a></h3>
+      <p class="entry__sum">前线军事单位可通过作战网络接收新目标，识别人员与装备——Skydio 将其定义为“无人机主导权的下一步”。</p>
+      <div class="entry__so"><b>对你意味着</b>ISR 无人机是 FOG/IMU 高价值应用；Skydio 供应链值得持续跟踪。</div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__meta"><span class="entry__src">sUAS News</span><span>10.13</span></div>
+      <h3 class="entry__title"><a href="https://www.suasnews.com/2026/10/parrot-strengthens-its-position-in-u-s-army-drone-procurement-programs/">Parrot 巩固其在美国陆军无人机采购项目中的地位</a></h3>
+      <p class="entry__sum">欧洲专业微型无人机系统厂商 Parrot 宣布在美陆军采购项目中取得重大进展。</p>
+      <div class="entry__so"><b>对你意味着</b>短程侦察无人机放量 = 微型 IMU 放量；Parrot 类公司的供应链可作直接开发对象。</div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__meta"><span class="entry__src">sUAS News</span><span>10.15</span></div>
+      <h3 class="entry__title"><a href="https://www.suasnews.com/2026/10/mobilicom-launches-swarmix-family-to-capitalize-on-industry-shift-toward-drone-swarms-networked-autonomous-fleets/">Mobilicom 发布 SwarmiX 系列，押注无人机蜂群</a></h3>
+      <p class="entry__sum">纳斯达克上市公司 Mobilicom 推出 SwarmiX 产品家族，顺应行业向蜂群与网络化自主机队转型的趋势。</p>
+      <div class="entry__so"><b>对你意味着</b>蜂群中的每个节点都需要相对定位—— MEMS 陀螺的走量场景。</div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__meta"><span class="entry__src">The War Zone</span><span>10.14</span></div>
+      <h3 class="entry__title"><a href="https://www.twz.com/land/sikorskys-nomad-100-vtol-drone-is-now-quad-packed-in-a-container-for-rapid-deployment/">西科斯基 Nomad 100 四联装集装箱快速部署</a></h3>
+      <p class="entry__sum">Sikorsky 的“Fast Pack”方案将四架自主固定翼无人机装入一个集装箱，从无基础设施的偏远地点最快投入作战。</p>
+      <div class="entry__so"><b>对你意味着</b>无基础设施部署 = 无外部定位辅助 = 纯惯性价值场景。</div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__meta"><span class="entry__src">The War Zone</span><span>10.15</span></div>
+      <h3 class="entry__title"><a href="https://www.twz.com/air/mq-72c-cargo-helicopter-drone-capabilities-demonstrated-for-u-s-army/">MQ-72C 货运无人直升机向美陆军演示能力</a></h3>
+      <p class="entry__sum">海军陆战队是 MQ-72C 的主要兴趣方，陆军也已装备 UH-72 并需要类似能力。</p>
+      <div class="entry__so"><b>对你意味着</b>货运无人机对导航可靠性要求低于 ISR 平台，属中低端惯性走量市场。</div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__meta"><span class="entry__src">The War Zone</span><span>10.13</span></div>
+      <h3 class="entry__title"><a href="https://www.twz.com/sponsored-content/general-atomics-mojave-drone-completes-austere-testing-in-korea">通用原子 Mojave 无人机在韩国完成苛刻环境测试</a></h3>
+      <p class="entry__sum">与合作伙伴韩华航空航天联合试飞，完成了低空飞行剖面和短 field 运行。</p>
+      <div class="entry__so"><b>对你意味着</b>韩华是亚洲防务巨头，其无人机业务的惯导采购可纳入客户开发雷达。</div>
+    </article>
+  </section>
+
+  <!-- 三、导航技术与趋势 -->
+  <section class="section">
+    <h2 class="section__name">导航技术与趋势<span class="section__count">4 条</span></h2>
+
+    <article class="entry">
+      <div class="entry__meta"><span class="entry__src">GPSWorld · 经国防科大 PNT 编译</span><span>09.28</span></div>
+      <h3 class="entry__title"><a href="https://pntlab.nudt.edu.cn/yndt/mrjb/cab6579c62804271ad5411803fa63a04.htm">导航栈正变得越来越庞大，这是件好事吗？</a></h3>
+      <p class="entry__sum">定位不再仅依赖单一 GNSS 信号：惯性传感器、相机、雷达、地磁、地面通信信号共同参与解算。新一代多源导航栈呈层级架构——GNSS 提供全局基准，惯性输出连续运动数据，环境传感器感知周边，精密时钟保障无参考时的时间基准。赛峰 LEO-PNT 项目亦按此思路将低轨信号与现有导航技术结合。</p>
+      <div class="entry__so"><b>对你意味着</b>多源融合中惯性是不可替代的一层——这是向技术型客户论证产品架构地位的最好引用。</div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__meta"><span class="entry__src">arXiv · 经国防科大 PNT 编译</span><span>09.15</span></div>
+      <h3 class="entry__title"><a href="https://pntlab.nudt.edu.cn/yndt/mrjb/cab6579c62804271ad5411803fa63a04.htm">论文：Xona Pulsar 与星载 GNSS 接收机的兼容性</a></h3>
+      <p class="entry__sum">评估 Xona Pulsar 低轨 PNT 星座对 400–1000 km 轨道卫星搭载 GNSS 接收机的干扰影响。仿真显示 1000 km 轨道场景下 99% 工况中 GPS L5 信号 C/N₀ 退化低于 3 dB，强干扰属小概率事件。</p>
+      <div class="entry__so"><b>对你意味着</b>LEO PNT 与星载 GNSS 的频谱共存有了量化结论——星载组合导航客户可能关心此问题。</div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__meta"><span class="entry__src">arXiv · 经国防科大 PNT 编译</span><span>09.24</span></div>
+      <h3 class="entry__title"><a href="https://pntlab.nudt.edu.cn/yndt/mrjb/cab6579c62804271ad5411803fa63a04.htm">论文：GNSS 拒止环境下增强 5G NTN VSAT 的随机接入性能</a></h3>
+      <p class="entry__sum">提出面向相控阵 5G 非地面网络 VSAT 终端的单卫星多步定位框架：融合到达角（AoA）、到达频率（FoA）与到达时间（ToA）观测，以改进卡尔曼滤波解算，标称工况下可将定位不确定度从数十公里降至数公里级。</p>
+      <div class="entry__so"><b>对你意味着</b>卫星通信终端在 GNSS 拒止时保持定位的新技术路径——与卫星互联网（Starlink 类）客户的话题结合点。</div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__meta"><span class="entry__src">Space News</span><span>10.12</span></div>
+      <h3 class="entry__title"><a href="https://spacenews.com/jena-optronik-is-proud-to-partner-with-mda-space-for-its-first-astro-hp-mission/">Jena-Optronik 与 MDA Space 合作首个 ASTRO HP 星敏感器任务</a></h3>
+      <p class="entry__sum">MDA Space 将在一项低轨任务中使用 Jena-Optronik 的 ASTRO HP 星敏感器。星敏提供绝对姿态基准，与惯性组合构成卫星姿态确定系统。</p>
+      <div class="entry__so"><b>对你意味着</b>航天姿态测量供应链动态——星载 INS 客户（如 MDA 这类卫星总包商）的采购线索。</div>
+    </article>
+  </section>
+
+  <!-- 四、竞品动态 -->
+  <section class="section">
+    <h2 class="section__name">竞品动态<span class="section__count">0 条</span></h2>
+    <div class="entry__empty">本期 SBG Systems 官网无新发布；Inside GNSS 窗口期内无直接竞品新品（SBG Pulse-40 v2 为 7 月发布）。下期起将 ANELLO、VectorNav、Advanced Navigation 纳入抓取并逐个试抓确认。</div>
+  </section>
+
+  <!-- 信源与方法 -->
+  <section class="method">
+    <h2 class="section__name">本期信源与筛选</h2>
+    <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>信源</th><th>层级</th><th>抓取</th><th>入选</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Inside GNSS</td><td>T2 媒体</td><td class="num">2</td><td class="num">2</td><td>PNT 行业第一媒体</td></tr>
+        <tr><td>The War Zone</td><td>T2 媒体</td><td class="num">31</td><td class="num">6</td><td>只取无人系统/导航相关</td></tr>
+        <tr><td>Naval News</td><td>T2 媒体</td><td class="num">10</td><td class="num">4</td><td>海上/水下无人系统</td></tr>
+        <tr><td>sUAS News</td><td>T2 媒体</td><td class="num">10</td><td class="num">4</td><td>无人机行业</td></tr>
+        <tr><td>Space News</td><td>T2 媒体</td><td class="num">5</td><td class="num">1</td><td>航天</td></tr>
+        <tr><td>IEEE Spectrum</td><td>T2 媒体</td><td class="num">10</td><td class="num">0</td><td>信号密度低，下期降频</td></tr>
+        <tr><td>C4ISRNET</td><td>T2 媒体</td><td class="num">0</td><td class="num">0</td><td>窗口内无更新</td></tr>
+        <tr><td>SBG Systems</td><td>T1 竞品</td><td class="num">0</td><td class="num">0</td><td>本周官网无发布</td></tr>
+        <tr><td>国防科大 PNT 每日动态</td><td>中文</td><td class="num">1</td><td class="num">3</td><td>网页列表型，单篇含多事件</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td>合计</td><td></td><td class="num">69</td><td class="num">20</td><td></td></tr>
+      </tfoot>
+    </table>
+    </div>
+    <p class="method__why"><strong>为什么信源不是越多越好：</strong>热度按事件算、不按文章算——同一事件多家报道只归并一次，按独立来源数量排序。信源每增加一个，抓取量上升但“独立来源”并未增加，噪声和阅读成本却实打实上升。AIHOT 的热度算法（48 小时内每个独立来源只算一次）就是为这个设计的。本期 arXiv 信源因日期解析问题抓到 0 条，下期修复。</p>
+  </section>
+
+  <!-- colophon -->
+  <footer class="colophon">
+    <div class="row">
+      <span><b>下期</b> 2026-10-26（周一）</span>
+      <span><b>制作</b> WorkBuddy 自动抓取 + 人工筛选标准</span>
+      <span><b>信源</b> 公开渠道，均附原文链接</span>
+    </div>
+    <div class="row" style="margin-top: var(--space-2);">
+      <span>仅供利科夫国际销售部内部参考 · 转载需核对原文</span>
+      <span>筛选标准可改：改 <b>信源与标准</b> 一节即可</span>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>
