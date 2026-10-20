@@ -37,6 +37,79 @@ export interface ResourceArticle {
 
 export const resources: ResourceArticle[] = [
   {
+    slug: 'imu-for-uav-guide',
+    title: 'Choosing an IMU for UAV Applications: A Practical Guide',
+    description:
+      'A UAV inertial unit has to earn every gram and watt it draws. How to match IMU class to airframe — micro multirotor, medium fixed wing, long-endurance and GNSS-denied — plus the vibration and GNSS-aiding checks that decide how it behaves in the field.',
+    date: '2026-10-20',
+    readingTime: 6,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'What a UAV actually asks of its IMU',
+        html: `<p>Picking an <strong>IMU for UAV</strong> platforms is mostly a sequencing problem: airframe and mission profile narrow the accuracy class, then size, power and vibration behavior narrow the shortlist, and the GNSS architecture you plan to fly determines how much accuracy you actually need to buy. A <strong>drone IMU sensor</strong> feeds the flight controller with angular rate and acceleration hundreds of times per second; every attitude loop, every position hold and every survey-grade output downstream inherits its errors. This guide walks through that sequence in order, so the specification decision lands on numbers instead of datasheet adjectives.</p>`,
+      },
+      {
+        h2: 'Match the IMU class to the airframe',
+        html: `<p>Different airframes fail in different ways when the sensor is wrong. The table below is the starting grid most UAV integrators work from:</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Platform</th>
+      <th class="py-2 pr-4 font-semibold">Typical mission</th>
+      <th class="py-2 pr-4 font-semibold">IMU class that fits</th>
+      <th class="py-2 pr-4 font-semibold">Why</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Micro multirotor (&lt;2 kg)</td><td class="py-2 pr-4">Inspection, photography, short-range mapping</td><td class="py-2 pr-4">Industrial MEMS IMU</td><td class="py-2 pr-4">Short sorties; GNSS nearly always in view; attitude loop quality and SWaP dominate</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Medium fixed wing / VTOL (5–25 kg)</td><td class="py-2 pr-4">Survey, cargo, patrol</td><td class="py-2 pr-4">Tactical MEMS IMU or integrated GNSS/INS</td><td class="py-2 pr-4">Longer legs and mapping payloads need stable attitude and low noise for image stitching</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Long-endurance / GNSS-denied</td><td class="py-2 pr-4">BVLOS, contested airspace, tunnels and indoor flight</td><td class="py-2 pr-4">FOG-based INS</td><td class="py-2 pr-4">Unaided drift must stay bounded for the whole outage, which MEMS class cannot sustain</td></tr>
+  </tbody>
+</table>
+<p>The third row is the expensive one to get wrong: once satellites drop out, position error growth is set almost entirely by gyro quality, and no amount of post-processing recovers it.</p>`,
+      },
+      {
+        h2: 'SWaP: the constraint that narrows the list first',
+        html: `<p>On an aircraft, every sensor pays rent in grams and watts. A compact integrated unit such as the <a href="/products/lkf-msu105/" class="text-blue-700 underline">LKF-MSU105 mini MEMS integrated navigation system</a> draws ≤0.5 W steady-state, fits in 41.5 × 35.5 × 9.5 mm, starts up in ≤3 s and outputs at up to 100 Hz — the kind of envelope that drops into a small airframe without reshaping the power budget. Its gyro range of ±300 °/s and accelerometer range of ±16 g cover the maneuver envelope of fixed-wing and multirotor flight control comfortably.</p>
+<p>If the payload bay takes a gimbal or electro-optical pod rather than a full navigation unit, a raw six-axis module is often the better fit. The <a href="/products/lkf-msu204b/" class="text-blue-700 underline">LKF-MSU204B MEMS IMU</a> runs from a 3.3 V nominal supply, starts in ≤2 s, measures 47.0 × 44.0 × 14.0 mm and is rated for 20,000 h MTBF — packaged for the vibration environment a pod sees on a rotating wing.</p>`,
+      },
+      {
+        h2: 'Vibration: the spec-sheet killer',
+        html: `<p>UAV IMUs rarely fail on the bench; they fail bolted next to a pair of unbalanced props. Rotating machinery injects broadband vibration that the sensor rectifies into a DC-like bias error — so the drift you measure in flight can be several times worse than the datasheet figure, which is usually taken static. Three mitigations work together:</p>
+<ul class="list-disc pl-6 space-y-1">
+  <li><strong>Mounting isolation.</strong> Damped mounts tuned below the propeller blade-pass frequency keep the largest energy out of the sensing axes.</li>
+  <li><strong>Vibration qualification data.</strong> Ask for bias behavior under vibration, not just static bias. The LKF-MSU204B is qualified at 10–2000 Hz with 6.06 g RMS vibration and 30 g / 11 ms shock — numbers that describe airframe reality better than a room-temperature bias line.</li>
+  <li><strong>Full-temperature calibration.</strong> Airframes see large temperature swings in a single sortie; sensors compensated across the full operating range hold their error model in flight instead of only at 25 °C.</li>
+</ul>`,
+      },
+      {
+        h2: 'Design the GNSS aiding, not just the sensor',
+        html: `<p>In practice, <strong>UAV inertial navigation</strong> is almost never an IMU alone — it is an IMU tightly coupled with GNSS, and often a magnetometer and barometer. That architecture changes the buying decision: the better your aiding sources, the lower the IMU class you can accept, and the shorter the outages you need to ride through unaided.</p>
+<p>The LKF-MSU105 illustrates the arithmetic. With single-point GNSS it holds 3 m horizontal position (1σ); with RTK corrections it holds 0.02 m + 1 ppm. Heading comes in at 0.5° single-antenna in dynamic flight, or 0.2° with a 1 m dual-antenna baseline — and roll/pitch reach 0.1° with dual antennas. For a survey UAV, that RTK-aided pair is often the difference between a usable map and a re-flight. Conversely, if the mission profile includes regular satellite outages, budget unaided drift first and let that number dictate the gyro class, then pick the aiding package around it.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Do I need a FOG IMU on my drone?',
+        a: 'Only if the platform must hold accurate dead reckoning through long GNSS outages. For missions where satellites are available most of the time, a tactical MEMS IMU with good aiding delivers comparable real-world position and attitude — at a fraction of the size, power and cost. Reserve FOG class for long-endurance, BVLOS or GNSS-contested profiles where unaided drift is the binding requirement.',
+      },
+      {
+        q: 'What gyro and accelerometer range does a UAV need?',
+        a: 'Flight-control applications rarely exceed a few hundred degrees per second, so a ±300 to ±500 °/s gyro range covers fixed-wing, multirotor and VTOL maneuvering with margin. Accelerometer range depends on the landing and vibration environment more than on flight itself — ±16 g suits most airframes, while pods exposed to hard shock benefit from wider range and a qualified shock rating.',
+      },
+      {
+        q: 'Why does my IMU drift in flight even when GNSS is fine?',
+        a: 'Position staying locked while attitude wanders usually points to installation and environment rather than the sensor itself: vibration rectification from prop imbalance, a mounting frame that flexes with temperature, or misalignment between the IMU axes and the airframe axes. Isolate the mount, verify the alignment angles, and check that the sensor is calibrated across the temperatures your sortie actually reaches.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-MSU105', href: '/products/lkf-msu105/', caption: 'Mini MEMS integrated navigation system' },
+      { model: 'LKF-MSU204B', href: '/products/lkf-msu204b/', caption: 'MEMS IMU for pods and stabilization' },
+    ],
+    relatedCategory: { name: 'IMU & North Seekers', href: '/products/imu/' },
+  },
+  {
     slug: 'gnss-denied-navigation-solutions',
     title: 'GNSS-Denied Navigation: 5 Approaches Compared',
     description:

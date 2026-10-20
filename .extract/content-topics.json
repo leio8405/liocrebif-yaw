@@ -29,7 +29,7 @@
       "relatedCategory": "inertial-navigation-systems"
     },
     {
-      "id": 7, "slug": "imu-for-uav-guide", "used": false,
+      "id": 7, "slug": "imu-for-uav-guide", "used": true, "published": "2026-10-20",
       "title": "Choosing an IMU for UAV Applications: A Practical Guide",
       "targetKeywords": "imu for uav, uav inertial navigation, drone imu sensor",
       "outline": "无人机场景 SWaP 敏感：小型多旋翼（MEMS IMU 即可）/中型固定翼（战术 MEMS）/长航时与 GNSS 拒止任务（FOG）。振动隔离、功耗预算、GNSS 辅助架构。内链：LKF-MSU105、LKF-MSU204B、imu 分类。",
