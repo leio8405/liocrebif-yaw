@@ -38,6 +38,113 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'fiber-coil-winding-process',
+    title: 'Inside Fiber Coil Winding: Why Precision Winding Defines FOG Performance',
+    description:
+      'Winding pattern, tension and traverse set a FOG coil\'s bias drift before a single test is run. How symmetric winding cancels Shupe error, and what tension and turn-count specifications actually control.',
+    date: '2026-10-21',
+    readingTime: 5,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'Where FOG accuracy is actually decided',
+        html: `<p><strong>Fiber coil winding</strong> is where a gyroscope's error budget is set, long before anything is tested. If the turns are laid down with the wrong symmetry, the wrong tension or a 0.1-turn length error, the coil will drift and nothing downstream recovers it. This guide covers what <strong>fiber optic coil manufacturing</strong> actually controls — winding pattern, tension and traverse — and what each does to the numbers on a datasheet.</p>`,
+      },
+      {
+        h2: 'Shupe error: the drift mechanism that lives in the winding',
+        html: `<p>The dominant drift term is <strong>Shupe error</strong>, a thermally induced non-reciprocity. Counter-propagating beams share one length of fiber, but they traverse any given section at different times. If that section is at a different temperature when the clockwise beam passes than when the counter-clockwise beam arrives, the two accumulate unequal phase — and the interferometer reads the difference as rotation.</p>
+<p>A ramp of a fraction of a degree per minute across the coil is enough, and because the mechanism is geometric it can be attacked geometrically.</p>`,
+      },
+      {
+        h2: 'Four-pole, eight-pole, sixteen-pole: what the symmetry buys you',
+        html: `<p>If fiber sections equidistant from the coil midpoint are placed <em>radially adjacent</em> to one another, a thermal wave diffusing inward reaches both counter-propagating beams at almost the same instant. Their phase errors become equal and cancel in the difference. That is the whole idea behind symmetric winding, and the pole count describes how finely the symmetry is arranged:</p>
+<ul class="list-disc pl-6 space-y-2">
+<li><strong>Four-pole (quadrupole)</strong> — the workhorse of production FOG coils. Layers are wound in pairs about the fiber midpoint, and the arrangement typically cuts Shupe error by roughly an order of magnitude against a simple two-pole pattern.</li>
+<li><strong>Eight-pole (octupole)</strong> — finer pairing again, aimed at fast thermal transients, steep radial gradients or the higher accuracy grades.</li>
+<li><strong>Sixteen-pole</strong> — the finest symmetry used in routine production. Drift gains over eight-pole are smaller, while winding time and process discipline go up.</li>
+</ul>
+<p>What survives is the transition region: the pigtails must leave the coil together, and lead routing asymmetry is usually the residual Shupe term in an otherwise well-wound coil.</p>`,
+      },
+      {
+        h2: 'Tension: the parameter that trades loss against long-term drift',
+        html: `<p>Winding tension decides how the coil behaves after it leaves the machine. Too loose, and layers settle under vibration; every relative movement between layers appears as a phase error. Too tight, and the fiber sits under sustained stress — in polarization-maintaining fiber that shifts the stress-induced birefringence, degrades polarization holding, and lets viscoelastic creep act as the coil thermal-cycles.</p>
+<p>What matters is not the setpoint but its <em>steadiness</em>. ±0.5 g at 20 r/min over a 5–50 g range is about 1% at mid-range, and that figure is quoted at a stated speed for a reason: the tension loop has finite bandwidth while the spindle accelerates and decelerates within every layer. A profile that outruns the loop produces exactly the layer-to-layer variation the specification exists to prevent.</p>`,
+      },
+      {
+        h2: 'Traverse and turn count: the two numbers behind scale factor',
+        html: `<p>Traverse control places each turn against the previous one. Layer pitch has to track the coated diameter — 245 μm for standard PM fiber, 135 μm for the thin-coated fiber used in compact coils — and any mismatch produces crossovers or gaps. A crossover breaks the radial adjacency the pattern was built to create and concentrates stress at the crossing.</p>
+<p>Turn count matters for a different reason: fiber length sits directly in the Sagnac scale factor, which scales with radius times length. On the <a href="/products/lkf-fc/" class="text-blue-700 underline">LKF-FC60</a> geometry (39 mm ID, 55 mm OD) one turn is about 148 mm, so a 0.1-turn error on a 500 m coil is roughly 30 ppm of length — and therefore of scale factor. Counting resolution is a scale-factor specification in disguise.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Parameter</th>
+      <th class="py-2 pr-4 font-semibold">LKF-RH04</th>
+      <th class="py-2 pr-4 font-semibold">LKF-RH16</th>
+      <th class="py-2 pr-4 font-semibold">LKF-RH16A</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Fiber diameter range</td><td class="py-2 pr-4">Φ0.1–0.26 mm</td><td class="py-2 pr-4">Φ0.1–0.5 mm</td><td class="py-2 pr-4">Φ0.1–0.5 mm</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Winding speed</td><td class="py-2 pr-4">40 r/min</td><td class="py-2 pr-4">0–50 r/min</td><td class="py-2 pr-4">0–80 r/min</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Max fixture diameter</td><td class="py-2 pr-4">250 mm</td><td class="py-2 pr-4">250 mm</td><td class="py-2 pr-4">250 mm</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Tension range</td><td class="py-2 pr-4">5–50 g</td><td class="py-2 pr-4">5–50 g</td><td class="py-2 pr-4">3–50 g</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Tension accuracy</td><td class="py-2 pr-4">±0.5 g @ 20 r/min</td><td class="py-2 pr-4">±0.5 g @ 20 r/min</td><td class="py-2 pr-4">±0.5 g @ 20 r/min</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Traverse stroke</td><td class="py-2 pr-4">0–60 mm</td><td class="py-2 pr-4">200 mm</td><td class="py-2 pr-4">200 mm</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Turn counting resolution</td><td class="py-2 pr-4">0.1 turn</td><td class="py-2 pr-4">0.1 turn</td><td class="py-2 pr-4">0.01 turn</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Dimensions (L×W×H)</td><td class="py-2 pr-4">1900×1100×2000 mm</td><td class="py-2 pr-4">2200×1100×2000 mm</td><td class="py-2 pr-4">1500×1150×1900 mm</td></tr>
+  </tbody>
+</table>
+<p>The 0–60 mm stroke on the RH04 matches its narrow fiber range and fixed 40 r/min spindle. The 200 mm stroke and 0–80 r/min spindle on the <a href="/products/lkf-rh16a/" class="text-blue-700 underline">LKF-RH16A</a> target larger builds, and its 0.01-turn counting resolution is the finer scale-factor instrument of the three.</p>`,
+      },
+      {
+        h2: 'From fiber to a characterised coil',
+        html: `<p>The process ends with a component, not an anonymous spool. An independent, self-supporting coil removes the fixture from the strain path — the reason the LKF-FC family is wound as a standalone structure — and is then bonded and cured so the tension set on the machine survives thermal cycling.</p>
+<p>Coil geometry, fiber length and achievable grade are one design decision:</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Coil</th>
+      <th class="py-2 pr-4 font-semibold">Wavelength</th>
+      <th class="py-2 pr-4 font-semibold">ID / OD / height</th>
+      <th class="py-2 pr-4 font-semibold">Fiber length</th>
+      <th class="py-2 pr-4 font-semibold">Target FOG accuracy (10 s avg.)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">LKF-FC60</td><td class="py-2 pr-4">1310 nm</td><td class="py-2 pr-4">39/55/8.5 mm</td><td class="py-2 pr-4">500 ±10 m</td><td class="py-2 pr-4">0.1 °/h</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">LKF-FC98</td><td class="py-2 pr-4">1550 nm</td><td class="py-2 pr-4">75/93/12 mm</td><td class="py-2 pr-4">1460 ±10 m</td><td class="py-2 pr-4">0.015 °/h</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">LKF-FC120</td><td class="py-2 pr-4">1550 nm</td><td class="py-2 pr-4">93.5/113/13.5 mm</td><td class="py-2 pr-4">2220 ±10 m</td><td class="py-2 pr-4">0.003 °/h</td></tr>
+  </tbody>
+</table>
+<p>Radius and length grow together, and that is the normal trade: sensitivity rises with their product, while loss, cost and thermal mass rise too. Winding has to preserve what the design bought.</p>`,
+      },
+      {
+        h2: 'Matching the machine to the coil, not the other way round',
+        html: `<p>Machine selection starts from the coil drawing. Fix the outer diameter and required bias stability, derive fiber length and diameter, then check that traverse stroke and tension range cover the build. Thin 135 μm fiber at low tension needs the 3–50 g end of the RH16A's range; a 500 m coil of standard 245 μm fiber is unremarkable for either 200 mm machine.</p>
+<p>If you are setting up or expanding coil production, the <a href="/products/fiber-optic/" class="text-blue-700 underline">fiber devices and equipment range</a> covers winding machines, UV curing chambers and the coils themselves. Send the coil drawing and the target grade, and we will confirm which winding configuration fits before you commit to a spindle.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Which winding pattern gives the lowest Shupe error?',
+        a: 'On paper, the finest symmetry available — sixteen-pole. In practice, four-pole is the standard for production coils, with eight-pole used where thermal transients are fast or the grade is high. A finer pattern costs winding time and demands tighter tension and traverse control, so specify it from the drift requirement rather than the pole count.',
+      },
+      {
+        q: 'Why is tension accuracy always quoted at a specific winding speed?',
+        a: 'Because the tension loop has finite bandwidth while the spindle accelerates and decelerates within each layer. ±0.5 g at 20 r/min is a real figure at that speed; run the spindle faster and the loop lags the demand, so the layer-to-layer variation grows above the quoted number. Always ask for the accuracy at the speed you intend to run.',
+      },
+      {
+        q: 'Does more fiber always mean better performance?',
+        a: 'No. Sensitivity rises with radius times length, but so do insertion loss, cost and the thermal mass the winding pattern has to manage. Past a point the added length buys less than the loss costs, and if symmetry or tension control degrades, drift gets worse rather than better. Length should come from the required angle random walk, not from the largest coil that fits the housing.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-RH16', href: '/products/lkf-rh16/', caption: 'Fiber coil winding machine, 0–50 r/min' },
+      { model: 'LKF-RH16A', href: '/products/lkf-rh16a/', caption: 'Fiber coil winding machine, 0–80 r/min, 0.01-turn counting' },
+    ],
+    relatedCategory: { name: 'Fiber Devices & Equipment', href: '/products/fiber-optic/' },
+  },
+  {
     slug: 'how-mems-accelerometer-works',
     title: 'How MEMS Accelerometers Work: From Capacitive Sensing to Navigation',
     description:

@@ -45,7 +45,7 @@
       "relatedCategory": "accelerometers"
     },
     {
-      "id": 9, "slug": "fiber-coil-winding-process", "used": false,
+      "id": 9, "slug": "fiber-coil-winding-process", "used": true, "published": "2026-10-21",
       "title": "Inside Fiber Coil Winding: Why Precision Winding Defines FOG Performance",
       "targetKeywords": "fiber coil winding, fog coil winding machine, fiber optic coil manufacturing",
       "outline": "四极/八极/十六极对称绕制为何影响 Shupe 误差、张力控制与排线精度、自动绕环机 vs 人工。内链：fiber-optic 分类、LKF-RH16、LKF-RH16A 详情页。",
