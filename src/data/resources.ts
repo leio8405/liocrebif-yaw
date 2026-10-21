@@ -48,28 +48,28 @@ export const resources: ResourceArticle[] = [
     sections: [
       {
         h2: 'The working principle in one pass',
-        html: `<p>A <strong>MEMS accelerometer</strong> is a mechanical device before it is an electronic one. A silicon proof mass hangs on flexures a few micrometres wide; acceleration displaces it; the displacement is measured. That is the full <strong>MEMS accelerometer working principle</strong>, and in the <strong>capacitive accelerometer</strong> the measurement is a change in capacitance across a gap measured in micrometres, so every datasheet figure traces back to how well that gap is controlled. This guide follows the signal from proof mass to digital output, then works through the two trade-offs that decide whether a part fits a platform: range against resolution, and bandwidth against noise.</p>`,
+        html: `<p>A <strong>MEMS accelerometer</strong> is a mechanical device before it is an electronic one: a silicon proof mass on flexures a few micrometres wide, displaced by acceleration and measured. That is the full <strong>MEMS accelerometer working principle</strong>, and in the <strong>capacitive accelerometer</strong> the measurement is a change in capacitance across a gap measured in micrometres, so every datasheet figure traces back to how well that gap is controlled. This guide follows the signal from proof mass to output, then the two trade-offs that matter: range against resolution, and bandwidth against noise.</p>`,
       },
       {
         h2: 'Inside the sense element: proof mass, flexures and a gap',
-        html: `<p>Strip the package away and a capacitive accelerometer is a plate capacitor whose moving electrode is the proof mass. Deflection follows Hooke's law rather than Newton's: the mass settles where spring force balances inertial force, so displacement is <strong>x = m · a / k</strong>, with m the proof mass and k the flexure stiffness. Capacitance varies as C = εA/d, so a displacement of a few nanometres yields a few femtofarads. Two consequences matter:</p>
+        html: `<p>Strip the package away and a capacitive accelerometer is a plate capacitor whose moving electrode is the proof mass. Deflection follows Hooke's law: the mass settles where spring force balances inertial force, so displacement is <strong>x = m · a / k</strong>, with m the proof mass and k the flexure stiffness. Capacitance varies as C = εA/d, so nanometres of travel yield femtofarads of change. Two consequences matter:</p>
 <ul class="list-disc pl-6 space-y-2">
-<li><strong>Stiffness sets the scale factor.</strong> Soft flexures give more deflection per g and more signal, but less travel before the mass reaches a mechanical stop — which is where range comes from.</li>
-<li><strong>Detection is differential.</strong> Electrodes on both sides are read as C1 − C2, so thermal expansion of the gap, dielectric ageing and supply drift cancel in the subtraction. That is how a part holds single-digit micro-g bias stability while surviving 3,000 g unpowered shock.</li>
+<li><strong>Stiffness sets the scale factor.</strong> Soft flexures give more deflection per g and more signal, but less travel before the mass hits a mechanical stop — which is where range comes from.</li>
+<li><strong>Detection is differential.</strong> Electrodes on both sides are read as C1 − C2, so gap expansion, dielectric ageing and supply drift cancel in the subtraction — how a part holds single-digit micro-g bias stability while surviving 3,000 g unpowered shock.</li>
 </ul>`,
       },
       {
         h2: 'From capacitance to a number the navigation filter can use',
         html: `<p>Between the sense element and the output pin sits a chain whose design shows up directly in the numbers you compare:</p>
 <ul class="list-disc pl-6 space-y-2">
-<li><strong>Sensing and demodulation.</strong> Charge or voltage sensing converts femtofarads into a usable voltage; carrier-based schemes move the measurement away from low-frequency 1/f noise, then demodulate back to baseband.</li>
+<li><strong>Sensing and demodulation.</strong> Charge or voltage sensing converts femtofarads into usable voltage; carrier-based schemes move the measurement away from 1/f noise, then demodulate to baseband.</li>
 <li><strong>Closed-loop rebalance.</strong> Electrostatic force holds the mass at null, and the voltage needed is proportional to acceleration. Linearity improves because the mass barely moves — the reason a production part can quote scale factor nonlinearity below 300 ppm.</li>
-<li><strong>Calibration on die.</strong> A sigma-delta modulator and decimation filter trade bandwidth against noise, while an on-chip temperature sensor drives compensation coefficients from a factory sweep; the residual afterwards is a separate datasheet line from the raw temperature coefficient. Self-test applies a commanded deflection to verify the mechanical path without a shaker.</li>
+<li><strong>Calibration on die.</strong> A sigma-delta modulator and decimation filter trade bandwidth against noise, while an on-chip temperature sensor drives compensation coefficients from a factory sweep; the residual afterwards is a separate datasheet line from the raw temperature coefficient.</li>
 </ul>`,
       },
       {
         h2: 'Range against resolution: the trade-off is mechanical, not electronic',
-        html: `<p>Extending range means stiffening the flexures, and stiffer flexures mean less deflection per g — less signal for the same noise floor. Noise referred to input therefore rises with range. The single-axis <a href="/products/lkf-mxh/" class="text-blue-700 underline">LKF-MXH family</a> shows the pattern across five variants of one sense-element design:</p>
+        html: `<p>Extending range means stiffening the flexures, and stiffer flexures mean less deflection per g — less signal for the same noise floor, so input-referred noise rises with range. The single-axis <a href="/products/lkf-mxh/" class="text-blue-700 underline">LKF-MXH family</a> shows the pattern across five variants of one design:</p>
 <table class="w-full text-sm border-collapse">
   <thead>
     <tr class="border-b border-gray-300 text-left">
@@ -88,22 +88,22 @@ export const resources: ResourceArticle[] = [
     <tr class="border-b border-gray-200"><td class="py-2 pr-4">MXH99HC</td><td class="py-2 pr-4">100 g</td><td class="py-2 pr-4">&lt;40 µg/√Hz</td><td class="py-2 pr-4">&lt;5 µg</td><td class="py-2 pr-4">&gt;150 Hz</td></tr>
   </tbody>
 </table>
-<p>The shape matters more than any row. From 2 g to 30 g, range grows fifteenfold while noise density only doubles; from 30 g to 100 g, range grows about threefold and noise density nearly sevenfold. A platform that genuinely needs 100 g pays an order of magnitude in resolution, so specify range from the manoeuvre envelope plus margin rather than from the worst case anyone can imagine.</p>`,
+<p>From 2 g to 30 g, range grows fifteenfold while noise density only doubles; from 30 g to 100 g, range grows about threefold and noise density nearly sevenfold. A platform that genuinely needs 100 g pays an order of magnitude in resolution, so specify range from the manoeuvre envelope plus margin.</p>`,
       },
       {
         h2: 'Why a stationary accelerometer reads 1 g',
-        html: `<p>An accelerometer does not measure gravity. It measures proper acceleration — the non-gravitational force per unit mass — and at rest the only such force is the table pushing up, so the vertical channel reads +1 g, or 9.80665 m/s². A part in free fall reads zero.</p>
-<p>That is what makes tilt measurement possible. Tilt the sensitive axis by θ and the component along it is <strong>a = g · sin θ</strong>, so one milligram corresponds to about 0.057° near level. Sensitivity peaks at zero tilt, where g · cos θ is maximal, and collapses near vertical — which is why practical tilt instruments combine two or three axes. The arithmetic also runs backwards: 0.1° of static tilt accuracy means the sensor, mounting and thermal environment must hold about 1.7 mg together.</p>`,
+        html: `<p>An accelerometer does not measure gravity. It measures proper acceleration — non-gravitational force per unit mass — and at rest the only such force is the table pushing up, so the vertical channel reads +1 g. A part in free fall reads zero.</p>
+<p>That is what makes tilt measurement possible: tilt the sensitive axis by θ and the component along it is <strong>a = g · sin θ</strong>, so one milligram is about 0.057° near level. Sensitivity peaks at zero tilt and collapses near vertical, which is why practical tilt instruments combine two or three axes. The arithmetic runs backwards too: 0.1° of static tilt accuracy means sensor, mounting and thermal environment must hold about 1.7 mg combined.</p>`,
       },
       {
         h2: 'Two-axis parts: fewer packages, more alignment discipline',
-        html: `<p>A dual-axis part measures two orthogonal in-plane axes from one proof-mass structure. The <a href="/products/lkf-mxd/" class="text-blue-700 underline">LKF-MXD</a> covers X and Y in a single CLCC48 package at 5, 10 or 16 g, with 150 Hz bandwidth, delay below 1.5 ms, start-up below 100 ms and Allan bias instability of 2, 4 and 5 µg. The trade is alignment: two axes in one body share a mounting plane and a characterised orthogonality, which two single-axis parts cannot. Uncorrected misalignment rotates the acceleration vector before integration — hard to observe, expensive to fix.</p>`,
+        html: `<p>A dual-axis part measures two orthogonal in-plane axes from one proof mass. The <a href="/products/lkf-mxd/" class="text-blue-700 underline">LKF-MXD</a> covers X and Y in a single CLCC48 package at 5, 10 or 16 g, with 150 Hz bandwidth, delay below 1.5 ms, start-up below 100 ms and Allan bias instability of 2, 4 and 5 µg. The trade is alignment: two axes share a mounting plane and characterised orthogonality, which two single-axis parts cannot. Uncorrected misalignment rotates the acceleration vector before integration, and is expensive to find later.</p>`,
       },
       {
         h2: 'What the navigation error budget actually consumes',
         html: `<p>The accelerometer supplies specific force, which a navigation filter integrates twice into position. A constant 1 mg of unmodelled acceleration produces roughly 17.7 m of position error after one minute, 440 m after five and 1.8 km after ten. Square-of-time growth means a one-minute GNSS outage is survivable with an ordinary industrial part, while ten minutes demands bias knowledge in the tens of micro-g.</p>
-<p>There is a trap in reading the table above. The Allan floor is not the number that limits navigation. MXH10HC holds bias stability below 1.5 µg at 10 s smoothing and below 0.75 µg on the Allan curve, yet its residual bias after factory temperature compensation is ±0.05 mg — ±50 µg, almost two orders of magnitude larger. The floor describes the silicon in a thermally stable environment; the compensated residual describes it after a thermal cycle inside a real enclosure. Budget from the second. Vibration follows the same logic: rectification error is quoted separately because on a platform with rotating machinery it can exceed the static bias error by an order of magnitude.</p>
-<p>If you are specifying from an error budget rather than a catalogue, the <a href="/products/accelerometers/" class="text-blue-700 underline">accelerometer product range</a> lists both families side by side, and our engineers will check a candidate against your drift requirement before you commit to a design.</p>`,
+<p>The Allan floor in that table is not what limits navigation. MXH10HC holds bias stability below 1.5 µg at 10 s smoothing and below 0.75 µg on the Allan curve, yet its residual bias after factory temperature compensation is ±0.05 mg — ±50 µg, two orders of magnitude larger. The floor describes silicon in a stable environment; the residual describes it after a thermal cycle inside a real enclosure. Budget from the second. Rectification error is quoted separately for the same reason: next to rotating machinery it can exceed static bias error by an order of magnitude.</p>
+<p>If you are specifying from an error budget rather than a catalogue, the <a href="/products/accelerometers/" class="text-blue-700 underline">accelerometer product range</a> lists both families side by side, and our engineers will check a candidate against your drift requirement.</p>`,
       },
     ],
     faq: [
