@@ -37,7 +37,7 @@
       "relatedCategory": "imu"
     },
     {
-      "id": 8, "slug": "how-mems-accelerometer-works", "used": false,
+      "id": 8, "slug": "how-mems-accelerometer-works", "used": true, "published": "2026-10-21",
       "title": "How MEMS Accelerometers Work: From Capacitive Sensing to Navigation",
       "targetKeywords": "mems accelerometer working principle, capacitive accelerometer",
       "outline": "电容敏感原理、质量块-弹簧结构、量程与分辨率的权衡、为什么加计静止时也能测重力倾角。内链：accelerometers 分类、LKF-MXD/LKF-MXH 详情页。",
