@@ -4,10 +4,11 @@
 输出: 网站项目/.extract/extracted.json  + 图片到 public/images/products/
 """
 import os, re, json, zipfile, shutil, sys
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SRC = r"D:\利科夫\2026年产品资料-利科夫"
-OUT_DIR = r"D:\利科夫\网站项目\liocrebif-yaw\.extract"
-IMG_DIR = r"D:\利科夫\网站项目\liocrebif-yaw\public\images\products"
+OUT_DIR = os.path.dirname(os.path.abspath(__file__))
+IMG_DIR = os.path.join(ROOT, "public", "images", "products")
 os.makedirs(OUT_DIR, exist_ok=True)
 os.makedirs(IMG_DIR, exist_ok=True)
 

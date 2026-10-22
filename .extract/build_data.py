@@ -7,9 +7,10 @@
 4. 生成 src/data/products/<cat>.ts 六个分类文件 + 诊断报告
 """
 import os, re, json
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 from phrase_fixes import PHRASES, V_EN_FIX, MODEL_EN, K_EN_FIX
 
-CAT_DIR = r"D:\利科夫\网站项目\liocrebif-yaw\src\data\products"
+CAT_DIR = os.path.join(ROOT, "src", "data", "products")
 CATALOG_DIR = r"D:\利科夫\利科夫产品目录_2026"
 EXTRACT = os.path.join(os.path.dirname(__file__), "extracted.json")
 

@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 """assembled.json -> src/data/products/*.ts（6 分类文件 + index.ts）"""
 import os, re, json
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-CAT_DIR = r"D:\利科夫\网站项目\liocrebif-yaw\src\data\products"
+CAT_DIR = os.path.join(ROOT, "src", "data", "products")
 HERE = os.path.dirname(__file__)
 data = json.load(open(os.path.join(HERE, "assembled.json"), encoding="utf-8"))
 
@@ -73,7 +74,7 @@ def esc(s):
         return ""
     return s.replace("\\", "\\\\").replace("'", "\\'").replace("\n", " ").strip()
 
-IMG_DIR = r"D:\利科夫\网站项目\liocrebif-yaw\public\images\products"
+IMG_DIR = os.path.join(ROOT, "public", "images", "products")
 
 MANUAL_IMAGES = {
     "LKF-FSI206": "/images/products/LKF-FSI206.jpg",  # 用户提供的手动截图（docx 内为尺寸图无实物照）
