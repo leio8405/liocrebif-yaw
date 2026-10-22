@@ -38,6 +38,114 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'north-seeking-for-drilling',
+    title: 'North Seeking for Directional Drilling: Why Gyro Surveying Wins Downhole',
+    description:
+      'Magnetometers measure a field the drilling environment itself disturbs. How gyroscopic north seeking recovers true azimuth downhole, why accuracy scales with sec(latitude), and how to read a north-seeker datasheet against a well plan.',
+    date: '2026-10-22',
+    readingTime: 6,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'Why a borehole has no absolute reference',
+        html: `<p><strong>North seeking for drilling</strong> is the one survey result that cannot be corrected afterwards. Whatever azimuth the tool reports at the kickoff point defines the well path, and every station below inherits that error. <strong>Gyro surveying in drilling</strong> exists because the conventional measurement — a magnetometer package in an MWD string — reads a field that the drilling environment itself disturbs. This guide covers what fails and why, how a gyroscope recovers <strong>downhole orientation</strong> from Earth's rotation, how to read a north-seeker datasheet at your own latitude, and when a station-based gyro run beats continuous MWD.</p>`,
+      },
+      {
+        h2: 'What the magnetometer is actually measuring',
+        html: `<p>An MWD package carries three accelerometers and three magnetometers. The accelerometers find gravity, giving inclination and toolface; the magnetometers measure the local field vector, whose angle to the borehole axis gives magnetic azimuth. The method rests on one assumption: only Earth's field is present.</p>
+<p>Earth's total field runs roughly 25–65 µT at the surface, and only its horizontal component carries azimuth — a fraction of a small number that shrinks toward the poles. Against it, steel and magnetite are enormous: a drill string a few metres away, a neighbouring cased well, a magnetite ore body or the BHA's own stabilisers each add fields comparable to the horizontal component.</p>
+<p>Non-magnetic spacing addresses the first: the sensor sits in a non-magnetic collar, often 15–30 m above the bit, far enough for the steel's field to fall off. That fixes a geometric problem and leaves the geological one — a magnetite stringer crossing the well path has no distance to increase.</p>
+<p>A quieter error remains: magnetometers measure from magnetic north, and converting to true north needs a declination for the well's position and date. Declination drifts by a fraction of a degree per year in many regions, and model error passes into true azimuth one-to-one.</p>`,
+      },
+      {
+        h2: 'How a gyroscope recovers true north downhole',
+        html: `<p>Earth rotates at 15.041 °/h. A vertical gyro senses Ω·sin(latitude); a horizontal axis pointing north senses Ω·cos(latitude) — about 13.0 °/h at 30°. That is the entire signal a gyrocompass works with, small enough that measurement technique matters as much as sensor quality.</p>
+<p>The practical sequence is multi-position: the instrument levels on its accelerometers, measures two orthogonal horizontal axes, rotates about 90° and measures again. Bias is largely common to both positions and cancels in the difference, while the Earth-rate components swap sign. Azimuth then comes from the ratio of the corrected components — an arctangent, not a single reading.</p>
+<p>The scaling law follows from that geometry: the signal drops as cos(latitude) while the error floor does not, so heading uncertainty grows as sec(latitude). Hence the "≤1 × secL" form on high-precision datasheets — 1.15 at 30°, 1.41 at 45°, 2.0 at 60°. The reference is true north by construction: no declination model, no magnetic spacing, no correction for a magnetite stringer.</p>`,
+      },
+      {
+        h2: 'Three ways to get azimuth downhole',
+        html: `<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Method</th>
+      <th class="py-2 pr-4 font-semibold">Reference</th>
+      <th class="py-2 pr-4 font-semibold">Station time</th>
+      <th class="py-2 pr-4 font-semibold">Magnetic immunity</th>
+      <th class="py-2 pr-4 font-semibold">Where it fits</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Magnetic MWD</td><td class="py-2 pr-4">Earth's field</td><td class="py-2 pr-4">Seconds per station</td><td class="py-2 pr-4">None; formation interference uncorrectable</td><td class="py-2 pr-4">Routine wells, dense stations</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Station-based gyro</td><td class="py-2 pr-4">Earth's rotation</td><td class="py-2 pr-4">Minutes per station</td><td class="py-2 pr-4">Full</td><td class="py-2 pr-4">Tie-in, kickoff, relief wells, magnetic-hostile geology</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Gyro while drilling</td><td class="py-2 pr-4">Earth's rotation</td><td class="py-2 pr-4">Continuous</td><td class="py-2 pr-4">Full</td><td class="py-2 pr-4">Where station time dominates the AFE</td></tr>
+  </tbody>
+</table>
+<p>The trade is survey time versus error that cannot be removed later: three degrees of azimuth error across 3000 m of horizontal departure displaces the bottom hole by about 157 m (3000 × sin 3°). A tie-in gyro run is cheap against that.</p>`,
+      },
+      {
+        h2: 'Reading a north-seeker datasheet at your latitude',
+        html: `<p>Three north finders cover the usual range of downhole work. The figures below are quoted from published specifications.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Specification</th>
+      <th class="py-2 pr-4 font-semibold">LKF-MSN300</th>
+      <th class="py-2 pr-4 font-semibold">LKF-MSN302</th>
+      <th class="py-2 pr-4 font-semibold">LKF-MSN300H</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Self north-seeking accuracy (°, 1σ)</td><td class="py-2 pr-4">≤1 × secL</td><td class="py-2 pr-4">≤0.5 × secL</td><td class="py-2 pr-4">≤2.5 × secL</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Full-temperature bias (°/h, 3σ)</td><td class="py-2 pr-4">≤0.6</td><td class="py-2 pr-4">≤0.3</td><td class="py-2 pr-4">≤1.5</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Bias stability (°/h, 10 s)</td><td class="py-2 pr-4">≤0.1</td><td class="py-2 pr-4">≤0.1</td><td class="py-2 pr-4">≤0.5</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Angle random walk (°/√h)</td><td class="py-2 pr-4">≤0.01</td><td class="py-2 pr-4">≤0.01</td><td class="py-2 pr-4">≤0.03</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Attitude accuracy (°, 1σ)</td><td class="py-2 pr-4">≤0.2</td><td class="py-2 pr-4">≤0.05</td><td class="py-2 pr-4">≤0.2</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Angular rate range (°/s)</td><td class="py-2 pr-4">±200</td><td class="py-2 pr-4">±200</td><td class="py-2 pr-4">±500</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Operating temperature (°C)</td><td class="py-2 pr-4">-40 to +120</td><td class="py-2 pr-4">-40 to +85</td><td class="py-2 pr-4">-40 to +120</td></tr>
+  </tbody>
+</table>
+<p>Read the first row with your latitude substituted: at L = 30° the <a href="/products/lkf-msn300/" class="text-blue-700 underline">LKF-MSN300</a> figure becomes ≤1.15° and the <a href="/products/lkf-msn302/" class="text-blue-700 underline">LKF-MSN302</a> ≤0.58°; at L = 60°, ≤2.0° and ≤1.0°. Same instruments, different well location.</p>
+<p>Full-temperature bias matters more than room-temperature bias in a borehole, where the tool sees a ramp down and back. The 0.3 °/h of the MSN302 against 0.6 °/h on the MSN300 is what finer thermal calibration buys, and it lands in the azimuth budget at depth.</p>
+<p>One check is worth carrying: at 30° latitude the horizontal Earth rate is 13.0 °/h, so with 0.5 °/h left uncancelled the azimuth error is roughly 2.2° (0.5 ÷ 13.0, in radians). Differencing across positions removes that term — a single gyro reading is not a heading.</p>`,
+      },
+      {
+        h2: 'Deployment constraints that pick the tool',
+        html: `<ul class="list-disc pl-6 space-y-2">
+<li><strong>String geometry.</strong> No magnetic spacing requirement, so it surveys inside casing, through tubing or on wireline — configurations where a magnetic tool reads nothing, and why gyros are used for whipstock and casing-exit orientation.</li>
+<li><strong>Temperature.</strong> The MSN300 and MSN300H are rated to +120 °C, the MSN302 to +85 °C. Compare against bottom-hole static temperature at total depth plus tool residence time, not surface conditions.</li>
+<li><strong>Dynamics.</strong> ±200 °/s covers static station work; ±500 °/s on the MSN300H is margin for faster running. All three are specified to 500 g / 1 ms shock.</li>
+<li><strong>Power and data.</strong> ≤2 W steady state, 5–12 V supply, ≤2 s start-up and 200 Hz maximum update rate suit memory-tool and battery-pack designs.</li>
+</ul>`,
+      },
+      {
+        h2: 'Specifying a gyro survey for a well plan',
+        html: `<p>Four inputs decide the instrument: latitude of surface location and target, maximum inclination and dogleg severity, bottom-hole static temperature at total depth, and the azimuth uncertainty you can carry there. Add the deployment method — wireline, memory or through-pipe — and the choice resolves to one model.</p>
+<p>For a tie-in reference to a magnetic programme, ≤1 × secL with a +120 °C rating is the usual starting point. If the entire azimuth budget rests on the gyro, ≤0.5 × secL and 0.05° attitude accuracy argue for the MSN302 — provided the well stays inside its +85 °C limit. The <a href="/products/imu/" class="text-blue-700 underline">IMU and north seeker range</a> covers both, plus the high-dynamic variant.</p>
+<p>Send the well plan — latitude, maximum inclination, temperature at total depth, and the azimuth uncertainty you need — and we will confirm which configuration fits before the tool goes in the hole.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Can a gyro survey be run inside casing or through tubing?',
+        a: 'Yes. The measurement depends on Earth rotation, not on the local magnetic field, so steel in the hole has no effect on it. That is why gyro tools are used for casing-exit and whipstock orientation, where a magnetic tool has nothing to read. The constraints are tool diameter, temperature rating and the need to remain stationary during the measurement sequence — not magnetic spacing.',
+      },
+      {
+        q: 'Why does north-seeking accuracy get worse at high latitude?',
+        a: 'The horizontal component of Earth rate falls as cos(latitude) while bias and noise stay roughly constant, so heading uncertainty grows as sec(latitude). Datasheets express this directly: a ≤1 × secL instrument is 1° at the equator, 1.15° at 30°, 1.41° at 45° and 2.0° at 60°. Above roughly 70° the penalty exceeds a factor of three and averaging time or a different technique has to be planned for.',
+      },
+      {
+        q: 'Do I still need magnetic MWD data if I run a gyro?',
+        a: 'Usually yes. MWD gives dense, cheap inclination and azimuth along the well, while the gyro provides an absolute true-north tie-in at selected stations. Running both lets you quantify the magnetic error — declination model, drill-string interference, formation effects — and correct the continuous survey against a reference that cannot drift with the steel around it.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-MSN300', href: '/products/lkf-msn300/', caption: 'MEMS north finder, ≤1 × secL, rated to +120 °C' },
+      { model: 'LKF-MSN302', href: '/products/lkf-msn302/', caption: 'MEMS north finder, ≤0.5 × secL, 0.05° attitude accuracy' },
+    ],
+    relatedCategory: { name: 'IMU & North Seekers', href: '/products/imu/' },
+  },
+  {
     slug: 'fiber-coil-winding-process',
     title: 'Inside Fiber Coil Winding: Why Precision Winding Defines FOG Performance',
     description:

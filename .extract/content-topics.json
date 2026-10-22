@@ -53,7 +53,7 @@
       "relatedCategory": "fiber-optic"
     },
     {
-      "id": 10, "slug": "north-seeking-for-drilling", "used": false,
+      "id": 10, "slug": "north-seeking-for-drilling", "used": true, "published": "2026-10-22",
       "title": "North-Finding for Directional Drilling: Why Gyroscopic Surveying Wins Underground",
       "targetKeywords": "north seeking drilling, gyro surveying drilling, downhole orientation",
       "outline": "钻井环境无 GNSS、磁干扰（钻杆/矿体）使磁力计失效，陀螺寻北是唯一可靠方位源；MEMS 寻北仪的尺寸与成本让单点测量普及。内链：LKF-MSN300、LKF-MSN302、imu 分类。",
