@@ -25,21 +25,12 @@ const related = category.products.filter((p) => p.model !== product.model).slice
 const detailURL = new URL(Astro.url.pathname, Astro.site).href;
 const productSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Product',
+  '@type': 'WebPage',
   name: product.nameEn,
-  sku: product.model,
-  mpn: product.model,
+  about: { '@type': 'Thing', name: product.model },
   description: product.descEn || product.nameEn,
   image: product.image ? new URL(product.image, Astro.site).href : undefined,
-  category: category.titleEn,
-  brand: { '@type': 'Brand', name: 'Liocrebif' },
-  manufacturer: { '@type': 'Organization', name: 'Wuhan Liocrebif Technology Co., Ltd' },
-  offers: {
-    '@type': 'Offer',
-    availability: 'https://schema.org/InStock',
-    url: detailURL,
-    businessFunction: 'http://purl.org/goodrelations/v1#Sell',
-  },
+  publisher: { '@type': 'Organization', name: 'Wuhan Liocrebif Technology Co., Ltd' },
 };
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
