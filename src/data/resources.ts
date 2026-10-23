@@ -38,6 +38,97 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'what-is-bias-stability',
+    title: 'Bias Stability Explained: The Single Number That Defines Your Gyro',
+    description:
+      'Bias stability is quoted with a smoothing time and a confidence level, and it sits beside two other bias figures that answer different questions. What each one governs, and which clears a 12 km dead-reckoning budget.',
+    date: '2026-10-23',
+    readingTime: 5,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'The number that sets the whole drift budget',
+        html: `<p><strong>Gyro bias stability</strong> is the figure that decides how far a heading drifts during a run, and on most FOG datasheets it is the first number worth reading. It is also routinely misread: the headline value carries a smoothing time and a confidence level that change what it means, and two other bias specifications sit beside it in the same table. This article separates the three, then runs a 12 km pipeline survey through the arithmetic against all of them.</p>`,
+      },
+      {
+        h2: 'What bias stability measures, and what it does not',
+        html: `<p>A gyro at rest outputs something other than zero, and that output moves. Bias stability is the standard deviation of the averaged output over a stated window, in degrees per hour at one sigma — a spread, not a constant offset.</p>
+<p>Take a unit specified at 0.05 °/h. That does not mean the output stays within 0.05 °/h of truth; it means that when the output is averaged into 10-second blocks, about 68% of those block averages land within 0.05 °/h of the mean and 95% within 0.10 °/h. A budget built on the 1σ figure holds on roughly two runs in three; if it has to hold on most, use 2σ or 3σ.</p>`,
+      },
+      {
+        h2: 'Why the bracket matters more than the number',
+        html: `<p>Bias stability is read off an Allan deviation curve. Plotted against averaging time on log axes, it falls at short scales as white rate noise averages down, flattens at a minimum — the bias instability — and climbs again at long scales as the bias itself wanders.</p>
+<p>The quoted figure is that minimum, and the bracket holds the averaging time at which it was found. A gyro specified at 10 s and one at 100 s are not comparable at face value: if the curve is still descending at 10 s, the true floor sits lower and later.</p>
+<p>Read the annotation before the number: two datasheets both reading 0.05 °/h can describe instruments that behave differently across a one-hour run.</p>`,
+      },
+      {
+        h2: 'Three bias numbers on the same datasheet',
+        html: `<p>Every FOG datasheet carries at least three bias figures answering three different questions. These are the published values for the <a href="/products/lkf-fs60/" class="text-blue-700 underline">LKF-FS60</a>, in its three grades.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Specification</th>
+      <th class="py-2 pr-4 font-semibold">Grade A</th>
+      <th class="py-2 pr-4 font-semibold">Grade B</th>
+      <th class="py-2 pr-4 font-semibold">Grade C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Bias stability (°/h, 1σ, 10 s)</td><td class="py-2 pr-4">≤0.20</td><td class="py-2 pr-4">≤0.10</td><td class="py-2 pr-4">≤0.05</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Bias repeatability (°/h, 1σ)</td><td class="py-2 pr-4">≤0.20</td><td class="py-2 pr-4">≤0.10</td><td class="py-2 pr-4">≤0.05</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Full-temperature bias repeatability (°/h)</td><td class="py-2 pr-4">≤1</td><td class="py-2 pr-4">≤0.5</td><td class="py-2 pr-4">≤0.3</td></tr>
+  </tbody>
+</table>
+<p><strong>Bias stability</strong> describes wander during a single run, warm and thermally steady — the input you want when you zero the gyro at the start. <strong>Bias repeatability</strong> describes the power-up-to-power-up spread at constant temperature, what you inherit from a stored calibration when you cannot zero. <strong>Full-temperature bias repeatability</strong> is what remains after compensation across the operating range: six times the first figure on the FS60, 0.3 against 0.05 °/h, and the one that governs whenever the hardware changes temperature.</p>`,
+      },
+      {
+        h2: 'A 12 km pipeline run, worked through',
+        html: `<p>A concrete case. An inspection pig runs 12 km of buried crude line in 45 minutes, with no GNSS. The operator wants a corrosion feature located to within 1.5 m, and the only attitude reference is one FOG holding heading after a surface alignment.</p>
+<p>Treat the residual bias as constant over the run — the conservative reading of a 1σ figure — and the arithmetic is short. Forty-five minutes is 0.75 h, so 0.05 °/h accumulates 0.0375° of heading, which at 12 km tilts the track sideways by 12000 × tan(0.0375°) ≈ 7.9 m. The 0.10 °/h grade lands at 0.075° and ≈ 15.7 m, the 0.20 °/h grade at 0.15° and ≈ 31 m.</p>
+<p>Now add temperature. A line at 60 °C against a 20 °C launch crosses the unit's range during the run, so the 0.3 °/h full-temperature figure applies, not the 0.05 °/h headline: 0.3 × 0.75 = 0.225°, or ≈ 47 m at the far end — more than the whole spread between the three grades.</p>
+<p>The requirement is 1.5 m, a heading tolerance of atan(1.5/12000) ≈ 0.0072°, or 0.0096 °/h over 0.75 h — five times better than the C grade delivers. No bias grade closes this budget, so the run needs above-ground markers: at 0.0375° of drift they can sit 1.5 ÷ tan(0.0375°) ≈ 2.3 km apart — the real output of the calculation.</p>`,
+      },
+      {
+        h2: 'Working backwards from a tolerance',
+        html: `<ul class="list-disc pl-6 space-y-2">
+<li>Convert position tolerance to heading tolerance: θ = atan(Δ/L), in degrees.</li>
+<li>Divide by mission duration in hours to get the required bias, in °/h.</li>
+<li>Compare that against the governing spec — stability, repeatability or full-temperature repeatability, not whichever is printed first.</li>
+<li>If no grade clears it, shorten the distance between references instead of buying accuracy the application cannot use.</li>
+</ul>
+<p>Step three is where budgets break. The 0.05 °/h figure is measured warm and thermally settled, after a settling time the FS60 puts at under 10 s; a real installation spends the first minutes of every run getting there.</p>`,
+      },
+      {
+        h2: 'Where bias stops being the limiting term',
+        html: `<p>Three conditions push bias stability off the top of the error budget:</p>
+<ul class="list-disc pl-6 space-y-2">
+<li><strong>Rotation.</strong> Scale factor nonlinearity is ≤100 ppm on the A grade and ≤50 ppm on B and C. At 50 °/s, 100 ppm is 0.005 °/s, or 18 °/h of equivalent rate error — 90 times the 0.20 °/h bias of that grade, and it scales with rate.</li>
+<li><strong>Vibration.</strong> The FS60 is specified to 4.2 g over 20–2000 Hz. Past that, rectification of vibration into a bias shift becomes a mounting problem rather than a sensor problem.</li>
+<li><strong>Magnetic field.</strong> Sensitivity is ≤0.05 °/h per gauss; Earth's field is around 0.5 gauss, so up to 0.025 °/h is spent before anything is switched on — more near motors or inspection magnets.</li>
+</ul>
+<p>None of these appear in the bias stability row, and each can exceed it. The <a href="/products/fog-gyroscopes/" class="text-blue-700 underline">FOG range</a> lists every model with its bias figure and measurement window; send the run length, temperature swing and position tolerance and we will run the same budget against the <a href="/products/lkf-fs60/" class="text-blue-700 underline">LKF-FS60</a> grades.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'If my gyro is 0.05 °/h, is my heading error 0.05° after one hour?',
+        a: 'Numerically yes, because a 0.05 °/h offset integrated for one hour is 0.05°. That coincidence is where most of the confusion comes from. At 0.75 h it is 0.0375°, at 4 h it is 0.2° and at 12 h it is 0.6° — heading error grows linearly with time as long as the bias behaves like a fixed offset. Two caveats: the specified figure is 1σ, so roughly one run in three is worse, and treating the bias as an offset is the conservative reading. A bias that averages out over long windows leaves less error than this, so the assumption errs in the safe direction.',
+      },
+      {
+        q: 'Why do some datasheets quote bias stability at 10 s and others at 100 s?',
+        a: 'Because the figure is the minimum of an Allan deviation curve, and the minimum sits wherever the sensor noise character puts it. A gyro with low rate noise reaches its floor at short averaging times; a noisier part needs longer. The numbers are not comparable across different windows, since a 10 s figure and a 100 s figure describe different averaging behaviour. Ask for the curve, or at minimum the time constant, before comparing two parts on bias stability alone.',
+      },
+      {
+        q: 'When should I use full-temperature bias repeatability instead of bias stability?',
+        a: 'Whenever the hardware changes temperature between alignment and the end of the run. Bias stability is measured with the unit warm and thermally settled, which is rarely what a vehicle, a pod or a downhole tool provides. On the LKF-FS60 the two differ by six times in the C grade, 0.05 against 0.3 °/h, so a budget that uses the smaller number while the unit crosses 40 °C is off by that factor before anything else is counted.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-FS60', href: '/products/lkf-fs60/', caption: 'Single-axis FOG, ≤0.05 °/h bias stability in the C grade' },
+    ],
+    relatedCategory: { name: 'Fiber Optic Gyroscopes', href: '/products/fog-gyroscopes/' },
+  },
+  {
     slug: 'north-seeking-for-drilling',
     title: 'North Seeking for Directional Drilling: Why Gyro Surveying Wins Downhole',
     description:

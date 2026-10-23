@@ -61,7 +61,7 @@
       "relatedCategory": "imu"
     },
     {
-      "id": 11, "slug": "what-is-bias-stability", "used": false,
+      "id": 11, "slug": "what-is-bias-stability", "used": true, "published": "2026-10-23",
       "title": "Bias Stability Explained: The Single Number That Defines Your Gyro",
       "targetKeywords": "gyro bias stability, bias stability explained, deg/hr bias",
       "outline": "零偏稳定性定义、Allan 方差平台值、1σ 与平滑时间的标注惯例、按任务时长反推所需的零偏稳定性。与 #5 ARW 互补（本篇聚焦 bias）。内链：fog-gyroscopes 分类、LKF-FS60。",
