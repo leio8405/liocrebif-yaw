@@ -38,6 +38,103 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'single-axis-vs-triaxis-gyro',
+    title: 'Single-Axis vs Dual-Axis vs Tri-Axis Gyroscope: Which Configuration Do You Need?',
+    description:
+      'Axis count follows the rotations you must observe independently, not the ones the platform happens to have. Where one gyro plus two accelerometers is enough, where a second axis earns its place, and where a triad is the only option.',
+    date: '2026-10-24',
+    readingTime: 5,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'Count the degrees of freedom, not the axes on the shelf',
+        html: `<p><strong>Choosing between a single-axis gyroscope, a dual-axis gyro and a triaxial gyro</strong> is not a question about the platform. It is a question about how many rotations you must observe independently, and how many of those gravity cannot answer.</p>
+<ul class="list-disc pl-6 space-y-2">
+<li><strong>Add an axis when the rotation drives its own control loop.</strong></li>
+<li><strong>Add an axis when accelerometers cannot resolve the tilt</strong> — under acceleration, or about the vertical, where gravity says nothing.</li>
+<li><strong>Do not add an axis for a rotation gravity measures statically and nothing servos.</strong></li>
+</ul>`,
+      },
+      {
+        h2: 'The case that decides it: a shield TBM 400 m into a drive',
+        html: `<p>A shielded tunnel boring machine 400 m into a drive, 30 m below grade. No GNSS down there, no sight line around a curve. The crew shoots a total station from the last stable point every 60 m or so; the computer holds the line in between.</p>
+<p>The tolerance sets everything. On a ±50 mm lateral budget over 400 m the permitted heading error is 0.0072° — the arctangent of 0.05 over 400. At 0.1° the cutter head ends 0.70 m off line, fourteen times the budget, and no gyro holds that open loop: a 1 °/h unit moves a full degree in an hour. So the total station supplies truth and the gyro carries heading across those 60 m: 1 °/h over ten minutes is 0.17°, trimmed at the next shot.</p>
+<p>The machine needs heading, pitch and roll. Pitch and roll come from two accelerometer axes, trustworthy because a TBM advances at centimeters per minute, leaving the tilt sensors free of linear acceleration. Heading is the one rotation gravity cannot supply: one gyro axis, mounted near vertical.</p>
+<p>The accelerometers then do a second job. As the shield rolls under cutter-head torque reaction, the gyro's sensitive axis rolls with it and reads ω·cos(roll). At 3° that is 0.14% low; across 15° of heading change, about 0.02° of uncorrected error, or 0.14 m at 400 m — nearly three times the tolerance. Projecting the rate onto the vertical they already track removes it.</p>`,
+      },
+      {
+        h2: 'One axis: where gravity covers the other two',
+        html: `<p>Single-axis units go where the other two attitudes are static enough for accelerometers and no servo acts on them: machine guidance, crane slew, azimuth-only weapon stations.</p>
+<p>The <a href="/products/lkf-fs60/" class="text-blue-700 underline">LKF-FS60</a> sits in that slot: three grades at 0.20, 0.10 and 0.05 °/h bias stability (1σ, 10 s smoothing) with angle random walk of 0.02, 0.01 and 0.005 °/√h, in a 150±20 g, 60×60×30 mm housing.</p>
+<p>One axis stops being enough when the platform tilts and accelerates at once. A single axis tilted 10° reads 1.5% low, and during acceleration the accelerometers that would have supplied the tilt read specific force instead of gravity. That is the boundary between one and two axes.</p>`,
+      },
+      {
+        h2: 'Two axes: two loops, or one loop that tilts',
+        html: `<p>A dual-axis gyro earns its place for one of two reasons: the payload has two servo axes that must each be stabilized on their own — an azimuth-over-elevation SatCom pedestal on a moving vessel — or the measured axis swings far enough that its tilt correction must come from a rate sensor, not an accelerometer.</p>
+<p>The <a href="/products/lkf-f2x64/" class="text-blue-700 underline">LKF-F2X64</a> covers both: 1.0 or 0.5 °/hr bias stability (1σ, 10 s smoothing over a 2 h run), ±400 °/s and ≥200 Hz bandwidth.</p>
+<p>For a pedestal, bandwidth is the number that matters: loop crossover has to sit well below the sensor band, or the loop amplifies sensor noise into the gimbal.</p>`,
+      },
+      {
+        h2: 'Three axes: when the body is free in all three',
+        html: `<p>A triaxial gyro is the answer when the body can rotate freely about all three axes and accelerates while it does. Airborne pods, UAV flight control and underwater vehicles share a condition: no static gravity reference, and maneuver corrupts the accelerometers exactly when attitude matters most.</p>
+<p>The <a href="/products/lkf-f3g20/" class="text-blue-700 underline">LKF-F3G20</a> is specified at ≤1 °/h at fixed temperature (10 s smoothing) and, separately, ≤1 °/h under a 1 °C/min thermal ramp with 100 s smoothing. Read the second figure twice: a triad measures three axes through one housing, so a gradient across it shifts bias differently per axis — invisible to a fixed-temperature figure.</p>
+<p>ARW is ≤0.1 °/√h, and the unit runs -45 to +70 °C at under 300 g in 52×51×52 mm.</p>`,
+      },
+      {
+        h2: 'The three configurations side by side',
+        html: `<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Specification</th>
+      <th class="py-2 pr-4 font-semibold">LKF-FS60</th>
+      <th class="py-2 pr-4 font-semibold">LKF-F2X64</th>
+      <th class="py-2 pr-4 font-semibold">LKF-F3G20</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Axes</td><td class="py-2 pr-4">1</td><td class="py-2 pr-4">2</td><td class="py-2 pr-4">3</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Bias stability (°/h, 1σ, 10 s)</td><td class="py-2 pr-4">≤0.20 / 0.10 / 0.05</td><td class="py-2 pr-4">≤1.0 / 0.5</td><td class="py-2 pr-4">≤1</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Angle random walk (°/√h)</td><td class="py-2 pr-4">≤0.02 / 0.01 / 0.005</td><td class="py-2 pr-4">Not quoted</td><td class="py-2 pr-4">≤0.1</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Dynamic range</td><td class="py-2 pr-4">±500 °/s</td><td class="py-2 pr-4">±400 °/s</td><td class="py-2 pr-4">±500 °/s</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Bandwidth</td><td class="py-2 pr-4">Not quoted</td><td class="py-2 pr-4">≥200 Hz</td><td class="py-2 pr-4">≥200 Hz</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Operating temperature</td><td class="py-2 pr-4">-40 to +70 °C</td><td class="py-2 pr-4">-40 to +65 °C</td><td class="py-2 pr-4">-45 to +70 °C</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Weight</td><td class="py-2 pr-4">150±20 g</td><td class="py-2 pr-4">300±50 g</td><td class="py-2 pr-4">&lt;300 g</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Envelope (mm)</td><td class="py-2 pr-4">60×60×30</td><td class="py-2 pr-4">64×60×42</td><td class="py-2 pr-4">52×51×52</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Envelope per axis (derived)</td><td class="py-2 pr-4">108,000 mm³</td><td class="py-2 pr-4">80,640 mm³</td><td class="py-2 pr-4">46,000 mm³</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Weight per axis (derived)</td><td class="py-2 pr-4">150 g</td><td class="py-2 pr-4">150 g</td><td class="py-2 pr-4">&lt;100 g</td></tr>
+  </tbody>
+</table>
+<p>The last two rows are arithmetic on published dimensions: per axis, the triad is the lightest and most compact. What it leaves off is integration cost — one connector instead of three, inter-axis alignment a triad gets in manufacture, and one failure mode for all three axes.</p>`,
+      },
+      {
+        h2: 'Axis count is not a grade, and that is where budgets break',
+        html: `<p>The trap is assuming a triaxial unit is three single-axis parts. It is not. The F3G20 is a ≤1 °/h device; the FS60 reaches 0.05 °/h, twenty times tighter. Axis count and grade are separate decisions; the second decides most attitude budgets.</p>
+<p>Tighter than about 1 °/h on all three axes, the answer is rarely a pile of single-axis units — it is a higher triaxial grade: ≤0.3 °/h on the F3G40S, ≤0.1 on the F3G40, 0.010-0.020 on the F3G80, 0.006-0.015 on the F3G90. The <a href="/products/fog-gyroscopes/" class="text-blue-700 underline">FOG range</a> lists every model with its bias figure and test conditions.</p>
+<p>Send the platform, the rotations you must observe, and the attitude error you can carry at the end of the run.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Can I build a triaxial sensor from three single-axis gyros?',
+        a: 'Yes, and sometimes it is the right call: three LKF-FS60 units give you 0.05 °/h on every axis, twenty times the bias performance of a 1 °/h triad. What you take on is integration — three housings mounted orthogonally, three harnesses, three thermal paths, and an inter-axis alignment you have to machine and measure yourself. Three FS60s also occupy 324,000 mm³ and 450 g against 137,904 mm³ and under 300 g for the LKF-F3G20. Choose single-axis parts when accuracy is the driver; choose a triad when envelope, harness count and alignment effort are.',
+      },
+      {
+        q: 'Does a dual-axis gyro give me attitude, or only rate?',
+        a: 'Only rate about two axes. Attitude needs the third rotation observed — either a third gyro axis or an external heading reference — plus integration and correction. A two-axis unit is enough for a two-gimbal stabilization loop, where each axis closes on its own rate sensor and absolute heading comes from a gyrocompass, GNSS course or an encoder. It is not enough for a free body that can roll, pitch and yaw independently.',
+      },
+      {
+        q: 'My platform only rolls a few degrees. Can I skip the third axis?',
+        a: 'Work the number first. A single axis tilted 3° reads 0.14% low; at 10° it reads 1.5% low. If that scale error stays inside budget after projection onto the vertical, one axis is enough — which is why the TBM case works with accelerometers supplying the tilt. The third axis becomes necessary when the platform accelerates hard enough that the accelerometers can no longer separate gravity from specific force, because then the projection itself is wrong.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-FS60', href: '/products/lkf-fs60/', caption: 'Single-axis FOG, 0.05-0.20 °/h, 150 g' },
+      { model: 'LKF-F2X64', href: '/products/lkf-f2x64/', caption: 'Dual-axis FOG, 0.5-1.0 °/hr, ±400 °/s' },
+      { model: 'LKF-F3G20', href: '/products/lkf-f3g20/', caption: 'Triaxial FOG, ≤1 °/h, 52×51×52 mm' },
+    ],
+    relatedCategory: { name: 'Fiber Optic Gyroscopes', href: '/products/fog-gyroscopes/' },
+  },
+  {
     slug: 'what-is-bias-stability',
     title: 'Bias Stability Explained: The Single Number That Defines Your Gyro',
     description:

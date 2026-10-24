@@ -52,6 +52,6 @@ hits = [b for b in BANNED if b in low]
 print(f"BANNED HITS: {hits if hits else 'NONE'}")
 
 # 关键词是否出现在正文前 100 词
-kw = "bias stability"
+kw = sys.argv[2].lower() if len(sys.argv) > 2 else "bias stability"
 first100 = " ".join(words[:100]).lower()
 print(f"keyword in first 100 words: {kw in first100}")

@@ -69,7 +69,7 @@
       "relatedCategory": "fog-gyroscopes"
     },
     {
-      "id": 12, "slug": "single-axis-vs-triaxis-gyro", "used": false,
+      "id": 12, "slug": "single-axis-vs-triaxis-gyro", "used": true, "published": "2026-10-24",
       "title": "Single-Axis vs Dual-Axis vs Tri-Axis Gyroscope: Which Configuration Do You Need?",
       "targetKeywords": "single axis gyroscope, triaxial gyro, dual axis gyro application",
       "outline": "按应用自由度选轴数：单轴（方位/速率反馈）、双轴（双轴稳定平台）、三轴（全姿态 IMU）。成本与冗余考量。内链：fog-gyroscopes 分类、LKF-FS60（单轴）、LKF-F2X64（双轴）、LKF-F3G20（三轴）。",
