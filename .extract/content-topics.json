@@ -77,7 +77,7 @@
       "relatedCategory": "fog-gyroscopes"
     },
     {
-      "id": 13, "slug": "gyrocompass-vs-magnetic-compass", "used": false,
+      "id": 13, "slug": "gyrocompass-vs-magnetic-compass", "used": true, "published": "2026-10-25",
       "title": "Gyrocompass vs Magnetic Compass: Heading Sources Compared",
       "targetKeywords": "gyrocompass vs magnetic compass, north seeking sensor, true north heading",
       "outline": "磁罗经受磁干扰/局部异常影响大且指磁北，陀螺寻北指真北且免疫磁场；精度与成本对比；现代组合（磁+惯导互补校准）。内链：LKF-MSN300、LKF-MSU105、imu 分类。",

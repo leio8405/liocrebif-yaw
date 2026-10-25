@@ -38,6 +38,100 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'gyrocompass-vs-magnetic-compass',
+    title: 'Gyrocompass vs Magnetic Compass: Which One Actually Gives True North?',
+    description:
+      'A magnetic compass reads the horizontal component of Earth\'s field and inherits every steel object within a few metres. A gyrocompass reads Earth\'s rotation and inherits nothing. Where each one fails, with the numbers that decide it.',
+    date: '2026-10-25',
+    readingTime: 6,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'The answer in one paragraph',
+        html: `<p><strong>The gyrocompass vs magnetic compass choice comes down to what each instrument is allowed to measure.</strong> A magnetic compass points at magnetic north — a drifting reference that bends around anything ferrous. A gyrocompass points at true north by measuring Earth's rotation, and steel does not touch it. The magnetic sensor is small, cheap and continuous; the gyro wants latitude and a still platform, and bills you in size and power.</p>
+<p>Three questions settle most cases:</p>
+<ul class="list-disc pl-6 space-y-2">
+<li><strong>Is a long lever arm multiplying the error?</strong> One degree at 30 m is 0.52 m.</li>
+<li><strong>Is there steel or DC current near the sensor?</strong> Then the field it reads is no longer Earth's.</li>
+<li><strong>Can the platform hold still?</strong> If it can, a north finder gives absolute azimuth with no model.</li>
+</ul>`,
+      },
+      {
+        h2: 'What each sensor is actually measuring',
+        html: `<p>A magnetic compass measures the horizontal component H of the geomagnetic field, roughly 20 to 50 µT at mid-latitudes. Resolving 1° of heading means resolving H·sin(1°) — about 0.35 µT at H = 20 µT. That is a very small field.</p>
+<p>A gyrocompass measures Earth's rotation: 15.041 °/h about the polar axis, of which the component about local vertical is 15.041·cos(latitude). At 30° latitude, 13.0 °/h. At 60°, 7.5 °/h. A level gyro senses that rate and solves for the azimuth at which it peaks.</p>
+<p>One signal is large but corrupted by everything nearby; the other is tiny but comes from the planet alone.</p>`,
+      },
+      {
+        h2: 'A survey launch 20 m off a steel sheet-pile quay',
+        html: `<p>Picture a hydrographic launch running a line 20 m off a steel sheet-pile quay, multibeam sounding in 25 to 30 m of water. The hull, the A-frame and the crane stowed aft are steel too.</p>
+<p>Every sounding 30 m from the transducer sits on a 30 m lever arm: 1° of heading error moves it 0.52 m across track. Survey specs ask for better, so heading must hold to a few tenths of a degree — while the compass reads a field the quay and the hull have rewritten.</p>
+<p>Declination correction does not help: the error changes as the launch moves along the wall and inverts on the return line.</p>
+<p>What works: hold station once, let a <a href="/products/lkf-msn300/" class="text-blue-700 underline">gyroscopic north finder</a> measure true north against Earth's rotation, then carry that azimuth down the line. The magnetic sensor stays useful between fixes; it stops being the source of truth.</p>`,
+      },
+      {
+        h2: 'The latitude penalty, in one table',
+        html: `<p>The signal scales with cos(latitude), so heading error scales with its reciprocal, sec(latitude). Hence specs written as "≤1 × secL" rather than one flat number: the same hardware is twice as good at the equator as at 60°.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Latitude</th>
+      <th class="py-2 pr-4 font-semibold">Horizontal component (°/h)</th>
+      <th class="py-2 pr-4 font-semibold">sec(L)</th>
+      <th class="py-2 pr-4 font-semibold">MSN300, ≤1 × secL (°)</th>
+      <th class="py-2 pr-4 font-semibold">MSN302, ≤0.5 × secL (°)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">0°</td><td class="py-2 pr-4">15.0</td><td class="py-2 pr-4">1.00</td><td class="py-2 pr-4">1.0</td><td class="py-2 pr-4">0.5</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">30°</td><td class="py-2 pr-4">13.0</td><td class="py-2 pr-4">1.15</td><td class="py-2 pr-4">1.2</td><td class="py-2 pr-4">0.6</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">45°</td><td class="py-2 pr-4">10.6</td><td class="py-2 pr-4">1.41</td><td class="py-2 pr-4">1.4</td><td class="py-2 pr-4">0.7</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">60°</td><td class="py-2 pr-4">7.5</td><td class="py-2 pr-4">2.00</td><td class="py-2 pr-4">2.0</td><td class="py-2 pr-4">1.0</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">70°</td><td class="py-2 pr-4">5.1</td><td class="py-2 pr-4">2.92</td><td class="py-2 pr-4">2.9</td><td class="py-2 pr-4">1.5</td></tr>
+  </tbody>
+</table>
+<p>A north-seeking spec without secL is incomplete: a unit specified at 30° N does easier work there than at 60°.</p>`,
+      },
+      {
+        h2: 'Declination drifts, and deviation breaks it',
+        html: `<p>Magnetic north is not fixed. Declination — the angle between magnetic and true north — varies with position and changes as the core field moves. It sits near zero along the agonic line and passes 20° in parts of Canada, Alaska and southern Africa; in most places it moves a fraction of a degree per year. A correction is a lookup, and its error lands straight in heading: 5° of model error is 5° of heading error.</p>
+<p>Deviation is worse, because the platform makes it. A steel hull, a gun barrel or a loaded flatbed produces a field at the sensor comparable to Earth's horizontal component, and uncompensated deviation can reach tens of degrees. Swinging the compass calibrates one configuration only — move the crane or change the cargo and the calibration describes a platform that no longer exists.</p>
+<p>DC current hides from static surveys. Ampere's law puts 2 µT at 1 m from a 10 A cable; against the 0.35 µT that one degree costs, 2 A at a metre is already about a degree of error. None of that reaches a gyro, whose input is a rotation rate rather than a field.</p>`,
+      },
+      {
+        h2: 'What the gyro costs you',
+        html: `<p>The <a href="/products/lkf-msn300/" class="text-blue-700 underline">LKF-MSN300</a> covers 1 × secL at 0.1 °/h bias stability and 0.01 °/√h angle random walk, in a Φ31.8 × 85 mm housing at 145 g that draws under 2 W from 5 to 12 V, measures ±200 °/s, updates at 200 Hz, runs -40 to +120 °C and takes 500 g / 1 ms shock. The LKF-MSN302 reaches 0.5 × secL and 0.05° attitude in 47 × 47 × 35.5 mm at 100 g.</p>
+<p>That is the bill: size, power, and the need to be still while measuring. The constraint datasheets leave out is that a static north finder produces azimuth, not continuous heading. Once the platform moves, a gyro triad or an inertial solution has to propagate it. A north finder starts a heading solution; it is not the whole of one.</p>`,
+      },
+      {
+        h2: 'The architecture most systems converge on',
+        html: `<p>In practice the two stop competing: the magnetic compass carries continuous heading cheaply, the gyro supplies absolute reference at start-up and after each disturbance, an inertial solution propagates between them.</p>
+<p>An integrated unit does all three in one box. The <a href="/products/lkf-msu105/" class="text-blue-700 underline">LKF-MSU105</a> pairs a MEMS gyro at ≤10 °/h bias stability and ≤0.3 °/√h ARW with GNSS: heading 0.2° on a 1 m dual-antenna baseline, 0.5° on a single antenna while moving, RTK position at 0.02 m + 1 ppm, in 41.5 × 35.5 × 9.5 mm at ≤0.5 W, with ≤3 s start-up and 100 Hz output.</p>
+<p>If the platform never sees steel, never passes a DC cable and always has sky, magnetic plus dual-antenna GNSS is enough and the gyro is money you need not spend. The <a href="/products/imu/" class="text-blue-700 underline">IMU and north seeker range</a> lists both paths.</p>
+<p>Send the platform, the heading budget and the worst magnetic environment it works in. The choice is arithmetic, not opinion.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Can I just add a declination correction and get true north from a magnetic compass?',
+        a: 'In principle yes, and most systems do. The correction has two parts: declination, from a model that drifts, and deviation, from the platform itself. Declination error passes straight into heading — five degrees of model error is five degrees of heading error. Deviation changes whenever the platform configuration changes. A gyrocompass removes both by measuring rotation instead of field, and pays for it with a known-latitude requirement and a still platform during the measurement.',
+      },
+      {
+        q: 'Does a north finder work better near the equator or near the poles?',
+        a: 'Near the equator. The signal is 15.041 °/h × cos(latitude): 15.0 °/h at the equator, 13.0 at 30°, 7.5 at 60°. Accuracy scales the other way, as sec(latitude), which is why the spec reads 1 × secL rather than a flat figure. A magnetic compass degrades for a different reason — its horizontal field component falls toward the magnetic poles while the vertical component rises, so a compass gets both weaker and slower to settle.',
+      },
+      {
+        q: 'How long does a MEMS north finder take, and can it run while moving?',
+        a: 'A static north finder needs the platform still while it averages the rotation signal. Power-on to output is ≤2 s on the LKF-MSN300, but the measurement itself averages over a longer interval, and how long depends on the latitude and the accuracy you want. It cannot output continuous heading while the platform maneuvers; after the initial azimuth, either a gyro triad propagates it or an inertial solution does. If continuous heading from the first second is the requirement, an integrated GNSS/INS is the shorter path.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-MSN300', href: '/products/lkf-msn300/', caption: 'MEMS north finder, ≤1 × secL, 145 g' },
+      { model: 'LKF-MSU105', href: '/products/lkf-msu105/', caption: 'MEMS GNSS/INS, 0.2° heading, 41.5×35.5×9.5 mm' },
+    ],
+    relatedCategory: { name: 'IMU & North Seekers', href: '/products/imu/' },
+  },
+  {
     slug: 'single-axis-vs-triaxis-gyro',
     title: 'Single-Axis vs Dual-Axis vs Tri-Axis Gyroscope: Which Configuration Do You Need?',
     description:
