@@ -8,7 +8,7 @@ export function getStaticPaths() {
   for (const cat of productCategories) {
     for (const p of cat.products) {
       paths.push({
-        params: { model: productSlug(p.model) },
+        params: { model: productSlug(p) },
         props: { product: p, category: cat },
       });
     }
@@ -18,7 +18,7 @@ export function getStaticPaths() {
 
 const { product, category } = Astro.props;
 const isZh = false;
-const detailPath = `/products/${productSlug(product.model)}/`;
+const detailPath = `/products/${productSlug(product)}/`;
 
 // 同分类其他产品（最多 4 个）
 const related = category.products.filter((p) => p.model !== product.model).slice(0, 4);
@@ -133,7 +133,7 @@ const breadcrumbSchema = {
         </h2>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {related.map((p) => (
-            <a href={`/products/${productSlug(p.model)}/`} class="hairline-card p-4 group hover:border-accent transition-colors">
+            <a href={`/products/${productSlug(p)}/`} class="hairline-card p-4 group hover:border-accent transition-colors">
               <span class="font-mono text-xs text-muted group-hover:text-accent transition-colors">{p.model}</span>
               <span class="block text-sm text-ink font-medium leading-snug mt-1.5">{p.nameEn}</span>
             </a>

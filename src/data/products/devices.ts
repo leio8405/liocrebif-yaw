@@ -4,6 +4,7 @@ import type { Product } from './types';
 export const devices: Product[] = [
   {
     model: 'LKF-PM',
+    slug: 'lkf-pm-coil-winding',
     subZh: '保偏光纤',
     subEn: 'PM Fiber',
     tagEn: 'PM Fiber',
@@ -36,6 +37,7 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-PM',
+    slug: 'lkf-pm-waveguide',
     subZh: '保偏光纤',
     subEn: 'PM Fiber',
     tagEn: 'PM Fiber',
@@ -65,6 +67,7 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-PM',
+    slug: 'lkf-pm-pcf',
     subZh: '保偏光纤',
     subEn: 'PM Fiber',
     tagEn: 'PM Fiber',
@@ -91,6 +94,7 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-G652',
+    slug: 'lkf-g652',
     subZh: '单模光纤',
     subEn: 'Single-Mode Fiber',
     tagEn: 'Single-Mode Fiber',
@@ -127,6 +131,7 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-G652',
+    slug: 'lkf-g652-low-water-peak',
     subZh: '单模光纤',
     subEn: 'Single-Mode Fiber',
     tagEn: 'Single-Mode Fiber',
@@ -163,6 +168,7 @@ export const devices: Product[] = [
   },
   {
     model: 'LKF-G652',
+    slug: 'lkf-g652-ultra-low-loss',
     subZh: '单模光纤',
     subEn: 'Single-Mode Fiber',
     tagEn: 'Single-Mode Fiber',

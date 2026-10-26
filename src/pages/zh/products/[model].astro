@@ -8,7 +8,7 @@ export function getStaticPaths() {
   for (const cat of productCategories) {
     for (const p of cat.products) {
       paths.push({
-        params: { model: productSlug(p.model) },
+        params: { model: productSlug(p) },
         props: { product: p, category: cat },
       });
     }
@@ -17,7 +17,7 @@ export function getStaticPaths() {
 }
 
 const { product, category } = Astro.props;
-const detailPath = `/zh/products/${productSlug(product.model)}/`;
+const detailPath = `/zh/products/${productSlug(product)}/`;
 
 const related = category.products.filter((p) => p.model !== product.model).slice(0, 4);
 
@@ -37,7 +37,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: '产品中心', item: 'https://www.liocrebif-yaw.top/zh/products/' },
     { '@type': 'ListItem', position: 2, name: category.titleZh, item: `https://www.liocrebif-yaw.top/zh/products/${category.slug}/` },
-    { '@type': 'ListItem', position: 3, name: product.model, item: `https://www.liocrebif-yaw.top/zh/products/${productSlug(product.model)}/` },
+    { '@type': 'ListItem', position: 3, name: product.model, item: `https://www.liocrebif-yaw.top/zh/products/${productSlug(product)}/` },
   ],
 };
 ---
@@ -127,7 +127,7 @@ const breadcrumbSchema = {
         <h2 class="font-mono text-sm tracking-[0.08em] text-muted mb-6">同系列其他产品</h2>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {related.map((p) => (
-            <a href={`/zh/products/${productSlug(p.model)}/`} class="hairline-card p-4 group hover:border-accent transition-colors">
+            <a href={`/zh/products/${productSlug(p)}/`} class="hairline-card p-4 group hover:border-accent transition-colors">
               <span class="font-mono text-xs text-muted group-hover:text-accent transition-colors">{p.model}</span>
               <span class="block text-sm text-ink font-medium leading-snug mt-1.5">{p.nameZh}</span>
             </a>

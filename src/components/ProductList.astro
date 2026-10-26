@@ -43,7 +43,7 @@ const showGroups = groups.length > 1;
     )}
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {group.products.map((p) => {
-        const detail = pre + '/products/' + productSlug(p.model) + '/';
+        const detail = pre + '/products/' + productSlug(p) + '/';
         const apps = isZh ? p.appsZh : p.appsEn;
         return (
           <a href={detail} class="hairline-card group flex flex-col overflow-hidden hover:border-accent transition-colors">

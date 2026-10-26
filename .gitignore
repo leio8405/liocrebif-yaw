@@ -5,6 +5,7 @@ node_modules/
 
 # build output (Cloudflare Pages builds automatically from Git — no need to commit dist)
 dist/
+.verify-dist/
 
 # environment
 .env

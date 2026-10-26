@@ -14,6 +14,7 @@ export interface SpecTable {
 
 export interface Product {
   model: string;        // 型号，如 'LKF-FS60'
+  slug?: string;        // URL slug 覆盖（同型号多规格产品共用 model 时用于区分路由）
   subZh?: string;       // 子系列名（中文，分组用）
   subEn?: string;       // 子系列名（英文，分组用）
   tagEn: string;        // 分类标签（英文）

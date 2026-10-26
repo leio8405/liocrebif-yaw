@@ -38,7 +38,7 @@ const isZh = lang === 'zh';
           <div class="lg:col-span-8">
             <div class="border-t border-rule">
               {cat.products.map((p) => (
-                <a href={translatePath(`/products/${productSlug(p.model)}`, lang)} class="group grid grid-cols-[auto_1fr] sm:grid-cols-[130px_1fr] gap-x-5 items-baseline py-3 border-b border-rule hover:bg-paper-2 transition-colors px-2 -mx-2">
+                <a href={translatePath(`/products/${productSlug(p)}`, lang)} class="group grid grid-cols-[auto_1fr] sm:grid-cols-[130px_1fr] gap-x-5 items-baseline py-3 border-b border-rule hover:bg-paper-2 transition-colors px-2 -mx-2">
                   <span class="font-mono text-xs text-muted group-hover:text-accent transition-colors">{p.model}</span>
                   <span class="min-w-0">
                     <span class="block text-[15px] text-ink font-medium leading-snug">{isZh ? p.nameZh : p.nameEn}</span>

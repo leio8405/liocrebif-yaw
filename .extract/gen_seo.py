@@ -18,14 +18,19 @@ def slugify(model):
     return re.sub(r"\s+", "-", model.lower())
 
 
-# 1. 产品详情页：以站点数据为准
+# 1. 产品详情页：以站点数据为准（型号含空格→连字符；同型号多规格用条目自带的 slug）
 prod_dir = os.path.join(ROOT, "src", "data", "products")
 products = []
 for fn in sorted(os.listdir(prod_dir)):
     if not fn.endswith(".ts") or fn in ("types.ts", "index.ts", "slug.ts"):
         continue
     ts = open(os.path.join(prod_dir, fn), encoding="utf-8").read()
-    products += re.findall(r"^\s{4}model: '([^']+)'", ts, re.M)
+    for block in re.split(r"\n  \{\n", ts):
+        m = re.search(r"^\s{4}model: '([^']+)'", block, re.M)
+        if not m:
+            continue
+        s = re.search(r"^\s{4}slug: '([^']+)'", block, re.M)
+        products.append(s.group(1) if s else slugify(m.group(1)))
 
 # 2. 资源文章：slug + 是否有中文版
 articles = {}
@@ -48,7 +53,7 @@ for p in static_pages:
     pri = "1.0" if p == "/" else ("0.9" if p in ("/products/", "/resources/") else "0.8")
     urls.append((BASE + p, pri))
     urls.append((BASE + "/zh" + p, pri))
-for m in sorted(set(slugify(x) for x in products)):
+for m in sorted(set(products)):
     urls.append((f"{BASE}/products/{m}/", "0.7"))
     urls.append((f"{BASE}/zh/products/{m}/", "0.7"))
 for sl, has_zh in sorted(articles.items()):
