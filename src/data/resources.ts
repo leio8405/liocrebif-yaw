@@ -38,6 +38,99 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'ins-vs-imu-difference',
+    title: 'IMU vs INS: What Is the Difference and Which Do You Need?',
+    description:
+      'An IMU reports angular rate and specific force in the body frame. An INS adds the mechanization and the GNSS updates that turn those signals into attitude, velocity and position. The output rows tell you which one is in the box, and the outage length tells you which grade you need.',
+    date: '2026-10-26',
+    readingTime: 6,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'The difference is a software boundary',
+        html: `<p><strong>The IMU vs INS difference is a software boundary, not a hardware one.</strong> An inertial measurement unit holds gyroscopes and accelerometers and reports angular rate and specific force in its own body frame. An inertial navigation system takes those same signals, runs strapdown mechanization and a Kalman filter over them, adds GNSS or odometer updates to keep the answer honest, and outputs attitude, velocity and position in a navigation frame.</p>
+<p>Where that line falls decides who owns the error. Buy the IMU and your software owns the integration, the frame conventions, the lever arm to the antenna and the bias estimate. Buy the INS and the supplier's firmware owns them. Paying for that is worth it when their firmware is better than what you would write, or when writing it is not your job.</p>
+<p>Two questions settle most cases before you open a datasheet:</p>
+<ul class="list-disc pl-6 space-y-2">
+<li>Does it quote a <strong>position</strong> output? No position row means no navigation solution, whatever the name on the cover.</li>
+<li>How many seconds per mission pass without GNSS? That number sets the grade you need, not the accuracy class.</li>
+</ul>`,
+      },
+      {
+        h2: 'Four output levels, and the work each one leaves you',
+        html: `<p>Units sold as INS differ in what they actually output. Sorting by output level is faster than sorting by accuracy, because each level moves work from your side of the table to the supplier's.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Output</th>
+      <th class="py-2 pr-4 font-semibold">What the box does</th>
+      <th class="py-2 pr-4 font-semibold">What you still supply</th>
+      <th class="py-2 pr-4 font-semibold">Figure from our datasheets</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Rate and acceleration</td><td class="py-2 pr-4">Sensing, calibration, thermal compensation</td><td class="py-2 pr-4">Mechanization, gravity model, timing, bias estimation</td><td class="py-2 pr-4">LKF-MSU203: ±500 °/s, ≥200 Hz</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Attitude and heading</td><td class="py-2 pr-4">Sensor fusion, initial alignment</td><td class="py-2 pr-4">Position, plus a heading source at start-up</td><td class="py-2 pr-4">LKF-MSI105: 0.2° at 1 m baseline</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Velocity as well</td><td class="py-2 pr-4">Mechanization with aiding</td><td class="py-2 pr-4">Lever arm and time synchronization</td><td class="py-2 pr-4">LKF-MSU105: 0.1 m/s horizontal</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Position as well</td><td class="py-2 pr-4">Full GNSS/INS filter</td><td class="py-2 pr-4">Trust, and a way to verify it</td><td class="py-2 pr-4">LKF-MSU105: 3 m single point, 0.02 m + 1 ppm RTK</td></tr>
+  </tbody>
+</table>`,
+      },
+      {
+        h2: 'A 1.4 km tunnel at 50 km/h',
+        html: `<p>A mobile mapping van is running a road-asset inventory on a mountain highway. It enters a 1.4 km tunnel at 50 km/h and leaves 100 s later. No sky for the whole 100 s, and the deliverable needs asset positions inside 0.3 m.</p>
+<p>The sensors do not stop working. Cameras and lidar do not need satellites. What stops is the correction, and from the portal onward the trajectory is carried by inertial data plus whatever the filter learned before the entrance.</p>
+<p>Take the datasheet bias at face value, ≤10 °/h, and hold it constant. Heading at the exit is off by 10 × 100/3600 = 0.28°. Lateral position follows from integrating that heading error: 13.9 m/s × 4.85 × 10⁻⁵ rad/s × 100²/2 ≈ 3.4 m. Eleven times the budget, at the tunnel mouth.</p>
+<p>Now give the filter five minutes of good RTK before the entrance. If it has pulled the residual bias down to 1 °/h, the same 100 s produces 0.34 m. Same unit, same tunnel, a tenth of the error.</p>`,
+      },
+      {
+        h2: 'Why the datasheet number is not the drift you get',
+        html: `<p>Two integrators running the same unit will not report the same drift, because bias stability describes the sensor and not the system.</p>
+<p>Feed-forward integration treats the number as truth: 10 °/h goes into the equation and stays there. A closed loop does something else. Each GNSS update brings a velocity and position measurement, the filter compares them with the propagated state, and the residual is assigned to attitude, gyro bias and accelerometer bias. What comes back is an estimate of the unit in front of you, at its actual temperature, rather than a limit from a test sheet.</p>
+<p>The random part is the smaller term. At 0.3 °/√h angle random walk, 100 s contributes 0.3 × √(100/3600) = 0.05°, small beside the bias.</p>
+<p>The accelerometer channel is harsher. A zero offset of ≤5 mg is 0.049 m/s²; unaided over 100 s that is 4.9 m/s of velocity and 245 m of position. This is the actual reason aided systems exist. A minute of open-loop integration does not end well at any grade.</p>`,
+      },
+      {
+        h2: 'Same gyro core, different firmware',
+        html: `<p>Two units can share a sensor core and still be different products, because the difference sits in the filter and in what the connector carries.</p>
+<p>The <a href="/products/lkf-msi105/" class="text-blue-700 underline">LKF-MSI105</a> quotes ≤10 °/h bias stability at 10 s smoothing, ≤3 °/h Allan deviation, ≤0.3 °/√h angle random walk, ±300 °/s, ±16 g, ≤100 ppm scale factor nonlinearity, ≤0.001 rad cross-coupling and a ≥100 Hz band, with integrated heading of 0.2° on a 1 m dual-antenna baseline and 0.5° on a single antenna while moving.</p>
+<p>The <a href="/products/lkf-msu105/" class="text-blue-700 underline">LKF-MSU105</a> carries the same gyro and accelerometer figures and adds the position line: 3 m single point, 0.02 m + 1 ppm under RTK, 0.1 m/s horizontal velocity. It runs on 5 V at ≤0.5 W, starts in ≤3 s, updates at 100 Hz and measures 41.5 × 35.5 × 9.5 mm.</p>
+<p>Then read the temperature row, the one buyers skip. Both units quote a full-temperature zero offset of ≤360 °/h. That is 36 times the 10 °/h at constant temperature, and it is roughly what the first minute after a cold start looks like before the filter converges.</p>`,
+      },
+      {
+        h2: 'What to put in the RFQ',
+        html: `<p>Suppliers answer the question you ask. These five lines get an answer you can compare:</p>
+<ul class="list-disc pl-6 space-y-2">
+<li>Platform and speed range, so dynamics and lever arm are known.</li>
+<li>Longest GNSS outage in seconds, and what the vehicle does at each end of it.</li>
+<li>Position budget in metres at the <em>end</em> of that outage.</li>
+<li>Update rate and interface the machine controller expects.</li>
+<li>Operating temperature range, and whether the calibration covers all of it.</li>
+</ul>
+<p>Browse the <a href="/products/imu/" class="text-blue-700 underline">IMU and north seeker range</a> for sensor-level units, or the <a href="/products/inertial-navigation-systems/" class="text-blue-700 underline">INS / GNSS systems</a> when you want the trajectory out of the box. Send those five lines and the grade follows from arithmetic rather than from a product name.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Can I build an INS around a raw IMU myself?',
+        a: 'Yes, and plenty of teams do. The mechanization is a page of equations. The work sits around it: time synchronization to the receiver inside a millisecond, the lever arm between antenna phase centre and sensor, a gravity model matched to latitude, and a filter that estimates bias instead of trusting it. Budget months, and keep an independent reference trajectory so the result can be proven rather than asserted.',
+      },
+      {
+        q: 'Does an INS still give me raw sensor data?',
+        a: 'Often yes, but the detail lives in the message definition rather than the brochure. The LKF-MSU105 outputs at 100 Hz; ask for the protocol document before you buy. If you want to run a parallel filter of your own, the raw rates have to be in the stream.',
+      },
+      {
+        q: 'If GNSS is always available, do I need the INS at all?',
+        a: 'Usually not. With RTK at 0.02 m + 1 ppm and 0.2° heading from a 1 m dual-antenna baseline, a MEMS unit answers most machine-control and mapping questions. The higher grade buys the minutes when the sky disappears, so size it on the outage and not on the good days.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-MSU105', href: '/products/lkf-msu105/', caption: 'MEMS GNSS/INS, position 0.02 m + 1 ppm RTK, ≤0.5 W' },
+      { model: 'LKF-MSI105', href: '/products/lkf-msi105/', caption: 'MEMS INS, 10 °/h bias stability, 0.2° heading' },
+    ],
+    relatedCategory: { name: 'INS / GNSS Navigation', href: '/products/inertial-navigation-systems/' },
+  },
+  {
     slug: 'gyrocompass-vs-magnetic-compass',
     title: 'Gyrocompass vs Magnetic Compass: Which One Actually Gives True North?',
     description:

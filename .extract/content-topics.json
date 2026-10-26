@@ -85,7 +85,7 @@
       "relatedCategory": "imu"
     },
     {
-      "id": 14, "slug": "ins-vs-imu-difference", "used": false,
+      "id": 14, "slug": "ins-vs-imu-difference", "used": true, "published": "2026-10-26",
       "title": "IMU vs INS: What Is the Difference and Which Do You Need?",
       "targetKeywords": "imu vs ins, inertial measurement unit vs navigation system, ins gnss",
       "outline": "IMU=传感器（角速度+比力），INS=IMU+导航解算（+GNSS）。架构图示、误差传播差异、选型问题清单（要不要位置输出？GNSS 可用吗？）。内链：imu 分类、inertial-navigation-systems 分类、LKF-MSU105 vs LKF-MSI105。",
