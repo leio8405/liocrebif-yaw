@@ -57,6 +57,27 @@ NAME_ZH_FIX = {
     "三合一集成光学器件": "Three-in-One Integrated Optical Device",
 }
 
+# 中文名修正：按 EN DataSheet 名（产品身份）校正——提取阶段中文名与文档配对错位/截断
+NAME_ZH_BY_EN = {
+    "LKF-PM(1310&1550)Coil Winding Panda PM Fiber": "(1310&1550)绕环用熊猫保偏光纤",
+    "LKF-PM(1310&1550)WaveGuide Panda PM Fiber": "(1310&1550)波导用熊猫保偏光纤",
+    "LKF-RH04 Fiber Coil Winding Machine": "RH04型光纤环绕制机",
+    "LKF-RH16 Fiber Coil Winding Machine": "RH16型光纤环绕制机",
+    "LKF-RH16A Fiber Coil Winding Machine": "RH16A光纤环绕制机",
+}
+
+# 同型号多规格产品（共用 model）的 URL 区分
+SLUG_BY_EN = {
+    "LKF-PM(1310&1550)Coil Winding Panda PM Fiber": "lkf-pm-coil-winding",
+    "LKF-PM(1310&1550)WaveGuide Panda PM Fiber": "lkf-pm-waveguide",
+    "LKF-PM Polarization-Maintaining Photonic Crystal Fiber": "lkf-pm-pcf",
+    "LKF-G652 Low-Water Peak Single-Mode Fiber": "lkf-g652",
+}
+SLUG_BY_ZH = {
+    "低水峰单模光纤": "lkf-g652-low-water-peak",
+    "超低损耗单模光纤": "lkf-g652-ultra-low-loss",
+}
+
 def clean_en_name(r):
     """从 EN DataSheet 文件名清洗出英文产品名"""
     en = r.get("enDoc")
@@ -102,7 +123,8 @@ def ts_entry(r):
     name_en = esc(clean_en_name(r)) or esc(r.get("nameEn")) or NAME_ZH_FIX.get(r["nameZh"]) or ""
     if not name_en:
         name_en = esc(r["nameZh"])
-    name_zh = esc(r["nameZh"])
+    name_zh = esc(NAME_ZH_BY_EN.get(clean_en_name(r)) or r["nameZh"])
+    product_slug = SLUG_BY_EN.get(clean_en_name(r)) or SLUG_BY_ZH.get(r["nameZh"])
     desc_en = esc(r.get("descEn"))
     desc_zh = esc(r.get("descZh"))
     apps_en = ", ".join(f"'{esc(a)}'" for a in (r.get("appsEn") or [])[:6])
@@ -111,6 +133,10 @@ def ts_entry(r):
     lines = [
         "  {",
         f"    model: '{model}',",
+    ]
+    if product_slug:
+        lines.append(f"    slug: '{product_slug}',")
+    lines += [
         f"    subZh: '{esc(tag_zh)}',",
         f"    subEn: '{esc(tag_en)}',",
         f"    tagEn: '{esc(tag_en)}',",

@@ -10,7 +10,7 @@ export const devices: Product[] = [
     tagEn: 'PM Fiber',
     tagZh: '保偏光纤',
     nameEn: 'LKF-PM(1310&1550)Coil Winding Panda PM Fiber',
-    nameZh: '(1310&1550)波导用熊猫保偏光纤',
+    nameZh: '(1310&1550)绕环用熊猫保偏光纤',
     descEn: 'Driven by the miniaturization trend of FOGs, smaller-diameter Panda PM is required for winding fiber coils. To meet customer demands, small-diameter PM has been designed and manufactured using thin coating technology, reducing the PM diameter from 165 μm to 135 μm while delivering excellent performance in compact gyroscopes. The small-diameter Panda PM offers high birefringence, low attenuation, stable low crosstalk, precise refractive index profile, good geometric symmetry, and longitudinal uniformity.',
     specTable: {
       headers: ['项目', '技术指标'],
@@ -43,7 +43,7 @@ export const devices: Product[] = [
     tagEn: 'PM Fiber',
     tagZh: '保偏光纤',
     nameEn: 'LKF-PM(1310&1550)WaveGuide Panda PM Fiber',
-    nameZh: '(1310&1550)绕环用熊猫保偏光纤',
+    nameZh: '(1310&1550)波导用熊猫保偏光纤',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -688,7 +688,7 @@ export const devices: Product[] = [
     tagEn: 'Production Equipment',
     tagZh: '生产设备',
     nameEn: 'LKF-RH04 Fiber Coil Winding Machine',
-    nameZh: '型光纤环绕制机',
+    nameZh: 'RH04型光纤环绕制机',
     descEn: 'Unique Technology Parameter',
     specTable: {
       headers: ['项目', '技术指标'],
@@ -716,7 +716,7 @@ export const devices: Product[] = [
     tagEn: 'Production Equipment',
     tagZh: '生产设备',
     nameEn: 'LKF-RH16A Fiber Coil Winding Machine',
-    nameZh: '型光纤环绕制机',
+    nameZh: 'RH16A光纤环绕制机',
     descEn: 'Unique Technology Parameter',
     specTable: {
       headers: ['项目', '技术指标'],
@@ -744,7 +744,7 @@ export const devices: Product[] = [
     tagEn: 'Production Equipment',
     tagZh: '生产设备',
     nameEn: 'LKF-RH16 Fiber Coil Winding Machine',
-    nameZh: '型光纤环绕制机',
+    nameZh: 'RH16型光纤环绕制机',
     descEn: 'Unique Technology Parameter',
     specTable: {
       headers: ['项目', '技术指标'],
