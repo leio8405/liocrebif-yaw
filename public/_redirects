@@ -1,11 +1,26 @@
-/products/lkf-pm/    /products/lkf-pm-pcf/    301
+# 自动生成：改 .extract/gen_redirects.py 后重跑，勿手改
+
+/products/lkf-pm/ /products/lkf-pm-pcf/ 301
 /zh/products/lkf-pm/ /zh/products/lkf-pm-pcf/ 301
-
-/products/lkf-g652-low-water-peak/    /products/lkf-g652/    301
+/products/lkf-g652-low-water-peak/ /products/lkf-g652/ 301
 /zh/products/lkf-g652-low-water-peak/ /zh/products/lkf-g652/ 301
-
-# 合订产品拆分：旧页指向其主要子产品
-/products/lkf-fiber-adhesive/    /products/lkf-uv500/    301
+/products/lkf-fiber-adhesive/ /products/lkf-uv500/ 301
 /zh/products/lkf-fiber-adhesive/ /zh/products/lkf-uv500/ 301
-/products/lkf-fiber-preform/    /products/lkf-boron-doped/    301
+/products/lkf-fiber-preform/ /products/lkf-boron-doped/ 301
 /zh/products/lkf-fiber-preform/ /zh/products/lkf-boron-doped/ 301
+/products/lkf-fiber%20coil%20bobbin/ /products/fiber-optic/ 301
+/zh/products/lkf-fiber%20coil%20bobbin/ /zh/products/fiber-optic/ 301
+
+/zh/resources/ins-vs-imu-difference/ /resources/ins-vs-imu-difference/ 301
+/zh/resources/gyrocompass-vs-magnetic-compass/ /resources/gyrocompass-vs-magnetic-compass/ 301
+/zh/resources/single-axis-vs-triaxis-gyro/ /resources/single-axis-vs-triaxis-gyro/ 301
+/zh/resources/what-is-bias-stability/ /resources/what-is-bias-stability/ 301
+/zh/resources/north-seeking-for-drilling/ /resources/north-seeking-for-drilling/ 301
+/zh/resources/fiber-coil-winding-process/ /resources/fiber-coil-winding-process/ 301
+/zh/resources/how-mems-accelerometer-works/ /resources/how-mems-accelerometer-works/ 301
+/zh/resources/imu-for-uav-guide/ /resources/imu-for-uav-guide/ 301
+/zh/resources/gnss-denied-navigation-solutions/ /resources/gnss-denied-navigation-solutions/ 301
+/zh/resources/what-is-angle-random-walk/ /resources/what-is-angle-random-walk/ 301
+/zh/resources/tactical-vs-navigation-grade-imu/ /resources/tactical-vs-navigation-grade-imu/ 301
+/zh/resources/how-fiber-optic-gyroscope-works/ /resources/how-fiber-optic-gyroscope-works/ 301
+/zh/resources/north-seeker-vs-gnss-heading/ /resources/north-seeker-vs-gnss-heading/ 301
