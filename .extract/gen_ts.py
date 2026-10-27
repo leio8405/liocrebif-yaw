@@ -128,6 +128,12 @@ if os.path.exists(_ov_path):
     SPEC_OVERRIDE = json.load(open(_ov_path, encoding="utf-8"))
 
 # 简介覆盖（目录 md 无简介的产品，从源 docx 提取：parse_desc.py）
+# 合订文档拆出的子产品（光纤胶水/光纤预制棒）：{原 model: [新记录...]}（parse_split.py）
+SPLIT_PRODUCTS = {}
+_sp = os.path.join(HERE, "split_products.json")
+if os.path.exists(_sp):
+    SPLIT_PRODUCTS = json.load(open(_sp, encoding="utf-8"))
+
 DESC_OVERRIDE = {}
 _dp = os.path.join(HERE, "desc_override.json")
 if os.path.exists(_dp):
@@ -208,6 +214,39 @@ def ts_entry(r):
     lines.append("  },")
     return "\n".join(lines)
 
+def split_entry(p, base):
+    """合订产品拆分出的子产品 -> TS 块（分类标签沿用原产品）"""
+    lines = [
+        "  {",
+        f"    model: '{esc(p['model'])}',",
+        f"    slug: '{esc(p['slug'])}',",
+        f"    subZh: '{esc(base['subZh'])}',",
+        f"    subEn: '{esc(base['subEn'])}',",
+        f"    tagZh: '{esc(base['tagZh'])}',",
+        f"    tagEn: '{esc(base['tagEn'])}',",
+        f"    nameEn: '{esc(p['nameEn'])}',",
+        f"    nameZh: '{esc(p['nameZh'])}',",
+    ]
+    if p.get("descEn"):
+        lines.append(f"    descEn: '{esc(p['descEn'])}',")
+    if p.get("descZh"):
+        lines.append(f"    descZh: '{esc(p['descZh'])}',")
+    st = p["specTable"]
+    lines.append("    specTable: {")
+    lines.append("      headers: [" + ", ".join(f"'{esc(h)}'" for h in st["headers"]) + "],")
+    lines.append("      rows: [")
+    for row in st["rows"]:
+        vs = ", ".join(f"'{esc(v)}'" for v in row["v"])
+        vse = ", ".join(f"'{esc(v)}'" for v in row["vEn"])
+        lines.append("        { k: '" + esc(row["k"]) + "', kEn: '" + esc(row["kEn"]) + "', v: [" + vs + "], vEn: [" + vse + "] },")
+    lines.append("      ],")
+    lines.append("    },")
+    if p.get("image"):
+        lines.append(f"    image: '{p['image']}',")
+    lines.append("  },")
+    return "\n".join(lines)
+
+
 def main():
     os.makedirs(CAT_DIR, exist_ok=True)
     by_series = {}
@@ -227,7 +266,18 @@ def main():
             f"import type {{ Product }} from './types';\n\n"
             f"export const {var}: Product[] = [\n"
         )
-        body = "\n".join(ts_entry(r) for r in rows)
+        emitted = []
+        for r in rows:
+            subs = SPLIT_PRODUCTS.get(r["model"])
+            if not subs:
+                emitted.append(ts_entry(r))
+                continue
+            tag_en, tag_zh = SUB_TAG.get(r.get("sub") or "", ("", ""))
+            if not tag_en:
+                tag_en, tag_zh = r.get("sub") or "Product", r.get("sub") or "产品"
+            base = {"subZh": tag_zh, "subEn": tag_en, "tagZh": tag_zh, "tagEn": tag_en}
+            emitted.extend(split_entry(p, base) for p in subs)
+        body = "\n".join(emitted)
         open(os.path.join(CAT_DIR, f"{slug}.ts"), "w", encoding="utf-8").write(header + body + "\n];\n")
         exports.append((var, slug, title_en, title_zh, old_slug, sub_en, sub_zh, len(rows)))
         print(f"{slug}.ts: {len(rows)} 条")

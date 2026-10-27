@@ -3,3 +3,9 @@
 
 /products/lkf-g652-low-water-peak/    /products/lkf-g652/    301
 /zh/products/lkf-g652-low-water-peak/ /zh/products/lkf-g652/ 301
+
+# 合订产品拆分：旧页指向其主要子产品
+/products/lkf-fiber-adhesive/    /products/lkf-uv500/    301
+/zh/products/lkf-fiber-adhesive/ /zh/products/lkf-uv500/ 301
+/products/lkf-fiber-preform/    /products/lkf-boron-doped/    301
+/zh/products/lkf-fiber-preform/ /zh/products/lkf-boron-doped/ 301
