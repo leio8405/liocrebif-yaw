@@ -93,7 +93,7 @@
       "relatedCategory": "inertial-navigation-systems"
     },
     {
-      "id": 15, "slug": "vibration-effects-on-imu", "used": false,
+      "id": 15, "slug": "vibration-effects-on-imu", "used": true, "published": "2026-10-27",
       "title": "How Vibration Affects IMU Performance (and How to Design Against It)",
       "targetKeywords": "imu vibration, vibration rectification, imu mounting",
       "outline": "振动整流误差机理、随机振动引起的 ARW 恶化、机械隔离设计、全温标定的意义。内链：fog-gyroscopes 分类（FOG 无运动质量优势）、LKF-FS60、imu 分类。",

@@ -38,6 +38,92 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'vibration-effects-on-imu',
+    title: 'IMU Vibration: How Rectification and Mounting Errors Reach Your Output',
+    description:
+      'A 4.2 g sweep proves the unit survives the shaker. It says nothing about what the gyro reports while shaking. Three mechanisms turn vibration into heading error, and plain arithmetic tells you which one dominates your budget.',
+    date: '2026-10-27',
+    readingTime: 6,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'What the vibration row actually certifies',
+        html: `<p><strong>IMU vibration specs are qualification numbers, not performance numbers.</strong> A row reading "4.2 g, 20–2000 Hz" says the unit survives a swept sine without damage or calibration shift. It does not say what the gyro reports while the shaker runs.</p>
+<p>Displacement falls with the square of frequency, so the same 4.2 g is 2.6 mm at 20 Hz (d = a/(2πf)²) and 0.26 µm at 2 kHz. The bottom of the sweep loads the bracket and the cable; the top loads potting, solder joints and the coil bond.</p>
+<p>A heading budget needs a fourth column the sweep never fills: bias shift while vibrating. On the <a href="/products/lkf-fs60/" class="text-blue-700 underline">LKF-FS60</a> the row stops at the sweep; one unit in the <a href="/products/imu/" class="text-blue-700 underline">MEMS IMU range</a> publishes it, ≤10 °/h at 20–2000 Hz and 6.06 g RMS, against ≤5 °/h at rest. The vibration term is twice the stability figure, and that ratio is what moves a heading budget.</p>`,
+      },
+      {
+        h2: 'Four units, three missing numbers',
+        html: `<p>Four units from the range, with the bias-shift figure beside the sweep:</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Unit</th>
+      <th class="py-2 pr-4 font-semibold">Vibration row</th>
+      <th class="py-2 pr-4 font-semibold">Bias shift while vibrating</th>
+      <th class="py-2 pr-4 font-semibold">Bias stability at rest</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">LKF-FS60, FOG</td><td class="py-2 pr-4">4.2 g, 20–2000 Hz sweep</td><td class="py-2 pr-4">not published</td><td class="py-2 pr-4">≤0.20 / 0.10 / 0.05 °/h</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">LKF-MSN300, MEMS north finder</td><td class="py-2 pr-4">6.06 g RMS, 20–2000 Hz</td><td class="py-2 pr-4">not published</td><td class="py-2 pr-4">≤0.1 °/h</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">LKF-MSU105, MEMS GNSS/INS</td><td class="py-2 pr-4">4.08 g RMS, 20–2000 Hz</td><td class="py-2 pr-4">not published</td><td class="py-2 pr-4">≤10 °/h</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">LKF-MSU206, MEMS IMU</td><td class="py-2 pr-4">6.06 g RMS, 20–2000 Hz</td><td class="py-2 pr-4">≤10 °/h</td><td class="py-2 pr-4">≤5 °/h</td></tr>
+  </tbody>
+</table>
+<p>Only one row can be checked against its own resting figure, and the check is unflattering: 10 °/h shaking, 5 °/h still. When a supplier will not fill that column, ask for the test. One hour static, one hour on the shaker at your profile, Allan deviation of both. The gap between the curves is the missing term.</p>`,
+      },
+      {
+        h2: 'Where a squared term comes from',
+        html: `<p>A MEMS sensor works through a proof mass on a spring, and no spring is perfectly linear. A second-order term in the restoring force makes the response to a sine pick up a constant offset proportional to the square of amplitude. It keeps one sign, so averaging will not remove it: vibration rectification behaves like a bias, not like noise.</p>
+<p>Worked example, not a specification: a second-order coefficient of 50 µg/g² at 2 g RMS gives 50 × 4 = 200 µg, or 0.00196 m/s². Held 60 s without GNSS, that integrates to 0.12 m/s and 3.5 m of position error. Nothing broke; the sensor did what its nonlinearity told it to do.</p>
+<p>A FOG carries no proof mass, so there is no spring to rectify. Its vibration paths run through the coil: a thermal gradient across the winding, acoustic pressure on the fiber, stress changing the polarization state. Those errors track temperature and sound rather than g², which helps when you chase a wander that only shows up at one engine speed.</p>`,
+      },
+      {
+        h2: 'A survey pod under a 2,400 rpm propeller',
+        html: `<p>Take a light aircraft on a mapping line: engine at 2,400 rpm, four-blade propeller. Blade-pass is 2,400 / 60 × 4 = 160 Hz, with harmonics at 320 and 480 Hz.</p>
+<p>At 160 Hz a 4.2 g sine moves the case 41 µm. If the pod bracket's first mode lands between 100 and 300 Hz, and plenty do, a Q of 8 to 10 multiplies that input by the same factor: 30 to 40 g at the sensor feet, from 4.2 g at the airframe. The shaker test passed at 4.2 g; the installation hands the sensor an order of magnitude more.</p>
+<p>Two things follow. A quadratic term does not stay at 10 °/h when the input rises from 6 g to 30 g; it climbs twenty-five fold, to roughly 250 °/h. And sampling folds what the loop cannot reject: at a 100 Hz update, a 160 Hz tone appears at 40 Hz and a 200 Hz tone at DC, both inside the band where the loop believes it sees real motion.</p>`,
+      },
+      {
+        h2: 'Mounting rules that survive the airframe',
+        html: `<p>IMU mounting decides most of the amplification, and none of it appears in a datasheet.</p>
+<ul class="list-disc pl-6 space-y-2">
+<li>Measure the bracket's first mode with a tap test. Ten minutes settles arguments drawings cannot.</li>
+<li>Keep that mode off the blade-pass harmonics. If it cannot go above them, put it below the loop crossover, where the loop can reject it.</li>
+<li>Treat an isolator as a new mode, not a cure. One millimetre of static deflection resonates at 15.8 Hz, 0.1 mm at 49.8 Hz. Pick the one outside your loop bandwidth; a rocking isolator reads as attitude error.</li>
+<li>Machine three pads and bolt to all three. Every added shim is a spring in series with the one you paid for.</li>
+<li>Clamp the harness to structure, not to the connector shell. A free-hanging cable is a vibration path with no damping.</li>
+</ul>`,
+      },
+      {
+        h2: 'Where the error budget actually sits',
+        html: `<p>Compare the terms already in hand before buying a quieter sensor. The LKF-FS60 holds ≤0.20, 0.10 and 0.05 °/h at room temperature across its three grades, and ≤1, 0.5 and 0.3 °/h full-temperature bias repeatability: a factor of five to six before the vehicle moves. The MEMS gap is wider, 60 against 5 °/h on the MSU206, 360 against 10 °/h on the MSU105.</p>
+<p>So the work order is not the datasheet order. Full-temperature compensation first, because it is the largest term. Bracket stiffness second, because amplification is multiplicative and cheap to remove. Isolation third. Sensor grade last, the only item priced per unit. A 0.05 °/h gyro drifts three arcmin in an hour; a 10 °/h unit drifts ten degrees. Nobody fixes a bracket ringing at 180 Hz by buying the 0.05 °/h unit.</p>
+<p>Where drift is the binding constraint, the <a href="/products/fog-gyroscopes/" class="text-blue-700 underline">FOG range</a> runs from 0.20 °/h down to 0.05 °/h in one 60 × 60 × 30 mm housing weighing 150 g.</p>
+<p>Send the vibration profile, the mounting drawing and the heading budget. Those three settle the grade faster than a datasheet.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Our IMU passed 6 g RMS random. Why does heading still wander on the vehicle?',
+        a: 'Because the test runs on a shaker through a fixture built to pass the profile, and your bracket is not that fixture. A first mode between 100 and 300 Hz with a Q of 8 to 10 turns a 4 g input into 30 to 40 g at the sensor. Add the figure most datasheets omit, the bias shift while vibrating, and the two effects multiply. Re-run the qualification with the unit on the real bracket if you want a number you can design against.',
+      },
+      {
+        q: 'Should I isolate a FOG the same way as a MEMS IMU?',
+        a: 'Usually not. A FOG has no proof mass, so the rectification term that dominates MEMS does not exist; the coil reacts to thermal gradients, acoustic pressure and mechanical stress. Isolators bring their own trouble: a low-frequency mode plus a rocking mode that the control loop reads as attitude error. Stiffen the bracket first. If you must isolate, put the mount mode outside the loop bandwidth and check that the sensor cannot rotate under sustained acceleration.',
+      },
+      {
+        q: 'Is vibration a bias error or a scale factor error?',
+        a: 'Both, and they need separate tests. Rectification is a bias: one sign, integrating into heading drift, invisible in a short static run. Angular vibration near the loop frequency produces a scale-factor-like error, and on a two-axis platform, coning. The datasheet scale factor nonlinearity, 50 ppm on the FS60 C grade, is a static figure and covers neither.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-FS60', href: '/products/lkf-fs60/', caption: 'Single-axis FOG, ≤0.20/0.10/0.05 °/h, 4.2 g 20–2000 Hz sweep' },
+    ],
+    relatedCategory: { name: 'Fiber Optic Gyroscopes', href: '/products/fog-gyroscopes/' },
+  },
+  {
     slug: 'ins-vs-imu-difference',
     title: 'IMU vs INS: What Is the Difference and Which Do You Need?',
     description:
