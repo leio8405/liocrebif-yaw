@@ -108,6 +108,12 @@ MANUAL_IMAGES = {
     "LKF-FSI206": "/images/products/LKF-FSI206.jpg",  # 用户提供的手动截图（docx 内为尺寸图无实物照）
 }
 
+# 参数表覆盖（目录 md 缺失/错位的产品，改由源 docx 解析产出：parse_fiber_specs.py）
+SPEC_OVERRIDE = {}
+_ov_path = os.path.join(HERE, "spec_override.json")
+if os.path.exists(_ov_path):
+    SPEC_OVERRIDE = json.load(open(_ov_path, encoding="utf-8"))
+
 def probe_image(r):
     """按实际存在的图片文件解析 image 路径；无文件返回 None（详情页显示型号占位）"""
     manual = MANUAL_IMAGES.get(r.get("model"))
@@ -155,11 +161,11 @@ def ts_entry(r):
         lines.append(f"    descEn: '{desc_en}',")
     if desc_zh:
         lines.append(f"    descZh: '{desc_zh}',")
-    st = r.get("specTable")
+    st = SPEC_OVERRIDE.get(product_slug) or r.get("specTable")
     if st and st.get("rows"):
         hs = ", ".join(f"'{esc(h)}'" for h in st["headers"])
         rl = []
-        for row in st["rows"][:30]:
+        for row in st["rows"][:60]:
             k_en = row.get("kEn") or row["k"]
             vs = ", ".join(f"'{esc(v)}'" for v in row["v"])
             ven = row.get("vEn") or row["v"]

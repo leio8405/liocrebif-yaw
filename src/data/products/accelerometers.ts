@@ -105,6 +105,7 @@ export const accelerometers: Product[] = [
         { k: '工作温度 (℃)', kEn: 'Operating Temperature (°C)', v: ['-40~+85', '-40~+85', '-40~+85', '-50~+85', '-10~+125'], vEn: ['-40~+85', '-40~+85', '-40~+85', '-50~+85', '-10~+125'] },
         { k: '电源电压 (V)', kEn: 'Supply Voltage (V)', v: ['5±0.25', '5±0.25', '5±0.25', '5±0.25', '5±0.25'], vEn: ['5±0.25', '5±0.25', '5±0.25', '5±0.25', '5±0.25'] },
         { k: '电流 (mA)', kEn: 'Current (mA)', v: ['&lt;30', '&lt;30', '&lt;30', '&lt;30', '&lt;25'], vEn: ['&lt;30', '&lt;30', '&lt;30', '&lt;30', '&lt;25'] },
+        { k: '通信接口', kEn: 'Communication Interface', v: ['SPI', 'SPI', 'SPI', 'SPI', 'SPI'], vEn: ['SPI', 'SPI', 'SPI', 'SPI', 'SPI'] },
       ],
     },
     appsEn: ['IMU', 'Avionics', 'Attitude Control', 'Platform Stabilization Systems', 'GPS-Aided Navigation', 'UAV Navigation Systems'],
