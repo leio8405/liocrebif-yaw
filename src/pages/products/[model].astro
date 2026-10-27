@@ -40,6 +40,9 @@ const HEADER_EN: Record<string, string> = {
 };
 const enHeader = (h: string) => HEADER_EN[h] ?? h;
 
+// 英文站参数值里的全角标点（，～）→ 半角
+const enText = (t: string) => t.replace(/，/g, ', ').replace(/～/g, '~').replace(/（/g, ' (').replace(/）/g, ')');
+
 const detailURL = new URL(Astro.url.pathname, Astro.site).href;
 const productSchema = {
   '@context': 'https://schema.org',
@@ -129,9 +132,9 @@ const breadcrumbSchema = {
             <tbody>
               {product.specTable.rows.map((row) => (
                 <tr class="border-b border-rule/60 last:border-0 hover:bg-paper-2/60 transition-colors">
-                  <td class="py-2.5 px-5 text-ink-2 align-top">{row.kEn || row.k}</td>
+                  <td class="py-2.5 px-5 text-ink-2 align-top">{enText(row.kEn || row.k)}</td>
                   {(row.vEn && row.vEn.length ? row.vEn : row.v).map((v) => (
-                    <td class="py-2.5 px-5 text-ink align-top font-medium whitespace-nowrap">{v || '—'}</td>
+                    <td class="py-2.5 px-5 text-ink align-top font-medium whitespace-nowrap">{v ? enText(v) : '—'}</td>
                   ))}
                 </tr>
               ))}
