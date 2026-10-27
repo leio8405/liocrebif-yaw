@@ -119,6 +119,7 @@ IMG_DIR = os.path.join(ROOT, "public", "images", "products")
 MANUAL_IMAGES = {
     "LKF-FSI206": "/images/products/LKF-FSI206.jpg",  # 用户提供的手动截图（docx 内为尺寸图无实物照）
     "LKF-SPC1310": "/images/products/LKF-SPC1310.png",  # 提取记录缺 image 字段（图片文件已在库）
+    "LKF-MIOC1550": "/images/products/LKF-MIOC1550.png",  # 原误用 SPC1310 图片，已改回本产品图
 }
 
 # 参数表覆盖（目录 md 缺失/错位的产品，改由源 docx 解析产出：parse_fiber_specs.py）

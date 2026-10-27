@@ -639,7 +639,7 @@ export const devices: Product[] = [
     },
     appsEn: ['Fiber Optic Gyroscope', 'Fiber Current Sensing', 'Other Fiber Sensing'],
     appsZh: ['光纤陀螺仪', '光纤电流传感', '其它光纤传感'],
-    image: '/images/products/LKF-SPC1310.png',
+    image: '/images/products/LKF-MIOC1550.png',
   },
   {
     model: 'LKF-PIN-FET',
