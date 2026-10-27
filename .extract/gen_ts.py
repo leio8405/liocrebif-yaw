@@ -66,15 +66,22 @@ NAME_ZH_BY_EN = {
     "LKF-RH16A Fiber Coil Winding Machine": "RH16A光纤环绕制机",
 }
 
+# 英文名修正：目录 md 的 G652 三条共用同一资料夹（只有一份 enDoc），需按中文名指定各自英文款名
+NAME_EN_BY_ZH = {
+    "低水峰单模光纤": "LKF-G652 Low-Water Peak Single-Mode Fiber",
+    "低损耗单模光纤": "LKF-G652 Low-Loss Single-Mode Fiber",
+    "超低损耗单模光纤": "LKF-G652 Ultra Low-Loss Single-Mode Fiber",
+}
+
 # 同型号多规格产品（共用 model）的 URL 区分
 SLUG_BY_EN = {
     "LKF-PM(1310&1550)Coil Winding Panda PM Fiber": "lkf-pm-coil-winding",
     "LKF-PM(1310&1550)WaveGuide Panda PM Fiber": "lkf-pm-waveguide",
     "LKF-PM Polarization-Maintaining Photonic Crystal Fiber": "lkf-pm-pcf",
-    "LKF-G652 Low-Water Peak Single-Mode Fiber": "lkf-g652",
 }
 SLUG_BY_ZH = {
-    "低水峰单模光纤": "lkf-g652-low-water-peak",
+    "低水峰单模光纤": "lkf-g652",
+    "低损耗单模光纤": "lkf-g652-low-loss",
     "超低损耗单模光纤": "lkf-g652-ultra-low-loss",
 }
 
@@ -120,11 +127,11 @@ def ts_entry(r):
     tag_en, tag_zh = SUB_TAG.get(r.get("sub") or "", ("", ""))
     if not tag_en:
         tag_en, tag_zh = r.get("sub") or "Product", r.get("sub") or "产品"
-    name_en = esc(clean_en_name(r)) or esc(r.get("nameEn")) or NAME_ZH_FIX.get(r["nameZh"]) or ""
+    name_en = esc(NAME_EN_BY_ZH.get(r["nameZh"])) or esc(clean_en_name(r)) or esc(r.get("nameEn")) or NAME_ZH_FIX.get(r["nameZh"]) or ""
     if not name_en:
         name_en = esc(r["nameZh"])
     name_zh = esc(NAME_ZH_BY_EN.get(clean_en_name(r)) or r["nameZh"])
-    product_slug = SLUG_BY_EN.get(clean_en_name(r)) or SLUG_BY_ZH.get(r["nameZh"])
+    product_slug = SLUG_BY_ZH.get(r["nameZh"]) or SLUG_BY_EN.get(clean_en_name(r))
     desc_en = esc(r.get("descEn"))
     desc_zh = esc(r.get("descZh"))
     apps_en = ", ".join(f"'{esc(a)}'" for a in (r.get("appsEn") or [])[:6])
