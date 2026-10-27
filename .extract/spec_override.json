@@ -1322,5 +1322,1369 @@
     ]
    }
   ]
+ },
+ "lkf-g657a1": {
+  "headers": [
+   "特性",
+   "数据"
+  ],
+  "rows": [
+   {
+    "k": "衰减 [dB/km]（1310nm）",
+    "kEn": "Attenuation [dB/km] (1310nm)",
+    "v": [
+     "≤0.32"
+    ],
+    "vEn": [
+     "≤0.32"
+    ]
+   },
+   {
+    "k": "衰减 [dB/km]（1383nm(氢老化后)）",
+    "kEn": "Attenuation [dB/km] (1383nm(after hydrogen aging))",
+    "v": [
+     "≤0.31"
+    ],
+    "vEn": [
+     "≤0.31"
+    ]
+   },
+   {
+    "k": "衰减 [dB/km]（1460nm）",
+    "kEn": "Attenuation [dB/km] (1460nm)",
+    "v": [
+     "≤0.31"
+    ],
+    "vEn": [
+     "≤0.31"
+    ]
+   },
+   {
+    "k": "衰减 [dB/km]（1550nm）",
+    "kEn": "Attenuation [dB/km] (1550nm)",
+    "v": [
+     "≤0.18"
+    ],
+    "vEn": [
+     "≤0.18"
+    ]
+   },
+   {
+    "k": "衰减 [dB/km]（1625nm）",
+    "kEn": "Attenuation [dB/km] (1625nm)",
+    "v": [
+     "≤0.20"
+    ],
+    "vEn": [
+     "≤0.20"
+    ]
+   },
+   {
+    "k": "相对于波长的衰减变化 [dB/km]（1285~1330nm, 相对于1310nm）",
+    "kEn": "Attenuation Variation vs. Wavelength [dB/km] (1285~1330nm, relative to 1310nm)",
+    "v": [
+     "≤0.03"
+    ],
+    "vEn": [
+     "≤0.03"
+    ]
+   },
+   {
+    "k": "相对于波长的衰减变化 [dB/km]（1525~1575nm, 相对于1550nm）",
+    "kEn": "Attenuation Variation vs. Wavelength [dB/km] (1525~1575nm, relative to1550nm)",
+    "v": [
+     "≤0.02"
+    ],
+    "vEn": [
+     "≤0.02"
+    ]
+   },
+   {
+    "k": "波长范围内的色散 [ps/(nm·km)]（1285nm~1340nm）",
+    "kEn": "Chromatic Dispersion over Wavelength Range [ps/(nm·km)] (1285nm~1340nm)",
+    "v": [
+     "-3.5到3.5"
+    ],
+    "vEn": [
+     "-3.5~3.5"
+    ]
+   },
+   {
+    "k": "波长范围内的色散 [ps/(nm·km)]（1550nm）",
+    "kEn": "Chromatic Dispersion over Wavelength Range [ps/(nm·km)] (1550nm)",
+    "v": [
+     "≤18"
+    ],
+    "vEn": [
+     "≤18"
+    ]
+   },
+   {
+    "k": "波长范围内的色散 [ps/(nm·km)]（1625nm）",
+    "kEn": "Chromatic Dispersion over Wavelength Range [ps/(nm·km)] (1625nm)",
+    "v": [
+     "≤22"
+    ],
+    "vEn": [
+     "≤22"
+    ]
+   },
+   {
+    "k": "零色散波长(λ0) [nm]",
+    "kEn": "Zero-Dispersion Wavelength (λ0) [nm]",
+    "v": [
+     "1300~1324"
+    ],
+    "vEn": [
+     "1300~1324"
+    ]
+   },
+   {
+    "k": "零色散斜率(S0) [ps/(nm2·km)]",
+    "kEn": "Zero-Dispersion Slope (S0) [ps/(nm2·km)]",
+    "v": [
+     "≤0.092"
+    ],
+    "vEn": [
+     "≤0.092"
+    ]
+   },
+   {
+    "k": "零色散斜率典型值 [ps/(nm2·km)]",
+    "kEn": "Typical Zero-Dispersion Slope [ps/(nm2·km)]",
+    "v": [
+     "0.086"
+    ],
+    "vEn": [
+     "0.086"
+    ]
+   },
+   {
+    "k": "偏振模色散系数（PMD) [ps/√km]（单根光纤最大值）",
+    "kEn": "PMD Coefficient (PMD)[ps/√km] (Maximum per Fiber)",
+    "v": [
+     "≤0.1"
+    ],
+    "vEn": [
+     "≤0.1"
+    ]
+   },
+   {
+    "k": "偏振模色散系数（PMD) [ps/√km] 光纤链路值（M=20，Q=0.01%)",
+    "kEn": "PMD Coefficient (PMD)[ps/√km] Fiber Link Value (M=20，Q=0.01%)",
+    "v": [
+     "≤0.06"
+    ],
+    "vEn": [
+     "≤0.06"
+    ]
+   },
+   {
+    "k": "偏振模色散系数（PMD) [ps/√km]（典型值）",
+    "kEn": "PMD Coefficient (PMD)[ps/√km] (Typical Value)",
+    "v": [
+     "0.04"
+    ],
+    "vEn": [
+     "0.04"
+    ]
+   },
+   {
+    "k": "光缆截止波长（ λcc) [nm]",
+    "kEn": "Cable Cut-off Wavelength ( λcc) [nm]",
+    "v": [
+     "≤1260"
+    ],
+    "vEn": [
+     "≤1260"
+    ]
+   },
+   {
+    "k": "模场直径（MFD) [nm]（1310nm）",
+    "kEn": "Mode Field Diameter (MFD) [nm] (1310nm)",
+    "v": [
+     "8.7~9.5"
+    ],
+    "vEn": [
+     "8.7~9.5"
+    ]
+   },
+   {
+    "k": "模场直径（MFD) [nm]（1550nm）",
+    "kEn": "Mode Field Diameter (MFD) [nm] (1550nm)",
+    "v": [
+     "9.8~10.8"
+    ],
+    "vEn": [
+     "9.8~10.8"
+    ]
+   },
+   {
+    "k": "有效群折射率（Neﬀ)（1310nm）",
+    "kEn": "Effective Group Refractive Index (Neﬀ) (1310nm)",
+    "v": [
+     "1.466"
+    ],
+    "vEn": [
+     "1.466"
+    ]
+   },
+   {
+    "k": "有效群折射率（Neﬀ)（1550nm）",
+    "kEn": "Effective Group Refractive Index (Neﬀ) (1550nm)",
+    "v": [
+     "1.467"
+    ],
+    "vEn": [
+     "1.467"
+    ]
+   },
+   {
+    "k": "点不连续性 [dB]（1310nm）",
+    "kEn": "Point Discontinuity [dB] (1310nm)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "点不连续性 [dB]（1550nm）",
+    "kEn": "Point Discontinuity [dB] (1550nm)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "包层直径 [μm]",
+    "kEn": "Cladding Diameter [μm]",
+    "v": [
+     "125.0±0.7"
+    ],
+    "vEn": [
+     "125.0±0.7"
+    ]
+   },
+   {
+    "k": "包层不圆度 [%]",
+    "kEn": "Cladding Non-Circularity [%]",
+    "v": [
+     "≤0.7"
+    ],
+    "vEn": [
+     "≤0.7"
+    ]
+   },
+   {
+    "k": "涂层直径 [μm]",
+    "kEn": "Coating Diameter [μm]",
+    "v": [
+     "235~245"
+    ],
+    "vEn": [
+     "235~245"
+    ]
+   },
+   {
+    "k": "涂层/包层同心度误差 [μm]",
+    "kEn": "Coating/Cladding Concentricity Error [μm]",
+    "v": [
+     "≤12.0"
+    ],
+    "vEn": [
+     "≤12.0"
+    ]
+   },
+   {
+    "k": "涂层不圆度 [%]",
+    "kEn": "Coating Non-Circularity [%]",
+    "v": [
+     "≤6.0"
+    ],
+    "vEn": [
+     "≤6.0"
+    ]
+   },
+   {
+    "k": "芯/包层同心度误差 [μm]",
+    "kEn": "Core/Cladding Concentricity Error [μm]",
+    "v": [
+     "≤0.5"
+    ],
+    "vEn": [
+     "≤0.5"
+    ]
+   },
+   {
+    "k": "翘曲度（半径） [m]",
+    "kEn": "Curl (Radius) [m]",
+    "v": [
+     "≥4"
+    ],
+    "vEn": [
+     "≥4"
+    ]
+   },
+   {
+    "k": "交货长度 [km/盘]",
+    "kEn": "Delivery Length [km/spool]",
+    "v": [
+     "最长50.4"
+    ],
+    "vEn": [
+     "Up to 50.4"
+    ]
+   },
+   {
+    "k": "温度附加衰减 [dB/km]（-65℃ 到85℃）",
+    "kEn": "Temperature-Induced Attenuation [dB/km] (-65℃ to 85℃)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "温度-湿度循环附加衰减 [dB/km]（-10℃ 到85℃，98% 相对湿度）",
+    "kEn": "Temperature-Humidity Cycling Attenuation [dB/km] (-10℃  to 85℃，98% Relative Humidity)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "浸水附加衰减 [dB/km]（23℃, 30 天）",
+    "kEn": "Water Immersion Attenuation [dB/km] (23℃, 30 days)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "湿热附加衰减 [dB/km]（85℃，85%相对湿度，30天）",
+    "kEn": "Damp Heat Attenuation [dB/km] (85℃，85%Relative Humidity，30 days)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "干热老化 [dB/km]（85℃，30天）",
+    "kEn": "Dry Heat Aging [dB/km] (85℃，30 days)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "筛选张力（绝对力 [N]）",
+    "kEn": "Proof Test Level (Absolute Force [N])",
+    "v": [
+     "≥9.0"
+    ],
+    "vEn": [
+     "≥9.0"
+    ]
+   },
+   {
+    "k": "筛选张力（应变 [%]）",
+    "kEn": "Proof Test Level (Strain [%])",
+    "v": [
+     "≥1.0"
+    ],
+    "vEn": [
+     "≥1.0"
+    ]
+   },
+   {
+    "k": "筛选张力（强度 [kpsi]）",
+    "kEn": "Proof Test Level (Stress [kpsi])",
+    "v": [
+     "≥100"
+    ],
+    "vEn": [
+     "≥100"
+    ]
+   },
+   {
+    "k": "宏弯附加损耗 [dB]（10圈，半径15mm，1550nm）",
+    "kEn": "Macro-Bending Loss [dB] (10turns，radius15mm，1550nm)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "宏弯附加损耗 [dB]（10圈，半径15mm，1625nm）",
+    "kEn": "Macro-Bending Loss [dB] (10turns，radius15mm，1625nm)",
+    "v": [
+     "≤0.3"
+    ],
+    "vEn": [
+     "≤0.3"
+    ]
+   },
+   {
+    "k": "宏弯附加损耗 [dB]（1圈，半径10mm，1550nm）",
+    "kEn": "Macro-Bending Loss [dB] (1turns，radius10mm，1550nm)",
+    "v": [
+     "≤0.5"
+    ],
+    "vEn": [
+     "≤0.5"
+    ]
+   },
+   {
+    "k": "宏弯附加损耗 [dB]（1圈，半径10mm，1625nm）",
+    "kEn": "Macro-Bending Loss [dB] (1turns，radius10mm，1625nm)",
+    "v": [
+     "≤1.5"
+    ],
+    "vEn": [
+     "≤1.5"
+    ]
+   },
+   {
+    "k": "涂层剥离力 [N]（典型平均值）",
+    "kEn": "Coating Strip Force [N] (Typical Avg.)",
+    "v": [
+     "1.5"
+    ],
+    "vEn": [
+     "1.5"
+    ]
+   },
+   {
+    "k": "涂层剥离力 [N]（峰值）",
+    "kEn": "Coating Strip Force [N] (Peak)",
+    "v": [
+     "1.3~8.9"
+    ],
+    "vEn": [
+     "1.3~8.9"
+    ]
+   },
+   {
+    "k": "动态疲劳参数（nd）",
+    "kEn": "Dynamic Fatigue Parameter (nd)",
+    "v": [
+     "≥20"
+    ],
+    "vEn": [
+     "≥20"
+    ]
+   }
+  ]
+ },
+ "lkf-g657a2": {
+  "headers": [
+   "特性",
+   "数据"
+  ],
+  "rows": [
+   {
+    "k": "衰减 [dB/km]（1310nm）",
+    "kEn": "Attenuation [dB/km] (1310nm)",
+    "v": [
+     "≤0.35"
+    ],
+    "vEn": [
+     "≤0.35"
+    ]
+   },
+   {
+    "k": "衰减 [dB/km]（1383nm(氢老化后)）",
+    "kEn": "Attenuation [dB/km] (1383nm(after hydrogen aging))",
+    "v": [
+     "≤0.35"
+    ],
+    "vEn": [
+     "≤0.35"
+    ]
+   },
+   {
+    "k": "衰减 [dB/km]（1460nm）",
+    "kEn": "Attenuation [dB/km] (1460nm)",
+    "v": [
+     "≤0.25"
+    ],
+    "vEn": [
+     "≤0.25"
+    ]
+   },
+   {
+    "k": "衰减 [dB/km]（1490nm）",
+    "kEn": "Attenuation [dB/km] (1490nm)",
+    "v": [
+     "≤0.23"
+    ],
+    "vEn": [
+     "≤0.23"
+    ]
+   },
+   {
+    "k": "衰减 [dB/km]（1550nm）",
+    "kEn": "Attenuation [dB/km] (1550nm)",
+    "v": [
+     "≤0.21"
+    ],
+    "vEn": [
+     "≤0.21"
+    ]
+   },
+   {
+    "k": "衰减 [dB/km]（1625nm）",
+    "kEn": "Attenuation [dB/km] (1625nm)",
+    "v": [
+     "≤0.23"
+    ],
+    "vEn": [
+     "≤0.23"
+    ]
+   },
+   {
+    "k": "相对于波长的衰减变化 [dB/km]（1285~1330nm, 相对于1310nm）",
+    "kEn": "Attenuation Variation vs. Wavelength [dB/km] (1285~1330nm, relative to 1310nm)",
+    "v": [
+     "≤0.03"
+    ],
+    "vEn": [
+     "≤0.03"
+    ]
+   },
+   {
+    "k": "相对于波长的衰减变化 [dB/km]（1525~1575nm, 相对于1550nm）",
+    "kEn": "Attenuation Variation vs. Wavelength [dB/km] (1525~1575nm, relative to 1550nm)",
+    "v": [
+     "≤0.02"
+    ],
+    "vEn": [
+     "≤0.02"
+    ]
+   },
+   {
+    "k": "零色散波长(λ0) [nm]",
+    "kEn": "Zero-Dispersion Wavelength(λ0) [nm]",
+    "v": [
+     "1300~1324"
+    ],
+    "vEn": [
+     "1300~1324"
+    ]
+   },
+   {
+    "k": "零色散斜率(S0) [ps/(nm2·km)]",
+    "kEn": "Zero-Dispersion Slope(S0) [ps/(nm2·km)]",
+    "v": [
+     "≤0.092"
+    ],
+    "vEn": [
+     "≤0.092"
+    ]
+   },
+   {
+    "k": "偏振模色散系数（PMD) [ps/√km]（单根光纤最大值）",
+    "kEn": "PMD Coefficient (PMD)[ps/√km] (Maximum per Fiber)",
+    "v": [
+     "≤0.1"
+    ],
+    "vEn": [
+     "≤0.1"
+    ]
+   },
+   {
+    "k": "偏振模色散系数（PMD) [ps/√km] 光纤链路值（M=20，Q=0.01%)",
+    "kEn": "PMD Coefficient (PMD)[ps/√km] Fiber Link Value (M=20，Q=0.01%)",
+    "v": [
+     "≤0.06"
+    ],
+    "vEn": [
+     "≤0.06"
+    ]
+   },
+   {
+    "k": "偏振模色散系数（PMD) [ps/√km]（典型值）",
+    "kEn": "PMD Coefficient (PMD)[ps/√km] (Typical Value)",
+    "v": [
+     "0.04"
+    ],
+    "vEn": [
+     "0.04"
+    ]
+   },
+   {
+    "k": "光缆截止波长（ λcc) [nm]",
+    "kEn": "Cable Cut-off Wavelength ( λcc) [nm]",
+    "v": [
+     "≤1260"
+    ],
+    "vEn": [
+     "≤1260"
+    ]
+   },
+   {
+    "k": "模场直径（MFD) [nm]（1310nm）",
+    "kEn": "Mode Field Diameter (MFD) [nm] (1310nm)",
+    "v": [
+     "8.4~9.2"
+    ],
+    "vEn": [
+     "8.4~9.2"
+    ]
+   },
+   {
+    "k": "模场直径（MFD) [nm]（1550nm）",
+    "kEn": "Mode Field Diameter (MFD) [nm] (1550nm)",
+    "v": [
+     "9.3~10.3"
+    ],
+    "vEn": [
+     "9.3~10.3"
+    ]
+   },
+   {
+    "k": "有效群折射率（Neﬀ)（1310nm）",
+    "kEn": "Effective Group Refractive Index (Neﬀ) (1310nm)",
+    "v": [
+     "1.466"
+    ],
+    "vEn": [
+     "1.466"
+    ]
+   },
+   {
+    "k": "有效群折射率（Neﬀ)（1550nm）",
+    "kEn": "Effective Group Refractive Index (Neﬀ) (1550nm)",
+    "v": [
+     "1.467"
+    ],
+    "vEn": [
+     "1.467"
+    ]
+   },
+   {
+    "k": "点不连续性 [dB]（1310nm）",
+    "kEn": "Point Discontinuity [dB] (1310nm)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "点不连续性 [dB]（1550nm）",
+    "kEn": "Point Discontinuity [dB] (1550nm)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "包层直径 [μm]",
+    "kEn": "Cladding Diameter [μm]",
+    "v": [
+     "125.0±0.7"
+    ],
+    "vEn": [
+     "125.0±0.7"
+    ]
+   },
+   {
+    "k": "包层不圆度 [%]",
+    "kEn": "Cladding Non-Circularity [%]",
+    "v": [
+     "≤0.7"
+    ],
+    "vEn": [
+     "≤0.7"
+    ]
+   },
+   {
+    "k": "涂层直径 [μm]",
+    "kEn": "Coating Diameter [μm]",
+    "v": [
+     "235~245"
+    ],
+    "vEn": [
+     "235~245"
+    ]
+   },
+   {
+    "k": "涂层/包层同心度误差 [μm]",
+    "kEn": "Coating/Cladding Concentricity Error [μm]",
+    "v": [
+     "≤12.0"
+    ],
+    "vEn": [
+     "≤12.0"
+    ]
+   },
+   {
+    "k": "涂层不圆度 [%]",
+    "kEn": "Coating Non-Circularity [%]",
+    "v": [
+     "≤6.0"
+    ],
+    "vEn": [
+     "≤6.0"
+    ]
+   },
+   {
+    "k": "芯/包层同心度误差 [μm]",
+    "kEn": "Core/Cladding Concentricity Error [μm]",
+    "v": [
+     "≤0.5"
+    ],
+    "vEn": [
+     "≤0.5"
+    ]
+   },
+   {
+    "k": "翘曲度（半径） [m]",
+    "kEn": "Curl (Radius) [m]",
+    "v": [
+     "≥4"
+    ],
+    "vEn": [
+     "≥4"
+    ]
+   },
+   {
+    "k": "交货长度 [km/盘]",
+    "kEn": "Delivery Length [km/spool]",
+    "v": [
+     "最长50.4"
+    ],
+    "vEn": [
+     "Up to 50.4"
+    ]
+   },
+   {
+    "k": "温度附加衰减 [dB/km]（-65℃ 到85℃）",
+    "kEn": "Temperature-Induced Attenuation [dB/km] (-65℃ to 85℃)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "温度-湿度循环附加衰减 [dB/km]（-10℃ 到85℃，98% 相对湿度）",
+    "kEn": "Temperature-Humidity Cycling Attenuation [dB/km] (-10℃  to 85℃，98% Relative Humidity)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "浸水附加衰减 [dB/km]（23℃, 30 天）",
+    "kEn": "Water Immersion Attenuation [dB/km] (23℃, 30 days)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "湿热附加衰减 [dB/km]（85℃，85%相对湿度，30天）",
+    "kEn": "Damp Heat Attenuation [dB/km] (85℃，85%Relative Humidity，30 days)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "干热老化 [dB/km]（85℃，30天）",
+    "kEn": "Dry Heat Aging [dB/km] (85℃，30 days)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "筛选张力（绝对力 [N]）",
+    "kEn": "Proof Test Level (Absolute Force [N])",
+    "v": [
+     "≥9.0"
+    ],
+    "vEn": [
+     "≥9.0"
+    ]
+   },
+   {
+    "k": "筛选张力（应变 [%]）",
+    "kEn": "Proof Test Level (Strain [%])",
+    "v": [
+     "≥1.0"
+    ],
+    "vEn": [
+     "≥1.0"
+    ]
+   },
+   {
+    "k": "筛选张力（强度 [kpsi]）",
+    "kEn": "Proof Test Level (Stress [kpsi])",
+    "v": [
+     "≥100"
+    ],
+    "vEn": [
+     "≥100"
+    ]
+   },
+   {
+    "k": "宏弯附加损耗 [dB]（10圈，半径15mm，1550nm）",
+    "kEn": "Macro-Bending Loss [dB] (10turns，radius15mm，1550nm)",
+    "v": [
+     "≤0.03"
+    ],
+    "vEn": [
+     "≤0.03"
+    ]
+   },
+   {
+    "k": "宏弯附加损耗 [dB]（10圈，半径15mm，1625nm）",
+    "kEn": "Macro-Bending Loss [dB] (10turns，radius15mm，1625nm)",
+    "v": [
+     "≤0.1"
+    ],
+    "vEn": [
+     "≤0.1"
+    ]
+   },
+   {
+    "k": "宏弯附加损耗 [dB]（1圈，半径10mm，1550nm）",
+    "kEn": "Macro-Bending Loss [dB] (1turns，radius10mm，1550nm)",
+    "v": [
+     "≤0.1"
+    ],
+    "vEn": [
+     "≤0.1"
+    ]
+   },
+   {
+    "k": "宏弯附加损耗 [dB]（1圈，半径10mm，1625nm）",
+    "kEn": "Macro-Bending Loss [dB] (1turns，radius10mm，1625nm)",
+    "v": [
+     "≤0.2"
+    ],
+    "vEn": [
+     "≤0.2"
+    ]
+   },
+   {
+    "k": "宏弯附加损耗 [dB]（1圈，半径7.5mm，1550nm）",
+    "kEn": "Macro-Bending Loss [dB] (1turns，radius7.5mm，1550nm)",
+    "v": [
+     "≤0.5"
+    ],
+    "vEn": [
+     "≤0.5"
+    ]
+   },
+   {
+    "k": "宏弯附加损耗 [dB]（1圈，半径7.5mm，1625nm）",
+    "kEn": "Macro-Bending Loss [dB] (1turns，radius7.5mm，1625nm)",
+    "v": [
+     "≤1.0"
+    ],
+    "vEn": [
+     "≤1.0"
+    ]
+   },
+   {
+    "k": "涂层剥离力 [N]（典型平均值）",
+    "kEn": "Coating Strip Force [N] (Typical Avg.)",
+    "v": [
+     "1.5"
+    ],
+    "vEn": [
+     "1.5"
+    ]
+   },
+   {
+    "k": "涂层剥离力 [N]（峰值）",
+    "kEn": "Coating Strip Force [N] (Peak)",
+    "v": [
+     "1.3~8.9"
+    ],
+    "vEn": [
+     "1.3~8.9"
+    ]
+   },
+   {
+    "k": "动态疲劳参数（nd）",
+    "kEn": "Dynamic Fatigue Parameter (nd)",
+    "v": [
+     "≥20"
+    ],
+    "vEn": [
+     "≥20"
+    ]
+   }
+  ]
+ },
+ "lkf-g657b3": {
+  "headers": [
+   "特性",
+   "数据"
+  ],
+  "rows": [
+   {
+    "k": "衰减 [dB/km]（1310nm）",
+    "kEn": "Attenuation [dB/km] (1310nm)",
+    "v": [
+     "≤0.35"
+    ],
+    "vEn": [
+     "≤0.35"
+    ]
+   },
+   {
+    "k": "衰减 [dB/km]（1383nm(氢老化后)）",
+    "kEn": "Attenuation [dB/km] (1383nm(after hydrogen aging))",
+    "v": [
+     "≤0.35"
+    ],
+    "vEn": [
+     "≤0.35"
+    ]
+   },
+   {
+    "k": "衰减 [dB/km]（1550nm）",
+    "kEn": "Attenuation [dB/km] (1550nm)",
+    "v": [
+     "≤0.21"
+    ],
+    "vEn": [
+     "≤0.21"
+    ]
+   },
+   {
+    "k": "衰减 [dB/km]（1625nm）",
+    "kEn": "Attenuation [dB/km] (1625nm)",
+    "v": [
+     "≤0.23"
+    ],
+    "vEn": [
+     "≤0.23"
+    ]
+   },
+   {
+    "k": "相对于波长的衰减变化 [dB/km]（1285~1330nm, 相对于1310nm）",
+    "kEn": "Attenuation Variation vs. Wavelength [dB/km] (1285~1330nm, relative to 1310nm)",
+    "v": [
+     "≤0.03"
+    ],
+    "vEn": [
+     "≤0.03"
+    ]
+   },
+   {
+    "k": "相对于波长的衰减变化 [dB/km]（1525~1575nm, 相对于1550nm）",
+    "kEn": "Attenuation Variation vs. Wavelength [dB/km] (1525~1575nm, relative to1550nm)",
+    "v": [
+     "≤0.02"
+    ],
+    "vEn": [
+     "≤0.02"
+    ]
+   },
+   {
+    "k": "零色散波长(λ0) [nm]",
+    "kEn": "Zero-Dispersion Wavelength (λ0) [nm]",
+    "v": [
+     "1300~1324"
+    ],
+    "vEn": [
+     "1300~1324"
+    ]
+   },
+   {
+    "k": "零色散斜率(S0) [ps/(nm2·km)]",
+    "kEn": "Zero-Dispersion Slope (S0) [ps/(nm2·km)]",
+    "v": [
+     "≤0.092"
+    ],
+    "vEn": [
+     "≤0.092"
+    ]
+   },
+   {
+    "k": "偏振模色散系数（PMD) [ps/√km]（单根光纤最大值）",
+    "kEn": "PMD Coefficient (PMD)[ps/√km] (Maximum per Fiber)",
+    "v": [
+     "≤0.1"
+    ],
+    "vEn": [
+     "≤0.1"
+    ]
+   },
+   {
+    "k": "偏振模色散系数（PMD) [ps/√km] 光纤链路值（M=20，Q=0.01%)",
+    "kEn": "PMD Coefficient (PMD)[ps/√km] Fiber Link Value (M=20，Q=0.01%)",
+    "v": [
+     "≤0.06"
+    ],
+    "vEn": [
+     "≤0.06"
+    ]
+   },
+   {
+    "k": "偏振模色散系数（PMD) [ps/√km]（典型值）",
+    "kEn": "PMD Coefficient (PMD)[ps/√km] (Typical Value)",
+    "v": [
+     "0.04"
+    ],
+    "vEn": [
+     "0.04"
+    ]
+   },
+   {
+    "k": "光缆截止波长（ λcc) [nm]",
+    "kEn": "Cable Cut-off Wavelength ( λcc) [nm]",
+    "v": [
+     "≤1260"
+    ],
+    "vEn": [
+     "≤1260"
+    ]
+   },
+   {
+    "k": "模场直径（MFD) [nm]（1310nm）",
+    "kEn": "Mode Field Diameter (MFD) [nm] (1310nm)",
+    "v": [
+     "8.2~9.0"
+    ],
+    "vEn": [
+     "8.2~9.0"
+    ]
+   },
+   {
+    "k": "模场直径（MFD) [nm]（1550nm）",
+    "kEn": "Mode Field Diameter (MFD) [nm] (1550nm)",
+    "v": [
+     "9.1~10.1"
+    ],
+    "vEn": [
+     "9.1~10.1"
+    ]
+   },
+   {
+    "k": "有效群折射率（Neﬀ)（1310nm）",
+    "kEn": "Effective Group Refractive Index (Neﬀ) (1310nm)",
+    "v": [
+     "1.468"
+    ],
+    "vEn": [
+     "1.468"
+    ]
+   },
+   {
+    "k": "有效群折射率（Neﬀ)（1550nm）",
+    "kEn": "Effective Group Refractive Index (Neﬀ) (1550nm)",
+    "v": [
+     "1.469"
+    ],
+    "vEn": [
+     "1.469"
+    ]
+   },
+   {
+    "k": "点不连续性 [dB]（1310nm）",
+    "kEn": "Point Discontinuity [dB] (1310nm)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "点不连续性 [dB]（1550nm）",
+    "kEn": "Point Discontinuity [dB] (1550nm)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "包层直径 [μm]",
+    "kEn": "Cladding Diameter [μm]",
+    "v": [
+     "125.0±0.7"
+    ],
+    "vEn": [
+     "125.0±0.7"
+    ]
+   },
+   {
+    "k": "包层不圆度 [%]",
+    "kEn": "Cladding Non-Circularity [%]",
+    "v": [
+     "≤0.7"
+    ],
+    "vEn": [
+     "≤0.7"
+    ]
+   },
+   {
+    "k": "涂层直径 [μm]",
+    "kEn": "Coating Diameter [μm]",
+    "v": [
+     "235~245"
+    ],
+    "vEn": [
+     "235~245"
+    ]
+   },
+   {
+    "k": "涂层/包层同心度误差 [μm]",
+    "kEn": "Coating/Cladding Concentricity Error [μm]",
+    "v": [
+     "≤12.0"
+    ],
+    "vEn": [
+     "≤12.0"
+    ]
+   },
+   {
+    "k": "涂层不圆度 [%]",
+    "kEn": "Coating Non-Circularity [%]",
+    "v": [
+     "≤6.0"
+    ],
+    "vEn": [
+     "≤6.0"
+    ]
+   },
+   {
+    "k": "芯/包层同心度误差 [μm]",
+    "kEn": "Core/Cladding Concentricity Error [μm]",
+    "v": [
+     "≤0.5"
+    ],
+    "vEn": [
+     "≤0.5"
+    ]
+   },
+   {
+    "k": "翘曲度（半径） [m]",
+    "kEn": "Curl (Radius) [m]",
+    "v": [
+     "≥4"
+    ],
+    "vEn": [
+     "≥4"
+    ]
+   },
+   {
+    "k": "交货长度 [km/盘]",
+    "kEn": "Delivery Length [km/spool]",
+    "v": [
+     "最长25.2"
+    ],
+    "vEn": [
+     "Up to 25.2"
+    ]
+   },
+   {
+    "k": "温度附加衰减 [dB/km]（-65℃ 到85℃）",
+    "kEn": "Temperature-Induced Attenuation [dB/km] (-65℃ to 85℃)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "温度-湿度循环附加衰减 [dB/km]（-10℃ 到85℃，98% 相对湿度）",
+    "kEn": "Temperature-Humidity Cycling Attenuation [dB/km] (-10℃  to 85℃，98% Relative Humidity)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "浸水附加衰减 [dB/km]（23℃, 30 天）",
+    "kEn": "Water Immersion Attenuation [dB/km] (23℃, 30 days)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "湿热附加衰减 [dB/km]（85℃，85%相对湿度，30天）",
+    "kEn": "Damp Heat Attenuation [dB/km] (85℃，85%Relative Humidity，30 days)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "干热老化 [dB/km]（85℃，30天）",
+    "kEn": "Dry Heat Aging [dB/km] (85℃，30 days)",
+    "v": [
+     "≤0.05"
+    ],
+    "vEn": [
+     "≤0.05"
+    ]
+   },
+   {
+    "k": "筛选张力（绝对力 [N]）",
+    "kEn": "Proof Test Level (Absolute Force [N])",
+    "v": [
+     "≥9.0"
+    ],
+    "vEn": [
+     "≥9.0"
+    ]
+   },
+   {
+    "k": "筛选张力（应变 [%]）",
+    "kEn": "Proof Test Level (Strain [%])",
+    "v": [
+     "≥1.0"
+    ],
+    "vEn": [
+     "≥1.0"
+    ]
+   },
+   {
+    "k": "筛选张力（强度 [kpsi]）",
+    "kEn": "Proof Test Level (Stress [kpsi])",
+    "v": [
+     "≥100"
+    ],
+    "vEn": [
+     "≥100"
+    ]
+   },
+   {
+    "k": "宏弯附加损耗 [dB]（1圈，半径10mm，1550nm）",
+    "kEn": "Macro-Bending Loss [dB] (1turns，radius10mm，1550nm)",
+    "v": [
+     "≤0.03"
+    ],
+    "vEn": [
+     "≤0.03"
+    ]
+   },
+   {
+    "k": "宏弯附加损耗 [dB]（1圈，半径10mm，1625nm）",
+    "kEn": "Macro-Bending Loss [dB] (1turns，radius10mm，1625nm)",
+    "v": [
+     "≤0.1"
+    ],
+    "vEn": [
+     "≤0.1"
+    ]
+   },
+   {
+    "k": "宏弯附加损耗 [dB]（1圈，半径7.5mm，1550nm）",
+    "kEn": "Macro-Bending Loss [dB] (1turns，radius7.5mm，1550nm)",
+    "v": [
+     "≤0.08"
+    ],
+    "vEn": [
+     "≤0.08"
+    ]
+   },
+   {
+    "k": "宏弯附加损耗 [dB]（1圈，半径7.5mm，1625nm）",
+    "kEn": "Macro-Bending Loss [dB] (1turns，radius7.5mm，1625nm)",
+    "v": [
+     "≤0.25"
+    ],
+    "vEn": [
+     "≤0.25"
+    ]
+   },
+   {
+    "k": "宏弯附加损耗 [dB]（1圈，半径5mm，1550nm）",
+    "kEn": "Macro-Bending Loss [dB] (1turns，radius5mm，1550nm)",
+    "v": [
+     "≤0.15"
+    ],
+    "vEn": [
+     "≤0.15"
+    ]
+   },
+   {
+    "k": "宏弯附加损耗 [dB]（1圈，半径5mm，1625nm）",
+    "kEn": "Macro-Bending Loss [dB] (1turns，radius5mm，1625nm)",
+    "v": [
+     "≤0.45"
+    ],
+    "vEn": [
+     "≤0.45"
+    ]
+   },
+   {
+    "k": "涂层剥离力 [N]（典型平均值）",
+    "kEn": "Coating Strip Force [N] (Typical Avg.)",
+    "v": [
+     "1.5"
+    ],
+    "vEn": [
+     "1.5"
+    ]
+   },
+   {
+    "k": "涂层剥离力 [N]（峰值）",
+    "kEn": "Coating Strip Force [N] (Peak)",
+    "v": [
+     "1.3~8.9"
+    ],
+    "vEn": [
+     "1.3~8.9"
+    ]
+   },
+   {
+    "k": "动态疲劳参数（nd）",
+    "kEn": "Dynamic Fatigue Parameter (nd)",
+    "v": [
+     "≥20"
+    ],
+    "vEn": [
+     "≥20"
+    ]
+   }
+  ]
  }
 }

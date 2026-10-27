@@ -1,26 +1,43 @@
 # -*- coding: utf-8 -*-
-"""从源 docx 生成 LKF-G652 三款光纤的完整参数表覆盖数据（目录 md 缺光学段且取值列错位）
+"""从源 docx 生成单模光纤（LKF-G652 / G657 各三款）的完整参数表覆盖数据
 
-输出 .extract/spec_override.json：{slug: {headers, rows}}，由 gen_ts 在生成时覆盖。
-中文表与英文 DataSheet 表格逐行对齐（同版本 V3.0），条件并进参数名，值单列。
+目录 md 缺光学段、且 4 列表把「数据」列取成了「条件」列（页面上显示 --），
+故改由 docx 重建：中文简介表 + 英文 DataSheet 表逐行对齐（同 V3.0），
+条件并进参数名、值单列。
+
+输出 .extract/spec_override.json：{slug: {headers, rows}}，由 gen_ts 按 slug 覆盖。
 """
 import json, os, re, zipfile
 
-SRC = r"D:\利科夫\2026年产品资料-利科夫\6、光纤陀螺解决方案\002.单模光纤\G652"
+SRC = r"D:\利科夫\2026年产品资料-利科夫\6、光纤陀螺解决方案\002.单模光纤"
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "spec_override.json")
 
 PRODUCTS = {
+    # LKF-G652 系列
     "lkf-g652": (
-        r"1、LKF-G652低水峰单模光纤简介V3.0_三页_中文.docx",
-        r"1.1、LKF-G652 Low-Water Peak Single-Mode Fiber V3.0 Data Sheet _EN.docx",
+        "G652/1、LKF-G652低水峰单模光纤简介V3.0_三页_中文.docx",
+        "G652/1.1、LKF-G652 Low-Water Peak Single-Mode Fiber V3.0 Data Sheet _EN.docx",
     ),
     "lkf-g652-low-loss": (
-        r"2、LKF-G652低损耗单模光纤简介V3.0_三页_中文.docx",
-        r"2.1、LKF-G652 Low-Loss Single-Mode Fiber V3.0 Data Sheet _EN.docx",
+        "G652/2、LKF-G652低损耗单模光纤简介V3.0_三页_中文.docx",
+        "G652/2.1、LKF-G652 Low-Loss Single-Mode Fiber V3.0 Data Sheet _EN.docx",
     ),
     "lkf-g652-ultra-low-loss": (
-        r"3、LKF-G652超低损耗单模光纤简介V3.0_三页_中文.docx",
-        r"3.1、LKF-G652 Ultra Low-Loss Single-Mode Fiber V3.0 Data Sheet _EN.docx",
+        "G652/3、LKF-G652超低损耗单模光纤简介V3.0_三页_中文.docx",
+        "G652/3.1、LKF-G652 Ultra Low-Loss Single-Mode Fiber V3.0 Data Sheet _EN.docx",
+    ),
+    # LKF-G657 系列（B3 的英文 DataSheet 文件名误写 A1，内文标题为 B3）
+    "lkf-g657a1": (
+        "G657/2、LKF-G657A1低损耗弯曲不敏感单模光纤简介V3.0_三页_中文.docx",
+        "G657/2.1、LKF-G657A1 Low-Loss Bend-Insensitive Single-Mode Fiber V3.0 Data Sheet _EN.docx",
+    ),
+    "lkf-g657a2": (
+        "G657/1、LKF-G657A2低水峰弯曲不敏感单模光纤简介V3.0_三页_中文.docx",
+        "G657/1.1、LKF-G657A2 Low Water Peak Bend-Insensitive Single-Mode Fiber V3.0 Data Sheet _EN.docx",
+    ),
+    "lkf-g657b3": (
+        "G657/3、LKF-G657B3超强弯曲不敏感单模光纤简介V3.0_三页_中文.docx",
+        "G657/3.1、LKF-G657A1 Ultra-Strong Bend-Insensitive Single-Mode Fiber V3.0 Data Sheet _EN.docx",
     ),
 }
 
@@ -57,7 +74,11 @@ def flat(rows):
         val = cells[-1].strip()
         if not last_k or not val:
             continue
-        label = last_k + ("（" + "，".join(conds) + "）" if conds and "（" not in conds[0] else (" " + "，".join(conds) if conds else ""))
+        if conds:
+            joined = "，".join(conds)
+            label = last_k + ("（" + joined + "）" if "（" not in conds[0] else " " + joined)
+        else:
+            label = last_k
         out.append((label, val))
     return out
 
@@ -78,7 +99,3 @@ for slug, (zh_doc, en_doc) in PRODUCTS.items():
 
 json.dump(override, open(OUT, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 print("写入:", OUT)
-
-sample = override.get("lkf-g652-low-loss", {}).get("rows", [])[:6]
-for r in sample:
-    print("   样例 |", r["k"], "=", r["v"][0], "||", r["kEn"], "=", r["vEn"][0])

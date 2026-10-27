@@ -71,6 +71,9 @@ NAME_EN_BY_ZH = {
     "低水峰单模光纤": "LKF-G652 Low-Water Peak Single-Mode Fiber",
     "低损耗单模光纤": "LKF-G652 Low-Loss Single-Mode Fiber",
     "超低损耗单模光纤": "LKF-G652 Ultra Low-Loss Single-Mode Fiber",
+    "低水峰弯曲不敏感单模光纤": "LKF-G657A2 Low Water Peak Bend-Insensitive Single-Mode Fiber",
+    "低损耗弯曲不敏感单模光纤": "LKF-G657A1 Low-Loss Bend-Insensitive Single-Mode Fiber",
+    "超强弯曲不敏感单模光纤": "LKF-G657B3 Ultra-Strong Bend-Insensitive Single-Mode Fiber",
 }
 
 # 同型号多规格产品（共用 model）的 URL 区分
@@ -83,6 +86,9 @@ SLUG_BY_ZH = {
     "低水峰单模光纤": "lkf-g652",
     "低损耗单模光纤": "lkf-g652-low-loss",
     "超低损耗单模光纤": "lkf-g652-ultra-low-loss",
+    "低水峰弯曲不敏感单模光纤": "lkf-g657a2",
+    "低损耗弯曲不敏感单模光纤": "lkf-g657a1",
+    "超强弯曲不敏感单模光纤": "lkf-g657b3",
 }
 
 def clean_en_name(r):
