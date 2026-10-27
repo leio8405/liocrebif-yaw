@@ -522,6 +522,8 @@ export const imus: Product[] = [
     tagZh: 'MEMS IMU',
     nameEn: 'LKF-MSU105 Mini MEMS Integrated Inertial Navigation System',
     nameZh: '微型MEMS惯性组合导航系统',
+    descEn: 'Liocrebif LKF-MSU105 is a miniature, cost-effective MEMS integrated inertial navigation system targeting SATCOM-on-the-move, UAVs, and similar navigation, control, and measurement applications. It tightly integrates MEMS sensors and a full-band GNSS receiver chip within a compact form factor, delivering precise positioning and attitude measurement in a small package.',
+    descZh: '利科夫LKF-MSU105微型MEMS惯性组合导航是一款微小型、高性价比的MEMS惯性组合导航系统，主打动中通、无人机为代表的导航、控制和测量等领域。系统在小尺寸内高度集成了MEMS传感器和全频点卫星接收机芯片，可以实现小体积的定位和姿态测量。',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [

@@ -2686,5 +2686,1499 @@
     ]
    }
   ]
+ },
+ "lkf-quartz-accelerometer": {
+  "headers": [
+   "项目",
+   "T180",
+   "T150",
+   "T125"
+  ],
+  "rows": [
+   {
+    "k": "高温抗震大表 · 量程 (g)",
+    "kEn": "High-temp / shock-resistant, large · Range (g)",
+    "v": [
+     "≥±30",
+     "≥±30",
+     "≥±30"
+    ],
+    "vEn": [
+     "≥±30",
+     "≥±30",
+     "≥±30"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 偏值 (mg)",
+    "kEn": "High-temp / shock-resistant, large · Bias (mg)",
+    "v": [
+     "≤±10",
+     "≤±7",
+     "≤±7"
+    ],
+    "vEn": [
+     "≤±10",
+     "≤±7",
+     "≤±7"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 偏值稳定性 (µg)",
+    "kEn": "High-temp / shock-resistant, large · Bias Stability (µg)",
+    "v": [
+     "≤150（1天）",
+     "≤100（1天）",
+     "≤80（1天）"
+    ],
+    "vEn": [
+     "≤150 (1 day)",
+     "≤100 (1 day)",
+     "≤80 (1 day)"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 偏值温度系数 (µg/ºC)",
+    "kEn": "High-temp / shock-resistant, large · Bias Temp Coeff (µg/ºC)",
+    "v": [
+     "≤±200",
+     "≤±150",
+     "≤±100"
+    ],
+    "vEn": [
+     "≤±200",
+     "≤±150",
+     "≤±100"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 标度因数 (mA/g)",
+    "kEn": "High-temp / shock-resistant, large · Scale Factor (mA/g)",
+    "v": [
+     "1.0～3.0",
+     "1.0～3.0",
+     "1.0～3.0"
+    ],
+    "vEn": [
+     "1.0～3.0",
+     "1.0～3.0",
+     "1.0～3.0"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 标度因数稳定性 (ppm)",
+    "kEn": "High-temp / shock-resistant, large · SF Stability (ppm)",
+    "v": [
+     "≤200（1天）",
+     "≤150（1天）",
+     "≤100（1天）"
+    ],
+    "vEn": [
+     "≤200 (1 day)",
+     "≤150 (1 day)",
+     "≤100 (1 day)"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 标度因数温度系数 (ppm/ºC)",
+    "kEn": "High-temp / shock-resistant, large · SF Temp Coeff (ppm/ºC)",
+    "v": [
+     "≤±300",
+     "≤±200",
+     "≤±100"
+    ],
+    "vEn": [
+     "≤±300",
+     "≤±200",
+     "≤±100"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 二阶非线性系数 (µg/g2)",
+    "kEn": "High-temp / shock-resistant, large · 2nd-Order NL (µg/g2)",
+    "v": [
+     "≤±50",
+     "≤±50",
+     "≤±50"
+    ],
+    "vEn": [
+     "≤±50",
+     "≤±50",
+     "≤±50"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 二阶非线性系数稳定性 (µg/g2)",
+    "kEn": "High-temp / shock-resistant, large · 2nd-Order NL Stability (µg/g2)",
+    "v": [
+     "≤30（1天）",
+     "≤30（1天）",
+     "≤30（1天）"
+    ],
+    "vEn": [
+     "≤30 (1 day)",
+     "≤30 (1 day)",
+     "≤30 (1 day)"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 阈值/分辨率 (µg)",
+    "kEn": "High-temp / shock-resistant, large · Threshold/Resolution (µg)",
+    "v": [
+     "＜20",
+     "＜20",
+     "＜20"
+    ],
+    "vEn": [
+     "＜20",
+     "＜20",
+     "＜20"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 噪声 (µA)",
+    "kEn": "High-temp / shock-resistant, large · Noise (µA)",
+    "v": [
+     "＜15",
+     "＜15",
+     "＜15"
+    ],
+    "vEn": [
+     "＜15",
+     "＜15",
+     "＜15"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 带宽 (Hz)",
+    "kEn": "High-temp / shock-resistant, large · Bandwidth (Hz)",
+    "v": [
+     "≥350",
+     "≥350",
+     "≥350"
+    ],
+    "vEn": [
+     "≥350",
+     "≥350",
+     "≥350"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 安装角 (µrad)",
+    "kEn": "High-temp / shock-resistant, large · Mounting Angle (µrad)",
+    "v": [
+     "≤±200",
+     "≤±200",
+     "≤±200"
+    ],
+    "vEn": [
+     "≤±200",
+     "≤±200",
+     "≤±200"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 安装角稳定性 (µrad)",
+    "kEn": "High-temp / shock-resistant, large · MA Stability (µrad)",
+    "v": [
+     "≤±80",
+     "≤±80",
+     "≤±80"
+    ],
+    "vEn": [
+     "≤±80",
+     "≤±80",
+     "≤±80"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 工作温度范围 (ºC)",
+    "kEn": "High-temp / shock-resistant, large · Operating Temp Range (ºC)",
+    "v": [
+     "－45～＋180",
+     "－45～＋150",
+     "－45～＋125"
+    ],
+    "vEn": [
+     "－45～＋180",
+     "－45～＋150",
+     "－45～＋125"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 冲击试验 (g)",
+    "kEn": "High-temp / shock-resistant, large · Shock (g)",
+    "v": [
+     "1000",
+     "1000",
+     "1000"
+    ],
+    "vEn": [
+     "1000",
+     "1000",
+     "1000"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 振动试验 (g)",
+    "kEn": "High-temp / shock-resistant, large · Vibration (g)",
+    "v": [
+     "20",
+     "20",
+     "20"
+    ],
+    "vEn": [
+     "20",
+     "20",
+     "20"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 低气压 (133pa、10min)",
+    "kEn": "High-temp / shock-resistant, large · Low Pressure (133pa, 10min)",
+    "v": [
+     "＜5%",
+     "＜5%",
+     "＜5%"
+    ],
+    "vEn": [
+     "＜5%",
+     "＜5%",
+     "＜5%"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 供电电压 (VDC)",
+    "kEn": "High-temp / shock-resistant, large · Supply Voltage (VDC)",
+    "v": [
+     "±7～±18",
+     "±7～±18",
+     "±7～±18"
+    ],
+    "vEn": [
+     "±7～±18",
+     "±7～±18",
+     "±7～±18"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 消耗电流 (mA)",
+    "kEn": "High-temp / shock-resistant, large · Current Consumption (mA)",
+    "v": [
+     "≤±20",
+     "≤±20",
+     "≤±20"
+    ],
+    "vEn": [
+     "≤±20",
+     "≤±20",
+     "≤±20"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 功耗 (mW)",
+    "kEn": "High-temp / shock-resistant, large · Power (mW)",
+    "v": [
+     "≤480",
+     "≤480",
+     "≤480"
+    ],
+    "vEn": [
+     "≤480",
+     "≤480",
+     "≤480"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 绝缘电阻 (MΩ)",
+    "kEn": "High-temp / shock-resistant, large · Insulation Resistance (MΩ)",
+    "v": [
+     "≥100",
+     "≥100",
+     "≥100"
+    ],
+    "vEn": [
+     "≥100",
+     "≥100",
+     "≥100"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 重量 (g)",
+    "kEn": "High-temp / shock-resistant, large · Weight (g)",
+    "v": [
+     "≤60",
+     "≤60",
+     "≤60"
+    ],
+    "vEn": [
+     "≤60",
+     "≤60",
+     "≤60"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 尺寸 (mm)",
+    "kEn": "High-temp / shock-resistant, large · Dimensions (mm)",
+    "v": [
+     "Φ25×23",
+     "Φ25×23",
+     "Φ25×23"
+    ],
+    "vEn": [
+     "Φ25×23",
+     "Φ25×23",
+     "Φ25×23"
+    ]
+   },
+   {
+    "k": "高温抗震大表 · 外壳材料",
+    "kEn": "High-temp / shock-resistant, large · Housing Material",
+    "v": [
+     "321不锈钢",
+     "321不锈钢",
+     "321不锈钢"
+    ],
+    "vEn": [
+     "321 Stainless Steel",
+     "321 Stainless Steel",
+     "321 Stainless Steel"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 量程 (g)",
+    "kEn": "High-temp / shock-resistant, small · Range (g)",
+    "v": [
+     "≥±30",
+     "≥±30",
+     "≥±30"
+    ],
+    "vEn": [
+     "≥±30",
+     "≥±30",
+     "≥±30"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 偏值 (mg)",
+    "kEn": "High-temp / shock-resistant, small · Bias (mg)",
+    "v": [
+     "≤±15",
+     "≤±10",
+     "≤±7"
+    ],
+    "vEn": [
+     "≤±15",
+     "≤±10",
+     "≤±7"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 偏值稳定性 (µg)",
+    "kEn": "High-temp / shock-resistant, small · Bias Stability (µg)",
+    "v": [
+     "≤200（1天）",
+     "≤150（1天）",
+     "≤100（1天）"
+    ],
+    "vEn": [
+     "≤200 (1 day)",
+     "≤150 (1 day)",
+     "≤100 (1 day)"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 偏值温度系数 (µg/ºC)",
+    "kEn": "High-temp / shock-resistant, small · Bias Temp Coeff (µg/ºC)",
+    "v": [
+     "≤±200",
+     "≤±150",
+     "≤±100"
+    ],
+    "vEn": [
+     "≤±200",
+     "≤±150",
+     "≤±100"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 标度因数 (mA/g)",
+    "kEn": "High-temp / shock-resistant, small · Scale Factor (mA/g)",
+    "v": [
+     "1.0～1.5",
+     "1.0～1.5",
+     "1.0～1.5"
+    ],
+    "vEn": [
+     "1.0～1.5",
+     "1.0～1.5",
+     "1.0～1.5"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 标度因数稳定性 ppm)",
+    "kEn": "High-temp / shock-resistant, small · SF Stability (ppm)",
+    "v": [
+     "≤200（1天）",
+     "≤150（1天）",
+     "≤100（1天）"
+    ],
+    "vEn": [
+     "≤200 (1 day)",
+     "≤150 (1 day)",
+     "≤100 (1 day)"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 标度因数温度系数 (ppm/ºC)",
+    "kEn": "High-temp / shock-resistant, small · SF Temp Coeff (ppm/ºC)",
+    "v": [
+     "≤±300",
+     "≤±200",
+     "≤±100"
+    ],
+    "vEn": [
+     "≤±300",
+     "≤±200",
+     "≤±100"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 二阶非线性系数 (µg/g2)",
+    "kEn": "High-temp / shock-resistant, small · 2nd-Order NL (µg/g2)",
+    "v": [
+     "≤±50",
+     "≤±50",
+     "≤±50"
+    ],
+    "vEn": [
+     "≤±50",
+     "≤±50",
+     "≤±50"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 二阶非线性系数稳定性 (µg/g2)",
+    "kEn": "High-temp / shock-resistant, small · 2nd-Order NL Stability (µg/g2)",
+    "v": [
+     "≤30（1天）",
+     "≤30（1天）",
+     "≤30（1天）"
+    ],
+    "vEn": [
+     "≤30 (1 day)",
+     "≤30 (1 day)",
+     "≤30 (1 day)"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 阈值/分辨率 (µg)",
+    "kEn": "High-temp / shock-resistant, small · Threshold/Resolution (µg)",
+    "v": [
+     "＜20",
+     "＜20",
+     "＜20"
+    ],
+    "vEn": [
+     "＜20",
+     "＜20",
+     "＜20"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 噪声 (µA)",
+    "kEn": "High-temp / shock-resistant, small · Noise (µA)",
+    "v": [
+     "＜15",
+     "＜15",
+     "＜15"
+    ],
+    "vEn": [
+     "＜15",
+     "＜15",
+     "＜15"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 带宽 (Hz)",
+    "kEn": "High-temp / shock-resistant, small · Bandwidth (Hz)",
+    "v": [
+     "≥350",
+     "≥350",
+     "≥350"
+    ],
+    "vEn": [
+     "≥350",
+     "≥350",
+     "≥350"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 安装角 (µrad)",
+    "kEn": "High-temp / shock-resistant, small · Mounting Angle (µrad)",
+    "v": [
+     "≤±200",
+     "≤±200",
+     "≤±200"
+    ],
+    "vEn": [
+     "≤±200",
+     "≤±200",
+     "≤±200"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 安装角稳定性 (µrad)",
+    "kEn": "High-temp / shock-resistant, small · Mounting Angle Stability (µrad)",
+    "v": [
+     "≤±80",
+     "≤±80",
+     "≤±80"
+    ],
+    "vEn": [
+     "≤±80",
+     "≤±80",
+     "≤±80"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 工作温度范围 (ºC)",
+    "kEn": "High-temp / shock-resistant, small · Operating Temp Range (ºC)",
+    "v": [
+     "－45～＋180",
+     "－45～＋150",
+     "－45～＋125"
+    ],
+    "vEn": [
+     "－45～＋180",
+     "－45～＋150",
+     "－45～＋125"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 冲击试验 (g)",
+    "kEn": "High-temp / shock-resistant, small · Shock (g)",
+    "v": [
+     "1000",
+     "1000",
+     "1000"
+    ],
+    "vEn": [
+     "1000",
+     "1000",
+     "1000"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 振动试验 (g)",
+    "kEn": "High-temp / shock-resistant, small · Vibration (g)",
+    "v": [
+     "20",
+     "20",
+     "20"
+    ],
+    "vEn": [
+     "20",
+     "20",
+     "20"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 低气压 (133pa、10min)",
+    "kEn": "High-temp / shock-resistant, small · Low Pressure (133 Pa, 10 min)",
+    "v": [
+     "＜5%",
+     "＜5%",
+     "＜5%"
+    ],
+    "vEn": [
+     "＜5%",
+     "＜5%",
+     "＜5%"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 供电电压 (VDC)",
+    "kEn": "High-temp / shock-resistant, small · Supply Voltage (VDC)",
+    "v": [
+     "±7～±18",
+     "±7～±18",
+     "±7～±18"
+    ],
+    "vEn": [
+     "±7～±18",
+     "±7～±18",
+     "±7～±18"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 消耗电流 (mA)",
+    "kEn": "High-temp / shock-resistant, small · Current Consumption (mA)",
+    "v": [
+     "≤±16",
+     "≤±16",
+     "≤±16"
+    ],
+    "vEn": [
+     "≤±16",
+     "≤±16",
+     "≤±16"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 功耗 (mW)",
+    "kEn": "High-temp / shock-resistant, small · Power (mW)",
+    "v": [
+     "≤480",
+     "≤480",
+     "≤480"
+    ],
+    "vEn": [
+     "≤480",
+     "≤480",
+     "≤480"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 绝缘电阻 (MΩ)",
+    "kEn": "High-temp / shock-resistant, small · Insulation Resistance (MΩ)",
+    "v": [
+     "≥100",
+     "≥100",
+     "≥100"
+    ],
+    "vEn": [
+     "≥100",
+     "≥100",
+     "≥100"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 重量 (g)",
+    "kEn": "High-temp / shock-resistant, small · Weight (g)",
+    "v": [
+     "≤25",
+     "≤25",
+     "≤25"
+    ],
+    "vEn": [
+     "≤25",
+     "≤25",
+     "≤25"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 尺寸 (mm)",
+    "kEn": "High-temp / shock-resistant, small · Dimensions (mm)",
+    "v": [
+     "Φ18.2×17.6",
+     "Φ18.2×17.6",
+     "Φ18.2×17.6"
+    ],
+    "vEn": [
+     "Φ18.2×17.6",
+     "Φ18.2×17.6",
+     "Φ18.2×17.6"
+    ]
+   },
+   {
+    "k": "高温抗震小表 · 外壳材料",
+    "kEn": "High-temp / shock-resistant, small · Housing Material",
+    "v": [
+     "321不锈钢",
+     "321不锈钢",
+     "321不锈钢"
+    ],
+    "vEn": [
+     "321 Stainless Steel",
+     "321 Stainless Steel",
+     "321 Stainless Steel"
+    ]
+   },
+   {
+    "k": "高精度 · 量程 (g)",
+    "kEn": "High precision · Range (g)",
+    "v": [
+     "±60",
+     "±60",
+     "±60"
+    ],
+    "vEn": [
+     "±60",
+     "±60",
+     "±60"
+    ]
+   },
+   {
+    "k": "高精度 · 零偏常值 (mg)",
+    "kEn": "High precision · Null Bias (mg)",
+    "v": [
+     "≤4",
+     "≤4",
+     "≤4"
+    ],
+    "vEn": [
+     "≤4",
+     "≤4",
+     "≤4"
+    ]
+   },
+   {
+    "k": "高精度 · 零偏月重复性 (μg ,1σ ,55℃)",
+    "kEn": "High precision · Bias Monthly Repeat. (μg, 1σ, 55°C)",
+    "v": [
+     "≤15",
+     "≤10",
+     "≤5"
+    ],
+    "vEn": [
+     "≤15",
+     "≤10",
+     "≤5"
+    ]
+   },
+   {
+    "k": "高精度 · 零偏年重复性 (μg ,1σ ,55℃)",
+    "kEn": "High precision · Bias Yearly Repeat. (μg, 1σ, 55°C)",
+    "v": [
+     "≤45",
+     "≤30",
+     "≤15"
+    ],
+    "vEn": [
+     "≤45",
+     "≤30",
+     "≤15"
+    ]
+   },
+   {
+    "k": "高精度 · 零偏温度系数 (μg/ºC)",
+    "kEn": "High precision · Bias Temp Coeff (μg/ºC)",
+    "v": [
+     "≤30",
+     "≤25",
+     "≤15"
+    ],
+    "vEn": [
+     "≤30",
+     "≤25",
+     "≤15"
+    ]
+   },
+   {
+    "k": "高精度 · 标度因数 (mA/g)",
+    "kEn": "High precision · Scale Factor (mA/g)",
+    "v": [
+     "1.00 to 1.25",
+     "1.00 to 1.25",
+     "1.00 to 1.25"
+    ],
+    "vEn": [
+     "1.00 to 1.25",
+     "1.00 to 1.25",
+     "1.00 to 1.25"
+    ]
+   },
+   {
+    "k": "高精度 · 标度因数月重复性 (ppm ,1σ ,55℃)",
+    "kEn": "High precision · SF Monthly Repeatability (ppm, 1σ, 55°C)",
+    "v": [
+     "≤15",
+     "≤10",
+     "≤5"
+    ],
+    "vEn": [
+     "≤15",
+     "≤10",
+     "≤5"
+    ]
+   },
+   {
+    "k": "高精度 · 标度因数年重复性 (ppm ,1σ ,55℃)",
+    "kEn": "High precision · SF Yearly Repeatability (ppm, 1σ, 55°C)",
+    "v": [
+     "≤45",
+     "≤30",
+     "≤15"
+    ],
+    "vEn": [
+     "≤45",
+     "≤30",
+     "≤15"
+    ]
+   },
+   {
+    "k": "高精度 · 标度因数温度系数 (ppm/ºC)",
+    "kEn": "High precision · SF Temp Coeff (ppm/ºC)",
+    "v": [
+     "≤30",
+     "≤25",
+     "≤20"
+    ],
+    "vEn": [
+     "≤30",
+     "≤25",
+     "≤20"
+    ]
+   },
+   {
+    "k": "高精度 · 安装误差角 (μrad)",
+    "kEn": "High precision · Misalignment Angle (μrad)",
+    "v": [
+     "≤2000",
+     "≤2000",
+     "≤1000"
+    ],
+    "vEn": [
+     "≤2000",
+     "≤2000",
+     "≤1000"
+    ]
+   },
+   {
+    "k": "高精度 · 安装误差角月重复性 (μrad ,1σ ,55℃)",
+    "kEn": "High precision · MA Monthly Repeatability (μrad, 1σ, 55°C)",
+    "v": [
+     "≤30",
+     "≤20",
+     "≤10"
+    ],
+    "vEn": [
+     "≤30",
+     "≤20",
+     "≤10"
+    ]
+   },
+   {
+    "k": "高精度 · 安装误差角年重复性 (μrad ,1σ ,55℃)",
+    "kEn": "High precision · MA Yearly Repeatability (μrad, 1σ, 55°C)",
+    "v": [
+     "≤80",
+     "≤50",
+     "≤30"
+    ],
+    "vEn": [
+     "≤80",
+     "≤50",
+     "≤30"
+    ]
+   },
+   {
+    "k": "高精度 · 安装误差角温度系数 (μrad/ºC)",
+    "kEn": "High precision · MA Temp Coeff (μrad/ºC)",
+    "v": [
+     "≤4",
+     "≤4",
+     "≤4"
+    ],
+    "vEn": [
+     "≤4",
+     "≤4",
+     "≤4"
+    ]
+   },
+   {
+    "k": "高精度 · 二阶非线性系数 (μg/g2)",
+    "kEn": "High precision · 2nd-Order NL (μg/g²)",
+    "v": [
+     "≤10",
+     "≤10",
+     "≤10"
+    ],
+    "vEn": [
+     "≤10",
+     "≤10",
+     "≤10"
+    ]
+   },
+   {
+    "k": "高精度 · 振动整流误差 (μg /g2rms)",
+    "kEn": "High precision · VRE (μg/g²rms)",
+    "v": [
+     "50-500 Hz",
+     "≤40",
+     "≤40"
+    ],
+    "vEn": [
+     "50-500 Hz",
+     "≤40",
+     "≤40"
+    ]
+   },
+   {
+    "k": "高精度 · ",
+    "kEn": "High precision · ",
+    "v": [
+     "500-2 kHz",
+     "≤150",
+     "≤60"
+    ],
+    "vEn": [
+     "500-2 kHz",
+     "≤150",
+     "≤60"
+    ]
+   },
+   {
+    "k": "高精度 · 固有噪声 (μg-rms)",
+    "kEn": "High precision · Inherent Noise (μg-rms)",
+    "v": [
+     "0-10 Hz",
+     "≤7",
+     "≤7"
+    ],
+    "vEn": [
+     "0-10 Hz",
+     "≤7",
+     "≤7"
+    ]
+   },
+   {
+    "k": "高精度 · ",
+    "kEn": "High precision · ",
+    "v": [
+     "10-500 Hz",
+     "≤70",
+     "≤70"
+    ],
+    "vEn": [
+     "10-500 Hz",
+     "≤70",
+     "≤70"
+    ]
+   },
+   {
+    "k": "高精度 · ",
+    "kEn": "High precision · ",
+    "v": [
+     "500-10 kHz",
+     "≤1,500",
+     "≤1,500"
+    ],
+    "vEn": [
+     "500-10 kHz",
+     "≤1,500",
+     "≤1,500"
+    ]
+   },
+   {
+    "k": "高精度 · 工作温度 (ºC)",
+    "kEn": "High precision · Operating Temp (ºC)",
+    "v": [
+     "-55 to +95",
+     "-55 to +95",
+     "-55 to +95"
+    ],
+    "vEn": [
+     "-55 to +95",
+     "-55 to +95",
+     "-55 to +95"
+    ]
+   },
+   {
+    "k": "高精度 · 冲击，半正弦 (g ,ms)",
+    "kEn": "High precision · Shock, Half-Sine (g, ms)",
+    "v": [
+     "250 ，4",
+     "250 ，4",
+     "250 ，4"
+    ],
+    "vEn": [
+     "250 , 4",
+     "250 , 4",
+     "250 , 4"
+    ]
+   },
+   {
+    "k": "高精度 · 正弦振动 (g ,@ 20-2 kHz)",
+    "kEn": "High precision · Sine Vibration (g, @20-2 kHz)",
+    "v": [
+     "15",
+     "15",
+     "15"
+    ],
+    "vEn": [
+     "15",
+     "15",
+     "15"
+    ]
+   },
+   {
+    "k": "高精度 · 分辨率/阈值 (μg)",
+    "kEn": "High precision · Resolution/Threshold (μg)",
+    "v": [
+     "≤1",
+     "≤1",
+     "≤1"
+    ],
+    "vEn": [
+     "≤1",
+     "≤1",
+     "≤1"
+    ]
+   },
+   {
+    "k": "高精度 · 带宽 (Hz)",
+    "kEn": "High precision · Bandwidth (Hz)",
+    "v": [
+     "≥800",
+     "≥800",
+     "≥800"
+    ],
+    "vEn": [
+     "≥800",
+     "≥800",
+     "≥800"
+    ]
+   },
+   {
+    "k": "高精度 · AD590",
+    "kEn": "High precision · AD590",
+    "v": [
+     "有",
+     "有",
+     "有"
+    ],
+    "vEn": [
+     "Yes",
+     "Yes",
+     "Yes"
+    ]
+   },
+   {
+    "k": "高精度 · 静态电流 (mA)",
+    "kEn": "High precision · Quiescent Current (mA)",
+    "v": [
+     "≤16",
+     "≤16",
+     "≤16"
+    ],
+    "vEn": [
+     "≤16",
+     "≤16",
+     "≤16"
+    ]
+   },
+   {
+    "k": "高精度 · 额定功率(±15V DC ,mW）",
+    "kEn": "High precision · Rated Power (±15V DC, mW)",
+    "v": [
+     "≤250",
+     "≤250",
+     "≤250"
+    ],
+    "vEn": [
+     "≤250",
+     "≤250",
+     "≤250"
+    ]
+   },
+   {
+    "k": "高精度 · 直流电源 (DC v)",
+    "kEn": "High precision · DC Supply (V DC)",
+    "v": [
+     "±13 ~ ±28",
+     "±13 ~ ±28",
+     "±13 ~ ±28"
+    ],
+    "vEn": [
+     "±13 ~ ±28",
+     "±13 ~ ±28",
+     "±13 ~ ±28"
+    ]
+   },
+   {
+    "k": "高精度 · 重量 (g)",
+    "kEn": "High precision · Weight (g)",
+    "v": [
+     "70 ±2",
+     "70 ±2",
+     "70 ±2"
+    ],
+    "vEn": [
+     "70 ±2",
+     "70 ±2",
+     "70 ±2"
+    ]
+   },
+   {
+    "k": "高精度 · 安装面下直径 (mm Max)",
+    "kEn": "High precision · Dia. Below Mount (mm Max)",
+    "v": [
+     "Ø25.4",
+     "Ø25.4",
+     "Ø25.4"
+    ],
+    "vEn": [
+     "Ø25.4",
+     "Ø25.4",
+     "Ø25.4"
+    ]
+   },
+   {
+    "k": "高精度 · 安装面下高度 (mm Max)",
+    "kEn": "High precision · Height Below Mount (mm Max)",
+    "v": [
+     "14.8",
+     "14.8",
+     "14.8"
+    ],
+    "vEn": [
+     "14.8",
+     "14.8",
+     "14.8"
+    ]
+   },
+   {
+    "k": "高精度 · 外壳材质",
+    "kEn": "High precision · Housing Material",
+    "v": [
+     "300系列不锈钢",
+     "300系列不锈钢",
+     "300系列不锈钢"
+    ],
+    "vEn": [
+     "300 Series Stainless Steel",
+     "300 Series Stainless Steel",
+     "300 Series Stainless Steel"
+    ]
+   },
+   {
+    "k": "普通 · 测量范围 (g)",
+    "kEn": "Standard · Range (g)",
+    "v": [
+     "-60～+60",
+     "-60～+60",
+     "-60～+60"
+    ],
+    "vEn": [
+     "-60～+60",
+     "-60～+60",
+     "-60～+60"
+    ]
+   },
+   {
+    "k": "普通 · 偏值 (mg)",
+    "kEn": "Standard · Bias (mg)",
+    "v": [
+     "≤|±3|",
+     "≤|±5|",
+     "≤|±10|"
+    ],
+    "vEn": [
+     "≤|±3|",
+     "≤|±5|",
+     "≤|±10|"
+    ]
+   },
+   {
+    "k": "普通 · 标度因数 (mA/g)",
+    "kEn": "Standard · Scale Factor (mA/g)",
+    "v": [
+     "1±0.25",
+     "1±0.25",
+     "1±0.25"
+    ],
+    "vEn": [
+     "1±0.25",
+     "1±0.25",
+     "1±0.25"
+    ]
+   },
+   {
+    "k": "普通 · 二阶非线性系数 (μg/g2 ,0～±30g)",
+    "kEn": "Standard · 2nd-Order NL (μg/g2 ,0～±30g)",
+    "v": [
+     "≤|±10|",
+     "≤|±10|",
+     "≤|±20|"
+    ],
+    "vEn": [
+     "≤|±10|",
+     "≤|±10|",
+     "≤|±20|"
+    ]
+   },
+   {
+    "k": "普通 · 偏值月重复性 (μg ,1σ)",
+    "kEn": "Standard · Bias Monthly Repeat. (μg, 1σ)",
+    "v": [
+     "≤10",
+     "≤30",
+     "≤80"
+    ],
+    "vEn": [
+     "≤10",
+     "≤30",
+     "≤80"
+    ]
+   },
+   {
+    "k": "普通 · 标度因数月重复性 (ppm ,1σ)",
+    "kEn": "Standard · SF Monthly Repeatability (ppm, 1σ)",
+    "v": [
+     "≤10",
+     "≤30",
+     "≤80"
+    ],
+    "vEn": [
+     "≤10",
+     "≤30",
+     "≤80"
+    ]
+   },
+   {
+    "k": "普通 · 二阶非线性系数月重复性 (μg/g2 ,1σ）",
+    "kEn": "Standard · 2nd-Order NL Month Repeat. (μg/g2 ,1σ)",
+    "v": [
+     "≤8",
+     "≤15",
+     "≤20"
+    ],
+    "vEn": [
+     "≤8",
+     "≤15",
+     "≤20"
+    ]
+   },
+   {
+    "k": "普通 · 偏值温度系数 (μg/℃ ,-40～+55℃）",
+    "kEn": "Standard · Bias Temp Coeff (μg/°C ,-40～+55°C)",
+    "v": [
+     "≤|±10|",
+     "≤|±30|",
+     "≤|±80|"
+    ],
+    "vEn": [
+     "≤|±10|",
+     "≤|±30|",
+     "≤|±80|"
+    ]
+   },
+   {
+    "k": "普通 · 标度因数温度系数 (ppm/℃ ,-40～+55℃）",
+    "kEn": "Standard · SF Temp Coeff (ppm/°C, -40 to +55°C)",
+    "v": [
+     "|±10|",
+     "|±30|",
+     "|±80|"
+    ],
+    "vEn": [
+     "|±10|",
+     "|±30|",
+     "|±80|"
+    ]
+   },
+   {
+    "k": "普通 · 失准角（″ ,门态、摆态）",
+    "kEn": "Standard · Misalignment (&quot;, gate/pendulum)",
+    "v": [
+     "≤|±100|",
+     "≤|±100|",
+     "≤|±100|"
+    ],
+    "vEn": [
+     "≤|±100|",
+     "≤|±100|",
+     "≤|±100|"
+    ]
+   },
+   {
+    "k": "普通 · 分辨率 (μg)",
+    "kEn": "Standard · Resolution (μg)",
+    "v": [
+     "≤|±5|",
+     "≤|±5|",
+     "≤|±5|"
+    ],
+    "vEn": [
+     "≤|±5|",
+     "≤|±5|",
+     "≤|±5|"
+    ]
+   },
+   {
+    "k": "普通 · 噪声 (μA)",
+    "kEn": "Standard · Noise (μA)",
+    "v": [
+     "≤10",
+     "≤10",
+     "≤10"
+    ],
+    "vEn": [
+     "≤10",
+     "≤10",
+     "≤10"
+    ]
+   },
+   {
+    "k": "普通 · 静态电流 (mA)",
+    "kEn": "Standard · Quiescent Current (mA)",
+    "v": [
+     "≤|±20|",
+     "≤|±20|",
+     "≤|±20|"
+    ],
+    "vEn": [
+     "≤|±20|",
+     "≤|±20|",
+     "≤|±20|"
+    ]
+   },
+   {
+    "k": "普通 · 动态 (%)",
+    "kEn": "Standard · Dynamic (%)",
+    "v": [
+     "≤38%",
+     "≤38",
+     "≤38"
+    ],
+    "vEn": [
+     "≤38%",
+     "≤38",
+     "≤38"
+    ]
+   },
+   {
+    "k": "普通 · 参数 (次)",
+    "kEn": "Standard · Parameter (times)",
+    "v": [
+     "≤3次",
+     "≤3",
+     "≤3"
+    ],
+    "vEn": [
+     "≤3 times",
+     "≤3",
+     "≤3"
+    ]
+   },
+   {
+    "k": "普通 · 固有频率 (Hz)",
+    "kEn": "Standard · Natural Frequency (Hz)",
+    "v": [
+     "≥400Hz",
+     "≥400",
+     "≥400"
+    ],
+    "vEn": [
+     "≥400Hz",
+     "≥400",
+     "≥400"
+    ]
+   },
+   {
+    "k": "普通 · 带宽 (Hz)",
+    "kEn": "Standard · Bandwidth (Hz)",
+    "v": [
+     "≥800Hz",
+     "≥800",
+     "≥800"
+    ],
+    "vEn": [
+     "≥800Hz",
+     "≥800",
+     "≥800"
+    ]
+   },
+   {
+    "k": "普通 · 绝缘电阻 (MΩ)",
+    "kEn": "Standard · Insulation Resistance",
+    "v": [
+     "≥100",
+     "≥100",
+     "≥100"
+    ],
+    "vEn": [
+     "≥100",
+     "≥100",
+     "≥100"
+    ]
+   },
+   {
+    "k": "普通 · 重量 (g)",
+    "kEn": "Standard · Weight",
+    "v": [
+     "≤80",
+     "≤80",
+     "≤80"
+    ],
+    "vEn": [
+     "≤80",
+     "≤80",
+     "≤80"
+    ]
+   },
+   {
+    "k": "普通 · 外形尺寸 (mm)",
+    "kEn": "Standard · Dimensions",
+    "v": [
+     "Φ25.4×31",
+     "Φ25.4×31",
+     "Φ25.4×31"
+    ],
+    "vEn": [
+     "Φ25.4×31",
+     "Φ25.4×31",
+     "Φ25.4×31"
+    ]
+   },
+   {
+    "k": "普通 · 冲击（1/2sin,11ms）",
+    "kEn": "Standard · Shock (1/2 sin, 11 ms)",
+    "v": [
+     "100g，三向，每向二次",
+     "",
+     ""
+    ],
+    "vEn": [
+     "100g, 3 axes, 2 per axis",
+     "",
+     ""
+    ]
+   },
+   {
+    "k": "普通 · 振动（RD）",
+    "kEn": "Standard · Vibration (Random)",
+    "v": [
+     "12.2g，三向，每向3min",
+     "",
+     ""
+    ],
+    "vEn": [
+     "12.2g3 axes, per axis3min",
+     "",
+     ""
+    ]
+   },
+   {
+    "k": "普通 · 工作温度范围",
+    "kEn": "Standard · Operating Temp Range",
+    "v": [
+     "-40℃～+85℃",
+     "",
+     ""
+    ],
+    "vEn": [
+     "-40°C～+85°C",
+     "",
+     ""
+    ]
+   },
+   {
+    "k": "普通 · 电源电压",
+    "kEn": "Standard · Power Voltage",
+    "v": [
+     "±15DVC",
+     "",
+     ""
+    ],
+    "vEn": [
+     "±15DVC",
+     "",
+     ""
+    ]
+   }
+  ]
  }
 }

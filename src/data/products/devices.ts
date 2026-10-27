@@ -44,6 +44,8 @@ export const devices: Product[] = [
     tagZh: '保偏光纤',
     nameEn: 'LKF-PM(1310&1550)WaveGuide Panda PM Fiber',
     nameZh: '(1310&1550)波导用熊猫保偏光纤',
+    descEn: 'Liocrebif\'s Panda PM products for FOG waveguide applications are suitable for fiber optic gyroscopes and other polarization-dependent devices. Optimized for device-level requirements, the fiber emphasizes geometric symmetry and polishability. While maintaining polarization performance, it offers excellent polishability, making it a PM suitable for both coil winding and polishing.',
+    descZh: '利科夫光纤陀螺波导用熊猫型保偏光纤产品可应用于光纤陀螺以及其它偏振相关器件领域，此光纤产品针对器件要求进行了优化，主要针对几何对称性和可研磨性能，在保持光纤偏振性能的同时，具备可研磨性能，是一种既可以绕环，也可以研磨的保偏光纤。',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -74,6 +76,8 @@ export const devices: Product[] = [
     tagZh: '保偏光纤',
     nameEn: 'LKF-PM Polarization-Maintaining Photonic Crystal Fiber',
     nameZh: '保偏光子晶体光纤',
+    descEn: 'Liocrebif PM-PCF is fabricated from a single material — silica — featuring low defect density, hydrogen damage resistance, and radiation resistance. Utilizing shape birefringence, it achieves high birefringence performance while maintaining excellent environmental adaptability, with minimal crosstalk fluctuation during thermal cycling. Customizable fiber cladding dimensions are available to meet diverse application requirements.',
+    descZh: '利科夫保偏光子晶体光纤采用单一材料二氧化硅制备，具备缺陷少、抗氢损、抗辐照能力，同时采用形状双折射，使其具备高双折射性能的同时兼具良好的环境适应性，在高低温循环中能保持极小的串音波动性。同时可定制化的光纤包层尺寸，能满足客户不同应用场景的需求。',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -706,6 +710,8 @@ export const devices: Product[] = [
     tagZh: '光学器件',
     nameEn: 'LKF-SPC1310 Three-in-One Integrated Optical Device',
     nameZh: '三合一集成光学器件',
+    descEn: 'Liocrebif’s SPC1310 three-in-one optical device integrates three discrete components — an SLED, a PIN-FET optical receiver, and a coupler — into a single unit with optical transceiver capability. Using hybrid integration technology, it combines active and passive optical components in a compact, highly integrated form factor. The device simplifies system architecture, reduces overall size, and lowers optical-path assembly and splicing complexity, meeting customer demand for miniaturized, integrated solutions.',
+    descZh: '利科夫SPC1310三合一光学器件，是一种集成了超辐射发光二极管（SLED）、光接收组件（PINFET）和耦合器（COUPLER）三种分立组件的器件，同时具备光收发功能。推出的SPC1310产品通过混合集成技术，实现了光有源无源组件的混合集成，具有尺寸小，集成度高的特点。该产品的应用可以有效简化系统结构，减小系统体积，减少光路装配熔接的复杂程度，从而满足客户对小型化和集成化产品的发展需求。',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -738,6 +744,8 @@ export const devices: Product[] = [
     tagZh: '硅光收发组件',
     nameEn: 'LKF-TIOS1310 Silicon-Photonic Three-Axis Integrated Gyro Transceiver Assembly',
     nameZh: '硅光三轴集成陀螺收发组件',
+    descEn: 'Liocrebif’s TIOS1310 is a silicon-photonic three-axis three-in-one transceiver assembly. Using silicon photonic integration, it replaces the traditional discrete devices of a three-axis FOG on a single chip. It integrates a high-PER SLD light source, PM 1×3 and 1×2 couplers, and three photodetectors into one three-in-one package, outputting three-channel analog current signals. It suits FOG systems and applications such as missile-borne, airborne, UAV, robotics, autonomous driving, and vehicular systems.',
+    descZh: '利科夫TIOS1310硅光三轴三合一收发组件，利用硅光集成方案实现对于传统三轴光纤陀螺分立器件的单个芯片级替代，同时实现高偏SLD光源、保偏1×3耦合器、保偏1×2耦合器以及3路探测器的三合一封装，器件输出为3路模拟电流信号。适用于光纤陀螺系统以及其支持的弹载、机载、无人机、机器人、无人驾驶和车载等领域。',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -1169,6 +1177,8 @@ export const devices: Product[] = [
     tagZh: '测试设备',
     nameEn: 'LKF-FMTP Fiber Coil Multifunction Test Platform',
     nameZh: '光纤环多功能测试平台',
+    descEn: 'Liocrebif LKF-FMTP fiber coil multifunction test platform integrates OTDR, extinction ratio testing, and red light detection. It completes fiber coil length, loss, crosstalk, and red light inspection in a single station, automatically generates test reports via host software, and supports networked storage to designated databases. Features include simple and fast operation, high automation, and automatic report generation with archiving.',
+    descZh: '利科夫LKF-FMTP光纤环多功能测试平台集成了ODTR、消光比测试和红光检测功能，可以一站式完成光纤环的长度、损耗、串音以及红光检测，并通过上位机软件自动生成测试报告，可联网存储到指定数据库中，具有操作简便快捷，自动化程度高，自动生成报告并归档等优点。',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [

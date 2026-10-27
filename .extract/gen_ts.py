@@ -127,6 +127,12 @@ _ov_path = os.path.join(HERE, "spec_override.json")
 if os.path.exists(_ov_path):
     SPEC_OVERRIDE = json.load(open(_ov_path, encoding="utf-8"))
 
+# 简介覆盖（目录 md 无简介的产品，从源 docx 提取：parse_desc.py）
+DESC_OVERRIDE = {}
+_dp = os.path.join(HERE, "desc_override.json")
+if os.path.exists(_dp):
+    DESC_OVERRIDE = json.load(open(_dp, encoding="utf-8"))
+
 def probe_image(r):
     """按实际存在的图片文件解析 image 路径；无文件返回 None（详情页显示型号占位）"""
     manual = MANUAL_IMAGES.get(r.get("model"))
@@ -151,8 +157,10 @@ def ts_entry(r):
         name_en = esc(r["nameZh"])
     name_zh = esc(NAME_ZH_BY_EN.get(clean_en_name(r)) or r["nameZh"])
     product_slug = SLUG_BY_ZH.get(r["nameZh"]) or SLUG_BY_EN.get(clean_en_name(r))
-    desc_en = esc(r.get("descEn"))
-    desc_zh = esc(r.get("descZh"))
+    ov_key = product_slug or model.lower().replace(" ", "-")  # 覆盖数据查找键
+    _desc = DESC_OVERRIDE.get(ov_key) or {}
+    desc_en = esc(_desc.get("descEn") or r.get("descEn"))
+    desc_zh = esc(_desc.get("descZh") or r.get("descZh"))
     apps_en = ", ".join(f"'{esc(a)}'" for a in (r.get("appsEn") or [])[:6])
     apps_zh = ", ".join(f"'{esc(a)}'" for a in (r.get("appsZh") or [])[:6])
     img = probe_image(r)
@@ -174,11 +182,11 @@ def ts_entry(r):
         lines.append(f"    descEn: '{desc_en}',")
     if desc_zh:
         lines.append(f"    descZh: '{desc_zh}',")
-    st = SPEC_OVERRIDE.get(product_slug) or r.get("specTable")
+    st = SPEC_OVERRIDE.get(ov_key) or r.get("specTable")
     if st and st.get("rows"):
         hs = ", ".join(f"'{esc(h)}'" for h in st["headers"])
         rl = []
-        for row in st["rows"][:60]:
+        for row in st["rows"][:200]:
             k_en = row.get("kEn") or row["k"]
             vs = ", ".join(f"'{esc(v)}'" for v in row["v"])
             ven = row.get("vEn") or row["v"]

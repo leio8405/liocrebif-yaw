@@ -106,6 +106,8 @@ export const insSystems: Product[] = [
     tagZh: 'MEMS INS',
     nameEn: 'LKF-MSI100 MEMS_GNSS Inertial Navigation System',
     nameZh: 'MEMS组合导航系统',
+    descEn: 'MSI100 is a highly reliable, cost-effective MEMS GNSS/INS system widely applied in navigation, control and measurement fields represented by vehicles, vessels and UAVs. It supports multiple configurable modes. Equipped with a high-precision gyroscope specifically on the Z-axis, the unit maintains accurate heading measurement over long durations.',
+    descZh: 'MSI100 MEMS组合导航系统是一款高可靠、高性价比的MEMS惯性组合导航系统，可广泛用于以车、船、无人机为代表的导航、控制和测量等领域。产品可提供不同的配置模式，特别在Z轴采用了高精度陀螺，可以长时间保证航向的测量精度。',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [

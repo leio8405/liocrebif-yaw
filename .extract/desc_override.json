@@ -1,0 +1,30 @@
+{
+ "lkf-pm-waveguide": {
+  "descZh": "利科夫光纤陀螺波导用熊猫型保偏光纤产品可应用于光纤陀螺以及其它偏振相关器件领域，此光纤产品针对器件要求进行了优化，主要针对几何对称性和可研磨性能，在保持光纤偏振性能的同时，具备可研磨性能，是一种既可以绕环，也可以研磨的保偏光纤。",
+  "descEn": "Liocrebif's Panda PM products for FOG waveguide applications are suitable for fiber optic gyroscopes and other polarization-dependent devices. Optimized for device-level requirements, the fiber emphasizes geometric symmetry and polishability. While maintaining polarization performance, it offers excellent polishability, making it a PM suitable for both coil winding and polishing."
+ },
+ "lkf-pm-pcf": {
+  "descZh": "利科夫保偏光子晶体光纤采用单一材料二氧化硅制备，具备缺陷少、抗氢损、抗辐照能力，同时采用形状双折射，使其具备高双折射性能的同时兼具良好的环境适应性，在高低温循环中能保持极小的串音波动性。同时可定制化的光纤包层尺寸，能满足客户不同应用场景的需求。",
+  "descEn": "Liocrebif PM-PCF is fabricated from a single material — silica — featuring low defect density, hydrogen damage resistance, and radiation resistance. Utilizing shape birefringence, it achieves high birefringence performance while maintaining excellent environmental adaptability, with minimal crosstalk fluctuation during thermal cycling. Customizable fiber cladding dimensions are available to meet diverse application requirements."
+ },
+ "lkf-spc1310": {
+  "descZh": "利科夫SPC1310三合一光学器件，是一种集成了超辐射发光二极管（SLED）、光接收组件（PINFET）和耦合器（COUPLER）三种分立组件的器件，同时具备光收发功能。推出的SPC1310产品通过混合集成技术，实现了光有源无源组件的混合集成，具有尺寸小，集成度高的特点。该产品的应用可以有效简化系统结构，减小系统体积，减少光路装配熔接的复杂程度，从而满足客户对小型化和集成化产品的发展需求。",
+  "descEn": "Liocrebif’s SPC1310 three-in-one optical device integrates three discrete components — an SLED, a PIN-FET optical receiver, and a coupler — into a single unit with optical transceiver capability. Using hybrid integration technology, it combines active and passive optical components in a compact, highly integrated form factor. The device simplifies system architecture, reduces overall size, and lowers optical-path assembly and splicing complexity, meeting customer demand for miniaturized, integrated solutions."
+ },
+ "lkf-tios1310": {
+  "descZh": "利科夫TIOS1310硅光三轴三合一收发组件，利用硅光集成方案实现对于传统三轴光纤陀螺分立器件的单个芯片级替代，同时实现高偏SLD光源、保偏1×3耦合器、保偏1×2耦合器以及3路探测器的三合一封装，器件输出为3路模拟电流信号。适用于光纤陀螺系统以及其支持的弹载、机载、无人机、机器人、无人驾驶和车载等领域。",
+  "descEn": "Liocrebif’s TIOS1310 is a silicon-photonic three-axis three-in-one transceiver assembly. Using silicon photonic integration, it replaces the traditional discrete devices of a three-axis FOG on a single chip. It integrates a high-PER SLD light source, PM 1×3 and 1×2 couplers, and three photodetectors into one three-in-one package, outputting three-channel analog current signals. It suits FOG systems and applications such as missile-borne, airborne, UAV, robotics, autonomous driving, and vehicular systems."
+ },
+ "lkf-fmtp": {
+  "descZh": "利科夫LKF-FMTP光纤环多功能测试平台集成了ODTR、消光比测试和红光检测功能，可以一站式完成光纤环的长度、损耗、串音以及红光检测，并通过上位机软件自动生成测试报告，可联网存储到指定数据库中，具有操作简便快捷，自动化程度高，自动生成报告并归档等优点。",
+  "descEn": "Liocrebif LKF-FMTP fiber coil multifunction test platform integrates OTDR, extinction ratio testing, and red light detection. It completes fiber coil length, loss, crosstalk, and red light inspection in a single station, automatically generates test reports via host software, and supports networked storage to designated databases. Features include simple and fast operation, high automation, and automatic report generation with archiving."
+ },
+ "lkf-msu105": {
+  "descZh": "利科夫LKF-MSU105微型MEMS惯性组合导航是一款微小型、高性价比的MEMS惯性组合导航系统，主打动中通、无人机为代表的导航、控制和测量等领域。系统在小尺寸内高度集成了MEMS传感器和全频点卫星接收机芯片，可以实现小体积的定位和姿态测量。",
+  "descEn": "Liocrebif LKF-MSU105 is a miniature, cost-effective MEMS integrated inertial navigation system targeting SATCOM-on-the-move, UAVs, and similar navigation, control, and measurement applications. It tightly integrates MEMS sensors and a full-band GNSS receiver chip within a compact form factor, delivering precise positioning and attitude measurement in a small package."
+ },
+ "lkf-msi100": {
+  "descZh": "MSI100 MEMS组合导航系统是一款高可靠、高性价比的MEMS惯性组合导航系统，可广泛用于以车、船、无人机为代表的导航、控制和测量等领域。产品可提供不同的配置模式，特别在Z轴采用了高精度陀螺，可以长时间保证航向的测量精度。",
+  "descEn": "MSI100 is a highly reliable, cost-effective MEMS GNSS/INS system widely applied in navigation, control and measurement fields represented by vehicles, vessels and UAVs. It supports multiple configurable modes. Equipped with a high-precision gyroscope specifically on the Z-axis, the unit maintains accurate heading measurement over long durations."
+ }
+}
