@@ -47,10 +47,10 @@ if os.path.exists(ts_path):
 static_pages = ["/", "/about/", "/contact/", "/products/",
                 "/products/fog-gyroscopes/", "/products/mems-gyroscopes/", "/products/imu/",
                 "/products/inertial-navigation-systems/", "/products/accelerometers/", "/products/fiber-optic/",
-                "/resources/"]
+                "/resources/", "/catalog/"]
 urls = []
 for p in static_pages:
-    pri = "1.0" if p == "/" else ("0.9" if p in ("/products/", "/resources/") else "0.8")
+    pri = "1.0" if p == "/" else ("0.9" if p in ("/products/", "/resources/", "/catalog/") else "0.8")
     urls.append((BASE + p, pri))
     urls.append((BASE + "/zh" + p, pri))
 for m in sorted(set(products)):

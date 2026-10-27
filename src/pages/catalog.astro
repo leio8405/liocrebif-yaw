@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { productCategories } from '../data/products';
+import { productSlug } from '../data/products/slug';
+
+const total = productCategories.reduce((n, c) => n + c.products.length, 0);
+const revised = '2026-10';
+// 型号列已显示型号，名称去掉重复的型号前缀（容忍空格差异，如 LKF-FIOS 1550 / LKF-FIOS1550）
+const shortName = (name: string, model: string) => {
+  const bare = model.replace(/\s+/g, '').toUpperCase();
+  if (name.replace(/\s+/g, '').toUpperCase().slice(0, bare.length) !== bare) return name;
+  let seen = 0;
+  let i = 0;
+  while (i < name.length && seen < bare.length) {
+    if (name[i] !== ' ') seen++;
+    i++;
+  }
+  return name.slice(i).replace(/^[\s:：-]+/, '');
+};
+
+---
+
+<BaseLayout
+  currentPath={Astro.url.pathname}
+  title="Complete Product Catalog | Liocrebif Technology"
+  description={`Full catalog of ${total} Liocrebif inertial navigation and fiber sensing products — fiber optic gyroscopes, MEMS gyroscopes, IMUs, INS, accelerometers, fiber optic components and production equipment.`}
+>
+  <section class="border-b border-rule">
+    <div class="container-page py-14 sm:py-16">
+      <p class="eyebrow mb-4">Catalog</p>
+      <h1 class="font-display font-semibold tracking-tight text-ink text-3xl sm:text-4xl">Complete Product Catalog</h1>
+      <p class="text-muted text-lg mt-4 max-w-2xl leading-relaxed">
+        Every model we manufacture, grouped by product line. Click any model for its full specification sheet.
+      </p>
+      <p class="font-mono text-xs text-muted mt-6">{total} models · {productCategories.length} product lines · Rev. {revised}</p>
+    </div>
+  </section>
+
+  <section class="container-page py-10 print:py-0">
+    <nav class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-2 border-y border-rule py-5" aria-label="Catalog sections">
+      {productCategories.map((cat, i) => (
+        <a href={`#c${i + 1}`} class="group flex items-baseline gap-2 text-[13px] text-ink-2 hover:text-accent transition-colors">
+          <span class="font-mono text-[11px] text-muted">{String(i + 1).padStart(2, '0')}</span>
+          <span class="leading-snug">{cat.titleEn}</span>
+          <span class="ml-auto font-mono text-[11px] text-muted">{cat.products.length}</span>
+        </a>
+      ))}
+    </nav>
+  </section>
+
+  <section class="container-page pb-16 space-y-12">
+    {productCategories.map((cat, i) => {
+      // 按子系列分组（保持原有顺序）
+      const groups = [];
+      for (const p of cat.products) {
+        const key = p.subEn || 'Others';
+        const g = groups.find((x) => x.key === key);
+        if (g) g.items.push(p);
+        else groups.push({ key, items: [p] });
+      }
+      return (
+        <div id={`c${i + 1}`} class="break-inside-avoid scroll-mt-24">
+          <div class="flex items-baseline justify-between gap-6 border-b border-ink pb-2 mb-5">
+            <h2 class="font-display font-semibold text-ink text-xl tracking-tight">
+              <span class="font-mono text-sm text-muted mr-3">{String(i + 1).padStart(2, '0')}</span>{cat.titleEn}
+            </h2>
+            <span class="font-mono text-xs text-muted shrink-0">{cat.products.length} models</span>
+          </div>
+          <div class="space-y-6">
+            {groups.map((g) => (
+              <div class="break-inside-avoid">
+                {groups.length > 1 && (
+                  <p class="font-mono text-[11px] tracking-[0.08em] uppercase text-muted mb-2">{g.key}</p>
+                )}
+                <div class="grid sm:grid-cols-2 print:grid-cols-2 gap-x-10">
+                  {g.items.map((p) => (
+                    <a href={`/products/${productSlug(p)}/`} class="flex items-baseline gap-3 py-[5px] border-b border-rule/50 hover:bg-paper-2/60 transition-colors">
+                      <span class="font-mono text-[11px] text-muted w-[124px] shrink-0">{p.model}</span>
+                      <span class="text-[13px] text-ink-2 leading-snug">{shortName(p.nameEn, p.model)}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    })}
+  </section>
+
+  <section class="border-t border-rule bg-paper-2 print:hidden">
+    <div class="container-page py-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+      <div>
+        <h2 class="font-display font-semibold text-ink text-xl">Need a specific model or a custom build?</h2>
+        <p class="text-muted text-sm mt-2">Send your requirement — we reply within 24 hours with datasheets and lead time.</p>
+      </div>
+      <a href="/contact/" class="btn-primary shrink-0">Contact us</a>
+    </div>
+  </section>
+
+  <style is:global>
+    @media print {
+      header.fixed, footer { display: none !important; }
+      main { padding-top: 0 !important; }
+      body { background: #fff !important; }
+      a { text-decoration: none !important; color: inherit !important; }
+    }
+    @page { margin: 14mm; }
+  </style>
+</BaseLayout>

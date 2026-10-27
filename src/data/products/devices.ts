@@ -609,7 +609,7 @@ export const devices: Product[] = [
     subEn: 'Optical Component',
     tagEn: 'Optical Component',
     tagZh: '光学器件',
-    nameEn: 'LKF-SPC1310 Three-in-One Integrated Optical Device',
+    nameEn: 'LKF-MIOC 1550nm (Y-waveguide)',
     nameZh: '多功能集成光学器件(Y波导)',
     descEn: 'Unique Technology Parameter',
     specTable: {
@@ -704,7 +704,7 @@ export const devices: Product[] = [
     subEn: 'Optical Component',
     tagEn: 'Optical Component',
     tagZh: '光学器件',
-    nameEn: 'Three-in-One Integrated Optical Device',
+    nameEn: 'LKF-SPC1310 Three-in-One Integrated Optical Device',
     nameZh: '三合一集成光学器件',
     specTable: {
       headers: ['项目', '技术指标'],
@@ -728,6 +728,7 @@ export const devices: Product[] = [
         { k: '全温响应度稳定性 (% ,@-55~75°C)', kEn: 'Full-Temp Responsivity Stability (% ,@-55~75°C)', v: ['≤5'], vEn: ['≤5'] },
       ],
     },
+    image: '/images/products/LKF-SPC1310.png',
   },
   {
     model: 'LKF-TIOS1310',

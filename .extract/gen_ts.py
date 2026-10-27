@@ -67,6 +67,12 @@ NAME_ZH_BY_EN = {
 }
 
 # 英文名修正：目录 md 的 G652 三条共用同一资料夹（只有一份 enDoc），需按中文名指定各自英文款名
+NAME_EN_BY_MODEL = {
+    "LKF-MIOC1310": "LKF-MIOC 1310nm (Y-waveguide)",
+    "LKF-MIOC1550": "LKF-MIOC 1550nm (Y-waveguide)",
+    "LKF-SPC1310": "LKF-SPC1310 Three-in-One Integrated Optical Device",
+}
+
 NAME_EN_BY_ZH = {
     "低水峰单模光纤": "LKF-G652 Low-Water Peak Single-Mode Fiber",
     "低损耗单模光纤": "LKF-G652 Low-Loss Single-Mode Fiber",
@@ -112,6 +118,7 @@ IMG_DIR = os.path.join(ROOT, "public", "images", "products")
 
 MANUAL_IMAGES = {
     "LKF-FSI206": "/images/products/LKF-FSI206.jpg",  # 用户提供的手动截图（docx 内为尺寸图无实物照）
+    "LKF-SPC1310": "/images/products/LKF-SPC1310.png",  # 提取记录缺 image 字段（图片文件已在库）
 }
 
 # 参数表覆盖（目录 md 缺失/错位的产品，改由源 docx 解析产出：parse_fiber_specs.py）
@@ -139,7 +146,7 @@ def ts_entry(r):
     tag_en, tag_zh = SUB_TAG.get(r.get("sub") or "", ("", ""))
     if not tag_en:
         tag_en, tag_zh = r.get("sub") or "Product", r.get("sub") or "产品"
-    name_en = esc(NAME_EN_BY_ZH.get(r["nameZh"])) or esc(clean_en_name(r)) or esc(r.get("nameEn")) or NAME_ZH_FIX.get(r["nameZh"]) or ""
+    name_en = esc(NAME_EN_BY_MODEL.get(model)) or esc(NAME_EN_BY_ZH.get(r["nameZh"])) or esc(clean_en_name(r)) or esc(r.get("nameEn")) or NAME_ZH_FIX.get(r["nameZh"]) or ""
     if not name_en:
         name_en = esc(r["nameZh"])
     name_zh = esc(NAME_ZH_BY_EN.get(clean_en_name(r)) or r["nameZh"])
