@@ -38,6 +38,100 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'thin-pm-fiber-technology',
+    title: '135 μm Polarization-Maintaining Fiber: Why Thin PM Fiber Changed FOG Coil Design',
+    description:
+      'Cutting the coating from 165 to 135 μm does not make a coil lighter inside the same housing. It lets that housing hold 49 percent more fiber, which raises the Sagnac phase behind the same detector.',
+    date: '2026-10-28',
+    readingTime: 6,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'The 40 μm that decides whether the coil fits',
+        html: `<p>A two-axis gimbal for a 6 kg EO payload on a 25 kg fixed-wing aircraft has about 74 mm of drum behind the optics. The coil, the MIOC, the source and a 2 mm mu-metal shield sit inside it. A 55 mm coil, plus shield, leaves 7 mm per side for the wall and the harness.</p>
+<p>That is the argument for thin <a href="/products/lkf-pm-coil-winding/" class="text-blue-700 underline">polarization-maintaining fiber</a>, and it has nothing to do with a datasheet adjective. The product page gives the reduction as 165 μm to 135 μm, made with a thinner coating. The fiber sold for winding is listed as PM 1310_80/135: 80 μm cladding inside a 135 μm coating, against 125 μm cladding in the standard build. Both the glass and the coating shrank, and the glass is where the strength and the mass live.</p>
+<p>Length in a fixed window scales with 1/d², so 165 to 135 μm is a factor of 1.49. The same coil cross-section holds 49 percent more fiber. At equal length it weighs 42 percent less, 11 g against 19 g per 500 m, at 2.2 g/cm³ for silica and 1.2 for the acrylic coating.</p>`,
+      },
+      {
+        h2: 'What the FC60 window actually holds',
+        html: `<p>The <a href="/products/lkf-fc/" class="text-blue-700 underline">LKF-FC60</a> coil is 39 mm inside, 55 mm outside, 8.5 mm tall. That is an 8 mm radial build and a 68 mm² winding window. At the 47 mm mean diameter, one turn is 148 mm long.</p>
+<p>Hexagonal packing puts 0.907 of the window into fiber, so it takes 9,100 mm³. Divided by each fiber cross-section, the ceiling appears:</p>
+<ul class="list-disc pl-6 space-y-2">
+<li>135 μm, 0.0143 mm²: 636 m</li>
+<li>165 μm, 0.0214 mm²: 426 m</li>
+<li>245 μm, 0.0471 mm²: 193 m</li>
+</ul>
+<p>The catalogue's 500 m is 79 percent of that, a sensible fill for a wound coil. In 165 μm the same bobbin stops at 426 m, and the standard 125/245 build stops at 193 m. The diameter reduction is not a refinement on top of a working design. It is what makes a 55 mm coil carry 500 m.</p>`,
+      },
+      {
+        h2: 'What one extra turn is worth in phase',
+        html: `<p>Sagnac phase for a coil of length L and diameter D is 2πLDΩ/λc. For 500 m at 47 mm and 1310 nm the geometry term is 0.376 s. One degree per hour is 4.85 × 10⁻⁶ rad/s, so the phase is 1.82 µrad. At the <a href="/products/lkf-fs60/" class="text-blue-700 underline">LKF-FS60</a> C grade's 0.05 °/h it is 0.091 µrad.</p>
+<p>Put a size on that. 0.1 µrad is a 1 mm edge seen at 10 km. A photodiode behind a 500 m coil resolves a phase shift of that order while the same coil is being shaken at 4.2 g. More turns means more phase for the same rate, which is what the 49 percent buys: signal up, without touching the source, the detector or the loop bandwidth.</p>`,
+      },
+      {
+        h2: 'Three numbers that get worse as the coating thins',
+        html: `<p>The trade is not free. The cost lands where a datasheet does not put it.</p>
+<ul class="list-disc pl-6 space-y-2">
+<li><strong>Proof load.</strong> 100 kpsi is 689 MPa. On 125 μm cladding that is 8.5 N, about 860 g. On 80 μm cladding it is 3.5 N, about 354 g: 41 percent of the glass carries 41 percent of the load.</li>
+<li><strong>Winding tension margin.</strong> RH04 and RH16 run 5 to 50 g; the RH16A starts at 3 g, at ±0.5 g on a 20 r/min spindle. A 50 g setpoint is 5.8 percent of the proof load on 125 μm and 14 percent on 80 μm. At 3 g, ±0.5 g is 17 percent of the value.</li>
+<li><strong>Thermal path.</strong> The coating is 27.5 μm per side at 135 μm overall with 80 μm cladding, against 60 μm on the 125/245 build. Acrylic conducts at roughly 0.2 W/m·K against 1.4 for silica, so the coating dominates the radial resistance. Halving its thickness halves that term, and the temperature model from the old coil does not transfer.</li>
+</ul>`,
+      },
+      {
+        h2: 'Crosstalk and loss over the length you gained',
+        html: `<p>Thin fiber buys length, and length costs polarization purity. The <a href="/products/fiber-optic/" class="text-blue-700 underline">winding fiber</a> is specified at ≤-30 dB/100 m crosstalk, which is 0.1 percent of the power in the wrong axis per 100 m, and it accumulates linearly. Attenuation is ≤0.6 dB/km at 1310 nm, so 500 m costs 0.3 dB each way and 0.6 dB round trip.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-3">Coil</th>
+      <th class="py-2 pr-3">Fiber length</th>
+      <th class="py-2 pr-3">Extinction ratio</th>
+      <th class="py-2 pr-3">Insertion loss</th>
+      <th class="py-2">-30 dB/100 m accumulated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-3">FC60</td><td class="py-2 pr-3">500 ± 10 m</td><td class="py-2 pr-3">≥20 dB</td><td class="py-2 pr-3">≤0.4 dB</td><td class="py-2">-23.0 dB</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-3">FC98</td><td class="py-2 pr-3">1,460 ± 10 m</td><td class="py-2 pr-3">≥20 dB</td><td class="py-2 pr-3">≤0.7 dB</td><td class="py-2">-18.4 dB</td></tr>
+    <tr><td class="py-2 pr-3">FC120</td><td class="py-2 pr-3">2,220 ± 10 m</td><td class="py-2 pr-3">≥18 dB</td><td class="py-2 pr-3">≤1.5 dB</td><td class="py-2">-16.5 dB</td></tr>
+  </tbody>
+</table>
+<p>Read the last column against the third. Every spec sits one to three dB inside what the fiber's worst case allows, and the requirement loosens as the coil grows, from ≥20 dB at 500 m to ≥18 dB at 2,220 m. A flat ≥20 dB on the long coil would reject good product, because two kilometres of fiber at the -30 dB/100 m limit cannot reach it. So the range quotes extinction ratio per coil, not per fiber.</p>`,
+      },
+      {
+        h2: 'What to put on the purchase order',
+        html: `<p>Four lines decide whether the coil you receive matches the one you designed.</p>
+<ul class="list-disc pl-6 space-y-2">
+<li>Cladding and coating separately: 80/135, not "135 μm PM". A quote for 135 μm can mean 125 μm cladding under a tight coating, and that changes the proof load by 2.4 times.</li>
+<li>Crosstalk in dB per 100 m, with the length and the test method named. A dB/4 m figure does not extrapolate to 2 km.</li>
+<li>Proof test level against the tension you actually run. 100 kpsi is a screening number, not a winding recommendation.</li>
+<li>Beat length, 2.5 to 4.0 mm at 1310 nm here, which is a modal birefringence of 3.3 to 5.2 × 10⁻⁴. A wide window means a looser preform and more turn-to-turn variation.</li>
+</ul>
+<p>Send the bobbin dimensions, the length you need and the tension you run. We will tell you whether 135 μm covers it or the tooling has to change.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Can we wind 500 m of standard 125/245 PM into an FC60 bobbin?',
+        a: 'No. 500 m of 245 μm fiber needs 176 mm² of winding window and the FC60 has 68 mm². You would need a 20 mm radial build, which puts the outside diameter near 80 mm. The same bobbin holds about 193 m of the thick fiber, enough for a coarse rate sensor and not for a 0.1 °/h coil.',
+      },
+      {
+        q: 'Does thinner fiber lower the gyro noise floor on its own?',
+        a: 'It raises the phase a given rate produces, because more length means more phase. What happens to the noise depends on the rest of the optical path. At ≤0.6 dB/km, 500 m costs 0.3 dB one way and 0.6 dB round trip, and the power returning to the detector sets the shot noise. With the same source and detector, the extra phase arrives with extra loss and the gain is smaller than the 49 percent suggests.',
+      },
+      {
+        q: 'Can we second-source 80/135 fiber to the same drawing?',
+        a: 'You can specify it, but qualify three things first: the proof test level, the crosstalk at 100 m with the test method named, and the coating diameter tolerance. A 5 μm change in coating diameter takes the layer count in an 8 mm build from 59 to 57, which changes the winding program, not just the fit.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-PM', href: '/products/lkf-pm-coil-winding/', caption: 'Panda PM fiber for winding, 80/135 build, ≤-30 dB/100 m crosstalk' },
+      { model: 'LKF-FC', href: '/products/lkf-fc/', caption: 'PM fiber coils, 500 to 2,220 m, ≥18 to ≥24 dB extinction ratio' },
+      { model: 'LKF-FS60', href: '/products/lkf-fs60/', caption: 'Single-axis FOG, ≤0.20/0.10/0.05 °/h in a 60 × 60 × 30 mm case' },
+    ],
+    relatedCategory: { name: 'Fiber Devices & Equipment', href: '/products/fiber-optic/' },
+  },
+  {
     slug: 'vibration-effects-on-imu',
     title: 'IMU Vibration: How Rectification and Mounting Errors Reach Your Output',
     description:

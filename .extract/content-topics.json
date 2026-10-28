@@ -101,7 +101,7 @@
       "relatedCategory": "fog-gyroscopes"
     },
     {
-      "id": 16, "slug": "thin-pm-fiber-technology", "used": false,
+      "id": 16, "slug": "thin-pm-fiber-technology", "used": true, "published": "2026-10-28",
       "title": "Why 135μm Polarization-Maintaining Fiber Changed FOG Design",
       "targetKeywords": "polarization maintaining fiber, thin pm fiber, 135 um pm fiber",
       "outline": "细径保偏光纤如何在同体积下提升线圈面积与灵敏度、降低重量；制造难点（涂层/一致性）；垂直整合（自产光纤）的意义。内链：fiber-optic 分类、LKF-PM、LKF-FS60。",
