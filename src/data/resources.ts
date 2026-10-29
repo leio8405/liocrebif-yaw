@@ -38,6 +38,110 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'rtk-gnss-explained',
+    title: 'RTK GNSS Explained: Why Centimeter Position Changes IMU Selection',
+    description:
+      'A 2 cm RTK fix does not cancel a gyro bias. It shortens the window in which the bias can act, and that window is set by fix rate, outage length and platform speed.',
+    date: '2026-10-29',
+    readingTime: 6,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'A tractor, a treeline, and a 3 cm row',
+        html: `<p>Picture a 200 hp row-crop tractor on 0.75 m rows, auto-steering at 1.5 m/s (5.4 km/h) with an <strong>RTK GNSS</strong> receiver, base station 4 km away, and a grower who will accept 3 cm of cross-track error at the shank. Halfway down a 400 m pass the machine enters a poplar treeline and drops from a fixed to a float solution for 25 seconds.</p>
+<p>That 25 seconds is where IMU selection gets decided. Centimeter level positioning does not cancel a gyro bias. It shortens the window in which the bias can act. Three numbers set that window: the interval between fixes, the length of the outage, and platform speed. Each maps to a datasheet line, none of them the receiver accuracy headline.</p>`,
+      },
+      {
+        h2: 'What 0.02 m plus 1 ppm adds up to',
+        html: `<p>The <a href="/products/lkf-msu105/" class="text-blue-700 underline">LKF-MSU105</a> page lists horizontal position as 3 m single-point and 0.02 m + 1 ppm with RTK. One part per million of a 4 km baseline is 4 mm, so the receiver noise floor on this field is about 2.4 cm.</p>
+<p>The two terms are equal at 20 km, where 0.02 m and 1 ppm of 20,000 m both come to 2 cm. At 4 km the receiver alone spends 80 percent of the 3 cm budget, leaving 6 mm for whatever the inertial filter adds.</p>`,
+      },
+      {
+        h2: 'At 1.5 m/s, course over ground is not heading',
+        html: `<p>Horizontal velocity on the same page is 0.1 m/s (1σ). Divided by speed, that is the heading noise of a raw course solution: 0.1 / 1.5 = 0.067, or 3.8 degrees per epoch. At 0.5 m/s in a headland turn it becomes 11 degrees. Stopped, course over ground is undefined.</p>
+<p>This is where RTK does not do what buyers expect. A 2 cm fix tells you where the antenna is, not where the nose points. The 0.2 degree heading on the MSU105 datasheet needs a 1 m dual-antenna baseline. The 0.5 degree figure is the single-antenna dynamic case, reachable only by filtering course against the gyro.</p>
+<p>The gyro earns its place in the one regime the receiver cannot cover: low speed. If the platform works under 2 m/s or stops to work, the cheapest upgrade is a second antenna or a gyro that holds heading through the stop. A better receiver will not help.</p>`,
+      },
+      {
+        h2: 'The 0.1 second between fixes',
+        html: `<p>The inertial side outputs at up to 100 Hz, always faster than the receiver. The gap the receiver leaves is what the filter fills. At 10 Hz that gap is 0.1 s, and 0.1 m/s held for 0.1 s is 1 cm, below the RTK noise floor at 4 km. That is the real reason a MEMS unit can sit behind a centimeter receiver: fixes arrive ten times a second, so the gyro has little time to drift.</p>
+<p>Change one number and it reverses. A 1 Hz receiver leaves a 1 s gap, and the same velocity error is 10 cm, three times the budget, before gyro bias enters. The first question in an RTK INS selection is the receiver rate and the aiding rate, not the gyro grade.</p>`,
+      },
+      {
+        h2: 'The 25 second outage: which spec actually hurts',
+        html: `<p>Back to the treeline. At 1.5 m/s the machine covers 37.5 m while the fix is gone. Two errors grow in that window, and they differ by a factor of fifty.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-3">Error source</th>
+      <th class="py-2 pr-3">How it grows</th>
+      <th class="py-2 pr-3">25 s at 1.5 m/s</th>
+      <th class="py-2 pr-3">Datasheet line</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">Velocity held from the last fix</td>
+      <td class="py-2 pr-3">0.1 m/s × time</td>
+      <td class="py-2 pr-3">2.5 m</td>
+      <td class="py-2 pr-3">Horizontal velocity 0.1 m/s</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">Heading drift</td>
+      <td class="py-2 pr-3">10 °/h × time, then × distance</td>
+      <td class="py-2 pr-3">4.5 cm</td>
+      <td class="py-2 pr-3">Bias stability ≤10 °/h</td>
+    </tr>
+    <tr>
+      <td class="py-2 pr-3">RTK noise floor</td>
+      <td class="py-2 pr-3">0.02 m + 1 ppm × baseline</td>
+      <td class="py-2 pr-3">2.4 cm</td>
+      <td class="py-2 pr-3">Integrated horizontal position</td>
+    </tr>
+  </tbody>
+</table>
+<p>Velocity dominates. Holding the last fix at 0.1 m/s for 25 s puts 2.5 m on the map, about 80 times the tolerance. Gyro drift is the smaller number: 10 °/h for 25 s is 0.069 degrees, and over 37.5 m that bends the track by 4.5 cm. At walking pace a bad gyro is not what ruins the row. The velocity spec is.</p>
+<p>Gyro drift still matters. It does not stop when the fix returns: the filter has to pull heading back, and until it does, every metre travelled carries the same angular error. On a faster platform the same 25 s also covers more ground. At 20 m/s it is 500 m, and 0.069 degrees becomes 0.6 m.</p>
+<p>Vendors publish this as a single line. Match it against your route. The <a href="/products/lkf-msi300/" class="text-blue-700 underline">LKF-MSI300</a> grades quote 3, 5, 8 and 10 m of pure inertial error per 60 s after signal loss, against bias stabilities of 0.1, 0.3, 2 and 3 °/h. Bias stability alone will not tell you which grade survives the treeline.</p>`,
+      },
+      {
+        h2: 'Four questions that settle the grade',
+        html: `<p>Four questions settle it faster than a sample unit.</p>
+<ul class="list-disc pl-6 space-y-2">
+<li><strong>Receiver and aiding rate.</strong> 10 Hz against 1 Hz changes the IMU burden tenfold, and no gyro spec compensates for a 1 s gap.</li>
+<li><strong>Longest outage on the route.</strong> The average is irrelevant. One 25 s shadow under trees is the design case.</li>
+<li><strong>Speed profile.</strong> Under 2 m/s, heading has to come from a dual antenna or a gyro.</li>
+<li><strong>Size, power, temperature.</strong> MSU105 fits 41.5 × 35.5 × 9.5 mm, under 30 g, 0.5 W, 3 s start-up. MSI300 takes 87 × 72 × 56 mm, 370 g, 9 to 36 V, and adds 0.5 degree north seeking at the top grade.</li>
+</ul>
+<p>Bandwidth, shock and temperature range decide whether the unit survives the machine, rarely whether it navigates. The <a href="/products/inertial-navigation-systems/" class="text-blue-700 underline">INS and GNSS navigation</a> range covers the grades between these two.</p>`,
+      },
+      {
+        h2: 'What to send us',
+        html: `<p>If you are sizing an RTK/INS build, the useful input is not a target accuracy. It is the fix rate, the longest expected outage and the speed range. Send those three and we will tell you which grade covers them, including the case where none does.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Does a 2 cm RTK fix make the IMU optional?',
+        a: 'No. The fix bounds position ten times a second, but it does not say which way the chassis points when the machine is slow, and it says nothing about the gyro bias that resumes acting the moment the fix drops. The receiver and the inertial unit answer different questions.',
+      },
+      {
+        q: 'Is a 1 Hz RTK receiver enough for centimeter work?',
+        a: 'With a 0.1 m/s velocity error, one second between fixes is 10 cm of drift, more than three times a 3 cm tolerance. For centimeter work the receiver and the aiding filter should run at 5 to 10 Hz.',
+      },
+      {
+        q: 'How long a baseline before the 1 ppm term matters?',
+        a: 'It equals the fixed 0.02 m term at 20 km, so on a 4 km baseline it contributes 4 mm. The practical limit usually arrives earlier, from how well the atmosphere over the baseline is modelled.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-MSU105', href: '/products/lkf-msu105/', caption: 'Micro MEMS integrated navigation system' },
+      { model: 'LKF-MSI300', href: '/products/lkf-msi300/', caption: 'MEMS GNSS/INS with north seeking' },
+    ],
+    relatedCategory: { name: 'INS / GNSS Navigation', href: '/products/inertial-navigation-systems/' },
+  },
+
+  {
     slug: 'thin-pm-fiber-technology',
     title: '135 μm Polarization-Maintaining Fiber: Why Thin PM Fiber Changed FOG Coil Design',
     description:

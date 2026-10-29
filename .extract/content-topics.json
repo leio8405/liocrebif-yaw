@@ -109,7 +109,7 @@
       "relatedCategory": "fiber-optic"
     },
     {
-      "id": 17, "slug": "rtk-gnss-explained", "used": false,
+      "id": 17, "slug": "rtk-gnss-explained", "used": true, "published": "2026-10-29",
       "title": "RTK GNSS Explained: Why Centimeter Position Changes IMU Selection",
       "targetKeywords": "rtk gnss, rtk ins, centimeter level positioning",
       "outline": "RTK 原理简述、厘米级位置对惯导的反馈校准意义：RTK 越准，可容忍的 IMU 档位越低（MEMS+RTK 组合方案崛起）。内链：LKF-MSU105（RTK 0.02+1ppm）、inertial-navigation-systems 分类。",
