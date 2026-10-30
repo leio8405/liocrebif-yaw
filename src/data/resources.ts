@@ -38,6 +38,118 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'marine-inertial-navigation',
+    title: 'Marine Inertial Navigation: Why 1 nm/h Is an Accelerometer Spec',
+    description:
+      'A nautical mile per hour of pure inertial drift and an 0.1 mg accelerometer bias are the same number, read through an 84.4 minute Schuler loop. On a ship that loop, not the gyro, decides where you are after an hour.',
+    date: '2026-10-30',
+    readingTime: 6,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'A 60 m patrol vessel, twelve days, no stop for alignment',
+        html: `<p>A 60 m patrol vessel casts off at 06:00, holds 12 knots, and works a box between 59 and 61 degrees north for twelve days. It does not stop to align. The inertial unit is switched on with the engine room already running and the hull still working against the fenders, and by the time the ship clears the breakwater the bridge expects to know which way it points.</p>
+<p>That expectation separates <strong>marine inertial navigation</strong> from the same job on a drone. Sea motion is slow and large: a 15 degree roll on an 8 second period peaks at 11.8 degrees per second, under 4 percent of the ±300 deg/s range on an <a href="/products/lkf-fsi400/" class="text-blue-700 underline">LKF-FSI400</a>. Range is never the sea constraint. Three other numbers decide the outcome, and none of them is the headline bias stability: accelerometer bias through the Schuler loop, gyro bias accumulated over days, and the length of whatever antenna baseline the vessel can carry.</p>`,
+      },
+      {
+        h2: 'Why the sheet quotes nautical miles per hour',
+        html: `<p>An unaided inertial navigator does not let position error grow quadratically. Velocity and position are closed on gravity, and that loop resonates at the Schuler period, 2π√(R/g) with R at 6,371 km, which is 84.4 minutes.</p>
+<p>Inside a closed loop, a constant accelerometer bias b holds a bounded offset of (b/g) × R. The 0.1 mg full-temperature bias on the FSI400 gives 0.1 × 10⁻³ × 6,371 km = 637 m, and the half-period peak is twice that, 1.27 km. Then the error comes back down.</p>
+<p>One nautical mile is 1,852 m. The FSI400 sheet states pure inertial accuracy of ≤1 nmile/1h. That line and the accelerometer row above it are the same statement, with margin.</p>
+<p>The <a href="/products/lkf-fsi301/" class="text-blue-700 underline">LKF-FSI301</a> carries a FOG core too, ±300 deg/s and 0.03 °/h, and its sheet has no nautical mile line at all. Its accelerometer full-temperature bias is 0.5 mg. Through the same loop that is 3,186 m of offset and a 6.4 km peak, five times the number above. Same gyro class, different position error, and the row that separates them is the accelerometer.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-3">Row on the datasheet</th>
+      <th class="py-2 pr-3">LKF-FSI301</th>
+      <th class="py-2 pr-3">LKF-FSI400</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">Gyro bias stability, 10 s</td>
+      <td class="py-2 pr-3">≤0.03 °/h</td>
+      <td class="py-2 pr-3">≤0.01 °/h</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">Gyro Allan instability</td>
+      <td class="py-2 pr-3">≤0.006 °/h</td>
+      <td class="py-2 pr-3">≤0.001 °/h</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">Accel full-temp bias, 3σ</td>
+      <td class="py-2 pr-3">≤0.5 mg</td>
+      <td class="py-2 pr-3">≤0.1 mg</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">Schuler peak from that bias</td>
+      <td class="py-2 pr-3">6.4 km</td>
+      <td class="py-2 pr-3">1.3 km</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">Pure inertial accuracy</td>
+      <td class="py-2 pr-3">not quoted</td>
+      <td class="py-2 pr-3">≤1 nmile/1h</td>
+    </tr>
+    <tr>
+      <td class="py-2 pr-3">Size and mass</td>
+      <td class="py-2 pr-3">177 × 132 × 99 mm, 3.5 kg</td>
+      <td class="py-2 pr-3">212 × 155 × 125 mm, 5 kg</td>
+    </tr>
+  </tbody>
+</table>`,
+      },
+      {
+        h2: 'Heading is the one term that does not come back',
+        html: `<p>Accelerometer bias makes position error oscillate back toward zero every 84.4 minutes. Heading error does not, because the Schuler loop moves position, not the platform's idea of north.</p>
+<p>A gyro bias of 0.03 °/h is 0.72 degrees after a day and 8.6 degrees after twelve. At 12 knots the ship covers 533 km a day, so if heading sits 0.72 degrees off at the end of day one and no aid corrects it, every metre after that is displaced sideways by tan(0.72°), which reaches 6.7 km. That figure is why a GNSS aid is not optional on a long cruise.</p>
+<p>That is the FSI400 case: 0.01 °/h accumulates 2.9 degrees over the same twelve days, not 8.6. The accelerometer row sets where you are after an hour. The gyro row sets what happens to the track after a week.</p>`,
+      },
+      {
+        h2: 'You cannot stop a 60 m ship to align',
+        html: `<p>A gyrocompass finds north by measuring the horizontal component of earth rate, which at 60 degrees north is 15.041 × cos 60 = 7.52 °/h. Both self north-seeking figures, ≤0.1 secL and ≤0.06 secL, are static measurements. At that latitude sec 60 = 2, so they become 0.2 and 0.12 degrees, and both assume a platform that is not moving.</p>
+<p>A ship on a course line is not that platform. Turn acceleration, roll and heading change all sit in the same band as the 7.52 °/h being measured. The unit still has to output a heading, so the work moves into a filter: start from a coarse attitude, then pull heading in as GNSS velocity arrives.</p>
+<p>Read that as a schedule problem first. If the operating profile keeps the vessel alongside for two hours before sailing, a static north seek at 0.12 degrees is available and cheap. If it casts off ten minutes after the generator starts, plan for a dynamic alignment and accept a wider heading through the first half hour.</p>`,
+      },
+      {
+        h2: 'The antenna baseline decides whether you need a gyro at all',
+        html: `<p>Two antennas on one receiver produce heading from the vector between them, and the noise is set by the baseline, not the receiver. With 2 cm of RTK noise the error is atan(0.02/L):</p>
+<ul class="list-disc pl-6 space-y-2">
+<li>1 m baseline: 1.15 degrees</li>
+<li>5 m: 0.23 degrees</li>
+<li>10 m: 0.12 degrees</li>
+<li>30 m: 0.04 degrees</li>
+</ul>
+<p>Put those against the seeker spec and the selection question answers itself. 0.1 secL is 0.115 degrees at 30 degrees latitude and 0.2 at 60. A 10 m baseline matches a 0.1 secL seeker at 30 degrees latitude. A 1 m baseline on a small craft is ten times worse than the same seeker. On a 200 m ship with 30 m between antennas the receiver wins on heading, and the gyro earns its place by holding that heading when the fix drops or the crane shadows an antenna.</p>
+<p>The GNSS says where the antennas are. The inertial unit says where the hull points in between.</p>`,
+      },
+      {
+        h2: 'What to send us',
+        html: `<p>Three numbers size a marine inertial build faster than any accuracy target: the longest run without a GNSS fix, the heading tolerance at the end of that run, and the antenna baseline the deck allows. Send those and we will tell you which unit covers the case, including when neither does. The <a href="/products/inertial-navigation-systems/" class="text-blue-700 underline">INS and GNSS navigation</a> range covers the grades on either side.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Can a marine INS run a twelve day patrol with no GNSS at all?',
+        a: 'Not at 1 nm/h. That figure is a one hour bound, and heading error does not return the way position error does: 0.03 °/h is 8.6 degrees after twelve days. The unit needs GNSS or another aid to bound heading. What the inertial core does is carry the ship through the gaps between fixes and keep attitude through turns.',
+      },
+      {
+        q: 'Does a long antenna baseline remove the need for a gyro?',
+        a: 'It removes the steady-state need on a large vessel. At 30 m and 2 cm of RTK noise, heading noise is 0.04 degrees, better than a 0.1 secL seeker at any latitude. It does not cover an outage, a multipath patch, or the hours alongside when a crane sits between the antennas.',
+      },
+      {
+        q: 'The spec says 0.1 secL. What is that in degrees?',
+        a: 'Divide by cos(latitude). 0.115 degrees at 30, 0.14 at 45, 0.2 at 60. At 70 degrees the cosine is 0.34 and the same hardware becomes a 0.3 degree seeker, which is the reason high latitude work either buys the better grade or takes a longer measurement.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-FSI301', href: '/products/lkf-fsi301/', caption: 'FOG/GNSS integrated navigation, 0.03 °/h' },
+      { model: 'LKF-FSI400', href: '/products/lkf-fsi400/', caption: 'FOG/GNSS INS, 1 nmile/h pure inertial' },
+    ],
+    relatedCategory: { name: 'INS / GNSS Navigation', href: '/products/inertial-navigation-systems/' },
+  },
+
+  {
     slug: 'rtk-gnss-explained',
     title: 'RTK GNSS Explained: Why Centimeter Position Changes IMU Selection',
     description:

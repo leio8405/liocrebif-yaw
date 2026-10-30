@@ -117,7 +117,7 @@
       "relatedCategory": "inertial-navigation-systems"
     },
     {
-      "id": 18, "slug": "marine-inertial-navigation", "used": false,
+      "id": 18, "slug": "marine-inertial-navigation", "used": true, "published": "2026-10-30",
       "title": "Inertial Navigation for Marine Vessels: Requirements and Solutions",
       "targetKeywords": "marine inertial navigation, ship ins, marine gyrocompass",
       "outline": "海上任务特点（长航时无 GNSS 拒止场景：近岸干扰/军事需求）、FOG 组合导航的优势、双天线 GNSS+惯导混合。内链：inertial-navigation-systems 分类、LKF-FSI301、LKF-FS300（如有）。",
