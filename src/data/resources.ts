@@ -38,6 +38,132 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'antenna-stabilization-sensors',
+    title: 'Antenna Stabilization Sensor Selection: The Specs That Hold the Beam',
+    description:
+      'A stabilized pedestal rarely fails on the bias stability that leads every comparison sheet. It fails on full-temperature bias during the seconds the satellite is behind the mast, and on bandwidth against the servo crossover. Here is the arithmetic, run on a 26 m vessel in sea state 4.',
+    date: '2026-10-31',
+    readingTime: 6,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'A 26 m crew boat, a 1.2 m dish, eight degrees of roll',
+        html: `<p>A crew transfer vessel holds station alongside a wind turbine in sea state 4. Roll runs 8 degrees on a 5 second period, pitch 2 degrees on 3.5. On the cabin roof a 1.2 m Ku-band dish must keep its boresight inside a quarter of the beam while the hull does all of that, and while the pedestal motor adds its own disturbance.</p>
+<p>That is <strong>antenna stabilization</strong>: reject platform motion the servo cannot see, with a sensor inside the control loop that contributes its own lag, noise and bias to it. A <a href="/products/lkf-f2x64/" class="text-blue-700 underline">LKF-F2X64</a> dual-axis FOG and an <a href="/products/lkf-msu203/" class="text-blue-700 underline">LKF-MSU203</a> MEMS unit both quote at least 200 Hz. On this duty they do not separate on bandwidth. They separate on two rows further down.</p>`,
+      },
+      {
+        h2: 'What the pedestal actually has to reject',
+        html: `<p>Peak roll rate is 8 x 2pi / 5 = 10.0 °/s, peak pitch rate 2 x 2pi / 3.5 = 3.6 °/s. Worst phase sums to 13.6 against a ±400 °/s range, 3 percent of scale.</p>
+<p>At 14.0 GHz the wavelength is 21.4 mm, so a 1.2 m aperture puts the half-power beamwidth near 70 x 21.4 / 1200 = 1.25 degrees. Budgeting a quarter of it gives 0.31 degrees, which costs 0.19 dB of loss under the Gaussian main-lobe approximation. A whole beamwidth would be 3 dB.</p>
+<p>Holding 0.31 degrees against 8 degrees of roll at 0.2 Hz asks for 26x, 28 dB, at 0.2 Hz. A type-2 loop falls off as (f / fc) squared, so crossover must reach 0.2 x sqrt(26) = 1.0 Hz. Waves alone are covered there. Pedestals run 5 to 10 Hz because gear compliance and structural modes sit between, and a 1 Hz loop has no margin for them.</p>`,
+      },
+      {
+        h2: 'Bandwidth, and the rows that separate the parts',
+        html: `<p>At a 10 Hz crossover, sensor bandwidth only has to stay far enough above it that its lag does not eat phase margin. A first-order sensor lags arctan(f / fs): 2.9 degrees at 200 Hz, 11.3 at 50 Hz.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-3">Spec</th>
+      <th class="py-2 pr-3">F2X64</th>
+      <th class="py-2 pr-3">F2X70</th>
+      <th class="py-2 pr-3">MSU203</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">Bias stability, 10 s</td>
+      <td class="py-2 pr-3">≤1.0 / ≤0.5 °/h</td>
+      <td class="py-2 pr-3">≤0.20 °/h</td>
+      <td class="py-2 pr-3">≤2 °/h</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">Full-temp bias</td>
+      <td class="py-2 pr-3">≤1.0 / ≤0.5 °/h</td>
+      <td class="py-2 pr-3">≤0.5 °/h</td>
+      <td class="py-2 pr-3">≤30 °/h (3 sigma)</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">Bandwidth</td>
+      <td class="py-2 pr-3">≥200 Hz</td>
+      <td class="py-2 pr-3">≥500 Hz</td>
+      <td class="py-2 pr-3">≥200 Hz</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">Range</td>
+      <td class="py-2 pr-3">±400 °/s</td>
+      <td class="py-2 pr-3">±400 °/s</td>
+      <td class="py-2 pr-3">±500 °/s</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">Settling time</td>
+      <td class="py-2 pr-3">under 10 s</td>
+      <td class="py-2 pr-3">under 100 s</td>
+      <td class="py-2 pr-3">not quoted</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">Weight</td>
+      <td class="py-2 pr-3">300 ±50 g</td>
+      <td class="py-2 pr-3">300 ±50 g</td>
+      <td class="py-2 pr-3">52 ±5 g</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">Operating temperature</td>
+      <td class="py-2 pr-3">-40 to +65 °C</td>
+      <td class="py-2 pr-3">-40 to +65 °C</td>
+      <td class="py-2 pr-3">-40 to +80 °C</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">Vibration condition</td>
+      <td class="py-2 pr-3">4.2 g, 20 to 2000 Hz</td>
+      <td class="py-2 pr-3">4.2 g, 20 to 2000 Hz</td>
+      <td class="py-2 pr-3">6.06 g RMS</td>
+    </tr>
+  </tbody>
+</table>
+<p>The LKF-F2X70 halves the bias and more than doubles bandwidth, and charges 100 s of settling instead of 10. On a truck that powers up and drives, that is 90 extra seconds with no link. On a fixed mast it is irrelevant.</p>
+<p>Two single-axis <a href="/products/lkf-fs60/" class="text-blue-700 underline">LKF-FS60</a> units reach the same 300 g as one F2X64, plus two connector sets and an alignment the dual-axis part settles in the factory. Mass does not argue for the dual-axis unit. Build time does.</p>`,
+      },
+      {
+        h2: 'Where the bias actually goes',
+        html: `<p>A rate loop does not reject bias. The inner loop drives the motor until measured rate matches command. With bias b, balance holds when true rate plus b equals command, so the platform runs at command minus b. Bias becomes a standing rate error, and a rate error integrates into angle.</p>
+<p>What removes it is the outer loop, reading a beacon or step-track error from the receiver. That loop is slow, under 1 Hz, and works only while the satellite is visible. The question is not what the bias is, but how long the beacon is blocked.</p>
+<p>The mast shadows the dish for about 75 s during a come-about. At 0.5 °/h that is 0.5 x 75 / 3600 = 0.010 degrees. At 2 °/h, 0.042. At the 30 °/h full-temperature bound, 0.63, twice the budget. A news truck behind a building for eight minutes is worse: 480 s gives 0.067 at 0.5 °/h and 4.0 at 30 °/h.</p>
+<p>Note which row that used. Full-temperature bias, not the 10 s stability that leads every comparison sheet. The radome runs from 20 below at night to 60 above in sun, and the bias moves with it. On the F2X64 the rows sit within a factor of two, 1.0 against 0.5. On the MEMS unit they are 15x apart, 30 against 2.</p>`,
+      },
+      {
+        h2: 'Two rows that are on neither sheet',
+        html: `<p>Two rows you need are on neither sheet. The first is vibration sensitivity. Both quote a vibration condition, 4.2 g swept 20 to 2000 Hz on the FOGs, 6.06 g RMS on the MEMS unit. Those are qualification levels, not coefficients. Neither gives rectification in °/h per g squared, so what a 2 g hull slap does to pointing cannot be computed from the sheet. A FOG has no moving mass, but its coil still strains. Test on your mount, or isolate and accept the lag.</p>
+<p>The second is alignment. A 0.1 degree error between gyro axes and boresight is 0.1 degree of pointing error, a third of the budget, and no datasheet row covers it. Survey it in, or calibrate against a known satellite and store the offset.</p>
+<p>One printed row goes against the FOG: both dual-axis units stop at +65 °C, the MEMS part runs to +80. A radome in Gulf sun reaches that limit. If the enclosure cannot be held under 65, the choice is made. The <a href="/products/fog-gyroscopes/" class="text-blue-700 underline">fiber optic gyroscope</a> range covers the 200 and 500 Hz parts in single, dual and three-axis form.</p>`,
+      },
+      {
+        h2: 'What to send us',
+        html: `<p>Four numbers settle a pedestal: largest platform rate and its frequency, longest beacon blockage, dish diameter and band, enclosure temperature. Those pick the grade, the settling time, and whether the +65 °C ceiling rules the FOG out. Send them and we will say which unit covers the case, including when the answer is the MEMS one.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Can one dual-axis gyro serve both axes of an az/el pedestal?',
+        a: 'For azimuth and elevation, yes, and both axes leave one housing already aligned to each other. If the mount also carries a cross-level axis to keep the dish out of gimbal lock near zenith, that third axis needs its own rate source. A dual-axis part covers two of three.',
+      },
+      {
+        q: 'Does more sensor bandwidth make the antenna point better?',
+        a: 'No. Pointing accuracy comes from the servo and the encoders. Bandwidth only decides how much phase the sensor takes out of the loop. At a 10 Hz crossover, 200 Hz costs 2.9 degrees of lag and 50 Hz costs 11.3, which is the difference between margin and none.',
+      },
+      {
+        q: 'The MEMS unit is 52 g against 300 g. Why fit a FOG at all?',
+        a: 'On a short blockage in a cool enclosure, do not. Fit the MEMS unit. The FOG earns its extra 250 g when the beacon is blocked for minutes rather than seconds, because its full-temperature bias is 0.5 °/h against 30. The MEMS part runs 15 °C hotter, so a hot radome can still favour it.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-F2X64', href: '/products/lkf-f2x64/', caption: 'Dual-axis FOG, 200 Hz bandwidth' },
+      { model: 'LKF-FS60', href: '/products/lkf-fs60/', caption: 'Single-axis FOG for satcom-on-the-move' },
+      { model: 'LKF-MSU203', href: '/products/lkf-msu203/', caption: 'MEMS IMU, 52 g' },
+    ],
+    relatedCategory: { name: 'Fiber Optic Gyroscopes', href: '/products/fog-gyroscopes/' },
+  },
+
+  {
     slug: 'marine-inertial-navigation',
     title: 'Marine Inertial Navigation: Why 1 nm/h Is an Accelerometer Spec',
     description:

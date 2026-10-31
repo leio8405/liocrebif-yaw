@@ -125,7 +125,7 @@
       "relatedCategory": "inertial-navigation-systems"
     },
     {
-      "id": 19, "slug": "antenna-stabilization-sensors", "used": false,
+      "id": 19, "slug": "antenna-stabilization-sensors", "used": true, "published": "2026-10-31",
       "title": "Sensor Selection for Antenna and Payload Stabilization",
       "targetKeywords": "antenna stabilization, gimbal stabilization sensor, satcom on the move",
       "outline": "动中通/吊舱稳定的传感需求：带宽、噪声、振动整流；双轴陀螺组合与 MEMS IMU 的配置对比。内链：LKF-MBG100A、LKF-FS60、fog-gyroscopes 分类。",
