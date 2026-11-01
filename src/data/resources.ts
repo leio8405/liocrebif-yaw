@@ -38,6 +38,167 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'surveying-ins-guide',
+    title: 'Surveying INS: What PPK Post-Processing Buys a Mobile Mapping Rig',
+    description:
+      'A mobile mapping rig fails on attitude, not position: at 200 m, 0.06 degrees of tilt is 21 cm of surface error while RTK position is 2 cm. What the post-processing rows buy, why a FOG does not fix heading in real time, and which four rows to ask for instead.',
+    date: '2026-11-01',
+    readingTime: 5,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'A 200 m corridor on a county road',
+        html: `<p>A mobile mapping rig scanning a 200 m road corridor does not fail on position. RTK holds 0.02 m plus 1 ppm, which is 2 cm at that range. It fails on attitude, because attitude error multiplies by range and position error does not. At 200 m, 0.06 degrees of real-time roll puts 21 cm of error on the surface. The same unit, post-processed, quotes 0.01 degrees, which is 3.5 cm.</p>
+<p>That gap is what a surveying INS is for. It is a separate purchase from the mobile mapping INS that only feeds a live display.</p>
+<p>Take a road widening job. The client wants the 200 m corridor, both slopes and the trench line, at 3 cm relative accuracy. The truck runs 40 km/h, 11.1 m/s, so 8 km takes 12 minutes.</p>
+<p>Position does not constrain this. 0.02 m plus 1 ppm over 200 m is 0.0202 m. Two centimetres against a 3 cm budget. Attitude does: a boresight rotated by theta displaces a point at range R by R tan(theta), and the displacement grows with every metre out.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-3">Attitude error (1 sigma)</th>
+      <th class="py-2 pr-3">Error at 50 m</th>
+      <th class="py-2 pr-3">100 m</th>
+      <th class="py-2 pr-3">200 m</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">0.5°</td>
+      <td class="py-2 pr-3">44 cm</td>
+      <td class="py-2 pr-3">87 cm</td>
+      <td class="py-2 pr-3">175 cm</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">0.2°</td>
+      <td class="py-2 pr-3">17 cm</td>
+      <td class="py-2 pr-3">35 cm</td>
+      <td class="py-2 pr-3">70 cm</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">0.1°</td>
+      <td class="py-2 pr-3">8.7 cm</td>
+      <td class="py-2 pr-3">17 cm</td>
+      <td class="py-2 pr-3">35 cm</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">0.06°</td>
+      <td class="py-2 pr-3">5.2 cm</td>
+      <td class="py-2 pr-3">10 cm</td>
+      <td class="py-2 pr-3">21 cm</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">0.01°</td>
+      <td class="py-2 pr-3">0.9 cm</td>
+      <td class="py-2 pr-3">1.7 cm</td>
+      <td class="py-2 pr-3">3.5 cm</td>
+    </tr>
+  </tbody>
+</table>
+<p>Read the table backwards and it gets worse. A 3 cm budget survives to 172 m at 0.01 degrees, to 29 m at 0.06, and to 8.6 m at 0.2. The 200 m corridor in the brief cannot be held at 3 cm by any attitude figure printed on a datasheet. It gets held by scanning in shorter blocks and tying each one to control points. What the sensor buys is how long those blocks can be.</p>`,
+      },
+      {
+        h2: 'What the post-processing row changes',
+        html: `<p>One unit prints four attitude rows instead of two. The <a href="/products/lkf-fsu305/" class="text-blue-700 underline">LKF-FSU305</a> quotes 0.5 degrees heading and 0.06 degrees horizontal in real time, then 0.06 and 0.01 after post-processing. Heading improves 8.3 times, attitude 6.</p>
+<p>Forward and backward smoothing does not give 8.3 by itself. Two passes carrying independent errors buy the square root of two, 1.41. The rest comes from what a second pass can see: the whole run, both ends of it, and any return to a known point. A bias that wandered through twelve minutes gets fitted over twelve minutes instead of estimated from the last hundred seconds.</p>
+<p>The number only exists if the box logs raw observations. A live-only unit outputs position and attitude at 100 Hz and discards the increments a smoother needs. Ask for the log format before you buy the post-processing figure.</p>`,
+      },
+      {
+        h2: 'Four configurations, one table',
+        html: `<p>Here is what the catalogue supports, with the surface error at 200 m computed for each printed attitude figure.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-3"></th>
+      <th class="py-2 pr-3">MSU105, 1 m baseline</th>
+      <th class="py-2 pr-3">MSU105, single antenna</th>
+      <th class="py-2 pr-3">FSU305 real-time</th>
+      <th class="py-2 pr-3">FSU305 post-processed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">Heading (1 sigma)</td>
+      <td class="py-2 pr-3">0.2°</td>
+      <td class="py-2 pr-3">0.5°</td>
+      <td class="py-2 pr-3">0.5°</td>
+      <td class="py-2 pr-3">0.06°</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">Horizontal attitude (1 sigma)</td>
+      <td class="py-2 pr-3">0.1°</td>
+      <td class="py-2 pr-3">0.2°</td>
+      <td class="py-2 pr-3">0.06°</td>
+      <td class="py-2 pr-3">0.01°</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">Worst axis at 200 m</td>
+      <td class="py-2 pr-3">70 cm</td>
+      <td class="py-2 pr-3">175 cm</td>
+      <td class="py-2 pr-3">175 cm</td>
+      <td class="py-2 pr-3">21 cm</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">Gyro bias stability, 10 s</td>
+      <td class="py-2 pr-3">≤10 °/h</td>
+      <td class="py-2 pr-3">≤10 °/h</td>
+      <td class="py-2 pr-3">≤0.5 °/h</td>
+      <td class="py-2 pr-3">same hardware</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">Available same day</td>
+      <td class="py-2 pr-3">yes</td>
+      <td class="py-2 pr-3">yes</td>
+      <td class="py-2 pr-3">yes</td>
+      <td class="py-2 pr-3">no</td>
+    </tr>
+  </tbody>
+</table>
+<p>Read the heading row. In real time the FOG unit is no better than the <a href="/products/lkf-msu105/" class="text-blue-700 underline">LKF-MSU105</a> on a single antenna, because both are limited by a 0.5 degree figure, and heading is the axis that scales with range. What the FOG changes is the fourth row, and that only shows up when satellites drop out.</p>
+<p>Post-processing takes the worst axis from 175 cm to 21 cm. At 200 m and 3 cm that is still seven times over budget, and the residual is heading. The fix from there is a longer antenna baseline or a shorter scan block, not a better gyro.</p>`,
+      },
+      {
+        h2: 'When the answer has to be today',
+        html: `<p>Not every job can wait. Stakeout, machine guidance and obstacle clearance work from a live solution, and a 12 minute run with a three hour turnaround breaks a paving schedule. On a mountain job or a night survey, a re-drive costs a day and a permit.</p>
+<p>So crews that care about both run a split: real time for coverage and gross error, post-processing for the deliverable. That is a payload decision, not a sensor decision. It wants a unit that streams live and logs raw at once.</p>`,
+      },
+      {
+        h2: 'Four rows worth asking for',
+        html: `<p>Comparison sheets lead with 10 s bias stability because it is easy to test on a bench. Four other rows matter more on a survey vehicle.</p>
+<ul class="list-disc pl-5 space-y-2">
+  <li><strong>Full-temperature bias, not the 10 s figure.</strong> A truck roof runs from -5 °C before dawn to 45 °C at noon, and the bias moves with the case temperature.</li>
+  <li><strong>Accelerometer full-temperature bias.</strong> This sets elevation, and elevation is the axis clients argue about. The MSU105 prints 5 mg at room temperature with no full-temperature row. The FSU305 prints 0.5 mg over temperature.</li>
+  <li><strong>Antenna baseline.</strong> Heading is quoted against a baseline length. A 0.2 degree figure on 1 m is a different product from the same figure on 0.5 m.</li>
+  <li><strong>Update rate against bandwidth.</strong> Both print in hertz and they are not the same number. Bandwidth is where the response rolls off; update rate is how often you get a solution. A 100 Hz output cannot feed a 200 Hz logger.</li>
+</ul>`,
+      },
+      {
+        h2: 'What to send us',
+        html: `<p>Four numbers settle a survey purchase: the longest range you need the accuracy at, the accuracy the client will check, the speed you drive, and whether a base station is reachable. Those pick the grade and tell you whether post-processing is open to you at all. The <a href="/products/imu/" class="text-blue-700 underline">inertial measurement unit</a> range covers both the MEMS and FOG options in this article.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Can I get post-processing accuracy in real time?',
+        a: 'No, and no one can. Smoothing uses data recorded after the point being estimated. What you can shorten is the gap when satellites drop. A FOG at 0.5 °/h holds heading to 0.0056 degrees over 40 s of loss, against 0.11 degrees for a 10 °/h MEMS unit. At 200 m that is 2 cm against 39 cm.',
+      },
+      {
+        q: 'Does PPK need a base station on site?',
+        a: 'It needs one of three things: a local base within radio range, a correction service, or precise ephemeris for PPP. Without any of them you have a real-time solution only. The inertial unit does not care which you use, but the receiver inside it has to support the mode you plan on.',
+      },
+      {
+        q: 'Is a MEMS unit enough for a 3 cm survey?',
+        a: 'At 200 m, no. At 20 m, yes, with a 1 m dual antenna: 0.1 degree horizontal attitude gives 3.5 cm there and 0.2 degree heading gives 7 cm. Whether that passes depends on corridor width against how far along it you run in one block.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-FSU305', href: '/products/lkf-fsu305/', caption: 'FOG INS with post-processing attitude rows' },
+      { model: 'LKF-MSU105', href: '/products/lkf-msu105/', caption: 'MEMS INS, 30 g, 100 Hz' },
+      { model: 'LKF-MSI105', href: '/products/lkf-msi105/', caption: 'MEMS INS, 2 cm RTK positioning' },
+    ],
+    relatedCategory: { name: 'IMU & North Seekers', href: '/products/imu/' },
+  },
+
+  {
     slug: 'antenna-stabilization-sensors',
     title: 'Antenna Stabilization Sensor Selection: The Specs That Hold the Beam',
     description:

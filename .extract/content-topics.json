@@ -133,7 +133,7 @@
       "relatedCategory": "fog-gyroscopes"
     },
     {
-      "id": 20, "slug": "surveying-ins-guide", "used": false,
+      "id": 20, "slug": "surveying-ins-guide", "used": true, "published": "2026-11-01",
       "title": "Inertial Systems for Surveying and Mapping: From PPK to Real-Time",
       "targetKeywords": "surveying ins, mobile mapping ins, inertial surveying",
       "outline": "移动测绘的定位定姿需求、PPK 后处理 vs 实时 RTK+INS、MEMS 组合导航的性价比方案。内链：LKF-MSU105、LKF-MSI105、imu 分类。",
