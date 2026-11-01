@@ -100,7 +100,7 @@ export const resources: ResourceArticle[] = [
         h2: 'What the post-processing row changes',
         html: `<p>One unit prints four attitude rows instead of two. The <a href="/products/lkf-fsu305/" class="text-blue-700 underline">LKF-FSU305</a> quotes 0.5 degrees heading and 0.06 degrees horizontal in real time, then 0.06 and 0.01 after post-processing. Heading improves 8.3 times, attitude 6.</p>
 <p>Forward and backward smoothing does not give 8.3 by itself. Two passes carrying independent errors buy the square root of two, 1.41. The rest comes from what a second pass can see: the whole run, both ends of it, and any return to a known point. A bias that wandered through twelve minutes gets fitted over twelve minutes instead of estimated from the last hundred seconds.</p>
-<p>The number only exists if the box logs raw observations. A live-only unit outputs position and attitude at 100 Hz and discards the increments a smoother needs. Ask for the log format before you buy the post-processing figure.</p>`,
+<p>The number only exists if the box logs raw observations. A live-only unit outputs a solved position and attitude, and discards the increments a smoother needs. Ask for the log format before you buy the post-processing figure.</p>`,
       },
       {
         h2: 'Four configurations, one table',
@@ -166,7 +166,7 @@ export const resources: ResourceArticle[] = [
         html: `<p>Comparison sheets lead with 10 s bias stability because it is easy to test on a bench. Four other rows matter more on a survey vehicle.</p>
 <ul class="list-disc pl-5 space-y-2">
   <li><strong>Full-temperature bias, not the 10 s figure.</strong> A truck roof runs from -5 °C before dawn to 45 °C at noon, and the bias moves with the case temperature.</li>
-  <li><strong>Accelerometer full-temperature bias.</strong> This sets elevation, and elevation is the axis clients argue about. The MSU105 prints 5 mg at room temperature with no full-temperature row. The FSU305 prints 0.5 mg over temperature.</li>
+  <li><strong>Accelerometer full-temperature bias.</strong> This sets elevation, and elevation is the axis clients argue about. The MSU105 prints 5 mg for zero offset with no temperature qualifier on that row. The FSU305 prints 0.5 mg over temperature.</li>
   <li><strong>Antenna baseline.</strong> Heading is quoted against a baseline length. A 0.2 degree figure on 1 m is a different product from the same figure on 0.5 m.</li>
   <li><strong>Update rate against bandwidth.</strong> Both print in hertz and they are not the same number. Bandwidth is where the response rolls off; update rate is how often you get a solution. A 100 Hz output cannot feed a 200 Hz logger.</li>
 </ul>`,
