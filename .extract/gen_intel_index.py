@@ -25,7 +25,7 @@ for f in sorted(os.listdir(INTEL_DIR), reverse=True):
     pages.append((f, title, week))
 
 items = "\n".join(
-    f'''    <a class="row" href="{fname}">
+    f'''    <a class="row" href="{fname[:-5]}">
       <span class="week">{week}</span>
       <span class="t">{title}</span>
       <span class="arrow">→</span>
