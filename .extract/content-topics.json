@@ -141,7 +141,7 @@
       "relatedCategory": "imu"
     },
     {
-      "id": 21, "slug": "calibration-of-inertial-sensors", "used": false,
+      "id": 21, "slug": "calibration-of-inertial-sensors", "used": true, "published": "2026-11-02",
       "title": "How Inertial Sensors Are Calibrated: From Rate Table to Field",
       "targetKeywords": "imu calibration, inertial sensor calibration, rate table calibration",
       "outline": "标定流程：温箱/速率转台/位置翻滚试验、误差模型系数（零偏/标度因数/正交误差）、出厂全温标定的价值。内链：fiber-optic 分类（测试设备 LKF-FCTS、LKF-DT300A、LKF-3FDT550WK）。",

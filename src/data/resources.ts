@@ -38,6 +38,123 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'calibration-of-inertial-sensors',
+    title: 'IMU Calibration from Rate Table to Field: What Each Step Proves',
+    description:
+      'IMU calibration answers three separate questions and a rate table settles only one of them. What ±3 arcsec buys, why the smallest commanded rate is 72 times a 0.05 deg/h bias row, and why the full-temperature row runs five to thirty-six times the room-temperature one.',
+    date: '2026-11-02',
+    readingTime: 5,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'One unit, three claims',
+        html: `<p>Twenty LKF-FS60 units arrive at a goods-in bench. One goes onto a plate, a script runs for an hour, and the printout reads 0.6 °/h against a 0.05 °/h datasheet row. The unit is quarantined.</p>
+<p>IMU calibration produces three claims that get read as one. Stability over time is referenced against the sensor's own history. Absolute bias and scale factor are referenced against a known angle and rate. Temperature behaviour is referenced against a chamber and a fitted model. A rate table settles the second claim only, yet goods-in disputes ask it for all three.</p>`,
+      },
+      {
+        h2: 'What the table angle is worth',
+        html: `<p>Both turntables here quote ±3 arcsec on rotation and positioning. The figure means two different things.</p>
+<p>As a tilt, 3 arcsec is 8.3 × 10⁻⁴ degrees. At 45 degrees latitude Earth rate's horizontal component is 15.041 × cos(45) = 10.6 °/h, so an axis 3 arcsec off horizontal leaks 1.5 × 10⁻⁴ °/h, about 1/300 of a 0.05 °/h row. The table is not your error source. The fixture is: a 2 degree shim under one corner leaks 10.6 × sin(2) = 0.37 °/h, nearly double the A-grade 0.20 °/h.</p>
+<p>Hold that leak to a tenth of the row and the plate must sit within arcsin(0.005 / 10.6) = 0.027 degrees, or 1.6 arcmin. A ±3 arcsec table is thirty times tighter than the job needs.</p>
+<p>As a full turn, 3 arcsec is 3/1,296,000 of a revolution, 2.3 ppm, the ceiling on any scale factor taken from the table. A 2 ppm reference certifies a 50 ppm row twenty times over, which is what the FS60 prints on B and C.</p>
+<p>The table stops being overkill at the accelerometer. A face 3 arcsec off level puts 1.45 × 10⁻⁵ g on the sensor, 14.5 µg. The LKF-FSI400 prints 10 µg of 10 s stability and 1 µg of Allan, so a ±3 arcsec fixture cannot resolve its absolute bias. It can watch that bias move: variation needs the fixture still, not right.</p>`,
+      },
+      {
+        h2: 'Rate is not read off the dial',
+        html: `<p>The <a href="/products/lkf-dt300a/" class="text-blue-700 underline">LKF-DT300A</a> commands ±0.001 to ±1000 °/s at 400 °/s² or better. The decisive row is rate accuracy and stability: 2 × 10⁻³ at 1° averaging, quoted at ω ≤ 1 °/s.</p>
+<p>Treat that as an absolute rate reference and the test collapses. Two parts in a thousand at 1 °/s is 0.002 °/s, or 7.2 °/h, which measures a 0.05 °/h bias with a 7 °/h ruler. The slow end fails the same way: 0.001 °/s is 3.6 °/h, seventy times the bias row.</p>
+<p>So bias is measured at rest, and scale factor as angle over time: index to a mark, run, index to the stop, read the encoder, divide by the clock. Over 360 degrees, 3 arcsec is 2.3 ppm. The 2 × 10⁻³ row covers rate ripple, which is what you sweep 1, 10 and 100 °/s to find scale factor nonlinearity.</p>`,
+      },
+      {
+        h2: 'The row that comes out of the chamber',
+        html: `<p>Every FOG and IMU sheet prints a room-temperature row and a full-temperature row. Their ratio is what the thermal model removed.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-3">Unit, gyro axis</th>
+      <th class="py-2 pr-3">Room temperature</th>
+      <th class="py-2 pr-3">Full temperature</th>
+      <th class="py-2 pr-3">Ratio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">FS60 A</td>
+      <td class="py-2 pr-3">≤0.20 °/h, 1σ, 10 s</td>
+      <td class="py-2 pr-3">≤1 °/h</td>
+      <td class="py-2 pr-3">5×</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">FS60 B</td>
+      <td class="py-2 pr-3">≤0.10 °/h</td>
+      <td class="py-2 pr-3">≤0.5 °/h</td>
+      <td class="py-2 pr-3">5×</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">FS60 C</td>
+      <td class="py-2 pr-3">≤0.05 °/h</td>
+      <td class="py-2 pr-3">≤0.3 °/h</td>
+      <td class="py-2 pr-3">6×</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">MSU105</td>
+      <td class="py-2 pr-3">≤10 °/h</td>
+      <td class="py-2 pr-3">≤360 °/h</td>
+      <td class="py-2 pr-3">36×</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">FSI400</td>
+      <td class="py-2 pr-3">≤0.01 °/h</td>
+      <td class="py-2 pr-3">≤0.01 °/h, 3σ</td>
+      <td class="py-2 pr-3">1×</td>
+    </tr>
+  </tbody>
+</table>
+<p>The FSI400 row reads 1 on a sigma mismatch, 3 sigma against 1 sigma, so the true ratio is lower and the model absorbed the temperature term down to the measurement floor. The MSU105 ratio of 36 says the opposite. A MEMS model cannot pull bias back to 10 °/h across -40 to +85 °C, so 360 °/h governs a cold morning.</p>
+<p>That row needs a chamber. The <a href="/products/lkf-3fdt550wk/" class="text-blue-700 underline">LKF-3FDT550WK</a> spans -55 to +100 °C with 40 kg on a Ø550 table. The unit range is narrower, -40 to +70 on an FS60, so a sweep uses 110 of the chamber's 155 degrees one way, 220 round trip, dwelling at every point. Forty kilograms in 223 litres does not follow the air. The payload is the lag.</p>
+<p>Three axes add geometry. The 3FDT550WK quotes ±3 arcsec perpendicularity and axis intersection inside a Ø0.5 mm sphere. If the axes do not cross at one point, a rate about one axis is also a translation at the others, and the accelerometers read centripetal acceleration as tilt.</p>`,
+      },
+      {
+        h2: 'What a goods-in bench can check',
+        html: `<p>A bench, a level, a supply and a script cover three of the five checks below.</p>
+<ul class="list-disc pl-5 space-y-2">
+  <li><strong>Turn-on repeatability.</strong> Power-cycle ten times, settle, record the first minute, compare the spread to the repeatability row. On the FS60 and the MSU105 that row prints the same number as stability.</li>
+  <li><strong>Relative stability over hours.</strong> One unit, one orientation, no absolute reference. The fixture has to be still, not level, the one thing a bench does as well as a table.</li>
+  <li><strong>Gross scale factor.</strong> An index mark and a stopwatch catch a unit off by a percent. They will not give 2.3 ppm.</li>
+  <li><strong>Absolute bias.</strong> No, not without 1.6 arcmin leveling and a logged case temperature. A 2 degree tilt is 0.37 °/h of Earth rate.</li>
+  <li><strong>Full temperature.</strong> No. That is the chamber, and it decides a January morning.</li>
+</ul>`,
+      },
+      {
+        h2: 'What to write into the purchase spec',
+        html: `<p>Ask for the temperature behind each row: a bias figure with no temperature qualifier is a room-temperature figure and will not describe a unit in a vehicle. Ask for the smoothing window and sigma. Ask whether a row is per-unit or batch-verified, because a batch number is a design claim and a unit number is a measurement. The FS60 settles in under 10 s, so anything logged before that is warm-up.</p>
+<p>The <a href="/products/lkf-fs60/" class="text-blue-700 underline">LKF-FS60</a> page carries the rows used here; the <a href="/products/fiber-optic/" class="text-blue-700 underline">fiber devices and test equipment</a> range carries the tables that produce them.</p>
+<p>Send the drift budget and the temperature range your platform actually sees, and we will tell you which rows to hold us to.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'My unit reads 0.6 deg/h on the bench against a 0.05 deg/h row. Is it out of spec?',
+        a: 'Not from that test. A 2 degree tilt in the mounting leaks 0.37 deg/h of Earth rate, and peak-to-peak of 1 s samples runs several times the 1 sigma of 10 s averages on the same data. Add a few degrees of case drift and 0.6 is the bench talking. To prove a unit out of spec you need the plate leveled to about 1.6 arcmin, the case temperature held and logged, and the statistic matched to the row.',
+      },
+      {
+        q: 'Do I need a thermal chamber turntable, or can I calibrate at 20 C?',
+        a: 'It depends which row governs your application. An MSU105 quotes 10 deg/h at room temperature and 360 deg/h full temperature, a factor of 36. In a rack at 25 C the room row is the honest one and a bench is enough. On a mast from -20 to +50 the 360 deg/h row governs, and no room-temperature calibration predicts it.',
+      },
+      {
+        q: 'How accurate does my rate table have to be?',
+        a: 'For bias, 3 arcsec is already 300 times tighter than the row requires, so your leveling dominates. For scale factor, one full turn at 3 arcsec is 2.3 ppm, which certifies a 50 ppm row with twenty times margin. The number that usually binds is neither: it is temperature stability of the fixture over the run, plus whatever you are using as a clock.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-DT300A', href: '/products/lkf-dt300a/', caption: 'Single-axis rate-position table, ±0.001 to ±1000 deg/s' },
+      { model: 'LKF-3FDT550WK', href: '/products/lkf-3fdt550wk/', caption: 'Three-axis thermal-chamber table, -55 to +100 C' },
+      { model: 'LKF-FS60', href: '/products/lkf-fs60/', caption: 'Single-axis FOG, 0.05 deg/h C grade' },
+    ],
+    relatedCategory: { name: 'Fiber Devices & Equipment', href: '/products/fiber-optic/' },
+  },
+
+  {
     slug: 'surveying-ins-guide',
     title: 'Surveying INS: What PPK Post-Processing Buys a Mobile Mapping Rig',
     description:
