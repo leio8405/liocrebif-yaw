@@ -2,6 +2,8 @@
 """行业情报周报归档索引生成器
 扫描 public/zh/intel/*.html（排除 index.html），从各期 <title> 提取标题，
 按文件名倒序（最新在前）生成归档页 index.html。
+同时给每期页面幂等注入 <meta name="robots" content="noindex, nofollow">：
+情报正文含「接触对象与门槛」等内部动作，保持链接可分享、但禁止被搜索引擎收录。
 用法：python gen_intel_index.py
 新增一期：把新期 HTML（ASCII 文件名，如 2026-W43-01.html）拷进 public/zh/intel/，再跑本脚本。
 """
@@ -16,12 +18,20 @@ pages = []
 for f in sorted(os.listdir(INTEL_DIR), reverse=True):
     if not f.endswith(".html") or f == "index.html":
         continue
-    html = open(os.path.join(INTEL_DIR, f), encoding="utf-8").read()
+    path = os.path.join(INTEL_DIR, f)
+    html = open(path, encoding="utf-8").read()
     m = re.search(r"<title>(.*?)</title>", html, re.S)
     title = m.group(1).strip() if m else f
     # 从文件名提取周标识（如 2026-W42）
     wm = re.search(r"(\d{4}-W\d{2})", f)
     week = wm.group(1) if wm else ""
+
+    # 情报含内部「接触对象与门槛」，保持可分享但不可被搜索索引（幂等注入）
+    if 'name="robots"' not in html:
+        html = re.sub(r"(<head[^>]*>)", r'\1\n<meta name="robots" content="noindex, nofollow">', html, count=1)
+        open(path, "w", encoding="utf-8").write(html)
+        print(f"  + noindex: {f}")
+
     pages.append((f, title, week))
 
 items = "\n".join(
