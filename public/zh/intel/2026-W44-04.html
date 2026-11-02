@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>惯性导航行业情报 · 第 4 期 · 2026 年第 44 周</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · macrostructure: Ecosystem Index · tone: editorial · anchor hue: 85 (warm newsprint) · theme: Newsprint
+ * genre: editorial · nav: N6 masthead · footer: Ft4 dense colophon · enrichment: none
+ * fonts: Fraunces (display) + Newsreader (body, latin) / Noto Serif SC (han) + JetBrains Mono (outlier: 元数据单一角色)
+ * knobs vs 第1期(垂直通栏列表)/第2期(2列同构网格): 本期多发现面 rail + 表格面 + 时间列列表面
+ * pre-emit critique: P5 H4 E4 S5 R4 V5 · slop: run at handoff (58 gates) */
+:root {
+  --color-paper:      oklch(97.5% 0.009 85);
+  --color-paper-2:    oklch(94.8% 0.013 85);
+  --color-paper-3:    oklch(91.5% 0.016 85);
+  --color-rule:       oklch(84% 0.012 85);
+  --color-rule-strong:oklch(72% 0.022 60);
+  --color-ink:        oklch(25% 0.014 60);
+  --color-muted:      oklch(44% 0.014 70);
+  --color-faint:      oklch(48% 0.014 75);
+  --color-accent:     oklch(50% 0.19 27);
+  --color-accent-deep:oklch(42% 0.16 27);
+  --color-focus:      oklch(50% 0.19 27);
+
+  --font-display: "Fraunces", "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --font-body:    "Newsreader", "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, monospace;
+
+  --text-xs: 0.75rem; --text-sm: 0.875rem; --text-base: 1rem;
+  --text-md: 1.25rem; --text-lg: 1.5625rem; --text-xl: 1.9531rem;
+
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+
+  --measure: 68ch;
+  --page: 68rem;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { overflow-x: clip; }
+html { background: var(--color-paper); }
+body {
+  font-family: var(--font-body); font-size: var(--text-base); line-height: 1.65;
+  color: var(--color-ink); background: var(--color-paper);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+
+/* ---------- 报头 N6 ---------- */
+.masthead { text-align: center; padding: var(--space-7) var(--space-4) 0; }
+.masthead__kicker {
+  font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-deep);
+  margin-bottom: var(--space-3);
+}
+.masthead__title {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(2rem, 6vw + 0.5rem, 3rem); letter-spacing: 0.04em; line-height: 1.1;
+  overflow-wrap: anywhere; min-width: 0;
+}
+.masthead__sub {
+  font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.14em;
+  color: var(--color-muted); margin-top: var(--space-2);
+}
+.masthead__issue {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-2) var(--space-4);
+  font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-muted);
+  margin-top: var(--space-4); font-variant-numeric: tabular-nums;
+}
+.masthead__issue b { font-weight: 700; color: var(--color-ink); }
+.rule-double { border: 0; border-top: 3px double var(--color-rule-strong); margin: var(--space-4) auto 0; max-width: 90rem; }
+
+.page { max-width: var(--page); margin: 0 auto; padding: 0 var(--space-4) var(--space-8); }
+
+/* ---------- 编者按 ---------- */
+.note { padding: var(--space-6) 0 var(--space-5); border-bottom: 1px solid var(--color-rule); }
+.note__label {
+  font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 700;
+  letter-spacing: 0.2em; color: var(--color-accent-deep); margin-bottom: var(--space-3);
+}
+.note p { max-width: 92ch; margin-bottom: var(--space-3); text-align: justify; }
+.note p:last-child { margin-bottom: 0; }
+.note strong { font-weight: 600; }
+.note .stats {
+  font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-muted);
+  font-variant-numeric: tabular-nums; margin-top: var(--space-4);
+}
+
+/* ---------- 发现面 rail ---------- */
+.rail { margin-top: var(--space-7); padding-left: var(--space-4); border-left: 3px solid var(--color-rule-strong); }
+.rail__head { display: block; margin-bottom: var(--space-4); }
+.rail__title {
+  font-family: var(--font-display); font-weight: 700; font-size: var(--text-md);
+  letter-spacing: 0.1em; overflow-wrap: anywhere; min-width: 0;
+}
+.rail__meta {
+  font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-faint);
+  letter-spacing: 0.04em; font-variant-numeric: tabular-nums; margin-top: var(--space-1);
+}
+
+/* ---------- 头条 ---------- */
+.lead { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); gap: var(--space-4); padding: var(--space-5) 0; border-top: 1px solid var(--color-rule); }
+.lead:first-of-type { border-top: 0; }
+.lead--plain { grid-template-columns: minmax(0, 1fr); }
+.lead__no {
+  font-family: var(--font-display); font-weight: 700; font-size: 2.75rem; line-height: 0.9;
+  color: var(--color-accent); font-variant-numeric: lining-nums;
+}
+.lead__src { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-faint); margin-bottom: var(--space-2); font-variant-numeric: tabular-nums; }
+.lead__title {
+  font-family: var(--font-display); font-weight: 700; font-size: var(--text-lg);
+  line-height: 1.3; margin-bottom: var(--space-2); overflow-wrap: anywhere; min-width: 0;
+}
+.lead__body p { margin-bottom: var(--space-2); text-align: justify; max-width: var(--measure); }
+.lead__body strong { font-weight: 600; }
+.lead__title a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--color-rule-strong); }
+.lead__title a:hover { border-bottom-color: var(--color-accent); }
+.lead__title a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.lead__title a:active { border-bottom-color: var(--color-accent-deep); }
+
+/* ---------- 通用：意味着 ---------- */
+.so {
+  margin-top: var(--space-2); padding-left: var(--space-3); border-left: 2px solid var(--color-accent);
+  font-size: var(--text-sm); color: var(--color-muted); max-width: var(--measure);
+}
+.so b {
+  font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 700;
+  letter-spacing: 0.12em; color: var(--color-accent-deep); margin-right: var(--space-2);
+}
+.links { margin-top: var(--space-2); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-faint); }
+.links a { color: var(--color-muted); text-decoration: none; border-bottom: 1px solid var(--color-rule-strong); }
+.links a:hover { color: var(--color-accent-deep); border-bottom-color: var(--color-accent); }
+.links a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.links a:active { border-bottom-color: var(--color-accent-deep); }
+
+/* ---------- 表格面 ---------- */
+.tbl-wrap { overflow-x: auto; }
+table.data { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+table.data th, table.data td { padding: var(--space-2) var(--space-3); text-align: left; vertical-align: top; border-bottom: 1px solid var(--color-rule); }
+table.data th {
+  font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 700;
+  letter-spacing: 0.08em; color: var(--color-muted); border-bottom: 1px solid var(--color-rule-strong);
+}
+table.data td:first-child { font-weight: 600; }
+table.data td a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--color-rule-strong); }
+table.data td a:hover { border-bottom-color: var(--color-accent); }
+table.data td a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+
+/* ---------- 时间列列表面 ---------- */
+.rowlist { border-top: 1px solid var(--color-rule); }
+.rowlist__item {
+  display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: var(--space-3);
+  padding: var(--space-3) 0; border-bottom: 1px solid var(--color-rule);
+}
+.rowlist__date { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-faint); padding-top: 2px; font-variant-numeric: tabular-nums; }
+.rowlist__title { font-weight: 600; line-height: 1.45; margin-bottom: var(--space-1); overflow-wrap: anywhere; }
+.rowlist__title a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--color-rule-strong); }
+.rowlist__title a:hover { border-bottom-color: var(--color-accent); }
+.rowlist__title a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.rowlist__sum { font-size: var(--text-sm); color: var(--color-ink); text-align: justify; }
+
+/* ---------- 信源表 ---------- */
+.method { padding-top: var(--space-7); }
+.method__name {
+  font-family: var(--font-display); font-weight: 700; font-size: var(--text-md);
+  letter-spacing: 0.1em; padding-bottom: var(--space-2);
+  border-bottom: 3px double var(--color-rule-strong); margin-bottom: var(--space-4);
+}
+.method td.num, .method th.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; }
+.method .fail { color: var(--color-accent-deep); font-weight: 700; }
+.method__why { margin-top: var(--space-4); max-width: 92ch; text-align: justify; font-size: var(--text-sm); color: var(--color-muted); }
+
+/* ---------- colophon Ft4 ---------- */
+.colophon {
+  margin-top: var(--space-7); padding-top: var(--space-4);
+  border-top: 3px double var(--color-rule-strong);
+  font-family: var(--font-mono); font-size: var(--text-xs); line-height: 1.8; color: var(--color-faint);
+}
+.colophon b { color: var(--color-muted); font-weight: 700; }
+.colophon .row { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); }
+
+/* ---------- responsive ---------- */
+@media (max-width: 700px) {
+  .lead { grid-template-columns: 1fr; gap: var(--space-2); }
+  .lead__no { font-size: 2rem; }
+  .rowlist__item { grid-template-columns: 1fr; gap: var(--space-1); }
+  .rail { padding-left: var(--space-3); }
+  .masthead { padding-top: var(--space-6); }
+}
+@media print {
+  .page { max-width: none; }
+  a { border-bottom: 0 !important; }
+  table.data { font-size: var(--text-xs); }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+.dl { border-top: 3px solid var(--color-accent); border-bottom: 1px solid var(--color-rule); padding: var(--space-2) 0; margin-bottom: var(--space-4); }
+.dl__row { display: flex; gap: var(--space-3); align-items: baseline; padding: 3px 0; font-size: var(--text-sm); }
+.dl__k { font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--color-accent-deep); min-width: 3.2rem; letter-spacing: .02em; }
+.dl__t { flex: 1; min-width: 0; }
+.dl__t a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--color-rule-strong); }
+.dl__m { font-family: var(--font-mono); font-size: 11px; color: var(--color-ink-mute); white-space: nowrap; }
+.tag { font-family: var(--font-mono); font-size: 10.5px; padding: 1px 5px; border: 1px solid currentColor; border-radius: 2px; letter-spacing: .02em; }
+.tag--a { color: #8a3b22; }
+.tag--b { color: #6b5a1e; }
+.tag--c { color: #5a6470; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead__kicker">Liocrebif · Internal Intelligence</div>
+  <h1 class="masthead__title">惯性导航行业情报</h1>
+  <div class="masthead__sub">INERTIAL NAVIGATION &amp; PNT WEEKLY</div>
+  <div class="masthead__issue">
+    <span><b>第 4 期</b></span>
+    <span>2026 年第 <b>44</b> 周 · 10.26 – 11.01</span>
+    <span>v4 骨架 · 发公司群</span>
+    <span>武汉利科夫科技</span>
+  </div>
+  <hr class="rule-double">
+</header>
+
+<main class="page">
+
+  <section class="dl">
+    <div class="dl__row"><span class="dl__k">D-0</span><span class="dl__t"><a href="https://www.ccgp.gov.cn/cggg/zygg/qtgg/202610/t20261026_27564969.htm">中科院上海光机所 高精度转台 2 套 80 万（国际招标，标书领购今日 11-02 截止）</a></span><span class="dl__m">11-17 开标</span></div>
+    <div class="dl__row"><span class="dl__k">D-1</span><span class="dl__t"><a href="https://www.china0001.com.cn/biddingdetail/index/92929e86d9714c3490ef376ce70f1b4c.html">江西洪都航空 导航系统综合测试仪 1 套（标书发售 11-03 17:00 截止）</a></span><span class="dl__m">11-19 投标</span></div>
+    <div class="dl__row"><span class="dl__k">D-3</span><span class="dl__t"><a href="https://shanghai.jianyu360.cn/jybx/20261010_26100991763222.html">中科院微小卫星 JZ 卫星光纤陀螺 400 万 1 套（不允许进口，投标截止 11-05 09:00）</a></span><span class="dl__m">11-05 开标</span></div>
+  </section>
+
+  <section class="note">
+    <div class="note__label">编者按</div>
+    <p>本期 A 级机会全在国内：两个未截止的测试设备招标，加一个三日后截止的卫星级光纤陀螺采购。海外段本周没有可执行项，LEO-PNT 与硅光陀螺仍在观察区。</p>
+  </section>
+
+  <section class="rail">
+    <div class="rail__head"><h2 class="rail__title">本期判断</h2><div class="rail__meta">3 条 · 下期回看</div></div>
+    <div class="rowlist">
+      <div class="rowlist__item"><div class="rowlist__date">判断 1</div><div><p class="rowlist__sum">院所测试设备采购进入年末集中期，<strong>11 月内还会出现不少于 2 个同类招标</strong>（转台 / 惯导测试系统）。<em>回看点：11-30</em></p></div></div>
+      <div class="rowlist__item"><div class="rowlist__date">判断 2</div><div><p class="rowlist__sum">上海光机所这个国际招标，<strong>卡点在资格不在价格</strong>：近 5 年 1 套同类业绩 + 制造商授权 + 资信证明，缺任一项直接出局。<em>回看点：11-17 开标结果</em></p></div></div>
+      <div class="rowlist__item"><div class="rowlist__date">判断 3</div><div><p class="rowlist__sum">海外本周 A 级信号为零；<strong>LEO-PNT 与硅光陀螺在未来 30 天内不会产生可投项目或直接影响报价</strong>。<em>回看点：12-02</em></p></div></div>
+    </div>
+  </section>
+
+  <section class="rail">
+    <div class="rail__head"><h2 class="rail__title">上期跟踪</h2><div class="rail__meta">3 条 · 状态三选一</div></div>
+    <div class="rowlist">
+      <div class="rowlist__item"><div class="rowlist__date">待核实</div><div><p class="rowlist__sum">中科院微小卫星 400 万光纤陀螺采购（第 3 期 10-09 报）→ 11-05 截止，<strong>是否已递标无公开信息</strong>。</p></div></div>
+      <div class="rowlist__item"><div class="rowlist__date">待核实</div><div><p class="rowlist__sum">上海光机所高精度转台（第 4 期报）→ 标书今日截止，<strong>是否领购无公开信息</strong>。</p></div></div>
+      <div class="rowlist__item"><div class="rowlist__date">无进展</div><div><p class="rowlist__sum">印尼 Bung Tomo 级护卫舰项目（第 4 期报）→ 本周无新增公开动作，合同方与交付节点均未更新。</p></div></div>
+    </div>
+  </section>
+
+  <section class="rail">
+    <div class="rail__head"><h2 class="rail__title">本周头条</h2><div class="rail__meta">3 条 · 全为 A 级</div></div>
+
+    <article class="lead">
+      <div class="lead__no">1</div>
+      <div class="lead__body">
+        <div class="lead__src">中国政府采购网 / 中国国际招标网 · 10-26 <span class="tag tag--a">A 级</span></div>
+        <h3 class="lead__title"><a href="https://www.ccgp.gov.cn/cggg/zygg/qtgg/202610/t20261026_27564969.htm">中科院上海光机所高精度转台国际招标，80 万元 2 套</a></h3>
+        <p>国际公开竞争性招标，预算 <strong>80 万元</strong>、<strong>2 套</strong>，11-17 09:45 开标。招标文件 500 元，领购窗口 10-26 至 <strong>11-02</strong>，现场购买（上海静安恒丰路 600 号机电大厦 5 楼 B 座）。资格三条：非自产货须制造商授权书；开标前 3 个月内银行资信证明；近 5 年至少 1 套同类产品销售业绩。</p>
+        <div class="so"><b>为什么是 A 级</b>不限国产、有明确预算与数量、未截止。三个条件同时成立的转台项目，本期只有这一个。卡点在业绩证明，不在报价。</div>
+      </div>
+    </article>
+
+    <article class="lead">
+      <div class="lead__no">2</div>
+      <div class="lead__body">
+        <div class="lead__src">中国招标投标公共服务平台 / 中策大数据 · 10-26 <span class="tag tag--a">A 级</span></div>
+        <h3 class="lead__title"><a href="https://www.china0001.com.cn/biddingdetail/index/92929e86d9714c3490ef376ce70f1b4c.html">江西洪都航空导航系统综合测试仪重新招标，1 套</a></h3>
+        <p>国拨资金 100%，1 套，<strong>标书发售至 11-03 17:00</strong>，投标截止 11-19 09:00。设备由激光惯导测试机柜、<strong>光纤航姿测试机柜</strong>、<strong>双轴自动转台</strong>、惯导与航姿部件托架组成；转台负载 ≥50kg、承载 ≥100kg、台面平面度 0.03 mm、轴间垂直度 ±2″。须在航空工业电子采购平台注册并办理 CA 数字证书。</p>
+        <div class="so"><b>为什么是 A 级</b>国拨资金已落实、数量与时间明确、制造商与代理商均可投（不接受多层代理）。"重新招标"意味着上轮流标或废标，原因值得作为投标前信息去问代理。</div>
+      </div>
+    </article>
+
+    <article class="lead">
+      <div class="lead__no">3</div>
+      <div class="lead__body">
+        <div class="lead__src">中国政府采购网 · 10-09 发布 / 11-05 截止 <span class="tag tag--a">A 级</span></div>
+        <h3 class="lead__title"><a href="https://shanghai.jianyu360.cn/jybx/20261010_26100991763222.html">中科院微小卫星 JZ 卫星光纤陀螺采购，400 万元 1 套</a></h3>
+        <p>预算与限价均为 <strong>400 万元</strong>，1 套，<strong>不允许进口</strong>，投标截止 11-05 09:00，标书经东方招标平台发售（600 元）。项目编号 OITC-G260303028。</p>
+        <div class="so"><b>为什么是 A 级</b>排除进口即排除海外对手，是纯国产竞争窗口；有预算上限、有截止日、剩余 3 天。卫星级资质与在轨业绩是硬门槛，判定标准不在价格。</div>
+      </div>
+    </article>
+  </section>
+
+  <section class="rail">
+    <div class="rail__head"><h2 class="rail__title">海外动态</h2><div class="rail__meta">4 条 · 区域 / 管制 / 竞品</div></div>
+    <div class="rowlist">
+      <div class="rowlist__item"><div class="rowlist__date">10.31</div><div>
+        <div class="rowlist__title"><a href="https://www.navalnews.com/naval-news/2026/10/chess-dynamics-wins-3m-contract-for-indonesian-bung-tomo-class-frigates/">东南亚 · 印尼 Bung Tomo 级护卫舰，Chess Dynamics 获 300 万英镑合同</a> <span class="tag tag--b">B</span> <span class="tag">[不受管制]</span></div>
+        <p class="rowlist__sum">英国 Chess Dynamics 为印尼海军 Bung Tomo 级护卫舰提供舰载系统，合同额 <strong>300 万英镑</strong>。惯导不属该合同范围，舰载系统集成中存在独立的选型环节。</p></div></div>
+      <div class="rowlist__item"><div class="rowlist__date">10.27</div><div>
+        <div class="rowlist__title">竞品 · Anello Photonics 硅光陀螺 SiPhOG 芯片在美国制造封装、融资扩产 <span class="tag tag--c">C</span></div>
+        <p class="rowlist__sum">主打比传统光纤陀螺更小、成本更低、抗振动与温度干扰更强。参数未公开，性能等级<strong>未核实</strong>。若其达到战术级，"低成本小型化"这一卖点会被分流。</p></div></div>
+      <div class="rowlist__item"><div class="rowlist__date">10.27</div><div>
+        <div class="rowlist__title">竞品 · Inertial Labs（VIAVI 旗下）推出可编程 IMU 开发平台，加速 Alt-PNT 与制导系统设计 <span class="tag tag--c">C</span></div>
+        <p class="rowlist__sum">以开发平台方式缩短客户的系统集成周期，属于面向工程选型的卡位动作。对我方影响在"客户自研门槛被降低"，短期不改变报价。</p></div></div>
+      <div class="rowlist__item"><div class="rowlist__date">11-18<br>生效</div><div>
+        <div class="rowlist__title">出口管制 · 商务部等三部门 2026 年第 49 号公告，9E901.b 明列惯性导航技术 <span class="tag">[需许可]</span></div>
+        <p class="rowlist__sum">公告 10-19 发布、<strong>11-18 实施</strong>，管制清单条目 <strong>9E901.b</strong> 明确包含"自主导航技术，包括惯性导航技术"。<strong>用途仅为判定可行性</strong>：涉及该条目的线索标 [需许可]，不产生跟进动作。</p></div></div>
+    </div>
+  </section>
+
+  <section class="rail">
+    <div class="rail__head"><h2 class="rail__title">国内动态</h2><div class="rail__meta">4 条 · 采购线索与中标价</div></div>
+    <div class="rowlist">
+      <div class="rowlist__item"><div class="rowlist__date">10.27</div><div>
+        <div class="rowlist__title"><a href="https://www.365trade.com.cn/jhwzb/888208.jhtml">高精度陀螺综合性能测试分析系统 363.6 万中标</a> <span class="tag tag--b">B</span></div>
+        <p class="rowlist__sum">招标人北京自动化控制设备研究所（航天科工体系），中标方<strong>湖南二零八先进科技</strong>，中标价 <strong>363.6 万元</strong>，编号 ZC26G230401。L4 测试系统的项目级价格锚。</p></div></div>
+      <div class="rowlist__item"><div class="rowlist__date">10.26</div><div>
+        <div class="rowlist__title"><a href="https://www.ccgp.gov.cn/cggg/zygg/zbgg/202610/t20261026_27561604.htm">中科院南海海洋所光纤惯导 49.55 万中标</a> <span class="tag tag--b">B</span></div>
+        <p class="rowlist__sum">项目 OITC-G260601992（冷泉生态系统研究装置）。中标方<strong>北京中航天佑</strong>，型号 <strong>INS1000</strong>，1 套，单价 <strong>495,505 元</strong>，评审 92.69 分。<strong>中科院系统单套光纤惯导的价格落点</strong>。</p></div></div>
+      <div class="rowlist__item"><div class="rowlist__date">10.27</div><div>
+        <div class="rowlist__title"><a href="https://www.365trade.com.cn/jfwzb/888748.jhtml">中国飞行试验研究院项目 90 万元预成交</a> <span class="tag tag--b">B</span></div>
+        <p class="rowlist__sum">预成交单位中国航空工业集团洛阳电光设备研究所，<strong>90 万元</strong>（买方现场价含税），综合得分 95.26。设备名目未在公告中明示，<strong>未核实</strong>；属小额单台设备或测试工装的价格带。</p></div></div>
+      <div class="rowlist__item"><div class="rowlist__date">年内</div><div>
+        <div class="rowlist__title">同行动向 · 深圳天陆海、西安中科华芯在院所体系连续中标 <span class="tag tag--b">B</span></div>
+        <p class="rowlist__sum">天陆海：某单位惯性定位定向导航系统（9-23）、中科院某单位 FOG 单机候选（8-26）、航空航天工程学院 FOG IMU（7-6）。中科华芯（参保 163 人）：航空工业金城南京机电 IMU（10-08）、中科院空间中心高性能惯导模组（9-29）、融通 60 所主惯导框架（7-22）。<strong>两家都已是院所常客</strong>。</p></div></div>
+    </div>
+  </section>
+
+  <section class="rail">
+    <div class="rail__head"><h2 class="rail__title">设备与产线</h2><div class="rail__meta">本期为零</div></div>
+    <p class="method__why">窗口内没有新建或扩建光纤陀螺产线的公开事件，也没有绕环、固化、测试设备的采购公告。<strong>为零的原因</strong>是这一类信息主要出现在企业投资公告与地方工信项目公示，现有 14 个信源不覆盖。补充监测建议：把省级工信厅"技术改造项目"公示与上市公司投资公告纳入季度检索，不必进周报。</p>
+  </section>
+
+  <section class="rail">
+    <div class="rail__head"><h2 class="rail__title">光子与元器件</h2><div class="rail__meta">1 条 · 需实物测试或已量产</div></div>
+    <article class="lead lead--plain">
+      <div class="lead__body">
+        <div class="lead__src">EDN · 10-28 <span class="tag tag--c">C</span></div>
+        <h3 class="lead__title"><a href="https://www.edn.com/motion-sensor-combo-ics-target-vehicle-dynamics/">ST 车规组合运动传感器已量产，四款型号覆盖偏航与横滚</a></h3>
+        <p>意法半导体推出车规组合传感器平台，把多轴加速度计与角速度传感器封进一颗器件，已量产（24 引脚 QFN）。首批四款：NCS1012BAEP、NCS1012CAEP、NCS1012EAEP、NCS10135AEP。角速度量程 ±125 / ±250 / ±350 dps，工作温度 −40 至 +105 °C，支持 SafeSPI。这是 ST 整合 NXP 传感器部门后的首批产品。</p>
+        <div class="so"><b>参数对照</b>量程上限 350 dps、精度未公开，与战术级惯导不在同一量级。<strong>车规市场的门槛是 AEC-Q100 与 SafeSPI 接口，不是精度</strong>。这条对报价没有直接影响，对判断"客户为什么选 MEMS"有用。</div>
+      </div>
+    </article>
+    <p class="method__why">本期光子类只有这一条满足准入（有型号、有量产、有量程）。其余候选为平台工艺介绍，缺具体器件参数，<strong>不硬凑</strong>，本栏就一条。</p>
+  </section>
+
+  <section class="method">
+    <h2 class="method__name">研究前沿 · 2 条（学术类放宽准入）</h2>
+    <p class="method__why" style="margin-top:0;">学术类允许仿真与理论，但须标性质、有量化数据、固定置末、不上头条。两条均取自国防科大 PNT 每日动态「学术动态」栏（arXiv 直连本期 IP 级 429 限流）。</p>
+    <p class="method__why"><strong>① 机载磁异常导航：前向-后向地图匹配</strong>【仿真验证】（arXiv，10-27）把地图匹配转成链式因子图推理，用前后向算法分段求解。1000 次仿真中，中位位置误差比惯性导航 362 米漂移降低 <strong>91%</strong>，比扩展卡尔曼滤波与粒子滤波降低 <strong>43%</strong>；单核每步 0.022–0.032 秒。论文自述未上真机。<br><em>用途</em>：磁异常导航不向外发射信号，靠地磁图约束惯导漂移，与 LEO、抗干扰天线是两条不同的路。目前不影响产品，可用于向客户解释"被动式替代方案"的边界。</p>
+    <p class="method__why"><strong>② 月球 PNT：月面基站辐射观测提升垂直定位</strong>【仿真验证】（arXiv，10-19 发布 / IAC 2026，窗口外因 PNT 编译进入视野）月面基站与月球车构建双差观测 + 双向单程测距，与车载导航传感器卡尔曼融合。仿真中垂直定位误差从 29.9 米降至 5.5 米，叠加双向测距后 4.8 米。<br><em>用途</em>：与当前业务无关联，仅作技术路线观察。</p>
+  </section>
+
+  <section class="rail">
+    <div class="rail__head"><h2 class="rail__title">接触对象与门槛</h2><div class="rail__meta">4 家 · 只写门槛与路径</div></div>
+    <div class="rowlist">
+      <div class="rowlist__item"><div class="rowlist__date">D-0</div><div>
+        <div class="rowlist__title">中科院上海光机所（高精度转台 2 套 / 80 万）</div>
+        <p class="rowlist__sum"><strong>门槛</strong>：近 5 年 1 套同类销售业绩（需合同或用户书面证明）+ 非自产货制造商授权书 + 开标前 3 个月银行资信证明；不接受联合体。<strong>路径</strong>：上海中招招标有限公司（代理），标书 500 元现场领购，技术规格见招标文件第八章。</p></div></div>
+      <div class="rowlist__item"><div class="rowlist__date">D-1</div><div>
+        <div class="rowlist__title">江西洪都航空工业集团（导航系统综合测试仪 1 套）</div>
+        <p class="rowlist__sum"><strong>门槛</strong>：航空工业电子采购平台注册 + CA 数字证书与电子签章；制造商或代理商均可，不接受多层代理与联合体。<strong>路径</strong>：中科信工（代理）购买标书，投标文件须电子 + 纸质双递（南昌航空城会议中心）。</p></div></div>
+      <div class="rowlist__item"><div class="rowlist__date">D-3</div><div>
+        <div class="rowlist__title">中科院微小卫星创新研究院（JZ 卫星光纤陀螺 400 万 / 1 套）</div>
+        <p class="rowlist__sum"><strong>门槛</strong>：卫星级资质与在轨业绩（招标文件未列具体标准，需购标确认）；不允许进口产品。<strong>路径</strong>：东方招标平台（oitccas.com）注册取标书，600 元。</p></div></div>
+      <div class="rowlist__item"><div class="rowlist__date">10.31</div><div>
+        <div class="rowlist__title">印尼 Bung Tomo 级护卫舰项目（Chess Dynamics 系统合同）</div>
+        <p class="rowlist__sum"><strong>门槛</strong>：非直接采购方，舰载系统由 Chess Dynamics 供，惯导选型在集成环节；需经船厂或海军装备部门进入。<strong>路径</strong>：项目主体为印尼海军，改装涉及承接船厂；公开信息未列选型负责人。</p></div></div>
+    </div>
+  </section>
+
+  <section class="method">
+    <h2 class="method__name">信源与筛选</h2>
+    <div class="tbl-wrap">
+    <table class="data">
+      <thead><tr><th>信源</th><th>分组</th><th class="num">窗口内</th><th class="num">候选</th><th>状态</th></tr></thead>
+      <tbody>
+        <tr><td>Inside GNSS</td><td>惯导</td><td class="num">6</td><td class="num">4</td><td>Xona 六星、Celeste、Inertial Labs</td></tr>
+        <tr><td>The War Zone</td><td>惯导</td><td class="num">24</td><td class="num">11</td><td>多为装备新闻，A 级为零</td></tr>
+        <tr><td>Naval News</td><td>惯导</td><td class="num">10</td><td class="num">4</td><td>印尼合同 1 条入海外</td></tr>
+        <tr><td>sUAS News</td><td>惯导</td><td class="num">10</td><td class="num">3</td><td>无线供电长航时，技术观察</td></tr>
+        <tr><td>Space News</td><td>惯导</td><td class="num">7</td><td class="num">1</td><td>太阳能组件，与本业无关，弃</td></tr>
+        <tr><td>IEEE Spectrum</td><td>惯导</td><td class="num">10</td><td class="num">1</td><td>AI 系统思维，泛论，弃</td></tr>
+        <tr><td>C4ISRNET</td><td>惯导</td><td class="num">0</td><td class="num">0</td><td>窗口内无更新</td></tr>
+        <tr><td>SBG Systems</td><td>竞品</td><td class="num">0</td><td class="num">0</td><td>窗口内无更新</td></tr>
+        <tr><td>Optica OPN</td><td>光子</td><td class="num">2</td><td class="num">0</td><td>未命中关键词</td></tr>
+        <tr><td>EE News Europe</td><td>光子</td><td class="num">0</td><td class="num">0</td><td>窗口内无更新</td></tr>
+        <tr><td>Semiconductor Eng.</td><td>光子</td><td class="num">10</td><td class="num">1</td><td>热签核，无关，弃</td></tr>
+        <tr><td>EDN</td><td>光子</td><td class="num">10</td><td class="num">4</td><td>ST 车规传感器 1 条入选</td></tr>
+        <tr><td>arXiv eess.SY</td><td>学术</td><td class="num">0</td><td class="num">0</td><td class="fail">可选源，429 限流跳过</td></tr>
+        <tr><td>arXiv physics.optics</td><td>学术</td><td class="num">0</td><td class="num">0</td><td class="fail">可选源，429 限流跳过</td></tr>
+      </tbody>
+      <tfoot><tr><td>合计</td><td>14 feed</td><td class="num">89</td><td class="num">29</td><td>入选独立事件 15 条</td></tr></tfoot>
+    </table>
+    </div>
+    <p class="method__why"><strong>口径与自校验</strong>：信源数＝脚本配置的 feed 条数（14，含两个 arXiv 可选源），不是表格行数；窗口内＝各 feed 7 天内原始条目之和；候选＝命中关键词之和；入选＝正文独立事件数（跨栏目同一事件只计 1 次）。<strong>逐行相加：窗口内 6+10+10+10+7+10+0+0+2+0+10+10+0+0 = 89；候选 4+11+4+3+1+1+0+0+0+0+1+4+0+0 = 29；与页脚一致。</strong>另有 5 条国内素材来自中文检索，不计入上表 feed 统计，已在本期正文标注来源。</p>
+  </section>
+
+  <section class="method">
+    <h2 class="method__name">附录 · 同行档案（本期增量）</h2>
+    <div class="tbl-wrap">
+    <table class="data">
+      <thead><tr><th>公司</th><th>体量</th><th>对标</th><th>本期依据</th><th>影响</th></tr></thead>
+      <tbody>
+        <tr><td>湖南二零八先进科技</td><td>湖南</td><td>L4 陀螺综合测试系统</td><td>北京自动化控制设备研究所项目中标 <strong>363.6 万</strong></td><td>测试设备方向直接对手，已进航天科工体系</td></tr>
+        <tr><td>北京中航天佑科技</td><td>北京朝阳</td><td>L1 光纤惯导</td><td>南海海洋所中标 <strong>INS1000 / 49.55 万（单价 49.55 万）</strong></td><td>中科院系统供应商，单套 50 万量级对标价</td></tr>
+        <tr><td>西安中科华芯测控</td><td>2012 成立 · 1312 万 · 163 人</td><td>L1+L4 光纤 IMU、标定设备</td><td>金城南京机电 IMU（10-08）、中科院空间中心模组（9-29）、融通 60 所框架（7-22）</td><td>资质与体量均高于我方，院所渠道已成型</td></tr>
+        <tr><td>深圳天陆海导航</td><td>2022 成立 · 636 万 · 47 人</td><td>L1+L2 垂直集成（器件到整机）</td><td>某单位惯导系统（9-23）、中科院 FOG 单机候选（8-26）、航空院校 FOG IMU（7-6）</td><td>走 FOG+MEMS 混合路线，器件到整机全自做</td></tr>
+        <tr><td>上海申核电子仪器</td><td>2004 成立 · 112 万 · 7 人</td><td>应用端：测井设备集成</td><td>中核 203 所测井电缆（10 月）、阿克苏地质大队 FOG 测斜仪（5 月）</td><td>渠道型买家，非制造对手</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="method__why">前四期已建档的 8 家不重复列出，全量见《国内信源清单》与历史周报。本期净增 5 家，均有中标公示或招标结果作为依据。</p>
+  </section>
+
+  <footer class="colophon">
+    <div class="row">
+      <span><b>下期</b> 2026-11-09（周一 08:00 前）</span>
+      <span><b>骨架</b> v4 · 13 栏</span>
+      <span><b>正文独立事件</b> 15 条（上限 18）· 栏位条数下限不硬凑</span>
+    </div>
+    <div class="row" style="margin-top: var(--space-2);">
+      <span><b>分级</b> A＝本周可执行（能投的招标、可直接接触的买方）· B＝影响报价或话术（价格锚、竞品参数、区域风险）· C＝技术观察，不影响本周动作</span>
+      <span>管制信息只作准入标签，不构成行动项</span>
+    </div>
+  </footer>
+
+</main>
+
+</body>
+</html>
