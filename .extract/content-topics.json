@@ -1,176 +1,744 @@
 {
-  "nextId": 31,
+  "nextId": 64,
   "topics": [
-    {"id": 1, "slug": "fog-vs-mems-imu", "used": true, "published": "2026-10-16"},
-    {"id": 2, "slug": "how-fiber-optic-gyroscope-works", "used": true, "published": "2026-10-16"},
-    {"id": 3, "slug": "north-seeker-vs-gnss-heading", "used": true, "published": "2026-10-16"},
     {
-      "id": 4, "slug": "tactical-vs-navigation-grade-imu", "used": true, "published": "2026-10-17",
+      "id": 1,
+      "slug": "fog-vs-mems-imu",
+      "used": true,
+      "published": "2026-10-16"
+    },
+    {
+      "id": 2,
+      "slug": "how-fiber-optic-gyroscope-works",
+      "used": true,
+      "published": "2026-10-16"
+    },
+    {
+      "id": 3,
+      "slug": "north-seeker-vs-gnss-heading",
+      "used": true,
+      "published": "2026-10-16"
+    },
+    {
+      "id": 4,
+      "slug": "tactical-vs-navigation-grade-imu",
+      "used": true,
+      "published": "2026-10-17",
       "title": "Tactical vs Navigation-Grade IMU: What the Spec Numbers Mean",
       "targetKeywords": "tactical grade imu, navigation grade imu, imu accuracy classes",
       "outline": "解释 IMU 精度分档逻辑：以零偏稳定性为主轴（战术级 ~1-10 °/h vs 导航级 ~0.01-0.1 °/h），讲清各档位对应的应用平台（无人机/吊舱/舰船/导弹），给出按任务漂移预算反推精度档位的方法。内链：fog-gyroscopes 分类、imu 分类、LKF-MSU105 与 LKF-FS60 详情页。",
-      "relatedProducts": ["lkf-msu105", "lkf-fs60", "lkf-fsi301"],
+      "relatedProducts": [
+        "lkf-msu105",
+        "lkf-fs60",
+        "lkf-fsi301"
+      ],
       "relatedCategory": "imu"
     },
     {
-      "id": 5, "slug": "what-is-angle-random-walk", "used": true, "published": "2026-10-18",
+      "id": 5,
+      "slug": "what-is-angle-random-walk",
+      "used": true,
+      "published": "2026-10-18",
       "title": "What Is Angle Random Walk (ARW) in IMU Datasheets?",
       "targetKeywords": "angle random walk, arw imu, arw deg/hr",
       "outline": "ARW 定义（°/√h）、与零偏稳定性的关系（Allan 方差曲线的斜率段）、对导航误差增长的长期影响、读表方法。内链：imu 分类、LKF-FS60 详情页。",
-      "relatedProducts": ["lkf-fs60"],
+      "relatedProducts": [
+        "lkf-fs60"
+      ],
       "relatedCategory": "imu"
     },
     {
-      "id": 6, "slug": "gnss-denied-navigation-solutions", "used": true, "published": "2026-10-19",
+      "id": 6,
+      "slug": "gnss-denied-navigation-solutions",
+      "used": true,
+      "published": "2026-10-19",
       "title": "GNSS-Denied Navigation: 5 Approaches Compared",
       "targetKeywords": "gnss denied navigation, navigation without gps, gps jamming navigation",
       "outline": "五种 GNSS 拒止方案对比：纯惯导（FOG）/寻北仪+惯导/地形匹配/视觉/磁导航，各自适用时长与环境，指出惯导是拒止环境的骨干。内链：inertial-navigation-systems 分类、LKF-FSI301、LKF-MSN300。",
-      "relatedProducts": ["lkf-fsi301", "lkf-msn300"],
+      "relatedProducts": [
+        "lkf-fsi301",
+        "lkf-msn300"
+      ],
       "relatedCategory": "inertial-navigation-systems"
     },
     {
-      "id": 7, "slug": "imu-for-uav-guide", "used": true, "published": "2026-10-20",
+      "id": 7,
+      "slug": "imu-for-uav-guide",
+      "used": true,
+      "published": "2026-10-20",
       "title": "Choosing an IMU for UAV Applications: A Practical Guide",
       "targetKeywords": "imu for uav, uav inertial navigation, drone imu sensor",
       "outline": "无人机场景 SWaP 敏感：小型多旋翼（MEMS IMU 即可）/中型固定翼（战术 MEMS）/长航时与 GNSS 拒止任务（FOG）。振动隔离、功耗预算、GNSS 辅助架构。内链：LKF-MSU105、LKF-MSU204B、imu 分类。",
-      "relatedProducts": ["lkf-msu105", "lkf-msu204b"],
+      "relatedProducts": [
+        "lkf-msu105",
+        "lkf-msu204b"
+      ],
       "relatedCategory": "imu"
     },
     {
-      "id": 8, "slug": "how-mems-accelerometer-works", "used": true, "published": "2026-10-21",
+      "id": 8,
+      "slug": "how-mems-accelerometer-works",
+      "used": true,
+      "published": "2026-10-21",
       "title": "How MEMS Accelerometers Work: From Capacitive Sensing to Navigation",
       "targetKeywords": "mems accelerometer working principle, capacitive accelerometer",
       "outline": "电容敏感原理、质量块-弹簧结构、量程与分辨率的权衡、为什么加计静止时也能测重力倾角。内链：accelerometers 分类、LKF-MXD/LKF-MXH 详情页。",
-      "relatedProducts": ["lkf-mxd", "lkf-mxh"],
+      "relatedProducts": [
+        "lkf-mxd",
+        "lkf-mxh"
+      ],
       "relatedCategory": "accelerometers"
     },
     {
-      "id": 9, "slug": "fiber-coil-winding-process", "used": true, "published": "2026-10-21",
+      "id": 9,
+      "slug": "fiber-coil-winding-process",
+      "used": true,
+      "published": "2026-10-21",
       "title": "Inside Fiber Coil Winding: Why Precision Winding Defines FOG Performance",
       "targetKeywords": "fiber coil winding, fog coil winding machine, fiber optic coil manufacturing",
       "outline": "四极/八极/十六极对称绕制为何影响 Shupe 误差、张力控制与排线精度、自动绕环机 vs 人工。内链：fiber-optic 分类、LKF-RH16、LKF-RH16A 详情页。",
-      "relatedProducts": ["lkf-rh16", "lkf-rh16a"],
+      "relatedProducts": [
+        "lkf-rh16",
+        "lkf-rh16a"
+      ],
       "relatedCategory": "fiber-optic"
     },
     {
-      "id": 10, "slug": "north-seeking-for-drilling", "used": true, "published": "2026-10-22",
+      "id": 10,
+      "slug": "north-seeking-for-drilling",
+      "used": true,
+      "published": "2026-10-22",
       "title": "North-Finding for Directional Drilling: Why Gyroscopic Surveying Wins Underground",
       "targetKeywords": "north seeking drilling, gyro surveying drilling, downhole orientation",
       "outline": "钻井环境无 GNSS、磁干扰（钻杆/矿体）使磁力计失效，陀螺寻北是唯一可靠方位源；MEMS 寻北仪的尺寸与成本让单点测量普及。内链：LKF-MSN300、LKF-MSN302、imu 分类。",
-      "relatedProducts": ["lkf-msn300", "lkf-msn302"],
+      "relatedProducts": [
+        "lkf-msn300",
+        "lkf-msn302"
+      ],
       "relatedCategory": "imu"
     },
     {
-      "id": 11, "slug": "what-is-bias-stability", "used": true, "published": "2026-10-23",
+      "id": 11,
+      "slug": "what-is-bias-stability",
+      "used": true,
+      "published": "2026-10-23",
       "title": "Bias Stability Explained: The Single Number That Defines Your Gyro",
       "targetKeywords": "gyro bias stability, bias stability explained, deg/hr bias",
       "outline": "零偏稳定性定义、Allan 方差平台值、1σ 与平滑时间的标注惯例、按任务时长反推所需的零偏稳定性。与 #5 ARW 互补（本篇聚焦 bias）。内链：fog-gyroscopes 分类、LKF-FS60。",
-      "relatedProducts": ["lkf-fs60"],
+      "relatedProducts": [
+        "lkf-fs60"
+      ],
       "relatedCategory": "fog-gyroscopes"
     },
     {
-      "id": 12, "slug": "single-axis-vs-triaxis-gyro", "used": true, "published": "2026-10-24",
+      "id": 12,
+      "slug": "single-axis-vs-triaxis-gyro",
+      "used": true,
+      "published": "2026-10-24",
       "title": "Single-Axis vs Dual-Axis vs Tri-Axis Gyroscope: Which Configuration Do You Need?",
       "targetKeywords": "single axis gyroscope, triaxial gyro, dual axis gyro application",
       "outline": "按应用自由度选轴数：单轴（方位/速率反馈）、双轴（双轴稳定平台）、三轴（全姿态 IMU）。成本与冗余考量。内链：fog-gyroscopes 分类、LKF-FS60（单轴）、LKF-F2X64（双轴）、LKF-F3G20（三轴）。",
-      "relatedProducts": ["lkf-fs60", "lkf-f2x64", "lkf-f3g20"],
+      "relatedProducts": [
+        "lkf-fs60",
+        "lkf-f2x64",
+        "lkf-f3g20"
+      ],
       "relatedCategory": "fog-gyroscopes"
     },
     {
-      "id": 13, "slug": "gyrocompass-vs-magnetic-compass", "used": true, "published": "2026-10-25",
+      "id": 13,
+      "slug": "gyrocompass-vs-magnetic-compass",
+      "used": true,
+      "published": "2026-10-25",
       "title": "Gyrocompass vs Magnetic Compass: Heading Sources Compared",
       "targetKeywords": "gyrocompass vs magnetic compass, north seeking sensor, true north heading",
       "outline": "磁罗经受磁干扰/局部异常影响大且指磁北，陀螺寻北指真北且免疫磁场；精度与成本对比；现代组合（磁+惯导互补校准）。内链：LKF-MSN300、LKF-MSU105、imu 分类。",
-      "relatedProducts": ["lkf-msn300", "lkf-msu105"],
+      "relatedProducts": [
+        "lkf-msn300",
+        "lkf-msu105"
+      ],
       "relatedCategory": "imu"
     },
     {
-      "id": 14, "slug": "ins-vs-imu-difference", "used": true, "published": "2026-10-26",
+      "id": 14,
+      "slug": "ins-vs-imu-difference",
+      "used": true,
+      "published": "2026-10-26",
       "title": "IMU vs INS: What Is the Difference and Which Do You Need?",
       "targetKeywords": "imu vs ins, inertial measurement unit vs navigation system, ins gnss",
       "outline": "IMU=传感器（角速度+比力），INS=IMU+导航解算（+GNSS）。架构图示、误差传播差异、选型问题清单（要不要位置输出？GNSS 可用吗？）。内链：imu 分类、inertial-navigation-systems 分类、LKF-MSU105 vs LKF-MSI105。",
-      "relatedProducts": ["lkf-msu105", "lkf-msi105"],
+      "relatedProducts": [
+        "lkf-msu105",
+        "lkf-msi105"
+      ],
       "relatedCategory": "inertial-navigation-systems"
     },
     {
-      "id": 15, "slug": "vibration-effects-on-imu", "used": true, "published": "2026-10-27",
+      "id": 15,
+      "slug": "vibration-effects-on-imu",
+      "used": true,
+      "published": "2026-10-27",
       "title": "How Vibration Affects IMU Performance (and How to Design Against It)",
       "targetKeywords": "imu vibration, vibration rectification, imu mounting",
       "outline": "振动整流误差机理、随机振动引起的 ARW 恶化、机械隔离设计、全温标定的意义。内链：fog-gyroscopes 分类（FOG 无运动质量优势）、LKF-FS60、imu 分类。",
-      "relatedProducts": ["lkf-fs60"],
+      "relatedProducts": [
+        "lkf-fs60"
+      ],
       "relatedCategory": "fog-gyroscopes"
     },
     {
-      "id": 16, "slug": "thin-pm-fiber-technology", "used": true, "published": "2026-10-28",
+      "id": 16,
+      "slug": "thin-pm-fiber-technology",
+      "used": true,
+      "published": "2026-10-28",
       "title": "Why 135μm Polarization-Maintaining Fiber Changed FOG Design",
       "targetKeywords": "polarization maintaining fiber, thin pm fiber, 135 um pm fiber",
       "outline": "细径保偏光纤如何在同体积下提升线圈面积与灵敏度、降低重量；制造难点（涂层/一致性）；垂直整合（自产光纤）的意义。内链：fiber-optic 分类、LKF-PM、LKF-FS60。",
-      "relatedProducts": ["lkf-pm", "lkf-fs60"],
+      "relatedProducts": [
+        "lkf-pm",
+        "lkf-fs60"
+      ],
       "relatedCategory": "fiber-optic"
     },
     {
-      "id": 17, "slug": "rtk-gnss-explained", "used": true, "published": "2026-10-29",
+      "id": 17,
+      "slug": "rtk-gnss-explained",
+      "used": true,
+      "published": "2026-10-29",
       "title": "RTK GNSS Explained: Why Centimeter Position Changes IMU Selection",
       "targetKeywords": "rtk gnss, rtk ins, centimeter level positioning",
       "outline": "RTK 原理简述、厘米级位置对惯导的反馈校准意义：RTK 越准，可容忍的 IMU 档位越低（MEMS+RTK 组合方案崛起）。内链：LKF-MSU105（RTK 0.02+1ppm）、inertial-navigation-systems 分类。",
-      "relatedProducts": ["lkf-msu105"],
+      "relatedProducts": [
+        "lkf-msu105"
+      ],
       "relatedCategory": "inertial-navigation-systems"
     },
     {
-      "id": 18, "slug": "marine-inertial-navigation", "used": true, "published": "2026-10-30",
+      "id": 18,
+      "slug": "marine-inertial-navigation",
+      "used": true,
+      "published": "2026-10-30",
       "title": "Inertial Navigation for Marine Vessels: Requirements and Solutions",
       "targetKeywords": "marine inertial navigation, ship ins, marine gyrocompass",
       "outline": "海上任务特点（长航时无 GNSS 拒止场景：近岸干扰/军事需求）、FOG 组合导航的优势、双天线 GNSS+惯导混合。内链：inertial-navigation-systems 分类、LKF-FSI301、LKF-FS300（如有）。",
-      "relatedProducts": ["lkf-fsi301"],
+      "relatedProducts": [
+        "lkf-fsi301"
+      ],
       "relatedCategory": "inertial-navigation-systems"
     },
     {
-      "id": 19, "slug": "antenna-stabilization-sensors", "used": true, "published": "2026-10-31",
+      "id": 19,
+      "slug": "antenna-stabilization-sensors",
+      "used": true,
+      "published": "2026-10-31",
       "title": "Sensor Selection for Antenna and Payload Stabilization",
       "targetKeywords": "antenna stabilization, gimbal stabilization sensor, satcom on the move",
       "outline": "动中通/吊舱稳定的传感需求：带宽、噪声、振动整流；双轴陀螺组合与 MEMS IMU 的配置对比。内链：LKF-MBG100A、LKF-FS60、fog-gyroscopes 分类。",
-      "relatedProducts": ["lkf-mbg100a", "lkf-fs60"],
+      "relatedProducts": [
+        "lkf-mbg100a",
+        "lkf-fs60"
+      ],
       "relatedCategory": "fog-gyroscopes"
     },
     {
-      "id": 20, "slug": "surveying-ins-guide", "used": true, "published": "2026-11-01",
+      "id": 20,
+      "slug": "surveying-ins-guide",
+      "used": true,
+      "published": "2026-11-01",
       "title": "Inertial Systems for Surveying and Mapping: From PPK to Real-Time",
       "targetKeywords": "surveying ins, mobile mapping ins, inertial surveying",
       "outline": "移动测绘的定位定姿需求、PPK 后处理 vs 实时 RTK+INS、MEMS 组合导航的性价比方案。内链：LKF-MSU105、LKF-MSI105、imu 分类。",
-      "relatedProducts": ["lkf-msu105", "lkf-msi105"],
+      "relatedProducts": [
+        "lkf-msu105",
+        "lkf-msi105"
+      ],
       "relatedCategory": "imu"
     },
     {
-      "id": 21, "slug": "calibration-of-inertial-sensors", "used": true, "published": "2026-11-02",
+      "id": 21,
+      "slug": "calibration-of-inertial-sensors",
+      "used": true,
+      "published": "2026-11-02",
       "title": "How Inertial Sensors Are Calibrated: From Rate Table to Field",
       "targetKeywords": "imu calibration, inertial sensor calibration, rate table calibration",
       "outline": "标定流程：温箱/速率转台/位置翻滚试验、误差模型系数（零偏/标度因数/正交误差）、出厂全温标定的价值。内链：fiber-optic 分类（测试设备 LKF-FCTS、LKF-DT300A、LKF-3FDT550WK）。",
-      "relatedProducts": ["lkf-dt300a", "lkf-3fdt550wk"],
+      "relatedProducts": [
+        "lkf-dt300a",
+        "lkf-3fdt550wk"
+      ],
       "relatedCategory": "fiber-optic"
     },
     {
-      "id": 22, "slug": "rugged-imu-design", "used": true, "published": "2026-11-03",
+      "id": 22,
+      "slug": "rugged-imu-design",
+      "used": true,
+      "published": "2026-11-03",
       "title": "Designing IMUs for Harsh Environments: Shock, Temperature and Reliability",
       "targetKeywords": "rugged imu, high shock imu, harsh environment imu",
       "outline": "抗冲击设计（MEMS 1000g+ vs FOG 隔振）、宽温标定（-40~85）、密封与连接器可靠性。内链：mems-gyroscopes 分类、LKF-MTG200、imu 分类。",
-      "relatedProducts": ["lkf-mtg200"],
+      "relatedProducts": [
+        "lkf-mtg200"
+      ],
       "relatedCategory": "mems-gyroscopes"
     },
     {
-      "id": 23, "slug": "mems-north-seeker-technology", "used": false,
+      "id": 23,
+      "slug": "mems-north-seeker-technology",
+      "used": false,
       "title": "How MEMS North Seekers Find True North Without GNSS",
       "targetKeywords": "mems north seeker, gyroscopic north finding, mems gyrocompass",
       "outline": "用 MEMS 陀螺感测地球自转分量寻北的原理、静态多位置测量、精度与纬度/测量时长的关系。内链：LKF-MSN300、LKF-MSN300H、LKF-MSN302、imu 分类。",
-      "relatedProducts": ["lkf-msn300", "lkf-msn300h", "lkf-msn302"],
+      "relatedProducts": [
+        "lkf-msn300",
+        "lkf-msn300h",
+        "lkf-msn302"
+      ],
       "relatedCategory": "imu"
     },
     {
-      "id": 24, "slug": "vertical-integration-inertial-manufacturing", "used": false,
+      "id": 24,
+      "slug": "vertical-integration-inertial-manufacturing",
+      "used": false,
       "title": "Why Vertical Integration Matters in Inertial Sensor Manufacturing",
       "targetKeywords": "vertical integration manufacturing, inertial sensor manufacturer, fog manufacturer",
       "outline": "从光纤拉丝/绕环/镀膜到整表标定的全链自控：质量一致性、定制响应速度、成本结构；对比外购组装模式。内链：about 页、LKF-RH16、LKF-FS60。",
-      "relatedProducts": ["lkf-rh16", "lkf-fs60"],
+      "relatedProducts": [
+        "lkf-rh16",
+        "lkf-fs60"
+      ],
       "relatedCategory": "fiber-optic"
+    },
+    {
+      "id": 31,
+      "slug": "fiber-coil-quadrupole-winding-pattern",
+      "used": false,
+      "title": "Quadrupole, Quadrupole-8, Hexadecapole: Which Winding Pattern for Your Coil",
+      "targetKeywords": "quadrupole winding pattern, fiber coil winding pattern, hexadecapole winding, fog coil design",
+      "outline": "四极/八极/十六极绕法各自抑制什么、如何选；对比表：绕法 vs 对称性 vs 工艺难度。内链：绕环机 RH16/RH04。",
+      "relatedProducts": [
+        "lkf-rh16",
+        "lkf-rh04"
+      ],
+      "relatedCategory": "fiber-optic"
+    },
+    {
+      "id": 32,
+      "slug": "fiber-coil-symmetric-winding-shupe-effect",
+      "used": false,
+      "title": "How Symmetric Winding Cancels the Shupe Effect in FOG Coils",
+      "targetKeywords": "shupe effect fog, symmetric winding, thermal phase error, fiber coil design",
+      "outline": "对称绕制如何抵消温度梯度引起的 Shupe 相位误差，给出温度斜坡下的直观解释。内链：RH16A、FS60。",
+      "relatedProducts": [
+        "lkf-rh16a",
+        "lkf-fs60"
+      ],
+      "relatedCategory": "fiber-optic"
+    },
+    {
+      "id": 33,
+      "slug": "fiber-coil-length-vs-bias",
+      "used": false,
+      "title": "Coil Length vs Bias Performance: Where Extra Fiber Stops Helping",
+      "targetKeywords": "fog coil length, fiber length vs sensitivity, coil diameter tradeoff, fog design",
+      "outline": "光纤长度/圈径与灵敏度、零偏的关系，说明超过某个长度后收益递减的原因（损耗、Shupe、成本）。内链：FS60、FS98H。",
+      "relatedProducts": [
+        "lkf-fs60",
+        "lkf-fs98h"
+      ],
+      "relatedCategory": "fog-gyroscopes"
+    },
+    {
+      "id": 34,
+      "slug": "fiber-coil-winding-tension-control",
+      "used": false,
+      "title": "Winding Tension Control in FOG Coils: What the Datasheet Does Not Say",
+      "targetKeywords": "coil winding tension, tension control fog, fiber winding quality, fog coil manufacturing",
+      "outline": "张力波动如何改变光纤应力分布并体现在零偏温漂上；张力控制的工程手段。内链：RH16、UV500 绕环胶。",
+      "relatedProducts": [
+        "lkf-rh16",
+        "lkf-uv500"
+      ],
+      "relatedCategory": "fiber-optic"
+    },
+    {
+      "id": 35,
+      "slug": "fiber-coil-bobbin-material",
+      "used": false,
+      "title": "Bobbin Material for FOG Coils: Thermal Expansion vs Mass",
+      "targetKeywords": "fog coil bobbin, bobbin material, thermal expansion coil, fiber coil design",
+      "outline": "骨架材料热膨胀系数与质量对零偏温漂、启动时间的影响；铝/钛/复合材料对比。内链：RH16、FS80。",
+      "relatedProducts": [
+        "lkf-rh16",
+        "lkf-fs80"
+      ],
+      "relatedCategory": "fiber-optic"
+    },
+    {
+      "id": 36,
+      "slug": "fiber-coil-glue-selection",
+      "used": false,
+      "title": "Choosing Coil Adhesive: UV-Cure vs Epoxy for Fiber Coils",
+      "targetKeywords": "fiber coil adhesive, uv cure adhesive fog, epoxy coil bonding, coil reliability",
+      "outline": "UV 固化胶与双组份环氧在模量、操作时间、低温附加损耗上的差异与选型判据。内链：UV500/UV100/H01。",
+      "relatedProducts": [
+        "lkf-uv500",
+        "lkf-uv100",
+        "lkf-h01"
+      ],
+      "relatedCategory": "fiber-optic"
+    },
+    {
+      "id": 37,
+      "slug": "pm-fiber-beat-length-selection",
+      "used": false,
+      "title": "Beat Length: Choosing PM Fiber for 1310 nm vs 1550 nm",
+      "targetKeywords": "pm fiber beat length, beat length 1310, panda fiber selection, pm fiber specification",
+      "outline": "拍长与双折射、串音的关系，1310nm 与 1550nm 选型差异；给判据表。内链：PM 绕环/波导两款。",
+      "relatedProducts": [
+        "lkf-pm-coil-winding",
+        "lkf-pm-waveguide"
+      ],
+      "relatedCategory": "fiber-optic"
+    },
+    {
+      "id": 38,
+      "slug": "pm-fiber-coil-grade-vs-waveguide-grade",
+      "used": false,
+      "title": "Coil-Grade vs Waveguide-Grade Panda Fiber: What Actually Changes",
+      "targetKeywords": "coil grade pm fiber, waveguide grade pm fiber, panda fiber grades, pm fiber selection",
+      "outline": "绕环级与波导级保偏光纤的指标差异（几何对称性、可研磨性、衰减），以及误用后果。内链：PM 两款。",
+      "relatedProducts": [
+        "lkf-pm-coil-winding",
+        "lkf-pm-waveguide"
+      ],
+      "relatedCategory": "fiber-optic"
+    },
+    {
+      "id": 39,
+      "slug": "pm-pcf-radiation-and-hydrogen",
+      "used": false,
+      "title": "PM-PCF Under Radiation and Hydrogen: When Panda Fiber Is Not Enough",
+      "targetKeywords": "pm photonic crystal fiber, radiation resistant fiber, hydrogen aging fiber, pcf fog",
+      "outline": "光子晶体保偏光纤在抗辐照、抗氢损上的机理与适用场景，对比熊猫光纤的边界。内链：PM-PCF。",
+      "relatedProducts": [
+        "lkf-pm-pcf"
+      ],
+      "relatedCategory": "fiber-optic"
+    },
+    {
+      "id": 40,
+      "slug": "g652d-vs-g657a2-small-coils",
+      "used": false,
+      "title": "G652D vs G657A2 for Small Coils: Bending Loss Decides",
+      "targetKeywords": "g652d vs g657a2, bend insensitive fiber fog, small coil fiber, single mode fiber selection",
+      "outline": "小直径线圈用 G652D 还是 G657A2：弯曲附加损耗与截止波长约束。内链：G652、G657A2/B3。",
+      "relatedProducts": [
+        "lkf-g652",
+        "lkf-g657a2",
+        "lkf-g657b3"
+      ],
+      "relatedCategory": "fiber-optic"
+    },
+    {
+      "id": 41,
+      "slug": "fiber-cutoff-wavelength-coil-design",
+      "used": false,
+      "title": "Cutoff Wavelength and Coil Diameter: The Constraint Most Designs Miss",
+      "targetKeywords": "cutoff wavelength fiber, coil diameter design, single mode cutoff, fog fiber selection",
+      "outline": "截止波长、工作波长与最小弯曲半径的耦合关系，常见设计错误与纠正方法。内链：G652 低损耗、FS60。",
+      "relatedProducts": [
+        "lkf-g652-low-loss",
+        "lkf-fs60"
+      ],
+      "relatedCategory": "fiber-optic"
+    },
+    {
+      "id": 42,
+      "slug": "mioc-vs-discrete-optics-fog",
+      "used": false,
+      "title": "MIOC vs Discrete Optics: Parts Count, Alignment and Drift",
+      "targetKeywords": "mioc fog, y waveguide vs discrete, integrated optics fog, mioc vs coupler",
+      "outline": "MIOC 与分立器件（Y 波导+耦合器+调制器）在零件数、对准、温漂上的对比。内链：MIOC 1310/1550、SPC1310。",
+      "relatedProducts": [
+        "lkf-mioc1310",
+        "lkf-mioc1550",
+        "lkf-spc1310"
+      ],
+      "relatedCategory": "fiber-optic"
+    },
+    {
+      "id": 43,
+      "slug": "three-in-one-optical-device-spc1310",
+      "used": false,
+      "title": "What a Three-in-One Optical Device Replaces in a FOG Front End",
+      "targetKeywords": "three in one optical device, spc1310, integrated optical device fog, sled pinfet coupler",
+      "outline": "三合一器件把 SLED+PIN-FET+耦合器集成的收益与代价（尺寸、一致性、维修性）。内链：SPC1310、SLD、PIN-FET。",
+      "relatedProducts": [
+        "lkf-spc1310",
+        "lkf-sld",
+        "lkf-pin-fet"
+      ],
+      "relatedCategory": "fiber-optic"
+    },
+    {
+      "id": 44,
+      "slug": "silicon-photonic-transceiver-for-fog",
+      "used": false,
+      "title": "Silicon-Photonic Transceivers: When One Chip Replaces Three Parts",
+      "targetKeywords": "silicon photonic transceiver, tios1310, silicon photonics fog, integrated transceiver",
+      "outline": "硅光三合一收发组件替代三路分立器件的条件、输出形式（3 路模拟电流）与系统影响。内链：TIOS1310、F3G20。",
+      "relatedProducts": [
+        "lkf-tios1310",
+        "lkf-f3g20"
+      ],
+      "relatedCategory": "fiber-optic"
+    },
+    {
+      "id": 45,
+      "slug": "pin-fet-responsivity-selection",
+      "used": false,
+      "title": "PIN-FET Selection: Responsivity, Bandwidth and Noise Floor",
+      "targetKeywords": "pin fet, photodetector fog, responsivity bandwidth, optical receiver selection",
+      "outline": "响应度、带宽、噪声底三者取舍，如何读 PIN-FET 规格并匹配前放。内链：PIN-FET、SLD。",
+      "relatedProducts": [
+        "lkf-pin-fet",
+        "lkf-sld"
+      ],
+      "relatedCategory": "fiber-optic"
+    },
+    {
+      "id": 46,
+      "slug": "sld-vs-ase-light-source",
+      "used": false,
+      "title": "SLD vs ASE Source for FOG: Coherence and Scale Factor Error",
+      "targetKeywords": "sld vs ase, light source fog, source coherence, scale factor error",
+      "outline": "SLD 与 ASE 光源在相干性、光谱宽度、标度因数误差上的差异与选型。内链：SLD、ASE。",
+      "relatedProducts": [
+        "lkf-sld",
+        "lkf-ase"
+      ],
+      "relatedCategory": "fiber-optic"
+    },
+    {
+      "id": 47,
+      "slug": "coupler-splitting-ratio-fog",
+      "used": false,
+      "title": "Coupler Splitting Ratio in FOG: Why 50:50 Is Not Always Right",
+      "targetKeywords": "fiber coupler fog, splitting ratio, 1x2 coupler selection, optical coupler fog",
+      "outline": "耦合器分光比如何影响信噪比与闭环动态，为什么 50:50 不是唯一解。内链：单模耦合器、MIOC1310。",
+      "relatedProducts": [
+        "lkf-fc",
+        "lkf-mioc1310"
+      ],
+      "relatedCategory": "fiber-optic"
+    },
+    {
+      "id": 48,
+      "slug": "quartz-vs-mems-accelerometer-high-temp",
+      "used": false,
+      "title": "Quartz vs MEMS Accelerometer Above 150 C: What Fails First",
+      "targetKeywords": "quartz accelerometer, high temperature accelerometer, mems vs quartz, 180c accelerometer",
+      "outline": "150℃ 以上石英与 MEMS 加速度计的失效机理差异（材料、封装、电路），按温区选型。内链：石英加速度计、MXH。",
+      "relatedProducts": [
+        "lkf-quartz-accelerometer",
+        "lkf-mxh"
+      ],
+      "relatedCategory": "accelerometers"
+    },
+    {
+      "id": 49,
+      "slug": "accelerometer-bias-instability",
+      "used": false,
+      "title": "Accelerometer Bias Instability: Micro-g vs Milli-g in Practice",
+      "targetKeywords": "accelerometer bias instability, bias stability accelerometer, ug accelerometer, accelerometer selection",
+      "outline": "µg 与 mg 级偏值不稳定性的实际含义：折算到角度/位置误差，什么时候值得多花钱。内链：石英加速度计、MXT50。",
+      "relatedProducts": [
+        "lkf-quartz-accelerometer",
+        "lkf-mxt50"
+      ],
+      "relatedCategory": "accelerometers"
+    },
+    {
+      "id": 50,
+      "slug": "mems-gyro-bias-over-temperature",
+      "used": false,
+      "title": "MEMS Gyro Bias Over Temperature: Reading Between the Datasheet Lines",
+      "targetKeywords": "mems gyro bias, bias temperature coefficient, mems gyro selection, gyro temperature compensation",
+      "outline": "MEMS 陀螺零偏随温度的典型曲线、规格书未写明的部分与补偿方法。内链：MTG300、MSU105。",
+      "relatedProducts": [
+        "lkf-mtg300",
+        "lkf-msu105"
+      ],
+      "relatedCategory": "mems-gyroscopes"
+    },
+    {
+      "id": 51,
+      "slug": "accelerometer-for-inclination",
+      "used": false,
+      "title": "Inclinometer or Inertial Accelerometer: Choosing by Application",
+      "targetKeywords": "inclinometer accelerometer, tilt measurement accelerometer, accelerometer selection, inclination sensor",
+      "outline": "倾角测量选型：量程、分辨率、温漂要求与惯性级加速度计的差别。内链：MXT15、石英加速度计。",
+      "relatedProducts": [
+        "lkf-mxt15",
+        "lkf-quartz-accelerometer"
+      ],
+      "relatedCategory": "accelerometers"
+    },
+    {
+      "id": 52,
+      "slug": "accelerometer-range-selection",
+      "used": false,
+      "title": "Choosing Accelerometer Range: 2 g vs 30 g in Real Applications",
+      "targetKeywords": "accelerometer range, 2g vs 30g, accelerometer selection, shock accelerometer",
+      "outline": "±2g 与 ±30g 在冲击环境、分辨率损失上的权衡，给出按场景选择的表。内链：MXT50、MXD。",
+      "relatedProducts": [
+        "lkf-mxt50",
+        "lkf-mxd"
+      ],
+      "relatedCategory": "accelerometers"
+    },
+    {
+      "id": 53,
+      "slug": "north-seeking-time-vs-accuracy",
+      "used": false,
+      "title": "North-Seeking Time vs Accuracy: Reading the Trade-off Curve",
+      "targetKeywords": "north seeking time, gyrocompass accuracy, north finder specification, north seeking tradeoff",
+      "outline": "寻北时间与精度的权衡曲线，纬度、倾角、陀螺噪声如何影响可达精度。内链：MSN300、MSN302。",
+      "relatedProducts": [
+        "lkf-msn300",
+        "lkf-msn302"
+      ],
+      "relatedCategory": "imu"
+    },
+    {
+      "id": 54,
+      "slug": "gyro-while-drilling-hardware",
+      "used": false,
+      "title": "Gyro-While-Drilling Hardware: What Survives Heat and Shock",
+      "targetKeywords": "gyro while drilling, mwd gyro, high temperature gyro, downhole inertial",
+      "outline": "井下陀螺在高温、强振动、小体积约束下的工程取舍（保温瓶、材料、封装）。内链：FT120H、FS120H。",
+      "relatedProducts": [
+        "lkf-ft120h",
+        "lkf-fs120h"
+      ],
+      "relatedCategory": "fog-gyroscopes"
+    },
+    {
+      "id": 55,
+      "slug": "track-geometry-gyro-measurement",
+      "used": false,
+      "title": "Measuring Track Geometry Without GNSS: Gyro-Based Alignment",
+      "targetKeywords": "track geometry measurement, gyro track survey, railway alignment measurement, inertial track survey",
+      "outline": "不用 GNSS 的轨道几何测量：陀螺航向+里程计推算，误差如何随距离累积。内链：FS70ZKH、FSI301。",
+      "relatedProducts": [
+        "lkf-fs70zkh",
+        "lkf-fsi301"
+      ],
+      "relatedCategory": "inertial-navigation-systems"
+    },
+    {
+      "id": 56,
+      "slug": "tunnel-breakthrough-gyro-orientation",
+      "used": false,
+      "title": "Tunnel Breakthrough Accuracy: How Gyro Orientation Errors Accumulate",
+      "targetKeywords": "tunnel surveying gyro, breakthrough accuracy, underground orientation, gyro tunnel",
+      "outline": "隧道贯通精度由陀螺定向误差与导线长度共同决定，给出误差传播的直观算法。内链：MSN300、FSI206。",
+      "relatedProducts": [
+        "lkf-msn300",
+        "lkf-fsi206"
+      ],
+      "relatedCategory": "inertial-navigation-systems"
+    },
+    {
+      "id": 57,
+      "slug": "cable-lay-heading-drift",
+      "used": false,
+      "title": "Heading Drift in Cable Lay: Why It Compounds Over Long Runs",
+      "targetKeywords": "cable lay heading, subsea heading drift, gyro heading accuracy, marine survey heading",
+      "outline": "海缆敷设中航向漂移为何在长距离上被放大，以及降低漂移的手段。内链：FSI400、MSI300。",
+      "relatedProducts": [
+        "lkf-fsi400",
+        "lkf-msi300"
+      ],
+      "relatedCategory": "inertial-navigation-systems"
+    },
+    {
+      "id": 58,
+      "slug": "ins-alignment-time",
+      "used": false,
+      "title": "INS Alignment Time: Static vs In-Motion and What Drives It",
+      "targetKeywords": "ins alignment time, static alignment, in motion alignment, ins startup",
+      "outline": "静基座/动基座对准的时间构成与影响因素，对准时间与精度的取舍。内链：FSI301、MSI105。",
+      "relatedProducts": [
+        "lkf-fsi301",
+        "lkf-msi105"
+      ],
+      "relatedCategory": "inertial-navigation-systems"
+    },
+    {
+      "id": 59,
+      "slug": "fog-vs-mems-ins-cost-of-ownership",
+      "used": false,
+      "title": "FOG vs MEMS INS: Five-Year Cost of Ownership",
+      "targetKeywords": "fog vs mems ins, ins cost of ownership, fog ins maintenance, mems ins lifespan",
+      "outline": "五年持有成本对比：采购价、标定周期、失效率、停机代价，给出计算框架而非结论。内链：FSI206、MSI100。",
+      "relatedProducts": [
+        "lkf-fsi206",
+        "lkf-msi100"
+      ],
+      "relatedCategory": "inertial-navigation-systems"
+    },
+    {
+      "id": 60,
+      "slug": "how-to-read-fog-datasheet",
+      "used": false,
+      "title": "How to Read a FOG Datasheet: Five Lines That Decide the Grade",
+      "targetKeywords": "fog datasheet, how to read gyro datasheet, bias stability spec, fog specification",
+      "outline": "教读者读光纤陀螺规格书：零偏稳定性、ARW、标度因数、全温、带宽五行决定档次。内链：FS60、FS98H。",
+      "relatedProducts": [
+        "lkf-fs60",
+        "lkf-fs98h"
+      ],
+      "relatedCategory": "fog-gyroscopes"
+    },
+    {
+      "id": 61,
+      "slug": "fog-moq-and-lead-time",
+      "used": false,
+      "title": "FOG MOQ and Lead Time: What Drives Each",
+      "targetKeywords": "fog moq, fog lead time, gyro procurement, fog ordering",
+      "outline": "光纤陀螺的起订量与交期由什么决定（光纤环、标定工位、筛选周期），给出询价前该明确的参数。内链：FS60、RH16。",
+      "relatedProducts": [
+        "lkf-fs60",
+        "lkf-rh16"
+      ],
+      "relatedCategory": "fog-gyroscopes"
+    },
+    {
+      "id": 62,
+      "slug": "custom-fiber-coil-specification",
+      "used": false,
+      "title": "Specifying a Custom Fiber Coil: The Six Numbers We Need",
+      "targetKeywords": "custom fiber coil, fiber coil specification, coil customization, fog coil supplier",
+      "outline": "定制光纤环需要客户提供哪六个数（内径/外径/长度/波长/工作温度/接口），附填写示例。内链：RH16、PM 绕环光纤。",
+      "relatedProducts": [
+        "lkf-rh16",
+        "lkf-pm-coil-winding"
+      ],
+      "relatedCategory": "fiber-optic"
+    },
+    {
+      "id": 63,
+      "slug": "inertial-sensor-acceptance-test",
+      "used": false,
+      "title": "Acceptance Testing Inertial Sensors: What to Ask the Supplier",
+      "targetKeywords": "inertial sensor acceptance test, gyro incoming inspection, imu acceptance, sensor quality",
+      "outline": "来料验收该测什么、怎么抽样、指标如何判读，附验收清单。内链：FMTP 测试平台、FS60。",
+      "relatedProducts": [
+        "lkf-fmtp",
+        "lkf-fs60"
+      ],
+      "relatedCategory": "fog-gyroscopes"
     }
   ]
 }
