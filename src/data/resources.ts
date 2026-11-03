@@ -38,6 +38,163 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'rugged-imu-design',
+    title: 'Rugged IMU Design: Why 30 g for 11 ms Can Be Harder Than 500 g for 1 ms',
+    description:
+      'A rugged IMU sheet prints a shock figure, two temperature ranges and maybe an MTBF, and three of those four rows get read wrong. How to convert a shock pulse into displacement, why the 30 g row can move the sensor 7.2 times further than the 500 g row, and what 20,000 h MTBF actually leaves after one year.',
+    date: '2026-11-03',
+    readingTime: 5,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'The boom of a 22-tonne excavator',
+        html: `<p>A rugged IMU on the boom pivot of a 22-tonne excavator cutting a trench on a limestone bench feeds the grade display, so the operator stops the teeth at design depth instead of sending a man down with a level and a staff.</p>
+<p>Geometry sets the requirement. At a 4.5 m radius, 0.1 degrees of boom angle is 4,500 x tan(0.1) = 7.9 mm at the teeth against a 10 mm tolerance. A 1 degree sensor would be 78.6 mm, useless. That is why a 0.1 degree part is on the machine.</p>
+<p>The same boom carries a hydraulic breaker at 600 blows a minute, six hours a day, 250 days a year: 54 million pulses a year through the same bolts. Ambient runs -10 C at dawn to +42 C in the afternoon, so the housing swings 52 K twice a day, 500 cycles a year and 2,500 over a five-year life.</p>
+<p>One machine, three questions: impulse, cycles, drift.</p>`,
+      },
+      {
+        h2: 'Shock is three numbers, not one',
+        html: `<p>Most harsh environment IMU enquiries arrive with one figure: 500 g, 1,000 g or 15,000 g. Peak alone says little. Damage depends on how far the part moves and how fast.</p>
+<p>Take a half sine pulse, the waveform on most sheets here. Displacement is A t squared over pi, velocity change 2 A t over pi. Three real rows:</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-3">Row as printed</th>
+      <th class="py-2 pr-3">Peak displacement</th>
+      <th class="py-2 pr-3">Velocity change</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">500 g / 1 ms</td>
+      <td class="py-2 pr-3">1.56 mm</td>
+      <td class="py-2 pr-3">3.12 m/s</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">1,000 g / 1 ms</td>
+      <td class="py-2 pr-3">3.12 mm</td>
+      <td class="py-2 pr-3">6.24 m/s</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">30 g / 11 ms</td>
+      <td class="py-2 pr-3">11.3 mm</td>
+      <td class="py-2 pr-3">2.06 m/s</td>
+    </tr>
+  </tbody>
+</table>
+<p>The 30 g row has the gentlest peak on the page and moves the sensor 7.2 times further than the 500 g row. With 2 mm of clearance before the housing bottoms out, the 500 g event passes and the 30 g event hits metal.</p>
+<p>The same cell hides powered against unpowered: the MEMS chip prints 500 g for 1 ms running and 10,000 g for 10 ms off, and that second figure certifies the die did not crack, not that the bias survived.</p>
+<p>A row with no duration or waveform cannot be converted. The <a href="/products/lkf-msu304/" class="text-blue-700 underline">LKF-MSU304</a> prints 1,000 g with no time; the LKF-MNU107 prints 15,000 g / 10 ms without naming the waveform. Ask before you size a mount.</p>`,
+      },
+      {
+        h2: 'What the sheets actually print',
+        html: `<p>Read down the shock column and the ordering is not by price or accuracy. The 2 deg/h gyro prints 500 g, the 0.15 deg/h IMU prints 1,000 g, the 20 deg/h unit prints 15,000 g. A machine mount, a pod, a gun launch.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-3">Unit</th>
+      <th class="py-2 pr-3">Shock as printed</th>
+      <th class="py-2 pr-3">Vibration</th>
+      <th class="py-2 pr-3">Operating</th>
+      <th class="py-2 pr-3">Storage</th>
+      <th class="py-2 pr-3">MTBF</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">LKF-MTG200</td>
+      <td class="py-2 pr-3">500 g / 1 ms</td>
+      <td class="py-2 pr-3">6.06 g RMS, 20-2000 Hz</td>
+      <td class="py-2 pr-3">-40 to 80 C</td>
+      <td class="py-2 pr-3">-55 to 85 C</td>
+      <td class="py-2 pr-3">not printed</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">LKF-MSU304</td>
+      <td class="py-2 pr-3">1,000 g, no duration</td>
+      <td class="py-2 pr-3">13 g RMS</td>
+      <td class="py-2 pr-3">-50 to 80 C, -50 start / -55 operating</td>
+      <td class="py-2 pr-3">-55 to 85 C</td>
+      <td class="py-2 pr-3">not printed</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">LKF-MSU204B</td>
+      <td class="py-2 pr-3">30 g / 11 ms half sine</td>
+      <td class="py-2 pr-3">6.06 g, 10-2000 Hz</td>
+      <td class="py-2 pr-3">no row</td>
+      <td class="py-2 pr-3">no row</td>
+      <td class="py-2 pr-3">20,000 h</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">LKF-MNU107</td>
+      <td class="py-2 pr-3">15,000 g / 10 ms</td>
+      <td class="py-2 pr-3">6.06 g RMS</td>
+      <td class="py-2 pr-3">-40 to 80 C</td>
+      <td class="py-2 pr-3">-55 to 85 C</td>
+      <td class="py-2 pr-3">not printed</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">LKF-FS60 (FOG)</td>
+      <td class="py-2 pr-3">not printed</td>
+      <td class="py-2 pr-3">4.2 g, 20-2000 Hz</td>
+      <td class="py-2 pr-3">-40 to 70 C</td>
+      <td class="py-2 pr-3">-50 to 70 C</td>
+      <td class="py-2 pr-3">not printed</td>
+    </tr>
+  </tbody>
+</table>
+<p>The fiber optic unit prints no shock figure, because its element is a coil of fiber, not a moving mass. That is an omission, not toughness, and it leaves the load on the bracket.</p>`,
+      },
+      {
+        h2: 'Temperature: three rows, not one',
+        html: `<p>The LKF-MTG200 quotes -40 to +80 C operating and -55 to +85 C storage. The <a href="/products/lkf-fs60/" class="text-blue-700 underline">LKF-FS60</a> quotes -40 to +70 and -50 to +70: zero headroom at the hot end, so a sealed container in July sun passes +70 with the unit off.</p>
+<p>The MSU304 is the only sheet here that splits the row: -50 to +80, or -50 start and -55 operating. A unit that boots at -50 can sit outside its quoted band for the first minutes, and the first fix of the day happens in that window.</p>
+<p>The MSU204A and 204B print no operating temperature. Absence is not a capability.</p>
+<p>The bias rows show the same split. The MTG200 prints 30 deg/h full temperature at 3 sigma against 2 deg/h at 10 s, a gap of 15 times. At 25 C the 2 governs; on a boom in February the 30 governs.</p>`,
+      },
+      {
+        h2: 'MTBF is a rate, not a life',
+        html: `<p>The MSU204B prints 20,000 h MTBF and the MSU105 prints 10,000 h. Both read as service life. They are not.</p>
+<p>Reliability over a period is e to the minus t over MTBF. At 8,760 hours of running, 20,000 h gives exp(-0.438) = 0.645: 64.5 per cent of units finish year one without repair. Five years, 43,800 h, gives 11.2 per cent. At 10,000 h, year one gives 41.6 per cent.</p>
+<p>MTBF counts random failures only. It assumes a constant rate and does not model wear. Those 54 million shock pulses are wear, and no sheet here prints a cycle life for the bracket or the solder joints. That number comes from a qualification test on your mount.</p>`,
+      },
+      {
+        h2: 'What to write into the purchase spec',
+        html: `<ul class="list-disc pl-5 space-y-2">
+  <li><strong>Shock as peak, duration and waveform, together.</strong> A bare g figure is not a specification.</li>
+  <li><strong>Powered or unpowered, and what the row certifies.</strong> No damage, or bias still inside its band afterwards. Different tests.</li>
+  <li><strong>Cold start and operating temperature as two rows,</strong> with the settling time at the cold end.</li>
+  <li><strong>The temperature behind each bias row,</strong> plus the sigma and the smoothing window.</li>
+  <li><strong>Sealing as a test report, not an adjective.</strong> No IP number appears on any sheet in this range; the MSU304 text says sealed with internal damping, which is a design statement.</li>
+</ul>
+<p>The <a href="/products/lkf-mtg200/" class="text-blue-700 underline">LKF-MTG200</a> is the three-axis MEMS gyro behind the pod rows here; the <a href="/products/mems-gyroscopes/" class="text-blue-700 underline">MEMS gyroscope range</a> carries it with the chip and satellite assemblies.</p>
+<p>Send the duty cycle, the ambient band and the mount clearance, and we will tell you which rows to hold us to.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'My supplier quotes 1,000 g shock. Is that enough for a machine-mounted IMU?',
+        a: 'Not as written. A peak with no duration and no waveform cannot be converted into displacement, and displacement is what breaks mounts. 1,000 g for 1 ms on a half sine moves the part 3.12 mm at 6.24 m/s; 30 g for 11 ms moves it 11.3 mm at 2.06 m/s. The second event is gentler on paper and harder on hardware. Ask for all three numbers, then compare with the clearance you have.',
+      },
+      {
+        q: 'The unit is rated -40 C but it misbehaved at -35 C on a cold morning. Why?',
+        a: 'Check whether the row covers start or operation. The MSU304 splits them: -50 start, -55 operating. A unit can boot inside its start limit and still be outside its quoted bias band until the case warms, and the first fix of the day is taken in that window. Ask for settling time at the cold end and for the temperature at which the bias row was measured.',
+      },
+      {
+        q: 'MTBF is 20,000 hours. How long will the unit actually last?',
+        a: 'Longer than 20,000 hours, in the sense that MTBF is not a lifetime. It is a failure rate: reliability over t hours is exp(-t/MTBF), so at 20,000 h about 64.5 per cent of units finish a year of continuous running without repair and 11.2 per cent finish five years. It also covers random failures only. Wear from repeated shock or thermal cycling is outside the model entirely.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-MTG200', href: '/products/lkf-mtg200/', caption: 'Three-axis MEMS gyro, 500 g / 1 ms, -40 to 80 C' },
+      { model: 'LKF-MSU304', href: '/products/lkf-msu304/', caption: 'Sealed MEMS IMU with internal damping, 13 g RMS' },
+      { model: 'LKF-FS60', href: '/products/lkf-fs60/', caption: 'Single-axis FOG, 4.2 g vibration, -40 to +70 C' },
+    ],
+    relatedCategory: { name: 'MEMS Gyroscopes', href: '/products/mems-gyroscopes/' },
+  },
+
+  {
     slug: 'calibration-of-inertial-sensors',
     title: 'IMU Calibration from Rate Table to Field: What Each Step Proves',
     description:

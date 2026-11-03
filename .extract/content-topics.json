@@ -149,7 +149,7 @@
       "relatedCategory": "fiber-optic"
     },
     {
-      "id": 22, "slug": "rugged-imu-design", "used": false,
+      "id": 22, "slug": "rugged-imu-design", "used": true, "published": "2026-11-03",
       "title": "Designing IMUs for Harsh Environments: Shock, Temperature and Reliability",
       "targetKeywords": "rugged imu, high shock imu, harsh environment imu",
       "outline": "抗冲击设计（MEMS 1000g+ vs FOG 隔振）、宽温标定（-40~85）、密封与连接器可靠性。内链：mems-gyroscopes 分类、LKF-MTG200、imu 分类。",
