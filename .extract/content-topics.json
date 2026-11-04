@@ -284,7 +284,8 @@
     {
       "id": 23,
       "slug": "mems-north-seeker-technology",
-      "used": false,
+      "used": true,
+      "published": "2026-11-04",
       "title": "How MEMS North Seekers Find True North Without GNSS",
       "targetKeywords": "mems north seeker, gyroscopic north finding, mems gyrocompass",
       "outline": "用 MEMS 陀螺感测地球自转分量寻北的原理、静态多位置测量、精度与纬度/测量时长的关系。内链：LKF-MSN300、LKF-MSN300H、LKF-MSN302、imu 分类。",

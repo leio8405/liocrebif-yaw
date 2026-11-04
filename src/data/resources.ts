@@ -38,6 +38,181 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'mems-north-seeker-technology',
+    title: 'How MEMS North Seekers Find True North Without GNSS',
+    description:
+      'A MEMS north seeker measures a rotation rate near 13 deg/h and cancels its own bias by reading twice in opposite orientations. How the secL in the accuracy row comes out of latitude, why a leveling error costs tan(L) degrees of heading, and what the 2 s start-up row does not include.',
+    date: '2026-11-04',
+    readingTime: 5,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'There is no sky above the instrument',
+        html: `<p>At the bottom of a 420 m mine shaft, 30 m from the cage guides, a surveyor needs a true azimuth to start a 400 m crosscut. GNSS is 420 m of rock away. A magnetic compass reads whatever the steel around it decides. A MEMS north seeker answers without pointing at anything: it measures the horizontal component of Earth rotation, about 13 °/h at 30°, under a bias of the same order, then recovers north from two readings in opposite orientations.</p>
+<p>The rest of this page is that arithmetic, and above 55° latitude the last two sections decide the purchase.</p>`,
+      },
+      {
+        h2: 'The signal is 13 °/h and the bias is close behind',
+        html: `<p>Earth turns once in 23.93 hours, 15.041 °/h. A horizontal gyro axis sees 15.041 x cos L of it. At 30° that is 13.0 °/h, or 0.0036 °/s.</p>
+<p>That is the entire signal. The <a href="/products/lkf-msn300/" class="text-blue-700 underline">LKF-MSN300</a> quotes ≤0.1 °/h of bias stability at 10 s and ≤0.6 °/h at full temperature, 3 sigma: 0.8 and 4.6 per cent of it at 30°N.</p>
+<p>Bias goes straight into heading. 0.1 °/h against 13.0 °/h is 0.0077 rad, 0.44°. Leave the 0.6 °/h in and the error is 2.6°. At 60° the signal is 7.52 °/h, so 0.1 °/h costs 0.76°.</p>`,
+      },
+      {
+        h2: 'Two readings, and the bias drops out',
+        html: `<p>Point the axis at an unknown azimuth A, read, turn the case 180°, read again. With b for bias the readings are Ω cos L sin A + b and minus Ω cos L sin A + b.</p>
+<p>Subtract and b is gone: 2 Ω cos L sin A, so sin A = difference / (2 Ω cos L). At 30° the denominator is 26.0 °/h, twice what one reading gives.</p>
+<p>What cancels is the constant part. What survives is how far the bias moved between readings, nearer the 10 s row than the full-temperature row, provided the case held its temperature. In a shaft with swinging ventilation air, it does not.</p>`,
+      },
+      {
+        h2: 'Where sec L comes from',
+        html: `<p>Sensitivity to a rate error is dA = dω / (Ω cos L). Nothing else in that expression depends on where you stand, so the error scales as 1 / cos L, which is sec L. That is all the notation means.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-3">Latitude</th>
+      <th class="py-2 pr-3">Horizontal rate</th>
+      <th class="py-2 pr-3">sec L</th>
+      <th class="py-2 pr-3">LKF-MSN302 at 0.5 secL</th>
+      <th class="py-2 pr-3">LKF-MSN300 at 1 secL</th>
+      <th class="py-2 pr-3">Heading error per 1° of tilt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">0°</td>
+      <td class="py-2 pr-3">15.04 °/h</td>
+      <td class="py-2 pr-3">1.00</td>
+      <td class="py-2 pr-3">0.50°</td>
+      <td class="py-2 pr-3">1.00°</td>
+      <td class="py-2 pr-3">0.00°</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">30°</td>
+      <td class="py-2 pr-3">13.0 °/h</td>
+      <td class="py-2 pr-3">1.15</td>
+      <td class="py-2 pr-3">0.58°</td>
+      <td class="py-2 pr-3">1.15°</td>
+      <td class="py-2 pr-3">0.58°</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">45°</td>
+      <td class="py-2 pr-3">10.6 °/h</td>
+      <td class="py-2 pr-3">1.41</td>
+      <td class="py-2 pr-3">0.71°</td>
+      <td class="py-2 pr-3">1.41°</td>
+      <td class="py-2 pr-3">1.00°</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">60°</td>
+      <td class="py-2 pr-3">7.52 °/h</td>
+      <td class="py-2 pr-3">2.00</td>
+      <td class="py-2 pr-3">1.00°</td>
+      <td class="py-2 pr-3">2.00°</td>
+      <td class="py-2 pr-3">1.73°</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">70°</td>
+      <td class="py-2 pr-3">5.14 °/h</td>
+      <td class="py-2 pr-3">2.92</td>
+      <td class="py-2 pr-3">1.46°</td>
+      <td class="py-2 pr-3">2.92°</td>
+      <td class="py-2 pr-3">2.75°</td>
+    </tr>
+  </tbody>
+</table>
+<p>Read the 60° row twice. The 300 is a 1° instrument at the equator and a 2.0° instrument in southern Norway, same hardware. At the mine, 400 m of crosscut turns 1.15° into 400 x tan(1.15) = 8.0 m and 2.0° into 14.0 m, against 4.0 and 7.0 m for the 302. Whether 8 m matters depends on what sits at the far end.</p>`,
+      },
+      {
+        h2: 'One degree off level costs tan L degrees',
+        html: `<p>A gyro senses only rotation along its axis. Tip it by θ off horizontal and the vertical component leaks in as Ω sin L sin θ. Against the horizontal term carrying the answer the ratio is tan L x θ.</p>
+<p>One degree of leveling error is 0.58° of heading at 30°, 1.00° at 45°, 1.73° at 60°. North of 55° the leveling budget is the accuracy budget.</p>
+<p>This is what the accelerometers do inside a north seeker. One milligram of error is 0.057° of tilt, 0.099° of heading at 60°. The 300 prints 100 µg of 10 s stability, so its share is 0.01°.</p>
+<p>The <a href="/products/lkf-msn302/" class="text-blue-700 underline">LKF-MSN302</a> prints the same 0.1 °/h stability, a tighter full-temperature row (0.3 against 0.6) and a tighter attitude row (0.05° against 0.2°). Both point at how well the unit knows horizontal: at 60°, 0.2° of attitude uncertainty is 0.35° of heading.</p>`,
+      },
+      {
+        h2: 'Time, and what 2 s start-up does not mean',
+        html: `<p>All three print ≤2 s start-up. That is power-on to valid output, not the time to find north.</p>
+<p>The two terms move opposite ways. Angle random walk falls with the square root of averaging time: 60 s at 0.01 °/√h leaves 0.078 °/h, 600 s leaves 0.024 °/h. Bias drift grows instead, so one minute to ten buys 3.2 on noise and hands back whatever the bias wandered in the extra nine.</p>
+<p>Where the optimum sits depends on the thermal environment. Ask for the averaging time behind the accuracy figure and the temperature band it was taken in. A 1 x secL row measured over 30 s in a lab is not what you see at a shaft bottom in January.</p>`,
+      },
+      {
+        h2: 'Choosing between the three units',
+        html: `<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-3">Model</th>
+      <th class="py-2 pr-3">North seeking, 1σ</th>
+      <th class="py-2 pr-3">Gyro range</th>
+      <th class="py-2 pr-3">Bias stability, 10 s</th>
+      <th class="py-2 pr-3">Full-temp bias, 3σ</th>
+      <th class="py-2 pr-3">Mass</th>
+      <th class="py-2 pr-3">Operating temp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">LKF-MSN302</td>
+      <td class="py-2 pr-3">≤0.5 secL</td>
+      <td class="py-2 pr-3">±200 °/s</td>
+      <td class="py-2 pr-3">≤0.1 °/h</td>
+      <td class="py-2 pr-3">≤0.3 °/h</td>
+      <td class="py-2 pr-3">100 g</td>
+      <td class="py-2 pr-3">-40 to +85 °C</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">LKF-MSN300</td>
+      <td class="py-2 pr-3">≤1 secL</td>
+      <td class="py-2 pr-3">±200 °/s</td>
+      <td class="py-2 pr-3">≤0.1 °/h</td>
+      <td class="py-2 pr-3">≤0.6 °/h</td>
+      <td class="py-2 pr-3">145 g</td>
+      <td class="py-2 pr-3">-40 to +120 °C</td>
+    </tr>
+    <tr class="border-b border-gray-200">
+      <td class="py-2 pr-3">LKF-MSN300H</td>
+      <td class="py-2 pr-3">≤2.5 secL</td>
+      <td class="py-2 pr-3">±500 °/s</td>
+      <td class="py-2 pr-3">≤0.5 °/h</td>
+      <td class="py-2 pr-3">≤1.5 °/h</td>
+      <td class="py-2 pr-3">145 g</td>
+      <td class="py-2 pr-3">-40 to +120 °C</td>
+    </tr>
+  </tbody>
+</table>
+<p>Rate range comes before accuracy. ±200 °/s is 33 rpm, ±500 °/s is 83 rpm. If the body turns faster than 33 rpm while measuring, the 300 clips, and the <a href="/products/lkf-msn300h/" class="text-blue-700 underline">LKF-MSN300H</a> is the only one that works, at 2.5 times the heading budget and five times the bias stability.</p>
+<p>Common to all three: 5 to 12 V, ≤2 W, 200 Hz update, 6.06 g RMS, 500 g / 1 ms.</p>
+<ul class="list-disc pl-5 space-y-2">
+  <li><strong>The latitude band,</strong> because it multiplies the accuracy row.</li>
+  <li><strong>The plinth tolerance,</strong> because at 60°N a tenth of a degree of tilt is 0.17° of heading.</li>
+  <li><strong>The temperature swing during the measurement,</strong> because it decides which bias row applies.</li>
+  <li><strong>Whether the platform stands still,</strong> because motion breaks the two-reading method.</li>
+</ul>
+<p>Send those four and the time you can afford per station. We will say which clears the budget. Full range on the <a href="/products/imu/" class="text-blue-700 underline">IMU and north seeker page</a>.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'The sheet says 1°, but my unit reads 1.4° at the site. Is it faulty?',
+        a: 'Check the latitude first. A 1 x secL row is 1.0° at the equator, 1.15° at 30°N, 1.41° at 45° and 2.0° at 60°. If the acceptance test was written at sea level near the equator and the site is at 50°N, the number you should expect is 1.56°, not 1.0°. The unit is doing what the row says. A second cause is leveling: one degree of tilt costs 0.58° of heading at 30°N and 1.73° at 60°N, so a plinth that was eyeballed can produce exactly this complaint.',
+      },
+      {
+        q: 'Start-up is 2 seconds. Does that mean it finds north in 2 seconds?',
+        a: 'No. Start-up is power-on to valid output, which is a data link and a self-test, not a north fix. The 2 s row appears on all three units here and says nothing about the integration time behind the accuracy figure. That time is set by how long you average the two opposite readings, and it trades against bias drift. Ask the supplier for it explicitly, along with the temperature band it was measured in.',
+      },
+      {
+        q: 'Can it find north while the vehicle is moving?',
+        a: 'Not by this method. The two-reading approach assumes the case rotates only by the 180° you command, so any motion of the platform between readings lands in the answer and cannot be separated from Earth rotation. A north seeker is a stationary instrument: park, level, measure, then carry the azimuth into the traverse. If the platform has to keep moving, the problem is in-motion alignment and it needs a different instrument and a different specification.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-MSN300', href: '/products/lkf-msn300/', caption: '1 x secL MEMS north finder, 145 g, -40 to +120 °C' },
+      { model: 'LKF-MSN302', href: '/products/lkf-msn302/', caption: '0.5 x secL north finder, 100 g, 47 x 47 x 35.5 mm' },
+      { model: 'LKF-MSN300H', href: '/products/lkf-msn300h/', caption: '2.5 x secL, ±500 °/s rate range for high-dynamic bodies' },
+    ],
+    relatedCategory: { name: 'IMU & North Seekers', href: '/products/imu/' },
+  },
+
+  {
     slug: 'rugged-imu-design',
     title: 'Rugged IMU Design: Why 30 g for 11 ms Can Be Harder Than 500 g for 1 ms',
     description:
