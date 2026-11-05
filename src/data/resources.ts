@@ -38,6 +38,107 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'vertical-integration-inertial-manufacturing',
+    title: 'Vertical Integration in Inertial Sensor Manufacturing: What You Can Actually Check',
+    description:
+      'A FOG bias row is the residue of five parts, and only one of them is wound rather than bought. What the coil table, a winding machine counting spec and a 500 m length window can answer at a receiving bench, and the one thing vertical integration will not fix.',
+    date: '2026-11-05',
+    readingTime: 5,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'The question starts at a receiving bench',
+        html: `<p>Vertical integration in inertial sensor manufacturing is usually argued as a story about factory floors. The version that survives contact with a receiving bench is narrower. Forty units into a 200 unit delivery, one <a href="/products/lkf-fs60/" class="text-blue-700 underline">LKF-FS60</a> settles at 0.14 °/h against the 0.10 °/h row it was bought on. Two others from the same carton read 0.06. The box looks fine.</p>
+<p>At that moment the buyer has two options: a replacement, or an explanation. Which one is available was decided years earlier, by who built which part. The rest of this page is the rows that decide it, and one thing vertical integration will not do.</p>`,
+      },
+      {
+        h2: 'The bias row is the residue of five parts',
+        html: `<p>Bias stability at ≤0.20, ≤0.10 and ≤0.05 °/h, 10 s, 1 sigma, three grades inside one 60 x 60 x 30 mm can of 150 g. The row does not say where the number came from. It is what remains after a light source's excess noise, a coupler's split, a modulator's drift, the coil's loss and the detector's responsivity have been closed around by the feedback loop.</p>
+<p>Four of those five arrive with another company's datasheet attached. The coil does not. Every metre of it is wound under a tension that was set, at a rate that was set, and counted while the spindle turns. It is the only step in the chain where the maker of the gyro can change a tolerance instead of accepting one.</p>`,
+      },
+      {
+        h2: 'The coil table already names the grade',
+        html: `<p>Across the coil family the fiber length runs 500 m, 1,460 m and 2,220 m, insertion loss ≤0.4, ≤0.7 and ≤1.5 dB, and target gyro accuracy 0.1, 0.015 and 0.003 °/h. Length grows 4.4 times across that table. The accuracy column grows 33 times. The gap is diameter and loss, and both are settled on the winding machine.</p>
+<p>Loss turns into noise. 0.4 dB leaves 91% of the light; 1.5 dB leaves 71%. With a shot-noise-limited detector, angle random walk moves as the inverse square root of optical power: the first coil gives up about 5% to loss, the last about 19%. The FS60 prints random walk at ≤0.02, ≤0.01 and ≤0.005 °/√h. A company that buys coils picks from what is on offer. A company that winds them picks the fiber.</p>`,
+      },
+      {
+        h2: 'A tension tolerance needs its setpoint',
+        html: `<p>The <a href="/products/lkf-rh16/" class="text-blue-700 underline">RH16</a> holds ±0.5 g over a 5 to 50 g range, quoted at 20 r/min. At the top of that range it is 1%. At the bottom it is 10%. The RH16A reaches down to 3 g for thin fiber, where the same ±0.5 g is 17%.</p>
+<p>So the two machines do not carry the same tolerance even though they print the same number. 135 µm PM fiber wants the bottom of the band, and a machine that starts at 5 g cannot get there. Everything the coil does afterwards, from how the layers pack to the stress left in the silica, was fixed at that setting.</p>
+<p>The mechanical envelope checks out as well: both machines take a 250 mm fixture and a 200 mm traverse, against 113 mm outside diameter on the largest catalog coil.</p>`,
+      },
+      {
+        h2: '0.1 turn is 30 ppm',
+        html: `<p>The <a href="/products/lkf-fc/" class="text-blue-700 underline">FC60</a> holds 500 m of fiber between a 39 mm bore and a 55 mm rim. At the 47 mm mean diameter one turn is 148 mm, so the coil carries about 3,386 turns.</p>
+<p>The RH16 counts to 0.1 turn, which is 30 ppm of the length. The RH16A counts to 0.01 turn, 3 ppm. The FS60 prints scale factor repeatability at ≤100, ≤50 and ≤50 ppm, so the counting spec sits inside the gyro spec with margin, and the finer count is what protects the upper grades.</p>
+<p>Now read the coil's own row again: 500 ±10 m. Ten metres in five hundred is 2%, or 20,000 ppm, two hundred times the scale factor row. No winder can hold that, and none has to. The length window is a purchasing tolerance. The performance figure is bought later, unit by unit, on a rate table. The coil's job is to be consistent enough that calibration stays a check rather than a repair.</p>`,
+      },
+      {
+        h2: 'What a buyer can ask for',
+        html: `<p>The difference between a bought coil and a wound one is not quality. It is which questions have an answer.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-3">At receiving inspection</th>
+      <th class="py-2 pr-3">Coil bought in</th>
+      <th class="py-2 pr-3">Coil wound in house</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-100">
+      <td class="py-2 pr-3">Which lot is this coil from?</td>
+      <td class="py-2 pr-3">A date code on a bag</td>
+      <td class="py-2 pr-3">Turns, tension setpoint, layer count, direction, shift</td>
+    </tr>
+    <tr class="border-b border-gray-100">
+      <td class="py-2 pr-3">Can the length sit in a tighter window?</td>
+      <td class="py-2 pr-3">Only what the catalog offers</td>
+      <td class="py-2 pr-3">0.1 turn, 30 ppm on a 500 m coil</td>
+    </tr>
+    <tr class="border-b border-gray-100">
+      <td class="py-2 pr-3">Who owns the drawing when the can shrinks?</td>
+      <td class="py-2 pr-3">Two drawings, two schedules</td>
+      <td class="py-2 pr-3">One drawing</td>
+    </tr>
+    <tr>
+      <td class="py-2 pr-3">What answers a return?</td>
+      <td class="py-2 pr-3">A replacement, cause unknown</td>
+      <td class="py-2 pr-3">The winding record, compared against the lot</td>
+    </tr>
+  </tbody>
+</table>`,
+      },
+      {
+        h2: 'What it does not buy',
+        html: `<p>It does not lower the noise floor of a design. A loop built around a 0.2 °/h optical circuit stays at 0.2 °/h whoever wound the coil. Fiber, modulator and loop length decide that.</p>
+<p>It does not remove calibration. Every unit still goes on a rate table and still has its scale factor written into it, and the hours are the same.</p>
+<p>It is also not worth a premium at low volume. Thirty gyros that fit a catalog grade are cheaper bought, and the trace stops at an invoice nobody will read. The case for building the chain is a coil length, a can size or a temperature band the catalog does not carry, plus a return that has to be answered with a cause instead of a credit note.</p>
+<p>If the coil falls outside the catalog, send the bore, the rim, the length, the wavelength and the working temperature, and the reply will carry the winding window and the tension band. Device list on the <a href="/products/fiber-optic/" class="text-blue-700 underline">fiber devices and equipment page</a>.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Does vertical integration mean the company makes everything?',
+        a: 'No. The preform, some of the optical chips and the detector die are normally bought, and a supplier claiming otherwise is worth checking. Ask for the list of steps actually in house. For a FOG that list is usually fiber drawing, coil winding, optical assembly, test and calibration, and the useful follow-up is which of those five can produce a record against a specific serial number.',
+      },
+      {
+        q: 'We order thirty units a year. Does any of this apply to us?',
+        a: 'Mostly no. At that volume the catalog grade is cheaper and the winding detail is invisible to you. What does apply is that the coil target accuracy has to match the bias row you sign. A 0.1 °/h coil cannot be built into a 0.02 °/h promise, and the mismatch shows up at the receiving bench, not in the quotation.',
+      },
+      {
+        q: 'Can I get the winding data for the coils in my order?',
+        a: 'Ask before you order, from any supplier including this one. The RH16 and RH16A display turns, tension, length, layer count and winding direction as the coil runs, so the data exists at the moment of winding. Whether it is archived against your serial number is a policy question, and a supplier who cannot answer it has answered something else.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-RH16', href: '/products/lkf-rh16/', caption: 'Coil winder, 5 to 50 g tension, ±0.5 g, 0.1 turn count' },
+      { model: 'LKF-FC', href: '/products/lkf-fc/', caption: 'PM fiber coils, 500 to 2,220 m, 0.1 to 0.003 °/h target' },
+      { model: 'LKF-FS60', href: '/products/lkf-fs60/', caption: 'Single-axis FOG, ≤0.20 to 0.05 °/h, 150 g, 60 x 60 x 30 mm' },
+    ],
+    relatedCategory: { name: 'Fiber Devices & Equipment', href: '/products/fiber-optic/' },
+  },
+
+  {
     slug: 'mems-north-seeker-technology',
     title: 'How MEMS North Seekers Find True North Without GNSS',
     description:

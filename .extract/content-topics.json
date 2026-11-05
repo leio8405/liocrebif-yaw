@@ -299,7 +299,8 @@
     {
       "id": 24,
       "slug": "vertical-integration-inertial-manufacturing",
-      "used": false,
+      "used": true,
+      "published": "2026-11-05",
       "title": "Why Vertical Integration Matters in Inertial Sensor Manufacturing",
       "targetKeywords": "vertical integration manufacturing, inertial sensor manufacturer, fog manufacturer",
       "outline": "从光纤拉丝/绕环/镀膜到整表标定的全链自控：质量一致性、定制响应速度、成本结构；对比外购组装模式。内链：about 页、LKF-RH16、LKF-FS60。",
