@@ -313,7 +313,8 @@
     {
       "id": 31,
       "slug": "fiber-coil-quadrupole-winding-pattern",
-      "used": false,
+      "used": true,
+      "published": "2026-11-06",
       "title": "Quadrupole, Quadrupole-8, Hexadecapole: Which Winding Pattern for Your Coil",
       "targetKeywords": "quadrupole winding pattern, fiber coil winding pattern, hexadecapole winding, fog coil design",
       "outline": "四极/八极/十六极绕法各自抑制什么、如何选；对比表：绕法 vs 对称性 vs 工艺难度。内链：绕环机 RH16/RH04。",

@@ -38,6 +38,84 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'fiber-coil-quadrupole-winding-pattern',
+    title: 'Quadrupole, 8-Pole or 16-Pole: Choosing a Fiber Coil Winding Pattern',
+    description:
+      'A winding pattern decides which turns sit next to each other, and every extra fold is paid for in turnarounds. How the pole count maps onto one 500 m coil, why 2.45 microseconds sets the requirement, and what to put on the order.',
+    date: '2026-11-06',
+    readingTime: 5,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'A pole is a sector, not a grade',
+        html: `<p>Choosing a <strong>fiber coil winding pattern</strong> comes down to one question: how finely does the fiber have to be folded before both halves of the light path see the same temperature? A <strong>quadrupole winding pattern</strong> folds the length into four sectors, an 8-pole into eight, a hexadecapole into sixteen. More folds buy symmetry. Each fold is paid for in turnarounds on the winding machine. The requirement follows the coil's transit time, not its price.</p>
+<p>Mechanically, a pole is one sector of a layer, and the spindle reverses at every boundary. So the pole count is a statement about which turns touch, not a quality grade stamped on the can. The coil range prints all three options in one line: wound by 16-pole, 8-pole or 4-pole symmetric methods. On the <a href="/products/lkf-fc/" class="text-blue-700 underline">LKF-FC60</a>, 3,386 turns of PM 1310_80/135 fiber in a 39/55/8.5 mm ring, four sectors hold 847 turns each, eight hold 423, sixteen hold 212. Same fiber. Same spool. Different order of laying it down.</p>`,
+      },
+      {
+        h2: '2.45 microseconds decides the requirement',
+        html: `<p>The counter-propagating beams never pass a point together. At 1.47 refractive index the offset is nL/c: 2.45 µs on 500 m, 7.2 µs on 1,460 m, 10.9 µs on 2,220 m. Shupe error is what a temperature change inside that window leaves behind, because the two beams integrate different phase across the same glass.</p>
+<p>This is why the requirement tracks length. Across the coil table the target accuracy goes 0.1, 0.015 and 0.003 °/h, a 33-fold tightening, while the time offset only grows 4.4 times. The long coils are where a fold pays, and they are the ones carrying the tight rows on the <a href="/products/lkf-fs60/" class="text-blue-700 underline">LKF-FS60</a>: ≤0.05 °/h at 10 s, 1 sigma, with full-temperature repeatability ≤0.3 °/h. A 16-pole program on a 500 m coil bought against a 0.1 °/h row is machine time spent where the budget is not.</p>`,
+      },
+      {
+        h2: 'What each fold cancels, and what it cannot',
+        html: `<p>Heat rarely arrives evenly. In a sealed housing the rim warms first, through the wall and the flange, so the gradient is radial. Four-pole pairing puts both halves of the fiber at the same radius; they see the same radial history and the error cancels at first order. That covers the ordinary case of a gyro that is cold-soaked and then switched on.</p>
+<p>An azimuthal gradient is a different problem: one side warm because an amplifier sits beside it. The half-length point is then on the far side of the ring and at a different temperature, and only the quarter and eighth points, brought forward by 8-pole and 16-pole, can answer a field that is not symmetric about the axis. What no pole count removes is the pigtail pair. Two leads have to leave the coil somewhere, and their route stays the residual term in an otherwise symmetric build.</p>
+<p>Keep the timescales in view. At 0.9 mm²/s for silica, heat crosses one 135 µm coating in about 20 ms: (135 µm)² / 0.9 mm²/s. The beams are 2.45 µs apart. Nothing thermal equalises those two paths in time, so the pairing has to be geometric.</p>`,
+      },
+      {
+        h2: 'The cost is turnarounds',
+        html: `<p>Eight millimetres of radial space at 135 µm is 59 layers. At one reversal per sector boundary the FC60 build carries 236 direction changes for quadrupole, 472 for 8-pole and 944 for 16-pole. Each is a deceleration, a settle and a re-acceleration while the tension loop catches up, on a machine quoted at ±0.5 g at 20 r/min over a 5 to 50 g range.</p>
+<p>Turn count alone sets the floor: 3,386 turns at 50 r/min is 67.7 minutes on the <a href="/products/lkf-rh16/" class="text-blue-700 underline">RH16</a>, or 42.3 minutes at 80 r/min on the RH16A. Add two seconds per turnaround and the three builds separate to 75.6, 83.4 and 99.2 minutes. The fiber bill is identical in all three.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Pattern</th>
+      <th class="py-2 pr-4 font-semibold">Sectors per layer</th>
+      <th class="py-2 pr-4 font-semibold">Turns per sector</th>
+      <th class="py-2 pr-4 font-semibold">Reversals, 59 layers</th>
+      <th class="py-2 pr-4 font-semibold">Build time, 50 r/min</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">4-pole (quadrupole)</td><td class="py-2 pr-4">4</td><td class="py-2 pr-4">847</td><td class="py-2 pr-4">236</td><td class="py-2 pr-4">75.6 min</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">8-pole</td><td class="py-2 pr-4">8</td><td class="py-2 pr-4">423</td><td class="py-2 pr-4">472</td><td class="py-2 pr-4">83.4 min</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">16-pole (hexadecapole)</td><td class="py-2 pr-4">16</td><td class="py-2 pr-4">212</td><td class="py-2 pr-4">944</td><td class="py-2 pr-4">99.2 min</td></tr>
+  </tbody>
+</table>
+<p>The last column assumes two seconds per turnaround. Your spindle ramps will differ. The ratio between the rows will not.</p>`,
+      },
+      {
+        h2: 'Matching the machine to the program',
+        html: `<p>Two things decide whether a machine can run a pattern: build width and what the spindle can be told to do. The three coils need 8.5, 12 and 13.5 mm of it, inside the 0 to 60 mm stroke of the <a href="/products/lkf-rh04/" class="text-blue-700 underline">RH04</a> and the 200 mm of the two larger machines, so stroke is not the constraint.</p>
+<p>Programmability is. Spindle direction, traverse direction, speed and tension are programmable parameters on the RH16 and RH16A; the RH04 holds a fixed 40 r/min. A reversal schedule is nothing more than those four parameters changing in sequence, so a machine that cannot vary speed is a machine that cannot ease into a turnaround. At 944 of them in a 16-pole build, that is the difference between a schedule and an event at every layer end.</p>`,
+      },
+      {
+        h2: 'What to put on the order',
+        html: `<p>Four lines settle it: coil part number with its fiber length, winding pattern by pole count, tension setpoint and range, and the temperature test the coil will be judged by. Leave any of them open and the supplier picks the pattern, which tends to mean quadrupole because it is the cheapest to run.</p>
+<p>Then verify where it matters. Run the gyro through a ramp at a stated rate in the mount it will ship in, and read bias against the full-temperature row. A coil that is correctly wound and badly mounted produces the same number as a coil with the wrong pattern, and only the ramp separates them. Send the coil drawing and the drift budget and we will come back with the pattern and the machine.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Does a 16-pole coil always drift less than a 4-pole one?',
+        a: 'Only where the temperature field is not radially symmetric, or the coil is long enough that the transit offset is large. Under a pure radial gradient the four-pole pairing already puts both halves of the fiber at the same radius, and the extra folds buy little. Below the pattern sits everything it cannot reach: pigtails, mounting, and the drift of the optics and electronics around the coil.',
+      },
+      {
+        q: 'Can I check the winding pattern after delivery?',
+        a: 'Not by looking at the coil. Ask for the machine record: spindle direction by layer, traverse direction, turn count and layer count, all of which the RH16 and RH16A display and log. Then verify the purpose of the pattern with a bias-versus-temperature run at a stated ramp rate, in the mount the unit will ship in.',
+      },
+      {
+        q: 'Does a finer pattern need a different winding machine?',
+        a: 'No. The pattern lives in the program, and spindle direction, traverse direction, speed and tension are programmable on both 200 mm machines. What changes is time: a 16-pole build of the same 500 m coil carries four times the turnarounds of a quadrupole build, and every turnaround is a place where tension has to recover.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-RH16', href: '/products/lkf-rh16/', caption: 'Fiber coil winding machine, 0–50 r/min, programmable direction' },
+      { model: 'LKF-RH04', href: '/products/lkf-rh04/', caption: 'Fiber coil winding machine, fixed 40 r/min, 0–60 mm traverse' },
+    ],
+    relatedCategory: { name: 'Fiber Devices & Equipment', href: '/products/fiber-optic/' },
+  },
+  {
     slug: 'vertical-integration-inertial-manufacturing',
     title: 'Vertical Integration in Inertial Sensor Manufacturing: What You Can Actually Check',
     description:
