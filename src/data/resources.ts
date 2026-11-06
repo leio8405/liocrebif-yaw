@@ -58,8 +58,8 @@ export const resources: ResourceArticle[] = [
       },
       {
         h2: 'What each fold cancels, and what it cannot',
-        html: `<p>Heat rarely arrives evenly. In a sealed housing the rim warms first, through the wall and the flange, so the gradient is radial. Four-pole pairing puts both halves of the fiber at the same radius; they see the same radial history and the error cancels at first order. That covers the ordinary case of a gyro that is cold-soaked and then switched on.</p>
-<p>An azimuthal gradient is a different problem: one side warm because an amplifier sits beside it. The half-length point is then on the far side of the ring and at a different temperature, and only the quarter and eighth points, brought forward by 8-pole and 16-pole, can answer a field that is not symmetric about the axis. What no pole count removes is the pigtail pair. Two leads have to leave the coil somewhere, and their route stays the residual term in an otherwise symmetric build.</p>
+        html: `<p>Heat rarely arrives evenly. In a sealed housing the rim warms first, through the wall and the flange, so the gradient is radial. Four-pole pairing puts both halves of the fiber at the same radius; they see the same radial history and the error cancels at first order. The common case is a north-seeking unit that spent the night at -20 °C in an unheated survey vehicle and is switched on at 08:00 with the cab heater running: the mounting flange reaches +20 °C inside ten minutes, the rim of a 55 mm coil follows within a minute or two, and the core is still cold.</p>
+<p>An azimuthal gradient is a different problem: one side warm because an amplifier sits beside it. The half-length point is then on the far side of the ring and at a different temperature, and only the quarter and eighth points, brought forward by 8-pole and 16-pole, can answer a field that is not symmetric about the axis. What no pole count removes is the pigtail pair: two leads have to leave the coil somewhere, and their route stays the residual term.</p>
 <p>Keep the timescales in view. At 0.9 mm²/s for silica, heat crosses one 135 µm coating in about 20 ms: (135 µm)² / 0.9 mm²/s. The beams are 2.45 µs apart. Nothing thermal equalises those two paths in time, so the pairing has to be geometric.</p>`,
       },
       {
@@ -87,12 +87,12 @@ export const resources: ResourceArticle[] = [
       {
         h2: 'Matching the machine to the program',
         html: `<p>Two things decide whether a machine can run a pattern: build width and what the spindle can be told to do. The three coils need 8.5, 12 and 13.5 mm of it, inside the 0 to 60 mm stroke of the <a href="/products/lkf-rh04/" class="text-blue-700 underline">RH04</a> and the 200 mm of the two larger machines, so stroke is not the constraint.</p>
-<p>Programmability is. Spindle direction, traverse direction, speed and tension are programmable parameters on the RH16 and RH16A; the RH04 holds a fixed 40 r/min. A reversal schedule is nothing more than those four parameters changing in sequence, so a machine that cannot vary speed is a machine that cannot ease into a turnaround. At 944 of them in a 16-pole build, that is the difference between a schedule and an event at every layer end.</p>`,
+<p>Programmability is. Spindle direction, traverse direction, speed and tension are programmable parameters on the RH16 and RH16A; the RH04 holds a fixed 40 r/min. A reversal schedule is nothing more than those four parameters changing in sequence, so a machine that cannot vary speed is a machine that cannot ease into a turnaround. At 944 turnarounds, that gap shows up on every layer.</p>`,
       },
       {
         h2: 'What to put on the order',
-        html: `<p>Four lines settle it: coil part number with its fiber length, winding pattern by pole count, tension setpoint and range, and the temperature test the coil will be judged by. Leave any of them open and the supplier picks the pattern, which tends to mean quadrupole because it is the cheapest to run.</p>
-<p>Then verify where it matters. Run the gyro through a ramp at a stated rate in the mount it will ship in, and read bias against the full-temperature row. A coil that is correctly wound and badly mounted produces the same number as a coil with the wrong pattern, and only the ramp separates them. Send the coil drawing and the drift budget and we will come back with the pattern and the machine.</p>`,
+        html: `<p>Four lines settle it: coil part number with its fiber length, winding pattern by pole count, tension setpoint and range, and the temperature test the coil will be judged by. Leave any open and the supplier picks the pattern, which tends to mean quadrupole because it is cheapest to run.</p>
+<p>Then verify where it matters. Run the gyro through a ramp at a stated rate in the mount it will ship in, and read bias against the full-temperature row. A correctly wound coil in a bad mount reads the same as a wrong pattern, and only the ramp separates them. Send the coil drawing and the drift budget and we will come back with the pattern and the machine.</p>`,
       },
     ],
     faq: [
