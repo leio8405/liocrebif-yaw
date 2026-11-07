@@ -327,7 +327,8 @@
     {
       "id": 32,
       "slug": "fiber-coil-symmetric-winding-shupe-effect",
-      "used": false,
+      "used": true,
+      "published": "2026-11-07",
       "title": "How Symmetric Winding Cancels the Shupe Effect in FOG Coils",
       "targetKeywords": "shupe effect fog, symmetric winding, thermal phase error, fiber coil design",
       "outline": "对称绕制如何抵消温度梯度引起的 Shupe 相位误差，给出温度斜坡下的直观解释。内链：RH16A、FS60。",

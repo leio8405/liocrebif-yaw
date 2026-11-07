@@ -38,6 +38,87 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'fiber-coil-symmetric-winding-shupe-effect',
+    title: 'How Symmetric Winding Cancels the Shupe Effect in FOG Coils',
+    description:
+      'The Shupe effect responds to how unevenly the temperature rate is spread along the fiber, not to how fast the coil warms. What a winding pair cancels, where the cancellation ends, and the ramp test that separates a good coil from a bad mount.',
+    date: '2026-11-07',
+    readingTime: 5,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'The Shupe effect is an integral with a mirror in it',
+        html: `<p>The two beams in a FOG never occupy the same piece of fiber at once. At a point z along the fiber the clockwise beam passes (L - 2z)n/c ahead of the other one: zero at the midpoint, plus or minus Ln/c at the ends. Multiply that offset by the local rate of temperature change and integrate, and you have the <strong>Shupe effect</strong>:</p>
+<p>Δφ = (2π/λ)(dn/dT + nα) · ∫ (dT/dt)(z) · (L - 2z) · (n/c) dz</p>
+<p>(L - 2z) is antisymmetric about the midpoint, so its integral over the whole fiber is exactly zero. A ramp that warms every point at the same rate produces no first-order error, whatever the winding. Only a rate that varies from point to point does. The question is never how fast a <strong>fiber coil</strong> warms, but how unevenly. <strong>Symmetric winding</strong> answers that question and nothing else.</p>`,
+      },
+      {
+        h2: 'A pair cancels because the weights are equal and opposite',
+        html: `<p>The method is to lay fiber from +s and from -s of the midpoint next to each other in the pack. Two turns side by side sit at the same radius, so a thermal wave from the rim reaches both at once, at the same rate. Their kernel weights are +2s and -2s. Equal rate, opposite weight, sum zero.</p>
+<p>That is the whole mechanism, and it explains the pole count without turning it into a grade. The coil range puts all three options on one line: wound by 16-pole, 8-pole or 4-pole symmetric methods. More folds place the two halves of a pair closer together, so the thermal distance each pair bridges gets shorter. The pattern does not make the coil isothermal; it makes the error cancel where a pair exists. A wound body has a boundary, and that is where pairs run out.</p>`,
+      },
+      {
+        h2: 'Heat moves slower than the housing',
+        html: `<p>Silica carries heat at about 0.9 mm<sup>2</sup>/s. Across the 8.5 mm radial build of the LKF-FC60 that is (8.5)<sup>2</sup> / 0.9, roughly 80 seconds. Across the 55 mm outside diameter it is (27.5)<sup>2</sup> / 0.9, about 840 seconds, or 14 minutes. Both are r<sup>2</sup>/D estimates; adhesive and layer gaps on a real pack make them worse.</p>
+<p>So the housing warms first and the core trails. Hold a 1 K/min ramp long enough and the core sits about 14 K behind the rim, as large as the whole ambient swing. In a steady ramp every layer ends up ramping at the same rate at a different temperature, so the rate gradient decays. The error lives in the first minutes of a transient, and in shocks.</p>
+<p>A mapping pod on a light aircraft shows the size of it: wheels up at 06:40 from a +10 °C apron, climbing 6,000 ft at 500 ft/min. Twelve minutes; at 2 K per 1,000 ft the outside air is near -2 °C. The housing follows within a minute, and the coil core is still climbing when the camera flies its first line.</p>`,
+      },
+      {
+        h2: 'Where the cancellation runs out',
+        html: `<p>Two things the pattern cannot reach: a field with no symmetry about the midpoint, and the ends. The kernel weight is zero at the midpoint and L at the ends, so the fiber nearest the pigtails carries the largest lever arm. Pairing works inside the wound body; the leads leave from one place, and their route is the residual term.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Temperature field</th>
+      <th class="py-2 pr-4 font-semibold">What the pattern does</th>
+      <th class="py-2 pr-4 font-semibold">What is left</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Radial gradient</td><td class="py-2 pr-4">Pair members at equal radius</td><td class="py-2 pr-4">Pair-to-pair mismatch in tension</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">One side warm (amplifier, sunlit wall)</td><td class="py-2 pr-4">Quarter and eighth points halve the lever</td><td class="py-2 pr-4">Not cancelled, only reduced</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Ends and pigtails</td><td class="py-2 pr-4">Nothing; the weight is largest there</td><td class="py-2 pr-4">Lead routing, which no fold reaches</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Fold off the half length</td><td class="py-2 pr-4">Shifts the kernel, ends stop balancing</td><td class="py-2 pr-4">Sensitive to a uniform ramp again</td></tr>
+  </tbody>
+</table>
+<p>The last row is the one to check on a drawing: if the half length does not fall on the fold, the halves are unequal and the cancellation carries a bias.</p>`,
+      },
+      {
+        h2: 'What the winding machine contributes',
+        html: `<p>The machine contributes placement, and nothing else. On the <a href="/products/lkf-rh16a/" class="text-blue-700 underline">LKF-RH16A</a> the traverse covers 200 mm while the coil builds are 8.5, 12 and 13.5 mm wide, so stroke is not the constraint. Tension runs 3 to 50 g and holds ±0.5 g at 20 r/min; both turns of a pair have to land at the same stress, not just the same setpoint. Spindle direction, traverse direction, speed and tension are programmable, and a fold schedule is those four changing in sequence.</p>`,
+      },
+      {
+        h2: 'A soak test cannot see a bad wind',
+        html: `<p>Put the unit in a chamber, hold it at -40 °C, then +70 °C, and plot bias against temperature. That measures the thermal model, not the winding: dT/dt is zero at every hold point, so nothing enters the integral. The test that reaches the winding is a ramp at a stated rate, in the mount the unit ships in.</p>
+<p>The datasheet carries both rows, and the gap between them is what temperature adds. On the <a href="/products/lkf-fs60/" class="text-blue-700 underline">LKF-FS60</a> the full-temperature bias repeatability is 1, 0.5 and 0.3 °/h across grades A, B and C, against 0.20, 0.10 and 0.05 °/h for the 10 s bias stability row: five times wider at A and B, six at C. A winding or mount problem lands in the first row long before the second.</p>`,
+      },
+      {
+        h2: 'Six lines on the coil drawing',
+        html: `<p>An order that can be checked without a conversation needs the bore, outside diameter and height; the fiber length and type; the wavelength; the pole count; the tension setpoint and range; and the ramp rate the coil will be accepted at. Leave the last line off and acceptance collapses into a soak, which passes everything.</p>
+<p>The <a href="/products/fiber-optic/" class="text-blue-700 underline">fiber devices and equipment range</a> covers the coils, the winding machines and the curing hardware. Send the drawing and the drift budget, and the answer comes back as a pattern and a machine setting.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Does symmetric winding make a coil immune to temperature?',
+        a: 'No. It cancels the part of the rate field that is symmetric about the midpoint, and it needs a pair behind every weight. A field with no symmetry axis, and the pigtail run, stay out of reach. The residual gets smaller; the term does not disappear.',
+      },
+      {
+        q: 'Why does a unit pass the soak test and drift during a climb?',
+        a: 'Because a soak holds temperature still, and the Shupe effect needs a rate. A chamber ramping at 1 K/min with the unit running, in its shipping mount, shows the same error the climb produces. Read it against the full-temperature row.',
+      },
+      {
+        q: 'Can a 16-pole coil fix a bad mount?',
+        a: 'Not usually. A mount that heats one foot or one wall produces a field with no symmetry about the coil axis, and extra folds halve the lever instead of removing it. Fix the mount first.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-RH16A', href: '/products/lkf-rh16a/', caption: 'Fiber coil winding machine, 200 mm traverse, programmable fold schedule' },
+      { model: 'LKF-FS60', href: '/products/lkf-fs60/', caption: 'Single-axis FOG, ≤0.05 °/h at grade C' },
+    ],
+    relatedCategory: { name: 'Fiber Devices & Equipment', href: '/products/fiber-optic/' },
+  },
+  {
     slug: 'fiber-coil-quadrupole-winding-pattern',
     title: 'Quadrupole, 8-Pole or 16-Pole: Choosing a Fiber Coil Winding Pattern',
     description:
