@@ -341,7 +341,8 @@
     {
       "id": 33,
       "slug": "fiber-coil-length-vs-bias",
-      "used": false,
+      "used": true,
+      "published": "2026-11-08",
       "title": "Coil Length vs Bias Performance: Where Extra Fiber Stops Helping",
       "targetKeywords": "fog coil length, fiber length vs sensitivity, coil diameter tradeoff, fog design",
       "outline": "光纤长度/圈径与灵敏度、零偏的关系，说明超过某个长度后收益递减的原因（损耗、Shupe、成本）。内链：FS60、FS98H。",

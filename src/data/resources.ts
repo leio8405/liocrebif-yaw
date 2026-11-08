@@ -38,6 +38,94 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'fiber-coil-length-vs-bias',
+    title: 'Coil Length vs Bias Performance: Where Extra Fiber Stops Helping',
+    description:
+      'Sagnac sensitivity goes as mean radius times fiber length, so a longer coil buys less than the meter count suggests. What the product explains on a production range, what it leaves to the rest of the instrument, and the term that grows with the fiber.',
+    date: '2026-11-08',
+    readingTime: 5,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'The request that starts this',
+        html: `<p>The request sounds routine: the housing has room for a 98 mm coil, so fit it and take the bias from 0.05 to 0.010 °/h. It does not follow, and the reason is arithmetic. <strong>FOG coil length</strong> is one factor of two in the sensitivity equation. Mean radius is the other, and the two carry different bills. This page works the trade on a production coil range: what the product of the two explains, what it leaves to the rest of the instrument, and the one term that grows while the signal grows.</p>`,
+      },
+      {
+        h2: 'Sensitivity is a product, not a length',
+        html: `<p>For a coil of mean radius R and fiber length L, the Sagnac phase shift is</p>
+<p>Δφ = (4πRL/λc) · Ω</p>
+<p>Length enters once and radius enters once, multiplied. The turn count is already fixed by the other two, so more turns on a smaller former buy nothing. Rewind the same 500 m onto a 45 mm mean radius instead of 47 and the signal drops 4 percent while the wound volume drops 8 percent. Trading one factor for the other at constant product gains you nothing but a smaller box.</p>
+<p>Three production coils, mean radius taken as (ID + OD)/2:</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Coil</th>
+      <th class="py-2 pr-4 font-semibold">Mean radius</th>
+      <th class="py-2 pr-4 font-semibold">Length</th>
+      <th class="py-2 pr-4 font-semibold">Wavelength</th>
+      <th class="py-2 pr-4 font-semibold">Insertion loss</th>
+      <th class="py-2 pr-4 font-semibold">Target accuracy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">LKF-FC60</td><td class="py-2 pr-4">47 mm</td><td class="py-2 pr-4">500 m</td><td class="py-2 pr-4">1310 nm</td><td class="py-2 pr-4">≤0.4 dB</td><td class="py-2 pr-4">0.1 °/h</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">LKF-FC98</td><td class="py-2 pr-4">84 mm</td><td class="py-2 pr-4">1,460 m</td><td class="py-2 pr-4">1550 nm</td><td class="py-2 pr-4">≤0.7 dB</td><td class="py-2 pr-4">0.015 °/h</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">LKF-FC120</td><td class="py-2 pr-4">103 mm</td><td class="py-2 pr-4">2,220 m</td><td class="py-2 pr-4">1550 nm</td><td class="py-2 pr-4">≤1.5 dB</td><td class="py-2 pr-4">0.003 °/h</td></tr>
+  </tbody>
+</table>
+<p>Two complete gyros sit on the first two coils. Grade C of the <a href="/products/lkf-fs60/" class="text-blue-700 underline">LKF-FS60</a> is 0.05 °/h; grade C of the <a href="/products/lkf-fs98h/" class="text-blue-700 underline">LKF-FS98H</a> with its 98 mm housing is 0.010 °/h. Five times. Radius times length between the coils is (84/47) × (1,460/500) = 5.2. Geometry closes the gap with nothing left over. Angle random walk tracks it: 0.005 against 0.001 °/√h, also five times.</p>`,
+      },
+      {
+        h2: 'Where the last three times come from',
+        html: `<p>The FC120 row breaks the accounting, which is why it earns a paragraph. Target accuracy 0.003 °/h against 0.1 °/h is 33 times. Radius times length is (103/47) × (2,220/500) = 9.7. Geometry explains 9.7 of the 33. The remaining 3.4 has to come from something that is not fiber: source power, detector noise, the winding, and a calibration with more signal to work against.</p>
+<p>That is the answer to the question in the title. Extra fiber stops helping when the rest of the instrument becomes the limit, and on this range it has become the limit by 2,220 m. If you hold a 500 m coil and expect 2,000 m to deliver 0.003 °/h, the fiber is not what stands in the way.</p>`,
+      },
+      {
+        h2: 'The loss bill is smaller than the worry',
+        html: `<p>Insertion loss reads 0.4, 0.7 and 1.5 dB across the range. At the ends, 0.4 dB leaves 91 percent of the light and 1.5 dB leaves 71 percent, a ratio of 0.78. Angle random walk scales with the square root of optical power, so the long coil pays 1/√0.78 = 1.13 on noise, about 13 percent. Signal gained 4.4 times, noise cost 13 percent. Loss is not what stops this trade, and it is worth saying plainly because it is the bill people expect to be fatal.</p>`,
+      },
+      {
+        h2: 'Volume, and a layer count that barely moves',
+        html: `<p>The FS60 envelope is 60 × 60 × 30 mm, 108,000 mm³, at 150 g. The FS98H is 98 × 98 × 35 mm, 336,000 mm³, at 540 g. Three times the volume and 3.6 times the mass. That bill arrives at the airframe rather than at the optics, and it usually ends the conversation first.</p>
+<p>The radial build is the quieter number. The FC60 packs 8 mm of wall, 39 to 55 mm, which at 135 μm fiber is 59 layers. The FC98 packs 9 mm and 67 layers; the FC120 packs 9.75 mm and 72 layers. Length rose 4.4 times while the layer count rose 22 percent, so nearly all the added fiber went into diameter.</p>
+<p>That choice pays twice. Turns per layer are the height over 0.135 mm, giving 63, 89 and 100, and total turns 3,386, 5,533 and 6,844. A coil that stacked layers instead would need 4.4 times the turns of the FC60 for the same length, and winding time follows turns, not meters.</p>`,
+      },
+      {
+        h2: 'The term that grows with the fiber',
+        html: `<p>Against all of that sits the Shupe term:</p>
+<p>Δφ = (2π/λ)(dn/dT + nα) · ∫ (dT/dt)(z) · (L - 2z) · (n/c) dz</p>
+<p>Let the rate of temperature change vary linearly from one end of the fiber to the other, and the integral evaluates to L<sup>2</sup>/3 times the end-to-end rate. Phase error grows with length squared while signal grows with length, so the rate error it maps to grows as L/R. Add 2.92 times the length at fixed radius and the Shupe term grows 2.92 times. Grow the radius to 1.79 times alongside it and the term grows 1.63 times.</p>
+<p>That ratio is why every step up in length on the range is matched by a step up in diameter. A coil lengthened on its own would measure better on a bench and drift worse in a thermal ramp.</p>`,
+      },
+      {
+        h2: 'What to put on the drawing',
+        html: `<p>Six lines cover a coil order: bore, outside diameter and height; length and fiber type; wavelength; insertion loss ceiling; target accuracy at a stated averaging time; pole count. A seventh, the ramp rate the coil will be accepted at, catches a winding problem that a soak test cannot see.</p>
+<p>The <a href="/products/lkf-fc/" class="text-blue-700 underline">coil range</a> runs from 500 to 2,220 m at 1310 and 1550 nm. The <a href="/products/fog-gyroscopes/" class="text-blue-700 underline">fiber optic gyroscope range</a> takes the same coils to instrument level, where the last 3.4 times have to be found.</p>
+<p>Send the drift budget and the housing envelope in the same email. The second decides how much of the first is reachable.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Does doubling the fiber length halve the bias?',
+        a: 'Not at fixed radius. Signal grows with length, but the Shupe term grows with the square of it, so the equivalent rate error grows as L/R. Doubling the fiber on the same former makes a coil that is more sensitive and less stable at once. The fivefold improvement between the FS60 and the FS98H comes from length and diameter moving together.',
+      },
+      {
+        q: 'Can I keep 500 m and shrink the coil to fit a smaller housing?',
+        a: 'Yes, and the trade is usually worth taking. Sensitivity falls with mean radius while wound volume falls with its square, so a 10 percent smaller radius costs 10 percent of the signal and about 19 percent of the volume. The Shupe term goes the other way, since it scales as L/R, so check it against your ramp specification before you commit.',
+      },
+      {
+        q: 'Why does my 500 m coil read 0.05 °/h when the coil is rated 0.1 °/h?',
+        a: 'Because the accuracy row is what the coil supports, not what it guarantees. A 0.1 °/h row means the coil is good enough for an instrument targeting that number; the instrument still has to earn it with source power, a detector matched to the return level, and a full-temperature calibration. Coils that measure better than the row are ordinary. Coils that measure worse point at a winding or a splice.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-FS60', href: '/products/lkf-fs60/', caption: 'Single-axis FOG, 0.05 °/h at grade C, 500 m coil' },
+      { model: 'LKF-FS98H', href: '/products/lkf-fs98h/', caption: 'Single-axis FOG, 0.010 °/h at grade C, 1,460 m coil' },
+      { model: 'LKF-FC', href: '/products/lkf-fc/', caption: 'PM fiber coils, 500 to 2,220 m, 16, 8 or 4-pole wound' },
+    ],
+    relatedCategory: { name: 'Fiber Optic Gyroscopes', href: '/products/fog-gyroscopes/' },
+  },
+  {
     slug: 'fiber-coil-symmetric-winding-shupe-effect',
     title: 'How Symmetric Winding Cancels the Shupe Effect in FOG Coils',
     description:
