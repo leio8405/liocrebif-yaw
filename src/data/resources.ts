@@ -38,6 +38,95 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'fiber-coil-winding-tension-control',
+    title: 'Winding Tension Control in FOG Coils: What the Datasheet Does Not Say',
+    description:
+      'A tension spec is a force measured at one point on one machine, while the coil keeps a stress. What the same gram does to 80 µm and 125 µm cladding, where the sensor sits, and four lines to put on the coil drawing instead.',
+    date: '2026-11-09',
+    readingTime: 5,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'The setpoint and the question it cannot answer',
+        html: `<p>An operator types 15 into the tension field of an <a href="/products/lkf-rh16a/" class="text-blue-700 underline">LKF-RH16A</a> and the display holds 15.0 g for a whole 500 m run. The machine sheet says 3-50 g, ±0.5 g at 20 r/min, fiber Φ0.1 to Φ0.5 mm. All true, and none of it answers the only question the coil has: what stress is in the glass, and is it the same in the first turn as in the last. <strong>Coil winding tension</strong> is quoted as a force because force is what a machine can control. A coil stores a strain, and the two are joined by the cross-section of the fiber on the spool.</p>
+<p>The bill arrives later. Grade C of the LKF-FS60 holds 0.05 °/h at a 10 s average and 0.3 °/h across temperature. Same instrument, six times apart. Tension uniformity sits somewhere in that gap, and no machine datasheet says whether it is the reason.</p>`,
+      },
+      {
+        h2: 'A gram is a force, a coil remembers a stress',
+        html: `<p>Axial stress in the glass is tension over cladding area:</p>
+<p>σ = 4T / (πd²)</p>
+<p>The FC60-class coil drawing names PM 1310_80/135 fiber, an 80 µm cladding under a 135 µm coating. Quarter the area and the same gram becomes 2.44 times the stress.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Tension</th>
+      <th class="py-2 pr-4 font-semibold">Stress, 80 µm</th>
+      <th class="py-2 pr-4 font-semibold">Stress, 125 µm</th>
+      <th class="py-2 pr-4 font-semibold">Strain, 80 µm</th>
+      <th class="py-2 pr-4 font-semibold">Stretch over 500 m</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">3 g</td><td class="py-2 pr-4">5.9 MPa</td><td class="py-2 pr-4">2.4 MPa</td><td class="py-2 pr-4">81 µε</td><td class="py-2 pr-4">41 mm</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">5 g</td><td class="py-2 pr-4">9.8 MPa</td><td class="py-2 pr-4">4.0 MPa</td><td class="py-2 pr-4">136 µε</td><td class="py-2 pr-4">68 mm</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">15 g</td><td class="py-2 pr-4">29.3 MPa</td><td class="py-2 pr-4">12.0 MPa</td><td class="py-2 pr-4">407 µε</td><td class="py-2 pr-4">203 mm</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">50 g</td><td class="py-2 pr-4">97.6 MPa</td><td class="py-2 pr-4">40.0 MPa</td><td class="py-2 pr-4">1,355 µε</td><td class="py-2 pr-4">678 mm</td></tr>
+  </tbody>
+</table>
+<p>Strain is stress over 72 GPa, the modulus of silica. The ceiling is on the fiber sheet: a 100 kpsi proof test, 689 MPa. At 3 g the 80 µm fiber runs under one percent of that; at 50 g, 14 percent. Both are legal settings on the same machine, and they are not the same process.</p>`,
+      },
+      {
+        h2: 'What the coil keeps after the tension comes off',
+        html: `<p>At 15 g the strain is 407 µε, so 500 m of fiber is 203 mm longer than its free length. Over 3,386 turns at 148 mm each, every turn holds 60 µm of stretch, just under half a fiber diameter. Release the load before bonding and that 60 µm per turn has to go somewhere: layers settle, turns ride up, and the pattern stops holding what it was built to hold.</p>
+<p>That is the adhesive's job, and its numbers read oddly until you see it. <a href="/products/lkf-uv500/" class="text-blue-700 underline">UV500</a> cures to a modulus of 387 MPa, 186 times softer than silica, so it fixes position without adding axial load. Elongation is 19 percent against the 0.14 percent the fiber carries, a margin of 140 times. Working time over 48 hours lets a long wind be inspected and potted in one cycle.</p>
+<p>Tension also loads the coil inward. Roughly, bore pressure is σ·t/r: an 8 mm wall at a 47 mm mean radius puts about 5 MPa on the innermost layer at 15 g, with 59 layers above adding to it. In PM fiber that pressure adds to the stress rods.</p>`,
+      },
+      {
+        h2: 'The sensor is not at the coil',
+        html: `<p>Every tension figure in a manual belongs to a sensor at one point on the path. Between that sensor and the coil sit guides, and a coated fiber dragged over one under load behaves like a belt on a capstan:</p>
+<p>T<sub>out</sub> = T<sub>in</sub> · e<sup>μθ</sup></p>
+<p>A quarter turn of wrap multiplies by 1.17, 1.37 or 1.60 at friction coefficients of 0.1, 0.2 and 0.3; a half turn gives 1.37, 1.87 and 2.57. That is not a defect, it is the geometry of bending a fiber around a radius. It is also why two machines quoting ±0.5 g can build coils that do not match: the number is honest where it is measured, and the coil is elsewhere on the frame.</p>
+<p>So ask where the sensor sits, how many guides stand between it and the traverse, and what total wrap angle they add up to. If that differs from the machine the recipe was qualified on, the recipe does not transfer, whatever the accuracy row says.</p>`,
+      },
+      {
+        h2: 'Reversal, and the layer count nobody quotes',
+        html: `<p>The FC60 pack is 8 mm of wall at 135 µm fiber: 59 layers of 63 turns, 3,386 turns in all. At the 20 r/min where accuracy is quoted a layer takes 3.15 minutes. Each of those 59 boundaries is a reversal, where the traverse stops and starts back while the spindle keeps turning.</p>
+<p>There is no row for that moment. ±0.5 g describes the loop in steady state, and a reversal is the one part of the cycle where the demand is not steady. What it leaves is a run of turns at every layer edge carrying a different strain from the middle of the layer, and edges are where the fiber bears on the layer below instead of on its neighbour.</p>
+<p>Two machines in the same catalogue bracket it. The <a href="/products/lkf-rh16/" class="text-blue-700 underline">LKF-RH16</a> floor is 5 g at up to 50 r/min; the RH16A goes to 3 g at 80 r/min. The lower floor exists for thin fiber, where 3 g is already 5.9 MPa on the glass.</p>`,
+      },
+      {
+        h2: 'Four lines for the coil drawing',
+        html: `<p>The setpoint alone does not survive a change of machine, supplier or fiber. Four lines carry it:</p>
+<ul class="list-disc pl-6 space-y-2">
+<li>Cladding diameter beside the tension, so the stress is recoverable. "15 g on 80 µm" travels between sites. "15 g" does not.</li>
+<li>A lower value for the reversal, if the loop cannot hold the setpoint through a stop.</li>
+<li>Sensor position and total wrap angle between sensor and traverse.</li>
+<li>Bonded state: adhesive, cure schedule, and whether the coil was measured before or after potting.</li>
+</ul>
+<p>The <a href="/products/fiber-optic/" class="text-blue-700 underline">fiber devices and equipment range</a> covers the machines, the adhesives and the coils built with them. Send the fiber type with the tension you run and we will tell you what stress that is.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Does more tension give a tighter coil?',
+        a: 'No. After cure, tightness is a property of the bond, not of the stretch. A higher setpoint raises axial stress, raises the radial load on the inner layers, and gives the coating more to creep under, but the coil holds its shape because the adhesive fixed it, not because the fiber is still pulled. A coil that goes loose points at the cure and the potting before it points at the tension.',
+      },
+      {
+        q: 'Can one tension recipe cover 245 µm and 135 µm coated fiber?',
+        a: 'Only if the cladding diameter is the same. Coating thickness does not change the glass area, but it changes contact pressure and how much load the coating takes before the glass does. Move from a 125 µm to an 80 µm cladding and the same gram is 2.44 times the stress. Write the recipe in megapascals, or write it in grams with the cladding diameter beside it.',
+      },
+      {
+        q: 'How do I check the tension once the coil is wound?',
+        a: 'You cannot read it back. Tension is a process variable that leaves no gauge on the part. Check the consequence: full-temperature bias repeatability at a stated ramp rate, extinction ratio after cure, and insertion loss against the pre-pot measurement. A coil that lost its strain state in the cure shows up in the first two.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-RH16', href: '/products/lkf-rh16/', caption: 'Fiber coil winding machine, 5-50 g tension, 0-50 r/min' },
+      { model: 'LKF-UV500', href: '/products/lkf-uv500/', caption: 'Winding adhesive, 387 MPa modulus, over 48 h working time' },
+    ],
+    relatedCategory: { name: 'Fiber Devices & Equipment', href: '/products/fiber-optic/' },
+  },
+  {
     slug: 'fiber-coil-length-vs-bias',
     title: 'Coil Length vs Bias Performance: Where Extra Fiber Stops Helping',
     description:

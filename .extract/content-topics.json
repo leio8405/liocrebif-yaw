@@ -355,7 +355,8 @@
     {
       "id": 34,
       "slug": "fiber-coil-winding-tension-control",
-      "used": false,
+      "used": true,
+      "published": "2026-11-09",
       "title": "Winding Tension Control in FOG Coils: What the Datasheet Does Not Say",
       "targetKeywords": "coil winding tension, tension control fog, fiber winding quality, fog coil manufacturing",
       "outline": "张力波动如何改变光纤应力分布并体现在零偏温漂上；张力控制的工程手段。内链：RH16、UV500 绕环胶。",
