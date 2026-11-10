@@ -369,7 +369,7 @@
     {
       "id": 35,
       "slug": "fiber-coil-bobbin-material",
-      "used": false,
+      "used": true,
       "title": "Bobbin Material for FOG Coils: Thermal Expansion vs Mass",
       "targetKeywords": "fog coil bobbin, bobbin material, thermal expansion coil, fiber coil design",
       "outline": "骨架材料热膨胀系数与质量对零偏温漂、启动时间的影响；铝/钛/复合材料对比。内链：RH16、FS80。",
@@ -377,7 +377,8 @@
         "lkf-rh16",
         "lkf-fs80"
       ],
-      "relatedCategory": "fiber-optic"
+      "relatedCategory": "fiber-optic",
+      "published": "2026-11-10"
     },
     {
       "id": 36,

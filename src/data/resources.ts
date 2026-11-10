@@ -38,6 +38,96 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'fiber-coil-bobbin-material',
+    title: 'Bobbin Material for FOG Coils: Thermal Expansion vs Mass',
+    description:
+      'A bobbin sets the bore the coil is wound against, carries heat from the housing into the pack, and holds the turns in shape. Only the second job reaches the bias, and thermal diffusivity decides it. Four materials on one table, and four lines for the drawing.',
+    date: '2026-11-10',
+    readingTime: 5,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'The field the winding machine asks for',
+        html: `<p>A <strong>FOG coil bobbin</strong> does three jobs: it sets the bore the fiber is wound against, it carries heat from the housing into the pack, and it holds the turns in shape. Bobbin material is usually argued on the first, because thermal expansion is the number on the drawing. That number lands in the scale factor, where a calibration table removes it. The job that reaches the bias is the second, and what decides it is thermal diffusivity, not expansion.</p>
+<p>A <a href="/products/lkf-rh16/" class="text-blue-700 underline">LKF-RH16</a> will not start until someone enters the bobbin diameter and width. Both sit in the programmable list beside fiber diameter and tension. One turn on the first layer of a 39 mm bore is 122.5 mm, and on a 40 mm bore 125.7 mm. A 500 m coil runs about 3,386 turns, so a 1 mm bore error puts the length count out by 10.6 m. Before any thermal argument, the bobbin is a metrology part, and its bore tolerance outranks the alloy.</p>`,
+      },
+      {
+        h2: 'Where the expansion actually lands',
+        html: `<p>Sagnac phase scales with loop area: fiber length times coil diameter. Heat the assembly and both grow, so the product grows at twice the expansion coefficient:</p>
+<p>d(L·D) / (L·D) = 2 α dT</p>
+<p>Aluminium at 23 ppm/K across 100 K, from -40 to +60 °C, gives 4,600 ppm. That number does not appear in the bias column. It appears in the scale factor, measured at each temperature and written into a compensation table.</p>
+<p>The <a href="/products/lkf-fs80/" class="text-blue-700 underline">LKF-FS80</a> prints what is left: full-temperature scale factor repeatability ≤150 ppm in grade A and ≤100 ppm in grade B, over -40 to +60 °C. If that were the raw swing, no aluminium bobbin could pass; it would need an expansion under 0.75 ppm/K. As repeatability, it says a second pass through a temperature lands within 150 ppm of the first, which measures whether bobbin and adhesive return to the same state, not how far they moved.</p>`,
+      },
+      {
+        h2: 'The number that reaches the bias',
+        html: `<p>A uniform temperature change, however large, cancels in a symmetric winding: the Shupe weight is antisymmetric about the coil midpoint and integrates to zero. A gradient does not cancel, and a gradient is what a bobbin makes when its temperature moves faster than the coil behind it.</p>
+<p>The speed of that equalisation is thermal diffusivity, k divided by density times specific heat. It is not the expansion coefficient. Invar has almost no expansion and conducts heat badly.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Material</th>
+      <th class="py-2 pr-4 font-semibold">CTE, ppm/K</th>
+      <th class="py-2 pr-4 font-semibold">Diffusivity, mm²/s</th>
+      <th class="py-2 pr-4 font-semibold">Density, g/cm³</th>
+      <th class="py-2 pr-4 font-semibold">SF swing, ppm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Aluminium 6061</td><td class="py-2 pr-4">23</td><td class="py-2 pr-4">69</td><td class="py-2 pr-4">2.70</td><td class="py-2 pr-4">4,600</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Titanium, CP</td><td class="py-2 pr-4">8.6</td><td class="py-2 pr-4">9.2</td><td class="py-2 pr-4">4.51</td><td class="py-2 pr-4">1,720</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Invar 36</td><td class="py-2 pr-4">1.5</td><td class="py-2 pr-4">2.5</td><td class="py-2 pr-4">8.05</td><td class="py-2 pr-4">300</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Fused silica</td><td class="py-2 pr-4">0.55</td><td class="py-2 pr-4">0.86</td><td class="py-2 pr-4">2.20</td><td class="py-2 pr-4">110</td></tr>
+  </tbody>
+</table>
+<p>A 3 mm aluminium wall takes 0.13 s to reach a new surface temperature. Heat needs 74 s to cross 8 mm of wound silica, 570 times slower. Every step the housing makes reaches the coil wall at once and the core a minute later.</p>
+<p>An unheated cabinet on a mast, a clear morning, the sunlit face up 25 K in half an hour. For the first minute and a quarter the coil inner wall runs 25 K ahead of its core, and the loop integrates a term that has nothing to do with how well the fiber was wound.</p>`,
+      },
+      {
+        h2: 'Mass buys time, not accuracy',
+        html: `<p>A 5 cm³ bobbin, about what a 39 mm bore coil needs, weighs 13.5 g in aluminium and holds 12 J/K. In titanium it weighs 22.5 g and holds the same 12 J/K, because specific heat drops by nearly what density gains. Invar holds 21 J/K. The 500 m coil and its adhesive sit near 16 J/K.</p>
+<p>So changing alloy barely moves total heat capacity, because the bobbin is not the dominant mass. And a heavier bobbin does not raise accuracy: it turns a step into a ramp, and a steady ramp carries no first-order Shupe error. Mass buys the ramp. The mechanism is time, not precision.</p>
+<p>The settling figure is often read as thermal. It is not. Under 10 s on the <a href="/products/lkf-fs60/" class="text-blue-700 underline">LKF-FS60</a> and the FS80 is the time for source and loop to settle. Heat needs 74 s to cross the coil, so an instrument can output valid rates while its core is still moving.</p>`,
+      },
+      {
+        h2: 'Four materials, one decision',
+        html: `<p>Aluminium is the default, and not because its expansion is low. 69 mm²/s keeps the gradient short, it holds a bore tolerance, and adhesives are qualified on it. The 4,600 ppm goes into a calibration table, a solved problem one level up.</p>
+<p>Titanium cuts the swing 2.7 times and stretches the gradient 7.5 times. Unless the ambient is stable and the gradient comes from elsewhere, that trade loses. Invar is worse: 300 ppm, and a gradient lasting 27 times longer. Correct only when the housing is already isothermal.</p>
+<p>Fused silica matches the fiber at 0.55 ppm/K and conducts almost nothing. It belongs where expansion has to be matched, not where temperature moves.</p>
+<p>One sentence: you are not buying a low expansion coefficient, you are buying a short gradient.</p>`,
+      },
+      {
+        h2: 'Four lines for the bobbin drawing',
+        html: `<p>The alloy name travels badly between suppliers. Four lines carry the intent:</p>
+<ul class="list-disc pl-6 space-y-2">
+<li>Alloy and temper, not the word aluminium. 6061-T6 and 7075-T6 differ in how much the bore moves after stress relief.</li>
+<li>Bore diameter with roundness and concentricity. The bore is the length standard for the run.</li>
+<li>Wall, flange thickness and anodising. The first two set the 12 J/K; the third changes the bond and the local expansion at the interface.</li>
+<li>Thermal acceptance: -40 to +70 °C, a stated cycle count, then full-temperature bias and scale factor repeatability after the last cycle. Both rows exist on the FS80 table and neither follows from a CTE value.</li>
+</ul>
+<p>The <a href="/products/fiber-optic/" class="text-blue-700 underline">fiber devices and equipment range</a> covers machines, coils and coil adhesives. Send the bore and width, and we will tell you what the pack weighs and what 100 K does to the scale factor.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Can a titanium bobbin reduce bias drift?',
+        a: 'It cuts the scale factor swing 2.7 times and extends the life of a thermal gradient inside the coil 7.5 times. The first number is compensated at instrument level. The second one is not, because it acts on bias. Unless the ambient is held constant and the gradient comes from a local heat source, titanium makes the harder number worse in order to improve the easier one.',
+      },
+      {
+        q: 'Does a heavier bobbin improve bias stability?',
+        a: 'It changes the shape of the disturbance, not the error per kelvin. A heavy bobbin turns a step into a ramp, and a steady ramp cancels in a symmetric winding, so the answer is yes for a step. For a slow ambient change it is no: the gradient forms anyway and simply takes longer to clear.',
+      },
+      {
+        q: 'Why does the winding machine need the bobbin diameter?',
+        a: 'Because one turn is pi times the diameter and the machine counts turns to report length. On a 39 mm bore a turn is 122.5 mm, on a 40 mm bore it is 125.7 mm. Over 3,386 turns that is 10.6 m. The same field also sets the layer count, so a wrong value shows up twice.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-RH16', href: '/products/lkf-rh16/', caption: 'Fiber coil winding machine, programmable bobbin diameter and width' },
+      { model: 'LKF-FS80', href: '/products/lkf-fs80/', caption: 'Single-axis FOG, 0.01 °/h bias stability, 380 g' },
+    ],
+    relatedCategory: { name: 'Fiber Devices & Equipment', href: '/products/fiber-optic/' },
+  },
+  {
     slug: 'fiber-coil-winding-tension-control',
     title: 'Winding Tension Control in FOG Coils: What the Datasheet Does Not Say',
     description:
