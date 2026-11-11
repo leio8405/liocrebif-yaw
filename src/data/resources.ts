@@ -38,6 +38,100 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'fiber-coil-glue-selection',
+    title: 'Fiber Coil Adhesive: UV Cure vs Epoxy, and Where Each One Fails',
+    description:
+      'Three adhesives, three jobs on one coil. What the cure energy can reach, what modulus times thermal strain does to the glass, and what none of the three sheets prints.',
+    date: '2026-11-11',
+    readingTime: 5,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'Three jobs, three materials, two questions',
+        html: `<p>A <strong>fiber coil adhesive</strong> appears three times in one FOG build, and each place wants a different material. One fixes 3,386 wound turns in place. One sits under the pigtail as a buffer. One bonds the finished coil to a metal base. In this catalogue those are <a href="/products/lkf-uv500/" class="text-blue-700 underline">UV500</a>, <a href="/products/lkf-uv100/" class="text-blue-700 underline">UV100</a> and <a href="/products/lkf-h01/" class="text-blue-700 underline">H01</a>, and their three tables disagree on almost every row.</p>
+<p>A coil holds 0.05 °/h in a 20 °C room, then misses its 0.3 °/h full-temperature row in a cold chamber. The winding record is clean, so the adhesive and its cure are what is left to suspect.</p>
+<p>Can the cure energy reach the adhesive? What load does the cured material put on the glass when the assembly cools? Every section below is arithmetic on those two.</p>`,
+      },
+      {
+        h2: 'Cure energy has to reach the adhesive',
+        html: `<p>The UV100 table is unusually honest about this. Its curing row reads surface cure at 365 nm, 200 mW/cm², 10 s or less, with time and intensity adjustable. Surface cure is what a lamp does to a wound pack. A 500 m winding in a 39/55/8.5 mm bore is 59 layers of 135 µm fiber, and light from the outside crosses a coating boundary at every layer.</p>
+<p>Put a light-cured adhesive inside that pack and it sets where the lamp can see it. Layer 30 never sees a photon, whatever the label says. H01 takes the other route: two parts at 10:1 by weight, 80 °C for more than 2 h. Heat crosses 8 mm of wound silica in about 74 s, so an oven reaches the interior a lamp cannot.</p>
+<p>That is the first rule, and it is geometry, not chemistry. Light-cure the outside if the light can land there. Heat the inside, or apply the adhesive during the wind and let it travel in with the fiber.</p>`,
+      },
+      {
+        h2: '387 MPa, 1 MPa, and what reaches the glass',
+        html: `<p>The numbers that matter are moduli, and the three sheets state them with different confidence. UV500 gives 387 MPa and 19% elongation. UV100 gives 1 MPa or less. H01 gives 53 MPa tensile and Shore D 96.1, a hardness rather than a modulus.</p>
+<p>Turn a temperature swing into a load. Aluminium at 23 ppm/K against silica at 0.55 leaves 22.45 ppm/K, and 120 K of cooling gives 2,694 ppm of differential strain. Multiply by the modulus of whatever carries it:</p>
+<p>silica, rigidly constrained: 72 GPa × 2,694 ppm = 194 MPa<br>
+UV500: 387 MPa × 2,694 ppm = 1.04 MPa<br>
+UV100: 1 MPa × 2,694 ppm = 2.7 kPa</p>
+<p>194 MPa is 28% of the 689 MPa proof test printed on the PM fiber sheet. No coil is bonded rigidly. That is what the adhesive is for: a compliant member between a 194 MPa problem and the glass. UV500 divides the transfer 186 times. UV100 divides it another 387 times, which is why it belongs under a single pigtail and not inside a pack that has to hold its shape.</p>`,
+      },
+      {
+        h2: 'Cure temperature is the zero-stress temperature',
+        html: `<p>An adhesive sets at a temperature, and that becomes the point where the assembly is strain-free. Below it, every kelvin adds strain. H01 cures at 80 °C, so the coil and its base are stress-free at 80 °C and 120 K away from it at -40 °C.</p>
+<p>Across a 3 mm bond width, 2,694 ppm is 8.1 µm of relative movement between metal and glass. In a 50 µm glue line that is 16% shear strain. H01 states 53 MPa tensile and Shore D 96.1 but no elongation at -40 °C, so 16% is a figure you cannot check against anything on the sheet. Ask for it in writing.</p>
+<p>Pot life sets the other half. H01 is workable for 5 h or less, and a 3,386 turn wind at 20 r/min takes 169 min, so a batch mixed at the start is near its end when the coil is ready. UV500 quotes over 48 h, which describes a different process: the adhesive is on the fiber long before the coil is finished.</p>
+<p>One more cost. Over the 60 K to cure temperature, an aluminium fixture grows 1,380 ppm while the coil grows 33, and the difference lands on whatever holds the two together.</p>`,
+      },
+      {
+        h2: 'The three tables side by side',
+        html: `<p>Read across the row, not down a column. The decision sits in the last two.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Product</th>
+      <th class="py-2 pr-4 font-semibold">Where it sits</th>
+      <th class="py-2 pr-4 font-semibold">Stiffness</th>
+      <th class="py-2 pr-4 font-semibold">Viscosity, mPa·s</th>
+      <th class="py-2 pr-4 font-semibold">Cure</th>
+      <th class="py-2 pr-4 font-semibold">Wrong choice for</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">UV500</td><td class="py-2 pr-4">Inside the pack</td><td class="py-2 pr-4">387 MPa, 19% elongation</td><td class="py-2 pr-4">6,747</td><td class="py-2 pr-4">not on the sheet</td><td class="py-2 pr-4">a pigtail buffer</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">UV100</td><td class="py-2 pr-4">Under the pigtail</td><td class="py-2 pr-4">1 MPa or less</td><td class="py-2 pr-4">2,000-3,000</td><td class="py-2 pr-4">UV 10 s, 365 nm</td><td class="py-2 pr-4">the inside of a pack</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">H01</td><td class="py-2 pr-4">Coil to metal</td><td class="py-2 pr-4">53 MPa tensile, Shore D 96.1</td><td class="py-2 pr-4">3,899</td><td class="py-2 pr-4">80 °C, over 2 h</td><td class="py-2 pr-4">stress relief</td></tr>
+  </tbody>
+</table>
+<p>One cell is empty on purpose. UV500 carries UV in its name and no cure row in its table, so the dose is a question for the supplier. UV100 gives wavelength, irradiance and time. H01 gives ratio, temperature and hold.</p>
+<p>Viscosity explains the rest. 6,747 mPa·s holds UV500 in place across a working window of days. 2,000 to 3,000 lets UV100 wet one fiber. 3,899 lets H01 wick into a thin bond line.</p>`,
+      },
+      {
+        h2: 'Five questions that survive a supplier change',
+        html: `<p>What travels between sites is what somebody wrote down. Five items:</p>
+<ul class="list-disc pl-6 space-y-2">
+<li>Cure energy as dose, or as temperature and time. A product name is not a schedule.</li>
+<li>Elongation at -40 °C, not at 25 °C. Shear strain is what fails a bond line first.</li>
+<li>Zero-stress temperature, meaning the temperature at which the adhesive set.</li>
+<li>Bond width and glue line thickness, since strain is movement divided by thickness.</li>
+<li>Whether the bias figure you accept was measured before or after potting.</li>
+</ul>
+<p>The <a href="/products/fiber-optic/" class="text-blue-700 underline">fiber devices and equipment range</a> lists the coils, the winding machines and all three adhesives. Send the coil drawing with the bond geometry and the cure you plan to run.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Can I pot a whole coil with a UV-cured adhesive?',
+        a: 'Only the part the lamp can see. UV100 is specified as a surface cure, and a 500 m pack is 59 layers deep. If the interior has to be fixed, the energy must arrive as heat, which is why H01 is a two-part epoxy held at 80 °C, or the adhesive must go on during the wind so each layer is exposed as it is laid.',
+      },
+      {
+        q: 'Is a higher strength adhesive better for coil reliability?',
+        a: 'Strength is a pull test number and it does not describe the service load. What the glass feels is modulus times differential strain. Silica constrained against aluminium over 120 K would carry 194 MPa, 28% of its proof stress. The adhesive is the soft member by design. Higher tensile strength with lower elongation makes that job harder.',
+      },
+      {
+        q: 'Why does a coil pass at room temperature and drift when cold?',
+        a: 'Because acceptance runs near the temperature where the adhesive set. An 80 °C cure puts the strain-free point 120 K above a -40 °C chamber, and every kelvin below the cure adds load. A room-temperature UV cure puts the zero near 20 °C, which is why a coil can pass incoming test and still move in the cold.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-UV500', href: '/products/lkf-uv500/', caption: 'Winding adhesive, 387 MPa modulus, over 48 h working time' },
+      { model: 'LKF-UV100', href: '/products/lkf-uv100/', caption: 'Pigtail buffer adhesive, 1 MPa modulus, UV cure in 10 s' },
+      { model: 'LKF-H01', href: '/products/lkf-h01/', caption: 'Two-part epoxy for coil to metal bonding, 80 °C cure' },
+    ],
+    relatedCategory: { name: 'Fiber Devices & Equipment', href: '/products/fiber-optic/' },
+  },
+  {
     slug: 'fiber-coil-bobbin-material',
     title: 'Bobbin Material for FOG Coils: Thermal Expansion vs Mass',
     description:

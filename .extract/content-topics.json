@@ -383,7 +383,8 @@
     {
       "id": 36,
       "slug": "fiber-coil-glue-selection",
-      "used": false,
+      "used": true,
+      "published": "2026-11-11",
       "title": "Choosing Coil Adhesive: UV-Cure vs Epoxy for Fiber Coils",
       "targetKeywords": "fiber coil adhesive, uv cure adhesive fog, epoxy coil bonding, coil reliability",
       "outline": "UV 固化胶与双组份环氧在模量、操作时间、低温附加损耗上的差异与选型判据。内链：UV500/UV100/H01。",
