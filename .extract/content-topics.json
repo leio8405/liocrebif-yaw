@@ -398,7 +398,8 @@
     {
       "id": 37,
       "slug": "pm-fiber-beat-length-selection",
-      "used": false,
+      "used": true,
+      "published": "2026-11-12",
       "title": "Beat Length: Choosing PM Fiber for 1310 nm vs 1550 nm",
       "targetKeywords": "pm fiber beat length, beat length 1310, panda fiber selection, pm fiber specification",
       "outline": "拍长与双折射、串音的关系，1310nm 与 1550nm 选型差异；给判据表。内链：PM 绕环/波导两款。",

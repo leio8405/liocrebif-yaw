@@ -38,6 +38,96 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'pm-fiber-beat-length-selection',
+    title: 'PM Fiber Beat Length: Choosing 1310 nm or 1550 nm for FOG Coils',
+    description:
+      'A beat length is only half a specification; the other half is the wavelength it was measured at. What the 2.5 to 4.0 mm window actually guarantees, why two crosstalk rows on the same sheet cannot both hold, and where the coil table makes the switch.',
+    date: '2026-11-12',
+    readingTime: 5,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'Half a specification',
+        html: `<p>A <strong>PM fiber beat length</strong> number is only half a specification. The other half is the wavelength it was measured at, and that half is usually missing from the purchase order. A 1,460 m coil arrives with a certificate reading 3.4 mm. The order meant 3.4 mm at 1310 nm, because the last 500 m coil was written that way, and this one runs at 1550. Nobody was wrong. The ruler moved.</p>
+<p>Three questions decide the window: how much fiber the coil needs, what loop loss the optics can carry, and which rows were measured where you intend to run.</p>`,
+      },
+      {
+        h2: 'Beat length is a birefringence in disguise',
+        html: `<p>Beat length is the distance over which the two polarization modes slip one full cycle out of phase: L<sub>B</sub> = &#955; / B, with B the birefringence. Invert it and the sheet becomes a birefringence value. At 1310 nm, a 2.5 mm beat length is B = 5.2 &#215; 10<sup>-4</sup>, and 4.0 mm is 3.3 &#215; 10<sup>-4</sup>. The <a href="/products/lkf-pm-coil-winding/" class="text-blue-700 underline">coil-winding Panda fiber</a> quotes exactly that window, 2.5 to 4.0 mm.</p>
+<p>Read it as a range of B, not a tolerance around one value. The ends differ by 1.6 times, and coupled-mode theory puts the coupling rate against the square of the beat length, so the loose end moves light about 2.6 times faster. Two coils pass the same inspection and behave differently at the same kink.</p>`,
+      },
+      {
+        h2: 'The same fiber at the other window',
+        html: `<p>Hold B fixed and change the wavelength. L<sub>B</sub> = &#955;/B scales with &#955;, so 1550/1310 = 1.18 turns a 3.4 mm beat length into 4.0 mm and lifts the coupling rate 1.4 times. The fiber did not degrade. The same birefringence buys less phase per millimetre.</p>
+<p>That is why a bound and a window cannot be compared by their numbers. The <a href="/products/lkf-pm-waveguide/" class="text-blue-700 underline">waveguide Panda fiber</a> prints 3.0 mm or less with no wavelength column; at 1310 nm that means B of at least 4.4 &#215; 10<sup>-4</sup>, tighter than a 2.5 to 4.0 mm window whose worst case is 3.3 &#215; 10<sup>-4</sup>. The photonic crystal fiber prints 3.0 mm at 1550 nm, B of at least 5.2 &#215; 10<sup>-4</sup>: the tight end of the Panda window, at the harder wavelength.</p>`,
+      },
+      {
+        h2: 'Two crosstalk rows that cannot both be true',
+        html: `<p>The coil-winding sheet prints crosstalk twice: -30 dB or better over 4 m, and -30 dB or better over 100 m. With h the coupling per metre, a reading over length L is 10 log(hL). Two rows at the same value across a 25 times length change cannot share one h.</p>
+<p>Take 4 m at face value: h = 10<sup>-3</sup>/4 = 2.5 &#215; 10<sup>-4</sup> per metre. Apply it to 100 m and the answer is -16 dB. For the 100 m row to read -30 dB, h has to be 1.0 &#215; 10<sup>-5</sup>, twenty-five times smaller. The rows come from different measurements, a short sample on a bench and a wound length on a spool. Push the 4 m value out to a 500 m coil and you get -9 dB, which nothing ships with. Treat 4 m as screening and quote the length you will wind.</p>`,
+      },
+      {
+        h2: 'The coil table picked the window first',
+        html: `<p>The <a href="/products/lkf-fc/" class="text-blue-700 underline">coil range</a> answers the wavelength question before you open the fiber sheet.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Coil</th>
+      <th class="py-2 pr-4 font-semibold">Window</th>
+      <th class="py-2 pr-4 font-semibold">Fiber length</th>
+      <th class="py-2 pr-4 font-semibold">Insertion loss</th>
+      <th class="py-2 pr-4 font-semibold">Extinction ratio</th>
+      <th class="py-2 pr-4 font-semibold">Target</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">FC60</td><td class="py-2 pr-4">1310 nm</td><td class="py-2 pr-4">500 m</td><td class="py-2 pr-4">0.4 dB or less</td><td class="py-2 pr-4">20 dB or more</td><td class="py-2 pr-4">0.1 &#176;/h</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">FC98</td><td class="py-2 pr-4">1550 nm</td><td class="py-2 pr-4">1,460 m</td><td class="py-2 pr-4">0.7 dB or less</td><td class="py-2 pr-4">20 dB or more</td><td class="py-2 pr-4">0.015 &#176;/h</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">FC120</td><td class="py-2 pr-4">1550 nm</td><td class="py-2 pr-4">2,220 m</td><td class="py-2 pr-4">1.5 dB or less</td><td class="py-2 pr-4">18 dB or more</td><td class="py-2 pr-4">0.003 &#176;/h</td></tr>
+  </tbody>
+</table>
+<p>Divide insertion loss by length and the rows line up at 0.8, 0.48 and 0.68 dB/km. The 500 m coil spends more per kilometre than the 0.6 dB/km ceiling on the fiber sheet, so this row measures the assembly, splices included. Compare it with your loop budget, not the fiber sheet.</p>
+<p>The switch is not free. Sagnac phase per unit rate goes as 1/&#955;, so 1550 gives 15% less signal at the same radius and length. Only the long coils pay that back.</p>`,
+      },
+      {
+        h2: 'Where a coil really loses polarization',
+        html: `<p>A 500 m coil sits on a 39/55 mm bore, a 23.5 mm mean radius, 0.17% strain on the outer glass held constant turn after turn. Constant strain shifts the birefringence a little. It does not move power between the axes, because coupling needs a perturbation that varies on the scale of the beat length.</p>
+<p>That scale is about 3 mm. One turn is 148 mm, fifty times too long to phase-match, and curvature alone would need a 0.48 mm radius, below any radius the glass survives. So the coil's own bend is not the failure. The events that couple are short: a kink at a winding step, a tie that pinches, a bubble in the adhesive, a splice sleeve over a 5 mm radius.</p>
+<p>The worst few millimetres decide the coil, which is what the 2.5 to 4.0 mm window hides: a section at 4.0 mm couples 2.6 times faster, at exactly the point where the kink is.</p>`,
+      },
+      {
+        h2: 'Four rows for the purchase order',
+        html: `<p>What travels between two companies is what somebody wrote down. Four items:</p>
+<ul class="list-disc pl-6 space-y-2">
+<li>Wavelength the beat length was measured at, plus the operating wavelength row for that window.</li>
+<li>Beat length as an upper bound if the design depends on it, not a window with no typical value.</li>
+<li>Crosstalk with the length it was measured over, or h per metre.</li>
+<li>Attenuation at your window, plus cladding and coating: the PM sheet says 125 and 245 &#181;m, the coil table says PM 1310_80/135. Ask which drawing applies.</li>
+</ul>
+<p>The <a href="/products/fiber-optic/" class="text-blue-700 underline">fiber devices range</a> lists the coils and both Panda grades. Send the coil length, the loop loss budget and the wavelength the rest of the optics runs at.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Can I use the 1310 nm PM fiber at 1550 nm?',
+        a: 'Optically, yes. Cutoff is 1100 to 1290 nm, so the fiber is single-mode at 1550. What is not specified there is the beat length, which grows about 18%, and the coupling rate, which rises about 1.4 times. Attenuation at 1550 is unquoted as well. Ask for the row at the wavelength you will run.',
+      },
+      {
+        q: 'Is a shorter beat length always better?',
+        a: 'For crosstalk it is, because coupling falls with the square of the birefringence. But the number that decides a coil is the worst few millimetres, and a window with no typical value hides that. A tight upper bound is worth more than a tight nominal.',
+      },
+      {
+        q: 'Does winding the coil change the beat length?',
+        a: 'Very little. Bend-induced birefringence scales with the square of glass radius over bend radius, so at 23.5 mm it sits orders of magnitude below the fiber\'s own birefringence. The local geometry at a kink changes your result, not the coil diameter.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-PM', href: '/products/lkf-pm-coil-winding/', caption: 'Coil-winding Panda PM fiber, 135 um coating, beat length 2.5 to 4.0 mm' },
+      { model: 'LKF-PM', href: '/products/lkf-pm-waveguide/', caption: 'Waveguide-grade Panda PM fiber, beat length 3.0 mm or less, polishable' },
+    ],
+    relatedCategory: { name: 'Fiber Devices & Equipment', href: '/products/fiber-optic/' },
+  },
+  {
     slug: 'fiber-coil-glue-selection',
     title: 'Fiber Coil Adhesive: UV Cure vs Epoxy, and Where Each One Fails',
     description:
