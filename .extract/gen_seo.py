@@ -70,3 +70,10 @@ open(os.path.join(ROOT, "public", "sitemap.xml"), "w", encoding="utf-8").write("
 robots = f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n"
 open(os.path.join(ROOT, "public", "robots.txt"), "w", encoding="utf-8").write(robots)
 print(f"sitemap: {len(urls)} URLs | 产品 {len(set(products))} | 文章 {len(articles)}（含中文 {sum(articles.values())}）| {TODAY}")
+
+# 同步重建 _redirects：新增文章若无中文版，其 /zh/ 页必须 301 到英文原文，否则成 404
+try:
+    import runpy
+    runpy.run_path(os.path.join(ROOT, ".extract", "gen_redirects.py"), run_name="__main__")
+except Exception as e:
+    print(f"[warn] _redirects 重建失败，需手动跑 gen_redirects.py：{e}")
