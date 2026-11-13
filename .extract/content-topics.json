@@ -412,7 +412,8 @@
     {
       "id": 38,
       "slug": "pm-fiber-coil-grade-vs-waveguide-grade",
-      "used": false,
+      "used": true,
+      "published": "2026-11-13",
       "title": "Coil-Grade vs Waveguide-Grade Panda Fiber: What Actually Changes",
       "targetKeywords": "coil grade pm fiber, waveguide grade pm fiber, panda fiber grades, pm fiber selection",
       "outline": "绕环级与波导级保偏光纤的指标差异（几何对称性、可研磨性、衰减），以及误用后果。内链：PM 两款。",

@@ -38,6 +38,104 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'pm-fiber-coil-grade-vs-waveguide-grade',
+    title: 'Coil-Grade vs Waveguide-Grade Panda Fiber: What Actually Changes',
+    description:
+      'A coil-grade and a waveguide-grade Panda fiber share twelve rows on their spec sheets and print the same value on ten of them. Where the grade really differs, why the crosstalk units hide it, and the one property neither sheet has a row for.',
+    date: '2026-11-13',
+    readingTime: 5,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'Two grades, one model number',
+        html: `<p>A <strong>coil-grade</strong> and a <strong>waveguide-grade</strong> Panda fiber sit in the same catalogue under the same model number, LKF-PM, and their two specification tables share twelve rows. Ten of those rows print identical values. If you are crossing the grade line expecting better glass, the tables do not support that purchase.</p>
+<p>What changes is where the fiber gets cut. A coil is 500 to 2,220 m of one continuous piece, spliced at both ends and wound under tension. A waveguide pigtail is 1 to 2 m with one face polished flat against a chip. The grade is the acceptance test that goes with each ending. Below: the row-by-row diff, the one calculation that makes the crosstalk rows comparable, and the case where the two grades swap without changing the optics.</p>`,
+      },
+      {
+        h2: 'Twelve shared rows, ten identical values',
+        html: `<p>The <a href="/products/lkf-pm-coil-winding/" class="text-blue-700 underline">coil-winding grade</a> and the <a href="/products/lkf-pm-waveguide/" class="text-blue-700 underline">waveguide grade</a>, side by side. The verdict column is the part that usually gets skipped.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Row</th>
+      <th class="py-2 pr-4 font-semibold">Coil grade</th>
+      <th class="py-2 pr-4 font-semibold">Waveguide grade</th>
+      <th class="py-2 pr-4 font-semibold">Verdict</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Cutoff wavelength</td><td class="py-2 pr-4">1100 to 1290 nm</td><td class="py-2 pr-4">1100 to 1290 nm</td><td class="py-2 pr-4">Same</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Mode field diameter</td><td class="py-2 pr-4">6.0 &#177; 0.5 &#181;m</td><td class="py-2 pr-4">6.0 &#177; 0.5 &#181;m</td><td class="py-2 pr-4">Same</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Attenuation</td><td class="py-2 pr-4">0.6 dB/km max</td><td class="py-2 pr-4">0.6 dB/km max</td><td class="py-2 pr-4">Same</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Beat length</td><td class="py-2 pr-4">2.5 to 4.0 mm</td><td class="py-2 pr-4">3.0 mm max</td><td class="py-2 pr-4">Shape differs</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Crosstalk</td><td class="py-2 pr-4">-30 dB over 4 m and 100 m</td><td class="py-2 pr-4">-30 dB over 1 km</td><td class="py-2 pr-4">Units differ</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Cladding diameter</td><td class="py-2 pr-4">125 &#177; 1 &#181;m</td><td class="py-2 pr-4">125 &#177; 1 &#181;m</td><td class="py-2 pr-4">Same</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Coating diameter</td><td class="py-2 pr-4">245 &#177; 5 &#181;m</td><td class="py-2 pr-4">245 &#177; 5 &#181;m</td><td class="py-2 pr-4">Same</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Cladding non-circularity</td><td class="py-2 pr-4">1.0% max</td><td class="py-2 pr-4">1.0% max</td><td class="py-2 pr-4">Same</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Core to cladding concentricity</td><td class="py-2 pr-4">0.5 &#181;m max</td><td class="py-2 pr-4">0.5 &#181;m max</td><td class="py-2 pr-4">Same</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Coating structure</td><td class="py-2 pr-4">dual-layer UV acrylic</td><td class="py-2 pr-4">dual-layer UV acrylic</td><td class="py-2 pr-4">Same</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Operating temperature</td><td class="py-2 pr-4">-45 to +85 &#176;C</td><td class="py-2 pr-4">-45 to +85 &#176;C</td><td class="py-2 pr-4">Same</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Proof test</td><td class="py-2 pr-4">100 kpsi</td><td class="py-2 pr-4">100 kpsi</td><td class="py-2 pr-4">Same</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Operating wavelength</td><td class="py-2 pr-4">1310 nm</td><td class="py-2 pr-4">not quoted</td><td class="py-2 pr-4">Coil sheet only</td></tr>
+  </tbody>
+</table>
+<p>Two rows do not match, and only one of them is a difference in the glass. Beat length is a window on one sheet and a ceiling on the other. Crosstalk is the same -30 dB printed against three different lengths. The second row needs the arithmetic.</p>`,
+      },
+      {
+        h2: 'Crosstalk is a rate, and the length is a guess about you',
+        html: `<p>Each row reads -30 dB. Let h be the coupling per metre, and a measurement over a length L is 10 log(hL). Solve for h and the three rows separate fast:</p>
+<ul class="list-disc pl-6 space-y-2">
+<li>4 m: 10<sup>-3</sup> / 4 = 2.5 &#215; 10<sup>-4</sup> per metre</li>
+<li>100 m: 10<sup>-3</sup> / 100 = 1.0 &#215; 10<sup>-5</sup> per metre</li>
+<li>1 km: 10<sup>-3</sup> / 1000 = 1.0 &#215; 10<sup>-6</sup> per metre</li>
+</ul>
+<p>The widest pair differs by 250 times while printing the same number. Put each rate onto the length you use. A 1.5 m pigtail at the per-kilometre rate reaches 1.5 &#215; 10<sup>-6</sup>, which is -58 dB: a figure no extinction ratio bench resolves, from a row that cannot reject a pigtail on its own. A 500 m piece at the 100 m rate reaches 5 &#215; 10<sup>-3</sup>, or -23 dB, and the 2,220 m piece reaches -16.5 dB. The <a href="/products/lkf-fc/" class="text-blue-700 underline">coil range</a> runs 500, 1,460 and 2,220 m, so the 100 m row is the only one on that sheet written for a coil. Quote the row whose length sits closest to yours.</p>`,
+      },
+      {
+        h2: 'The endface has no row',
+        html: `<p>Polishing is the operation a pigtail gets and a coil never does, and neither table has a line for it. Both tables do carry the two rows that decide how a polished face behaves: cladding non-circularity at 1.0% or less and core to cladding concentricity at 0.5 &#181;m or less. Identical limits on both grades.</p>
+<p>Those limits turn into coupling loss once the part is aligned on its outside diameter. A core sitting 0.5 &#181;m off the cladding centre arrives 0.5 &#181;m off the waveguide it is butted against. Against a 3.0 &#181;m mode radius, Gaussian overlap gives exp(-d&#178;/w&#178;), which is 0.12 dB. Two parts at opposite ends of the tolerance lose 0.48 dB. One percent ovality on a 125 &#181;m cladding is 1.25 &#181;m of diameter difference, and an oval seated in a V-groove changes height as the part is turned, so the alignment moves with rotation.</p>
+<p>None of that is a grade difference. It is a tolerance you inherit from either sheet.</p>`,
+      },
+      {
+        h2: 'Thursday, two thousand metres on the shelf',
+        html: `<p>There are 2,000 m of coil grade left on a spool from a cancelled order, and 200 waveguide pigtails are due Friday. Run the numbers first. At 1.5 m, even the loosest rate on the coil sheet gives 3.75 &#215; 10<sup>-4</sup>, or -34 dB. Attenuation ceilings match at 0.6 dB/km. Cutoff windows match. Cladding and coating rows match. Optically the leftover spool works.</p>
+<p>One row rejects it. The coil window runs to 4.0 mm at the loose end, the waveguide sheet stops at 3.0 mm, so a fiber drawn at 3.8 mm passes one sheet and fails the other before anything is cut.</p>
+<p>The answer is not in the optics anyway. Nobody has polished that spool and measured extinction ratio on a finished face. Order the waveguide grade and the supplier carries that proof. Use the leftover and you carry it.</p>`,
+      },
+      {
+        h2: 'Five lines for the order',
+        html: `<ul class="list-disc pl-6 space-y-2">
+<li>Crosstalk at your length, or h per metre, with the length it was measured over.</li>
+<li>Beat length in the shape your design needs: a window to control a draw, a ceiling to protect a bend.</li>
+<li>Cladding and coating from the drawing. The coil sheet description says the diameter was cut from 165 to 135 &#181;m while its own table row still prints 245 &#177; 5 &#181;m.</li>
+<li>Extinction ratio measured on the polished pigtail, at your polish angle and your length. Neither sheet has this row.</li>
+<li>Who qualifies the polish, and on how many pieces per lot.</li>
+</ul>
+<p>The <a href="/products/fiber-optic/" class="text-blue-700 underline">fiber devices range</a> lists both Panda grades next to the coils they feed. Send the length, the window and the polish spec, and the grade question answers itself.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Can I wind a coil from waveguide-grade fiber?',
+        a: 'The waveguide sheet description says the fiber is suitable for both winding and polishing, and the two grades share the same cladding, coating and proof test rows. What it does not print is a beat-length window, only a ceiling of 3.0 mm, and it prints no operating wavelength row at all. If your coil design was built around the 2.5 to 4.0 mm window, you are changing one variable without a number to put on it.',
+      },
+      {
+        q: 'Does polishing change the crosstalk?',
+        a: 'It can, and no row on either sheet covers it. Polishing strips the coating and releases part of the cladding stress state at the endface, so the extinction ratio you measure on the finished pigtail is the only number that includes the operation. Ask for it at your length and your polish angle, not on a one kilometre fiber sample.',
+      },
+      {
+        q: 'Why not buy one fiber and use it for both?',
+        a: 'Length. A 1.5 m pigtail and a 2,220 m coil cannot share one acceptance test. The per-metre rate that screens a coil is 250 times looser than the per-kilometre rate that screens a pigtail, and both rows read -30 dB on the page.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-PM', href: '/products/lkf-pm-coil-winding/', caption: 'Coil-winding Panda PM fiber, beat length 2.5 to 4.0 mm, crosstalk screened at 4 m and 100 m' },
+      { model: 'LKF-PM', href: '/products/lkf-pm-waveguide/', caption: 'Waveguide-grade Panda PM fiber, beat length 3.0 mm or less, polishable pigtail stock' },
+    ],
+    relatedCategory: { name: 'Fiber Devices & Equipment', href: '/products/fiber-optic/' },
+  },
+  {
     slug: 'pm-fiber-beat-length-selection',
     title: 'PM Fiber Beat Length: Choosing 1310 nm or 1550 nm for FOG Coils',
     description:
