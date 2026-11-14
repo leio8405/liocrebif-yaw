@@ -38,6 +38,104 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'pm-pcf-radiation-and-hydrogen',
+    title: 'PM Photonic Crystal Fiber Under Radiation and Hydrogen: Where Panda Fiber Stops',
+    description:
+      'A PM photonic crystal fiber claims radiation and hydrogen resistance in one line of prose and prints no row for either. What the pure silica core removes, what a 2.0 dB/km ceiling costs a coil at 500 m and at 1,460 m, and the three rows the sheet does not have.',
+    date: '2026-11-14',
+    readingTime: 5,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'Two claims, no rows',
+        html: `<p>A <strong>PM photonic crystal fiber</strong> makes two claims in one line of prose: hydrogen damage resistance and radiation resistance. Look for rows underneath and there are none. No dose, no induced attenuation, no hydrogen pressure, no wavelength. What the sheet gives instead is why the claims exist: one material, silica, and polarization held by shape, not by doped stress rods.</p>
+<p>The useful question is not how radiation hard it is, but what the material change removes, what it costs, and which rows stopped existing. It removes the dopant defects that darken a fiber, it costs 0.70 dB on a 500 m coil, and three rows needed to wind a coil are gone.</p>`,
+      },
+      {
+        h2: 'What darkens a fiber, and what does not',
+        html: `<p>Induced loss at 1310 and 1550 nm is not a property of silica but of what was added to it. Germanium in the core and boron in the stress rods are the sites that trap charge under ionizing dose, and the drawing defects around them absorb light afterwards. Panda needs both: a doped core for the index, two borosilicate rods for the birefringence.</p>
+<p>The <a href="/products/lkf-pm-pcf/" class="text-blue-700 underline">photonic crystal fiber</a> has neither. Pure silica core, birefringence from the shape of the core and the holes around it. No germanium to darken, no boron rod to go grey, and that is structural rather than a property of one preform.</p>
+<p>One caveat. Air holes are internal surface, and surface defects are color centers too, so the material removes the dopant path and not the surface one.</p>`,
+      },
+      {
+        h2: 'Three sheets, seven rows',
+        html: `<p>Set it beside the two Panda grades. Seven rows separate them.</p>
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b border-gray-300 text-left">
+      <th class="py-2 pr-4 font-semibold">Row</th>
+      <th class="py-2 pr-4 font-semibold">PM-PCF</th>
+      <th class="py-2 pr-4 font-semibold">Panda, coil grade</th>
+      <th class="py-2 pr-4 font-semibold">Panda, waveguide grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Attenuation</td><td class="py-2 pr-4">2.0 dB/km max, at 1550</td><td class="py-2 pr-4">0.6 dB/km max, no wavelength</td><td class="py-2 pr-4">0.6 dB/km max</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Crosstalk</td><td class="py-2 pr-4">-28 dB over 100 m</td><td class="py-2 pr-4">-30 dB over 4 m and 100 m</td><td class="py-2 pr-4">-30 dB over 1 km</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Mode field diameter</td><td class="py-2 pr-4">no row</td><td class="py-2 pr-4">6.0 &#177; 0.5 &#181;m</td><td class="py-2 pr-4">6.0 &#177; 0.5 &#181;m</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Coating</td><td class="py-2 pr-4">250 &#177; 10 &#181;m acrylic</td><td class="py-2 pr-4">245 &#177; 5 &#181;m UV acrylic</td><td class="py-2 pr-4">245 &#177; 5 &#181;m UV acrylic</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Proof test</td><td class="py-2 pr-4">no row</td><td class="py-2 pr-4">100 kpsi</td><td class="py-2 pr-4">100 kpsi</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Operating temperature</td><td class="py-2 pr-4">no row</td><td class="py-2 pr-4">-45 to +85 &#176;C</td><td class="py-2 pr-4">-45 to +85 &#176;C</td></tr>
+    <tr class="border-b border-gray-200"><td class="py-2 pr-4">Core</td><td class="py-2 pr-4">pure silica</td><td class="py-2 pr-4">doped silica</td><td class="py-2 pr-4">doped silica</td></tr>
+  </tbody>
+</table>
+<p>The 2.0 is stated at 1550 nm; the Panda 0.6 sits on a 1310 sheet with no wavelength on the row, so take 3.3 times as a floor, not a measurement.</p>`,
+      },
+      {
+        h2: 'What the loss costs, and why length is the variable',
+        html: `<p>A 500 m coil at 2.0 dB/km eats 1.0 dB. The same coil in coil-grade Panda eats 0.30 dB. The extra 0.70 dB is a power ratio of 0.85, so 15% of the light is gone before anything radiates the fiber, and shot-noise limited ARW follows one over the square root of power: 8% worse.</p>
+<p>The penalty scales with length:</p>
+<ul class="list-disc pl-6 space-y-2">
+<li>500 m: 0.70 dB, 15% lost, ARW 8% worse</li>
+<li>1,460 m: 2.0 dB, 37% lost, ARW 26% worse</li>
+<li>2,220 m: 3.1 dB, 51% lost, ARW 43% worse</li>
+</ul>
+<p>The 1,460 m coil is the 1550 nm part, 75 mm bore, 93 mm outside diameter, and the length a 0.010 &#176;/h gyro is built around. There the fiber spends two decibels before the payload sees a single rad, and two decibels is more than a third of the light. Above 1.5 km it is the wrong fiber at any dose.</p>`,
+      },
+      {
+        h2: 'The two decibels that never grow',
+        html: `<p>The PCF crosstalk row reads -28 dB over 100 m, which is 10<sup>-2.8</sup> divided by 100, or 1.6 &#215; 10<sup>-5</sup> per metre. Coil grade at 100 m gives 1.0 &#215; 10<sup>-5</sup>; waveguide grade, printed per kilometre, 1.0 &#215; 10<sup>-6</sup>.</p>
+<p>Against <a href="/products/lkf-pm-waveguide/" class="text-blue-700 underline">waveguide grade</a> the PCF holds polarization 16 times worse per metre, the price of shape birefringence against borosilicate rods. Against <a href="/products/lkf-pm-coil-winding/" class="text-blue-700 underline">coil grade</a> it is 1.6 times worse, or 2 dB, and that does not grow with length because both rows are quoted over 100 m. A 500 m coil lands at -21 dB with the PCF and -23 dB with the Panda; at 2,220 m, -14.5 and -16.5.</p>
+<p>So loss multiplies by length while polarization holding stays a fixed 2 dB, making crosstalk the larger gap only on a short coil.</p>`,
+      },
+      {
+        h2: 'Hydrogen comes in through the coating',
+        html: `<p>Both wear the same family of coating: 250 &#177; 10 &#181;m acrylic on the PCF, 245 &#177; 5 &#181;m dual layer UV acrylic on the Panda. Under dose an organic coating is both a permeation path and a hydrogen source, and no glass composition closes that path. Pure silica changes the other half: hydrogen damages by reaching a defect and staying there, and the PCF offers fewer places to stay.</p>
+<p>That is a real difference and still not a number. Neither PM sheet has a hydrogen row, and the one hydrogen figure here belongs to a telecom single mode fiber: 1383 nm after aging, with no row before aging, so no delta can be subtracted. 1383 nm is also the OH peak, a wavelength no FOG uses.</p>`,
+      },
+      {
+        h2: 'Five things to put in the RFQ',
+        html: `<ul class="list-disc pl-6 space-y-2">
+<li>Induced attenuation against dose at your wavelength, with dose rate, temperature, and whether it was read in place or after recovery.</li>
+<li>A hydrogen test at your pressure and temperature, read at 1310 or 1550 nm, not 1383 nm.</li>
+<li>Mode field diameter. The sheet prints core axes of 5 &#177; 0.3 and 7 &#177; 0.3 &#181;m: geometry, not mode, and a 1.4 aspect ratio will not meet a round 6.0 &#181;m mode without measured loss.</li>
+<li>Proof test tension. Panda prints 100 kpsi; this sheet prints nothing, and the winder needs a number before it pulls.</li>
+<li>Operating temperature against -45 to +85 &#176;C, and the coating identity, which is the hydrogen door.</li>
+</ul>
+<p>Send the dose, the coil length and the wavelength. Those three decide between this fiber and a Panda coil, and the <a href="/products/fiber-optic/" class="text-blue-700 underline">fiber devices range</a> lists both next to the equipment that winds them.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Can I splice PM photonic crystal fiber to a Panda pigtail?',
+        a: 'Physically yes, but budget a measured loss rather than a calculated one. The PCF sheet gives core axes of 5 and 7 &#181;m and no mode field row, while Panda gives a 6.0 &#181;m mode. Core diameter is not mode field, and an elliptical core makes an elliptical mode. Air holes also collapse if the arc is too hot, so the splice recipe is part of the qualification, not an afterthought.',
+      },
+      {
+        q: 'Does radiation induced loss anneal out?',
+        a: 'Part of it does. Some color centers bleach at room temperature, some anneal faster with light travelling in the fiber, and the remainder is permanent. No PM sheet in this catalogue separates the two. If a link budget depends on it, ask for induced loss at end of life and again after a recovery period, then size the budget on the second number.',
+      },
+      {
+        q: 'If my dose is modest, is the PCF still the right call?',
+        a: 'Run the loss first. A 1,460 m coil pays 2.0 dB, which is 26% more ARW, plus a flat 2 dB of polarization holding, to buy hardness you may not need. Below a few hundred metres the same fiber is reasonable because the penalty shrinks with length. Above a kilometre the burden of proof moves onto the dose figure, and this sheet does not print one.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-PM PCF', href: '/products/lkf-pm-pcf/', caption: 'Pure silica PM photonic crystal fiber, shape birefringence, beat length 3.0 mm max at 1550 nm' },
+    ],
+    relatedCategory: { name: 'Fiber Devices & Equipment', href: '/products/fiber-optic/' },
+  },
+
+  {
     slug: 'pm-fiber-coil-grade-vs-waveguide-grade',
     title: 'Coil-Grade vs Waveguide-Grade Panda Fiber: What Actually Changes',
     description:
