@@ -90,7 +90,7 @@ export const resources: ResourceArticle[] = [
 <li>1,460 m: 2.0 dB, 37% lost, ARW 26% worse</li>
 <li>2,220 m: 3.1 dB, 51% lost, ARW 43% worse</li>
 </ul>
-<p>The 1,460 m coil is the 1550 nm part, 75 mm bore, 93 mm outside diameter, and the length a 0.010 &#176;/h gyro is built around. There the fiber spends two decibels before the payload sees a single rad, and two decibels is more than a third of the light. Above 1.5 km it is the wrong fiber at any dose.</p>`,
+<p>The 1,460 m coil is the 1550 nm part, 75 mm bore and 93 mm outside diameter, and the coil table pairs it with a 0.015 &#176;/h target. There it spends two decibels before the payload sees a single rad, and two decibels is more than a third of the light. Above 1.5 km it is the wrong fiber at any dose.</p>`,
       },
       {
         h2: 'The two decibels that never grow',
