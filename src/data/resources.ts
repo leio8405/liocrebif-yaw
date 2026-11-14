@@ -118,7 +118,7 @@ export const resources: ResourceArticle[] = [
     faq: [
       {
         q: 'Can I splice PM photonic crystal fiber to a Panda pigtail?',
-        a: 'Physically yes, but budget a measured loss rather than a calculated one. The PCF sheet gives core axes of 5 and 7 &#181;m and no mode field row, while Panda gives a 6.0 &#181;m mode. Core diameter is not mode field, and an elliptical core makes an elliptical mode. Air holes also collapse if the arc is too hot, so the splice recipe is part of the qualification, not an afterthought.',
+        a: 'Physically yes, but budget a measured loss rather than a calculated one. The PCF sheet gives core axes of 5 and 7 µm and no mode field row, while Panda gives a 6.0 µm mode. Core diameter is not mode field, and an elliptical core makes an elliptical mode. Air holes also collapse if the arc is too hot, so the splice recipe is part of the qualification, not an afterthought.',
       },
       {
         q: 'Does radiation induced loss anneal out?',
