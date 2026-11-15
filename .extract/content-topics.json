@@ -439,7 +439,8 @@
     {
       "id": 40,
       "slug": "g652d-vs-g657a2-small-coils",
-      "used": false,
+      "used": true,
+      "published": "2026-11-15",
       "title": "G652D vs G657A2 for Small Coils: Bending Loss Decides",
       "targetKeywords": "g652d vs g657a2, bend insensitive fiber fog, small coil fiber, single mode fiber selection",
       "outline": "小直径线圈用 G652D 还是 G657A2：弯曲附加损耗与截止波长约束。内链：G652、G657A2/B3。",

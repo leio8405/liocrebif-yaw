@@ -38,6 +38,79 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'g652d-vs-g657a2-small-coils',
+    title: 'G652D vs G657A2 for Small Coils: Bending Loss Decides',
+    description:
+      'The two sheets share a cut-off wavelength, a cladding diameter and a proof test, and differ in one place: how small a radius the supplier will sign for. G652D stops at a 16 mm single turn, G657A2 reaches 7.5 mm. What that gap costs in a 70 by 50 mm package, and why a missing row is not a zero.',
+    date: '2026-11-15',
+    readingTime: 5,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'Most rows are the same, and they do not decide anything',
+        html: `<p>For a small coil, the <strong>G652D vs G657A2</strong> question is a question about radius, not about loss. Put both sheets side by side and most rows match. Cable cut-off is 1260 nm or shorter on both, so both run single mode at 1310 nm. Cladding is 125.0 &plusmn; 0.7 &micro;m and proof test is 9.0 N at 100 kpsi on both. Attenuation differs by 0.01 dB/km, 0.34 against 0.35 at 1310 nm and 0.20 against 0.21 at 1550 nm. Over 500 m that gap is 0.005 dB.</p>
+<p>The bend table is where they part. It is not a list of losses but a list of radii the supplier will sign for, and one of these fibers is sold as bend-insensitive because its signature reaches further.</p>`,
+      },
+      {
+        h2: 'Read the bend table as a radius ladder',
+        html: `<p>Four fibers, sorted by the smallest radius that carries a single-turn number at 1550 nm:</p>
+<table><thead><tr><th>Fiber</th><th>Deepest single turn, 1550 nm</th><th>Loss there</th><th>MFD at 1550 nm</th><th>Cladding non-circularity</th></tr></thead><tbody><tr><td>G652D</td><td>16 mm</td><td>&le;0.05 dB</td><td>9.8 to 10.8 &micro;m</td><td>&le;1.0%</td></tr><tr><td>G657A1</td><td>10 mm</td><td>&le;0.5 dB</td><td>9.8 to 10.8 &micro;m</td><td>&le;0.7%</td></tr><tr><td>G657A2</td><td>7.5 mm</td><td>&le;0.5 dB</td><td>9.3 to 10.3 &micro;m</td><td>&le;0.7%</td></tr><tr><td>G657B3</td><td>5 mm</td><td>&le;0.15 dB</td><td>9.1 to 10.1 &micro;m</td><td>&le;0.7%</td></tr></tbody></table>
+<p>The loss column is not comparable across rows because the radius is not the same. G652D allows 0.05 dB at 16 mm. G657A2 allows 0.5 dB at 7.5 mm, ten times the loss at less than half the radius. Read as a ladder, the table says one thing: G657A2 is specified where G652D has no entry.</p>
+<p>One trap. The 100-turn rows are not single turns. 100 turns at 25 mm is 15.7 m, and 0.05 dB across 15.7 m is 0.0032 dB/m. Compare 10 turns at 15 mm: 0.94 m, 0.03 dB, or 0.032 dB/m. The second is ten times larger on a shorter sample, and neither is wrong.</p>`,
+      },
+      {
+        h2: 'A missing row is not a zero',
+        html: `<p>The G652D sheet has no single-turn row below 16 mm. It does not say the fiber fails at 10 mm. It says nothing. Those are different statements, and only one of them survives a design review.</p>
+<p>The missing number can be estimated. G657A1 carries two single-turn points: 0.5 dB at 10 mm and 0.005 dB per turn at 15 mm, from its 10-turn row. That is a factor of 100 across 5 mm, so loss rises about 2.5 times per millimetre of shrinking radius. G652D has the same 1550 nm mode field, 9.8 to 10.8 &micro;m, so the same slope is a fair guess. At 10 mm it puts <a href="/products/lkf-g652/" class="text-blue-700 underline">G652D</a> near 12 dB per turn.</p>
+<p>Twelve decibels per turn is not a design value. It is a sign the model has left the measured region. Between 16 and 10 mm, G652D performance is undefined, and an undefined row cannot be quoted in a contract.</p>`,
+      },
+      {
+        h2: 'Six turns at 10 mm in a 70 by 50 by 14 mm box',
+        html: `<p>A 1x2 coupler goes into a 70 by 50 by 14 mm housing with 2 m of pigtail per port. The fiber folds into a racetrack, and the corners are the only place the radius gets small. Count them as six equivalent full turns at 10 mm:</p>
+<ul><li>G657B3: 0.03 dB times six, 0.18 dB</li><li><a href="/products/lkf-g657a2/" class="text-blue-700 underline">G657A2</a>: 0.10 dB times six, 0.60 dB</li><li>G657A1: 0.50 dB times six, 3.0 dB</li><li>G652D: no specified value at this radius</li></ul>
+<p>Widen the corners to 12 mm and every number falls, but the ranking does not change. The point is that 0.60 dB and 3.0 dB are usable numbers on an order while the fourth line is not a number at all. A buyer comparing price per metre is comparing these two on the one row where neither is defined.</p>`,
+      },
+      {
+        h2: 'What a tighter mode field costs at the splice',
+        html: `<p>G657A2 pays for its bend performance with a smaller mode field: 9.3 to 10.3 &micro;m at 1550 nm against 9.8 to 10.8 &micro;m for G652D. Splice the two and the fields no longer match. With centred fields the Gaussian mismatch costs 0.011 dB at the middle of both ranges, 0.097 dB at the worst pairing.</p>
+<p>Over one hundred splices that is 1.1 dB typical and 9.7 dB worst case. Most assemblies have fewer than ten joints, where the effect is smaller than a cleave angle. Budget for it only when a design runs to hundreds of joints.</p>`,
+      },
+      {
+        h2: 'Where neither fiber belongs',
+        html: `<p>Both are <a href="/products/fiber-optic/" class="text-blue-700 underline">communication fibers</a>. A FOG sensing coil is wound from polarization-maintaining fiber, and the coil table prints what it wants: PM 1310_80/135 for the 500 m and 1,460 m builds. Neither holds polarization, so neither replaces a sensing coil whatever the bend numbers say.</p>
+<p>Their place is the rest of the bench: source and detector pigtails, coupler legs, delay spools, and the lead-in between a coil and its integrated optic. That is where a small package forces a small radius, which is why the bend table decides.</p>
+<p>If the radius truly reaches 5 mm, G657A2 stops being enough and the answer is <a href="/products/lkf-g657b3/" class="text-blue-700 underline">G657B3</a> at 0.15 dB per turn. The cost lands on the reel: 25.2 km maximum delivery against 50.4 km, so a long run needs more of the splices the previous section was about.</p>`,
+      },
+      {
+        h2: 'Six lines for the purchase order',
+        html: `<p>None of them is the fiber grade:</p>
+<ul><li>The smallest radius the package forces, in mm</li><li>Equivalent turns at that radius, not total length</li><li>The wavelength you will measure at</li><li>Storage and operating temperature</li><li>What it will be spliced to, and how many joints</li><li>Acceptance method, one-turn loss or wound assembly loss</li></ul>
+<p>The last line matters most. A one-turn measurement on a mandrel and a measurement of the finished assembly are different tests. A supplier can pass the first while the assembly fails the second. Decide which one you accept before the order goes out.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'Can I use G652D at a 10 mm radius if the sample measures fine?',
+        a: 'You can, and you will be relying on that one piece rather than on a guarantee. A measured value belongs to the reel you tested; the next reel carries no obligation to repeat it. If the radius is fixed by the package, the number written on the drawing should come from a sheet that specifies it, which means G657A2 at 0.1 dB per turn rather than a note saying the prototype worked.',
+      },
+      {
+        q: 'Is G657A2 always better than G657A1?',
+        a: 'Only below about 10 mm. Both reach the same 1260 nm cut-off and both are single mode at 1310 nm, but G657A1 keeps the wider mode field of G652D, 9.8 to 10.8 µm at 1550 nm, so its splices are easier. Run the A2 slope backwards to 15 mm and you get 0.004 dB per turn against the 0.005 dB per turn implied by the A1 ten-turn row. The two are inside measurement noise. Pay for A2 when the package actually bends below 10 mm.',
+      },
+      {
+        q: 'Do I need bend-insensitive fiber for a 40 mm diameter FOG coil?',
+        a: 'A 40 mm diameter is a 20 mm radius, which is outside the small-radius region these tables argue about, so bending is not the constraint there. The larger point is that a FOG sensing coil is wound from polarization-maintaining fiber, not from either of these, so the question only applies to the pigtails and the lead-in around the coil.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-G652', href: '/products/lkf-g652/', caption: 'Low-water-peak single-mode fiber, 16 mm bend spec' },
+      { model: 'LKF-G657A2', href: '/products/lkf-g657a2/', caption: 'Bend-insensitive single-mode fiber, 7.5 mm' },
+      { model: 'LKF-G657B3', href: '/products/lkf-g657b3/', caption: 'Ultra bend-insensitive single-mode fiber, 5 mm' },
+    ],
+    relatedCategory: { name: 'Fiber Devices & Equipment', href: '/products/fiber-optic/' },
+  },
+
+  {
     slug: 'pm-pcf-radiation-and-hydrogen',
     title: 'PM Photonic Crystal Fiber Under Radiation and Hydrogen: Where Panda Fiber Stops',
     description:
