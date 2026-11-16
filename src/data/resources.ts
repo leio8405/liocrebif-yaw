@@ -38,6 +38,78 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'fiber-cutoff-wavelength-coil-design',
+    title: 'Cutoff Wavelength and Coil Diameter: The Constraint Most Designs Miss',
+    description:
+      'Three fibers, three different tests behind one column label, and a 500 m coil whose worst turn sits nearer a single-turn row than any 100-turn one. How to convert cut-off into normalized frequency, why the coil insertion loss row is the real radius limit, and what a 39 to 30 mm bore change costs.',
+    date: '2026-11-16',
+    readingTime: 5,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'One column, three test methods',
+        html: `<p>A <strong>cutoff wavelength</strong> row answers one question: at what wavelength the second mode stops being guided. It depends on the glass and on the test, and the test is where these sheets differ. The single-mode sheets print cable cut-off, &lambda;cc, and name the cable. The polarization-maintaining sheets print "cutoff wavelength" with no method. The photonic crystal sheet prints a bound below 1000 nm.</p>
+<p>Cable cut-off is measured on 22 m wound into a loop, fiber cut-off on 2 m of loose fiber. The loop is why the number is lower: bending removes the second mode early. A printed &le;1260 nm is therefore not where the glass turns single mode, but where a looped 22 m sample does.</p>
+<p>A 500 m coil is a tighter loop with far more of it, which is why <strong>coil diameter design</strong> belongs beside the cut-off row. The fiber numbers below come from the sheets here.</p>`,
+      },
+      {
+        h2: 'The PM sheet gives a window, not a maximum',
+        html: `<p>The coil table does not name a communication fiber. It names PM 1310_80/135 for the 500 m and 1,460 m builds, and the <a href="/products/lkf-pm-coil-winding/" class="text-blue-700 underline">sheet behind that designation</a> prints a cut-off window of 1100 to 1290 nm at an operating wavelength of 1310 nm.</p>
+<p>A window looks odd until it becomes normalized frequency, where single mode means 2.405 or less. Scaled to 1310 nm, a 1290 nm cut-off gives 2.37, barely under the limit, and 1100 nm gives 2.02, a seventh lower. That span matches the mode field row: 6.0 &plusmn; 0.5 &micro;m is 8.3 per cent either way, against 8.0 per cent for the two V numbers. The window is one confinement number written twice.</p>`,
+      },
+      {
+        h2: 'Where the inner layer actually sits',
+        html: `<p>Coil diameter appears on no <a href="/products/fiber-optic/" class="text-blue-700 underline">fiber sheet</a>. Take the 500 m build: bore 39 mm, outside diameter 55 mm, height 8.5 mm, fiber 135 &micro;m coated. The innermost turn runs at 19.5 mm plus half the coating, a centre line of 19.57 mm. The outermost is at 27.5 mm.</p>
+<p>Circumference grows from 123 mm to 173 mm across those layers, mean 148 mm, which is where 3,386 turns come from. The worst turn is not the mean turn: it sits 3.6 mm inside the tightest single-turn row on the G652 sheet, 16 mm at 0.05 dB.</p>
+<p>So the coil runs 3.6 mm outside a radius where the fiber may lose 0.05 dB, and at 1310 nm where bend loss is below that row's 1550 nm. Both margins are real, and both shrink once turns are counted.</p>`,
+      },
+      {
+        h2: 'Eight turns would spend the whole budget',
+        html: `<p>The coil sheet carries an insertion loss row: 0.4 dB maximum over 500 m, splices included. That is 0.8 dB per kilometre, 0.0001 dB per turn at the inner radius. Set it beside the <a href="/products/lkf-g652-low-loss/" class="text-blue-700 underline">G652 low-loss</a> bend rows.</p>
+<table><thead><tr><th>Row</th><th>Radius</th><th>Turns</th><th>Allowance</th><th>Per turn</th></tr></thead><tbody><tr><td>G652, 1550 nm</td><td>16 mm</td><td>1</td><td>&le;0.05 dB</td><td>0.05 dB</td></tr><tr><td>G652, 1550 nm</td><td>25 mm</td><td>100</td><td>&le;0.05 dB</td><td>0.0005 dB</td></tr><tr><td>500 m coil, 1310 nm</td><td>19.6 to 27.5 mm</td><td>3,386</td><td>&le;0.4 dB</td><td>0.0001 dB</td></tr></tbody></table>
+<p>Take the 16 mm row at face value. Eight turns at 0.05 dB is the whole 0.4 dB, and eight turns of 123 mm is 0.98 m of fiber. A coil losing that much per turn fails before the second layer.</p>
+<p>Read the other way, the coil runs about 500 times tighter per turn than the handling row. That is the number the design lives under. The bend table confirms the fiber survives winding and potting, not what radius a coil may use.</p>`,
+      },
+      {
+        h2: '30 mm bore, same fiber, 1.1 dB on the bench',
+        html: `<p>A <a href="/products/lkf-fs60/" class="text-blue-700 underline">gyro</a> that measured 0.10 &deg;/h last month has to fit a 50 mm housing. Bore goes to 30 mm, wall stays 8.5 mm, outside diameter 47 mm, 1.5 mm left on each side. The fiber is unchanged. The first build comes back at 1.1 dB against the 0.4 dB row.</p>
+<p>Three things moved. Turn count rose from 3,386 to 4,134, a fifth more turns at the same loss per turn. The innermost layer moved to 15.07 mm, 0.9 mm inside the smallest single-turn row on the G652 sheet. And the whole winding turns 4.5 mm closer to the axis.</p>
+<p>The trap is blaming cut-off. It did not move, the fiber is still single mode at 1310 nm, and a tighter bend strips the second mode harder rather than softer. What changed is the radius the fundamental must survive: a loss problem, not a mode count problem.</p>`,
+      },
+      {
+        h2: 'Macro-bend ends where the bobbin begins',
+        html: `<p>Two mechanisms share the name and answer to different variables. Macro-bend is a whole turn at a radius and falls exponentially with it, which is why the limits above move two orders of magnitude between 25 mm and 16 mm. Micro-bend is the axial ripple from the coating and the bobbin surface; its scale is the fiber diameter, not the coil diameter.</p>
+<p>Cut-off decides which one a fiber is more exposed to. At the 1290 nm end of the window the mode runs at 2.37 and stays inside the cladding. At 1100 nm it runs at 2.02, the field reaches into the coating, and a bobbin finish that was irrelevant becomes a loss term. Both are in specification and behave differently on one machine.</p>`,
+      },
+      {
+        h2: 'Three lines for the drawing',
+        html: `<ul><li>Which cut-off, by method: 2 m loose and 22 m looped, both values</li><li>The bend row in full: radius, turns and wavelength, since per turn and per hundred turns differ by two orders</li><li>Insertion loss measured on the wound coil at the operating wavelength, not on a mandrel</li></ul>
+<p>The third line is the one that holds: it contains the radius, the turn count, the coating and the process in one measurement, and the gyro budget is written against it. Send the bore and the length for a new coil and you get back the turn count and the loss that goes with them.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'My fiber is rated 1250 nm and I run at 1310 nm. Is 60 nm enough margin?',
+        a: 'The margin is larger than 60 nm in a coil, not smaller. Cable cut-off is already measured with the fiber bent, and a coil bends it further, so the second mode is stripped before the printed wavelength. The risk is on the other side: too much margin at the fundamental means a loosely guided mode and higher loss on a rough bobbin. Judge the winding by its insertion loss row rather than by the cut-off gap.',
+      },
+      {
+        q: 'Does a smaller coil make the fiber single mode?',
+        a: 'It helps, and it is not free. The second mode has the wider field, so it feels the bend first and disappears at a longer wavelength than the sheet states. The fundamental feels the same mechanism with less amplitude, and its loss grows exponentially as the radius falls. A tighter coil buys mode purity with loss, and the loss lands on the insertion loss row.',
+      },
+      {
+        q: 'Can I use the 1550 nm fiber in a 1310 nm coil?',
+        a: 'Only if its cut-off is below the operating wavelength, and then the mode field no longer matches the rest of the bench. A 1550 nm design has a larger field, so splices to a 1310 nm PM pigtail and the coupling into the integrated optic both lose more than the fiber gain returns. The coil table prints PM 1310_80/135 for the 500 m and 1,460 m builds for that reason.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-G652', href: '/products/lkf-g652-low-loss/', caption: 'Low-loss single-mode fiber, full bend table' },
+      { model: 'LKF-PM', href: '/products/lkf-pm-coil-winding/', caption: 'Coil-winding Panda PM fiber, 1100 to 1290 nm cut-off' },
+      { model: 'LKF-FS60', href: '/products/lkf-fs60/', caption: 'Single-axis FOG, 60 by 60 by 30 mm, 150 g' },
+    ],
+    relatedCategory: { name: 'Fiber Devices & Equipment', href: '/products/fiber-optic/' },
+  },
+
+  {
     slug: 'g652d-vs-g657a2-small-coils',
     title: 'G652D vs G657A2 for Small Coils: Bending Loss Decides',
     description:

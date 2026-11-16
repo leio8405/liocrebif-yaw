@@ -454,7 +454,8 @@
     {
       "id": 41,
       "slug": "fiber-cutoff-wavelength-coil-design",
-      "used": false,
+      "used": true,
+      "published": "2026-11-16",
       "title": "Cutoff Wavelength and Coil Diameter: The Constraint Most Designs Miss",
       "targetKeywords": "cutoff wavelength fiber, coil diameter design, single mode cutoff, fog fiber selection",
       "outline": "截止波长、工作波长与最小弯曲半径的耦合关系，常见设计错误与纠正方法。内链：G652 低损耗、FS60。",
