@@ -54,7 +54,7 @@ export const resources: ResourceArticle[] = [
       },
       {
         h2: 'Three packages, six pigtails, one chip',
-        html: `<p>The discrete trio is three parts and six fiber ends. Three of those ends meet inside the bench — polarizer to splitter, splitter to modulator — and each joint has to hold the polarization axis over the full range. The <a href="/products/lkf-mioc1310/" class="text-blue-700 underline">MIOC</a> arrives with three pigtails of 1.2 m PM 125/80 &micro;m fiber and nothing to join: one to the source coupler, two to the coil.</p>
+        html: `<p>The discrete trio is three parts and six fiber ends. Three of those ends meet inside the bench — polarizer to splitter, splitter to modulator — and each joint has to hold the polarization axis over the full range. The <a href="/products/lkf-mioc1310/" class="text-blue-700 underline">MIOC</a> — an integrated-optics Y-waveguide — arrives with three pigtails of 1.2 m PM 125/80 &micro;m fiber and nothing to join: one to the source coupler, two to the coil.</p>
 <table><thead><tr><th>Function</th><th>Discrete trio</th><th>LKF-MIOC1310</th></tr></thead><tbody><tr><td>Polarizer</td><td>Separate part, 2 pigtails</td><td>In the waveguide, &le;&minus;30 dB at 25 &deg;C</td></tr><tr><td>Split and combine</td><td>Fused coupler</td><td>50 &plusmn; 2 %, 50 &plusmn; 3 % general</td></tr><tr><td>Phase modulation</td><td>Modulator plus driver</td><td>V&pi; 3.5 V, &ge;300 MHz</td></tr><tr><td>Parts / pigtails</td><td>3 / 6</td><td>1 / 3</td></tr><tr><td>Joints inside the bench</td><td>3</td><td>0</td></tr></tbody></table>
 <p>Three fewer splices is a small number in a table and a different one at the bench. An 80 &micro;m core joined to an 80 &micro;m core has to keep its axis within a couple of degrees, then live from &minus;45 to +70 &deg;C for the life of the unit. Where a joint cannot be made, the design does not ship; where it can be made but creeps, the creep arrives as bias, months later.</p>`,
       },
@@ -78,14 +78,14 @@ export const resources: ResourceArticle[] = [
       },
       {
         h2: 'Four lines for the request',
-        html: `<ul><li>Wavelength and grade: the good and general columns differ by 5 dB of crosstalk over temperature.</li><li>Package letter: Q, E, T or U. That sets the footprint, not the chip.</li><li>Pigtail length against your splice tray. 1.2 m is the standard cut, and a 60 mm housing has less room than it sounds.</li><li>Spectral width, if the source shares the package: &ge;35 nm on the SLD alone, &ge;30 nm on the SPC. Coherence length follows the width, and so does the bias term from Rayleigh backscatter.</li></ul>
+        html: `<ul><li>Wavelength and grade: the good and general columns differ by 5 dB of crosstalk over temperature, and the <a href="/products/lkf-mioc1550/" class="text-blue-700 underline">1550 nm part</a> is the tighter of the two.</li><li>Package letter: Q, E, T or U. That sets the footprint, not the chip.</li><li>Pigtail length against your splice tray. 1.2 m is the standard cut, and a 60 mm housing has less room than it sounds.</li><li>Spectral width, if the source shares the package: &ge;35 nm on the SLD alone, &ge;30 nm on the SPC. Coherence length follows the width, and so does the bias term from Rayleigh backscatter.</li></ul>
 <p>Send the coil, the housing envelope and the crosstalk column you can live with, and the rest of the <a href="/products/fiber-optic/" class="text-blue-700 underline">part list</a> follows.</p>`,
       },
     ],
     faq: [
       {
         q: 'My source already holds 12 dB polarization extinction. Can I drop the polarizer?',
-        a: 'The polarizer is not there for the source. The cross-polarized wave is made in the coil — LKF-FC60 holds &ge;20 dB extinction, FC70 &ge;24 dB, FC120 &ge;18 dB — and that is what the return light carries. The chip polarizes at the common port, where light passes twice.',
+        a: 'The polarizer is not there for the source. The cross-polarized wave is made in the coil — LKF-FC60 holds ≥20 dB extinction, FC70 ≥24 dB, FC120 ≥18 dB — and that is what the return light carries. The chip polarizes at the common port, where light passes twice.',
       },
       {
         q: 'The chip is specified at 3.5 dB. My three-part bench measures 2.6 dB. Is the integrated part lossier?',
@@ -93,7 +93,7 @@ export const resources: ResourceArticle[] = [
       },
       {
         q: 'Does the 1550 nm part drop into the same package and pigtail?',
-        a: 'Yes: Q, E, T and U for <a href="/products/lkf-mioc1550/" class="text-blue-700 underline">both wavelengths</a>, same PM 125/80 &micro;m pigtail at 1.2 m. Its rows are tighter — split 50 &plusmn; 1.5 per cent against &plusmn; 2, crosstalk &minus;30 dB over temperature against &minus;25, loss variation 0.3 dB against 0.35. The coil changes to PM 1550_80/135.',
+        a: 'Yes: Q, E, T and U for both wavelengths, same PM 125/80 µm pigtail at 1.2 m. Its rows are tighter — split 50 ± 1.5 per cent against ± 2, crosstalk −30 dB over temperature against −25, loss variation 0.3 dB against 0.35. The coil changes to PM 1550_80/135.',
       },
     ],
     relatedProducts: [
