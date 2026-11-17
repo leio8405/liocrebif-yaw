@@ -468,7 +468,8 @@
     {
       "id": 42,
       "slug": "mioc-vs-discrete-optics-fog",
-      "used": false,
+      "used": true,
+      "published": "2026-11-17",
       "title": "MIOC vs Discrete Optics: Parts Count, Alignment and Drift",
       "targetKeywords": "mioc fog, y waveguide vs discrete, integrated optics fog, mioc vs coupler",
       "outline": "MIOC 与分立器件（Y 波导+耦合器+调制器）在零件数、对准、温漂上的对比。内链：MIOC 1310/1550、SPC1310。",

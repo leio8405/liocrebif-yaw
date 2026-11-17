@@ -38,6 +38,73 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'mioc-vs-discrete-optics-fog',
+    title: 'MIOC vs Discrete Optics: Parts Count, Alignment and Drift in a FOG Bench',
+    description:
+      'A polarizer, a splitter and a phase modulator collapse into one chip with three pigtails. What that saves inside a 60 mm housing, why the insertion loss has to be counted twice, and why the -25 dB crosstalk row at +70 °C is the number that sets the design floor.',
+    date: '2026-11-17',
+    readingTime: 6,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'Five millimetres off each side, 130 g off the scale',
+        html: `<p>A single-axis gyro leaves a 70 &times; 70 &times; 30 mm housing at 280 g and moves into a 60 &times; 60 &times; 30 mm one at 150 g. The coil does not change: 39 mm bore, 55 mm outside, 8.5 mm high, 500 m of PM 1310_80/135, 0.4 dB insertion loss. So the part that has to give is the optical bench behind it.</p>
+<p>Built from discrete parts, that bench holds a polarizer, a 3 dB splitter and a phase modulator, each in its own package with two pigtails. A <strong>MIOC</strong> puts all three on one chip with three pigtails. The choice is a budget with four lines: parts and splices, crosstalk over temperature, insertion loss crossed twice, and the modulation the chip applies to its own light.</p>
+<p>If those four lines fit in 60 mm, the shrink is a packaging job. If one does not, no housing change fixes it.</p>`,
+      },
+      {
+        h2: 'Three packages, six pigtails, one chip',
+        html: `<p>The discrete trio is three parts and six fiber ends. Three of those ends meet inside the bench — polarizer to splitter, splitter to modulator — and each joint has to hold the polarization axis over the full range. The <a href="/products/lkf-mioc1310/" class="text-blue-700 underline">MIOC</a> arrives with three pigtails of 1.2 m PM 125/80 &micro;m fiber and nothing to join: one to the source coupler, two to the coil.</p>
+<table><thead><tr><th>Function</th><th>Discrete trio</th><th>LKF-MIOC1310</th></tr></thead><tbody><tr><td>Polarizer</td><td>Separate part, 2 pigtails</td><td>In the waveguide, &le;&minus;30 dB at 25 &deg;C</td></tr><tr><td>Split and combine</td><td>Fused coupler</td><td>50 &plusmn; 2 %, 50 &plusmn; 3 % general</td></tr><tr><td>Phase modulation</td><td>Modulator plus driver</td><td>V&pi; 3.5 V, &ge;300 MHz</td></tr><tr><td>Parts / pigtails</td><td>3 / 6</td><td>1 / 3</td></tr><tr><td>Joints inside the bench</td><td>3</td><td>0</td></tr></tbody></table>
+<p>Three fewer splices is a small number in a table and a different one at the bench. An 80 &micro;m core joined to an 80 &micro;m core has to keep its axis within a couple of degrees, then live from &minus;45 to +70 &deg;C for the life of the unit. Where a joint cannot be made, the design does not ship; where it can be made but creeps, the creep arrives as bias, months later.</p>`,
+      },
+      {
+        h2: 'The crosstalk row is a floor, not a target',
+        html: `<p>Crosstalk is where a FOG loses bias, and this chip prints it twice: &minus;30 dB at room temperature and &minus;25 dB over temperature on the good grade, &minus;28 and &minus;23 dB on the general grade. Those are 3.2, 5.6, 4.0 and 7.1 per cent amplitude — the general grade carries 26 per cent more polarization error, and the good grade about three quarters more at +70 &deg;C than at 25 &deg;C.</p>
+<p>So the room column is not the one to budget against. The chip is 5 dB worse at the hot end, where a gyro spends its worst hour, and the figure already contains the chip's own pigtail joints: anything spliced upstream adds and nothing subtracts. The floor is set at the factory.</p>
+<p>Return loss is &minus;55 dB at both wavelengths, a value you can write into a budget. A three-part bench cannot offer that, because its reflections depend on how each joint was made and no sheet covers them.</p>`,
+      },
+      {
+        h2: 'Count the chip twice',
+        html: `<p>Light crosses the chip twice, source to coil and coil to detector, so 3.5 dB of insertion loss is a 7 dB line in the budget; the general grade's 4.0 dB becomes 8 dB — a fifth of the light reaching the coil, and a fifth of that coming back.</p>
+<p>The temperature row repeats. 0.35 dB per pass is 0.7 dB round trip, a 15 per cent swing from &minus;45 to +70 &deg;C, against &le;3 per cent for the SLD. The term that moves is the chip, not the source, and it reaches the demodulator as an amplitude change at the rate the housing heats and cools.</p>
+<p>Size it once. 400 &micro;W out of the source, 3.5 dB port-to-port, the coil at 0.4 dB, a 50:50 coupler at each end: 36 &micro;W at the detector. Read the 3.5 dB as excess loss on top of a 3 dB split and the same bench delivers 9 &micro;W. The PIN-FET sheet meets that spread with three versions — 0.72, 0.36 and 0.18 V/&micro;W at 4, 8 and 16 &micro;W saturation — so a 36 &micro;W return rules out the first two, and that reading picks the receiver before any decision about the chip.</p>`,
+      },
+      {
+        h2: 'What the three-in-one takes in payment',
+        html: `<p>One level out, the arithmetic repeats. The <a href="/products/lkf-spc1310/" class="text-blue-700 underline">SPC1310</a> folds the SLED, coupler and PIN-FET into one package, so the bench drops to two optical parts: transceiver block and chip.</p>
+<p>The detector is where the payment lands. Voltage responsivity is 0.067 to 0.086 V/&micro;W against 0.72 V/&micro;W for the discrete PIN-FET at 800 k&Omega; — about nine times less signal for the same light. Transimpedance says it in one figure: 180 to 220 k&Omega; against 800 k&Omega;. Bandwidth holds (&ge;7 MHz against 4 to 10 MHz); noise moves from 0.5 mV to 0.8 mV. Sensitivity is &le;&minus;43 dBm, which at 1310 nm is 0.05 &micro;W, near the 0.03 &micro;W minimum linear power of the discrete module.</p>
+<p>Full-temp power stability is &le;5 per cent over &minus;55 to +75 &deg;C against &le;3 per cent for the SLD alone. And one cost never appears as a row: a single failure takes three functions with it.</p>`,
+      },
+      {
+        h2: 'Four lines for the request',
+        html: `<ul><li>Wavelength and grade: the good and general columns differ by 5 dB of crosstalk over temperature.</li><li>Package letter: Q, E, T or U. That sets the footprint, not the chip.</li><li>Pigtail length against your splice tray. 1.2 m is the standard cut, and a 60 mm housing has less room than it sounds.</li><li>Spectral width, if the source shares the package: &ge;35 nm on the SLD alone, &ge;30 nm on the SPC. Coherence length follows the width, and so does the bias term from Rayleigh backscatter.</li></ul>
+<p>Send the coil, the housing envelope and the crosstalk column you can live with, and the rest of the <a href="/products/fiber-optic/" class="text-blue-700 underline">part list</a> follows.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'My source already holds 12 dB polarization extinction. Can I drop the polarizer?',
+        a: 'The polarizer is not there for the source. The cross-polarized wave is made in the coil — LKF-FC60 holds &ge;20 dB extinction, FC70 &ge;24 dB, FC120 &ge;18 dB — and that is what the return light carries. The chip polarizes at the common port, where light passes twice.',
+      },
+      {
+        q: 'The chip is specified at 3.5 dB. My three-part bench measures 2.6 dB. Is the integrated part lossier?',
+        a: 'Check the reference plane first. A 3.5 dB figure taken port-to-port includes the 3 dB split; a 2.6 dB figure for the trio alone excludes three splices and two connectors. On one plane the gap usually closes to a few tenths.',
+      },
+      {
+        q: 'Does the 1550 nm part drop into the same package and pigtail?',
+        a: 'Yes: Q, E, T and U for <a href="/products/lkf-mioc1550/" class="text-blue-700 underline">both wavelengths</a>, same PM 125/80 &micro;m pigtail at 1.2 m. Its rows are tighter — split 50 &plusmn; 1.5 per cent against &plusmn; 2, crosstalk &minus;30 dB over temperature against &minus;25, loss variation 0.3 dB against 0.35. The coil changes to PM 1550_80/135.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-MIOC1310', href: '/products/lkf-mioc1310/', caption: '1310 nm Y-waveguide chip, 3.5 dB, 1.2 m PM pigtails' },
+      { model: 'LKF-MIOC1550', href: '/products/lkf-mioc1550/', caption: '1550 nm Y-waveguide chip, tighter split and crosstalk rows' },
+      { model: 'LKF-SPC1310', href: '/products/lkf-spc1310/', caption: 'SLED, coupler and PIN-FET in one package' },
+    ],
+    relatedCategory: { name: 'Fiber Devices & Equipment', href: '/products/fiber-optic/' },
+  },
+
+  {
     slug: 'fiber-cutoff-wavelength-coil-design',
     title: 'Cutoff Wavelength and Coil Diameter: The Constraint Most Designs Miss',
     description:
