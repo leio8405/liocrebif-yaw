@@ -12,6 +12,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-PM(1310&1550)Coil Winding Panda PM Fiber',
     nameZh: '(1310&1550)绕环用熊猫保偏光纤',
     descEn: 'Driven by the miniaturization trend of FOGs, smaller-diameter Panda PM is required for winding fiber coils. To meet customer demands, small-diameter PM has been designed and manufactured using thin coating technology, reducing the PM diameter from 165 μm to 135 μm while delivering excellent performance in compact gyroscopes. The small-diameter Panda PM offers high birefringence, low attenuation, stable low crosstalk, precise refractive index profile, good geometric symmetry, and longitudinal uniformity.',
+    seoTitle: 'LKF-PM Coil-Winding Polarization maintaining fiber',
+    seoDesc: '(1310&1550)Coil Winding Panda PM Fiber, for fiber optic gyroscope, polarization maintaining fiber from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -46,6 +48,8 @@ export const devices: Product[] = [
     nameZh: '(1310&1550)波导用熊猫保偏光纤',
     descEn: 'Liocrebif\'s Panda PM products for FOG waveguide applications are suitable for fiber optic gyroscopes and other polarization-dependent devices. Optimized for device-level requirements, the fiber emphasizes geometric symmetry and polishability. While maintaining polarization performance, it offers excellent polishability, making it a PM suitable for both coil winding and polishing.',
     descZh: '利科夫光纤陀螺波导用熊猫型保偏光纤产品可应用于光纤陀螺以及其它偏振相关器件领域，此光纤产品针对器件要求进行了优化，主要针对几何对称性和可研磨性能，在保持光纤偏振性能的同时，具备可研磨性能，是一种既可以绕环，也可以研磨的保偏光纤。',
+    seoTitle: 'LKF-PM Waveguide Polarization maintaining fiber',
+    seoDesc: '(1310&1550)WaveGuide Panda PM Fiber, for linbo3 waveguide pigtail, polarization maintaining fiber from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -78,6 +82,8 @@ export const devices: Product[] = [
     nameZh: '保偏光子晶体光纤',
     descEn: 'Liocrebif PM-PCF is fabricated from a single material — silica — featuring low defect density, hydrogen damage resistance, and radiation resistance. Utilizing shape birefringence, it achieves high birefringence performance while maintaining excellent environmental adaptability, with minimal crosstalk fluctuation during thermal cycling. Customizable fiber cladding dimensions are available to meet diverse application requirements.',
     descZh: '利科夫保偏光子晶体光纤采用单一材料二氧化硅制备，具备缺陷少、抗氢损、抗辐照能力，同时采用形状双折射，使其具备高双折射性能的同时兼具良好的环境适应性，在高低温循环中能保持极小的串音波动性。同时可定制化的光纤包层尺寸，能满足客户不同应用场景的需求。',
+    seoTitle: 'LKF-PM Photonic-Crystal Polarization maintaining',
+    seoDesc: 'Polarization-Maintaining Photonic Crystal Fiber, for interferometers, polarization maintaining fiber from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -107,6 +113,8 @@ export const devices: Product[] = [
     nameZh: '低损耗单模光纤',
     descEn: 'The Low-Water Peak SMF complies with or exceeds the technical specifications of ITU-T G.652.D and IEC 60793-2-50 Type B1.3 optical fiber standards. Unique Technology Parameter Condition Value Optical Characteristics',
     descZh: '低水峰单模光纤符合或优于 ITU-T G.652.D 和 IEC 60793-2-50 B1.3 型光纤技术规范。 独特技术 特性 条件 数据 光学特性 衰减 [dB/km] 1383nm（氢老化后） 相对于波长的衰减变化 [dB/km] 1285~1330nm, 相对于1310nm 1525~1575nm, 相对于1550nm 波长范围内的色散 [ps/(nm·km)] 1285~1340nm -3.5到3.5 零色散波长(λ0) [nm] 1300~1324 零色散斜率(S0) [ps/(nm2·km)] 零色散斜率典型值 [ps/(nm2·km)] 偏振模色散系数（PMD) [ps/√km] 单根光纤最大值 光纤链路值（M=20，Q=0.01%) 典型值 光缆截止波长（ λcc) [nm] 模场直径（MFD) [nm] 9.8~10.8 有效群折射率（Neﬀ) 点不连续性 [dB] 特性 条件 数据 几何特性 包层直径 [μm] 125.0±0.7 包层不圆度 [%] 涂层直径 [μm] 涂层/包层同心度误差 [μm] 涂层不圆度 [%] 芯/包层同心度误差 [μm] 翘曲度（半径） [m] 交货长度 [km/盘] 最长50.4 环境特性 1310nm, 1550nm 和 1625nm 温度附加衰减 [dB/km] -60℃ 到85℃ 温度-湿度循环附加衰减 [dB/km] -10℃ 到85℃，98% 相对湿度 浸水附加衰减 [dB/km] 23℃, 30 天 湿热附加衰减 [dB/km] 85℃，85%相对湿度，30天 干热老化 [dB/km] 85℃，30天 机械特性 筛选张力 绝对力 [N] 应变 [%] 强度 [kpsi] 宏弯附加损耗 [dB] 100圈，半径30mm 100圈，半径25mm 1310nm 和1550nm 1圈，半径16mm 涂层剥离力 [N] 典型平均值 峰值 动态疲劳参数（nd）',
+    seoTitle: 'LKF-G652 Low-Loss Single-mode fiber',
+    seoDesc: 'Low-Loss Single-Mode Fiber, for multi-protocol compatible, single-mode fiber from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['特性', '数据'],
       rows: [
@@ -171,6 +179,8 @@ export const devices: Product[] = [
     nameZh: '低水峰单模光纤',
     descEn: 'The Low-Water Peak SMF complies with or exceeds the technical specifications of ITU-T G.652.D and IEC 60793-2-50 Type B1.3 optical fiber standards. Unique Technology Parameter Condition Value Optical Characteristics',
     descZh: '低水峰单模光纤符合或优于 ITU-T G.652.D 和 IEC 60793-2-50 B1.3 型光纤技术规范。 独特技术 特性 条件 数据 光学特性 衰减 [dB/km] 1383nm（氢老化后） 相对于波长的衰减变化 [dB/km] 1285~1330nm, 相对于1310nm 1525~1575nm, 相对于1550nm 波长范围内的色散 [ps/(nm·km)] 1285~1340nm -3.5到3.5 零色散波长(λ0) [nm] 1300~1324 零色散斜率(S0) [ps/(nm2·km)] 零色散斜率典型值 [ps/(nm2·km)] 偏振模色散系数（PMD) [ps/√km] 单根光纤最大值 光纤链路值（M=20，Q=0.01%) 典型值 光缆截止波长（ λcc) [nm] 模场直径（MFD) [nm] 9.8~10.8 有效群折射率（Neﬀ) 点不连续性 [dB] 特性 条件 数据 几何特性 包层直径 [μm] 125.0±0.7 包层不圆度 [%] 涂层直径 [μm] 涂层/包层同心度误差 [μm] 涂层不圆度 [%] 芯/包层同心度误差 [μm] 翘曲度（半径） [m] 交货长度 [km/盘] 最长50.4 环境特性 1310nm, 1550nm 和 1625nm 温度附加衰减 [dB/km] -60℃ 到85℃ 温度-湿度循环附加衰减 [dB/km] -10℃ 到85℃，98% 相对湿度 浸水附加衰减 [dB/km] 23℃, 30 天 湿热附加衰减 [dB/km] 85℃，85%相对湿度，30天 干热老化 [dB/km] 85℃，30天 机械特性 筛选张力 绝对力 [N] 应变 [%] 强度 [kpsi] 宏弯附加损耗 [dB] 100圈，半径30mm 100圈，半径25mm 1310nm 和1550nm 1圈，半径16mm 涂层剥离力 [N] 典型平均值 峰值 动态疲劳参数（nd）',
+    seoTitle: 'LKF-G652 Low-Water-Peak Single-mode fiber',
+    seoDesc: 'Low-Water Peak Single-Mode Fiber, for wdm adaptation, single-mode fiber from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['特性', '数据'],
       rows: [
@@ -235,6 +245,8 @@ export const devices: Product[] = [
     nameZh: '超低损耗单模光纤',
     descEn: 'The Low-Water Peak SMF complies with or exceeds the technical specifications of ITU-T G.652.D and IEC 60793-2-50 Type B1.3 optical fiber standards. Unique Technology Parameter Condition Value Optical Characteristics',
     descZh: '低水峰单模光纤符合或优于 ITU-T G.652.D 和 IEC 60793-2-50 B1.3 型光纤技术规范。 独特技术 特性 条件 数据 光学特性 衰减 [dB/km] 1383nm（氢老化后） 相对于波长的衰减变化 [dB/km] 1285~1330nm, 相对于1310nm 1525~1575nm, 相对于1550nm 波长范围内的色散 [ps/(nm·km)] 1285~1340nm -3.5到3.5 零色散波长(λ0) [nm] 1300~1324 零色散斜率(S0) [ps/(nm2·km)] 零色散斜率典型值 [ps/(nm2·km)] 偏振模色散系数（PMD) [ps/√km] 单根光纤最大值 光纤链路值（M=20，Q=0.01%) 典型值 光缆截止波长（ λcc) [nm] 模场直径（MFD) [nm] 9.8~10.8 有效群折射率（Neﬀ) 点不连续性 [dB] 特性 条件 数据 几何特性 包层直径 [μm] 125.0±0.7 包层不圆度 [%] 涂层直径 [μm] 涂层/包层同心度误差 [μm] 涂层不圆度 [%] 芯/包层同心度误差 [μm] 翘曲度（半径） [m] 交货长度 [km/盘] 最长50.4 环境特性 1310nm, 1550nm 和 1625nm 温度附加衰减 [dB/km] -60℃ 到85℃ 温度-湿度循环附加衰减 [dB/km] -10℃ 到85℃，98% 相对湿度 浸水附加衰减 [dB/km] 23℃, 30 天 湿热附加衰减 [dB/km] 85℃，85%相对湿度，30天 干热老化 [dB/km] 85℃，30天 机械特性 筛选张力 绝对力 [N] 应变 [%] 强度 [kpsi] 宏弯附加损耗 [dB] 100圈，半径30mm 100圈，半径25mm 1310nm 和1550nm 1圈，半径16mm 涂层剥离力 [N] 典型平均值 峰值 动态疲劳参数（nd）',
+    seoTitle: 'LKF-G652 Ultra-Low-Loss Single-mode fiber',
+    seoDesc: 'Ultra Low-Loss Single-Mode Fiber, for tier-3 networks, single-mode fiber from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['特性', '数据'],
       rows: [
@@ -297,6 +309,8 @@ export const devices: Product[] = [
     nameZh: '低损耗弯曲不敏感单模光纤',
     descEn: 'Unique Technology Parameter Condition Value Optical Characteristics Attenuation [dB/km]',
     descZh: '特性 条件 数据 光学特性 衰减 [dB/km] 1383nm(氢老化后) 相对于波长的衰减变化 [dB/km] 1285~1330nm, 相对于1310nm 1525~1575nm, 相对于1550nm 零色散波长(λ0) [nm] 1300~1324 零色散斜率(S0) [ps/(nm2·km)] 偏振模色散系数（PMD) [ps/√km] 单根光纤最大值 光纤链路值（M=20，Q=0.01%) 典型值 光缆截止波长（ λcc) [nm] 模场直径（MFD) [nm] 9.3~10.3 有效群折射率（Neﬀ) 点不连续性 [dB] 特性 条件 数据 几何特性 包层直径 [μm] 125.0±0.7 包层不圆度 [%] 涂层直径 [μm] 涂层/包层同心度误差 [μm] 涂层不圆度 [%] 芯/包层同心度误差 [μm] 翘曲度（半径） [m] 交货长度 [km/盘] 最长50.4 环境特性 1310nm, 1550nm 和 1625nm 温度附加衰减 [dB/km] -65℃ 到85℃ 温度-湿度循环附加衰减 [dB/km] -10℃ 到85℃，98% 相对湿度 浸水附加衰减 [dB/km] 23℃, 30 天 湿热附加衰减 [dB/km] 85℃，85%相对湿度，30天 干热老化 [dB/km] 85℃，30天 机械特性 筛选张力 绝对力 [N] 应变 [%] 强度 [kpsi] 宏弯附加损耗 [dB] 10圈，半径15mm 10圈，半径15mm 1圈，半径10mm 1圈，半径10mm 1圈，半径7.5mm 1圈，半径7.5mm 涂层剥离力 [N] 典型平均值 峰值 动态疲劳参数（nd）',
+    seoTitle: 'LKF-G657A1 Single-mode fiber for Small Bend Radius',
+    seoDesc: 'Low-Loss Bend-Insensitive Single-Mode Fiber, for small bend radius, single-mode fiber from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['特性', '数据'],
       rows: [
@@ -363,6 +377,8 @@ export const devices: Product[] = [
     nameZh: '低水峰弯曲不敏感单模光纤',
     descEn: 'Unique Technology Parameter Condition Value Optical Characteristics Attenuation [dB/km]',
     descZh: '特性 条件 数据 光学特性 衰减 [dB/km] 1383nm(氢老化后) 相对于波长的衰减变化 [dB/km] 1285~1330nm, 相对于1310nm 1525~1575nm, 相对于1550nm 零色散波长(λ0) [nm] 1300~1324 零色散斜率(S0) [ps/(nm2·km)] 偏振模色散系数（PMD) [ps/√km] 单根光纤最大值 光纤链路值（M=20，Q=0.01%) 典型值 光缆截止波长（ λcc) [nm] 模场直径（MFD) [nm] 9.3~10.3 有效群折射率（Neﬀ) 点不连续性 [dB] 特性 条件 数据 几何特性 包层直径 [μm] 125.0±0.7 包层不圆度 [%] 涂层直径 [μm] 涂层/包层同心度误差 [μm] 涂层不圆度 [%] 芯/包层同心度误差 [μm] 翘曲度（半径） [m] 交货长度 [km/盘] 最长50.4 环境特性 1310nm, 1550nm 和 1625nm 温度附加衰减 [dB/km] -65℃ 到85℃ 温度-湿度循环附加衰减 [dB/km] -10℃ 到85℃，98% 相对湿度 浸水附加衰减 [dB/km] 23℃, 30 天 湿热附加衰减 [dB/km] 85℃，85%相对湿度，30天 干热老化 [dB/km] 85℃，30天 机械特性 筛选张力 绝对力 [N] 应变 [%] 强度 [kpsi] 宏弯附加损耗 [dB] 10圈，半径15mm 10圈，半径15mm 1圈，半径10mm 1圈，半径10mm 1圈，半径7.5mm 1圈，半径7.5mm 涂层剥离力 [N] 典型平均值 峰值 动态疲劳参数（nd）',
+    seoTitle: 'LKF-G657A2 Single-mode fiber for Compact Devices',
+    seoDesc: 'Low Water Peak Bend-Insensitive Single-Mode Fiber, for compact devices',
     specTable: {
       headers: ['特性', '数据'],
       rows: [
@@ -428,6 +444,8 @@ export const devices: Product[] = [
     nameZh: '超强弯曲不敏感单模光纤',
     descEn: 'Unique Technology Parameter Condition Value Optical Characteristics Attenuation [dB/km]',
     descZh: '特性 条件 数据 光学特性 衰减 [dB/km] 1383nm(氢老化后) 相对于波长的衰减变化 [dB/km] 1285~1330nm, 相对于1310nm 1525~1575nm, 相对于1550nm 零色散波长(λ0) [nm] 1300~1324 零色散斜率(S0) [ps/(nm2·km)] 偏振模色散系数（PMD) [ps/√km] 单根光纤最大值 光纤链路值（M=20，Q=0.01%) 典型值 光缆截止波长（ λcc) [nm] 模场直径（MFD) [nm] 9.3~10.3 有效群折射率（Neﬀ) 点不连续性 [dB] 特性 条件 数据 几何特性 包层直径 [μm] 125.0±0.7 包层不圆度 [%] 涂层直径 [μm] 涂层/包层同心度误差 [μm] 涂层不圆度 [%] 芯/包层同心度误差 [μm] 翘曲度（半径） [m] 交货长度 [km/盘] 最长50.4 环境特性 1310nm, 1550nm 和 1625nm 温度附加衰减 [dB/km] -65℃ 到85℃ 温度-湿度循环附加衰减 [dB/km] -10℃ 到85℃，98% 相对湿度 浸水附加衰减 [dB/km] 23℃, 30 天 湿热附加衰减 [dB/km] 85℃，85%相对湿度，30天 干热老化 [dB/km] 85℃，30天 机械特性 筛选张力 绝对力 [N] 应变 [%] 强度 [kpsi] 宏弯附加损耗 [dB] 10圈，半径15mm 10圈，半径15mm 1圈，半径10mm 1圈，半径10mm 1圈，半径7.5mm 1圈，半径7.5mm 涂层剥离力 [N] 典型平均值 峰值 动态疲劳参数（nd）',
+    seoTitle: 'LKF-G657B3 Single-mode fiber for Full Cable',
+    seoDesc: 'Ultra-Strong Bend-Insensitive Single-Mode Fiber, for full cable structure adaptation',
     specTable: {
       headers: ['特性', '数据'],
       rows: [
@@ -489,6 +507,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-FC Polarization-Maintaining Fiber Coil',
     nameZh: '保偏光纤环圈',
     descEn: 'The fiber coil is the core component of any fiber optic gyroscope, and Liocrebif adopts high-performance independent fiber coils. Wound by 16-pole, 8-pole, or 4-pole symmetric winding methods, the independent structure eliminates fixture-induced strain on the fiber. As ambient temperature varies, the symmetric winding reduces Shupe error to a minimum. Coils wound with small-diameter (135 μm or 100 μm) PM fiber are also well suited to compact FOGs。',
+    seoTitle: 'LKF-FC Fiber optic coil for Fiber Optic Gyroscope',
+    seoDesc: 'Polarization-Maintaining Fiber Coil, for fiber optic gyroscope, fiber optic coil from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['LKF-FC60', 'LKF-FC70', 'LKF-FC98', 'LKF-FC120'],
       rows: [
@@ -515,6 +535,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-ASE Light Source',
     nameZh: '光源',
     descEn: 'Unique Technology',
+    seoTitle: 'LKF-ASE Fiber optic integrated optical device',
+    seoDesc: 'Light Source, for fiber optic gyroscope, fiber optic integrated optical device from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['数据', ''],
       rows: [
@@ -544,6 +566,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-FIOS 1550 Four-in-One Fully Integrated Optical Device',
     nameZh: '四合一全集成光学器件',
     descEn: 'Unique Technology',
+    seoTitle: 'LKF-FIOS1550 Fiber optic integrated optical device',
+    seoDesc: 'LKF-FIOS 1550 Four-in-One Fully Integrated Optical Device, for fiber current sensing',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -582,6 +606,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-MIOC 1310nm (Y-waveguide)',
     nameZh: '多功能集成光学器件(Y波导)',
     descEn: 'The Liocrebif Multifunctional Integrated Optical Chip (Y-waveguide / MIOC) is a core component of the optical path in a fiber optic gyroscope system and one of the classic applications of integrated optics. It performs polarizing and polarization analyzing, beam splitting and combining, and electro-optic phase modulation. It features low insertion loss, high polarization extinction ratio, and high electro-optic phase modulation linearity. Fabricated using microelectronics and micro-optics processes with PM fiber alignment coupling and packaging technology, it can also be customized for specific operating wavelengths, package types, and other special specifications according to customer requirements.',
+    seoTitle: 'LKF-MIOC1310 Fiber optic integrated optical device',
+    seoDesc: 'LKF-MIOC 1310nm (Y-waveguide), for other fiber sensing, fiber optic integrated optical device from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['优良数据', '一般数据'],
       rows: [
@@ -616,6 +642,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-MIOC 1550nm (Y-waveguide)',
     nameZh: '多功能集成光学器件(Y波导)',
     descEn: 'Unique Technology Parameter',
+    seoTitle: 'LKF-MIOC1550 Fiber optic integrated optical device',
+    seoDesc: 'LKF-MIOC 1550nm (Y-waveguide), for fiber optic gyroscope, fiber optic integrated optical device from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['优良数据', '一般数据'],
       rows: [
@@ -650,6 +678,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-PIN-FET Optical Receiver Module',
     nameZh: '光接收组件',
     descEn: 'Unique Technology',
+    seoTitle: 'LKF-PIN-FET Fiber optic integrated optical device',
+    seoDesc: 'Optical Receiver Module, for fiber current sensing, fiber optic integrated optical device from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['数据', '', ''],
       rows: [
@@ -680,6 +710,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-SLD(1310nm)Superluminescent Diode',
     nameZh: '(1310nm)超辐射发光管',
     descEn: 'Unique Technology',
+    seoTitle: 'LKF-SLD Fiber optic integrated optical device',
+    seoDesc: '(1310nm)Superluminescent Diode, for fiber current sensing, fiber optic integrated optical device from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['数据', '', ''],
       rows: [
@@ -712,6 +744,8 @@ export const devices: Product[] = [
     nameZh: '三合一集成光学器件',
     descEn: 'Liocrebif’s SPC1310 three-in-one optical device integrates three discrete components — an SLED, a PIN-FET optical receiver, and a coupler — into a single unit with optical transceiver capability. Using hybrid integration technology, it combines active and passive optical components in a compact, highly integrated form factor. The device simplifies system architecture, reduces overall size, and lowers optical-path assembly and splicing complexity, meeting customer demand for miniaturized, integrated solutions.',
     descZh: '利科夫SPC1310三合一光学器件，是一种集成了超辐射发光二极管（SLED）、光接收组件（PINFET）和耦合器（COUPLER）三种分立组件的器件，同时具备光收发功能。推出的SPC1310产品通过混合集成技术，实现了光有源无源组件的混合集成，具有尺寸小，集成度高的特点。该产品的应用可以有效简化系统结构，减小系统体积，减少光路装配熔接的复杂程度，从而满足客户对小型化和集成化产品的发展需求。',
+    seoTitle: 'LKF-SPC1310 Fiber optic integrated optical device',
+    seoDesc: 'Three-in-One Integrated Optical Device, fiber optic integrated optical device from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -746,6 +780,8 @@ export const devices: Product[] = [
     nameZh: '硅光三轴集成陀螺收发组件',
     descEn: 'Liocrebif’s TIOS1310 is a silicon-photonic three-axis three-in-one transceiver assembly. Using silicon photonic integration, it replaces the traditional discrete devices of a three-axis FOG on a single chip. It integrates a high-PER SLD light source, PM 1×3 and 1×2 couplers, and three photodetectors into one three-in-one package, outputting three-channel analog current signals. It suits FOG systems and applications such as missile-borne, airborne, UAV, robotics, autonomous driving, and vehicular systems.',
     descZh: '利科夫TIOS1310硅光三轴三合一收发组件，利用硅光集成方案实现对于传统三轴光纤陀螺分立器件的单个芯片级替代，同时实现高偏SLD光源、保偏1×3耦合器、保偏1×2耦合器以及3路探测器的三合一封装，器件输出为3路模拟电流信号。适用于光纤陀螺系统以及其支持的弹载、机载、无人机、机器人、无人驾驶和车载等领域。',
+    seoTitle: 'LKF-TIOS1310 Silicon photonic transceiver',
+    seoDesc: 'Silicon-Photonic Three-Axis Integrated Gyro Transceiver Assembly, for mobile position & attitude reference',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -781,6 +817,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-FX02 Fiber Separating and Rewinding Machine',
     nameZh: '分纤复绕机',
     descEn: 'Unique Technology Parameter',
+    seoTitle: 'LKF-FX02 Fiber optic production equipment',
+    seoDesc: 'Fiber Separating and Rewinding Machine, for fiber rewinding & cutting, fiber optic production equipment from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -808,6 +846,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-FX03 Fiber Separating and Rewinding Machine',
     nameZh: '分纤复绕机',
     descEn: 'Unique Technology Parameter',
+    seoTitle: 'LKF-FX03 Fiber optic production equipment',
+    seoDesc: 'Fiber Separating and Rewinding Machine, for fiber coils, fiber optic production equipment from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -835,6 +875,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-GR02 Thermal Curing Chanber',
     nameZh: '热固化箱',
     descEn: 'Unique Technology Parameter',
+    seoTitle: 'LKF-GR02 Fiber optic production equipment',
+    seoDesc: 'Thermal Curing Chanber, for fiber coils, fiber optic production equipment from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -864,6 +906,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-RH04 Fiber Coil Winding Machine',
     nameZh: 'RH04型光纤环绕制机',
     descEn: 'Unique Technology Parameter',
+    seoTitle: 'LKF-RH04 Fiber optic production equipment',
+    seoDesc: 'Fiber Coil Winding Machine, for fiber coil winding, fiber optic production equipment from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -892,6 +936,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-RH16A Fiber Coil Winding Machine',
     nameZh: 'RH16A光纤环绕制机',
     descEn: 'Unique Technology Parameter',
+    seoTitle: 'LKF-RH16A Fiber optic production equipment',
+    seoDesc: 'Fiber Coil Winding Machine, for fiber coil winding, fiber optic production equipment from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -920,6 +966,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-RH16 Fiber Coil Winding Machine',
     nameZh: 'RH16型光纤环绕制机',
     descEn: 'Unique Technology Parameter',
+    seoTitle: 'LKF-RH16 Fiber optic production equipment',
+    seoDesc: 'Fiber Coil Winding Machine, for fiber coil winding, fiber optic production equipment from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -948,6 +996,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-UV02 Rotary UV Curing Chamber',
     nameZh: '旋转紫外固化箱',
     descEn: 'Unique Technology Parameter',
+    seoTitle: 'LKF-UV02 Fiber optic production equipment',
+    seoDesc: 'Rotary UV Curing Chamber, for fiber coils, fiber optic production equipment from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -988,6 +1038,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-UV03 Rotary UV Curing Chamber',
     nameZh: '旋转紫外固化箱',
     descEn: 'Unique Technology Parameter',
+    seoTitle: 'LKF-UV03 Fiber optic production equipment',
+    seoDesc: 'Rotary UV Curing Chamber, for other curing applications, fiber optic production equipment from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -1026,6 +1078,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-2FDT400WK Dual-Axis Thermal-Chamber Turntable',
     nameZh: '双轴温箱转台',
     descEn: 'Unique Technology Parameter',
+    seoTitle: 'LKF-2FDT400WK Inertial test equipment',
+    seoDesc: 'Dual-Axis Thermal-Chamber Turntable, for fog & imu research & testing, inertial test equipment from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['参数', ''],
       rows: [
@@ -1058,6 +1112,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-3FDT550WK Three-Axis Thermal-Chamber Turntable',
     nameZh: '三轴温箱转台',
     descEn: 'Unique Technology Parameter',
+    seoTitle: 'LKF-3FDT550WK Inertial test equipment',
+    seoDesc: 'Three-Axis Thermal-Chamber Turntable, for production debugging & calibration',
     specTable: {
       headers: ['参数', ''],
       rows: [
@@ -1092,6 +1148,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-DT300A Single-Axis Motorized Rate-Position Turntable',
     nameZh: '单轴电动速率位置转台',
     descEn: 'Unique Technology Parameter',
+    seoTitle: 'LKF-DT300A Inertial test equipment',
+    seoDesc: 'Single-Axis Motorized Rate-Position Turntable, for rate & position function tests',
     specTable: {
       headers: ['参数', ''],
       rows: [
@@ -1120,6 +1178,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-FCTS1310C Fiber Coil Test System',
     nameZh: '光纤环三轴测试系统',
     descEn: 'Unique Technology Parameter',
+    seoTitle: 'LKF-FCTS1310C Inertial test equipment',
+    seoDesc: 'Fiber Coil Test System, for fiber coil production testing, inertial test equipment from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -1149,6 +1209,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-FCTS1550C Fiber Coil Test System',
     nameZh: '光纤环三轴测试系统',
     descEn: 'Unique Technology Parameter',
+    seoTitle: 'LKF-FCTS1550C Inertial test equipment',
+    seoDesc: 'Fiber Coil Test System, for fiber coil production testing, inertial test equipment from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -1179,6 +1241,8 @@ export const devices: Product[] = [
     nameZh: '光纤环多功能测试平台',
     descEn: 'Liocrebif LKF-FMTP fiber coil multifunction test platform integrates OTDR, extinction ratio testing, and red light detection. It completes fiber coil length, loss, crosstalk, and red light inspection in a single station, automatically generates test reports via host software, and supports networked storage to designated databases. Features include simple and fast operation, high automation, and automatic report generation with archiving.',
     descZh: '利科夫LKF-FMTP光纤环多功能测试平台集成了ODTR、消光比测试和红光检测功能，可以一站式完成光纤环的长度、损耗、串音以及红光检测，并通过上位机软件自动生成测试报告，可联网存储到指定数据库中，具有操作简便快捷，自动化程度高，自动生成报告并归档等优点。',
+    seoTitle: 'LKF-FMTP Inertial test equipment',
+    seoDesc: 'Fiber Coil Multifunction Test Platform, for pm/sm fiber inspection, inertial test equipment from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -1231,6 +1295,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-HLTTC Single-Axis High-Low Temperature Test Chamber',
     nameZh: '高低温试验箱',
     descEn: 'Unique Technology Parameter',
+    seoTitle: 'LKF-HLTTC Inertial test equipment',
+    seoDesc: 'Single-Axis High-Low Temperature Test Chamber, for aerospace, inertial test equipment from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['数据', '', '', '', '', '', ''],
       rows: [
@@ -1269,6 +1335,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-LDDR1 SLD Controller',
     nameZh: 'SLD光源驱动仪',
     descEn: 'Unique Technology Parameter Parameters Performance',
+    seoTitle: 'LKF-LDDR1 Inertial test equipment',
+    seoDesc: 'SLD Controller, for testing & production, inertial test equipment from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -1298,6 +1366,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-OMTS1310C FOG Optical Module Test System',
     nameZh: '陀螺光模块三轴测试系统',
     descEn: 'Unique Technology Parameter',
+    seoTitle: 'LKF-OMTS1310C Inertial test equipment',
+    seoDesc: 'FOG Optical Module Test System, for gyro optical module screening tests',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -1327,6 +1397,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-OMTS1550C FOG Optical Module Test System',
     nameZh: '陀螺光模块三轴测试系统',
     descEn: 'Unique Technology Parameter',
+    seoTitle: 'LKF-OMTS1550C Inertial test equipment',
+    seoDesc: 'FOG Optical Module Test System, for gyro optical module screening tests',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -1356,6 +1428,8 @@ export const devices: Product[] = [
     nameEn: 'LKF-PERM Polarization Extinction Ratio Meter',
     nameZh: '消光比测试仪',
     descEn: 'Unique Technology Parameter Parameters Performance',
+    seoTitle: 'LKF-PERM Inertial test equipment',
+    seoDesc: 'Polarization Extinction Ratio Meter, for optical devices, inertial test equipment from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -1386,6 +1460,8 @@ export const devices: Product[] = [
     nameZh: 'UV500 绕环胶',
     descEn: 'UV500 is a curing adhesive for fiber-coil winding. It evenly coats the coil body to secure the wound fiber in its set state and prevent stripping and breakage. With moderate viscosity and good fiber wettability, it dispenses and pots easily. After curing, its wide operating-temperature range suits long-cycle winding.',
     descZh: 'UV500 是光纤环绕制工序专用的固化胶粘剂，核心作用是均匀分布于环体，固定绕制成型的光纤，使其保持既定的绕制状态，同时防止光纤脱皮、断裂。',
+    seoTitle: 'LKF-UV500 Fiber optic adhesive',
+    seoDesc: 'UV500 Winding Adhesive, fiber optic adhesive from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '典型值 / Typical'],
       rows: [
@@ -1409,6 +1485,8 @@ export const devices: Product[] = [
     nameZh: 'UV100 尾纤胶',
     descEn: 'UV100 is a UV-curable silicone-rubber adhesive curing via siloxane addition crosslinking under UV light. As a fiber buffer layer, it removes stress from mechanical and thermal sources, protecting the fiber. Highly photo-crosslinking-sensitive, the cured gel is uniform, soft, and low-stress, keeping low modulus over its operating range. With low water absorption and excellent low-temperature performance, it cuts temperature-induced fiber loss. Safe to store and use, its curing is adjustable.',
     descZh: 'UV100 是紫外光固化硅橡胶胶粘剂，通过硅氧烷在紫外光照射下发生加成交联反应实现固化，主要作为光纤缓冲层使用，可消除外部机械力损伤与温度变化带来的附加应力，对光纤起到保护作用。',
+    seoTitle: 'LKF-UV100 Fiber optic adhesive',
+    seoDesc: 'UV100 Pigtail Adhesive, fiber optic adhesive from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '指标 / Value'],
       rows: [
@@ -1435,6 +1513,8 @@ export const devices: Product[] = [
     nameZh: 'H01 粘环胶',
     descEn: 'H01 is a two-component epoxy adhesive bonding fiber coils to metal substrates. At a fixed mass ratio it has low viscosity, good wettability to coils and devices, long pot life, fast mid-temperature cure. Cured, it gives high bond strength and toughness, resists thermal/humidity-heat shock, serves a wide range, and has long room-temperature sealed shelf life.',
     descZh: 'H01 是一款双组份环氧胶黏剂，主要用于光纤环与金属基材的粘接固定。',
+    seoTitle: 'LKF-H01 Fiber optic adhesive',
+    seoDesc: 'H01 Coil Bonding Adhesive, fiber optic adhesive from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '典型值 / Typical'],
       rows: [
@@ -1461,6 +1541,8 @@ export const devices: Product[] = [
     nameZh: '硼掺杂光纤预制棒',
     descEn: 'Liocrebif LKF-Boron-Doped preforms are fabricated via PCVD process and serve as raw material for panda-type PM fiber and PM active fiber, featuring excellent geometric properties.',
     descZh: '利科夫LKF-硼掺杂预制棒是基于PCVD工艺设计开发而成，作为原材料，广泛的应用于熊猫型保偏光纤和保偏有源光纤，具备良好的的几何性能。',
+    seoTitle: 'LKF-Boron-Doped Fiber preform',
+    seoDesc: 'Boron-Doped Fiber Preform, fiber preform from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', 'BDP16-22', 'BDP12-26', '客户定制 / Custom'],
       rows: [
@@ -1485,6 +1567,8 @@ export const devices: Product[] = [
     nameZh: '氟掺杂光纤预制棒',
     descEn: 'Liocrebif LKF-Fluorine-Doped preforms feature a pure silica core fabricated via plasma deposition, producing step-index multimode preforms for industrial laser and visible-light fiber applications, with customization available.',
     descZh: '利科夫LKF-氟掺杂预制棒以高纯石英为芯棒，使用等离子体沉积工艺所制成的阶跃折射率多模预制棒，对应工业激光及可见光光纤的典型应用，亦可满足定制化的客户需求。',
+    seoTitle: 'LKF-Fluorine-Doped Fiber preform',
+    seoDesc: 'Fluorine-Doped Fiber Preform, fiber preform from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', 'FDUVP01', 'FDUVP02', 'FDIRP1.05', 'FDIR1.1', 'FDIR1.15', 'FDIR1.2'],
       rows: [
@@ -1513,6 +1597,8 @@ export const devices: Product[] = [
     nameZh: '锗掺杂光纤预制棒',
     descEn: 'Liocrebif LKF-Germanium-Doped preforms are the core raw material for PM fiber manufacturing. Fabricated via large-rod process, they offer excellent geometric consistency, stable production, and low cost.',
     descZh: '利科夫LKF-锗掺杂预制棒是制造系列保偏光纤的核心原材料。采用大棒工艺制备而成，具有预制棒几何一致性好， 生产工艺稳定，成本低等优点。',
+    seoTitle: 'LKF-Germanium-Doped Fiber preform',
+    seoDesc: 'Germanium-Doped Fiber Preform, fiber preform from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', 'GDP01', 'GDP02'],
       rows: [

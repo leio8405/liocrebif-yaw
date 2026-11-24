@@ -66,8 +66,8 @@ const breadcrumbSchema = {
 
 <BaseLayout
   currentPath={Astro.url.pathname}
-  title={`${isZh ? product.nameZh : product.nameEn} | ${product.model}`}
-  description={product.descEn || product.nameEn}
+  title={product.seoTitle || `${product.nameEn} | ${product.model}`}
+  description={product.seoDesc || product.descEn || product.nameEn}
 >
   <section class="border-b border-rule">
     <div class="container-page py-10 sm:py-12">

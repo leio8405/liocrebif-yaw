@@ -11,6 +11,8 @@ export const memsGyros: Product[] = [
     nameEn: 'LKF-MEMS Single-Axis Gyroscope Chip',
     nameZh: '单轴陀螺芯片',
     descEn: 'Unique Technology Parameter',
+    seoTitle: 'LKF-MEMS MEMS gyroscope chip <0.5°/h',
+    seoDesc: 'Single-Axis Gyroscope Chip, bias stability 0.5 °/h, for mobile positioning & attitude reference',
     specTable: {
       headers: ['数据', '', '', '', '', ''],
       rows: [
@@ -59,6 +61,8 @@ export const memsGyros: Product[] = [
     nameZh: 'MEMS陀螺组合',
     descEn: 'The MTG200 series MEMS three-axis gyro assembly is a high-reliability, cost-effective three-axis gyro module, serving as the control sensor for various stabilization platforms. It has been mass-applied in optoelectronic pods and low-to-medium Earth orbit satellites. All electronic components inside the system are fully domestically sourced.Featuring compact size, light weight, low power consumption, and a simple interface, it offers exceptional cost performance. Based on proven designs with engineering optimizations for mass production, it delivers outstanding value across inertial measurement fields.',
     descZh: '三轴陀螺组合仪 参数 技术指标 陀螺仪 量程（°/s） 全温零偏（°/h，3σ） 零偏稳定性（°/h，10s平滑） 零偏不稳定性（°/h，allan，typ） 零偏重复性（°/h） 角度随机游走（°/√h） 标度因数非线性（ppm） 交叉耦合（rad） 带宽（Hz） 电气/机械接口 电源（V） 5~12（纹波≤100mV） 稳态功率(W) 启动时间（s） 更新率（Hz，max） 尺寸（mm×mm×mm） 44.8×38.6×21.5 重量（g） 使用环境 工作温度（℃） 存储温度（℃） 振动（g，RMS） 20~2000Hz，6.06 冲击（g，半正弦波） 外形结构尺寸图',
+    seoTitle: 'LKF-MTG200 MEMS gyroscope 2°/h',
+    seoDesc: 'MEMS Gyro, bias stability 2 °/h, for satellite attitude control, MEMS gyroscope from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -97,6 +101,8 @@ export const memsGyros: Product[] = [
     nameZh: 'MEMS陀螺组合',
     descEn: 'The LKF-MTG300A MEMS three-axis gyro assembly is a high-reliability, cost-effective 3-axis MEMS gyro assembly, applicable to navigation and control fields of low-to-medium Earth orbit satellites. Assembly integrates high-performance MEMS gyroscopes inside an independent mechanical housing. The built-in gyroscopes adopt domestically manufactured MEMS inertial sensor technology reaching advanced industry level.The three-axis MEMS gyroscope senses the angular motion of the carrier. Full-temperature compensation for Bias, scale factor and non-orthogonality error is implemented inside the system, enabling sustained high measurement accuracy during long-term operation.',
     descZh: 'MEMS三轴陀螺组合仪 参数 技术指标 陀螺仪 量程（/s） 全温零位（/h） 零偏稳定性（/h，10s平滑） 零偏稳定性（/h，100s平滑） 零偏稳定性（/h，allan） 零偏重复性（/h） 角度随机游走（°/√h） 与g有关项（°/h/g） 标度因数非线性（ppm） 带宽（Hz） 电气/机械接口 电源（V） 5~12(纹波≤100mV) 功率(W) 启动时间（s） 通信接口 1路RS-422 更新率（Hz） 应答式输出，最大200Hz 尺寸（mm×mm×mm） 44.8×38.6×21.5 重量（g） 使用环境 工作温度（℃） 存储温度（℃） 振动 7.72g（rms） 冲击 500g（1ms） 外形结构尺寸图',
+    seoTitle: 'LKF-MTG300A MEMS gyroscope 0.1°/h',
+    seoDesc: 'MEMS Gyro, bias stability 0.1 °/h, for satellite stabilization control',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -137,6 +143,8 @@ export const memsGyros: Product[] = [
     nameZh: 'MEMS陀螺组合',
     descEn: 'The LKF-MTG300 MEMS three-axis gyro assembly is a high-reliability, cost-effective 3-axis MEMS gyro assembly, applicable to navigation and control fields of low-to-medium Earth orbit satellites. Assembly integrates high-performance MEMS gyroscopes inside an independent mechanical housing. The built-in gyroscopes adopt domestically manufactured MEMS inertial sensor technology reaching advanced industry level. All electronic components inside the system are 100% domestically sourced. The three-axis MEMS gyroscope senses the angular motion of the carrier. Full-temperature compensation for Bias, scale factor and non-orthogonality error is implemented inside the system, enabling sustained high measurement accuracy during long-term operation.',
     descZh: 'MEMS三轴陀螺组合仪 参数 技术指标 陀螺仪 量程（/s） 全温零位（/h） 零偏稳定性（/h，10s平滑） 零偏稳定性（/h，100s平滑） 零偏稳定性（/h，allan） 零偏重复性（/h） 角度随机游走（°/√h） 与g有关项（°/h/g） 标度因数非线性（ppm） 带宽（Hz） 电气/机械接口 电源（V） 5~12(纹波≤100mV) 功率(W) 启动时间（s） 通信接口 1路RS-422 更新率（Hz） 应答式输出，最大200Hz 尺寸（mm×mm×mm） 44.8×38.6×21.5 重量（g） 使用环境 工作温度（℃） 存储温度（℃） 振动 7.72g（rms） 冲击 500g（1ms） 外形结构尺寸图',
+    seoTitle: 'LKF-MTG300 MEMS gyroscope 0.2°/h',
+    seoDesc: 'MEMS Gyro, bias stability 0.2 °/h, for satellite stabilization control',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [

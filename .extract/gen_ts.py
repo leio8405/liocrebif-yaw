@@ -136,6 +136,11 @@ if os.path.exists(_sp):
     SPLIT_PRODUCTS = json.load(open(_sp, encoding="utf-8"))
 
 DESC_OVERRIDE = {}
+# SEO 标题/描述覆盖（.extract/seo_override.json，gen_keywords.py 生成，键=slug）
+SEO_OVERRIDE = {}
+_seo_path = os.path.join(HERE, "seo_override.json")
+if os.path.exists(_seo_path):
+    SEO_OVERRIDE = json.load(open(_seo_path, encoding="utf-8"))
 _dp = os.path.join(HERE, "desc_override.json")
 if os.path.exists(_dp):
     DESC_OVERRIDE = json.load(open(_dp, encoding="utf-8"))
@@ -189,6 +194,11 @@ def ts_entry(r):
         lines.append(f"    descEn: '{desc_en}',")
     if desc_zh:
         lines.append(f"    descZh: '{desc_zh}',")
+    _seo = SEO_OVERRIDE.get(product_slug) or SEO_OVERRIDE.get(ov_key) or {}
+    if _seo.get("seoTitle"):
+        lines.append(f"    seoTitle: '{esc(_seo['seoTitle'])}',")
+    if _seo.get("seoDesc"):
+        lines.append(f"    seoDesc: '{esc(_seo['seoDesc'])}',")
     st = SPEC_OVERRIDE.get(ov_key) or r.get("specTable")
     if st and st.get("rows"):
         hs = ", ".join(f"'{esc(h)}'" for h in st["headers"])
@@ -232,6 +242,11 @@ def split_entry(p, base):
         lines.append(f"    descEn: '{esc(p['descEn'])}',")
     if p.get("descZh"):
         lines.append(f"    descZh: '{esc(p['descZh'])}',")
+    _seo = SEO_OVERRIDE.get(p.get("slug") or "") or {}
+    if _seo.get("seoTitle"):
+        lines.append(f"    seoTitle: '{esc(_seo['seoTitle'])}',")
+    if _seo.get("seoDesc"):
+        lines.append(f"    seoDesc: '{esc(_seo['seoDesc'])}',")
     st = p["specTable"]
     lines.append("    specTable: {")
     lines.append("      headers: [" + ", ".join(f"'{esc(h)}'" for h in st["headers"]) + "],")

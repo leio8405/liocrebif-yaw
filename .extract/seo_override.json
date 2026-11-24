@@ -1,0 +1,920 @@
+{
+ "lkf-quartz-accelerometer": {
+  "seoTitle": "LKF-Quartz Accelerometer 150µg",
+  "seoDesc": "quartz accelerometer, bias stability 150 µg, for aerospace, quartz accelerometer from a Chinese inertial sensor manufacturer",
+  "words": [
+   "quartz accelerometer",
+   "tactical grade quartz accelerometer",
+   "quartz accelerometer for aerospace"
+  ]
+ },
+ "lkf-mxh": {
+  "seoTitle": "LKF-MXH MEMS accelerometer <6µg",
+  "seoDesc": "Single-Axis MEMS Accelerometer, bias stability 6 µg, for imu, MEMS accelerometer from a Chinese inertial sensor manufacturer",
+  "words": [
+   "MEMS accelerometer",
+   "precision grade MEMS accelerometer",
+   "MEMS accelerometer for imu"
+  ]
+ },
+ "lkf-mxd": {
+  "seoTitle": "LKF-MXD MEMS accelerometer 13µg",
+  "seoDesc": "Dual-Axis MEMS Accelerometer, bias stability 13 µg, for avionics, MEMS accelerometer from a Chinese inertial sensor manufacturer",
+  "words": [
+   "13 ug precision grade MEMS accelerometer",
+   "precision grade MEMS accelerometer",
+   "MEMS accelerometer for avionics"
+  ]
+ },
+ "lkf-mxt15": {
+  "seoTitle": "LKF-MXT15 MEMS accelerometer for Attitude Control",
+  "seoDesc": "Three-Axis MEMS Accelerometer, for attitude control, MEMS accelerometer from a Chinese inertial sensor manufacturer",
+  "words": [
+   "MEMS accelerometer for attitude control",
+   "MEMS accelerometer for imu",
+   "MEMS accelerometer for avionics"
+  ]
+ },
+ "lkf-mxt50": {
+  "seoTitle": "LKF-MXT50 MEMS accelerometer for Platform",
+  "seoDesc": "Three-Axis MEMS Accelerometer, for platform stabilization systems, MEMS accelerometer from a Chinese inertial sensor manufacturer",
+  "words": [
+   "MEMS accelerometer for platform stabilization systems",
+   "MEMS accelerometer for imu",
+   "MEMS accelerometer for avionics"
+  ]
+ },
+ "lkf-pm-coil-winding": {
+  "seoTitle": "LKF-PM Coil-Winding Polarization maintaining fiber",
+  "seoDesc": "(1310&1550)Coil Winding Panda PM Fiber, for fiber optic gyroscope, polarization maintaining fiber from a Chinese inertial sensor manufacturer",
+  "words": [
+   "(1310&1550)coil winding panda pm fiber",
+   "polarization maintaining fiber for fiber optic gyroscope",
+   "polarization maintaining fiber for fused pm couplers"
+  ]
+ },
+ "lkf-pm-waveguide": {
+  "seoTitle": "LKF-PM Waveguide Polarization maintaining fiber",
+  "seoDesc": "(1310&1550)WaveGuide Panda PM Fiber, for linbo3 waveguide pigtail, polarization maintaining fiber from a Chinese inertial sensor manufacturer",
+  "words": [
+   "(1310&1550)waveguide panda pm fiber",
+   "polarization maintaining fiber for linbo3 waveguide pigtail",
+   "polarization maintaining fiber for fiber coils"
+  ]
+ },
+ "lkf-pm-pcf": {
+  "seoTitle": "LKF-PM Photonic-Crystal Polarization maintaining",
+  "seoDesc": "Polarization-Maintaining Photonic Crystal Fiber, for interferometers, polarization maintaining fiber from a Chinese inertial sensor manufacturer",
+  "words": [
+   "polarization-maintaining photonic crystal fiber",
+   "polarization maintaining fiber for interferometers",
+   "polarization maintaining fiber for sensors"
+  ]
+ },
+ "lkf-g652-low-loss": {
+  "seoTitle": "LKF-G652 Low-Loss Single-mode fiber",
+  "seoDesc": "Low-Loss Single-Mode Fiber, for multi-protocol compatible, single-mode fiber from a Chinese inertial sensor manufacturer",
+  "words": [
+   "low-loss single-mode fiber",
+   "single-mode fiber for multi-protocol compatible",
+   "single-mode fiber for wdm adaptation"
+  ]
+ },
+ "lkf-g652": {
+  "seoTitle": "LKF-G652 Low-Water-Peak Single-mode fiber",
+  "seoDesc": "Low-Water Peak Single-Mode Fiber, for wdm adaptation, single-mode fiber from a Chinese inertial sensor manufacturer",
+  "words": [
+   "low-water peak single-mode fiber",
+   "single-mode fiber for wdm adaptation",
+   "single-mode fiber for multi-protocol compatible"
+  ]
+ },
+ "lkf-g652-ultra-low-loss": {
+  "seoTitle": "LKF-G652 Ultra-Low-Loss Single-mode fiber",
+  "seoDesc": "Ultra Low-Loss Single-Mode Fiber, for tier-3 networks, single-mode fiber from a Chinese inertial sensor manufacturer",
+  "words": [
+   "ultra low-loss single-mode fiber",
+   "single-mode fiber for tier-3 networks",
+   "single-mode fiber for multi-protocol compatible"
+  ]
+ },
+ "lkf-g657a1": {
+  "seoTitle": "LKF-G657A1 Single-mode fiber for Small Bend Radius",
+  "seoDesc": "Low-Loss Bend-Insensitive Single-Mode Fiber, for small bend radius, single-mode fiber from a Chinese inertial sensor manufacturer",
+  "words": [
+   "low-loss bend-insensitive single-mode fiber",
+   "single-mode fiber for small bend radius",
+   "single-mode fiber for full cable structure adaptation"
+  ]
+ },
+ "lkf-g657a2": {
+  "seoTitle": "LKF-G657A2 Single-mode fiber for Compact Devices",
+  "seoDesc": "Low Water Peak Bend-Insensitive Single-Mode Fiber, for compact devices",
+  "words": [
+   "low water peak bend-insensitive single-mode fiber",
+   "single-mode fiber for compact devices",
+   "single-mode fiber for full cable structure adaptation"
+  ]
+ },
+ "lkf-g657b3": {
+  "seoTitle": "LKF-G657B3 Single-mode fiber for Full Cable",
+  "seoDesc": "Ultra-Strong Bend-Insensitive Single-Mode Fiber, for full cable structure adaptation",
+  "words": [
+   "ultra-strong bend-insensitive single-mode fiber",
+   "single-mode fiber for full cable structure adaptation",
+   "single-mode fiber for o-e-s-c-l full band"
+  ]
+ },
+ "lkf-fc": {
+  "seoTitle": "LKF-FC Fiber optic coil for Fiber Optic Gyroscope",
+  "seoDesc": "Polarization-Maintaining Fiber Coil, for fiber optic gyroscope, fiber optic coil from a Chinese inertial sensor manufacturer",
+  "words": [
+   "polarization-maintaining fiber coil",
+   "fiber optic coil for fiber optic gyroscope",
+   "fiber coil fiber optic coil"
+  ]
+ },
+ "lkf-ase": {
+  "seoTitle": "LKF-ASE Fiber optic integrated optical device",
+  "seoDesc": "Light Source, for fiber optic gyroscope, fiber optic integrated optical device from a Chinese inertial sensor manufacturer",
+  "words": [
+   "light source",
+   "fiber optic integrated optical device for fiber optic gyroscope",
+   "fiber optic integrated optical device for passive device testing"
+  ]
+ },
+ "lkf-fios1550": {
+  "seoTitle": "LKF-FIOS1550 Fiber optic integrated optical device",
+  "seoDesc": "LKF-FIOS 1550 Four-in-One Fully Integrated Optical Device, for fiber current sensing",
+  "words": [
+   "lkf-fios 1550 four-in-one fully integrated optical device",
+   "fiber optic integrated optical device for fiber current sensing",
+   "fiber optic integrated optical device for fiber optic gyroscope"
+  ]
+ },
+ "lkf-mioc1310": {
+  "seoTitle": "LKF-MIOC1310 Fiber optic integrated optical device",
+  "seoDesc": "LKF-MIOC 1310nm (Y-waveguide), for other fiber sensing, fiber optic integrated optical device from a Chinese inertial sensor manufacturer",
+  "words": [
+   "lkf-mioc 1310nm (y-waveguide)",
+   "fiber optic integrated optical device for other fiber sensing",
+   "fiber optic integrated optical device for fiber optic gyroscope"
+  ]
+ },
+ "lkf-mioc1550": {
+  "seoTitle": "LKF-MIOC1550 Fiber optic integrated optical device",
+  "seoDesc": "LKF-MIOC 1550nm (Y-waveguide), for fiber optic gyroscope, fiber optic integrated optical device from a Chinese inertial sensor manufacturer",
+  "words": [
+   "lkf-mioc 1550nm (y-waveguide)",
+   "fiber optic integrated optical device for fiber optic gyroscope",
+   "fiber optic integrated optical device for fiber current sensing"
+  ]
+ },
+ "lkf-pin-fet": {
+  "seoTitle": "LKF-PIN-FET Fiber optic integrated optical device",
+  "seoDesc": "Optical Receiver Module, for fiber current sensing, fiber optic integrated optical device from a Chinese inertial sensor manufacturer",
+  "words": [
+   "optical receiver module",
+   "fiber optic integrated optical device for fiber current sensing",
+   "fiber optic integrated optical device for fiber optic gyroscope"
+  ]
+ },
+ "lkf-sld": {
+  "seoTitle": "LKF-SLD Fiber optic integrated optical device",
+  "seoDesc": "(1310nm)Superluminescent Diode, for fiber current sensing, fiber optic integrated optical device from a Chinese inertial sensor manufacturer",
+  "words": [
+   "(1310nm)superluminescent diode",
+   "fiber optic integrated optical device for fiber current sensing",
+   "fiber optic integrated optical device for fiber optic gyroscope"
+  ]
+ },
+ "lkf-spc1310": {
+  "seoTitle": "LKF-SPC1310 Fiber optic integrated optical device",
+  "seoDesc": "Three-in-One Integrated Optical Device, fiber optic integrated optical device from a Chinese inertial sensor manufacturer",
+  "words": [
+   "three-in-one integrated optical device",
+   "fiber optic integrated optical device supplier",
+   "fiber optic integrated optical device manufacturer"
+  ]
+ },
+ "lkf-tios1310": {
+  "seoTitle": "LKF-TIOS1310 Silicon photonic transceiver",
+  "seoDesc": "Silicon-Photonic Three-Axis Integrated Gyro Transceiver Assembly, for mobile position & attitude reference",
+  "words": [
+   "silicon-photonic three-axis integrated gyro transceiver assembly",
+   "silicon photonic transceiver for mobile position & attitude reference",
+   "silicon photonic transceiver for unmanned ground vehicles"
+  ]
+ },
+ "lkf-fx02": {
+  "seoTitle": "LKF-FX02 Fiber optic production equipment",
+  "seoDesc": "Fiber Separating and Rewinding Machine, for fiber rewinding & cutting, fiber optic production equipment from a Chinese inertial sensor manufacturer",
+  "words": [
+   "fiber separating and rewinding machine",
+   "fiber optic production equipment for fiber rewinding & cutting",
+   "fiber optic production equipment for fiber coils"
+  ]
+ },
+ "lkf-fx03": {
+  "seoTitle": "LKF-FX03 Fiber optic production equipment",
+  "seoDesc": "Fiber Separating and Rewinding Machine, for fiber coils, fiber optic production equipment from a Chinese inertial sensor manufacturer",
+  "words": [
+   "fiber separating and rewinding machine",
+   "fiber optic production equipment for fiber coils",
+   "fiber optic production equipment for fiber rewinding & cutting"
+  ]
+ },
+ "lkf-gr02": {
+  "seoTitle": "LKF-GR02 Fiber optic production equipment",
+  "seoDesc": "Thermal Curing Chanber, for fiber coils, fiber optic production equipment from a Chinese inertial sensor manufacturer",
+  "words": [
+   "thermal curing chanber",
+   "fiber optic production equipment for fiber coils",
+   "fiber optic production equipment for other curing applications"
+  ]
+ },
+ "lkf-rh04": {
+  "seoTitle": "LKF-RH04 Fiber optic production equipment",
+  "seoDesc": "Fiber Coil Winding Machine, for fiber coil winding, fiber optic production equipment from a Chinese inertial sensor manufacturer",
+  "words": [
+   "fiber coil winding machine",
+   "fiber optic production equipment for fiber coil winding",
+   "production equipment fiber optic production equipment"
+  ]
+ },
+ "lkf-rh16a": {
+  "seoTitle": "LKF-RH16A Fiber optic production equipment",
+  "seoDesc": "Fiber Coil Winding Machine, for fiber coil winding, fiber optic production equipment from a Chinese inertial sensor manufacturer",
+  "words": [
+   "fiber coil winding machine",
+   "fiber optic production equipment for fiber coil winding",
+   "production equipment fiber optic production equipment"
+  ]
+ },
+ "lkf-rh16": {
+  "seoTitle": "LKF-RH16 Fiber optic production equipment",
+  "seoDesc": "Fiber Coil Winding Machine, for fiber coil winding, fiber optic production equipment from a Chinese inertial sensor manufacturer",
+  "words": [
+   "fiber coil winding machine supplier",
+   "fiber optic production equipment for fiber coil winding",
+   "production equipment fiber optic production equipment"
+  ]
+ },
+ "lkf-uv02": {
+  "seoTitle": "LKF-UV02 Fiber optic production equipment",
+  "seoDesc": "Rotary UV Curing Chamber, for fiber coils, fiber optic production equipment from a Chinese inertial sensor manufacturer",
+  "words": [
+   "rotary uv curing chamber",
+   "fiber optic production equipment for fiber coils",
+   "fiber optic production equipment for other curing applications"
+  ]
+ },
+ "lkf-uv03": {
+  "seoTitle": "LKF-UV03 Fiber optic production equipment",
+  "seoDesc": "Rotary UV Curing Chamber, for other curing applications, fiber optic production equipment from a Chinese inertial sensor manufacturer",
+  "words": [
+   "rotary uv curing chamber",
+   "fiber optic production equipment for other curing applications",
+   "fiber optic production equipment for fiber coils"
+  ]
+ },
+ "lkf-fcts1310c": {
+  "seoTitle": "LKF-FCTS1310C Inertial test equipment",
+  "seoDesc": "Fiber Coil Test System, for fiber coil production testing, inertial test equipment from a Chinese inertial sensor manufacturer",
+  "words": [
+   "fiber coil test system",
+   "navigation grade inertial test equipment",
+   "inertial test equipment for fiber coil production testing"
+  ]
+ },
+ "lkf-omts1310c": {
+  "seoTitle": "LKF-OMTS1310C Inertial test equipment",
+  "seoDesc": "FOG Optical Module Test System, for gyro optical module screening tests",
+  "words": [
+   "fog optical module test system",
+   "navigation grade inertial test equipment",
+   "inertial test equipment for gyro optical module screening tests"
+  ]
+ },
+ "lkf-fcts1550c": {
+  "seoTitle": "LKF-FCTS1550C Inertial test equipment",
+  "seoDesc": "Fiber Coil Test System, for fiber coil production testing, inertial test equipment from a Chinese inertial sensor manufacturer",
+  "words": [
+   "fiber coil test system",
+   "tactical grade inertial test equipment",
+   "inertial test equipment for fiber coil production testing"
+  ]
+ },
+ "lkf-omts1550c": {
+  "seoTitle": "LKF-OMTS1550C Inertial test equipment",
+  "seoDesc": "FOG Optical Module Test System, for gyro optical module screening tests",
+  "words": [
+   "fog optical module test system",
+   "tactical grade inertial test equipment",
+   "inertial test equipment for gyro optical module screening tests"
+  ]
+ },
+ "lkf-2fdt400wk": {
+  "seoTitle": "LKF-2FDT400WK Inertial test equipment",
+  "seoDesc": "Dual-Axis Thermal-Chamber Turntable, for fog & imu research & testing, inertial test equipment from a Chinese inertial sensor manufacturer",
+  "words": [
+   "dual-axis thermal-chamber turntable",
+   "inertial test equipment for fog & imu research & testing",
+   "inertial test equipment for production debugging & calibration"
+  ]
+ },
+ "lkf-3fdt550wk": {
+  "seoTitle": "LKF-3FDT550WK Inertial test equipment",
+  "seoDesc": "Three-Axis Thermal-Chamber Turntable, for production debugging & calibration",
+  "words": [
+   "three-axis thermal-chamber turntable",
+   "inertial test equipment for production debugging & calibration",
+   "inertial test equipment for fog & imu research & testing"
+  ]
+ },
+ "lkf-dt300a": {
+  "seoTitle": "LKF-DT300A Inertial test equipment",
+  "seoDesc": "Single-Axis Motorized Rate-Position Turntable, for rate & position function tests",
+  "words": [
+   "single-axis motorized rate-position turntable",
+   "inertial test equipment for rate & position function tests",
+   "inertial test equipment for fog & imu research & testing"
+  ]
+ },
+ "lkf-fmtp": {
+  "seoTitle": "LKF-FMTP Inertial test equipment",
+  "seoDesc": "Fiber Coil Multifunction Test Platform, for pm/sm fiber inspection, inertial test equipment from a Chinese inertial sensor manufacturer",
+  "words": [
+   "fiber coil multifunction test platform",
+   "inertial test equipment for pm/sm fiber inspection",
+   "inertial test equipment for fiber coil testing"
+  ]
+ },
+ "lkf-hlttc": {
+  "seoTitle": "LKF-HLTTC Inertial test equipment",
+  "seoDesc": "Single-Axis High-Low Temperature Test Chamber, for aerospace, inertial test equipment from a Chinese inertial sensor manufacturer",
+  "words": [
+   "single-axis high-low temperature test chamber",
+   "inertial test equipment for aerospace",
+   "inertial test equipment for defense"
+  ]
+ },
+ "lkf-lddr1": {
+  "seoTitle": "LKF-LDDR1 Inertial test equipment",
+  "seoDesc": "SLD Controller, for testing & production, inertial test equipment from a Chinese inertial sensor manufacturer",
+  "words": [
+   "sld controller",
+   "inertial test equipment for testing & production",
+   "inertial test equipment for laser diode module r&d"
+  ]
+ },
+ "lkf-perm": {
+  "seoTitle": "LKF-PERM Inertial test equipment",
+  "seoDesc": "Polarization Extinction Ratio Meter, for optical devices, inertial test equipment from a Chinese inertial sensor manufacturer",
+  "words": [
+   "polarization extinction ratio meter",
+   "inertial test equipment for optical devices",
+   "inertial test equipment for fiber coils"
+  ]
+ },
+ "lkf-uv500": {
+  "seoTitle": "LKF-UV500 Fiber optic adhesive",
+  "seoDesc": "UV500 Winding Adhesive, fiber optic adhesive from a Chinese inertial sensor manufacturer",
+  "words": [
+   "uv500 winding adhesive",
+   "fiber optic adhesive supplier",
+   "fiber optic adhesive manufacturer"
+  ]
+ },
+ "lkf-uv100": {
+  "seoTitle": "LKF-UV100 Fiber optic adhesive",
+  "seoDesc": "UV100 Pigtail Adhesive, fiber optic adhesive from a Chinese inertial sensor manufacturer",
+  "words": [
+   "uv100 pigtail adhesive",
+   "fiber optic adhesive supplier",
+   "fiber optic adhesive manufacturer"
+  ]
+ },
+ "lkf-h01": {
+  "seoTitle": "LKF-H01 Fiber optic adhesive",
+  "seoDesc": "H01 Coil Bonding Adhesive, fiber optic adhesive from a Chinese inertial sensor manufacturer",
+  "words": [
+   "h01 coil bonding adhesive",
+   "fiber optic adhesive supplier",
+   "fiber optic adhesive manufacturer"
+  ]
+ },
+ "lkf-boron-doped": {
+  "seoTitle": "LKF-Boron-Doped Fiber preform",
+  "seoDesc": "Boron-Doped Fiber Preform, fiber preform from a Chinese inertial sensor manufacturer",
+  "words": [
+   "boron-doped fiber preform",
+   "fiber preform supplier",
+   "fiber preform manufacturer"
+  ]
+ },
+ "lkf-fluorine-doped": {
+  "seoTitle": "LKF-Fluorine-Doped Fiber preform",
+  "seoDesc": "Fluorine-Doped Fiber Preform, fiber preform from a Chinese inertial sensor manufacturer",
+  "words": [
+   "fluorine-doped fiber preform",
+   "fiber preform supplier",
+   "fiber preform manufacturer"
+  ]
+ },
+ "lkf-germanium-doped": {
+  "seoTitle": "LKF-Germanium-Doped Fiber preform",
+  "seoDesc": "Germanium-Doped Fiber Preform, fiber preform from a Chinese inertial sensor manufacturer",
+  "words": [
+   "germanium-doped fiber preform",
+   "fiber preform supplier",
+   "fiber preform manufacturer"
+  ]
+ },
+ "lkf-fs120h": {
+  "seoTitle": "LKF-FS120H Single-axis fiber optic gyroscope",
+  "seoDesc": "Single-Axis Medium-High Precision FOG, bias stability 0.01 °/h, for electro-optical pod",
+  "words": [
+   "single-axis fiber optic gyroscope",
+   "navigation grade single-axis fiber optic gyroscope",
+   "single-axis fiber optic gyroscope for electro-optical pod"
+  ]
+ },
+ "lkf-fs80": {
+  "seoTitle": "LKF-FS80 Single-axis fiber optic gyroscope",
+  "seoDesc": "Single-Axis Medium-High Precision FOG, bias stability 0.015 °/h, for flight control",
+  "words": [
+   "0.015 deg/h tactical grade single-axis fiber optic gyroscope",
+   "tactical grade single-axis fiber optic gyroscope",
+   "single-axis fiber optic gyroscope for flight control"
+  ]
+ },
+ "lkf-fs98h": {
+  "seoTitle": "LKF-FS98H Single-axis fiber optic gyroscope",
+  "seoDesc": "Single-Axis Medium-High Precision FOG, bias stability 0.015 °/h, for optical/photography platform",
+  "words": [
+   "0.015 deg/h tactical grade single-axis fiber optic gyroscope",
+   "tactical grade single-axis fiber optic gyroscope",
+   "single-axis fiber optic gyroscope for optical/photography platform"
+  ]
+ },
+ "lkf-fs70hb": {
+  "seoTitle": "LKF-FS70HB Single-axis fiber optic gyroscope",
+  "seoDesc": "SLD Single-Axis Medium-High Precision FOG, bias stability 0.02 °/h, for platform stabilization",
+  "words": [
+   "0.02 deg/h tactical grade single-axis fiber optic gyroscope",
+   "tactical grade single-axis fiber optic gyroscope",
+   "single-axis fiber optic gyroscope for platform stabilization"
+  ]
+ },
+ "lkf-fs70ha": {
+  "seoTitle": "LKF-FS70HA Single-axis fiber optic gyroscope",
+  "seoDesc": "Single-Axis Medium-High Precision FOG, bias stability 0.03 °/h, for satcom-on-the-move",
+  "words": [
+   "0.03 deg/h tactical grade single-axis fiber optic gyroscope",
+   "tactical grade single-axis fiber optic gyroscope",
+   "single-axis fiber optic gyroscope for satcom-on-the-move"
+  ]
+ },
+ "lkf-fs70zkh": {
+  "seoTitle": "LKF-FS70ZKH Single-axis fiber optic gyroscope",
+  "seoDesc": "Single-Axis Medium-High Precision FOG, bias stability 0.05 °/h, for inertial measurement unit",
+  "words": [
+   "0.05 deg/h tactical grade single-axis fiber optic gyroscope",
+   "tactical grade single-axis fiber optic gyroscope",
+   "single-axis fiber optic gyroscope for inertial measurement unit"
+  ]
+ },
+ "lkf-fs70zk": {
+  "seoTitle": "LKF-FS70ZK Single-axis fiber optic gyroscope",
+  "seoDesc": "Single-Axis Medium-High Precision FOG, bias stability 0.05 °/h, for electro-optical pod",
+  "words": [
+   "0.05 deg/h tactical grade single-axis fiber optic gyroscope",
+   "tactical grade single-axis fiber optic gyroscope",
+   "single-axis fiber optic gyroscope for electro-optical pod"
+  ]
+ },
+ "lkf-fs50x": {
+  "seoTitle": "LKF-FS50X Single-axis fiber optic gyroscope",
+  "seoDesc": "Single-Axis Medium-Low Precision FOG, bias stability 0.2 °/h, for flight control",
+  "words": [
+   "0.2 deg/h industrial grade single-axis fiber optic gyroscope",
+   "industrial grade single-axis fiber optic gyroscope",
+   "single-axis fiber optic gyroscope for flight control"
+  ]
+ },
+ "lkf-fs60": {
+  "seoTitle": "LKF-FS60 Single-axis fiber optic gyroscope",
+  "seoDesc": "Single-Axis Medium-High Precision FOG, bias stability 0.2 °/h, for optical/photography platform",
+  "words": [
+   "0.2 deg/h industrial grade single-axis fiber optic gyroscope",
+   "industrial grade single-axis fiber optic gyroscope",
+   "single-axis fiber optic gyroscope for optical/photography platform"
+  ]
+ },
+ "lkf-fs40h1": {
+  "seoTitle": "LKF-FS40H1 Single-axis fiber optic gyroscope",
+  "seoDesc": "Single-Axis Medium-High Precision Silicon Photonic Gyroscope, bias stability 0.5 °/h, for platform stabilization",
+  "words": [
+   "0.5 deg/h industrial grade single-axis fiber optic gyroscope",
+   "industrial grade single-axis fiber optic gyroscope",
+   "single-axis fiber optic gyroscope for platform stabilization"
+  ]
+ },
+ "lkf-fs40l1": {
+  "seoTitle": "LKF-FS40L1 Single-axis fiber optic gyroscope",
+  "seoDesc": "Single-Axis Medium-Low Precision Silicon Photonic Gyroscope, bias stability 0.8 °/h, for satcom-on-the-move",
+  "words": [
+   "0.8 deg/h industrial grade single-axis fiber optic gyroscope",
+   "industrial grade single-axis fiber optic gyroscope",
+   "single-axis fiber optic gyroscope for satcom-on-the-move"
+  ]
+ },
+ "lkf-f2x70": {
+  "seoTitle": "LKF-F2X70 Dual-axis fiber optic gyroscope",
+  "seoDesc": "Dual-Axis Medium Precision FOG, bias stability 0.2 °/h, for electro-optical pod",
+  "words": [
+   "dual-axis fiber optic gyroscope",
+   "industrial grade dual-axis fiber optic gyroscope",
+   "dual-axis fiber optic gyroscope for electro-optical pod"
+  ]
+ },
+ "lkf-f2x64": {
+  "seoTitle": "LKF-F2X64 Dual-axis fiber optic gyroscope",
+  "seoDesc": "Dual-Axis Medium-Low Precision FOG, bias stability 1 °/h, for flight control",
+  "words": [
+   "1 deg/h industrial grade dual-axis fiber optic gyroscope",
+   "industrial grade dual-axis fiber optic gyroscope",
+   "dual-axis fiber optic gyroscope for flight control"
+  ]
+ },
+ "lkf-ft120h": {
+  "seoTitle": "LKF-FT120H Tri-axis fiber optic gyroscope",
+  "seoDesc": "Three-Axis FOG, bias stability 0.003 °/h, for electro-optical pod, tri-axis fiber optic gyroscope from a Chinese inertial sensor manufacturer",
+  "words": [
+   "tri-axis fiber optic gyroscope",
+   "navigation grade tri-axis fiber optic gyroscope",
+   "tri-axis fiber optic gyroscope for electro-optical pod"
+  ]
+ },
+ "lkf-ft120c": {
+  "seoTitle": "LKF-FT120C Tri-axis fiber optic gyroscope",
+  "seoDesc": "Three-Axis FOG, bias stability 0.005 °/h, for flight control, tri-axis fiber optic gyroscope from a Chinese inertial sensor manufacturer",
+  "words": [
+   "0.005 deg/h navigation grade tri-axis fiber optic gyroscope",
+   "navigation grade tri-axis fiber optic gyroscope",
+   "tri-axis fiber optic gyroscope for flight control"
+  ]
+ },
+ "lkf-f3g90": {
+  "seoTitle": "LKF-F3G90 Tri-axis fiber optic gyroscope",
+  "seoDesc": "Three-Axis FOG, bias stability 0.015 °/h, for optical/photography platform",
+  "words": [
+   "0.015 deg/h tactical grade tri-axis fiber optic gyroscope",
+   "tactical grade tri-axis fiber optic gyroscope",
+   "tri-axis fiber optic gyroscope for optical/photography platform"
+  ]
+ },
+ "lkf-f3g80": {
+  "seoTitle": "LKF-F3G80 Tri-axis fiber optic gyroscope",
+  "seoDesc": "Three-Axis FOG, bias stability 0.02 °/h, for platform stabilization, tri-axis fiber optic gyroscope from a Chinese inertial sensor manufacturer",
+  "words": [
+   "0.02 deg/h tactical grade tri-axis fiber optic gyroscope",
+   "tactical grade tri-axis fiber optic gyroscope",
+   "tri-axis fiber optic gyroscope for platform stabilization"
+  ]
+ },
+ "lkf-ft70h": {
+  "seoTitle": "LKF-FT70H Tri-axis fiber optic gyroscope",
+  "seoDesc": "Three-Axis FOG, bias stability 0.03 °/h, for satcom-on-the-move, tri-axis fiber optic gyroscope from a Chinese inertial sensor manufacturer",
+  "words": [
+   "0.03 deg/h tactical grade tri-axis fiber optic gyroscope",
+   "tactical grade tri-axis fiber optic gyroscope",
+   "tri-axis fiber optic gyroscope for satcom-on-the-move"
+  ]
+ },
+ "lkf-ft60": {
+  "seoTitle": "LKF-FT60 Tri-axis fiber optic gyroscope",
+  "seoDesc": "Three-Axis FOG, bias stability 0.05 °/h, for inertial measurement unit",
+  "words": [
+   "0.05 deg/h tactical grade tri-axis fiber optic gyroscope",
+   "tactical grade tri-axis fiber optic gyroscope",
+   "tri-axis fiber optic gyroscope for inertial measurement unit"
+  ]
+ },
+ "lkf-ft70a": {
+  "seoTitle": "LKF-FT70A Tri-axis fiber optic gyroscope",
+  "seoDesc": "Three-Axis FOG, bias stability 0.05 °/h, for electro-optical pod, tri-axis fiber optic gyroscope from a Chinese inertial sensor manufacturer",
+  "words": [
+   "0.05 deg/h tactical grade tri-axis fiber optic gyroscope",
+   "tactical grade tri-axis fiber optic gyroscope",
+   "tri-axis fiber optic gyroscope for electro-optical pod"
+  ]
+ },
+ "lkf-f3g40": {
+  "seoTitle": "LKF-F3G40 Tri-axis fiber optic gyroscope",
+  "seoDesc": "Three-Axis FOG, bias stability 0.1 °/h, for flight control, tri-axis fiber optic gyroscope from a Chinese inertial sensor manufacturer",
+  "words": [
+   "0.1 deg/h tactical grade tri-axis fiber optic gyroscope",
+   "tactical grade tri-axis fiber optic gyroscope",
+   "tri-axis fiber optic gyroscope for flight control"
+  ]
+ },
+ "lkf-f3g40s": {
+  "seoTitle": "LKF-F3G40S Tri-axis fiber optic gyroscope",
+  "seoDesc": "Three-Axis FOG, bias stability 0.3 °/h, for optical/photography platform",
+  "words": [
+   "0.3 deg/h industrial grade tri-axis fiber optic gyroscope",
+   "industrial grade tri-axis fiber optic gyroscope",
+   "tri-axis fiber optic gyroscope for optical/photography platform"
+  ]
+ },
+ "lkf-f3g20": {
+  "seoTitle": "LKF-F3G20 Tri-axis fiber optic gyroscope",
+  "seoDesc": "Three-Axis FOG, bias stability 1 °/h, for platform stabilization, tri-axis fiber optic gyroscope from a Chinese inertial sensor manufacturer",
+  "words": [
+   "1 deg/h industrial grade tri-axis fiber optic gyroscope",
+   "industrial grade tri-axis fiber optic gyroscope",
+   "tri-axis fiber optic gyroscope for platform stabilization"
+  ]
+ },
+ "lkf-f3x100": {
+  "seoTitle": "LKF-F3X100 Fiber optic IMU 0.05°/h",
+  "seoDesc": "Three-Axis FOG IMU, bias stability 0.05 °/h, for mobile positioning & attitude reference",
+  "words": [
+   "fiber optic IMU",
+   "tactical grade fiber optic IMU",
+   "fiber optic IMU for mobile positioning & attitude reference"
+  ]
+ },
+ "lkf-f3x90": {
+  "seoTitle": "LKF-F3X90 Fiber optic IMU 0.1°/h",
+  "seoDesc": "Three-Axis FOG IMU, bias stability 0.1 °/h, for underwater, fiber optic IMU from a Chinese inertial sensor manufacturer",
+  "words": [
+   "0.1 deg/h tactical grade fiber optic IMU",
+   "tactical grade fiber optic IMU",
+   "fiber optic IMU for underwater"
+  ]
+ },
+ "lkf-f3x50": {
+  "seoTitle": "LKF-F3X50 Fiber optic IMU 0.15°/h",
+  "seoDesc": "Three-Axis Fiber Gyro IMU, bias stability 0.15 °/h, for surveying & north-seeking",
+  "words": [
+   "0.15 deg/h industrial grade fiber optic IMU",
+   "industrial grade fiber optic IMU",
+   "fiber optic IMU for surveying & north-seeking"
+  ]
+ },
+ "lkf-f3x70": {
+  "seoTitle": "LKF-F3X70 Fiber optic IMU 0.5°/h",
+  "seoDesc": "Three-Axis FOG IMU, bias stability 0.5 °/h, for stabilized platforms, fiber optic IMU from a Chinese inertial sensor manufacturer",
+  "words": [
+   "0.5 deg/h industrial grade fiber optic IMU",
+   "industrial grade fiber optic IMU",
+   "fiber optic IMU for stabilized platforms"
+  ]
+ },
+ "lkf-f3x80": {
+  "seoTitle": "LKF-F3X80 Fiber optic IMU 0.5°/h",
+  "seoDesc": "Three-Axis FOG IMU, bias stability 0.5 °/h, for satcom-on-the-move, fiber optic IMU from a Chinese inertial sensor manufacturer",
+  "words": [
+   "0.5 deg/h industrial grade fiber optic IMU",
+   "industrial grade fiber optic IMU",
+   "fiber optic IMU for satcom-on-the-move"
+  ]
+ },
+ "lkf-fsu305": {
+  "seoTitle": "LKF-FSU305 Fiber optic IMU 0.5°/h",
+  "seoDesc": "Fiber Inertial Navigation System, bias stability 0.5 °/h, for autonomous driving & missile-borne",
+  "words": [
+   "0.5 deg/h fiber optic IMU",
+   "industrial grade fiber optic IMU",
+   "fiber optic IMU for autonomous driving & missile-borne"
+  ]
+ },
+ "lkf-fsu307": {
+  "seoTitle": "LKF-FSU307 Fiber optic IMU 0.5°/h",
+  "seoDesc": "Fiber Optic Inertial Measurement Unit, bias stability 0.5 °/h, for mobile positioning & attitude reference",
+  "words": [
+   "0.5 deg/h fiber optic IMU",
+   "industrial grade fiber optic IMU",
+   "fiber optic IMU for mobile positioning & attitude reference"
+  ]
+ },
+ "lkf-msn300": {
+  "seoTitle": "LKF-MSN300 MEMS inertial measurement unit",
+  "seoDesc": "High Precision MEMS North Finder, bias stability 0.1 °/h, for mine environment orientation",
+  "words": [
+   "MEMS inertial measurement unit",
+   "tactical grade MEMS inertial measurement unit",
+   "MEMS inertial measurement unit for mine environment orientation"
+  ]
+ },
+ "lkf-msn302": {
+  "seoTitle": "LKF-MSN302 MEMS inertial measurement unit",
+  "seoDesc": "High Precision MEMS North Finder, bias stability 0.1 °/h, for soldier north-seeking",
+  "words": [
+   "0.1 deg/h tactical grade MEMS inertial measurement unit",
+   "tactical grade MEMS inertial measurement unit",
+   "MEMS inertial measurement unit for soldier north-seeking"
+  ]
+ },
+ "lkf-msu304d": {
+  "seoTitle": "LKF-MSU304D MEMS inertial measurement unit",
+  "seoDesc": "High-Performance MEMS Inertial Measurement Module, bias stability 0.15 °/h, for underwater navigation",
+  "words": [
+   "0.15 deg/h industrial grade MEMS inertial measurement unit",
+   "industrial grade MEMS inertial measurement unit",
+   "MEMS inertial measurement unit for underwater navigation"
+  ]
+ },
+ "lkf-msu304": {
+  "seoTitle": "LKF-MSU304 MEMS inertial measurement unit",
+  "seoDesc": "High Precision MEMS Inertial Measurement Unit, bias stability 0.15 °/h, for ship & marine operations",
+  "words": [
+   "0.15 deg/h industrial grade MEMS inertial measurement unit",
+   "industrial grade MEMS inertial measurement unit",
+   "MEMS inertial measurement unit for ship & marine operations"
+  ]
+ },
+ "lkf-msu300": {
+  "seoTitle": "LKF-MSU300 MEMS inertial measurement unit",
+  "seoDesc": "High Precision MEMS Inertial Measurement Unit, bias stability 0.3 °/h, for underwater navigation",
+  "words": [
+   "0.3 deg/h industrial grade MEMS inertial measurement unit",
+   "industrial grade MEMS inertial measurement unit",
+   "MEMS inertial measurement unit for underwater navigation"
+  ]
+ },
+ "lkf-msu301": {
+  "seoTitle": "LKF-MSU301 MEMS inertial measurement unit",
+  "seoDesc": "MEMS Inertial Measurement Module, bias stability 0.3 °/h, for vehicle/vessel attitude measurement",
+  "words": [
+   "0.3 deg/h industrial grade MEMS inertial measurement unit",
+   "industrial grade MEMS inertial measurement unit",
+   "MEMS inertial measurement unit for vehicle/vessel attitude measurement"
+  ]
+ },
+ "lkf-msn300h": {
+  "seoTitle": "LKF-MSN300H MEMS inertial measurement unit",
+  "seoDesc": "High Dynamic MEMS North Finder, bias stability 0.5 °/h, for mine environment orientation",
+  "words": [
+   "0.5 deg/h industrial grade MEMS inertial measurement unit",
+   "industrial grade MEMS inertial measurement unit",
+   "MEMS inertial measurement unit for mine environment orientation"
+  ]
+ },
+ "lkf-msu203": {
+  "seoTitle": "LKF-MSU203 MEMS inertial measurement unit",
+  "seoDesc": "MEMS Inertial Measurement Unit, bias stability 2 °/h, for vehicle/vessel attitude measurement",
+  "words": [
+   "2 deg/h rate grade MEMS inertial measurement unit",
+   "rate grade MEMS inertial measurement unit",
+   "MEMS inertial measurement unit for vehicle/vessel attitude measurement"
+  ]
+ },
+ "lkf-msu206": {
+  "seoTitle": "LKF-MSU206 MEMS inertial measurement unit",
+  "seoDesc": "MEMS Inertial Measurement Unit, bias stability 5 °/h, for guidance & control",
+  "words": [
+   "5 deg/h rate grade MEMS inertial measurement unit",
+   "rate grade MEMS inertial measurement unit",
+   "MEMS inertial measurement unit for guidance & control"
+  ]
+ },
+ "lkf-msu102": {
+  "seoTitle": "LKF-MSU102 MEMS inertial measurement unit",
+  "seoDesc": "MEMS IMU, bias stability 10 °/h, for vehicle/vessel attitude measurement",
+  "words": [
+   "10 deg/h rate grade MEMS inertial measurement unit",
+   "rate grade MEMS inertial measurement unit",
+   "MEMS inertial measurement unit for vehicle/vessel attitude measurement"
+  ]
+ },
+ "lkf-msu105": {
+  "seoTitle": "LKF-MSU105 MEMS inertial measurement unit",
+  "seoDesc": "Mini MEMS Integrated Inertial Navigation System, bias stability 10 °/h, for mobile mapping & engineering survey",
+  "words": [
+   "10 deg/h rate grade MEMS inertial measurement unit",
+   "rate grade MEMS inertial measurement unit",
+   "MEMS inertial measurement unit for mobile mapping & engineering survey"
+  ]
+ },
+ "lkf-mnu107": {
+  "seoTitle": "LKF-MNU107 MEMS inertial measurement unit",
+  "seoDesc": "MEMS Inertial Measurement Unit, bias stability 20 °/h, for flight control",
+  "words": [
+   "20 deg/h rate grade MEMS inertial measurement unit",
+   "rate grade MEMS inertial measurement unit",
+   "MEMS inertial measurement unit for flight control"
+  ]
+ },
+ "lkf-msu204a": {
+  "seoTitle": "LKF-MSU204A MEMS inertial measurement unit",
+  "seoDesc": "MEMS Inertial Measurement Unit, for industrial, MEMS inertial measurement unit from a Chinese inertial sensor manufacturer",
+  "words": [
+   "MEMS inertial measurement unit for industrial",
+   "MEMS inertial measurement unit for attitude control",
+   "MEMS inertial measurement unit for automation control"
+  ]
+ },
+ "lkf-msu204b": {
+  "seoTitle": "LKF-MSU204B MEMS inertial measurement unit",
+  "seoDesc": "MEMS Inertial Measurement Unit, for industrial, MEMS inertial measurement unit from a Chinese inertial sensor manufacturer",
+  "words": [
+   "MEMS inertial measurement unit for industrial",
+   "MEMS inertial measurement unit for electro-optical pod",
+   "MEMS inertial measurement unit for attitude control"
+  ]
+ },
+ "lkf-fsi400": {
+  "seoTitle": "LKF-FSI400 Fiber optic inertial navigation system",
+  "seoDesc": "FOG_GNSS Combined Inertial Navigation System, bias stability 0.01 °/h, fiber optic inertial navigation system from a Chinese inertial sensor manufacture",
+  "words": [
+   "fiber optic inertial navigation system",
+   "navigation grade fiber optic inertial navigation system",
+   "high precision fiber optic inertial navigation system"
+  ]
+ },
+ "lkf-fsi301": {
+  "seoTitle": "LKF-FSI301 Fiber optic inertial navigation system",
+  "seoDesc": "FOG_GNSS Combined Inertial Navigation System, bias stability 0.03 °/h, for vehicular positioning & orientation",
+  "words": [
+   "0.03 deg/h tactical grade fiber optic inertial navigation system",
+   "tactical grade fiber optic inertial navigation system",
+   "fiber optic inertial navigation system for vehicular positioning & orientation"
+  ]
+ },
+ "lkf-fsi206": {
+  "seoTitle": "LKF-FSI206 Fiber optic inertial navigation system",
+  "seoDesc": "FOG Strapdown Inertial Navigation System, bias stability 0.5 °/h, for unmanned surface vessels",
+  "words": [
+   "0.5 deg/h industrial grade fiber optic inertial navigation system",
+   "industrial grade fiber optic inertial navigation system",
+   "fiber optic inertial navigation system for unmanned surface vessels"
+  ]
+ },
+ "lkf-msi300": {
+  "seoTitle": "LKF-MSI300 MEMS inertial navigation system",
+  "seoDesc": "MEMS_GNSS Combined Inertial Navigation System, bias stability 0.1 °/h, MEMS inertial navigation system from a Chinese inertial sensor manufacturer",
+  "words": [
+   "MEMS inertial navigation system",
+   "tactical grade MEMS inertial navigation system",
+   "high precision MEMS inertial navigation system"
+  ]
+ },
+ "lkf-msi100": {
+  "seoTitle": "LKF-MSI100 MEMS inertial navigation system",
+  "seoDesc": "MEMS_GNSS Inertial Navigation System, bias stability 10 °/h, MEMS inertial navigation system from a Chinese inertial sensor manufacturer",
+  "words": [
+   "10 deg/h rate grade MEMS inertial navigation system",
+   "rate grade MEMS inertial navigation system",
+   "low cost MEMS inertial navigation system"
+  ]
+ },
+ "lkf-msi105": {
+  "seoTitle": "LKF-MSI105 MEMS inertial navigation system",
+  "seoDesc": "Micro MEMS Inertial Navigation System, bias stability 10 °/h, for attitude control",
+  "words": [
+   "10 deg/h rate grade MEMS inertial navigation system",
+   "rate grade MEMS inertial navigation system",
+   "MEMS inertial navigation system for attitude control"
+  ]
+ },
+ "lkf-mems": {
+  "seoTitle": "LKF-MEMS MEMS gyroscope chip <0.5°/h",
+  "seoDesc": "Single-Axis Gyroscope Chip, bias stability 0.5 °/h, for mobile positioning & attitude reference",
+  "words": [
+   "MEMS gyroscope chip",
+   "industrial grade MEMS gyroscope chip",
+   "MEMS gyroscope chip for mobile positioning & attitude reference"
+  ]
+ },
+ "lkf-mtg300a": {
+  "seoTitle": "LKF-MTG300A MEMS gyroscope 0.1°/h",
+  "seoDesc": "MEMS Gyro, bias stability 0.1 °/h, for satellite stabilization control",
+  "words": [
+   "MEMS gyroscope",
+   "tactical grade MEMS gyroscope",
+   "MEMS gyroscope for satellite stabilization control"
+  ]
+ },
+ "lkf-mtg300": {
+  "seoTitle": "LKF-MTG300 MEMS gyroscope 0.2°/h",
+  "seoDesc": "MEMS Gyro, bias stability 0.2 °/h, for satellite stabilization control",
+  "words": [
+   "0.2 deg/h industrial grade MEMS gyroscope",
+   "industrial grade MEMS gyroscope",
+   "MEMS gyroscope for satellite stabilization control"
+  ]
+ },
+ "lkf-mtg200": {
+  "seoTitle": "LKF-MTG200 MEMS gyroscope 2°/h",
+  "seoDesc": "MEMS Gyro, bias stability 2 °/h, for satellite attitude control, MEMS gyroscope from a Chinese inertial sensor manufacturer",
+  "words": [
+   "2 deg/h rate grade MEMS gyroscope",
+   "rate grade MEMS gyroscope",
+   "MEMS gyroscope for satellite attitude control"
+  ]
+ }
+}

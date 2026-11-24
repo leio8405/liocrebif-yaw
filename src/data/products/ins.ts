@@ -12,6 +12,8 @@ export const insSystems: Product[] = [
     nameZh: '光纤捷联惯性导航系统',
     descEn: 'FSI206 is a highly reliable and cost-effective navigation system with a built-in receiver, and can be widely used in navigation, control, measurement, and other fields represented by aircraft, unmanned vehicles, unmanned boats, and unmanned aerial vehicles.',
     descZh: '组合导航系统中继承了同类产品模块化的设计思想，采用高精度硅光陀螺和高精度 MEMS 加速度计。通过多传感器融合算法处理，将主惯导、GPS 位置与速度输入到滤波器中，同时 INS 的位置、速度、姿态也作为滤波器的输入，滤波器通过比较二者的差值，建立误差模型以估计 INS 的误差，利用这些误差对惯导结果进行修正，得到速度、位置、姿态的组合导航结果。惯导可提供不同的配置模式，适应于不同的载体，例如机载、车载、船载，车载时加入了车辆约束，通过误差估计及修正，实现载体长时间高精度导航定位功能。 光纤捷联惯性导航系统 光纤陀螺 量程（°/s） 零偏稳定性 ( °/h ，10s） 零偏不稳定性 ( °/h ，allan ，typ） 零偏重复性 ( °/h ，6 次上电） FM  加速度计 量程（g） 全温零偏（mg ，3σ) 零偏稳定性 (μg ，10s 平滑） 组合导航精度 自寻北精度(°，1σ) 纯惯精度（1σ） ≤300m/300s 组合航向精度 ( ° , 1 σ , 实时） 组合水平姿态 ( ° , 1 σ , 实时）） 组合水平位置（m ，1 σ ) 3（单点），0.02+1ppm（RTK） 卫星接收机（内置） 卫星模式 GPS：L1/L2/L5 BeiDou：B1/B2/B3 GLONASS：L1/L2 电气/机械接口 电源（V） 12～36VDC（建议 24V） 稳态功率(W) 尺寸（mm×mm×mm） 65×70×63 重量（g）',
+    seoTitle: 'LKF-FSI206 Fiber optic inertial navigation system',
+    seoDesc: 'FOG Strapdown Inertial Navigation System, bias stability 0.5 °/h, for unmanned surface vessels',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -48,6 +50,8 @@ export const insSystems: Product[] = [
     nameZh: '光纤组合导航系统',
     descEn: 'FSI301 is a highly reliable, cost-effective fiber-optic inertial/satellite integrated navigation system, widely applicable in fields such as high-precision vehicle-mounted platforms and long-endurance UAVs, as well as navigation, control, and measurement. The system uses closed-loop fiber optic gyroscopes (FOG) and high-precision accelerometers, combined with a professional GNSS board, to achieve real-time navigation output. The system output is compatible with mainstream post-processing software to obtain higher-precision navigation results and serve as a benchmark for research platforms.',
     descZh: '组合导航系统中继承了同类产品模块化的设计思想，采用高精度光纤陀螺和高精度 MEMS 加速度计。通过多传感器融合算法处理，将主惯导、GPS 位置与速度输入到滤波器中，同时 INS 的位置、速度、姿态也作为滤波器的输入，滤波器通过比较二者的差值，建立误差模型以估计 INS 的误差，利用这些误差对惯导结果进行修正，得到速度、位置、姿态的组合导航结果。惯导可提供不同的配置模式，适应于不同的载体，例如机载、车载、船载，车载时加入了车辆约束，通过误差估计及修正，实现载体长时间高精度导航定位功能。 TECHNOLOGICAL INNOVATION · NAVIGATING THE FUTURE TECHNOLOGICAL INNOVATION · NAVIGATING THE FUTURE 光纤捷联惯性导航系统 规格参数 光纤陀螺 量程（°/s） 全温零位（°/h，，3σ） 零偏稳定性（°/h，10s平滑） 零偏不稳定性（°/h，allan） MEMS加速度计 量程（g） 全温零偏（mg，3σ） 零偏稳定性（μg，10s平滑） 零偏不稳定性（μg，allan，typ） 导航精度 自寻北精度(°，1σ) ≤0.1secL 电气/机械接口 电源（V） 18~36(纹波≤100mV) 尺寸（mm×mm×mm） 177 × 132 × 99 重量（g）',
+    seoTitle: 'LKF-FSI301 Fiber optic inertial navigation system',
+    seoDesc: 'FOG_GNSS Combined Inertial Navigation System, bias stability 0.03 °/h, for vehicular positioning & orientation',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -78,6 +82,8 @@ export const insSystems: Product[] = [
     nameEn: 'LKF-FSI400 FOG_GNSS Combined Inertial Navigation System',
     nameZh: '光纤组合导航系统',
     descEn: 'FSI400 is a highly reliable, cost-effective fiber-optic inertial/satellite integrated navigation system, widely applicable in fields such as high-precision vehicle-mounted platforms and long-endurance UAVs, as well as navigation, control, and measurement. The system uses closed-loop fiber optic gyroscopes (FOG) and high-precision accelerometers, combined with a professional GNSS board, to achieve real-time navigation output. The system output is compatible with mainstream post-processing software to obtain higher-precision navigation results and serve as a benchmark for research platforms.',
+    seoTitle: 'LKF-FSI400 Fiber optic inertial navigation system',
+    seoDesc: 'FOG_GNSS Combined Inertial Navigation System, bias stability 0.01 °/h, fiber optic inertial navigation system from a Chinese inertial sensor manufacture',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -108,6 +114,8 @@ export const insSystems: Product[] = [
     nameZh: 'MEMS组合导航系统',
     descEn: 'MSI100 is a highly reliable, cost-effective MEMS GNSS/INS system widely applied in navigation, control and measurement fields represented by vehicles, vessels and UAVs. It supports multiple configurable modes. Equipped with a high-precision gyroscope specifically on the Z-axis, the unit maintains accurate heading measurement over long durations.',
     descZh: 'MSI100 MEMS组合导航系统是一款高可靠、高性价比的MEMS惯性组合导航系统，可广泛用于以车、船、无人机为代表的导航、控制和测量等领域。产品可提供不同的配置模式，特别在Z轴采用了高精度陀螺，可以长时间保证航向的测量精度。',
+    seoTitle: 'LKF-MSI100 MEMS inertial navigation system',
+    seoDesc: 'MEMS_GNSS Inertial Navigation System, bias stability 10 °/h, MEMS inertial navigation system from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -137,6 +145,8 @@ export const insSystems: Product[] = [
     nameEn: 'LKF-MSI105 Micro MEMS Inertial Navigation System',
     nameZh: '微型MEMS组合导航系统',
     descEn: 'Unique Technology',
+    seoTitle: 'LKF-MSI105 MEMS inertial navigation system',
+    seoDesc: 'Micro MEMS Inertial Navigation System, bias stability 10 °/h, for attitude control',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -179,6 +189,8 @@ export const insSystems: Product[] = [
     nameEn: 'LKF-MSI300 MEMS_GNSS Combined Inertial Navigation System',
     nameZh: 'MEMS组合导航系统',
     descEn: 'MSI300 is a high-precision, reliable and cost-effective MEMS GNSS/INS unit widely used in navigation, control and measurement for vehicles, vessels and UAVs. Its high-accuracy variants support automatic north-seeking, and multiple configurable modes are available to suit various carrier applications.',
+    seoTitle: 'LKF-MSI300 MEMS inertial navigation system',
+    seoDesc: 'MEMS_GNSS Combined Inertial Navigation System, bias stability 0.1 °/h, MEMS inertial navigation system from a Chinese inertial sensor manufacturer',
     specTable: {
       headers: ['技术指标', '', '', ''],
       rows: [
