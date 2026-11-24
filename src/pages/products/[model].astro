@@ -96,6 +96,9 @@ const breadcrumbSchema = {
           <h1 class="font-display font-semibold tracking-tight text-ink text-3xl sm:text-4xl leading-tight">
             {isZh ? product.nameZh : product.nameEn}
           </h1>
+          {product.categoryLine && (
+            <p class="font-mono text-[11px] uppercase tracking-[0.08em] text-muted mt-3">{product.categoryLine}</p>
+          )}
           {product.descEn && (
             <p class="text-ink-2 text-[15px] mt-5 leading-relaxed max-w-2xl">{product.descEn}</p>
           )}

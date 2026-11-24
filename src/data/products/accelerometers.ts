@@ -13,6 +13,7 @@ export const accelerometers: Product[] = [
     descEn: 'Unique Technology Parameter',
     seoTitle: 'LKF-Quartz Accelerometer 150µg',
     seoDesc: 'quartz accelerometer, bias stability 150 µg, for aerospace, quartz accelerometer from a Chinese inertial sensor manufacturer',
+    categoryLine: 'Quartz accelerometer for aerospace',
     specTable: {
       headers: ['项目', 'T180', 'T150', 'T125'],
       rows: [
@@ -139,6 +140,7 @@ export const accelerometers: Product[] = [
     descEn: 'Unique Technology Parameter Package CLCC48 CLCC48 CLCC48 Axis Range (g) Scale Nonlinearity (ppm) Delay (ms) Noise (µg/√Hz @1hz) Resolution (LSB/μg) Factory Bias, RT (mg)',
     seoTitle: 'LKF-MXD MEMS accelerometer 13µg',
     seoDesc: 'Dual-Axis MEMS Accelerometer, bias stability 13 µg, for avionics, MEMS accelerometer from a Chinese inertial sensor manufacturer',
+    categoryLine: '13 ug precision grade MEMS accelerometer for avionics',
     specTable: {
       headers: ['MXD05HC', 'MXD10HC', 'MXD16HC'],
       rows: [
@@ -189,6 +191,7 @@ export const accelerometers: Product[] = [
     descEn: 'Unique Technology Parameter Package CLCC48 CLCC48 CLCC48 CLCC48 CLCC48 Axis Range (g) Scale Nonlinearity (ppm) BW @90° Phase (Hz) Delay (ms) 2nd-Order NL (µg/g2)',
     seoTitle: 'LKF-MXH MEMS accelerometer <6µg',
     seoDesc: 'Single-Axis MEMS Accelerometer, bias stability 6 µg, for imu, MEMS accelerometer from a Chinese inertial sensor manufacturer',
+    categoryLine: 'MEMS accelerometer for imu',
     specTable: {
       headers: ['MXH30HC', 'MXH10HC', 'MXH60HC', 'MXH99HC', 'MXH02HC'],
       rows: [
@@ -241,6 +244,7 @@ export const accelerometers: Product[] = [
     descZh: '计，支持数字输出，和±2g / ±4g /±8g 可选测量量程。LKF-MXT15具有低噪声、低温度漂移和优良的长期稳定性，适用于各类高精度测量系统。LKF-MXT15被集成在一个陶瓷封装管壳内，可以提供良好的长期稳定性。 独特技术',
     seoTitle: 'LKF-MXT15 MEMS accelerometer for Attitude Control',
     seoDesc: 'Three-Axis MEMS Accelerometer, for attitude control, MEMS accelerometer from a Chinese inertial sensor manufacturer',
+    categoryLine: 'MEMS accelerometer for attitude control',
     specTable: {
       headers: ['条件', '最小值', '典型值', '最大值'],
       rows: [
@@ -292,6 +296,7 @@ export const accelerometers: Product[] = [
     descZh: '计，支持数字输出，和±2g / ±4g /±8g 可选测量量程。MXT50具有低噪声、低温度漂移和优良的长期稳定性，适用于各类高精度测量系统。MXT50被集成在一个陶瓷封装管壳内，可以提供良好的长期稳定性。 独特技术',
     seoTitle: 'LKF-MXT50 MEMS accelerometer for Platform',
     seoDesc: 'Three-Axis MEMS Accelerometer, for platform stabilization systems, MEMS accelerometer from a Chinese inertial sensor manufacturer',
+    categoryLine: 'MEMS accelerometer for platform stabilization systems',
     specTable: {
       headers: ['条件', '最小值', '典型值', '最大值'],
       rows: [

@@ -17,6 +17,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 BASE = json.load(open(os.path.join(ROOT, ".qa", "keyword-base.json"), encoding="utf-8"))
 
+# 源文档错字（与 gen_ts 的 SPELL_FIX 保持一致）
+for _r in BASE:
+    for _bad, _good in {"Chanber": "Chamber"}.items():
+        if _r.get("nameEn"):
+            _r["nameEn"] = _r["nameEn"].replace(_bad, _good)
+
 CAT = {
     "Single-Axis FOG": "single-axis fiber optic gyroscope",
     "Dual-Axis FOG": "dual-axis fiber optic gyroscope",
@@ -218,6 +224,12 @@ for tag, items in by_tag.items():
                 cut = cut[:cut.rfind(" ")]
             seo_title = cut.rstrip(" ,|-")
 
+        # H1 下方的品类副标题：主打词 [+ for 应用]，让页面正文区也出现完整品类词
+        cat_line = primary
+        if app and app.lower() not in primary.lower():
+            cat_line = f"{primary} for {app.lower()}"
+        cat_line = cat_line[0].upper() + cat_line[1:]
+
         bits = [sn or cat]
         if bs_val and tag not in NO_BIAS_TAGS:
             bits.append(f"bias stability {bs_val} {unit_sym}")
@@ -230,7 +242,7 @@ for tag, items in by_tag.items():
 
         rows.append(dict(model=r["model"], slug=r["slug"], file=r["file"], tag=tag,
                          category=cat, bs=bs_raw, grade=grade, sub=sub, app=app,
-                         primary=primary, words=words,
+                         primary=primary, words=words, categoryLine=cat_line,
                          seoTitle=seo_title, seoDesc=seo_desc))
 
 # ---------- 校验 ----------
@@ -249,7 +261,8 @@ print(f"seoTitle 重复: {len(title_dup)} 处  {list(title_dup.items())[:3]}")
 print(f"每款词数分布: {dict(Counter(len(r['words']) for r in rows))}")
 
 # ---------- 输出：seo 覆盖文件（供 gen_ts 注入）----------
-SEO = {r["slug"]: {"seoTitle": r["seoTitle"], "seoDesc": r["seoDesc"], "words": r["words"]} for r in rows}
+SEO = {r["slug"]: {"seoTitle": r["seoTitle"], "seoDesc": r["seoDesc"],
+                  "categoryLine": r["categoryLine"], "words": r["words"]} for r in rows}
 json.dump(SEO, open(os.path.join(HERE, "seo_override.json"), "w", encoding="utf-8"),
           ensure_ascii=False, indent=1)
 

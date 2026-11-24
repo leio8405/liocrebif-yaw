@@ -14,6 +14,7 @@ export const fogGyros: Product[] = [
     descZh: '惯性导航系统在智能化采煤中发挥着关键作用，光纤陀螺是惯导的关键部件，LKF-FS120H具有高精度、长寿命、抗冲击等优点，可以大幅提升惯导的性能，是高精度惯导的理想选择。 单轴中高精度光纤陀螺仪',
     seoTitle: 'LKF-FS120H Single-axis fiber optic gyroscope',
     seoDesc: 'Single-Axis Medium-High Precision FOG, bias stability 0.01 °/h, for electro-optical pod',
+    categoryLine: 'Single-axis fiber optic gyroscope for electro-optical pod',
     specTable: {
       headers: ['A', 'B', 'C'],
       rows: [
@@ -50,6 +51,7 @@ export const fogGyros: Product[] = [
     descZh: '通过利用惯性器件及捷联惯性导航技术，可以为无人机提供精确的速度、位置和姿态等信息，从而实现其精确的导航定位和姿态控制。LKF-FS40H1适用于小型化惯导，是中低精度惯导的理想选择。 单轴中高精度硅光陀螺仪',
     seoTitle: 'LKF-FS40H1 Single-axis fiber optic gyroscope',
     seoDesc: 'Single-Axis Medium-High Precision Silicon Photonic Gyroscope, bias stability 0.5 °/h, for platform stabilization',
+    categoryLine: '0.5 deg/h industrial grade single-axis fiber optic gyroscope for platform stabilization',
     specTable: {
       headers: ['A', 'B', ''],
       rows: [
@@ -86,6 +88,7 @@ export const fogGyros: Product[] = [
     descZh: '通过利用惯性器件及捷联惯性导航技术，可以为无人机提供精确的速度、位置和姿态等信息，从而实现其精确的导航定位和姿态控制。LKF-FS40L1适用于小型化惯导，是中低精度惯导的理想选择。 单轴中低精度硅光陀螺仪',
     seoTitle: 'LKF-FS40L1 Single-axis fiber optic gyroscope',
     seoDesc: 'Single-Axis Medium-Low Precision Silicon Photonic Gyroscope, bias stability 0.8 °/h, for satcom-on-the-move',
+    categoryLine: '0.8 deg/h industrial grade single-axis fiber optic gyroscope for satcom-on-the-move',
     specTable: {
       headers: ['A', 'B', 'C'],
       rows: [
@@ -119,6 +122,7 @@ export const fogGyros: Product[] = [
     descZh: '通过利用惯性器件及捷联惯性导航技术，可以为无人机提供精确的速度、位置和姿态等信息，从而实现其精确的导航定位和姿态控制。LKF-FS50X可以大幅提升惯导的性能，是中低精度惯导的理想选择。 单轴中低精度光纤陀螺仪',
     seoTitle: 'LKF-FS50X Single-axis fiber optic gyroscope',
     seoDesc: 'Single-Axis Medium-Low Precision FOG, bias stability 0.2 °/h, for flight control',
+    categoryLine: '0.2 deg/h industrial grade single-axis fiber optic gyroscope for flight control',
     specTable: {
       headers: ['A', 'B', 'C'],
       rows: [
@@ -154,6 +158,7 @@ export const fogGyros: Product[] = [
     descZh: '“动中通”可以通过天线基座对天线进行动态调整，使平台保持和通讯卫星相对稳定的状态，从而保证通讯质量。惯性传感器是动中通的核心部件，LKF-FS60可以大幅提升惯导的性能，是中精度惯导的更好选择。 单轴中高精度光纤陀螺仪',
     seoTitle: 'LKF-FS60 Single-axis fiber optic gyroscope',
     seoDesc: 'Single-Axis Medium-High Precision FOG, bias stability 0.2 °/h, for optical/photography platform',
+    categoryLine: '0.2 deg/h industrial grade single-axis fiber optic gyroscope for optical/photography platform',
     specTable: {
       headers: ['A', 'B', 'C'],
       rows: [
@@ -189,6 +194,7 @@ export const fogGyros: Product[] = [
     descZh: '惯性技术是高速铁路检测中普遍采用的技术方法之一。基于惯性技术的路轨检测车则可以自动地测量轨道高低、轨向、水平、扭曲和轨距等轨道不平顺度以及轨道损伤等。LKF-FS70HA可以大幅提升惯导的性能，是中高精度惯导的理想选择。 单轴中高精度光纤陀螺仪',
     seoTitle: 'LKF-FS70HA Single-axis fiber optic gyroscope',
     seoDesc: 'Single-Axis Medium-High Precision FOG, bias stability 0.03 °/h, for satcom-on-the-move',
+    categoryLine: '0.03 deg/h tactical grade single-axis fiber optic gyroscope for satcom-on-the-move',
     specTable: {
       headers: ['FS70HA', '备注'],
       rows: [
@@ -224,6 +230,7 @@ export const fogGyros: Product[] = [
     descZh: '惯性技术是高速铁路检测中普遍采用的技术方法之一。基于惯性技术的路轨检测车则可以自动地测量轨道高低、轨向、水平、扭曲和轨距等轨道不平顺度以及轨道损伤等。LKF-FS70HB SLD可以大幅提升惯导的性能，是中高精度惯导的理想选择。 单轴中高精度光纤陀螺仪',
     seoTitle: 'LKF-FS70HB Single-axis fiber optic gyroscope',
     seoDesc: 'SLD Single-Axis Medium-High Precision FOG, bias stability 0.02 °/h, for platform stabilization',
+    categoryLine: '0.02 deg/h tactical grade single-axis fiber optic gyroscope for platform stabilization',
     specTable: {
       headers: ['1310', '备注'],
       rows: [
@@ -261,6 +268,7 @@ export const fogGyros: Product[] = [
     descZh: '惯性技术是高速铁路检测中普遍采用的技术方法之一。基于惯性技术的路轨检测车则可以自动地测量轨道高低、轨向、水平、扭曲和轨距等轨道不平顺度以及轨道损伤等。LKF-FS70ZKH可以大幅提升惯导的性能，是中高精度惯导的理想选择。 单轴中高精度光纤陀螺仪',
     seoTitle: 'LKF-FS70ZKH Single-axis fiber optic gyroscope',
     seoDesc: 'Single-Axis Medium-High Precision FOG, bias stability 0.05 °/h, for inertial measurement unit',
+    categoryLine: '0.05 deg/h tactical grade single-axis fiber optic gyroscope for inertial measurement unit',
     specTable: {
       headers: ['FS70ZKH', '备注'],
       rows: [
@@ -296,6 +304,7 @@ export const fogGyros: Product[] = [
     descZh: '惯性技术是高速铁路检测中普遍采用的技术方法之一。基于惯性技术的路轨检测车则可以自动地测量轨道高低、轨向、水平、扭曲和轨距等轨道不平顺度以及轨道损伤等。LKF-FS70ZK可以大幅提升惯导的性能，是中高精度惯导的理想选择。 单轴中高精度光纤陀螺仪',
     seoTitle: 'LKF-FS70ZK Single-axis fiber optic gyroscope',
     seoDesc: 'Single-Axis Medium-High Precision FOG, bias stability 0.05 °/h, for electro-optical pod',
+    categoryLine: '0.05 deg/h tactical grade single-axis fiber optic gyroscope for electro-optical pod',
     specTable: {
       headers: ['A', 'B', '备注'],
       rows: [
@@ -330,6 +339,7 @@ export const fogGyros: Product[] = [
     descZh: '微型光纤陀螺仪具有结构紧凑，性价比高的优点，并且易于集成，适用于无人机，光电吊舱，光学平台等。LKF-FS80可以大幅提升惯导的性能，是中高精度惯导的理想选择。 单轴中高精度光纤陀螺仪',
     seoTitle: 'LKF-FS80 Single-axis fiber optic gyroscope',
     seoDesc: 'Single-Axis Medium-High Precision FOG, bias stability 0.015 °/h, for flight control',
+    categoryLine: '0.015 deg/h tactical grade single-axis fiber optic gyroscope for flight control',
     specTable: {
       headers: ['A', 'B', '备注'],
       rows: [
@@ -367,6 +377,7 @@ export const fogGyros: Product[] = [
     descZh: '微型光纤陀螺仪具有结构紧凑，性价比高的优点，并且易于集成，适用于无人机，光电吊舱，光学平台等。LKF-FS98H可以大幅提升惯导的性能，是中高精度惯导的理想选择。 单轴中高精度光纤陀螺仪',
     seoTitle: 'LKF-FS98H Single-axis fiber optic gyroscope',
     seoDesc: 'Single-Axis Medium-High Precision FOG, bias stability 0.015 °/h, for optical/photography platform',
+    categoryLine: '0.015 deg/h tactical grade single-axis fiber optic gyroscope for optical/photography platform',
     specTable: {
       headers: ['A(1310)', 'B(1550)', 'C(1550)', 'D(1550)'],
       rows: [
@@ -402,6 +413,7 @@ export const fogGyros: Product[] = [
     descZh: '惯性导航系统在智能化采煤中发挥着关键作用，光纤陀螺是惯导的关键部件，LKF-F2X64具有高精度、长寿命、抗冲击等优点，可以大幅提升惯导的性能，是高精度惯导的理想选择。 双轴中低精度光纤陀螺仪',
     seoTitle: 'LKF-F2X64 Dual-axis fiber optic gyroscope',
     seoDesc: 'Dual-Axis Medium-Low Precision FOG, bias stability 1 °/h, for flight control',
+    categoryLine: '1 deg/h industrial grade dual-axis fiber optic gyroscope for flight control',
     specTable: {
       headers: ['A', 'B', '备注'],
       rows: [
@@ -436,6 +448,7 @@ export const fogGyros: Product[] = [
     descZh: '双轴中精度光纤陀螺仪',
     seoTitle: 'LKF-F2X70 Dual-axis fiber optic gyroscope',
     seoDesc: 'Dual-Axis Medium Precision FOG, bias stability 0.2 °/h, for electro-optical pod',
+    categoryLine: 'Dual-axis fiber optic gyroscope for electro-optical pod',
     specTable: {
       headers: ['A', '备注'],
       rows: [
@@ -472,6 +485,7 @@ export const fogGyros: Product[] = [
     descZh: 'F3G20光纤陀螺仪具备体积小， 重量轻，功耗低，接口简单，使用方便等突出特点，并且性价比优势显著，是导航，控制领域中角速率传感器的理想选择，被广泛应用于各种惯性测量及控制领域。 独特技术 惯性导航系统在智能化采煤中发挥着关键作用，光纤陀螺是惯导的关键部件，LKF-F3G20三轴光纤陀螺可用于大地测量、矿产勘探、石油勘探、石油钻井导向、隧道施工等定位和路径测量，以及利用光纤陀螺旋转角度和直线位移实现大坝倾角测量等。 三轴光纤陀螺仪',
     seoTitle: 'LKF-F3G20 Tri-axis fiber optic gyroscope',
     seoDesc: 'Three-Axis FOG, bias stability 1 °/h, for platform stabilization, tri-axis fiber optic gyroscope from a Chinese inertial sensor manufacturer',
+    categoryLine: '1 deg/h industrial grade tri-axis fiber optic gyroscope for platform stabilization',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -515,6 +529,7 @@ export const fogGyros: Product[] = [
     descZh: '公司是一家实现从光纤绕环设备、光纤环绕制、IMU 的电路、软件、IMU 测试标定设备全闭环的高新技术企业，通过对上下游工艺的全面把控，可以有效提高产品质量， 降低系统成本。同时，公司执行  ISO9001 质量体系，并采用严格的工艺保证的产品性能的可靠性和一致性。 三轴光纤陀螺仪',
     seoTitle: 'LKF-F3G40S Tri-axis fiber optic gyroscope',
     seoDesc: 'Three-Axis FOG, bias stability 0.3 °/h, for optical/photography platform',
+    categoryLine: '0.3 deg/h industrial grade tri-axis fiber optic gyroscope for optical/photography platform',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -549,6 +564,7 @@ export const fogGyros: Product[] = [
     descZh: 'F3G20光纤陀螺仪具备体积小， 重量轻，功耗低，接口简单，使用方便等突出特点，并且性价比优势显著，是导航，控制领域中角速率传感器的理想选择，被广泛应用于各种惯性测量及控制领域。 独特技术 惯性导航系统在智能化采煤中发挥着关键作用，光纤陀螺是惯导的关键部件，LKF-F3G40三轴光纤陀螺可用于大地测量、矿产勘探、石油勘探、石油钻井导向、隧道施工等定位和路径测量，以及利用光纤陀螺旋转角度和直线位移实现大坝倾角测量等。 三轴光纤陀螺仪',
     seoTitle: 'LKF-F3G40 Tri-axis fiber optic gyroscope',
     seoDesc: 'Three-Axis FOG, bias stability 0.1 °/h, for flight control, tri-axis fiber optic gyroscope from a Chinese inertial sensor manufacturer',
+    categoryLine: '0.1 deg/h tactical grade tri-axis fiber optic gyroscope for flight control',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -583,6 +599,7 @@ export const fogGyros: Product[] = [
     descZh: '光纤陀螺作为一种新型全固态陀螺，具有启动快、测量范围广和可靠性高等优点。其中， LKF-F3G80型光纤陀螺惯组是针对中高精度应用背景的需求，采用三轴共用技术，以及分体式设计，成本低、性能稳定；结构上采用光路、电路一体封装，结构简单，安装方便，可应用与小型导弹、制导炸弹的导航制导、姿态测量与控制等系统中。 独特技术 在GPS信号不好时，LKF-F3G80可根据已获知的方位、方向和速度来继续进行精确导航，这也是惯性导航技术的基本原理。同时也可修正GPS信号不好时定位偏差过大的问题。 三轴光纤陀螺仪',
     seoTitle: 'LKF-F3G80 Tri-axis fiber optic gyroscope',
     seoDesc: 'Three-Axis FOG, bias stability 0.02 °/h, for platform stabilization, tri-axis fiber optic gyroscope from a Chinese inertial sensor manufacturer',
+    categoryLine: '0.02 deg/h tactical grade tri-axis fiber optic gyroscope for platform stabilization',
     specTable: {
       headers: ['A', 'B', 'C'],
       rows: [
@@ -627,6 +644,7 @@ export const fogGyros: Product[] = [
     descZh: '设计，成本低、性能稳定；结构上采用光路、电路一体封装，结构简单，安装方便，可应 用与小型导弹、制导炸弹的导航制导、姿态测量与控制等系统中。 独特技术 无人机的飞行控制系统是其最主要的组成部分之一，而姿态的稳定控制，则是对无人机顺利执行各项任务的有效方法。其中，LKF-F3G90三轴陀螺仪主要用来测量无人机在飞行过程中俯仰角、横滚角和偏航角的角速度，并根据角速度积分计算角度的改变。 三轴光纤陀螺仪',
     seoTitle: 'LKF-F3G90 Tri-axis fiber optic gyroscope',
     seoDesc: 'Three-Axis FOG, bias stability 0.015 °/h, for optical/photography platform',
+    categoryLine: '0.015 deg/h tactical grade tri-axis fiber optic gyroscope for optical/photography platform',
     specTable: {
       headers: ['A', 'B', 'C'],
       rows: [
@@ -671,6 +689,7 @@ export const fogGyros: Product[] = [
     descZh: '三轴光纤陀螺仪',
     seoTitle: 'LKF-FT120C Tri-axis fiber optic gyroscope',
     seoDesc: 'Three-Axis FOG, bias stability 0.005 °/h, for flight control, tri-axis fiber optic gyroscope from a Chinese inertial sensor manufacturer',
+    categoryLine: '0.005 deg/h navigation grade tri-axis fiber optic gyroscope for flight control',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -715,6 +734,7 @@ export const fogGyros: Product[] = [
     descZh: '敏感轴的角速度。本产品的角速度传感单元为光纤环，采用数字闭环检测电路提取光纤环 敏感的由外界物理角速度引起的顺逆时针传播光的光程差，同时将光程差信号转化成的电 压信号进行闭环反馈和控制，实现信号的调制解调，达到高精度角速度信号检测的目的。 独特技术 FS120H三轴一体光纤陀螺适配水下无人载体惯导系统。水下无卫星信号，无人潜航器依靠纯惯性长时间解算航姿、位置，对陀螺长期低漂移性能要求严苛。产品具备优异零偏稳定性，持续输出高精度角增量与温度数据，有效降低长时航行累积误差，满足水下巡航、海底测绘等水下作业自主定向与姿态测量需求。 三轴光纤陀螺仪',
     seoTitle: 'LKF-FT120H Tri-axis fiber optic gyroscope',
     seoDesc: 'Three-Axis FOG, bias stability 0.003 °/h, for electro-optical pod, tri-axis fiber optic gyroscope from a Chinese inertial sensor manufacturer',
+    categoryLine: 'Tri-axis fiber optic gyroscope for electro-optical pod',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -759,6 +779,7 @@ export const fogGyros: Product[] = [
     descZh: '石油钻井导向系统是井下作业设备的核心组成部分之一，而井下姿态方位的精准测量，则是保障钻井轨迹贴合设计路径的关键手段。其中，LKF-FT60光纤陀螺仪主要用来测量钻具在地层钻进过程中俯仰、横滚、方位三个维度的角速率，并对角速度积分实时解算钻具倾斜与转向角度。 三轴光纤陀螺仪',
     seoTitle: 'LKF-FT60 Tri-axis fiber optic gyroscope',
     seoDesc: 'Three-Axis FOG, bias stability 0.05 °/h, for inertial measurement unit',
+    categoryLine: '0.05 deg/h tactical grade tri-axis fiber optic gyroscope for inertial measurement unit',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -802,6 +823,7 @@ export const fogGyros: Product[] = [
     descZh: '三轴光纤陀螺仪',
     seoTitle: 'LKF-FT70A Tri-axis fiber optic gyroscope',
     seoDesc: 'Three-Axis FOG, bias stability 0.05 °/h, for electro-optical pod, tri-axis fiber optic gyroscope from a Chinese inertial sensor manufacturer',
+    categoryLine: '0.05 deg/h tactical grade tri-axis fiber optic gyroscope for electro-optical pod',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -846,6 +868,7 @@ export const fogGyros: Product[] = [
     descZh: '三轴光纤陀螺仪可提供船舶航行过程中的姿态变化信息，辅助自动驾驶系统进行航向调节与稳性控制。结合惯性导航系统（INS）使用时，陀螺仪数据能在GPS信号缺失或受干扰情况下提供可靠的定位导航信息，保障船舶安全航行。 三轴光纤陀螺仪',
     seoTitle: 'LKF-FT70H Tri-axis fiber optic gyroscope',
     seoDesc: 'Three-Axis FOG, bias stability 0.03 °/h, for satcom-on-the-move, tri-axis fiber optic gyroscope from a Chinese inertial sensor manufacturer',
+    categoryLine: '0.03 deg/h tactical grade tri-axis fiber optic gyroscope for satcom-on-the-move',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [

@@ -29,6 +29,7 @@ export interface Product {
   image?: string;       // 产品图片地址（可留空）
   seoTitle?: string;    // SEO 标题（唯一，含真实参数；留空则用 nameEn | model）
   seoDesc?: string;     // SEO 描述（留空则用 descEn）
+  categoryLine?: string; // H1 下方品类副标题（页面可见的完整品类词）
   shortEn?: string;     // 产品总览页显示的短名称（英文，可留空）
   shortZh?: string;     // 产品总览页显示的短名称（中文，可留空）
   subEn?: string;       // 产品总览页显示的副标题（英文，可留空）

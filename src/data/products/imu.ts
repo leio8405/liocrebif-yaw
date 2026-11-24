@@ -13,6 +13,7 @@ export const imus: Product[] = [
     descEn: 'Unique Technology Parameter Fiber Optic Gyroscope RT Bias Repeatability (run-to-run, day-to-day) (°/h)',
     seoTitle: 'LKF-F3X100 Fiber optic IMU 0.05°/h',
     seoDesc: 'Three-Axis FOG IMU, bias stability 0.05 °/h, for mobile positioning & attitude reference',
+    categoryLine: 'Fiber optic IMU for mobile positioning & attitude reference',
     specTable: {
       headers: ['H', 'M'],
       rows: [
@@ -53,6 +54,7 @@ export const imus: Product[] = [
     descEn: 'Unique Technology Parameter Fiber OpticGyro Bias Stability (°/h, 1, 10s) Bias Repeatability (°/h, 1, 10s)',
     seoTitle: 'LKF-F3X50 Fiber optic IMU 0.15°/h',
     seoDesc: 'Three-Axis Fiber Gyro IMU, bias stability 0.15 °/h, for surveying & north-seeking',
+    categoryLine: '0.15 deg/h industrial grade fiber optic IMU for surveying & north-seeking',
     specTable: {
       headers: ['A', 'B'],
       rows: [
@@ -91,6 +93,7 @@ export const imus: Product[] = [
     descEn: 'Unique Technology Parameter Fiber Optic Gyroscope RT Bias Repeatability (run-to-run, day-to-day) (°/h)',
     seoTitle: 'LKF-F3X70 Fiber optic IMU 0.5°/h',
     seoDesc: 'Three-Axis FOG IMU, bias stability 0.5 °/h, for stabilized platforms, fiber optic IMU from a Chinese inertial sensor manufacturer',
+    categoryLine: '0.5 deg/h industrial grade fiber optic IMU for stabilized platforms',
     specTable: {
       headers: ['A', 'B', 'C', ''],
       rows: [
@@ -129,6 +132,7 @@ export const imus: Product[] = [
     descEn: 'Unique Technology Parameter Fiber Optic Gyroscope RT Bias Repeatability (run-to-run, day-to-day) ( º/ h)',
     seoTitle: 'LKF-F3X80 Fiber optic IMU 0.5°/h',
     seoDesc: 'Three-Axis FOG IMU, bias stability 0.5 °/h, for satcom-on-the-move, fiber optic IMU from a Chinese inertial sensor manufacturer',
+    categoryLine: '0.5 deg/h industrial grade fiber optic IMU for satcom-on-the-move',
     specTable: {
       headers: ['A', 'B', 'C'],
       rows: [
@@ -170,6 +174,7 @@ export const imus: Product[] = [
     descEn: 'Unique Technology Parameter Fiber Optic Gyroscope RT Bias Repeatability (run-to-run, day-to-day) (°/h)',
     seoTitle: 'LKF-F3X90 Fiber optic IMU 0.1°/h',
     seoDesc: 'Three-Axis FOG IMU, bias stability 0.1 °/h, for underwater, fiber optic IMU from a Chinese inertial sensor manufacturer',
+    categoryLine: '0.1 deg/h tactical grade fiber optic IMU for underwater',
     specTable: {
       headers: ['H', 'M'],
       rows: [
@@ -210,6 +215,7 @@ export const imus: Product[] = [
     descEn: 'Unique Technology',
     seoTitle: 'LKF-FSU305 Fiber optic IMU 0.5°/h',
     seoDesc: 'Fiber Inertial Navigation System, bias stability 0.5 °/h, for autonomous driving & missile-borne',
+    categoryLine: '0.5 deg/h fiber optic IMU for autonomous driving & missile-borne',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -256,6 +262,7 @@ export const imus: Product[] = [
     descEn: 'Unique Technology Parameter',
     seoTitle: 'LKF-FSU307 Fiber optic IMU 0.5°/h',
     seoDesc: 'Fiber Optic Inertial Measurement Unit, bias stability 0.5 °/h, for mobile positioning & attitude reference',
+    categoryLine: '0.5 deg/h fiber optic IMU for mobile positioning & attitude reference',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -305,6 +312,7 @@ export const imus: Product[] = [
     descZh: 'MEMS 惯性测量模块 陀螺仪 量程（°/s） X轴：±5400°/s Y、Z轴：±500°/s 全温零偏（°/s，3σ） 零偏稳定性（°/h，10s平滑） 零偏重复性（°/h） 零偏不稳定性（°/h，allan，typ） 角度随机游走（°/√h） 标度因数非线性（ppm） 交叉耦合（rad） 带宽（Hz） 加速度计 量程（g） 全温零偏（mg，3σ） 零偏稳定性（μg，10s平滑） 零偏不稳定性（μg，allan，typ） 零偏重复性（μg） 速度随机游走（m/s/√h） 标度因数非线性（ppm，±1g） 交叉耦合（rad） 带宽（Hz） 电气/机械接口 电源（V） 功率(W) 启动时间（s） 通信接口 更新率（Hz） 尺寸（mm×mm×mm） Ф55 × 15 重量（g） 使用环境 工作温度（℃） 存储温度（℃） 振动（g，Rms） 20~2000HZ，6.06 冲击（g） 15000/10ms',
     seoTitle: 'LKF-MNU107 MEMS inertial measurement unit',
     seoDesc: 'MEMS Inertial Measurement Unit, bias stability 20 °/h, for flight control',
+    categoryLine: '20 deg/h rate grade MEMS inertial measurement unit for flight control',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -355,6 +363,7 @@ export const imus: Product[] = [
     descZh: '高动态MEMS寻北仪 陀螺仪 量程（°/s） 全温零偏（°/h，3σ） 零偏稳定性（°/h，10s平滑） 零偏不稳定性（°/h，allan，typ） 零偏重复性（°/h） 角度随机游走（°/√h） 标度因数非线性（ppm） 交叉耦合（rad） 带宽（Hz） 加速度计 量程（g） 全温零偏（mg，3σ） 零偏稳定性（μg，10s平滑） 零偏不稳定性（μg，allan，typ） 零偏重复性（ug） 速度随机游走（m/s/√h） 标度因数非线性（ppm，±1g） 交叉耦合（rad） 带宽（Hz） 导航精度 自寻北精度（°，1σ） ≤2.5*secL（L代表当地纬度） 姿态精度（°，1σ） 物理特性 电源（V） 5~12(纹波≤100mV) 稳态功率(W) 启动时间（s） 通讯接口 更新率（Hz，max） 尺寸（mm×mm） Φ31.8 × 85 重量（g） 使用环境 工作温度（℃） -40～+120 存储温度（℃） 振动（g，RMS） 20~2000HZ，6.06 冲击（g） 500g/1ms',
     seoTitle: 'LKF-MSN300H MEMS inertial measurement unit',
     seoDesc: 'High Dynamic MEMS North Finder, bias stability 0.5 °/h, for mine environment orientation',
+    categoryLine: '0.5 deg/h industrial grade MEMS inertial measurement unit for mine environment orientation',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -407,6 +416,7 @@ export const imus: Product[] = [
     descZh: '高精度MEMS寻北仪 陀螺仪 量程（°/s） 全温零偏（°/h，3σ） 零偏稳定性（°/h，10s平滑） 零偏不稳定性（°/h，allan，typ） 零偏重复性（°/h） 角度随机游走（°/√h） 标度因数非线性（ppm） 交叉耦合（rad） 带宽（Hz） 加速度计 量程（g） 全温零偏（mg，3σ） 零偏稳定性（μg，10s平滑） 零偏不稳定性（μg，allan，typ） 零偏重复性（ug） 速度随机游走（m/s/√h） 标度因数非线性（ppm，±1g） 交叉耦合（rad） 带宽（Hz） 导航精度 自寻北精度（°，1σ） ≤1*secL（L代表当地纬度） 姿态精度（°，1σ） 物理特性 电源（V） 5~12(纹波≤100mV) 稳态功率(W) 启动时间（s） 更新率（Hz，max） 尺寸（mm×mm×mm） Φ31.8 × 85 重量（g） 使用环境 工作温度（℃） -40～+120 存储温度（℃） 振动（g，RMS） 20~2000HZ，6.06 冲击（g） 500g/1ms',
     seoTitle: 'LKF-MSN300 MEMS inertial measurement unit',
     seoDesc: 'High Precision MEMS North Finder, bias stability 0.1 °/h, for mine environment orientation',
+    categoryLine: 'MEMS inertial measurement unit for mine environment orientation',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -457,6 +467,7 @@ export const imus: Product[] = [
     descZh: '高精度MEMS寻北仪 陀螺仪 量程（°/s） 全温零偏（°/h，3σ） 零偏稳定性（°/h，10s平滑） 零偏不稳定性（°/h，allan，typ） 零偏重复性（°/h） 角度随机游走（°/√h） 标度因数非线性（ppm） 交叉耦合（rad） 带宽（Hz） 加速度计 量程（g） 全温零偏（mg，3σ） 零偏稳定性（ug，10s平滑） 零偏不稳定性（ug，allan，typ） 零偏重复性（ug） 速度随机游走（m/s/√h） 标度因数非线性（ppm，±1g） 交叉耦合（rad） 带宽（Hz） 导航精度 自寻北精度（°，1σ） ≤0.5secL（L代表当地纬度） 姿态精度（°，1σ） 物理特性 电源（V） 5~12(纹波≤100mV) 稳态功率(W) 启动时间（s） 更新率（Hz，max） 尺寸（mm×mm×mm） 47×47×35.5 重量（g） 使用环境 工作温度（℃） 存储温度（℃） 振动（g，RMS） 20~2000HZ，6.06 冲击（g） 500g/1ms',
     seoTitle: 'LKF-MSN302 MEMS inertial measurement unit',
     seoDesc: 'High Precision MEMS North Finder, bias stability 0.1 °/h, for soldier north-seeking',
+    categoryLine: '0.1 deg/h tactical grade MEMS inertial measurement unit for soldier north-seeking',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -507,6 +518,7 @@ export const imus: Product[] = [
     descZh: '惯性测量单元是运动姿态感知与自主导航的核心器件，LKF-MSU102 六轴 MEMS 惯性测量模块可用于车载、船载、无人机导航姿态控制、工程机械轨迹监测、矿山井下设备定向、钻井随钻测量、隧道掘进定位测绘，以及依托陀螺角速率与加速度数据完成设备倾角监测、结构形变检测等。 MEMS惯性测量模块 参数 技术指标 陀螺仪 量程（°/s） 全温零偏（°/h，3σ） 零偏稳定性（°/h，10s平滑） 零偏不稳定性（°/h，allan，typ） 零偏重复性（°/h） 角度随机游走（°/√h） 标度因数非线性（ppm） 交叉耦合（rad） 带宽（Hz） 加速度计 量程（g） 全温零偏（mg，3σ） 零偏稳定性（μg，10s平滑） 零偏不稳定性（μg，allan，typ） 零偏重复性（ug） 速度随机游走（m/s/√h） 标度因数非线性（ppm，±1g） 交叉耦合（rad） 带宽（Hz） 使用环境 工作温度（℃） 存储温度（℃） 振动（g，RMS） 20~2000HZ，6.06 冲击（g） 1000/1ms 外形结构尺寸图',
     seoTitle: 'LKF-MSU102 MEMS inertial measurement unit',
     seoDesc: 'MEMS IMU, bias stability 10 °/h, for vehicle/vessel attitude measurement',
+    categoryLine: '10 deg/h rate grade MEMS inertial measurement unit for vehicle/vessel attitude measurement',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -550,6 +562,7 @@ export const imus: Product[] = [
     descZh: '利科夫LKF-MSU105微型MEMS惯性组合导航是一款微小型、高性价比的MEMS惯性组合导航系统，主打动中通、无人机为代表的导航、控制和测量等领域。系统在小尺寸内高度集成了MEMS传感器和全频点卫星接收机芯片，可以实现小体积的定位和姿态测量。',
     seoTitle: 'LKF-MSU105 MEMS inertial measurement unit',
     seoDesc: 'Mini MEMS Integrated Inertial Navigation System, bias stability 10 °/h, for mobile mapping & engineering survey',
+    categoryLine: '10 deg/h rate grade MEMS inertial measurement unit for mobile mapping & engineering survey',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -607,6 +620,7 @@ export const imus: Product[] = [
     descZh: 'MEMS惯性测量模块仪 参数 技术指标 陀螺仪 量程（°/s） 全温零偏（°/h，3σ） 零偏稳定性（°/h，10s平滑） 零偏不稳定性（°/h，allan，typ） 零偏重复性（°/h） 角度随机游走（°/√h） 标度因数非线性（ppm） 交叉耦合（rad） 带宽（Hz） 加速度计 量程（g） 全温零偏（mg，3σ） 零偏稳定性（μg，10s平滑） 零偏不稳定性（μg，allan，typ） 零偏重复性（ug） 速度随机游走（m/s/√h） 标度因数非线性（ppm，±1g） 交叉耦合（rad） 带宽（Hz） 物理特性 更新率（Hz，max） 尺寸（mm×mm×mm） 44.8×38.6×21.5 重量（g） 使用环境 工作温度（℃） 存储温度（℃） 振动（g，RMS） 20~2000HZ，6.06 冲击（g） 外形结构尺寸图',
     seoTitle: 'LKF-MSU203 MEMS inertial measurement unit',
     seoDesc: 'MEMS Inertial Measurement Unit, bias stability 2 °/h, for vehicle/vessel attitude measurement',
+    categoryLine: '2 deg/h rate grade MEMS inertial measurement unit for vehicle/vessel attitude measurement',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -653,6 +667,7 @@ export const imus: Product[] = [
     descZh: 'MEMS惯性测量模块仪 参数 测试条件 最小值 典型值 最大值 单位 陀螺仪 量程 全温零偏 零偏稳定性 10s平滑 零偏不稳定性 allan方差 零偏重复性 定温 角度随机游走 标度因数非线性 交叉耦合 带宽 加速度计 量程 全温零偏 零偏稳定性 10s平滑 零偏不稳定性 allan方差 零偏重复性 定温 速度随机游走 标度因数非线性 交叉耦合 带宽 磁力计 量程 分辨率 噪声密度 带宽 气压计 量程 总误差 绝对误差 非线性度 分辨率 工作环境 震动 10-2000Hz, 6.06g 冲击 30g, 11ms 过载 半正弦波 可靠性 平均无故障时间（MTBF） 连续工作时间 注：典型值代表多套产品测试指标的1σ统计值。',
     seoTitle: 'LKF-MSU204A MEMS inertial measurement unit',
     seoDesc: 'MEMS Inertial Measurement Unit, for industrial, MEMS inertial measurement unit from a Chinese inertial sensor manufacturer',
+    categoryLine: 'MEMS inertial measurement unit for industrial',
     specTable: {
       headers: ['测试条件', '最小值', '典型值', '最大值', '单位', ''],
       rows: [
@@ -680,6 +695,7 @@ export const imus: Product[] = [
     descZh: 'MEMS惯性测量模块 参数 测试条件 最小值 典型值 最大值 单位 陀螺仪 量程 全温零偏 零偏稳定性 10s平滑 零偏不稳定性 allan方差 零偏重复性 角度随机游走 标度因数非线性 交叉耦合 带宽 加速度计 量程 全温零偏 零偏稳定性 10s平滑 零偏不稳定性 allan方差 零偏重复性 速度随机游走 标度因数非线性 交叉耦合 带宽 磁力计 量程 分辨率 噪声密度 带宽 电气特性 工作电压 功耗 纹波 峰峰值 启动时间 结构特性 尺寸 47.0 × 44.0 ×14.0 重量 工作环境 震动 10-2000Hz, 6.06g 冲击 30g, 11ms 过载 半正弦波 可靠性 平均无故障时间（MTBF） 连续工作时间 注：典型值代表多套产品测试指标的1σ统计值。',
     seoTitle: 'LKF-MSU204B MEMS inertial measurement unit',
     seoDesc: 'MEMS Inertial Measurement Unit, for industrial, MEMS inertial measurement unit from a Chinese inertial sensor manufacturer',
+    categoryLine: 'MEMS inertial measurement unit for industrial',
     specTable: {
       headers: ['测试条件', '最小值', '典型值', '最大值', '单位', ''],
       rows: [
@@ -709,6 +725,7 @@ export const imus: Product[] = [
     descZh: 'MEMS惯性测量模块仪 参数 技术指标 陀螺仪 量程（°/s） 全温零偏（°/h，3σ） 零偏稳定性（°/h，10s平滑） 零偏不稳定性（°/h，allan，typ） 零偏重复性（°/h） 角度随机游走（°/√h） 标度因数非线性（ppm） 带宽（Hz） 交叉耦合（rad） 振中零偏变化（°/h，20~2000HZ，6.06g） 加速度计 量程（g） 全温零偏（mg，3σ） ≤3（XY）≤5（Z） 零偏稳定性（μg，10s平滑） 零偏不稳定性（μg，allan，typ） 零偏重复性（ug） 速度随机游走（m/s/√h） 标度因数非线性（ppm，±1g） 交叉耦合（rad） 带宽（Hz） 磁传感器 量程（Gs） 分辨率（μGs） 噪声密度（μGs） 带宽（Hz） 物理特性 电源（V） 3.3±0.3(纹波≤100mV) 通信接口 一路SPI，一路UART 更新率（Hz，max） 尺寸（mm×mm×mm） 22.4×22.3×13.7 重量（g） 使用环境 工作温度（℃） 存储温度（℃） 振动（g，RMS） 20~2000HZ，6.06 冲击（g） 1000/1ms',
     seoTitle: 'LKF-MSU206 MEMS inertial measurement unit',
     seoDesc: 'MEMS Inertial Measurement Unit, bias stability 5 °/h, for guidance & control',
+    categoryLine: '5 deg/h rate grade MEMS inertial measurement unit for guidance & control',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -762,6 +779,7 @@ export const imus: Product[] = [
     descZh: '高精度MEMS惯性测量模块 陀螺仪 量程（°/s） 零位（°/h） 零偏稳定性（°/h，10s 平滑） 零偏不稳定性（°/h，ALLAN） 角度随机游走（°/√h） 零偏重复性（°/h） 标度因数非线性（ppm） 交叉耦合（rad） 带宽（Hz） MEMS 加速度计 量程（g） 零位（mg） 零偏稳定性（μg） 零偏不稳定性（μg，ALLAN） 速度随机游走（m/s/√h） 零偏重复性（μg） 标度因数非线性（ppm） 带宽（Hz） 交叉耦合（rad） 电气/机械接口 电源（V） 功率(W) 启动时间（s） 通信接口 2 路 RS-422 更新率（Hz） 200(可定制，最高 1000) 尺寸（mm×mm×mm） 56×56×38.5 重量（g） 使用环境 工作温度（℃） 存储温度（℃） 振动（g，Rms） 冲击（g） 1000g/1ms（带电）',
     seoTitle: 'LKF-MSU300 MEMS inertial measurement unit',
     seoDesc: 'High Precision MEMS Inertial Measurement Unit, bias stability 0.3 °/h, for underwater navigation',
+    categoryLine: '0.3 deg/h industrial grade MEMS inertial measurement unit for underwater navigation',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -811,6 +829,7 @@ export const imus: Product[] = [
     descEn: 'Unique Technology Parameter Gyroscope Range (°/s) Full-Temperature Bias (°/h, 3σ)',
     seoTitle: 'LKF-MSU301 MEMS inertial measurement unit',
     seoDesc: 'MEMS Inertial Measurement Module, bias stability 0.3 °/h, for vehicle/vessel attitude measurement',
+    categoryLine: '0.3 deg/h industrial grade MEMS inertial measurement unit for vehicle/vessel attitude measurement',
     specTable: {
       headers: ['MSU301A', 'MSU301B', 'MSU301C'],
       rows: [
@@ -859,6 +878,7 @@ export const imus: Product[] = [
     descEn: 'Unique Technology Parameter Gyroscope',
     seoTitle: 'LKF-MSU304D MEMS inertial measurement unit',
     seoDesc: 'High-Performance MEMS Inertial Measurement Module, bias stability 0.15 °/h, for underwater navigation',
+    categoryLine: '0.15 deg/h industrial grade MEMS inertial measurement unit for underwater navigation',
     specTable: {
       headers: ['项目', '技术指标'],
       rows: [
@@ -908,6 +928,7 @@ export const imus: Product[] = [
     descZh: 'MEMS惯性测量模块 参数 MSU304 A MSU304 B 陀螺仪 量程（°/s） 全温零偏（°/h，3σ） 零偏稳定性（°/h，10s平滑） 零偏不稳定性（°/h，allan，typ） 零偏重复性（°/h，1σ） 角度随机游走（°/√h） 标度因数非线性（ppm） 交叉耦合（rad） 带宽（Hz） 加速度计 量程（g） 全温零偏（mg） 零偏稳定性（ug，10s平滑） 零偏不稳定性（μg，allan，typ） 零偏重复性（ug） 速度随机游走（m/s/√h） 标度因数非线性（ppm，±1g） 交叉耦合（rad） 带宽（Hz） 电气/机械接口 电源（V） 5~12(纹波≤100mV) 稳态功率(W) 启动时间（s） 通讯接口 更新率（Hz，max） 尺寸（mm×mm×mm） 70×70×30 重量（g） 使用环境 工作温度（℃） -50～+80（或者-50启动，-55工作） 存储温度（℃） 振动（g，RMS） 冲击（g）',
     seoTitle: 'LKF-MSU304 MEMS inertial measurement unit',
     seoDesc: 'High Precision MEMS Inertial Measurement Unit, bias stability 0.15 °/h, for ship & marine operations',
+    categoryLine: '0.15 deg/h industrial grade MEMS inertial measurement unit for ship & marine operations',
     specTable: {
       headers: ['MSU304 A', 'MSU304 B'],
       rows: [

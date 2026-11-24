@@ -49,6 +49,11 @@ SUB_TAG = {
 }
 
 
+# 源文档错字修正（改源 docx 不现实，在生成侧统一纠正）
+SPELL_FIX = {
+    "Chanber": "Chamber",   # LKF-GR02 热固化箱
+}
+
 NAME_ZH_FIX = {
     "低水峰单模光纤": "Low Water Peak Single-Mode Fiber",
     "超低损耗单模光纤": "Ultra-Low Loss Single-Mode Fiber",
@@ -165,6 +170,8 @@ def ts_entry(r):
     if not tag_en:
         tag_en, tag_zh = r.get("sub") or "Product", r.get("sub") or "产品"
     name_en = esc(NAME_EN_BY_MODEL.get(model)) or esc(NAME_EN_BY_ZH.get(r["nameZh"])) or esc(clean_en_name(r)) or esc(r.get("nameEn")) or NAME_ZH_FIX.get(r["nameZh"]) or ""
+    for _bad, _good in SPELL_FIX.items():
+        name_en = name_en.replace(_bad, _good)
     if not name_en:
         name_en = esc(r["nameZh"])
     name_zh = esc(NAME_ZH_BY_EN.get(clean_en_name(r)) or r["nameZh"])
@@ -199,6 +206,8 @@ def ts_entry(r):
         lines.append(f"    seoTitle: '{esc(_seo['seoTitle'])}',")
     if _seo.get("seoDesc"):
         lines.append(f"    seoDesc: '{esc(_seo['seoDesc'])}',")
+    if _seo.get("categoryLine"):
+        lines.append(f"    categoryLine: '{esc(_seo['categoryLine'])}',")
     st = SPEC_OVERRIDE.get(ov_key) or r.get("specTable")
     if st and st.get("rows"):
         hs = ", ".join(f"'{esc(h)}'" for h in st["headers"])
@@ -247,6 +256,8 @@ def split_entry(p, base):
         lines.append(f"    seoTitle: '{esc(_seo['seoTitle'])}',")
     if _seo.get("seoDesc"):
         lines.append(f"    seoDesc: '{esc(_seo['seoDesc'])}',")
+    if _seo.get("categoryLine"):
+        lines.append(f"    categoryLine: '{esc(_seo['categoryLine'])}',")
     st = p["specTable"]
     lines.append("    specTable: {")
     lines.append("      headers: [" + ", ".join(f"'{esc(h)}'" for h in st["headers"]) + "],")
