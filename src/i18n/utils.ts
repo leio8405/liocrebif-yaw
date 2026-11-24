@@ -25,8 +25,12 @@ export function useTranslations(lang: Lang) {
 }
 
 export function translatePath(path: string, lang: Lang): string {
+  // 外部链接原样返回
+  if (/^https?:\/\//.test(path)) return path;
   // Remove existing /zh prefix if any
-  const cleanPath = path.replace(/^\/zh/, '') || '/';
+  let cleanPath = path.replace(/^\/zh/, '') || '/';
+  // 页面路由统一补尾斜杠：canonical 带斜杠，少补会让每次抓取多一跳 308
+  if (!cleanPath.endsWith('/')) cleanPath += '/';
   if (lang === defaultLang) return cleanPath;
   return `/zh${cleanPath}`;
 }
