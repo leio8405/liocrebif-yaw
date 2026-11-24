@@ -38,6 +38,71 @@ export interface ResourceArticle {
 export const resources: ResourceArticle[] = [
 
   {
+    slug: 'three-in-one-optical-device-spc1310',
+    title: 'What a Three-in-One Optical Device Replaces in a FOG Front End',
+    description:
+      'The SPC1310 folds an SLED, a coupler and a PIN-FET receiver into one package, and the front end that has to fit beside a 55 mm coil shrinks with it. What that costs: one failure now takes three functions with it, and receiver gain, saturation limit and source polarization stop being your choice.',
+    date: '2026-11-24',
+    readingTime: 5,
+    tag: 'Technology',
+    sections: [
+      {
+        h2: 'A dish on the roof of a moving truck',
+        html: `<p>A three in one optical device collapses the source, the coupler and the receiver of a FOG front end into one package. The SPC1310 is ours, and the tradeoff is plain: what the footprint gains, serviceability pays for.</p>
+<p>Picture the gain. A satcom-on-the-move terminal on the roof of a truck crossing a mountain pass at 80 km/h, the gimbal holding a dish on target over broken road. The gyro feeding it lives through 4.2 g between 20 and 2000 Hz and a cabin swinging from &minus;40 to +70 &deg;C. The LKF-FS60 is 60 &times; 60 &times; 30 mm and 150 &plusmn; 20 g, and at &le;0.20 &deg;/h bias stability it walks about 0.8&deg; of heading over a four-hour drive uncorrected.</p>
+<p>Inside that 60 mm cube the light path has to fit beside the coil. The LKF-FC60 is 39 mm bore and 55 mm outside diameter, leaving a 5 mm band around it and 21.5 mm of depth above. Discretely, the front end is three packages: the <a href="/products/lkf-sld/" class="text-blue-700 underline">SLD</a> at 22 &times; 12.6 &times; 7.3 to 8.0 mm or 16.8 &times; 9 &times; 5.7 mm with &ge;1 m of pigtail; a coupler; and a receiver module.</p>`,
+      },
+      {
+        h2: 'What is actually inside the package',
+        html: `<p>The <a href="/products/lkf-spc1310/" class="text-blue-700 underline">SPC1310</a> is a hybrid integration: an SLED, a coupler and a PIN-FET receiver in one housing, source and detector sharing the same body and thermal path.</p>
+<ul><li>Source: 400 to 600 &micro;W at 100 mA and 25 &deg;C, 1310 &plusmn; 20 nm center, 3 dB bandwidth &ge;30 nm, ripple &le;0.2 dB, full-temperature power stability &le;5 per cent over &minus;55 to +75 &deg;C, TEC current &le;800 mA, operating current 100 to 150 mA.</li>
+<li>Detector: current responsivity 0.37 to 0.43 A/W, transimpedance 180 to 220 k&Omega;, voltage responsivity 0.067 to 0.086 V/&micro;W, dark voltage &minus;1.1 to &minus;0.7 V at 100 mA, bandwidth &ge;7 MHz at 25 &deg;C, noise &le;0.8 mV, full-temperature responsivity stability &le;5 per cent over &minus;55 to +75 &deg;C.</li>
+<li>Across the assembly rather than across one part: sensitivity &le;&minus;43 dBm, source-to-detector crosstalk &le;0.06 V.</li></ul>
+<p>Those last two rows are what a discrete bench cannot buy. Sensitivity and internal crosstalk belong to the assembled package, not the parts inside it, so on a discrete front end you measure them yourself, unit by unit, at incoming inspection.</p>`,
+      },
+      {
+        h2: 'What the merge does to the source',
+        html: `<p>The integrated source prints one extinction-ratio row: &le;1 dB. The standalone SLD prints two options, &le;1.2 dB or &ge;12 dB, so a polarized source exists in the catalog, but only as the discrete part. The polarization then has to be made downstream, by the block that also splits and modulates: the MIOC1310 Y-waveguide. The light path becomes a source-and-receiver package plus a waveguide, and each now hands a crosstalk term to the other.</p>
+<p>Then the spectrum: a 3 dB width of &ge;30 nm on the integrated module against &ge;35 nm on the standalone SLD, 5 nm narrower around the same 1310 &plusmn; 20 nm center. Coherence length goes as roughly the square of the wavelength over the spectral width, so the narrower source buys a longer one, and a longer coherence length returns more Rayleigh backscatter into the detector. That arrives as bias.</p>
+<p>The thermal budget collapses too. The standalone SLD prints a working TEC current of &le;700 mA across the full-temperature steady range and a maximum of &ge;1200 mA for fast start-up, because the source has to be pulled down quickly from cold. The SPC1310 prints a single &le;800 mA, so a supply sized against the fast-start case has to be rechecked. The drift rows get more specific and a little looser: &le;3 per cent over &minus;45 to +70 &deg;C on the SLD, &le;5 per cent over &minus;55 to +75 &deg;C on the integrated module. And the receiver's drift, inherited on a discrete bench from whichever detector was mounted, is now published at &le;5 per cent responsivity stability.</p>`,
+      },
+      {
+        h2: 'What one failure takes with it',
+        html: `<p>The service bench is where the integration gets expensive, so read the tradeoff straight.</p>
+<table><thead><tr><th>Point</th><th>Discrete front end</th><th>SPC1310</th></tr></thead><tbody><tr><td>Parts to align</td><td>SLD, coupler, PIN-FET</td><td>One module</td></tr><tr><td>Receiver gain</td><td>Three grades</td><td>One fixed part</td></tr><tr><td>Saturation power</td><td>Published</td><td>No row</td></tr><tr><td>Receiver linearity</td><td>&plusmn;3 per cent</td><td>No row</td></tr><tr><td>Source extinction</td><td>&le;1.2 dB or &ge;12 dB</td><td>&le;1 dB</td></tr><tr><td>Package outline</td><td>H-type, J-type</td><td>No row</td></tr><tr><td>Pigtail length</td><td>&ge;1 m</td><td>No row</td></tr><tr><td>Operating temperature</td><td>&minus;45 to +70 &deg;C</td><td>No row</td></tr><tr><td>One failure takes</td><td>One part</td><td>Source, coupler and detector</td></tr></tbody></table>
+<p>Read the last row first. On a discrete bench the failure modes are separable: an SLED that has aged out is replaced without touching the receiver, a detector pushed into saturation is replaced without touching the source. Integrated, a field swap takes three functions with it.</p>
+<p>Behind it sits a quieter effect. The discrete <a href="/products/lkf-pin-fet/" class="text-blue-700 underline">PIN-FET</a> is graded three ways, so the version can be matched to the optical power arriving at the fiber, and its saturation limit says where that version stops being linear. The integrated detector has no grade to pick, so the receiver is designed against a band, not a point. The merge that removes three splices also removes the trim.</p>
+<p>The table also lists what the sheet does not print, so ask for it in writing before the layout is frozen. The receiver rows matter most: the PIN-FET publishes saturation points at &ge;4, &ge;8 and &ge;16 &micro;W against minimum linear power of &le;0.03, &le;0.05 and &le;0.1 &micro;W. Without those rows the working point comes from measuring the first units.</p>`,
+      },
+      {
+        h2: 'What to send with the inquiry',
+        html: `<p>Four lines make the answer short: coil length and outside diameter, the housing envelope, the optical power you expect at the receiver, and whether the source has to be polarized. On that last one, &le;1 dB extinction means unpolarized output, so a design needing a polarized source keeps the discrete SLD and adds a receiver.</p>
+<p>Send those, and we will say whether the <a href="/products/fiber-optic/" class="text-blue-700 underline">fiber-optic parts</a> on your list are the discrete three or the integrated module, and what the drawing must confirm first.</p>`,
+      },
+    ],
+    faq: [
+      {
+        q: 'The SLD is offered with 12 dB polarization extinction and the SPC1310 only lists 1 dB. Can I get a polarized three-in-one?',
+        a: 'Not from the published SPC1310 sheet. The polarized grade belongs to the standalone LKF-SLD, so a front end that needs a polarized source either keeps the SLD and adds a separate PIN-FET, or we confirm a custom variant. Raise it before the design is frozen rather than after.',
+      },
+      {
+        q: 'If I move to the integrated module, can I still change the detector gain to match my optical power?',
+        a: 'No. The discrete LKF-PIN-FET is graded three ways: 0.72, 0.36 and 0.18 V/µW, on 800, 400 and 200 kΩ transimpedance, each with its own saturation limit. The integrated detector is one fixed part, so the gain has to move into your downstream electronics instead.',
+      },
+      {
+        q: 'The SPC1310 sheet has no operating temperature row. What temperature can I actually run it at?',
+        a: 'The sheet gives full-temperature power stability of ≤5 per cent and responsivity stability of ≤5 per cent over −55 to +75 °C, but that is a drift figure, not a rated operating range. The discrete SLD is specified −45 to +70 °C with storage at −55 to +85 °C. Ask for the rated operating range in writing before the enclosure is fixed.',
+      },
+    ],
+    relatedProducts: [
+      { model: 'LKF-SPC1310', href: '/products/lkf-spc1310/', caption: 'Three-in-one optical device: SLED, coupler and PIN-FET in one package' },
+      { model: 'LKF-SLD', href: '/products/lkf-sld/', caption: '1310 nm superluminescent diode, H-type and J-type packages' },
+      { model: 'LKF-PIN-FET', href: '/products/lkf-pin-fet/', caption: 'Optical receiver module in three responsivity grades' },
+    ],
+    relatedCategory: { name: 'Fiber Devices & Equipment', href: '/products/fiber-optic/' },
+  },
+
+  {
     slug: 'mioc-vs-discrete-optics-fog',
     title: 'MIOC vs Discrete Optics: Parts Count, Alignment and Drift in a FOG Bench',
     description:

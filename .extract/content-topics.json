@@ -483,7 +483,7 @@
     {
       "id": 43,
       "slug": "three-in-one-optical-device-spc1310",
-      "used": false,
+      "used": true,
       "title": "What a Three-in-One Optical Device Replaces in a FOG Front End",
       "targetKeywords": "three in one optical device, spc1310, integrated optical device fog, sled pinfet coupler",
       "outline": "三合一器件把 SLED+PIN-FET+耦合器集成的收益与代价（尺寸、一致性、维修性）。内链：SPC1310、SLD、PIN-FET。",
@@ -492,7 +492,8 @@
         "lkf-sld",
         "lkf-pin-fet"
       ],
-      "relatedCategory": "fiber-optic"
+      "relatedCategory": "fiber-optic",
+      "published": "2026-11-24"
     },
     {
       "id": 44,
